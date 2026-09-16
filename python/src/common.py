@@ -48,6 +48,7 @@ def resolve_domain(domain: str) -> str | None:
         return None
 
 
+@functools.lru_cache(maxsize=4096)
 def is_valid_host(host_str: str) -> bool:
     """Проверяет, является ли raw-string валидным доменным именем.
     Предварительно очищает от [], портов (:), ведущих /.
@@ -70,16 +71,19 @@ FAKE_DOMAINS = ("whatsapp.com", "vk.com", "huawei", "bing.com", "google.com")
 RU_TAGS = ("ru", "russia")
 
 
+@functools.lru_cache(maxsize=4096)
 def is_ru_tag(node_tag: str) -> bool:
     """Проверяет, содержит ли тег RU/Russia зону."""
     return any(f"-{z}" in node_tag or f".{z}" in node_tag or f" {z}" in node_tag or node_tag.endswith(z) for z in RU_TAGS)
 
 
+@functools.lru_cache(maxsize=4096)
 def is_ru_server(server_val: str) -> bool:
     """Проверяет, содержит ли сервер RU-зону."""
     return server_val.endswith(RU_ZONES) or any(f"{z}:" in server_val for z in RU_ZONES)
 
 
+@functools.lru_cache(maxsize=4096)
 def is_fake_domain(value: str) -> bool:
     """Проверяет, содержит ли значение фейковый домен."""
     return any(d in value for d in FAKE_DOMAINS)
@@ -113,7 +117,10 @@ def should_accept_outbound(
     if is_ru_tag(node_tag):
         return False
     server_val = str(outbound.get("server", "")).lower()
-    if not is_valid_server(server_val):
+    if not server_val or "@" in server_val:
+        return False
+    clean_server = server_val.strip().strip("[]").split(":")[0].strip()
+    if not is_valid_ip(clean_server) and not is_valid_domain(clean_server):
         return False
     if is_ru_server(server_val):
         return False
@@ -176,14 +183,6 @@ def _build_fingerprint(outbound: dict, protocol: str) -> str | None:
         case _:
             # Generic fallback: server:port
             return f"{server}:{port}"
-
-
-def is_valid_server(server: str) -> bool:
-    """Проверяет корректность поля server."""
-    if not server or "@" in server:
-        return False
-    clean_server = server.strip().strip("[]").split(":")[0].strip()
-    return is_valid_ip(clean_server) or is_valid_domain(clean_server)
 
 
 def country_code_to_flag(cc: str) -> str:
