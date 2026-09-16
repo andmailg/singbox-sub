@@ -9,8 +9,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from src.common import (
     country_code_to_flag,
     fetch_subscription,
-    load_sources,
     resolve_domain,
+    should_accept_outbound,
 )
 from src.rkn_filter import (
     download_geoip,
@@ -60,16 +60,27 @@ def _parse_and_deduplicate(
     clean_outbound: Callable,
     extra_filter: Callable[[dict], bool] | None,
     parse_kwargs: dict | None,
+    protocol: str = "generic",
+    tls_required: bool = False,
+    port_whitelist: tuple[int, ...] | None = None,
 ) -> list[dict]:
-    """Парсинг, DNS-резолвинг (параллельный), дедупликация по IP:port и дополнительные фильтры."""
+    """Парсинг, быстрая фильтрация, DNS-резолвинг (параллельный), дедупликация по IP:port и дополнительные фильтры."""
     kw = parse_kwargs or {}
 
     print(f"Parsing {len(links)} links...")
-    # 1. Парсинг + очистка + фильтрация — без DNS
+    # 1. Парсинг + быстрая фильтрация + очистка — без DNS
     parsed: list[tuple[int, dict]] = []
+    seen_fps: set[str] = set()
     for idx, link in enumerate(links):
         outbound = parse_proxy_link(link, **kw)
         if not outbound:
+            continue
+        if not should_accept_outbound(
+            outbound, seen_fps,
+            protocol=protocol,
+            tls_required=tls_required,
+            port_whitelist=port_whitelist,
+        ):
             continue
         outbound = clean_outbound(outbound)
         if not outbound:
@@ -182,12 +193,15 @@ def _sort_and_tag(outbounds: list[dict]) -> None:
 def run_pipeline(
     parser_module: str,
     *,
-    exporter: str = "singbox",
+    exporter: str = "tun",
     output_file: str = "output.json",
     extra_filter: Callable[[dict], bool] | None = None,
     parse_kwargs: dict | None = None,
     export_func: Callable | None = None,
     post_process: Callable[[list[dict]], None] | None = None,
+    protocol: str = "generic",
+    tls_required: bool = False,
+    port_whitelist: tuple[int, ...] | None = None,
 ) -> None:
     """Запускает полный pipeline сборки конфига.
 
@@ -199,6 +213,9 @@ def run_pipeline(
         parse_kwargs: дополнительные аргументы для parse_proxy_link.
         export_func: кастомная функция экспорта. Если None — используется exporter.
         post_process: функция для постобработки перед экспортом.
+        protocol: тип протокола для быстрой фильтрации ("hy2", "vless", "vmess").
+        tls_required: если True — требует TLS + server_name.
+        port_whitelist: если указан — разрешены только эти порты.
     """
     # 1. Загрузка подписок
     sub_urls_path = os.path.join(os.path.dirname(__file__), SOURCES_JSON_PATH)
@@ -217,13 +234,16 @@ def run_pipeline(
     parse_proxy_link = mod.parse_proxy_link
     clean_outbound = mod.clean_outbound
 
-    # 3. Парсинг + дедупликация
+    # 3. Парсинг + быстрая фильтрация + дедупликация
     outbounds = _parse_and_deduplicate(
         links,
         parse_proxy_link,
         clean_outbound,
         extra_filter,
         parse_kwargs,
+        protocol=protocol,
+        tls_required=tls_required,
+        port_whitelist=port_whitelist,
     )
 
     if not outbounds:

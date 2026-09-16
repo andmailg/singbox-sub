@@ -2,40 +2,7 @@
 
 import urllib.parse
 
-from src.common import (
-    is_fake_domain,
-    is_ru_server,
-    is_ru_tag,
-    is_valid_domain,
-    is_valid_server,
-)
 
-
-def should_accept_outbound(outbound: dict, seen_fingerprints: set[str]) -> bool:
-    """Быстрая фильтрация ноды после парсинга."""
-    if not outbound:
-        return False
-    tls_opts = outbound.get("tls")
-    if not isinstance(tls_opts, dict) or not tls_opts.get("enabled"):
-        return False
-    server_name = tls_opts.get("server_name")
-    if not server_name or not isinstance(server_name, str) or not server_name.strip():
-        return False
-    if is_fake_domain(server_name.lower()):
-        return False
-    node_tag = str(outbound.get("tag", "")).lower()
-    if is_ru_tag(node_tag):
-        return False
-    server_val = str(outbound.get("server", "")).lower()
-    if is_ru_server(server_val):
-        return False
-    if is_fake_domain(server_val):
-        return False
-    fingerprint = f"{server_val}:{outbound.get('server_port')}:{outbound.get('password')}"
-    if fingerprint in seen_fingerprints:
-        return False
-    seen_fingerprints.add(fingerprint)
-    return True
 
 
 def parse_proxy_link(link: str) -> dict | None:
@@ -123,21 +90,6 @@ def parse_proxy_link(link: str) -> dict | None:
         "password": urllib.parse.unquote(password),
         "tls": tls_opts,
     }
-
-    # Глобальные проверки (SERVER, SNI, RU DOMAINS)
-    if not is_valid_server(outbound["server"]):
-        return None
-
-    if sni:
-        sni_val = sni.lower()
-        if not is_valid_domain(sni_val):
-            return None
-
-        if sni_val.endswith(RU_ZONES) or any(f"{z}:" in sni_val for z in RU_ZONES):
-            return None
-
-        if is_fake_domain(sni_val):
-            return None
 
     return outbound
 

@@ -3,15 +3,6 @@
 import base64
 import functools
 import json
-import urllib.parse
-
-from src.common import (
-    is_ru_server,
-    is_ru_tag,
-    is_valid_domain,
-    is_valid_ip,
-    is_valid_server,
-)
 
 
 @functools.lru_cache(maxsize=4096)
@@ -39,29 +30,6 @@ def _decode_vmess_json(link: str) -> dict | None:
         return json.loads(decoded)
     except Exception:
         return None
-
-
-def should_accept_outbound(outbound: dict, seen_fingerprints: set[str]) -> bool:
-    """Фильтрация: RU домены + дедупликация по fingerprint (server:port:uuid:path)."""
-    if not outbound:
-        return False
-
-    node_tag = str(outbound.get("tag", "")).lower()
-    if is_ru_tag(node_tag):
-        return False
-    server_val = str(outbound.get("server", "")).lower()
-    if is_ru_server(server_val):
-        return False
-
-    port_val = str(outbound.get("server_port", "80"))
-    uuid_val = str(outbound.get("uuid", "")).lower()
-    path_val = str(outbound.get("transport", {}).get("path", "/")).lower()
-    fingerprint = f"{server_val}:{port_val}:{uuid_val}:{path_val}"
-
-    if fingerprint in seen_fingerprints:
-        return False
-    seen_fingerprints.add(fingerprint)
-    return True
 
 
 def parse_proxy_link(link: str) -> dict | None:
@@ -207,14 +175,6 @@ def parse_proxy_link(link: str) -> dict | None:
 
     if tls_opts:
         outbound["tls"] = tls_opts
-
-    # 10. Валидация
-    if not is_valid_server(outbound["server"]):
-        return None
-
-    sni_val = (sni or server).lower()
-    if not is_valid_domain(sni_val) and not is_valid_ip(sni_val):
-        return None
 
     return outbound
 

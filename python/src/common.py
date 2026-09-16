@@ -85,6 +85,99 @@ def is_fake_domain(value: str) -> bool:
     return any(d in value for d in FAKE_DOMAINS)
 
 
+def should_accept_outbound(
+    outbound: dict,
+    seen_fingerprints: set[str],
+    *,
+    protocol: str = "generic",
+    tls_required: bool = False,
+    port_whitelist: tuple[int, ...] | None = None,
+) -> bool:
+    """Универсальная быстрая фильтрация ноды после парсинга.
+
+    Args:
+        outbound: объект ноды в формате sing-box.
+        seen_fingerprints: множество для дедупликации.
+        protocol: тип протокола ("hy2", "vless", "vmess").
+        tls_required: если True — проверяет наличие включённого TLS и server_name.
+        port_whitelist: если указан — разрешены только эти порты.
+
+    Returns:
+        True если нода проходит все проверки.
+    """
+    if not outbound:
+        return False
+
+    # --- Базовые проверки (общие для всех протоколов) ---
+    node_tag = str(outbound.get("tag", "")).lower()
+    if is_ru_tag(node_tag):
+        return False
+    server_val = str(outbound.get("server", "")).lower()
+    if not is_valid_server(server_val):
+        return False
+    if is_ru_server(server_val):
+        return False
+    if is_fake_domain(server_val):
+        return False
+
+    # --- Фильтр по порту ---
+    if port_whitelist is not None:
+        if outbound.get("server_port") not in port_whitelist:
+            return False
+
+    # --- TLS-проверки ---
+    if tls_required:
+        tls_opts = outbound.get("tls")
+        if not isinstance(tls_opts, dict) or not tls_opts.get("enabled"):
+            return False
+        server_name = tls_opts.get("server_name")
+        if not server_name or not isinstance(server_name, str) or not server_name.strip():
+            return False
+        sni_val = server_name.lower()
+        if not is_valid_domain(sni_val):
+            return False
+        if is_ru_server(sni_val):
+            return False
+        if is_fake_domain(sni_val):
+            return False
+
+    # --- Дедупликация ---
+    fingerprint = _build_fingerprint(outbound, protocol)
+    if not fingerprint or fingerprint in seen_fingerprints:
+        return False
+    seen_fingerprints.add(fingerprint)
+    return True
+
+
+def _build_fingerprint(outbound: dict, protocol: str) -> str | None:
+    """Формирует ключ дедупликации в зависимости от протокола."""
+    server = str(outbound.get("server", "")).lower()
+    port = str(outbound.get("server_port", ""))
+
+    match protocol:
+        case "hy2":
+            password = str(outbound.get("password", ""))
+            return f"{server}:{port}:{password}"
+        case "vless":
+            uuid_val = str(outbound.get("uuid", ""))
+            transport = outbound.get("transport", {}) or {}
+            transport_type = transport.get("type", "")
+            if transport_type == "grpc":
+                # gRPC: уникальный сервер
+                return server
+            # VLESS WS/HTTP/TCP: server:port:uuid:path
+            path = str(transport.get("path", "/")).lower()
+            return f"{server}:{port}:{uuid_val}:{path}"
+        case "vmess":
+            uuid_val = str(outbound.get("uuid", ""))
+            transport = outbound.get("transport", {}) or {}
+            path = str(transport.get("path", "/")).lower()
+            return f"{server}:{port}:{uuid_val}:{path}"
+        case _:
+            # Generic fallback: server:port
+            return f"{server}:{port}"
+
+
 def is_valid_server(server: str) -> bool:
     """Проверяет корректность поля server."""
     if not server or "@" in server:

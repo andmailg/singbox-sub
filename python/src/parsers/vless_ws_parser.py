@@ -2,39 +2,6 @@
 
 import urllib.parse
 
-from src.common import (
-    is_ru_server,
-    is_ru_tag,
-    is_valid_host,
-    is_valid_ip,
-    is_valid_domain,
-    is_valid_server,
-)
-
-
-
-def should_accept_outbound(outbound: dict, seen_fingerprints: set[str]) -> bool:
-    """Фильтрация: RU домены + дедупликация по fingerprint (server:port:uuid:path)."""
-    if not outbound:
-        return False
-
-    node_tag = str(outbound.get("tag", "")).lower()
-    if is_ru_tag(node_tag):
-        return False
-    server_val = str(outbound.get("server", "")).lower()
-    if is_ru_server(server_val):
-        return False
-
-    port_val = str(outbound.get("server_port", "80"))
-    uuid_val = str(outbound.get("uuid", "")).lower()
-    path_val = str(outbound.get("transport", {}).get("path", "/")).lower()
-    fingerprint = f"{server_val}:{port_val}:{uuid_val}:{path_val}"
-
-    if fingerprint in seen_fingerprints:
-        return False
-    seen_fingerprints.add(fingerprint)
-    return True
-
 
 def parse_proxy_link(link: str, require_cloudfront: bool = False) -> dict | None:
     """
@@ -115,10 +82,6 @@ def parse_proxy_link(link: str, require_cloudfront: bool = False) -> dict | None
                     "public_key": pbk,
                     "short_id": sid,
                 }
-
-    # 7. Глобальная проверка server
-    if not is_valid_server(outbound["server"]):
-        return None
 
     return outbound
 

@@ -2,41 +2,7 @@
 
 import urllib.parse
 
-from src.common import (
-    RU_ZONES,
-    is_valid_server,
-    is_valid_domain
-)
 
-
-def should_accept_outbound(outbound: dict, seen_servers: set[str]) -> bool:
-    """Быстрая фильтрация ноды после парсинга."""
-    if not outbound:
-        return False
-    # Фильтр: только порт 8443
-    if outbound.get("server_port") != 8443:
-        return False
-    tls_opts = outbound.get("tls")
-    if not isinstance(tls_opts, dict) or not tls_opts.get("enabled"):
-        return False
-    # Отсекаем reality — только gRPC без reality
-    if outbound.get("type") == "vless":
-        reality_opts = tls_opts.get("reality")
-        if isinstance(reality_opts, dict) and reality_opts.get("enabled"):
-            return False
-    server_name = tls_opts.get("server_name")
-    if not server_name or not isinstance(server_name, str) or not server_name.strip():
-        return False
-    node_tag = str(outbound.get("tag", "")).lower()
-    if is_ru_tag(node_tag):
-        return False
-    server_address = str(outbound.get("server", "")).lower()
-    if is_ru_server(server_address):
-        return False
-    if server_address in seen_servers:
-        return False
-    seen_servers.add(server_address)
-    return True
 
 
 def parse_proxy_link(link: str) -> dict | None:
@@ -128,14 +94,6 @@ def parse_proxy_link(link: str) -> dict | None:
     }
     if packet_encoding:
         outbound["packet_encoding"] = packet_encoding
-
-    # Глобальные проверки (SERVER, SNI)
-    if not is_valid_server(outbound["server"]):
-        return None
-
-    sni_val = sni.lower()
-    if not is_valid_domain(sni_val):
-        return None
 
     return outbound
 

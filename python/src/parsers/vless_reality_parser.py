@@ -5,12 +5,7 @@ import functools
 import re
 import urllib.parse
 
-from src.common import (
-    is_ru_server,
-    is_ru_tag,
-    is_valid_domain,
-    is_valid_server,
-)
+
 
 
 @functools.lru_cache(maxsize=4096)
@@ -49,36 +44,6 @@ VALID_FINGERPRINTS = (
     "chrome", "firefox", "safari", "ios", "android",
     "edge", "360", "qq", "random", "randomized"
 )
-
-
-def should_accept_outbound(outbound: dict, seen_fingerprints: set[str]) -> bool:
-    """Быстрая фильтрация ноды после парсинга."""
-    if not outbound:
-        return False
-    tls_opts = outbound.get("tls")
-    if not isinstance(tls_opts, dict) or not tls_opts.get("enabled"):
-        return False
-    # Проверяем reality для VLESS
-    if outbound.get("type") == "vless":
-        reality_opts = tls_opts.get("reality")
-        if not isinstance(reality_opts, dict) or not reality_opts.get("enabled"):
-            return False
-    server_name = tls_opts.get("server_name")
-    if not server_name or not isinstance(server_name, str) or not server_name.strip():
-        return False
-    node_tag = str(outbound.get("tag", "")).lower()
-    if is_ru_tag(node_tag):
-        return False
-    server_val = str(outbound.get("server", "")).lower()
-    if is_ru_server(server_val):
-        return False
-    port_val = str(outbound.get("server_port", "80"))
-    uuid_val = str(outbound.get("uuid", "")).lower()
-    fingerprint = f"{server_val}:{port_val}:{uuid_val}"
-    if fingerprint in seen_fingerprints:
-        return False
-    seen_fingerprints.add(fingerprint)
-    return True
 
 
 def parse_proxy_link(link: str) -> dict | None:
@@ -195,14 +160,6 @@ def parse_proxy_link(link: str) -> dict | None:
     }
     if packet_encoding:
         outbound["packet_encoding"] = packet_encoding
-
-    # Глобальные проверки (SERVER, SNI)
-    if not is_valid_server(outbound["server"]):
-        return None
-
-    sni_val = sni.lower()
-    if not is_valid_domain(sni_val):
-        return None
 
     return outbound
 
