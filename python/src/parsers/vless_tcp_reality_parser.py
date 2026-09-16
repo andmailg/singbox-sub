@@ -32,6 +32,11 @@ def _is_valid_reality_public_key(s: str) -> bool:
         return False
 
 
+UUID_PATTERN = re.compile(
+    r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
+)
+
+
 @functools.lru_cache(maxsize=4096)
 def _is_valid_hex(s: str) -> bool:
     """Проверяет, является ли строка валидным hex."""
@@ -57,7 +62,6 @@ def parse_proxy_link(link: str) -> dict | None:
         hostname = parsed.hostname
         if not hostname:
             return None
-        hostname = hostname.strip("[]")
     except ValueError:
         return None
 
@@ -73,21 +77,16 @@ def parse_proxy_link(link: str) -> dict | None:
     try:
         port = parsed.port
     except ValueError:
-        port_part = parsed.netloc.rsplit(":", 1)[-1].split("?")[0].split("#")[0]
-        first_port = port_part.split("-")[0]
-        port = int(first_port) if first_port.isdigit() else None
-
-    if not port or port != 8443:
         return None
 
     # 2. Извлечение UUID (пароля для VLESS)
     uuid = parsed.username
 
-    if not uuid and "@" in parsed.netloc:
-        user_part = parsed.netloc.split("@")[0]
-        uuid = user_part.split(":", 1)[-1] if ":" in user_part else user_part
-
     if not uuid:
+        return None
+
+    # Валидация UUID (V2Ray стандарт: 8-4-4-4-12)
+    if not UUID_PATTERN.match(uuid):
         return None
 
     tag = (
@@ -105,6 +104,8 @@ def parse_proxy_link(link: str) -> dict | None:
     # 4. Сборка TLS options для reality
     pbk = params.get("pbk", [None])[0]
     sid = params.get("sid", [None])[0] or ""
+    spider_x = params.get("spiderX", [None])[0] or ""
+    flow = params.get("flow", [None])[0] or ""
 
     # Универсальная валидация полей reality
     if not pbk or not _is_valid_reality_public_key(pbk):
@@ -140,16 +141,20 @@ def parse_proxy_link(link: str) -> dict | None:
         }
     }
 
+    # spider_x обязателен для sing-box reality
+    if spider_x:
+        tls_opts["reality"]["spider_x"] = spider_x
+
+    # flow (например, xtls-rprx-vision)
+    if flow:
+        tls_opts["reality"]["flow"] = flow
+
     # 5. Обработка транспорта (network)
     network = params.get("type", [None])[0] or params.get("network", [None])[0]
     if not network or network.lower() != "tcp":
         return None
 
     # 6. Сборка объекта outbound для sing-box
-    packet_encoding = params.get("packetEncoding", [None])[0]
-    if packet_encoding and packet_encoding.lower() not in ("xudp", "udp"):
-        return None
-
     outbound = {
         "type": "vless",
         "tag": tag,
@@ -158,8 +163,6 @@ def parse_proxy_link(link: str) -> dict | None:
         "uuid": urllib.parse.unquote(uuid),
         "tls": tls_opts,
     }
-    if packet_encoding:
-        outbound["packet_encoding"] = packet_encoding
 
     return outbound
 
@@ -189,6 +192,8 @@ def encode_vless_link(outbound: dict) -> str:
     sni = tls.get("server_name", "")
     pbk = tls.get("reality", {}).get("public_key", "")
     sid = tls.get("reality", {}).get("short_id", "")
+    spider_x = tls.get("reality", {}).get("spider_x", "")
+    flow = tls.get("reality", {}).get("flow", "")
     fp = tls.get("utls", {}).get("fingerprint", "")
 
     params = {
@@ -199,6 +204,10 @@ def encode_vless_link(outbound: dict) -> str:
     }
     if sid:
         params["sid"] = sid
+    if spider_x:
+        params["spiderX"] = spider_x
+    if flow:
+        params["flow"] = flow
 
     query = urllib.parse.urlencode(params)
     fragment = urllib.parse.quote(tag)

@@ -64,7 +64,7 @@ def is_valid_host(host_str: str) -> bool:
 RU_ZONES = (".ru", ".su", ".рф")
 
 # Домены фейковых нод, которые блокируются
-FAKE_DOMAINS = ("whatsapp.com", "vk.com", "huawei", "bing.com")
+FAKE_DOMAINS = ("whatsapp.com", "vk.com", "huawei", "bing.com", "google.com")
 
 # RU-домены для фильтрации тегов
 RU_TAGS = ("ru", "russia")

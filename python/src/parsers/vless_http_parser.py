@@ -1,14 +1,13 @@
-"""Парсинг и фильтрация ссылок VLESS with TCP + HTTP header."""
+"""Парсинг и фильтрация ссылок VLESS with HTTP transport."""
 
+import json
 import urllib.parse
 
-from src.common import (
-    is_valid_host,
-)
+from src.common import is_valid_host
 
 
 def parse_proxy_link(link: str) -> dict | None:
-    """Парсит VLESS TCP+HTTP ссылку."""
+    """Парсит VLESS HTTP ссылку."""
     link = link.strip()
     if not link or link.startswith("#"):
         return None
@@ -28,6 +27,11 @@ def parse_proxy_link(link: str) -> dict | None:
 
     params = urllib.parse.parse_qs(parsed.query)
 
+    # Проверка: headerType = http
+    header_type = params.get("headerType", [""])[0].lower()
+    if header_type != "http":
+        return None
+
     # Проверка: security = none
     security = params.get("security", ["none"])[0].lower()
     if security not in ["", "none"]:
@@ -38,16 +42,6 @@ def parse_proxy_link(link: str) -> dict | None:
     if encryption != "none":
         return None
 
-    # Проверка: network = tcp
-    net_type = params.get("type", ["tcp"])[0].lower()
-    if net_type != "tcp":
-        return None
-
-    # Проверка: headerType = http
-    header_type = params.get("headerType", [""])[0].lower()
-    if header_type != "http":
-        return None
-
     # Извлечение UUID
     uuid_str = parsed.username
     if not uuid_str and "@" in parsed.netloc:
@@ -55,17 +49,45 @@ def parse_proxy_link(link: str) -> dict | None:
     if not uuid_str:
         return None
 
-    # Проверка host
-    host = params.get("host", [""])[0].strip()
-    if not host or not is_valid_host(host):
-        return None
+    # Извлечение host (поддержка comma-separated list)
+    raw_hosts = params.get("host", [""])[0].strip()
+    http_hosts = [h.strip() for h in raw_hosts.split(",") if h.strip()] if raw_hosts else []
 
-    # Фильтр google.com в host
-    if "google.com" in host.lower():
-        return None
+    # Извлечение path (по умолчанию "/")
+    path = params.get("path", ["/"])[0].strip()
+
+    # Извлечение method
+    method = params.get("method", [""])[0].strip()
+
+    # Извлечение custom headers (JSON array)
+    raw_headers = params.get("header", [""])[0].strip()
+    custom_headers = []
+    if raw_headers:
+        try:
+            parsed_headers = json.loads(raw_headers)
+            if isinstance(parsed_headers, list):
+                custom_headers = parsed_headers
+        except (json.JSONDecodeError, ValueError):
+            return None
 
     port = parsed.port or 80
     tag = urllib.parse.unquote(parsed.fragment) if parsed.fragment else "VLESS-HTTP-Node"
+
+    transport: dict = {
+        "type": "http",
+    }
+
+    if http_hosts:
+        transport["host"] = http_hosts
+
+    if path:
+        transport["path"] = path
+
+    if method:
+        transport["method"] = method
+
+    if custom_headers:
+        transport["headers"] = custom_headers
 
     outbound = {
         "type": "vless",
@@ -73,10 +95,7 @@ def parse_proxy_link(link: str) -> dict | None:
         "server": hostname,
         "server_port": port,
         "uuid": uuid_str,
-        "transport": {
-            "type": "http",
-            "host": [host],
-        },
+        "transport": transport,
     }
     return outbound
 

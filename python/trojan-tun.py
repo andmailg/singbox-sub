@@ -9,4 +9,5 @@ if __name__ == "__main__":
         protocol="hy2",
         exporter="tun",
         output_file="trojan-tun.json",
+        port_whitelist=(80, 8080, 2053, 2083, 2087, 2096, 4433),
     )
