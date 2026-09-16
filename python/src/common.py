@@ -66,6 +66,24 @@ RU_ZONES = (".ru", ".su", ".рф")
 # Домены фейковых нод, которые блокируются
 FAKE_DOMAINS = ("whatsapp.com", "vk.com", "huawei", "bing.com")
 
+# RU-домены для фильтрации тегов
+RU_TAGS = ("ru", "russia")
+
+
+def is_ru_tag(node_tag: str) -> bool:
+    """Проверяет, содержит ли тег RU/Russia зону."""
+    return any(f"-{z}" in node_tag or f".{z}" in node_tag or f" {z}" in node_tag or node_tag.endswith(z) for z in RU_TAGS)
+
+
+def is_ru_server(server_val: str) -> bool:
+    """Проверяет, содержит ли сервер RU-зону."""
+    return server_val.endswith(RU_ZONES) or any(f"{z}:" in server_val for z in RU_ZONES)
+
+
+def is_fake_domain(value: str) -> bool:
+    """Проверяет, содержит ли значение фейковый домен."""
+    return any(d in value for d in FAKE_DOMAINS)
+
 
 def is_valid_server(server: str) -> bool:
     """Проверяет корректность поля server."""

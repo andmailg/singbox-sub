@@ -3,8 +3,9 @@
 import urllib.parse
 
 from src.common import (
-    FAKE_DOMAINS,
-    RU_ZONES,
+    is_fake_domain,
+    is_ru_server,
+    is_ru_tag,
     is_valid_domain,
     is_valid_server,
 )
@@ -20,15 +21,15 @@ def should_accept_outbound(outbound: dict, seen_fingerprints: set[str]) -> bool:
     server_name = tls_opts.get("server_name")
     if not server_name or not isinstance(server_name, str) or not server_name.strip():
         return False
-    if any(d in server_name.lower() for d in FAKE_DOMAINS):
+    if is_fake_domain(server_name.lower()):
         return False
     node_tag = str(outbound.get("tag", "")).lower()
-    if any(f"-{z}" in node_tag or f".{z}" in node_tag or f" {z}" in node_tag or node_tag.endswith(z) for z in ("ru", "russia")):
+    if is_ru_tag(node_tag):
         return False
     server_val = str(outbound.get("server", "")).lower()
-    if server_val.endswith(RU_ZONES) or any(f"{z}:" in server_val for z in RU_ZONES):
+    if is_ru_server(server_val):
         return False
-    if any(d in server_val for d in FAKE_DOMAINS):
+    if is_fake_domain(server_val):
         return False
     fingerprint = f"{server_val}:{outbound.get('server_port')}:{outbound.get('password')}"
     if fingerprint in seen_fingerprints:
@@ -132,7 +133,10 @@ def parse_proxy_link(link: str) -> dict | None:
         if not is_valid_domain(sni_val):
             return None
 
-        if sni_val.lower().endswith(RU_ZONES) or any(f"{z}:" in sni_val for z in RU_ZONES):
+        if sni_val.endswith(RU_ZONES) or any(f"{z}:" in sni_val for z in RU_ZONES):
+            return None
+
+        if is_fake_domain(sni_val):
             return None
 
     return outbound

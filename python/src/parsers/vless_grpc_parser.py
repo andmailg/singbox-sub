@@ -28,10 +28,10 @@ def should_accept_outbound(outbound: dict, seen_servers: set[str]) -> bool:
     if not server_name or not isinstance(server_name, str) or not server_name.strip():
         return False
     node_tag = str(outbound.get("tag", "")).lower()
-    if any(f"-{z}" in node_tag or f".{z}" in node_tag or f" {z}" in node_tag or node_tag.endswith(z) for z in ("ru", "russia")):
-            return False
+    if is_ru_tag(node_tag):
+        return False
     server_address = str(outbound.get("server", "")).lower()
-    if server_address.lower().endswith(RU_ZONES) or any(f"{z}:" in server_address for z in RU_ZONES):
+    if is_ru_server(server_address):
         return False
     if server_address in seen_servers:
         return False
