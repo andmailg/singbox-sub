@@ -131,16 +131,16 @@ def parse_proxy_link(link: str) -> dict | None:
         tls_opts["certificate"] = {"pin_sha256": pin_sha256}
 
     # 7. Obfuscation (obfs)
+    obfs: dict | None = None
     obfs_type = _param(params, "obfs")
     if obfs_type:
-        obfs: dict = {"type": obfs_type}
+        obfs = {"type": obfs_type}
         obfs_password = _param(params, "obfs-password")
         if obfs_password:
             obfs["password"] = urllib.parse.unquote(obfs_password)
-        tls_opts["obfs"] = obfs
 
     # 8. Сборка outbound
-    return {
+    result: dict = {
         "type": "hysteria2",
         "tag": tag,
         "server": server_host,
@@ -148,6 +148,9 @@ def parse_proxy_link(link: str) -> dict | None:
         "password": urllib.parse.unquote(password),
         "tls": tls_opts,
     }
+    if obfs:
+        result["obfs"] = obfs
+    return result
 
 
 def clean_outbound(outbound: dict) -> dict:
