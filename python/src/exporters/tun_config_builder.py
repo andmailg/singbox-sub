@@ -23,7 +23,7 @@ def build_tun_config(outbounds: list[dict]) -> dict:
 
     singbox_config = {
         "log": {
-            "level": "debug",
+            "level": "warn",
             "timestamp": True
         },
         "dns": {
