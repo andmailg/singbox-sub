@@ -117,15 +117,15 @@
         "node-5",
         "node-6",
         "node-7",
-        "🇦🇪node-8",
+        "node-8",
         "🇦🇪node-9",
         "🇦🇪node-10",
         "🇦🇪node-11",
-        "🇦🇹node-12",
+        "🇦🇪node-12",
         "🇦🇹node-13",
         "🇦🇹node-14",
         "🇦🇹node-15",
-        "🇦🇺node-16",
+        "🇦🇹node-16",
         "🇨🇭node-17",
         "🇨🇾node-18",
         "🇨🇾node-19",
@@ -177,7 +177,9 @@
         "🇸🇪node-65",
         "🇺🇸node-66",
         "🇺🇸node-67",
-        "🇺🇸node-68"
+        "🇺🇸node-68",
+        "🇺🇸node-69",
+        "🇺🇸node-70"
       ],
       "default": "auto"
     },
@@ -192,15 +194,15 @@
         "node-5",
         "node-6",
         "node-7",
-        "🇦🇪node-8",
+        "node-8",
         "🇦🇪node-9",
         "🇦🇪node-10",
         "🇦🇪node-11",
-        "🇦🇹node-12",
+        "🇦🇪node-12",
         "🇦🇹node-13",
         "🇦🇹node-14",
         "🇦🇹node-15",
-        "🇦🇺node-16",
+        "🇦🇹node-16",
         "🇨🇭node-17",
         "🇨🇾node-18",
         "🇨🇾node-19",
@@ -252,7 +254,9 @@
         "🇸🇪node-65",
         "🇺🇸node-66",
         "🇺🇸node-67",
-        "🇺🇸node-68"
+        "🇺🇸node-68",
+        "🇺🇸node-69",
+        "🇺🇸node-70"
       ],
       "url": "https://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -365,7 +369,22 @@
     },
     {
       "type": "vless",
-      "tag": "🇦🇪node-8",
+      "tag": "node-8",
+      "server": "hilnu.com",
+      "server_port": 8443,
+      "uuid": "0c94ca98-3643-4cb4-de75-6167815af665",
+      "tls": {
+        "enabled": true,
+        "server_name": "admin.kanal-tel-nufilter.store"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇦🇪node-9",
       "server": "45.88.13.3",
       "server_port": 8443,
       "uuid": "e6d41d6f-d58a-7650-bba4-d7f0dde3ba4d",
@@ -381,7 +400,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇦🇪node-9",
+      "tag": "🇦🇪node-10",
       "server": "45.88.13.4",
       "server_port": 8443,
       "uuid": "0ab925b6-35f7-6e27-e713-925bea65455e",
@@ -396,7 +415,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇦🇪node-10",
+      "tag": "🇦🇪node-11",
       "server": "89.47.55.8",
       "server_port": 8443,
       "uuid": "4350213a-b4e7-262a-0bd7-bd16957cf71a",
@@ -411,7 +430,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇦🇪node-11",
+      "tag": "🇦🇪node-12",
       "server": "89.47.55.9",
       "server_port": 8443,
       "uuid": "4350213a-b4e7-262a-0bd7-bd16957cf71a",
@@ -426,7 +445,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇦🇹node-12",
+      "tag": "🇦🇹node-13",
       "server": "152.53.64.139",
       "server_port": 8443,
       "uuid": "84a794a5-2420-4ca7-8e08-8d21571f36f3",
@@ -441,7 +460,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇦🇹node-13",
+      "tag": "🇦🇹node-14",
       "server": "152.53.65.60",
       "server_port": 8443,
       "uuid": "84a794a5-2420-4ca7-8e08-8d21571f36f3",
@@ -456,7 +475,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇦🇹node-14",
+      "tag": "🇦🇹node-15",
       "server": "152.53.66.34",
       "server_port": 8443,
       "uuid": "84a794a5-2420-4ca7-8e08-8d21571f36f3",
@@ -471,7 +490,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇦🇹node-15",
+      "tag": "🇦🇹node-16",
       "server": "jsengineer.org",
       "server_port": 8443,
       "uuid": "aa28b265-baff-42e4-927e-7a8dee0ef623",
@@ -482,21 +501,6 @@
       "transport": {
         "type": "grpc",
         "service_name": "grpc"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇦🇺node-16",
-      "server": "dns3.nufilter.store",
-      "server_port": 8443,
-      "uuid": "9c46957b-688b-451c-9d10-4663f7e7dfdc",
-      "tls": {
-        "enabled": true,
-        "server_name": "f.kanal-tel-nufilter.site"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER"
       }
     },
     {
@@ -1057,21 +1061,6 @@
     {
       "type": "vless",
       "tag": "🇳🇱node-54",
-      "server": "45.195.200.4",
-      "server_port": 8443,
-      "uuid": "4798121a-068d-4bf7-b290-287a2aa81f10",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": ""
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇳🇱node-55",
       "server": "5.129.210.63",
       "server_port": 8443,
       "uuid": "c80a96e8-d4a6-4785-b53b-a475b252c4ed",
@@ -1086,7 +1075,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-56",
+      "tag": "🇳🇱node-55",
       "server": "95.181.162.80",
       "server_port": 8443,
       "uuid": "e9a6734a-d030-4b6a-a8e7-e7d668e34c19",
@@ -1097,6 +1086,21 @@
       "transport": {
         "type": "grpc",
         "service_name": "xyz"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-56",
+      "server": "nl.armankhan.shop",
+      "server_port": 8443,
+      "uuid": "4798121a-068d-4bf7-b290-287a2aa81f10",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.cloudflare.com"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": ""
       }
     },
     {
@@ -1252,6 +1256,21 @@
     {
       "type": "vless",
       "tag": "🇺🇸node-67",
+      "server": "136.0.116.171",
+      "server_port": 8443,
+      "uuid": "1ec9239a-4174-4496-800b-5756bdf21041",
+      "tls": {
+        "enabled": true,
+        "server_name": "cloudflare.com"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "gugfgrpc"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-68",
       "server": "140.235.168.4",
       "server_port": 8443,
       "uuid": "a42eec3c-9491-0280-04b3-0c9730410bfb",
@@ -1266,7 +1285,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-68",
+      "tag": "🇺🇸node-69",
       "server": "98.142.251.31",
       "server_port": 8443,
       "uuid": "f50822b7-02ec-4611-83bd-ff29411e0e10",
@@ -1277,6 +1296,21 @@
       "transport": {
         "type": "grpc",
         "service_name": "api.v1.telemetry.EventStream"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-70",
+      "server": "dns3.nufilter.store",
+      "server_port": 8443,
+      "uuid": "9c46957b-688b-451c-9d10-4663f7e7dfdc",
+      "tls": {
+        "enabled": true,
+        "server_name": "f.kanal-tel-nufilter.site"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER-Telegram:@NUFiLTER"
       }
     }
   ],
