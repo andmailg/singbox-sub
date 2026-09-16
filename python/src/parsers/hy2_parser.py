@@ -142,7 +142,6 @@ def parse_proxy_link(link: str) -> dict | None:
 
     # 8. Сборка outbound
     # server = реальный hostname/IP (для подключения и фильтрации)
-    # sni = отдельное поле (для v2ray-экспорта)
     result: dict = {
         "type": "hysteria2",
         "tag": tag,
@@ -151,8 +150,6 @@ def parse_proxy_link(link: str) -> dict | None:
         "password": urllib.parse.unquote(password),
         "tls": tls_opts,
     }
-    if sni:
-        result["sni"] = sni
     if obfs:
         result["obfs"] = obfs
     return result

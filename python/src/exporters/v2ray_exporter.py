@@ -15,7 +15,7 @@ def _generate_hy2_links(outbounds: list[dict]) -> list[str]:
         server = o.get("server", "")
         port = o.get("server_port", 443)
         password = o.get("password", "")
-        sni = o.get("sni") or o.get("tls", {}).get("server_name", "")
+        sni = o.get("tls", {}).get("server_name", "")
         up_mbps = o.get("up_mbps", 20)
         down_mbps = o.get("down_mbps", 20)
 
