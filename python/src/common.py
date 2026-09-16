@@ -67,6 +67,21 @@ RU_ZONES = (".ru", ".su", ".рф")
 # Домены фейковых нод, которые блокируются
 FAKE_DOMAINS = ("whatsapp.com", "vk.com", "huawei", "bing.com", "google.com")
 
+# Фейковые IP, которые блокируются
+#FAKE_IPS = ("121.0.0.1",)
+
+# Зарезервированные IP-диапазоны (RFC 1918 + др.), которые блокируются
+RESERVED_IP_RANGES = (
+    "121.0.0.1/32",
+    "10.0.0.0/8",
+    "172.16.0.0/12",
+    "192.168.0.0/16",
+    "169.254.0.0/16",
+    "224.0.0.0/4",
+    "255.255.255.255/32",
+    "fc00::/7",
+)
+
 # RU-домены для фильтрации тегов
 RU_TAGS = ("ru", "russia")
 
@@ -87,6 +102,25 @@ def is_ru_server(server_val: str) -> bool:
 def is_fake_domain(value: str) -> bool:
     """Проверяет, содержит ли значение фейковый домен."""
     return any(d in value for d in FAKE_DOMAINS)
+
+
+@functools.lru_cache(maxsize=4096)
+def is_fake_ip(address: str) -> bool:
+    """Проверяет, является ли адрес фейковым или зарезервированным IP."""
+    addr = address.strip("[]")
+    #if addr in FAKE_IPS:
+        #return True
+    try:
+        ip = ipaddress.ip_address(addr)
+        return any(ip in net for net in (_cached_networks()))
+    except ValueError:
+        return False
+
+
+@functools.lru_cache(maxsize=1)
+def _cached_networks():
+    """Кэшированные ip_network объекты для RESERVED_IP_RANGES."""
+    return tuple(ipaddress.ip_network(n) for n in RESERVED_IP_RANGES)
 
 
 def should_accept_outbound(
@@ -125,6 +159,8 @@ def should_accept_outbound(
     if is_ru_server(server_val):
         return False
     if is_fake_domain(server_val):
+        return False
+    if is_fake_ip(clean_server):
         return False
 
     # --- Фильтр по порту ---
