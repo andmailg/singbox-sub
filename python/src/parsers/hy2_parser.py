@@ -112,12 +112,11 @@ def parse_proxy_link(link: str) -> dict | None:
 
     # 5. SNI (необязателен — fallback на hostname)
     sni = _param(params, "sni")
-    server_host = sni if sni else hostname
 
-    # 6. Сборка TLS-опций
+    # 6. Сборка TLS-опций (server_name = SNI или hostname)
     tls_opts: dict = {
         "enabled": True,
-        "server_name": server_host,
+        "server_name": sni if sni else hostname,
     }
 
     # ALPN
@@ -142,14 +141,18 @@ def parse_proxy_link(link: str) -> dict | None:
         obfs = None
 
     # 8. Сборка outbound
+    # server = реальный hostname/IP (для подключения и фильтрации)
+    # sni = отдельное поле (для v2ray-экспорта)
     result: dict = {
         "type": "hysteria2",
         "tag": tag,
-        "server": server_host,
+        "server": hostname,
         "server_port": port,
         "password": urllib.parse.unquote(password),
         "tls": tls_opts,
     }
+    if sni:
+        result["sni"] = sni
     if obfs:
         result["obfs"] = obfs
     return result

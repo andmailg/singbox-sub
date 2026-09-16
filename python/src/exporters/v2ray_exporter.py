@@ -15,19 +15,30 @@ def _generate_hy2_links(outbounds: list[dict]) -> list[str]:
         server = o.get("server", "")
         port = o.get("server_port", 443)
         password = o.get("password", "")
-        sni = o.get("tls", {}).get("server_name", "")
+        sni = o.get("sni") or o.get("tls", {}).get("server_name", "")
         up_mbps = o.get("up_mbps", 20)
         down_mbps = o.get("down_mbps", 20)
 
-        query_params = urllib.parse.urlencode({
+        query_params = {
             "sni": sni,
             "security": "tls",
             "up": up_mbps,
             "down": down_mbps,
-        })
+        }
+
+        # Obfuscation (obfs)
+        obfs = o.get("obfs")
+        if obfs and isinstance(obfs, dict):
+            obfs_type = obfs.get("type")
+            obfs_password = obfs.get("password")
+            if obfs_type and obfs_password:
+                query_params["obfs"] = obfs_type
+                query_params["obfs-password"] = urllib.parse.unquote(obfs_password)
+
+        query = urllib.parse.urlencode(query_params)
         fragment = urllib.parse.quote(tag)
         netloc = f"{server}:{port}"
-        link = f"hysteria2://{urllib.parse.quote(password, safe='')}@{netloc}?{query_params}#{fragment}"
+        link = f"hysteria2://{urllib.parse.quote(password, safe='')}@{netloc}?{query}#{fragment}"
         links.append(link)
     return links
 
