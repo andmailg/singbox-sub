@@ -67,18 +67,15 @@ RU_ZONES = (".ru", ".su", ".рф")
 # Домены фейковых нод, которые блокируются
 FAKE_DOMAINS = ("whatsapp.com", "vk.com", "huawei", "bing.com", "google.com")
 
-# Фейковые IP, которые блокируются
-#FAKE_IPS = ("121.0.0.1",)
-
 # Зарезервированные IP-диапазоны (RFC 1918 + др.), которые блокируются
 RESERVED_IP_RANGES = (
-    "121.0.0.1/32",
     "10.0.0.0/8",
     "172.16.0.0/12",
     "192.168.0.0/16",
     "169.254.0.0/16",
     "224.0.0.0/4",
     "255.255.255.255/32",
+    "127.0.0.0/8",
     "fc00::/7",
 )
 
@@ -108,8 +105,6 @@ def is_fake_domain(value: str) -> bool:
 def is_fake_ip(address: str) -> bool:
     """Проверяет, является ли адрес фейковым или зарезервированным IP."""
     addr = address.strip("[]")
-    #if addr in FAKE_IPS:
-        #return True
     try:
         ip = ipaddress.ip_address(addr)
         return any(ip in net for net in (_cached_networks()))
