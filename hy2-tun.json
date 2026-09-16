@@ -8,11 +8,7 @@
       {
         "type": "https",
         "tag": "dns-local",
-        "server": "8.8.8.8",
-        "tls": {
-          "enabled": true,
-          "server_name": "dns.google"
-        }
+        "server": "77.88.8.8"
       },
       {
         "type": "https",
@@ -328,6 +324,19 @@
     {
       "type": "hysteria2",
       "tag": "🇩🇪node-5",
+      "server": "2.27.59.206",
+      "server_port": 443,
+      "password": "cd74c0a406664a5bc0bac098220a2468",
+      "tls": {
+        "enabled": true,
+        "server_name": "2.27.59.206"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇩🇪node-6",
       "server": "5.175.249.174",
       "server_port": 35000,
       "password": "b4bd0613-ff7c-4f2f-954d-185915e6ddad",
@@ -340,7 +349,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-6",
+      "tag": "🇩🇪node-7",
       "server": "77.90.41.197",
       "server_port": 35000,
       "password": "b4bd0613-ff7c-4f2f-954d-185915e6ddad",
@@ -353,7 +362,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-7",
+      "tag": "🇩🇪node-8",
       "server": "91.107.140.154",
       "server_port": 443,
       "password": "V2RayyNGvpn",
@@ -366,7 +375,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-8",
+      "tag": "🇩🇪node-9",
       "server": "de.jey.cc.cd",
       "server_port": 37003,
       "password": "TelegramVPNJey",
@@ -386,30 +395,13 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-9",
+      "tag": "🇩🇪node-10",
       "server": "de1.apexvpn.space",
       "server_port": 443,
       "password": "dffb4c3d-1e84-4938-8881-cad917e8efb2",
       "tls": {
         "enabled": true,
         "server_name": "de1.apexvpn.space"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇩🇪node-10",
-      "server": "de1.sferavpn.pro",
-      "server_port": 443,
-      "password": "cd74c0a406664a5bc0bac098220a2468",
-      "tls": {
-        "enabled": true,
-        "server_name": "de1.sferavpn.pro"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "44f1c1e2f8b99e792ceed574627a1eb0"
       },
       "up_mbps": 20,
       "down_mbps": 20
@@ -1255,10 +1247,6 @@
       "tls": {
         "enabled": true,
         "server_name": "bwdf2fnt.xn--e1aatfr8bwa.online"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "b6d1f3888ab1d90dd11aac1dce427b81"
       },
       "up_mbps": 20,
       "down_mbps": 20
