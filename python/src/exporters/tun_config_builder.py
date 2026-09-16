@@ -31,11 +31,7 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                 {
                     "type": "https",
                     "tag": "dns-local",
-                    "server": "8.8.8.8",
-                    "tls": {
-                        "enabled": True,
-                        "server_name": "dns.google"
-                    }
+                    "server": "77.88.8.8"
                 },
                 {
                     "type": "https",
