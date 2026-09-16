@@ -109,7 +109,7 @@ def _parse_and_deduplicate(
             except Exception:
                 unique_servers[server] = None
 
-    # 3. Сборка outbounds с резолвнутыми IP + дедупликация
+    # 3. Сборка outbounds с дедупликацией по резолвнутому IP
     seen: set[str] = set()
     outbounds: list[dict] = []
     for _idx, outbound in parsed:
@@ -125,7 +125,6 @@ def _parse_and_deduplicate(
             continue
         seen.add(dedup_val)
 
-        outbound["server"] = resolved_ip
         outbounds.append(outbound)
 
     return outbounds
