@@ -141,11 +141,11 @@ def parse_proxy_link(link: str) -> dict | None:
         obfs = None
 
     # 8. Сборка outbound
-    # server = реальный hostname/IP (для подключения и фильтрации)
+    # server = tls.server_name (SNI или hostname)
     result: dict = {
         "type": "hysteria2",
         "tag": tag,
-        "server": hostname,
+        "server": tls_opts["server_name"],
         "server_port": port,
         "password": urllib.parse.unquote(password),
         "tls": tls_opts,
