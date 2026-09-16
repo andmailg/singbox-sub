@@ -132,12 +132,14 @@ def parse_proxy_link(link: str) -> dict | None:
 
     # 7. Obfuscation (obfs)
     obfs: dict | None = None
-    obfs_type = _param(params, "obfs")
+    obfs_type = _param(params, "obfs") or _param(params_lower, "obfs")
+    obfs_password = _param(params_lower, "obfs-password")
     if obfs_type:
-        obfs = {"type": obfs_type}
-        obfs_password = _param(params, "obfs-password")
-        if obfs_password:
-            obfs["password"] = urllib.parse.unquote(obfs_password)
+        if not obfs_password:
+            return None
+        obfs = {"type": obfs_type, "password": urllib.parse.unquote(obfs_password)}
+    else:
+        obfs = None
 
     # 8. Сборка outbound
     result: dict = {
