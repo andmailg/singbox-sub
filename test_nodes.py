@@ -1,6 +1,8 @@
 import json
+import os
 import subprocess
 import sys
+import tempfile
 import time
 import socket
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -47,38 +49,76 @@ def wait_for_port(host: str, port: int, timeout: float = 5.0) -> bool:
     return False
 
 
-def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
-    """
-    Тестирует ноду в GitHub Actions, делая запрос через системный curl
-    и поднятый локально SOCKS5-прокси Hysteria2.
-    """
+def _yaml_escape(value: str) -> str:
+    """Экранирует строку для YAML — оборачивает в двойные кавычки."""
+    escaped = value.replace("\\", "\\\\").replace('"', '\\"')
+    return f'"{escaped}"'
+
+
+def _build_yaml(node: dict, local_port: int) -> str:
+    """Генерирует YAML-конфигурацию для Hysteria 2 client на основе ноды."""
     server = node["server"]
     port = node["server_port"]
     password = node["password"]
     sni = node.get("tls", {}).get("server_name", "")
+    tls_cfg = node.get("tls", {})
+
+    lines = [
+        "server: " + _yaml_escape(f"{server}:{port}"),
+        "auth: " + _yaml_escape(password),
+        "tls:",
+    ]
+
+    if sni:
+        lines.append("  sni: " + _yaml_escape(sni))
+
+    # insecure — если нет pinSHA256, отключаем проверку сертификата
+    if "pinSHA256" not in tls_cfg:
+        lines.append("  insecure: true")
+
+    lines.append("socks5:")
+    lines.append("  listen: 127.0.0.1:" + str(local_port))
+    lines.append("log:")
+    lines.append("  level: error")
+
+    return "\n".join(lines) + "\n"
+
+
+def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
+    """
+    Тестирует ноду в GitHub Actions, делая запрос через системный curl
+    и поднятый локально SOCKS5-прокси Hysteria2.
+
+    Hysteria 2 CLI работает ТОЛЬКО через YAML-конфигурационный файл.
+    """
+    server = node["server"]
+    port = node["server_port"]
     tag = node.get("tag", f"{server}:{port}")
 
     local_port = get_free_port()
-
-    # Собираем команду, исключая пустые аргументы
-    hy2_cmd = [
-        "hy2", "client",
-        "--server", f"{server}:{port}",
-        "--password", password,
-        "--socks5", f"127.0.0.1:{local_port}",
-        "--log-level", "error"
-    ]
-    if sni:
-        hy2_cmd.extend(["--server-name", sni])
+    yaml_content = _build_yaml(node, local_port)
 
     proc = None
+    config_file = None
     try:
-        # 1. Запускаем туннель Hysteria2 в фоне
+        # 1. Создаём временный YAML-файл конфигурации
+        config_file = tempfile.NamedTemporaryFile(
+            mode="w", suffix=".yaml", delete=False, encoding="utf-8"
+        )
+        config_file.write(yaml_content)
+        config_file.close()
+
+        # 2. Запускаем Hysteria 2 client с YAML-конфигом
+        hy2_cmd = [
+            "hy2", "client",
+            "-c", config_file.name,
+        ]
+
         proc = subprocess.Popen(
             hy2_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
         )
 
-        # Даем время на инициализацию и ждем стабильного запуска
+        # Ждём стабильного запуска (3 сек)
         try:
             proc.wait(timeout=3)
         except subprocess.TimeoutExpired:
@@ -93,7 +133,7 @@ def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
                 "details": f"CLI exit {proc.returncode}: {output[:300]}"
             }
 
-        # Ждем, пока SOCKS5-порт станет доступен
+        # 3. Ждём, пока SOCKS5-порт станет доступен
         if not wait_for_port("127.0.0.1", local_port, timeout=5.0):
             proc.terminate()
             try:
@@ -106,7 +146,7 @@ def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
                 "details": "SOCKS5 port did not become ready within 5s"
             }
 
-        # 2. Выполняем проверку через системный curl с проксированием
+        # 4. Выполняем проверку через curl с проксированием
         curl_cmd = [
             "curl", "-s", "-o", "/dev/null",
             "-w", "%{http_code}:%{time_total}",
@@ -116,9 +156,8 @@ def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
         ]
 
         res = subprocess.run(curl_cmd, capture_output=True, text=True)
-        
+
         if res.returncode == 0 and res.stdout:
-            # Корректно бьем строку вывода curl (пример "204:0.045")
             parts = res.stdout.strip().split(":")
             if len(parts) >= 2:
                 http_code = parts[0]
@@ -146,13 +185,20 @@ def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
         latency = 0
         details = str(e)
     finally:
-        # 3. Гарантированно убиваем фоновый процесс Hysteria2
+        # 5. Гарантированно убиваем фоновый процесс Hysteria2
         if proc:
             proc.terminate()
             try:
                 proc.wait(timeout=1)
             except subprocess.TimeoutExpired:
                 proc.kill()
+
+        # Удаляем временный YAML-файл
+        if config_file:
+            try:
+                os.unlink(config_file.name)
+            except OSError:
+                pass
 
     return {
         "tag": tag,
