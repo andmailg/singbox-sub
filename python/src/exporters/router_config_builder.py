@@ -16,7 +16,7 @@ def build_router_config(outbounds: list[dict]) -> dict:
         "type": "urltest",
         "tag": "auto",
         "outbounds": node_tags,
-        "url": "https://connectivitycheck.gstatic.com/generate_204",
+        "url": "http://connectivitycheck.gstatic.com/generate_204",
         "interval": "10m",
         "tolerance": 50,
     }
