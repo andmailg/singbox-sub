@@ -1,490 +1,114 @@
 {
-  "last_updated": "2026-09-17 12:35:16",
-  "total_nodes": 61,
-  "working_nodes": 14,
+  "last_updated": "2026-09-17 14:32:45",
+  "total_nodes": 14,
+  "working_nodes": 11,
   "results": [
     {
-      "tag": "🇪🇪node-11",
-      "server": "217.60.182.79",
-      "port": 443,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "CLI exit 1: 2026-09-17T12:34:52Z\t\u001b[34mINFO\u001b[0m\tclient mode\n2026-09-17T12:34:52Z\t\u001b[31mFATAL\u001b[0m\tfailed to initialize client\t{\"error\": \"connect error: CRYPTO_ERROR 0x150 (remote): tls: internal error\"}"
-    },
-    {
-      "tag": "🇩🇪node-10",
-      "server": "gift-catalog.aroonia.ir",
-      "port": 52000,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "CLI exit 1: 2026-09-17T12:34:52Z\t\u001b[34mINFO\u001b[0m\tclient mode\n2026-09-17T12:34:52Z\t\u001b[31mFATAL\u001b[0m\tfailed to initialize client\t{\"error\": \"authentication error, HTTP status code: 404\"}"
-    },
-    {
-      "tag": "🇩🇪node-9",
-      "server": "de1.sferavpn.pro",
-      "port": 443,
-      "status": "OK",
-      "latency_ms": 299,
-      "details": "Connected and verified"
-    },
-    {
-      "tag": "🇩🇪node-4",
-      "server": "181.214.99.162",
-      "port": 35000,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇩🇪node-6",
-      "server": "77.90.41.197",
-      "port": 35000,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇩🇪node-3",
-      "server": "168.222.43.132",
-      "port": 30740,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇦🇪node-1",
-      "server": "130.49.161.70",
-      "port": 443,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇩🇪node-5",
-      "server": "5.175.249.174",
-      "port": 35000,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇦🇺node-2",
-      "server": "149.118.78.109",
-      "port": 443,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇩🇪node-8",
-      "server": "de.jey.cc.cd",
-      "port": 37003,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-14",
-      "server": "assets.gateway-stream.com",
-      "port": 52064,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-13",
-      "server": "65.109.177.191",
-      "port": 443,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-15",
-      "server": "assets.gateway-stream.com",
-      "port": 52024,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇩🇪node-7",
-      "server": "91.107.140.154",
-      "port": 443,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇪🇪node-12",
-      "server": "ee2.sferavpn.pro",
-      "port": 443,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-17",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52087,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-18",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52076,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-19",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52030,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-16",
-      "server": "fiproxy1.lockdwn.com",
-      "port": 443,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-20",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52031,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-21",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52000,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-22",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52001,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-23",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52002,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇭🇰node-37",
-      "server": "mz.hkychina.com",
-      "port": 8443,
-      "status": "OK",
-      "latency_ms": 407,
-      "details": "Connected and verified"
-    },
-    {
-      "tag": "🇮🇳node-38",
-      "server": "vpn-in-001.fastervpn.world",
-      "port": 443,
-      "status": "OK",
-      "latency_ms": 429,
-      "details": "Connected and verified"
-    },
-    {
-      "tag": "🇳🇱node-42",
-      "server": "72.56.92.120",
-      "port": 443,
-      "status": "OK",
-      "latency_ms": 217,
-      "details": "Connected and verified"
-    },
-    {
-      "tag": "🇳🇱node-43",
-      "server": "grape-turbo-fr.roxa.org",
-      "port": 8443,
-      "status": "OK",
-      "latency_ms": 180,
-      "details": "Connected and verified"
-    },
-    {
-      "tag": "🇵🇱node-44",
-      "server": "admin.wwwinternetvideo.click",
-      "port": 443,
-      "status": "OK",
-      "latency_ms": 210,
-      "details": "Connected and verified"
-    },
-    {
-      "tag": "🇷🇴node-45",
-      "server": "hopp-germany-new.ddnsguru.com",
-      "port": 8443,
-      "status": "OK",
-      "latency_ms": 201,
-      "details": "Connected and verified"
-    },
-    {
-      "tag": "🇷🇴node-46",
-      "server": "hopp-netherland-new.dynuddns.net",
-      "port": 8443,
-      "status": "OK",
-      "latency_ms": 199,
-      "details": "Connected and verified"
-    },
-    {
-      "tag": "🇫🇮node-25",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52021,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-24",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52010,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-27",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52033,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-26",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52026,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-28",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52050,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-29",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52067,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-30",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52069,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-31",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52071,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-32",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52088,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-33",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52062,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-35",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52056,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-34",
-      "server": "giftcard.gateway-stream.com",
-      "port": 52090,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇰🇷node-40",
-      "server": "152-69-231-175.liao.kdns.fr",
-      "port": 50160,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇫🇮node-36",
-      "server": "samurai.h4ck.me",
-      "port": 443,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇮🇷node-39",
-      "server": "srm.kishonline.online",
-      "port": 443,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇳🇱node-41",
-      "server": "206.71.158.37",
-      "port": 35200,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇷🇴node-49",
-      "server": "hy2-new.aspidnet.xyz",
-      "port": 443,
-      "status": "OK",
-      "latency_ms": 568,
-      "details": "Connected and verified"
-    },
-    {
-      "tag": "🇷🇴node-50",
-      "server": "hy2.aspidnet.xyz",
-      "port": 443,
-      "status": "OK",
-      "latency_ms": 288,
-      "details": "Connected and verified"
-    },
-    {
-      "tag": "🇺🇸node-58",
-      "server": "hy2.561891.xyz",
-      "port": 44356,
-      "status": "OK",
-      "latency_ms": 114,
-      "details": "Connected and verified"
-    },
-    {
-      "tag": "🇺🇸node-57",
+      "tag": "🇺🇸node-10",
       "server": "hy2.123266.xyz",
       "port": 33333,
       "status": "OK",
-      "latency_ms": 137,
+      "latency_ms": 5,
       "details": "Connected and verified"
     },
     {
-      "tag": "🇺🇸node-60",
-      "server": "nl1.sferavpn.pro",
+      "tag": "🇺🇸node-11",
+      "server": "hy2.561891.xyz",
+      "port": 44356,
+      "status": "OK",
+      "latency_ms": 25,
+      "details": "Connected and verified"
+    },
+    {
+      "tag": "🇳🇱node-3",
+      "server": "72.56.92.120",
       "port": 443,
       "status": "OK",
-      "latency_ms": 222,
+      "latency_ms": 285,
       "details": "Connected and verified"
     },
     {
-      "tag": "🇺🇸node-61",
+      "tag": "🇷🇴node-5",
+      "server": "hopp-germany-new.ddnsguru.com",
+      "port": 8443,
+      "status": "OK",
+      "latency_ms": 315,
+      "details": "Connected and verified"
+    },
+    {
+      "tag": "🇳🇱node-4",
+      "server": "grape-turbo-fr.roxa.org",
+      "port": 8443,
+      "status": "OK",
+      "latency_ms": 319,
+      "details": "Connected and verified"
+    },
+    {
+      "tag": "🇷🇴node-9",
+      "server": "hy2.aspidnet.xyz",
+      "port": 443,
+      "status": "FAIL",
+      "latency_ms": 0,
+      "details": "Curl failed: Exit code 97"
+    },
+    {
+      "tag": "🇷🇴node-6",
+      "server": "hopp-romania-new.roxa.org",
+      "port": 8443,
+      "status": "OK",
+      "latency_ms": 400,
+      "details": "Connected and verified"
+    },
+    {
+      "tag": "🇮🇳node-2",
+      "server": "vpn-in-001.fastervpn.world",
+      "port": 443,
+      "status": "OK",
+      "latency_ms": 461,
+      "details": "Connected and verified"
+    },
+    {
+      "tag": "🇩🇪node-1",
+      "server": "de1.sferavpn.pro",
+      "port": 443,
+      "status": "OK",
+      "latency_ms": 529,
+      "details": "Connected and verified"
+    },
+    {
+      "tag": "🇷🇴node-7",
+      "server": "hopp-romania-new.roxa.org",
+      "port": 8080,
+      "status": "OK",
+      "latency_ms": 537,
+      "details": "Connected and verified"
+    },
+    {
+      "tag": "🇷🇴node-8",
+      "server": "hy2-new.aspidnet.xyz",
+      "port": 443,
+      "status": "OK",
+      "latency_ms": 1424,
+      "details": "Connected and verified"
+    },
+    {
+      "tag": "🇺🇸node-14",
       "server": "ru1.sferavpn.pro",
       "port": 443,
       "status": "OK",
-      "latency_ms": 2320,
+      "latency_ms": 1401,
       "details": "Connected and verified"
     },
     {
-      "tag": "🇷🇴node-47",
-      "server": "hopp-romania-new.roxa.org",
-      "port": 8080,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "Curl failed: Exit code 28"
-    },
-    {
-      "tag": "🇷🇴node-48",
-      "server": "hopp-romania-new.roxa.org",
-      "port": 8443,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "Curl failed: Exit code 28"
-    },
-    {
-      "tag": "🇺🇸node-52",
-      "server": "107.175.219.48",
-      "port": 443,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇷🇴node-51",
-      "server": "ro.h2corp.org",
-      "port": 443,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇺🇸node-53",
-      "server": "144.202.99.96",
-      "port": 443,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇺🇸node-54",
-      "server": "bwdf2fnt.xn--e1aatfr8bwa.online",
-      "port": 443,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇺🇸node-55",
-      "server": "bwdf2fnt.xn--e1aatfr8bwa.online",
-      "port": 30000,
-      "status": "FAIL",
-      "latency_ms": 0,
-      "details": "SOCKS5 port did not become ready within 5s"
-    },
-    {
-      "tag": "🇺🇸node-56",
-      "server": "gta.internet-card.sbs",
+      "tag": "🇺🇸node-13",
+      "server": "nl1.sferavpn.pro",
       "port": 443,
       "status": "FAIL",
       "latency_ms": 0,
       "details": "Curl failed: Exit code 28"
     },
     {
-      "tag": "🇺🇸node-59",
+      "tag": "🇺🇸node-12",
       "server": "news.gazette.help",
       "port": 443,
       "status": "FAIL",
