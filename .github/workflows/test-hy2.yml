@@ -34,7 +34,7 @@ jobs:
           sudo mv hy2 /usr/local/bin/hy2
           
           # Проверяем корректность установки
-          hy2 --version
+          hy2 version
 
       - name: Test nodes
         run: |

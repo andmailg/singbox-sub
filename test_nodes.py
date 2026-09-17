@@ -36,7 +36,7 @@ def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
     # Используем --socks5 127.0.0.1:0, чтобы ОС выделяла случайный свободный порт
     # для каждого потока отдельно во избежание конфликтов "Port already in use".
     cmd = [
-        "hy2", "connect",
+        "hy2", "client",
         "--server", f"{server}:{port}",
         "--password", password,
         "--server-name", sni,
