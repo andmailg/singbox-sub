@@ -95,9 +95,9 @@ def _parse_and_deduplicate(
 
     print(f"{prefix}Parsed {len(parsed)} valid links, resolving {len(set(o.get('server', '') for _, o in parsed))} unique servers...")
 
-    # 2. Параллельный DNS-резолвинг уникальных серверов
+    # 2. Параллельный DNS-резолвинг уникальных серверов (сортировка для детерминизма)
     unique_servers: dict[str, str | None] = {}
-    servers = list(set(o.get("server", "").strip("[]").lower() for _, o in parsed))
+    servers = sorted(set(o.get("server", "").strip("[]").lower() for _, o in parsed))
 
     num_workers = min(16, len(servers))
     print(f"{prefix}Resolving {len(servers)} unique servers with {num_workers} workers...")

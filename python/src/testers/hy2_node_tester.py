@@ -208,26 +208,38 @@ def test_hy2_connectivity(
     num_workers = min(20, len(outbounds))
     print(f"{prefix}Testing {len(outbounds)} hy2 nodes with {num_workers} workers ({timeout}s timeout)...")
 
+    # Sort for deterministic testing order
+    sorted_outbounds = sorted(outbounds, key=lambda o: (o.get("_country", ""), o.get("server", ""), o.get("server_port", 0)))
+    
     working: list[dict] = []
     failed = 0
 
     with ThreadPoolExecutor(max_workers=num_workers) as pool:
-        futures = {pool.submit(test_hy2_node, node, timeout): node for node in outbounds}
+        futures = {pool.submit(test_hy2_node, node, timeout): node for node in sorted_outbounds}
+        # Store results by node identity to preserve order
+        results_map: dict[int, dict | None] = {}
         for i, future in enumerate(as_completed(futures), 1):
             node = futures[future]
             tag = node.get("tag", f"node-{i}")
+            node_id = id(node)
             try:
                 result = future.result()
                 if result is not None:
-                    working.append(result)
-                    print(f"  [{i}/{len(outbounds)}] {tag}: OK — {result.get('_latency_ms', '?')}ms")
+                    results_map[node_id] = result
+                    print(f"  [{i}/{len(sorted_outbounds)}] {tag}: OK — {result.get('_latency_ms', '?')}ms")
                 else:
+                    results_map[node_id] = None
                     failed += 1
-                    print(f"  [{i}/{len(outbounds)}] {tag}: FAIL")
+                    print(f"  [{i}/{len(sorted_outbounds)}] {tag}: FAIL")
             except Exception as e:
+                results_map[node_id] = None
                 failed += 1
-                print(f"  [{i}/{len(outbounds)}] {tag}: ERROR — {e}")
+                print(f"  [{i}/{len(sorted_outbounds)}] {tag}: ERROR — {e}")
 
+    # Restore original order (by server:port) for deterministic output
+    working = [r for r in results_map.values() if r is not None]
+    working.sort(key=lambda o: (o.get("_country", ""), o.get("server", ""), o.get("server_port", 0)))
+    
     removed = failed
     if removed:
         print(f"{prefix}Hy2 connectivity: {len(working)} working / {removed} failed ({len(outbounds)} total).")
