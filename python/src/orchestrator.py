@@ -191,6 +191,7 @@ def _sort_and_tag(outbounds: list[dict]) -> None:
     """Сортировка по стране и сквозная нумерация с флагами."""
     outbounds.sort(key=lambda o: (o.get("_country", ""), o.get("server", "")))
     for idx, outbound in enumerate(outbounds, start=1):
+        outbound.pop("_latency_ms", None)  # internal — не экспортируем
         country = outbound.pop("_country", None)
         flag = country_code_to_flag(country) if country else ""
         outbound["tag"] = f"{flag}node-{idx}" if flag else f"node-{idx}"
