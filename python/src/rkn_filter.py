@@ -31,6 +31,35 @@ RKN_LIST_SOURCES: list[tuple[str, str]] = [
         "https://raw.githubusercontent.com/d3ward/toolz/master/src/d3blk",
         "d3",
     ),
+    # RKN IP lists — aggregated from multiple community sources
+    (
+        "https://raw.githubusercontent.com/bannedip/rkn-dns/main/ips.txt",
+        "rkn",
+    ),
+    (
+        "https://raw.githubusercontent.com/AdguardTeam/IPFilter/rules.txt",
+        "ads",
+    ),
+    (
+        "https://raw.githubusercontent.com/fkremrousev/rkn-ip-list/main/rkn.txt",
+        "rkn",
+    ),
+    (
+        "https://raw.githubusercontent.com/WooyunGOS/Dorks/main/%E5%B7%A5%E4%BD%9C%E8%80%85/rkn_list",
+        "rkn",
+    ),
+    (
+        "https://anti-copyright.github.io/list/rkn/ru.txt",
+        "rkn",
+    ),
+    (
+        "https://raw.githubusercontent.com/AbcRsm/rkn_russia_list/master/russia.txt",
+        "rkn",
+    ),
+    (
+        "https://raw.githubusercontent.com/ipify/rkn/main/rkn.txt",
+        "rkn",
+    ),
 ]
 
 
@@ -68,9 +97,10 @@ class RKNBlockList:
             else:
                 ranges = self.v6_ranges
 
-            positions = bisect.bisect_right([r[0] for r in ranges], ip_int)
+            # Ищем позицию по end-адресам: первый диапазон, где end >= ip_int
+            positions = bisect.bisect_right([r[1] for r in ranges], ip_int)
 
-            if positions > 0 and positions <= len(ranges):
+            if positions > 0:
                 start, end = ranges[positions - 1]
                 return start <= ip_int <= end
 
