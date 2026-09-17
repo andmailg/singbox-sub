@@ -13,6 +13,26 @@ try:
 except ImportError:
     maxminddb = None
 
+# Источники IP-блэклистов РКН — агрегируются вместе;
+# каждый источник имеет свой формат (CIDR, comment-separated и т.д.).
+RKN_LIST_SOURCES: list[tuple[str, str]] = [
+    # Re-filter-lists (активно обновляется сообществом)
+    (
+        "https://github.com/1andrevich/Re-filter-lists/raw/refs/heads/main/ipsum.lst",
+        "rkn",
+    ),
+    # rkn-ip-lists (широкий охват, разные форматы)
+    (
+        "https://raw.githubusercontent.com/MayersScott/rkn-ip-lists/main/rkn-ip-lists.txt",
+        "rkn",
+    ),
+    # d3blk (классический список, содержит комментарии в начале)
+    (
+        "https://raw.githubusercontent.com/d3ward/toolz/master/src/d3blk",
+        "d3",
+    ),
+]
+
 
 class RKNBlockList:
     """Оптимизированная проверка подсетей РКН через бинарный поиск."""
@@ -59,32 +79,50 @@ class RKNBlockList:
             return False
 
 
-def load_rkn_list(session) -> RKNBlockList:
-    """Скачивает и собирает RKN BlockList из удалённого источника."""
-    rkn_url = "https://github.com/1andrevich/Re-filter-lists/raw/refs/heads/main/ipsum.lst"
+def _fetch_networks(session, url: str, source_type: str, timeout: int = 12) -> list[ipaddress.IPv4Network | ipaddress.IPv6Network]:
+    """Скачивает один источник и возвращает список IPvNetwork."""
+    raw: list[ipaddress.IPv4Network | ipaddress.IPv6Network] = []
     try:
-        rkn_resp = session.get(rkn_url, timeout=15)
-        if rkn_resp.status_code == 200:
-            raw_blocked_networks = []
-            for line in rkn_resp.text.splitlines():
-                line = line.strip()
-                if not line or line.startswith("#"):
-                    continue
-                try:
-                    cidr_str = line.split()[0]
-                    net_obj = ipaddress.ip_network(cidr_str, strict=False)
-                    raw_blocked_networks.append(net_obj)
-                except (ValueError, IndexError):
-                    continue
-
-            collapsed = list(ipaddress.collapse_addresses(raw_blocked_networks))
-            print(f"Successfully loaded and collapsed {len(collapsed)} blocked networks from RKN list.")
-            return RKNBlockList(collapsed)
-        else:
-            print(f"Failed to download RKN list. Status code: {rkn_resp.status_code}")
+        resp = session.get(url, timeout=timeout)
+        if resp.status_code != 200:
+            print(f"  [WARN] {source_type}: HTTP {resp.status_code} from {url}")
+            return raw
+        for line in resp.text.splitlines():
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            try:
+                cidr_str = line.split()[0]
+                net_obj = ipaddress.ip_network(cidr_str, strict=False)
+                raw.append(net_obj)
+            except (ValueError, IndexError):
+                continue
     except Exception as e:
-        print(f"Error loading RKN blacklist: {e}")
-    return RKNBlockList([])
+        print(f"  [WARN] {source_type}: {e}")
+    return raw
+
+
+def load_rkn_list(session) -> RKNBlockList:
+    """Скачивает и объединяет RKN BlockList из нескольких источников."""
+    all_networks: list[ipaddress.IPv4Network | ipaddress.IPv6Network] = []
+    sources_fetched = 0
+    sources_total = len(RKN_LIST_SOURCES)
+
+    for url, source_type in RKN_LIST_SOURCES:
+        nets = _fetch_networks(session, url, source_type)
+        if nets:
+            sources_fetched += 1
+            all_networks.extend(nets)
+            print(f"  [{source_type}] Loaded {len(nets)} networks from {url}")
+
+    if not all_networks:
+        print("  [WARN] No RKN blocklist sources returned data.")
+        return RKNBlockList([])
+
+    collapsed = list(ipaddress.collapse_addresses(all_networks))
+    print(f"Aggregated {sources_fetched}/{sources_total} sources, "
+          f"{len(all_networks)} raw -> {len(collapsed)} collapsed networks.")
+    return RKNBlockList(collapsed)
 
 
 def download_geoip(session, mmdb_path: str = "GeoLite2-Country.mmdb") -> bool:
