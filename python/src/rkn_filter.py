@@ -119,7 +119,13 @@ def load_rkn_list(session) -> RKNBlockList:
         print("  [WARN] No RKN blocklist sources returned data.")
         return RKNBlockList([])
 
-    collapsed = list(ipaddress.collapse_addresses(all_networks))
+    v4_nets: list[ipaddress.IPv4Network] = [n for n in all_networks if n.version == 4]
+    v6_nets: list[ipaddress.IPv6Network] = [n for n in all_networks if n.version == 6]
+
+    collapsed_v4 = list(ipaddress.collapse_addresses(v4_nets)) if v4_nets else []
+    collapsed_v6 = list(ipaddress.collapse_addresses(v6_nets)) if v6_nets else []
+
+    collapsed: list[ipaddress.IPv4Network | ipaddress.IPv6Network] = [*collapsed_v4, *collapsed_v6]
     print(f"Aggregated {sources_fetched}/{sources_total} sources, "
           f"{len(all_networks)} raw -> {len(collapsed)} collapsed networks.")
     return RKNBlockList(collapsed)
