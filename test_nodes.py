@@ -2,10 +2,19 @@ import json
 import subprocess
 import sys
 import time
+import socket
+import urllib.request
+import urllib.error
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 
 
+def get_free_port() -> int:
+    """Находит случайный свободный порт на локальной машине."""
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.bind(('127.0.0.1', 0))
+        return s.getsockname()[1]
+    
 def load_nodes(config_path: str) -> list[dict]:
     """Загружает ноды Hysteria2 из конфигурационного файла JSON."""
     try:
@@ -26,80 +35,98 @@ def load_nodes(config_path: str) -> list[dict]:
 
 
 def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
-    """Тестирует ноду, запускала hy2 CLI на короткое время."""
+    """
+    Тестирует ноду в GitHub Actions, пропуская реальный HTTP-запрос 
+    через поднятый локально SOCKS5-прокси Hysteria2.
+    """
     server = node["server"]
     port = node["server_port"]
     password = node["password"]
     sni = node.get("tls", {}).get("server_name", "")
     tag = node.get("tag", f"{server}:{port}")
 
-    # Используем --socks5 127.0.0.1:0, чтобы ОС выделяла случайный свободный порт
-    # для каждого потока отдельно во избежание конфликтов "Port already in use".
+    # Получаем уникальный локальный порт для этого потока
+    local_port = get_free_port()
+
     cmd = [
         "hy2", "client",
         "--server", f"{server}:{port}",
         "--password", password,
         "--server-name", sni,
-        "--socks5", "127.0.0.1:0"
+        "--socks5", f"127.0.0.1:{local_port}",
+        "--log-level", "error"
     ]
 
-    start = time.time()
     proc = None
+    start = time.time()
     try:
-        # Запускаем клиент в фоне
+        # 1. Запускаем клиент Hysteria2 в фоне
         proc = subprocess.Popen(
             cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
         )
         
-        # Ждем 2 секунды (достаточно для установки соединения и хэндшейка)
-        time.sleep(2.0)
+        # Даем 1 секунду на инициализацию локального SOCKS5 прокси
+        time.sleep(1.0)
         
-        # Проверяем, не завершился ли процесс аварийно за это время
-        return_code = proc.poll()
-        elapsed = time.time() - start
-        
-        if return_code is not None:
-            # Процесс завершился сам -> ошибка авторизации или сети
+        # Проверяем, не упал ли процесс сразу (например, из-за неверных флагов)
+        if proc.poll() is not None:
             stdout, stderr = proc.communicate()
-            output = (stdout or "") + (stderr or "")
             return {
-                "tag": tag,
-                "server": server,
-                "port": port,
-                "status": "FAIL",
-                "latency_ms": round(elapsed * 1000),
-                "details": output.strip()[:200],
-            }
-        else:
-            # Процесс активен и работает -> соединение успешно!
-            proc.terminate()  # Корректно закрываем туннель
-            try:
-                proc.wait(timeout=2)
-            except subprocess.TimeoutExpired:
-                proc.kill()
-                
-            return {
-                "tag": tag,
-                "server": server,
-                "port": port,
-                "status": "OK",
-                "latency_ms": round(elapsed * 1000),
-                "details": "Connected successfully",
+                "tag": tag, "server": server, "port": port, "status": "FAIL",
+                "latency_ms": round((time.time() - start) * 1000),
+                "details": f"CLI init failed: {(stdout or '') + (stderr or '')}".strip()[:200]
             }
 
-    except FileNotFoundError:
-        return None  # Утилита hy2 не установлена в системе
+        # 2. Настраиваем отправку HTTP-запроса через наш новый SOCKS5 прокси.
+        # Используем встроенный urllib с поддержкой socks (в Python 3.10+ работает)
+        proxy_support = urllib.request.ProxyHandler({
+            'http': f'socks5://127.0.0.1:{local_port}',
+            'https': f'socks5://127.0.0.1:{local_port}'
+        })
+        opener = urllib.request.build_opener(proxy_support)
+        
+        # Делаем легкий запрос проверки связи (Cloudflare captive portal)
+        req_start = time.time()
+        # Устанавливаем тайм-аут на сетевой запрос
+        response = opener.open("https://connectivity.cloudflareclient.com", timeout=timeout)
+        latency = round((time.time() - req_start) * 1000)
+        
+        if response.getcode() == 204 or response.getcode() == 200:
+            status = "OK"
+            details = "Connected and verified via HTTP"
+        else:
+            status = "FAIL"
+            details = f"Unexpected HTTP status: {response.getcode()}"
+
+    except urllib.error.URLError as e:
+        status = "FAIL"
+        latency = round((time.time() - start) * 1000)
+        details = f"Network unreachable via proxy: {e.reason}"
+    except socket.timeout:
+        status = "FAIL"
+        latency = timeout * 1000
+        details = "HTTP request timed out"
     except Exception as e:
+        status = "ERROR"
+        latency = 0
+        details = str(e)
+    finally:
+        # 3. Гарантированно убиваем процесс туннеля, освобождая порт
         if proc:
-            proc.kill()
-        return {
-            "tag": tag,
-            "server": server,
-            "port": port,
-            "status": "ERROR",
-            "latency_ms": 0,
-            "details": str(e),
-        }
+            proc.terminate()
+            try:
+                proc.wait(timeout=1)
+            except subprocess.TimeoutExpired:
+                proc.kill()
+
+    return {
+        "tag": tag,
+        "server": server,
+        "port": port,
+        "status": status,
+        "latency_ms": latency,
+        "details": details
+    }
 
 
 def format_table(results: list[dict]) -> str:
