@@ -88,7 +88,7 @@ def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
         # Делаем легкий запрос проверки связи (Cloudflare captive portal)
         req_start = time.time()
         # Устанавливаем тайм-аут на сетевой запрос
-        response = opener.open("https://connectivity.cloudflareclient.com", timeout=timeout)
+        response = opener.open("http://connectivitycheck.gstatic.com/generate_204", timeout=timeout)
         latency = round((time.time() - req_start) * 1000)
         
         if response.getcode() == 204 or response.getcode() == 200:
