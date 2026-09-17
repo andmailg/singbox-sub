@@ -1,4 +1,3 @@
-import argparse
 import json
 import os
 import subprocess
@@ -254,51 +253,9 @@ def format_table(results: list[dict]) -> str:
     return "\n".join(lines)
 
 
-def parse_args() -> argparse.Namespace:
-    """Парсит аргументы командной строки для pipeline-интеграции."""
-    parser = argparse.ArgumentParser(
-        description="Hysteria2 node connectivity tester (pipeline-ready)"
-    )
-    parser.add_argument(
-        "input",
-        nargs="?",
-        default="hy2_tun.json",
-        help="Input Sing-box config with Hysteria2 outbounds (default: hy2_tun.json)",
-    )
-    parser.add_argument(
-        "output",
-        nargs="?",
-        default=None,
-        help="Output results JSON file (default: latest_results.json)",
-    )
-    parser.add_argument(
-        "-w", "--workers",
-        type=int,
-        default=20,
-        help="Max parallel workers (default: 20)",
-    )
-    parser.add_argument(
-        "-t", "--timeout",
-        type=int,
-        default=5,
-        help="Timeout per node test in seconds (default: 5)",
-    )
-    parser.add_argument(
-        "--summary",
-        action="store_true",
-        help="Print only summary (no table, no per-node output)",
-    )
-    parser.add_argument(
-        "--min-ports",
-        type=int,
-        default=0,
-        help="Minimum working ports required to pass (CI exit 1 if below)",
-    )
-    return parser.parse_args()
-
-
 def main():
-    args = parse_args()
+    config_path = sys.argv[1] if len(sys.argv) > 1 else "hy2_tun.json"
+    workers = int(sys.argv[2]) if len(sys.argv) > 2 else 10
 
     # Проверка наличия hy2 CLI
     try:
@@ -311,21 +268,21 @@ def main():
         print(f"Ошибка проверки hy2 CLI: {e}")
         sys.exit(1)
 
-    print(f"Loading nodes from {args.input}...")
-    nodes = load_nodes(args.input)
+    print(f"Loading nodes from {config_path}...")
+    nodes = load_nodes(config_path)
     print(f"Found {len(nodes)} Hysteria2 nodes")
 
     if not nodes:
         print("No Hysteria2 nodes found!")
         sys.exit(1)
 
-    print(f"Starting parallel test ({args.workers} workers, {args.timeout}s timeout)...\n")
-
+    print(f"Starting parallel test using hy2 CLI & curl ({workers} workers)...\n")
+    
     results = []
     start_all = time.time()
 
-    with ThreadPoolExecutor(max_workers=args.workers) as pool:
-        futures = {pool.submit(test_node_hy2cli, node, args.timeout): node for node in nodes}
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = {pool.submit(test_node_hy2cli, node): node for node in nodes}
         for i, future in enumerate(as_completed(futures), 1):
             node = futures[future]
             tag = node.get("tag", f"node-{i}")
@@ -333,43 +290,31 @@ def main():
                 res = future.result()
                 if res:
                     results.append(res)
-                    if not args.summary:
-                        status_icon = "✓" if res["status"] == "OK" else "✗"
-                        print(f"[{i}/{len(nodes)}] {tag}: {status_icon} {res['status']} — {res['latency_ms']}ms")
+                    status_icon = "✓" if res["status"] == "OK" else "✗"
+                    print(f"[{i}/{len(nodes)}] {tag}: {status_icon} {res['status']} — {res['latency_ms']}ms")
             except Exception as e:
-                if not args.summary:
-                    print(f"[{i}/{len(nodes)}] {tag}: ✗ ERROR — {e}")
+                print(f"[{i}/{len(nodes)}] {tag}: ✗ ERROR — {e}")
 
     total_time = time.time() - start_all
 
+    print(f"\n{'='*70}")
+    print(format_table(results))
+
     ok_count = sum(1 for r in results if r["status"] == "OK")
     fail_count = len(results) - ok_count
+    print(f"\nSummary: {ok_count} OK / {fail_count} FAIL — Total: {len(results)} — Time: {total_time:.1f}s")
 
-    if args.summary:
-        print(f"Summary: {ok_count} OK / {fail_count} FAIL — Total: {len(results)} — Time: {total_time:.1f}s")
-    else:
-        print(f"\n{'='*70}")
-        print(format_table(results))
-        print(f"\nSummary: {ok_count} OK / {fail_count} FAIL — Total: {len(results)} — Time: {total_time:.1f}s")
-
-    out_file = args.output or "latest_results.json"
+    out_file = "latest_results.json"
     output_data = {
         "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "total_nodes": len(results),
         "working_nodes": ok_count,
         "results": results
     }
-
+    
     with open(out_file, "w", encoding="utf-8") as f:
         json.dump(output_data, f, indent=2, ensure_ascii=False)
     print(f"Results saved to {out_file}")
-
-    # CI gate: fail if below minimum working ports
-    if args.min_ports > 0 and ok_count < args.min_ports:
-        print(f"\nCI FAIL: Only {ok_count} working ports, minimum required: {args.min_ports}")
-        sys.exit(1)
-
-    print("Done.")
 
 
 if __name__ == "__main__":

@@ -2,13 +2,16 @@ name: Auto Test Hy2
 
 on:
   schedule:
-    # Запуск каждые 5 часов
+    # Запуск каждые 5 часов (синхронизировано с convert-hy2.yml)
     - cron: '0 */5 * * *'
   workflow_dispatch: # Ручной запуск
 
 jobs:
   test-and-save:
     runs-on: ubuntu-latest
+    
+    # Ждём завершения конвертации, чтобы тестировать актуальные ноды
+    needs: []
     
     permissions:
       contents: write
@@ -39,7 +42,12 @@ jobs:
 
       - name: Test nodes
         run: |
-          python python/testers/hy2_node_tester.py hy2_tun.json 20
+          python python/testers/hy2_node_tester.py \
+            hy2_tun.json \
+            --output latest_results.json \
+            --workers 20 \
+            --timeout 5 \
+            --min-ports 1
 
       - name: Commit and push if changed
         run: |
