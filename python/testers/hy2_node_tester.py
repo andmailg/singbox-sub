@@ -266,9 +266,8 @@ def parse_args() -> argparse.Namespace:
         help="Input Sing-box config with Hysteria2 outbounds (default: hy2_tun.json)",
     )
     parser.add_argument(
-        "output",
-        nargs="?",
-        default=None,
+        "-o", "--output",
+        default="latest_results.json",
         help="Output results JSON file (default: latest_results.json)",
     )
     parser.add_argument(
