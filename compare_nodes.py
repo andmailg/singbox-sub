@@ -8,10 +8,10 @@ tun_nodes = [o for o in d['outbounds'] if o.get('type') == 'hysteria2']
 with open('hy2.txt', encoding='utf-8') as f:
     v2ray_lines = [l.strip() for l in f if l.strip()]
 
-# Build lookup by server:port:password
+# Build lookup by server:port
 tun_lookup = {}
 for n in tun_nodes:
-    key = f"{n['server']}:{n['server_port']}:{n['password']}"
+    key = f"{n['server']}:{n['server_port']}"
     tun_lookup[key] = n['tag']
 
 v2ray_lookup = {}
@@ -19,8 +19,7 @@ for line in v2ray_lines:
     parsed = urllib.parse.urlparse(line)
     server = parsed.hostname or ''
     port = parsed.port or ''
-    password = parsed.username or ''
-    key = f'{server}:{port}:{password}'
+    key = f'{server}:{port}'
     v2ray_lookup[key] = urllib.parse.unquote(parsed.fragment or '')
 
 # Find missing
