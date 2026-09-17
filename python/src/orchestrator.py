@@ -174,6 +174,10 @@ def _rkn_geoip_filter(
                 node["_country"] = country
             filtered.append(node)
 
+    removed = len(outbounds) - len(filtered)
+    if removed:
+        print(f"Filtered out {removed} nodes by RKN/GeoIP ({len(filtered)} remaining).")
+
     if reader:
         reader.close()
 
