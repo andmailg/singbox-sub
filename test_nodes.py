@@ -33,6 +33,20 @@ def get_free_port() -> int:
         return s.getsockname()[1]  # Явно берем только инт порта
 
 
+def wait_for_port(host: str, port: int, timeout: float = 5.0) -> bool:
+    """Ожидает, пока порт станет доступен (поднят)."""
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.settimeout(0.5)
+            try:
+                s.connect((host, port))
+                return True
+            except (ConnectionRefusedError, socket.timeout, OSError):
+                time.sleep(0.2)
+    return False
+
+
 def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
     """
     Тестирует ноду в GitHub Actions, делая запрос через системный curl
@@ -46,14 +60,16 @@ def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
 
     local_port = get_free_port()
 
+    # Собираем команду, исключая пустые аргументы
     hy2_cmd = [
         "hy2", "client",
         "--server", f"{server}:{port}",
         "--password", password,
-        "--server-name", sni,
         "--socks5", f"127.0.0.1:{local_port}",
         "--log-level", "error"
     ]
+    if sni:
+        hy2_cmd.extend(["--server-name", sni])
 
     proc = None
     try:
@@ -61,17 +77,33 @@ def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
         proc = subprocess.Popen(
             hy2_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
         )
-        
-        # Даем 1 секунду на инициализацию локального порта
-        time.sleep(1.0)
-        
-        if proc.poll() is not None:
+
+        # Даем время на инициализацию и ждем стабильного запуска
+        try:
+            proc.wait(timeout=3)
+        except subprocess.TimeoutExpired:
+            pass  # Процесс работает — это хорошо
+
+        if proc.returncode is not None and proc.returncode != 0:
             stdout, stderr = proc.communicate()
-            output = (stdout or "") + (stderr or "")
+            output = (stderr or stdout or "").strip()
             return {
                 "tag": tag, "server": server, "port": port, "status": "FAIL",
                 "latency_ms": 0,
-                "details": f"CLI init failed: {output.strip()[:150]}"
+                "details": f"CLI exit {proc.returncode}: {output[:300]}"
+            }
+
+        # Ждем, пока SOCKS5-порт станет доступен
+        if not wait_for_port("127.0.0.1", local_port, timeout=5.0):
+            proc.terminate()
+            try:
+                proc.wait(timeout=1)
+            except subprocess.TimeoutExpired:
+                proc.kill()
+            return {
+                "tag": tag, "server": server, "port": port, "status": "FAIL",
+                "latency_ms": 0,
+                "details": "SOCKS5 port did not become ready within 5s"
             }
 
         # 2. Выполняем проверку через системный curl с проксированием
@@ -148,6 +180,17 @@ def format_table(results: list[dict]) -> str:
 def main():
     config_path = sys.argv[1] if len(sys.argv) > 1 else "hy2-tun.json"
     workers = int(sys.argv[2]) if len(sys.argv) > 2 else 10
+
+    # Проверка наличия hy2 CLI
+    try:
+        ver = subprocess.run(["hy2", "version"], capture_output=True, text=True, timeout=5)
+        print(f"hy2 CLI: {ver.stdout.strip() or ver.stderr.strip()}")
+    except FileNotFoundError:
+        print("Ошибка: 'hy2' не найден в PATH. Убедитесь, что Hysteria CLI установлен.")
+        sys.exit(1)
+    except Exception as e:
+        print(f"Ошибка проверки hy2 CLI: {e}")
+        sys.exit(1)
 
     print(f"Loading nodes from {config_path}...")
     nodes = load_nodes(config_path)
