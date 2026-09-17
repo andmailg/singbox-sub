@@ -118,10 +118,11 @@
         "🇷🇴node-6",
         "🇷🇴node-7",
         "🇷🇴node-8",
-        "🇺🇸node-9",
+        "🇷🇴node-9",
         "🇺🇸node-10",
         "🇺🇸node-11",
-        "🇺🇸node-12"
+        "🇺🇸node-12",
+        "🇺🇸node-13"
       ],
       "default": "auto"
     },
@@ -137,10 +138,11 @@
         "🇷🇴node-6",
         "🇷🇴node-7",
         "🇷🇴node-8",
-        "🇺🇸node-9",
+        "🇷🇴node-9",
         "🇺🇸node-10",
         "🇺🇸node-11",
-        "🇺🇸node-12"
+        "🇺🇸node-12",
+        "🇺🇸node-13"
       ],
       "url": "https://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -160,7 +162,6 @@
         "type": "salamander",
         "password": "44f1c1e2f8b99e792ceed574627a1eb0"
       },
-      "_latency_ms": 900,
       "up_mbps": 20,
       "down_mbps": 20
     },
@@ -174,7 +175,6 @@
         "enabled": true,
         "server_name": "mz.hkychina.com"
       },
-      "_latency_ms": 282,
       "up_mbps": 20,
       "down_mbps": 20
     },
@@ -188,7 +188,6 @@
         "enabled": true,
         "server_name": "vpn-in-001.fastervpn.world"
       },
-      "_latency_ms": 495,
       "up_mbps": 20,
       "down_mbps": 20
     },
@@ -202,7 +201,6 @@
         "enabled": true,
         "server_name": "72.56.92.120"
       },
-      "_latency_ms": 319,
       "up_mbps": 20,
       "down_mbps": 20
     },
@@ -216,7 +214,6 @@
         "enabled": true,
         "server_name": "grape-turbo-fr.roxa.org"
       },
-      "_latency_ms": 309,
       "up_mbps": 20,
       "down_mbps": 20
     },
@@ -230,7 +227,6 @@
         "enabled": true,
         "server_name": "hopp-germany-new.ddnsguru.com"
       },
-      "_latency_ms": 335,
       "up_mbps": 20,
       "down_mbps": 20
     },
@@ -244,7 +240,6 @@
         "enabled": true,
         "server_name": "hopp-romania-new.roxa.org"
       },
-      "_latency_ms": 517,
       "up_mbps": 20,
       "down_mbps": 20
     },
@@ -258,13 +253,29 @@
         "enabled": true,
         "server_name": "hopp-romania-new.roxa.org"
       },
-      "_latency_ms": 2767,
       "up_mbps": 20,
       "down_mbps": 20
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-9",
+      "tag": "🇷🇴node-9",
+      "server": "hy2-new.aspidnet.xyz",
+      "server_port": 443,
+      "password": "QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s",
+      "tls": {
+        "enabled": true,
+        "server_name": "hy2-new.aspidnet.xyz"
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "c1b4086fea89914496c7e10967a419216566"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇺🇸node-10",
       "server": "hy2.123266.xyz",
       "server_port": 33333,
       "password": "bce6c821-200d-421f-bf3d-7159e5246ea0",
@@ -272,13 +283,12 @@
         "enabled": true,
         "server_name": "hy2.123266.xyz"
       },
-      "_latency_ms": 49,
       "up_mbps": 20,
       "down_mbps": 20
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-10",
+      "tag": "🇺🇸node-11",
       "server": "hy2.561891.xyz",
       "server_port": 44356,
       "password": "dongtaiwang.com",
@@ -286,31 +296,25 @@
         "enabled": true,
         "server_name": "hy2.561891.xyz"
       },
-      "_latency_ms": 71,
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇺🇸node-11",
-      "server": "nl1.sferavpn.pro",
-      "server_port": 443,
-      "password": "cd74c0a406664a5bc0bac098220a2468",
-      "tls": {
-        "enabled": true,
-        "server_name": "nl1.sferavpn.pro"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "44f1c1e2f8b99e792ceed574627a1eb0"
-      },
-      "_latency_ms": 356,
       "up_mbps": 20,
       "down_mbps": 20
     },
     {
       "type": "hysteria2",
       "tag": "🇺🇸node-12",
+      "server": "news.gazette.help",
+      "server_port": 443,
+      "password": "sOiWCQ2AdIV0OWNuqQVyWp4JZnRxdyLROSjX",
+      "tls": {
+        "enabled": true,
+        "server_name": "news.gazette.help"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇺🇸node-13",
       "server": "ru1.sferavpn.pro",
       "server_port": 443,
       "password": "cd74c0a406664a5bc0bac098220a2468",
@@ -322,7 +326,6 @@
         "type": "salamander",
         "password": "44f1c1e2f8b99e792ceed574627a1eb0"
       },
-      "_latency_ms": 976,
       "up_mbps": 20,
       "down_mbps": 20
     }
