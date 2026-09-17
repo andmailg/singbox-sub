@@ -32,7 +32,7 @@
         "🇩🇪node-8",
         "🇩🇪node-9",
         "🇩🇪node-10",
-        "🇩🇪node-11",
+        "🇪🇪node-11",
         "🇪🇪node-12",
         "🇫🇮node-13",
         "🇫🇮node-14",
@@ -61,16 +61,16 @@
         "🇫🇮node-37",
         "🇫🇮node-38",
         "🇫🇮node-39",
-        "🇫🇮node-40",
-        "🇬🇧node-41",
-        "🇭🇰node-42",
-        "🇮🇳node-43",
-        "🇮🇷node-44",
-        "🇯🇵node-45",
-        "🇰🇷node-46",
+        "🇬🇧node-40",
+        "🇭🇰node-41",
+        "🇮🇳node-42",
+        "🇮🇷node-43",
+        "🇰🇷node-44",
+        "🇰🇷node-45",
+        "🇳🇱node-46",
         "🇳🇱node-47",
         "🇳🇱node-48",
-        "🇳🇱node-49",
+        "🇵🇱node-49",
         "🇷🇴node-50",
         "🇷🇴node-51",
         "🇷🇴node-52",
@@ -88,7 +88,8 @@
         "🇺🇸node-64",
         "🇺🇸node-65",
         "🇺🇸node-66",
-        "🇺🇸node-67"
+        "🇺🇸node-67",
+        "🇺🇸node-68"
       ],
       "default": "auto"
     },
@@ -106,7 +107,7 @@
         "🇩🇪node-8",
         "🇩🇪node-9",
         "🇩🇪node-10",
-        "🇩🇪node-11",
+        "🇪🇪node-11",
         "🇪🇪node-12",
         "🇫🇮node-13",
         "🇫🇮node-14",
@@ -135,16 +136,16 @@
         "🇫🇮node-37",
         "🇫🇮node-38",
         "🇫🇮node-39",
-        "🇫🇮node-40",
-        "🇬🇧node-41",
-        "🇭🇰node-42",
-        "🇮🇳node-43",
-        "🇮🇷node-44",
-        "🇯🇵node-45",
-        "🇰🇷node-46",
+        "🇬🇧node-40",
+        "🇭🇰node-41",
+        "🇮🇳node-42",
+        "🇮🇷node-43",
+        "🇰🇷node-44",
+        "🇰🇷node-45",
+        "🇳🇱node-46",
         "🇳🇱node-47",
         "🇳🇱node-48",
-        "🇳🇱node-49",
+        "🇵🇱node-49",
         "🇷🇴node-50",
         "🇷🇴node-51",
         "🇷🇴node-52",
@@ -162,7 +163,8 @@
         "🇺🇸node-64",
         "🇺🇸node-65",
         "🇺🇸node-66",
-        "🇺🇸node-67"
+        "🇺🇸node-67",
+        "🇺🇸node-68"
       ],
       "url": "https://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -289,19 +291,6 @@
     {
       "type": "hysteria2",
       "tag": "🇩🇪node-9",
-      "server": "de1.apexvpn.space",
-      "server_port": 443,
-      "password": "dffb4c3d-1e84-4938-8881-cad917e8efb2",
-      "tls": {
-        "enabled": true,
-        "server_name": "de1.apexvpn.space"
-      },
-      "up_mbps": 100,
-      "down_mbps": 100
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇩🇪node-10",
       "server": "de1.sferavpn.pro",
       "server_port": 443,
       "password": "cd74c0a406664a5bc0bac098220a2468",
@@ -318,7 +307,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-11",
+      "tag": "🇩🇪node-10",
       "server": "gift-catalog.aroonia.ir",
       "server_port": 52000,
       "password": "8z2e26xkqsa598s3",
@@ -329,6 +318,23 @@
       "obfs": {
         "type": "salamander",
         "password": "6cmj1dymhm79hopl"
+      },
+      "up_mbps": 100,
+      "down_mbps": 100
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇪🇪node-11",
+      "server": "ee1.sferavpn.pro",
+      "server_port": 443,
+      "password": "cd74c0a406664a5bc0bac098220a2468",
+      "tls": {
+        "enabled": true,
+        "server_name": "ee1.sferavpn.pro"
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "44f1c1e2f8b99e792ceed574627a1eb0"
       },
       "up_mbps": 100,
       "down_mbps": 100
@@ -821,23 +827,6 @@
     {
       "type": "hysteria2",
       "tag": "🇫🇮node-39",
-      "server": "giftcard.gateway-stream.com",
-      "server_port": 52029,
-      "password": "bfmf6a05bp4fjwuh",
-      "tls": {
-        "enabled": true,
-        "server_name": "giftcard.gateway-stream.com"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "fuw2k1ddrouwxr3u"
-      },
-      "up_mbps": 100,
-      "down_mbps": 100
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇮node-40",
       "server": "samurai.h4ck.me",
       "server_port": 443,
       "password": "14f7504c-bd01-4d88-bd42-80dc6bf6b202",
@@ -850,7 +839,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇬🇧node-41",
+      "tag": "🇬🇧node-40",
       "server": "vpn-uk-002.fastervpn.world",
       "server_port": 443,
       "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
@@ -863,7 +852,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇭🇰node-42",
+      "tag": "🇭🇰node-41",
       "server": "mz.hkychina.com",
       "server_port": 8443,
       "password": "HysTeria2026!Proxy",
@@ -876,7 +865,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇮🇳node-43",
+      "tag": "🇮🇳node-42",
       "server": "vpn-in-001.fastervpn.world",
       "server_port": 443,
       "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
@@ -889,7 +878,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇮🇷node-44",
+      "tag": "🇮🇷node-43",
       "server": "srm.kishonline.online",
       "server_port": 443,
       "password": "9P5zfc7S0s",
@@ -902,20 +891,20 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇯🇵node-45",
-      "server": "hk01.kfc-520.com",
-      "server_port": 60001,
-      "password": "49f7ff21-a176-30cc-ab60-a5988fd85ce0",
+      "tag": "🇰🇷node-44",
+      "server": "150-230-252-217.liao.kdns.fr",
+      "server_port": 50160,
+      "password": "9cfc9458e48c028ec03ff86ebc71c744",
       "tls": {
         "enabled": true,
-        "server_name": "hk01.kfc-520.com"
+        "server_name": "150-230-252-217.liao.kdns.fr"
       },
       "up_mbps": 100,
       "down_mbps": 100
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-46",
+      "tag": "🇰🇷node-45",
       "server": "152-69-231-175.liao.kdns.fr",
       "server_port": 50160,
       "password": "1beb216e3f60aea9555dae60d219a5ca",
@@ -928,7 +917,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇳🇱node-47",
+      "tag": "🇳🇱node-46",
       "server": "206.71.158.37",
       "server_port": 35200,
       "password": "Yet-Another-Public-Config-1",
@@ -941,7 +930,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇳🇱node-48",
+      "tag": "🇳🇱node-47",
       "server": "72.56.92.120",
       "server_port": 443,
       "password": "CnVfXXvMzh",
@@ -954,13 +943,26 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇳🇱node-49",
+      "tag": "🇳🇱node-48",
       "server": "grape-turbo-fr.roxa.org",
       "server_port": 8443,
       "password": "s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z",
       "tls": {
         "enabled": true,
         "server_name": "grape-turbo-fr.roxa.org"
+      },
+      "up_mbps": 100,
+      "down_mbps": 100
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇵🇱node-49",
+      "server": "admin.wwwinternetvideo.click",
+      "server_port": 443,
+      "password": "YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc",
+      "tls": {
+        "enabled": true,
+        "server_name": "admin.wwwinternetvideo.click"
       },
       "up_mbps": 100,
       "down_mbps": 100
@@ -1134,6 +1136,10 @@
         "enabled": true,
         "server_name": "bwdf2fnt.xn--e1aatfr8bwa.online"
       },
+      "obfs": {
+        "type": "salamander",
+        "password": "b6d1f3888ab1d90dd11aac1dce427b81"
+      },
       "up_mbps": 100,
       "down_mbps": 100
     },
@@ -1179,6 +1185,19 @@
     {
       "type": "hysteria2",
       "tag": "🇺🇸node-65",
+      "server": "mol.ultimagamest.com",
+      "server_port": 443,
+      "password": "a2c74ce7-5daa-4bee-a1eb-52863873b3c3",
+      "tls": {
+        "enabled": true,
+        "server_name": "mol.ultimagamest.com"
+      },
+      "up_mbps": 100,
+      "down_mbps": 100
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇺🇸node-66",
       "server": "news.gazette.help",
       "server_port": 443,
       "password": "sOiWCQ2AdIV0OWNuqQVyWp4JZnRxdyLROSjX",
@@ -1191,7 +1210,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-66",
+      "tag": "🇺🇸node-67",
       "server": "nl1.sferavpn.pro",
       "server_port": 443,
       "password": "cd74c0a406664a5bc0bac098220a2468",
@@ -1208,7 +1227,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-67",
+      "tag": "🇺🇸node-68",
       "server": "ru1.sferavpn.pro",
       "server_port": 443,
       "password": "cd74c0a406664a5bc0bac098220a2468",
