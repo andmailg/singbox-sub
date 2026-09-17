@@ -62,6 +62,7 @@ def _build_yaml(node: dict, local_port: int) -> str:
     password = node["password"]
     sni = node.get("tls", {}).get("server_name", "")
     tls_cfg = node.get("tls", {})
+    obfs_cfg = node.get("obfs", {})
 
     lines = [
         "server: " + _yaml_escape(f"{server}:{port}"),
@@ -75,6 +76,35 @@ def _build_yaml(node: dict, local_port: int) -> str:
     # insecure — если нет pinSHA256, отключаем проверку сертификата
     if "pinSHA256" not in tls_cfg:
         lines.append("  insecure: true")
+
+    # obfs (obfuscation)
+    if obfs_cfg and obfs_cfg.get("type"):
+        obfs_type = obfs_cfg["type"]
+        lines.append("obfs:")
+        if obfs_type == "salamander":
+            lines.append("  type: salamander")
+            lines.append("  salamander:")
+            lines.append("    password: " + _yaml_escape(obfs_cfg.get("password", "")))
+        elif obfs_type == "gecko":
+            lines.append("  type: gecko")
+            lines.append("  gecko:")
+            lines.append("    password: " + _yaml_escape(obfs_cfg.get("password", "")))
+            min_pkt = obfs_cfg.get("min_packet_size")
+            max_pkt = obfs_cfg.get("max_packet_size")
+            if min_pkt is not None:
+                lines.append("    min_packet_size: " + str(min_pkt))
+            if max_pkt is not None:
+                lines.append("    max_packet_size: " + str(max_pkt))
+
+    # bandwidth
+    up = node.get("up_mbps")
+    down = node.get("down_mbps")
+    if up is not None or down is not None:
+        lines.append("bandwidth:")
+        if up is not None:
+            lines.append("  up: " + str(up) + " mbps")
+        if down is not None:
+            lines.append("  down: " + str(down) + " mbps")
 
     lines.append("socks5:")
     lines.append("  listen: 127.0.0.1:" + str(local_port))
