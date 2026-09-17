@@ -263,9 +263,9 @@ def load_sources(sources_json_url: str) -> list[str]:
         if not isinstance(sub_urls, list):
             raise ValueError(f"Expected list or dict, got {type(sub_urls)}")
 
-        print(f"✅ Successfully loaded {len(sub_urls)} subscription sources.")
+        print(f"OK Successfully loaded {len(sub_urls)} subscription sources.")
         return sub_urls
 
     except Exception as e:
-        print(f"❌ Error fetching sources JSON: {e}")
+        print(f"ERROR Error fetching sources JSON: {e}")
         return []

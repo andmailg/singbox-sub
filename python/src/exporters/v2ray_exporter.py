@@ -175,7 +175,7 @@ def export_v2ray(outbounds: list[dict], output_file: str = "output.txt") -> int:
     )
     with open(output_file, "w", encoding="utf-8") as f:
         f.write("\n".join(all_links))
-    print(f"✅ Successfully exported {len(all_links)} nodes to {output_file}")
+    print(f"OK Successfully exported {len(all_links)} nodes to {output_file}")
     return len(all_links)
 
 
@@ -196,28 +196,28 @@ def export_v2ray_by_type(outbounds: list[dict], output_file: str = "output.txt")
         with open(path, "w", encoding="utf-8") as f:
             f.write("\n".join(hy2_links))
         result["hy2.txt"] = len(hy2_links)
-        print(f"✅ Exported {len(hy2_links)} Hysteria2 nodes to {path}")
+        print(f"OK Exported {len(hy2_links)} Hysteria2 nodes to {path}")
 
     if grpc_links:
         path = f"{output_file}"
         with open(path, "w", encoding="utf-8") as f:
             f.write("\n".join(grpc_links))
         result["vless-grpc.txt"] = len(grpc_links)
-        print(f"✅ Exported {len(grpc_links)} VLESS gRPC nodes to {path}")
+        print(f"OK Exported {len(grpc_links)} VLESS gRPC nodes to {path}")
 
     if reality_links:
         path = f"{output_file}"
         with open(path, "w", encoding="utf-8") as f:
             f.write("\n".join(reality_links))
         result["vless-reality.txt"] = len(reality_links)
-        print(f"✅ Exported {len(reality_links)} VLESS Reality nodes to {path}")
+        print(f"OK Exported {len(reality_links)} VLESS Reality nodes to {path}")
 
     if vmess_links:
         path = f"{output_file}"
         with open(path, "w", encoding="utf-8") as f:
             f.write("\n".join(vmess_links))
         result["vmess.txt"] = len(vmess_links)
-        print(f"✅ Exported {len(vmess_links)} VMess nodes to {path}")
+        print(f"OK Exported {len(vmess_links)} VMess nodes to {path}")
 
     total = sum(result.values())
     print(f"Total: {total} nodes exported.")

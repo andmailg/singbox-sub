@@ -32,5 +32,5 @@ def _export(
     singbox_config = build_fn(outbounds)
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(singbox_config, f, ensure_ascii=False, indent=2)
-    print(f"✅ Successfully generated {output_file} with {len(outbounds)} nodes.")
+    print(f"OK Successfully generated {output_file} with {len(outbounds)} nodes.")
     return len(outbounds)
