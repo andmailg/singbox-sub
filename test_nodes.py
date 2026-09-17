@@ -1,21 +1,10 @@
 import json
-import os
-import socket
 import subprocess
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from functools import partial
 from datetime import datetime
 
-# Force UTF-8 encoding for Windows console
-if sys.platform == "win32":
-    os.environ["PYTHONUTF8"] = "1"
-    import io
-    if hasattr(sys.stdout, "buffer"):
-        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
-    if hasattr(sys.stderr, "buffer"):
-        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8")
 
 
 def load_nodes(config_path: str) -> list[dict]:
@@ -75,56 +64,6 @@ def test_node_hy2cli(node: dict, timeout: int = 10) -> dict | None:
         return None  # hy2 not found
 
 
-def test_node_tcp(node: dict, timeout: int = 5) -> dict:
-    """Basic TCP connect test."""
-    server = node["server"]
-    port = node["server_port"]
-    tag = node.get("tag", f"{server}:{port}")
-
-    start = time.time()
-    try:
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.settimeout(timeout)
-        sock.connect((server, port))
-        sock.close()
-        elapsed = time.time() - start
-        return {
-            "tag": tag,
-            "server": server,
-            "port": port,
-            "status": "TCP-OPEN",
-            "latency_ms": round(elapsed * 1000),
-            "details": "TCP port open",
-        }
-    except socket.timeout:
-        return {
-            "tag": tag,
-            "server": server,
-            "port": port,
-            "status": "TIMEOUT",
-            "latency_ms": timeout * 1000,
-            "details": "Connection timed out",
-        }
-    except ConnectionRefusedError:
-        return {
-            "tag": tag,
-            "server": server,
-            "port": port,
-            "status": "REFUSED",
-            "latency_ms": round((time.time() - start) * 1000),
-            "details": "Connection refused",
-        }
-    except OSError as e:
-        return {
-            "tag": tag,
-            "server": server,
-            "port": port,
-            "status": "ERROR",
-            "latency_ms": round((time.time() - start) * 1000),
-            "details": str(e),
-        }
-
-
 def format_table(results: list[dict]) -> str:
     lines = []
     header = f"{'Tag':<20} {'Server':<18} {'Port':<6} {'Status':<10} {'Latency':<10}"
@@ -151,7 +90,7 @@ def main():
 
     # Use hy2 CLI for testing
     print("Using hy2 CLI\n")
-    test_fn = partial(test_node_hy2cli, timeout=10)
+    test_fn = lambda node: test_node_hy2cli(node, timeout=10)
 
     # Parallel testing
     results = []
@@ -166,7 +105,7 @@ def main():
                 res = future.result()
                 if res:
                     results.append(res)
-                    status_icon = "✓" if res["status"] in ("OK", "TCP-OPEN") else "✗"
+                    status_icon = "✓" if res["status"] == "OK" else "✗"
                     print(f"[{i}/{len(nodes)}] {tag}: {status_icon} {res['status']} — {res['latency_ms']}ms")
             except Exception as e:
                 print(f"[{i}/{len(nodes)}] {tag}: ✗ ERROR — {e}")
@@ -177,7 +116,7 @@ def main():
     print(format_table(results))
 
     # Summary
-    ok = sum(1 for r in results if r["status"] in ("OK", "TCP-OPEN"))
+    ok = sum(1 for r in results if r["status"] == "OK")
     fail = len(results) - ok
     print(f"\nSummary: {ok} OK / {fail} FAIL — Total: {len(results)} — Time: {total:.1f}s")
 
