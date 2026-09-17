@@ -30,7 +30,7 @@ def get_free_port() -> int:
     """Находит случайный свободный порт на локальной машине."""
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind(('127.0.0.1', 0))
-        return s.getsockname()[1]
+        return s.getsockname()[1]  # Явно берем только инт порта
 
 
 def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
@@ -46,7 +46,6 @@ def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
 
     local_port = get_free_port()
 
-    # Формируем команду для запуска клиента Hysteria2
     hy2_cmd = [
         "hy2", "client",
         "--server", f"{server}:{port}",
@@ -68,14 +67,14 @@ def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
         
         if proc.poll() is not None:
             stdout, stderr = proc.communicate()
+            output = (stdout or "") + (stderr or "")
             return {
                 "tag": tag, "server": server, "port": port, "status": "FAIL",
                 "latency_ms": 0,
-                "details": f"CLI init failed: {(stdout or '') + (stderr or '')}".strip()[:200]
+                "details": f"CLI init failed: {output.strip()[:150]}"
             }
 
         # 2. Выполняем проверку через системный curl с проксированием
-        # --socks5-hostname заставляет резолвить домен внутри прокси (защита от утечек)
         curl_cmd = [
             "curl", "-s", "-o", "/dev/null",
             "-w", "%{http_code}:%{time_total}",
@@ -84,26 +83,31 @@ def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
             "https://connectivity.cloudflareclient.com"
         ]
 
-        curl_start = time.time()
         res = subprocess.run(curl_cmd, capture_output=True, text=True)
         
         if res.returncode == 0 and res.stdout:
-            # curl возвращает строку вида "204:0.145" (http_code:time_total)
+            # Корректно бьем строку вывода curl (пример "204:0.045")
             parts = res.stdout.strip().split(":")
-            http_code = parts[0]
-            time_total = float(parts[1]) if len(parts) > 1 else 0.0
-            latency = round(time_total * 1000)
+            if len(parts) >= 2:
+                http_code = parts[0]
+                time_total = float(parts[1])
+                latency = round(time_total * 1000)
 
-            if http_code in ["204", "200"]:
-                status = "OK"
-                details = "Connected and verified via curl"
+                if http_code in ["204", "200"]:
+                    status = "OK"
+                    details = "Connected and verified"
+                else:
+                    status = "FAIL"
+                    details = f"HTTP Status {http_code}"
             else:
                 status = "FAIL"
-                details = f"HTTP Status {http_code}"
+                latency = 0
+                details = f"Malformed curl output: {res.stdout}"
         else:
             status = "FAIL"
-            latency = round((time.time() - curl_start) * 1000)
-            details = res.stderr.strip()[:200] if res.stderr else f"Curl exited with code {res.returncode}"
+            latency = 0
+            err_msg = res.stderr.strip() if res.stderr else f"Exit code {res.returncode}"
+            details = f"Curl failed: {err_msg[:100]}"
 
     except Exception as e:
         status = "ERROR"
