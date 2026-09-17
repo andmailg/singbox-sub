@@ -8,5 +8,5 @@ if __name__ == "__main__":
         parser_module="src.parsers.vless_tcp_reality_parser",
         protocol="vless",
         exporter="tun",
-        output_file="vless-reality-tun.json",
+        output_file="vless_reality_tun.json",
     )

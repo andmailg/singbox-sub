@@ -254,7 +254,7 @@ def format_table(results: list[dict]) -> str:
 
 
 def main():
-    config_path = sys.argv[1] if len(sys.argv) > 1 else "hy2-tun.json"
+    config_path = sys.argv[1] if len(sys.argv) > 1 else "hy2_tun.json"
     workers = int(sys.argv[2]) if len(sys.argv) > 2 else 10
 
     # Проверка наличия hy2 CLI

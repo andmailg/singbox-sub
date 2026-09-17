@@ -28,8 +28,8 @@ jobs:
 
       - name: Run scripts
         run: |
-          python python/vmess-tun.py
-          python python/vmess-v2ray.py
+          python python/vmess_tun.py
+          python python/vmess_v2ray.py
 
       - name: Commit and push if changed
         run: |
@@ -38,14 +38,14 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           # 2. Добавляем файлы в индекс
-          git add vmess-tun.json vmess.txt
+          git add vmess_tun.json vmess.txt
           git status
           
           # 3. Коммитим и пушим с предварительным rebase
           if git diff --cached --quiet; then
             echo "Нет изменений для коммита."
           else
-            git commit -m "Auto-update vmess-tun.json & vmess.txt"
+            git commit -m "Auto-update vmess_tun.json & vmess.txt"
             
             # Подтягиваем изменения из удаленного репозитория, накладывая наш коммит поверх них
             git pull origin main --rebase

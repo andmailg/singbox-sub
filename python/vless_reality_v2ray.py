@@ -8,5 +8,5 @@ if __name__ == "__main__":
         parser_module="src.parsers.vless_tcp_reality_parser",
         protocol="vless",
         exporter="v2ray",
-        output_file="vless-reality.txt",
+        output_file="vless_reality.txt",
     )

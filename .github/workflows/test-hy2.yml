@@ -39,7 +39,7 @@ jobs:
 
       - name: Test nodes
         run: |
-          python test_nodes.py hy2-tun.json 20
+          python python/src/testers/hy2_node_tester.py hy2_tun.json 20
 
       - name: Commit and push if changed
         run: |

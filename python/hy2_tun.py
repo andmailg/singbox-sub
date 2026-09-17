@@ -8,5 +8,5 @@ if __name__ == "__main__":
         parser_module="src.parsers.hy2_parser",
         protocol="hy2",
         exporter="tun",
-        output_file="hy2-tun.json",
+        output_file="hy2_tun.json",
     )

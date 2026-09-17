@@ -8,5 +8,5 @@ if __name__ == "__main__":
         parser_module="src.parsers.vless_http_parser",
         protocol="vless",
         exporter="tun",
-        output_file="vless-http-tun.json",
+        output_file="vless_http_tun.json",
     )

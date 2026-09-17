@@ -7,5 +7,5 @@ if __name__ == "__main__":
     run_pipeline(
         parser_module="src.parsers.vmess_parser",
         exporter="tun",
-        output_file="vmess-tun.json",
+        output_file="vmess_tun.json",
     )
