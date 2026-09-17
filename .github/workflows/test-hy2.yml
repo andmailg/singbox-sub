@@ -1,0 +1,57 @@
+name: Auto Convert Xray to Sing-Box Hy2
+
+on:
+  schedule:
+    # Запуск каждые 5 часов
+    - cron: '0 */5 * * *'
+  workflow_dispatch: # Ручной запуск
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    
+    # Права на запись оставляем, они необходимы для git push
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          # Ошибочная строка кэша удалена
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests maxminddb
+
+      - name: Install Hysteria2 CLI
+        run: |
+          curl -L https://github.com/HyNetwork/hysteria/releases/latest/download/hy2-linux-amd64 -o hy2
+          chmod +x hy2
+          sudo mv hy2 /usr/local/bin/hy2
+
+      - name: Test nodes
+        run: |
+          python test_nodes.py hy2-tun.json 20
+
+      - name: Commit and push if changed
+        run: |
+          # Настройка бота GitHub Actions
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@://github.com"
+
+          # Добавляем файл в индекс
+          #git add hy2-tun.json hy2.txt
+          
+          # Коммитим и пушим только при наличии изменений
+          if git diff --cached --quiet; then
+            echo "Нет изменений для коммита."
+          else
+            #git commit -m "Auto-update hy2-tun.json & hy2.txt"
+            git push
+          fi
