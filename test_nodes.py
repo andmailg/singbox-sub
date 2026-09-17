@@ -5,6 +5,7 @@ import subprocess
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from functools import partial
 from datetime import datetime
 
 # Force UTF-8 encoding for Windows console
@@ -28,7 +29,7 @@ def load_nodes(config_path: str) -> list[dict]:
     return nodes
 
 
-def test_node_hy2cli(node: dict, timeout: int = 10) -> dict:
+def test_node_hy2cli(node: dict, timeout: int = 10) -> dict | None:
     """Test using hysteria CLI (hy2 client)."""
     server = node["server"]
     port = node["server_port"]
@@ -136,30 +137,6 @@ def format_table(results: list[dict]) -> str:
     return "\n".join(lines)
 
 
-def find_hy2() -> str | None:
-    """Find hy2 CLI in common locations."""
-    candidates = ["hy2", "hy2.exe"]
-    # Check PATH
-    for c in candidates:
-        try:
-            subprocess.run([c, "--version"], capture_output=True, timeout=5)
-            return c
-        except (FileNotFoundError, subprocess.TimeoutExpired):
-            pass
-
-    # Check common local paths
-    import os
-    local_paths = [
-        os.path.expanduser("~\\hy2.exe"),
-        os.path.expanduser("~\\.hy2\\hy2.exe"),
-        os.path.join(os.getcwd(), "hy2.exe"),
-    ]
-    for p in local_paths:
-        if os.path.isfile(p):
-            return p
-    return None
-
-
 def main():
     config_path = sys.argv[1] if len(sys.argv) > 1 else "hy2-tun.json"
     workers = int(sys.argv[2]) if len(sys.argv) > 2 else 10
@@ -172,14 +149,9 @@ def main():
         print("No Hysteria2 nodes found!")
         sys.exit(1)
 
-    # Detect test method
-    hy2_path = find_hy2()
-    if hy2_path:
-        print(f"Using hy2 CLI: {hy2_path}\n")
-        test_fn = lambda n: test_node_hy2cli(n)
-    else:
-        print("hy2 CLI not found — using TCP connect test\n")
-        test_fn = test_node_tcp
+    # Use hy2 CLI for testing
+    print("Using hy2 CLI\n")
+    test_fn = partial(test_node_hy2cli, timeout=10)
 
     # Parallel testing
     results = []
