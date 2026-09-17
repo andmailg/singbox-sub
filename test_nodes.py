@@ -80,7 +80,7 @@ def test_node_hy2cli(node: dict, timeout: int = 5) -> dict | None:
             "-w", "%{http_code}:%{time_total}",
             "--socks5-hostname", f"127.0.0.1:{local_port}",
             "--max-time", str(timeout),
-            "https://connectivity.cloudflareclient.com"
+            "http://connectivitycheck.gstatic.com/generate_204"
         ]
 
         res = subprocess.run(curl_cmd, capture_output=True, text=True)
