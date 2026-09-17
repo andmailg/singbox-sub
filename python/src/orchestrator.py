@@ -41,6 +41,8 @@ def _fetch_links(sub_urls: list[str], prefix: str = "") -> list[str]:
                 url = future_to_url[future]
                 print(f"{prefix}Error fetching {url}: {e}")
     print(f"{prefix}Total raw lines collected: {len(links)}")
+    # Sort for deterministic deduplication order across runs
+    links.sort()
     return links
 
 
