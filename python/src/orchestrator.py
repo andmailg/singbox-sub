@@ -23,11 +23,11 @@ from src.rkn_filter import (
 SOURCES_JSON_PATH = "./sub_urls.json"
 
 
-def _fetch_links(sub_urls: list[str]) -> list[str]:
+def _fetch_links(sub_urls: list[str], prefix: str = "") -> list[str]:
     """Параллельно скачивает все подписки."""
     links: list[str] = []
     max_workers = min(10, len(sub_urls))
-    print(f"Fetching {len(sub_urls)} subscriptions with {max_workers} workers...")
+    print(f"{prefix}Fetching {len(sub_urls)} subscriptions with {max_workers} workers...")
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         future_to_url = {
             executor.submit(fetch_subscription, url): url
@@ -38,8 +38,8 @@ def _fetch_links(sub_urls: list[str]) -> list[str]:
                 links.extend(future.result())
             except Exception as e:
                 url = future_to_url[future]
-                print(f"Error fetching {url}: {e}")
-    print(f"Total raw lines collected: {len(links)}")
+                print(f"{prefix}Error fetching {url}: {e}")
+    print(f"{prefix}Total raw lines collected: {len(links)}")
     return links
 
 
@@ -63,11 +63,12 @@ def _parse_and_deduplicate(
     protocol: str = "generic",
     tls_required: bool = False,
     port_whitelist: tuple[int, ...] | None = None,
+    prefix: str = "",
 ) -> list[dict]:
     """Парсинг, быстрая фильтрация, DNS-резолвинг (параллельный), дедупликация по IP:port и дополнительные фильтры."""
     kw = parse_kwargs or {}
 
-    print(f"Parsing {len(links)} links...")
+    print(f"{prefix}Parsing {len(links)} links...")
     # 1. Парсинг + быстрая фильтрация + очистка — без DNS
     parsed: list[tuple[int, dict]] = []
     seen_fps: set[str] = set()
@@ -89,14 +90,14 @@ def _parse_and_deduplicate(
             continue
         parsed.append((idx, outbound))
 
-    print(f"Parsed {len(parsed)} valid links, resolving {len(set(o.get('server', '') for _, o in parsed))} unique servers...")
+    print(f"{prefix}Parsed {len(parsed)} valid links, resolving {len(set(o.get('server', '') for _, o in parsed))} unique servers...")
 
     # 2. Параллельный DNS-резолвинг уникальных серверов
     unique_servers: dict[str, str | None] = {}
     servers = list(set(o.get("server", "").strip("[]").lower() for _, o in parsed))
 
     num_workers = min(16, len(servers))
-    print(f"Resolving {len(servers)} unique servers with {num_workers} workers...")
+    print(f"{prefix}Resolving {len(servers)} unique servers with {num_workers} workers...")
     with ThreadPoolExecutor(max_workers=num_workers) as executor:
         future_to_server = {
             executor.submit(_resolve_outbound_server, server): server
@@ -132,6 +133,7 @@ def _parse_and_deduplicate(
 
 def _rkn_geoip_filter(
     outbounds: list[dict],
+    prefix: str = "",
 ) -> list[dict]:
     """RKN + GeoIP фильтрация через resolve_and_check."""
     from src.common import session
@@ -141,10 +143,10 @@ def _rkn_geoip_filter(
     reader = open_geoip_reader()
 
     if reader:
-        print("GeoIP database loaded for geolocation filtering.")
+        print(f"{prefix}GeoIP database loaded for geolocation filtering.")
 
     num_workers = min(8, len(outbounds))
-    print(f"Filtering {len(outbounds)} nodes with {num_workers} workers...")
+    print(f"{prefix}Filtering {len(outbounds)} nodes with {num_workers} workers...")
 
     with ThreadPoolExecutor(max_workers=num_workers) as executor:
         future_to_idx = {
@@ -176,7 +178,7 @@ def _rkn_geoip_filter(
 
     removed = len(outbounds) - len(filtered)
     if removed:
-        print(f"Filtered out {removed} nodes by RKN/GeoIP ({len(filtered)} remaining).")
+        print(f"{prefix}Filtered out {removed} nodes by RKN/GeoIP ({len(filtered)} remaining).")
 
     if reader:
         reader.close()
@@ -220,6 +222,10 @@ def run_pipeline(
         tls_required: если True — требует TLS + server_name.
         port_whitelist: если указан — разрешены только эти порты.
     """
+    print(f"[{output_file}] Starting pipeline (exporter={exporter})...")
+
+    prefix = f"[{output_file}] "
+
     # 1. Загрузка подписок
     sub_urls_path = os.path.join(os.path.dirname(__file__), SOURCES_JSON_PATH)
     with open(sub_urls_path, "r", encoding="utf-8") as f:
@@ -228,7 +234,7 @@ def run_pipeline(
     if not sub_urls:
         return
 
-    links = _fetch_links(sub_urls)
+    links = _fetch_links(sub_urls, prefix=prefix)
     if not links:
         return
 
@@ -247,20 +253,21 @@ def run_pipeline(
         protocol=protocol,
         tls_required=tls_required,
         port_whitelist=port_whitelist,
+        prefix=prefix,
     )
 
     if not outbounds:
-        print("Error: No valid proxy nodes left after parsing!")
+        print(f"{prefix}Error: No valid proxy nodes left after parsing!")
         return
 
     # 4. RKN + GeoIP фильтрация
-    outbounds = _rkn_geoip_filter(outbounds)
+    outbounds = _rkn_geoip_filter(outbounds, prefix=prefix)
 
     if not outbounds:
-        print("Error: No valid proxy nodes left after RKN+GeoIP filtration!")
+        print(f"{prefix}Error: No valid proxy nodes left after RKN+GeoIP filtration!")
         return
 
-    print(f"Total {len(outbounds)} nodes passed all filters.")
+    print(f"[{output_file}] Total {len(outbounds)} nodes passed all filters.")
 
     # 5. Сортировка + нумерация
     _sort_and_tag(outbounds)
