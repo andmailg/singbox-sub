@@ -83,10 +83,6 @@ def parse_proxy_link(link: str) -> dict | None:
     if not hostname:
         return None
 
-    port = parsed.port
-    if not port:
-        return None
-
     params = urllib.parse.parse_qs(parsed.query)
     params_lower = {k.lower(): v for k, v in params.items()}
 
