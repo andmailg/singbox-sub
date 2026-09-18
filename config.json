@@ -22,19 +22,19 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇦🇪node-1",
-        "🇩🇪node-2",
+        "node-1",
+        "🇦🇪node-2",
         "🇩🇪node-3",
         "🇩🇪node-4",
         "🇩🇪node-5",
         "🇩🇪node-6",
         "🇩🇪node-7",
         "🇩🇪node-8",
-        "🇪🇪node-9",
-        "🇪🇪node-10",
+        "🇩🇪node-9",
+        "🇩🇰node-10",
         "🇪🇪node-11",
-        "🇫🇮node-12",
-        "🇫🇮node-13",
+        "🇪🇪node-12",
+        "🇪🇪node-13",
         "🇫🇮node-14",
         "🇫🇮node-15",
         "🇫🇮node-16",
@@ -54,28 +54,31 @@
         "🇫🇮node-30",
         "🇫🇮node-31",
         "🇫🇮node-32",
-        "🇭🇰node-33",
-        "🇮🇷node-34",
-        "🇰🇷node-35",
-        "🇰🇷node-36",
-        "🇳🇱node-37",
-        "🇳🇱node-38",
-        "🇵🇱node-39",
-        "🇷🇴node-40",
-        "🇷🇴node-41",
-        "🇷🇴node-42",
+        "🇫🇮node-33",
+        "🇭🇰node-34",
+        "🇮🇳node-35",
+        "🇮🇷node-36",
+        "🇰🇷node-37",
+        "🇰🇷node-38",
+        "🇳🇱node-39",
+        "🇳🇱node-40",
+        "🇵🇱node-41",
+        "🇵🇱node-42",
         "🇷🇴node-43",
         "🇷🇴node-44",
         "🇷🇴node-45",
-        "🇸🇪node-46",
-        "🇹🇷node-47",
-        "🇺🇸node-48",
-        "🇺🇸node-49",
+        "🇷🇴node-46",
+        "🇷🇴node-47",
+        "🇷🇴node-48",
+        "🇹🇷node-49",
         "🇺🇸node-50",
         "🇺🇸node-51",
         "🇺🇸node-52",
         "🇺🇸node-53",
-        "🇺🇸node-54"
+        "🇺🇸node-54",
+        "🇺🇸node-55",
+        "🇺🇸node-56",
+        "🇺🇸node-57"
       ],
       "default": "auto"
     },
@@ -83,19 +86,19 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇦🇪node-1",
-        "🇩🇪node-2",
+        "node-1",
+        "🇦🇪node-2",
         "🇩🇪node-3",
         "🇩🇪node-4",
         "🇩🇪node-5",
         "🇩🇪node-6",
         "🇩🇪node-7",
         "🇩🇪node-8",
-        "🇪🇪node-9",
-        "🇪🇪node-10",
+        "🇩🇪node-9",
+        "🇩🇰node-10",
         "🇪🇪node-11",
-        "🇫🇮node-12",
-        "🇫🇮node-13",
+        "🇪🇪node-12",
+        "🇪🇪node-13",
         "🇫🇮node-14",
         "🇫🇮node-15",
         "🇫🇮node-16",
@@ -115,28 +118,31 @@
         "🇫🇮node-30",
         "🇫🇮node-31",
         "🇫🇮node-32",
-        "🇭🇰node-33",
-        "🇮🇷node-34",
-        "🇰🇷node-35",
-        "🇰🇷node-36",
-        "🇳🇱node-37",
-        "🇳🇱node-38",
-        "🇵🇱node-39",
-        "🇷🇴node-40",
-        "🇷🇴node-41",
-        "🇷🇴node-42",
+        "🇫🇮node-33",
+        "🇭🇰node-34",
+        "🇮🇳node-35",
+        "🇮🇷node-36",
+        "🇰🇷node-37",
+        "🇰🇷node-38",
+        "🇳🇱node-39",
+        "🇳🇱node-40",
+        "🇵🇱node-41",
+        "🇵🇱node-42",
         "🇷🇴node-43",
         "🇷🇴node-44",
         "🇷🇴node-45",
-        "🇸🇪node-46",
-        "🇹🇷node-47",
-        "🇺🇸node-48",
-        "🇺🇸node-49",
+        "🇷🇴node-46",
+        "🇷🇴node-47",
+        "🇷🇴node-48",
+        "🇹🇷node-49",
         "🇺🇸node-50",
         "🇺🇸node-51",
         "🇺🇸node-52",
         "🇺🇸node-53",
-        "🇺🇸node-54"
+        "🇺🇸node-54",
+        "🇺🇸node-55",
+        "🇺🇸node-56",
+        "🇺🇸node-57"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -144,7 +150,20 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇦🇪node-1",
+      "tag": "node-1",
+      "server": "cf2.rumedia-cdn.com",
+      "server_port": 25443,
+      "password": "29ffde49-e1d6-4dcd-a135-352920f9f0b8",
+      "tls": {
+        "enabled": true,
+        "server_name": "cf2.rumedia-cdn.com"
+      },
+      "up_mbps": 100,
+      "down_mbps": 100
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇦🇪node-2",
       "server": "130.49.161.70",
       "server_port": 443,
       "password": "p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR",
@@ -157,7 +176,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-2",
+      "tag": "🇩🇪node-3",
       "server": "181.214.99.162",
       "server_port": 35000,
       "password": "b4bd0613-ff7c-4f2f-954d-185915e6ddad",
@@ -170,7 +189,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-3",
+      "tag": "🇩🇪node-4",
       "server": "5.175.249.174",
       "server_port": 35000,
       "password": "b4bd0613-ff7c-4f2f-954d-185915e6ddad",
@@ -183,7 +202,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-4",
+      "tag": "🇩🇪node-5",
       "server": "77.90.41.197",
       "server_port": 35000,
       "password": "b4bd0613-ff7c-4f2f-954d-185915e6ddad",
@@ -196,7 +215,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-5",
+      "tag": "🇩🇪node-6",
       "server": "de.jey.cc.cd",
       "server_port": 37003,
       "password": "TelegramVPNJey",
@@ -216,7 +235,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-6",
+      "tag": "🇩🇪node-7",
       "server": "de1.sferavpn.pro",
       "server_port": 443,
       "password": "cd74c0a406664a5bc0bac098220a2468",
@@ -233,7 +252,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-7",
+      "tag": "🇩🇪node-8",
       "server": "de1.xiaoliyu.cyou",
       "server_port": 4433,
       "password": "19f72087-4591-4d72-930b-2697078ec2be",
@@ -246,7 +265,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-8",
+      "tag": "🇩🇪node-9",
       "server": "gift-catalog.aroonia.ir",
       "server_port": 52000,
       "password": "8z2e26xkqsa598s3",
@@ -263,7 +282,20 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇪🇪node-9",
+      "tag": "🇩🇰node-10",
+      "server": "se.xiaoliyu.cyou",
+      "server_port": 4433,
+      "password": "19f72087-4591-4d72-930b-2697078ec2be",
+      "tls": {
+        "enabled": true,
+        "server_name": "se.xiaoliyu.cyou"
+      },
+      "up_mbps": 100,
+      "down_mbps": 100
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇪🇪node-11",
       "server": "217.60.182.79",
       "server_port": 443,
       "password": "sOiWCQ2AdIV0OWNuqQVyWp4JZnRxdyLROSjX",
@@ -276,7 +308,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇪🇪node-10",
+      "tag": "🇪🇪node-12",
       "server": "ee1.sferavpn.pro",
       "server_port": 443,
       "password": "cd74c0a406664a5bc0bac098220a2468",
@@ -293,7 +325,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇪🇪node-11",
+      "tag": "🇪🇪node-13",
       "server": "ee2.sferavpn.pro",
       "server_port": 443,
       "password": "cd74c0a406664a5bc0bac098220a2468",
@@ -310,7 +342,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮node-12",
+      "tag": "🇫🇮node-14",
       "server": "65.109.177.191",
       "server_port": 443,
       "password": "t-me-v2rayyngvpn",
@@ -323,7 +355,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮node-13",
+      "tag": "🇫🇮node-15",
       "server": "assets.gateway-stream.com",
       "server_port": 52024,
       "password": "76kyzc055ahiyfzy",
@@ -336,7 +368,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮node-14",
+      "tag": "🇫🇮node-16",
       "server": "assets.gateway-stream.com",
       "server_port": 52064,
       "password": "76kyzc055ahiyfzy",
@@ -349,7 +381,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮node-15",
+      "tag": "🇫🇮node-17",
       "server": "assets.gateway-stream.com",
       "server_port": 52021,
       "password": "xbr3ppxk7rv068c4",
@@ -366,7 +398,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮node-16",
+      "tag": "🇫🇮node-18",
       "server": "assets.gateway-stream.com",
       "server_port": 52023,
       "password": "xbr3ppxk7rv068c4",
@@ -383,24 +415,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮node-17",
-      "server": "assets.gateway-stream.com",
-      "server_port": 52030,
-      "password": "xbr3ppxk7rv068c4",
-      "tls": {
-        "enabled": true,
-        "server_name": "assets.gateway-stream.com"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "x5y77oxwfcl868u3"
-      },
-      "up_mbps": 100,
-      "down_mbps": 100
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇮node-18",
+      "tag": "🇫🇮node-19",
       "server": "fiproxy1.lockdwn.com",
       "server_port": 443,
       "password": "6aab8efdf13945829ae3699c342be406",
@@ -417,7 +432,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮node-19",
+      "tag": "🇫🇮node-20",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52087,
       "password": "8f0gvz5eul6omhq4",
@@ -434,7 +449,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮node-20",
+      "tag": "🇫🇮node-21",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52076,
       "password": "fmaznn1lrzys7ddy",
@@ -451,7 +466,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮node-21",
+      "tag": "🇫🇮node-22",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52056,
       "password": "fr9p9ji70krwnup6",
@@ -464,29 +479,9 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮node-22",
-      "server": "giftcard.gateway-stream.com",
-      "server_port": 52021,
-      "password": "s6gt5e4mof43sfg8",
-      "tls": {
-        "enabled": true,
-        "server_name": "giftcard.gateway-stream.com",
-        "alpn": [
-          "h3"
-        ]
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "fuw2k1ddrouwxr3u"
-      },
-      "up_mbps": 100,
-      "down_mbps": 100
-    },
-    {
-      "type": "hysteria2",
       "tag": "🇫🇮node-23",
       "server": "giftcard.gateway-stream.com",
-      "server_port": 52026,
+      "server_port": 52021,
       "password": "s6gt5e4mof43sfg8",
       "tls": {
         "enabled": true,
@@ -506,7 +501,7 @@
       "type": "hysteria2",
       "tag": "🇫🇮node-24",
       "server": "giftcard.gateway-stream.com",
-      "server_port": 52030,
+      "server_port": 52026,
       "password": "s6gt5e4mof43sfg8",
       "tls": {
         "enabled": true,
@@ -526,7 +521,7 @@
       "type": "hysteria2",
       "tag": "🇫🇮node-25",
       "server": "giftcard.gateway-stream.com",
-      "server_port": 52033,
+      "server_port": 52030,
       "password": "s6gt5e4mof43sfg8",
       "tls": {
         "enabled": true,
@@ -546,7 +541,7 @@
       "type": "hysteria2",
       "tag": "🇫🇮node-26",
       "server": "giftcard.gateway-stream.com",
-      "server_port": 52050,
+      "server_port": 52033,
       "password": "s6gt5e4mof43sfg8",
       "tls": {
         "enabled": true,
@@ -566,7 +561,7 @@
       "type": "hysteria2",
       "tag": "🇫🇮node-27",
       "server": "giftcard.gateway-stream.com",
-      "server_port": 52067,
+      "server_port": 52050,
       "password": "s6gt5e4mof43sfg8",
       "tls": {
         "enabled": true,
@@ -586,7 +581,7 @@
       "type": "hysteria2",
       "tag": "🇫🇮node-28",
       "server": "giftcard.gateway-stream.com",
-      "server_port": 52069,
+      "server_port": 52067,
       "password": "s6gt5e4mof43sfg8",
       "tls": {
         "enabled": true,
@@ -606,7 +601,7 @@
       "type": "hysteria2",
       "tag": "🇫🇮node-29",
       "server": "giftcard.gateway-stream.com",
-      "server_port": 52071,
+      "server_port": 52069,
       "password": "s6gt5e4mof43sfg8",
       "tls": {
         "enabled": true,
@@ -626,7 +621,7 @@
       "type": "hysteria2",
       "tag": "🇫🇮node-30",
       "server": "giftcard.gateway-stream.com",
-      "server_port": 52088,
+      "server_port": 52071,
       "password": "s6gt5e4mof43sfg8",
       "tls": {
         "enabled": true,
@@ -646,6 +641,26 @@
       "type": "hysteria2",
       "tag": "🇫🇮node-31",
       "server": "giftcard.gateway-stream.com",
+      "server_port": 52088,
+      "password": "s6gt5e4mof43sfg8",
+      "tls": {
+        "enabled": true,
+        "server_name": "giftcard.gateway-stream.com",
+        "alpn": [
+          "h3"
+        ]
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "fuw2k1ddrouwxr3u"
+      },
+      "up_mbps": 100,
+      "down_mbps": 100
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇫🇮node-32",
+      "server": "giftcard.gateway-stream.com",
       "server_port": 52062,
       "password": "vz86jgszv4zszchv",
       "tls": {
@@ -661,7 +676,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮node-32",
+      "tag": "🇫🇮node-33",
       "server": "giftcard.gateway-stream.com",
       "server_port": 52090,
       "password": "xf2ak19a4uajprxg",
@@ -678,7 +693,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇭🇰node-33",
+      "tag": "🇭🇰node-34",
       "server": "mz.hkychina.com",
       "server_port": 8443,
       "password": "HysTeria2026!Proxy",
@@ -691,7 +706,20 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇮🇷node-34",
+      "tag": "🇮🇳node-35",
+      "server": "vpn-in-001.fastervpn.world",
+      "server_port": 443,
+      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
+      "tls": {
+        "enabled": true,
+        "server_name": "vpn-in-001.fastervpn.world"
+      },
+      "up_mbps": 100,
+      "down_mbps": 100
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇮🇷node-36",
       "server": "srm.kishonline.online",
       "server_port": 443,
       "password": "9P5zfc7S0s",
@@ -704,7 +732,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-35",
+      "tag": "🇰🇷node-37",
       "server": "150-230-252-217.liao.kdns.fr",
       "server_port": 50160,
       "password": "9cfc9458e48c028ec03ff86ebc71c744",
@@ -717,7 +745,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-36",
+      "tag": "🇰🇷node-38",
       "server": "152-69-231-175.liao.kdns.fr",
       "server_port": 50160,
       "password": "1beb216e3f60aea9555dae60d219a5ca",
@@ -730,7 +758,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇳🇱node-37",
+      "tag": "🇳🇱node-39",
       "server": "206.71.158.37",
       "server_port": 35200,
       "password": "Yet-Another-Public-Config-1",
@@ -743,7 +771,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇳🇱node-38",
+      "tag": "🇳🇱node-40",
       "server": "grape-turbo-fr.roxa.org",
       "server_port": 8443,
       "password": "s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z",
@@ -756,7 +784,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇵🇱node-39",
+      "tag": "🇵🇱node-41",
       "server": "admin.wwwinternetvideo.click",
       "server_port": 443,
       "password": "YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc",
@@ -769,7 +797,20 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-40",
+      "tag": "🇵🇱node-42",
+      "server": "streambox.wwwinternetvideo.click",
+      "server_port": 443,
+      "password": "865e271f7c97b549b024255c9d02cebe9cc0c2c070a82b1e11bb11b9cd88dd01",
+      "tls": {
+        "enabled": true,
+        "server_name": "streambox.wwwinternetvideo.click"
+      },
+      "up_mbps": 100,
+      "down_mbps": 100
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇷🇴node-43",
       "server": "hopp-germany-new.ddnsguru.com",
       "server_port": 8443,
       "password": "9Me_Jx935gnHx13_Nx45M_NYXe037js_Be4z",
@@ -782,7 +823,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-41",
+      "tag": "🇷🇴node-44",
       "server": "hopp-romania-new.roxa.org",
       "server_port": 8080,
       "password": "Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0",
@@ -795,7 +836,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-42",
+      "tag": "🇷🇴node-45",
       "server": "hopp-romania-new.roxa.org",
       "server_port": 8443,
       "password": "Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0",
@@ -808,7 +849,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-43",
+      "tag": "🇷🇴node-46",
       "server": "hy2-new.aspidnet.xyz",
       "server_port": 443,
       "password": "QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s",
@@ -825,7 +866,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-44",
+      "tag": "🇷🇴node-47",
       "server": "hy2.aspidnet.xyz",
       "server_port": 443,
       "password": "p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR",
@@ -842,7 +883,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-45",
+      "tag": "🇷🇴node-48",
       "server": "ro.h2corp.org",
       "server_port": 443,
       "password": "uj7XGZGUqRlmdpk6rysyZMN333RWsxTFj0hBIMaFV-NUCd5r",
@@ -855,20 +896,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇸🇪node-46",
-      "server": "onecloudstream.com",
-      "server_port": 9443,
-      "password": "e3c3b722-1264-4cdc-a97c-b0a1bb73cd67",
-      "tls": {
-        "enabled": true,
-        "server_name": "onecloudstream.com"
-      },
-      "up_mbps": 100,
-      "down_mbps": 100
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇹🇷node-47",
+      "tag": "🇹🇷node-49",
       "server": "me17.msjia8844.site",
       "server_port": 7443,
       "password": "M8LP9DztTr3znqCkmf-r08CQLBLLFK1r",
@@ -885,7 +913,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-48",
+      "tag": "🇺🇸node-50",
       "server": "bwdf2fnt.xn--e1aatfr8bwa.online",
       "server_port": 30000,
       "password": "tnnls",
@@ -898,7 +926,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-49",
+      "tag": "🇺🇸node-51",
       "server": "bwdf2fnt.xn--e1aatfr8bwa.online",
       "server_port": 443,
       "password": "tnnls",
@@ -915,7 +943,20 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-50",
+      "tag": "🇺🇸node-52",
+      "server": "es1.xiaoliyu.cyou",
+      "server_port": 4433,
+      "password": "19f72087-4591-4d72-930b-2697078ec2be",
+      "tls": {
+        "enabled": true,
+        "server_name": "es1.xiaoliyu.cyou"
+      },
+      "up_mbps": 100,
+      "down_mbps": 100
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇺🇸node-53",
       "server": "hy2.123266.xyz",
       "server_port": 33333,
       "password": "bce6c821-200d-421f-bf3d-7159e5246ea0",
@@ -928,7 +969,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-51",
+      "tag": "🇺🇸node-54",
       "server": "hy2.561891.xyz",
       "server_port": 44356,
       "password": "dongtaiwang.com",
@@ -941,7 +982,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-52",
+      "tag": "🇺🇸node-55",
       "server": "news.gazette.help",
       "server_port": 443,
       "password": "sOiWCQ2AdIV0OWNuqQVyWp4JZnRxdyLROSjX",
@@ -954,7 +995,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-53",
+      "tag": "🇺🇸node-56",
       "server": "nl1.sferavpn.pro",
       "server_port": 443,
       "password": "cd74c0a406664a5bc0bac098220a2468",
@@ -971,7 +1012,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-54",
+      "tag": "🇺🇸node-57",
       "server": "ru1.sferavpn.pro",
       "server_port": 443,
       "password": "cd74c0a406664a5bc0bac098220a2468",
