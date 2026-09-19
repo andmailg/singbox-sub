@@ -1,0 +1,68 @@
+name: Auto Test Hy2
+
+on:
+  schedule:
+    # Запуск каждые 5 часов (синхронизировано с convert-hy2.yml)
+    - cron: '0 */5 * * *'
+  workflow_dispatch: # Ручной запуск
+
+jobs:
+  test-and-save:
+    runs-on: ubuntu-latest
+    
+    # Ждём завершения конвертации, чтобы тестировать актуальные ноды
+    needs: []
+    
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests maxminddb PySocks
+
+      - name: Install Hysteria2 CLI
+        run: |
+          curl -L https://github.com/HyNetworks/hysteria/releases/download/app%2Fv2.12.3/hysteria-linux-amd64 -o hy2
+          # Делаем файл исполняемым и переносим в системную директорию
+          chmod +x hy2
+          sudo mv hy2 /usr/local/bin/hy2
+          
+          # Проверяем корректность установки
+          hy2 version
+
+      - name: Test nodes
+        run: |
+          python python/testers/hy2_node_tester.py \
+            hy2_tun.json \
+            --output latest_results.json \
+            --workers 20 \
+            --timeout 5 \
+            --min-ports 1
+
+      - name: Commit and push if changed
+        run: |
+          # Корректная настройка бота GitHub Actions
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Добавляем сгенерированные JSON-отчеты. 
+          # Если вы измените Python-скрипт на сохранение в один файл, укажите его вместо *.json
+          git add *.json
+          
+          # Проверяем изменения. Если они есть — коммитим и пушим.
+          if git diff --staged --quiet; then
+            echo "Нет изменений для коммита."
+          else
+            git commit -m "Auto-update Hysteria2 test results [skip ci]"
+            git push
+          fi

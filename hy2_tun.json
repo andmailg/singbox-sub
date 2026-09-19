@@ -3,13 +3,101 @@
     "level": "warn",
     "timestamp": true
   },
+  "dns": {
+    "servers": [
+      {
+        "type": "https",
+        "tag": "dns-local",
+        "server": "77.88.8.8"
+      },
+      {
+        "type": "https",
+        "tag": "dns-remote",
+        "server": "8.8.8.8",
+        "detour": "proxy-out",
+        "tls": {
+          "enabled": true,
+          "server_name": "dns.google"
+        }
+      },
+      {
+        "type": "https",
+        "tag": "smart-dns",
+        "server": "xbox-dns.ru",
+        "domain_resolver": "dns-local"
+      },
+      {
+        "type": "fakeip",
+        "tag": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      },
+      {
+        "type": "local",
+        "tag": "local"
+      }
+    ],
+    "rules": [
+      {
+        "domain_suffix": [
+          ".lan",
+          ".local"
+        ],
+        "server": "local"
+      },
+      {
+        "rule_set": [
+          "geosite-category-ai-!cn"
+        ],
+        "server": "smart-dns"
+      },
+      {
+        "rule_set": [
+          "geosite-category-ru"
+        ],
+        "server": "dns-local"
+      },
+      {
+        "query_type": [
+          "HTTPS",
+          "SVCB"
+        ],
+        "rule_set": [
+          "geosite-category-media-ru-blocked",
+          "antizapret"
+        ],
+        "action": "predefined",
+        "rcode": "REFUSED"
+      },
+      {
+        "rule_set": [
+          "geosite-category-media-ru-blocked",
+          "antizapret"
+        ],
+        "server": "fakeip"
+      }
+    ],
+    "final": "dns-remote",
+    "strategy": "prefer_ipv4",
+    "cache_capacity": 2048
+  },
   "inbounds": [
     {
-      "type": "socks",
-      "tag": "socks-in",
-      "listen": "127.0.0.1",
-      "listen_port": 1080,
-      "tcp_fast_open": true
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 1420,
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "stack": "mixed",
+      "route_exclude_address": [
+        "10.0.0.0/8",
+        "172.16.0.0/12",
+        "192.168.0.0/16",
+        "169.254.0.0/16",
+        "224.0.0.0/4",
+        "255.255.255.255/32",
+        "fc00::/7"
+      ]
     }
   ],
   "outbounds": [
@@ -80,8 +168,8 @@
         "enabled": true,
         "server_name": "hopp-swizland-new.mysynology.net"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
@@ -97,8 +185,8 @@
         "type": "salamander",
         "password": "44f1c1e2f8b99e792ceed574627a1eb0"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
@@ -114,8 +202,8 @@
         "type": "salamander",
         "password": "44f1c1e2f8b99e792ceed574627a1eb0"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
@@ -127,8 +215,8 @@
         "enabled": true,
         "server_name": "tishina-axe.dedyn.io"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
@@ -140,8 +228,8 @@
         "enabled": true,
         "server_name": "mz.hkychina.com"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
@@ -153,8 +241,8 @@
         "enabled": true,
         "server_name": "vpn-in-001.fastervpn.world"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
@@ -166,8 +254,8 @@
         "enabled": true,
         "server_name": "150-230-252-217.liao.kdns.fr"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
@@ -179,8 +267,8 @@
         "enabled": true,
         "server_name": "152-69-231-175.liao.kdns.fr"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
@@ -192,8 +280,8 @@
         "enabled": true,
         "server_name": "grape-turbo-fr.roxa.org"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
@@ -205,12 +293,25 @@
         "enabled": true,
         "server_name": "admin.wwwinternetvideo.click"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
       "tag": "🇷🇴node-11",
+      "server": "hopp-germany-new.ddnsguru.com",
+      "server_port": 8443,
+      "password": "9Me_Jx935gnHx13_Nx45M_NYXe037js_Be4z",
+      "tls": {
+        "enabled": true,
+        "server_name": "hopp-germany-new.ddnsguru.com"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇷🇴node-12",
       "server": "hopp-romania-new.roxa.org",
       "server_port": 8080,
       "password": "Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0",
@@ -218,12 +319,12 @@
         "enabled": true,
         "server_name": "hopp-romania-new.roxa.org"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-12",
+      "tag": "🇷🇴node-13",
       "server": "hopp-romania-new.roxa.org",
       "server_port": 8443,
       "password": "Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0",
@@ -231,12 +332,12 @@
         "enabled": true,
         "server_name": "hopp-romania-new.roxa.org"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-13",
+      "tag": "🇷🇴node-14",
       "server": "hy2-new.aspidnet.xyz",
       "server_port": 443,
       "password": "QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s",
@@ -248,25 +349,8 @@
         "type": "salamander",
         "password": "c1b4086fea89914496c7e10967a419216566"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇷🇴node-14",
-      "server": "hy2.aspidnet.xyz",
-      "server_port": 443,
-      "password": "p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR",
-      "tls": {
-        "enabled": true,
-        "server_name": "hy2.aspidnet.xyz"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "rG07s3COMIEvdnQipRyWzx_H_2xygNC3"
-      },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
@@ -278,8 +362,8 @@
         "enabled": true,
         "server_name": "hy2.123266.xyz"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
@@ -291,8 +375,8 @@
         "enabled": true,
         "server_name": "hy2.561891.xyz"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
@@ -308,8 +392,8 @@
         "type": "salamander",
         "password": "44f1c1e2f8b99e792ceed574627a1eb0"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
     },
     {
       "type": "hysteria2",
@@ -325,24 +409,81 @@
         "type": "salamander",
         "password": "44f1c1e2f8b99e792ceed574627a1eb0"
       },
-      "up_mbps": 100,
-      "down_mbps": 100
+      "up_mbps": 20,
+      "down_mbps": 20
+    }
+  ],
+  "http_clients": [
+    {
+      "tag": "rules-downloader"
     }
   ],
   "route": {
+    "default_http_client": "rules-downloader",
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "rule_set": [
+          "geosite-category-media-ru-blocked",
+          "antizapret"
+        ],
+        "outbound": "proxy-out"
+      },
+      {
+        "rule_set": [
+          "geosite-category-ru",
+          "geoip-ru",
+          "geosite-category-ai-!cn"
+        ],
+        "outbound": "direct-out"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "db-github",
+        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-github.srs"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-media-ru-blocked",
+        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-category-media-ru-blocked.srs"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ru",
+        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-category-ru.srs"
+      },
+      {
+        "type": "remote",
+        "tag": "geoip-ru",
+        "url": "https://github.com/SagerNet/sing-geoip/raw/rule-set/geoip-ru.srs"
+      },
+      {
+        "type": "remote",
+        "tag": "antizapret",
+        "url": "https://github.com/savely-krasovsky/antizapret-sing-box/releases/latest/download/antizapret.srs"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ai-!cn",
+        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-category-ai-!cn.srs"
+      }
+    ],
     "final": "proxy-out",
-    "auto_detect_interface": true
+    "auto_detect_interface": true,
+    "override_android_vpn": true,
+    "default_domain_resolver": "dns-local"
   },
   "experimental": {
     "cache_file": {
-      "enabled": true,
-      "path": "/opt/etc/sing-box/cache"
-    },
-    "clash_api": {
-      "external_controller": "192.168.1.1:9090",
-      "external_ui": "/opt/etc/sing-box/ui",
-      "external_ui_download_detour": "direct-out",
-      "access_control_allow_private_network": true
+      "enabled": true
     }
   }
 }

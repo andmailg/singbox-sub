@@ -1,0 +1,12 @@
+"""Модуль сборки и экспорта конфига Sing-box для Hysteria2 нод."""
+
+from src.orchestrator import run_pipeline
+
+
+if __name__ == "__main__":
+    run_pipeline(
+        parser_module="src.parsers.hy2_parser",
+        protocol="hy2",
+        exporter="tun",
+        output_file="hy2_tun.json",
+    )
