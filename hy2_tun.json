@@ -115,9 +115,9 @@
         "🇪🇪node-3",
         "🇪🇪node-4",
         "🇭🇰node-5",
-        "🇮🇳node-6",
+        "🇰🇷node-6",
         "🇰🇷node-7",
-        "🇰🇷node-8",
+        "🇳🇱node-8",
         "🇳🇱node-9",
         "🇵🇱node-10",
         "🇷🇴node-11",
@@ -129,7 +129,8 @@
         "🇺🇸node-17",
         "🇺🇸node-18",
         "🇺🇸node-19",
-        "🇺🇸node-20"
+        "🇺🇸node-20",
+        "🇺🇸node-21"
       ],
       "default": "auto"
     },
@@ -142,9 +143,9 @@
         "🇪🇪node-3",
         "🇪🇪node-4",
         "🇭🇰node-5",
-        "🇮🇳node-6",
+        "🇰🇷node-6",
         "🇰🇷node-7",
-        "🇰🇷node-8",
+        "🇳🇱node-8",
         "🇳🇱node-9",
         "🇵🇱node-10",
         "🇷🇴node-11",
@@ -156,7 +157,8 @@
         "🇺🇸node-17",
         "🇺🇸node-18",
         "🇺🇸node-19",
-        "🇺🇸node-20"
+        "🇺🇸node-20",
+        "🇺🇸node-21"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -237,20 +239,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇮🇳node-6",
-      "server": "vpn-in-001.fastervpn.world",
-      "server_port": 443,
-      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
-      "tls": {
-        "enabled": true,
-        "server_name": "vpn-in-001.fastervpn.world"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇰🇷node-7",
+      "tag": "🇰🇷node-6",
       "server": "150-230-252-217.liao.kdns.fr",
       "server_port": 50160,
       "password": "9cfc9458e48c028ec03ff86ebc71c744",
@@ -263,7 +252,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-8",
+      "tag": "🇰🇷node-7",
       "server": "152-69-231-175.liao.kdns.fr",
       "server_port": 50160,
       "password": "1beb216e3f60aea9555dae60d219a5ca",
@@ -276,13 +265,26 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇳🇱node-9",
+      "tag": "🇳🇱node-8",
       "server": "fast.patrik-service.com",
       "server_port": 1443,
       "password": "fa1b99c89b5479752ae95af92a79e833",
       "tls": {
         "enabled": true,
         "server_name": "fast.patrik-service.com"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇳🇱node-9",
+      "server": "grape-turbo-fr.roxa.org",
+      "server_port": 8443,
+      "password": "s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z",
+      "tls": {
+        "enabled": true,
+        "server_name": "grape-turbo-fr.roxa.org"
       },
       "up_mbps": 20,
       "down_mbps": 20
@@ -393,6 +395,19 @@
     {
       "type": "hysteria2",
       "tag": "🇺🇸node-17",
+      "server": "gta.internet-card.sbs",
+      "server_port": 443,
+      "password": "mkL3AfdSZIpTWRB9TcWPn9vywPGN89MRHg3ToRDj",
+      "tls": {
+        "enabled": true,
+        "server_name": "gta.internet-card.sbs"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇺🇸node-18",
       "server": "hy2.123266.xyz",
       "server_port": 33333,
       "password": "bce6c821-200d-421f-bf3d-7159e5246ea0",
@@ -405,7 +420,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-18",
+      "tag": "🇺🇸node-19",
       "server": "hy2.561891.xyz",
       "server_port": 44356,
       "password": "dongtaiwang.com",
@@ -418,7 +433,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-19",
+      "tag": "🇺🇸node-20",
       "server": "nl1.sferavpn.pro",
       "server_port": 443,
       "password": "cd74c0a406664a5bc0bac098220a2468",
@@ -435,7 +450,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-20",
+      "tag": "🇺🇸node-21",
       "server": "ru1.sferavpn.pro",
       "server_port": 443,
       "password": "cd74c0a406664a5bc0bac098220a2468",
