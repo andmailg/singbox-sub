@@ -125,10 +125,7 @@
       "password": "319ed24b1c7203aa",
       "tls": {
         "enabled": true,
-        "server_name": "tishina-axe.dedyn.io",
-        "alpn": [
-          "h3"
-        ]
+        "server_name": "tishina-axe.dedyn.io"
       },
       "up_mbps": 100,
       "down_mbps": 100
@@ -214,19 +211,6 @@
     {
       "type": "hysteria2",
       "tag": "🇷🇴node-11",
-      "server": "hopp-germany-new.ddnsguru.com",
-      "server_port": 8443,
-      "password": "9Me_Jx935gnHx13_Nx45M_NYXe037js_Be4z",
-      "tls": {
-        "enabled": true,
-        "server_name": "hopp-germany-new.ddnsguru.com"
-      },
-      "up_mbps": 100,
-      "down_mbps": 100
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇷🇴node-12",
       "server": "hopp-romania-new.roxa.org",
       "server_port": 8080,
       "password": "Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0",
@@ -239,7 +223,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-13",
+      "tag": "🇷🇴node-12",
       "server": "hopp-romania-new.roxa.org",
       "server_port": 8443,
       "password": "Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0",
@@ -252,7 +236,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-14",
+      "tag": "🇷🇴node-13",
       "server": "hy2-new.aspidnet.xyz",
       "server_port": 443,
       "password": "QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s",
@@ -263,6 +247,23 @@
       "obfs": {
         "type": "salamander",
         "password": "c1b4086fea89914496c7e10967a419216566"
+      },
+      "up_mbps": 100,
+      "down_mbps": 100
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇷🇴node-14",
+      "server": "hy2.aspidnet.xyz",
+      "server_port": 443,
+      "password": "p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR",
+      "tls": {
+        "enabled": true,
+        "server_name": "hy2.aspidnet.xyz"
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "rG07s3COMIEvdnQipRyWzx_H_2xygNC3"
       },
       "up_mbps": 100,
       "down_mbps": 100
