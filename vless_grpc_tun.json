@@ -169,14 +169,16 @@
         "🇵🇱node-57",
         "🇵🇱node-58",
         "🇵🇱node-59",
-        "🇸🇨node-60",
+        "🇵🇱node-60",
         "🇸🇨node-61",
-        "🇸🇪node-62",
-        "🇺🇸node-63",
+        "🇸🇨node-62",
+        "🇸🇪node-63",
         "🇺🇸node-64",
         "🇺🇸node-65",
         "🇺🇸node-66",
-        "🇺🇸node-67"
+        "🇺🇸node-67",
+        "🇺🇸node-68",
+        "🇺🇸node-69"
       ],
       "default": "auto"
     },
@@ -243,14 +245,16 @@
         "🇵🇱node-57",
         "🇵🇱node-58",
         "🇵🇱node-59",
-        "🇸🇨node-60",
+        "🇵🇱node-60",
         "🇸🇨node-61",
-        "🇸🇪node-62",
-        "🇺🇸node-63",
+        "🇸🇨node-62",
+        "🇸🇪node-63",
         "🇺🇸node-64",
         "🇺🇸node-65",
         "🇺🇸node-66",
-        "🇺🇸node-67"
+        "🇺🇸node-67",
+        "🇺🇸node-68",
+        "🇺🇸node-69"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -1144,7 +1148,22 @@
     },
     {
       "type": "vless",
-      "tag": "🇸🇨node-60",
+      "tag": "🇵🇱node-60",
+      "server": "plsh.riotvpn.eu",
+      "server_port": 8443,
+      "uuid": "2e9d3568-f977-4cea-800d-fd9a876e7252",
+      "tls": {
+        "enabled": true,
+        "server_name": "static.vkimages.io"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc-yandex"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇨node-61",
       "server": "154.83.2.212",
       "server_port": 8443,
       "uuid": "f988794c-cdb2-4842-b604-06e65cf6d040",
@@ -1159,7 +1178,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇸🇨node-61",
+      "tag": "🇸🇨node-62",
       "server": "156.229.48.66",
       "server_port": 8443,
       "uuid": "51d22c42-5342-4715-a927-1b76226dd4cf",
@@ -1174,7 +1193,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇸🇪node-62",
+      "tag": "🇸🇪node-63",
       "server": "185.146.173.59",
       "server_port": 8443,
       "uuid": "f988794c-cdb2-4842-b604-06e65cf6d040",
@@ -1189,7 +1208,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-63",
+      "tag": "🇺🇸node-64",
       "server": "104.245.242.8",
       "server_port": 8443,
       "uuid": "4350213a-b4e7-262a-0bd7-bd16957cf71a",
@@ -1204,7 +1223,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-64",
+      "tag": "🇺🇸node-65",
       "server": "136.0.116.171",
       "server_port": 8443,
       "uuid": "1ec9239a-4174-4496-800b-5756bdf21041",
@@ -1219,7 +1238,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-65",
+      "tag": "🇺🇸node-66",
       "server": "144.31.40.96",
       "server_port": 8443,
       "uuid": "7ab9fe4f-6699-427f-a828-9fcf2496d714",
@@ -1234,7 +1253,22 @@
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-66",
+      "tag": "🇺🇸node-67",
+      "server": "80.209.242.5",
+      "server_port": 8443,
+      "uuid": "89d4896a-5bb8-43fc-a889-3837103cd053",
+      "tls": {
+        "enabled": true,
+        "server_name": "yandex.ru"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": ""
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-68",
       "server": "98.142.251.31",
       "server_port": 8443,
       "uuid": "f50822b7-02ec-4611-83bd-ff29411e0e10",
@@ -1249,7 +1283,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-67",
+      "tag": "🇺🇸node-69",
       "server": "dns3.nufilter.store",
       "server_port": 8443,
       "uuid": "9c46957b-688b-451c-9d10-4663f7e7dfdc",
