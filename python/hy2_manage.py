@@ -50,9 +50,6 @@ def cmd_test(args):
     for node in working:
         node["_last_ok_ts"] = now_ts
 
-    # Удаляем устаревшие
-    working = remove_stale_nodes(working, stale_days=args.stale_days)
-
     # Сохраняем
     save_working_nodes(working)
     print(f"\nSaved {len(working)} working nodes to hy2_working.json")
@@ -242,7 +239,6 @@ Examples:
   python hy2_manage.py test              Test all nodes
   python hy2_manage.py merge             Fetch new nodes from subscriptions
   python hy2_manage.py export --type tun --output hy2_tun.json
-  python hy2_manage.py test --timeout 10 --stale-days 30
         """,
     )
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
@@ -250,7 +246,6 @@ Examples:
     # test
     test_parser = subparsers.add_parser("test", help="Test all nodes and remove dead ones")
     test_parser.add_argument("--timeout", type=int, default=5, help="Test timeout per node (seconds)")
-    test_parser.add_argument("--stale-days", type=int, default=14, help="Remove nodes older than N days")
 
     # merge
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
