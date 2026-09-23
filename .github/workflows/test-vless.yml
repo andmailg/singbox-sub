@@ -43,7 +43,7 @@ jobs:
           sudo mv xray /usr/local/bin/xray
           
           # Удаляем временные файлы
-          rm xray.zip xray LICENSE
+          rm -rf xray.zip LICENSE README.md geoip.dat geosite.dat
           
           # Проверяем корректность установки
           xray version
