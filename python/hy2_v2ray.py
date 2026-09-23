@@ -4,10 +4,11 @@ import sys
 import os
 
 PYTHON_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(PYTHON_DIR)
 sys.path.insert(0, PYTHON_DIR)
 
 from src.hy2_working import load_working_nodes
-from src.exporters.v2ray_exporter import export_v2ray_by_type
+from src.exporters.v2ray_exporter import _generate_hy2_links
 
 
 if __name__ == "__main__":
@@ -22,4 +23,8 @@ if __name__ == "__main__":
         node.pop("_last_ok_ts", None)
         node.pop("_country", None)
 
-    export_v2ray_by_type(nodes, "hy2")
+    links = _generate_hy2_links(nodes)
+    output_path = os.path.join(ROOT_DIR, "hy2.txt")
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write("\n".join(links))
+    print(f"Exported {len(links)} Hysteria2 nodes to {output_path}")
