@@ -72,7 +72,7 @@ def cmd_merge(args):
     import importlib
 
     # Загрузка подписок
-    sub_urls_path = os.path.join(PYTHON_DIR, "sub_urls.json")
+    sub_urls_path = os.path.join(PYTHON_DIR, "src", "sub_urls.json")
     with open(sub_urls_path, "r", encoding="utf-8") as f:
         sub_urls_data = json.load(f)
     sub_urls = list(sub_urls_data.values()) if isinstance(sub_urls_data, dict) else sub_urls_data
