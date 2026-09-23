@@ -71,6 +71,9 @@ def cmd_merge(args):
     from concurrent.futures import ThreadPoolExecutor, as_completed
     import importlib
 
+    # Парсим port whitelist
+    port_whitelist = tuple(int(p) for p in args.ports.split(","))
+
     # Загрузка подписок
     sub_urls_path = os.path.join(PYTHON_DIR, "src", "sub_urls.json")
     with open(sub_urls_path, "r", encoding="utf-8") as f:
@@ -103,7 +106,7 @@ def cmd_merge(args):
             outbound, seen_fps,
             protocol="hy2",
             tls_required=True,
-            port_whitelist=args.port_whitelist,
+            port_whitelist=port_whitelist,
         ):
             continue
         outbound = clean_outbound(outbound)
