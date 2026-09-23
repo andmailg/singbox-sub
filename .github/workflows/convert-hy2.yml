@@ -63,7 +63,7 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@://github.com"
 
           # Добавляем файлы в индекс
-          git add hy2_tun.json hy2.txt config.json hy2_working.json
+          git add hy2_tun.json hy2.txt config.json python/src/hy2_working.json
           
           # Коммитим и пушим только при наличии изменений
           if git diff --cached --quiet; then
