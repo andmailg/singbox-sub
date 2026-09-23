@@ -245,27 +245,4 @@ def fetch_subscription(url: str) -> list[str]:
         return []
 
 
-def load_sources(sources_json_url: str) -> list[str]:
-    """Загружает список URL подписок из JSON."""
-    print(f"Fetching subscription sources from {sources_json_url}...")
-    try:
-        sources_resp = session.get(sources_json_url, timeout=15)
-        sources_resp.raise_for_status()
 
-        try:
-            sub_urls = sources_resp.json()
-        except Exception:
-            sub_urls = __import__('json').loads(sources_resp.text)
-
-        if isinstance(sub_urls, dict):
-            sub_urls = list(sub_urls.values())
-
-        if not isinstance(sub_urls, list):
-            raise ValueError(f"Expected list or dict, got {type(sub_urls)}")
-
-        print(f"OK Successfully loaded {len(sub_urls)} subscription sources.")
-        return sub_urls
-
-    except Exception as e:
-        print(f"ERROR Error fetching sources JSON: {e}")
-        return []

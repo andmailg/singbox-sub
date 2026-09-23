@@ -165,20 +165,6 @@ def _generate_vmess_links(outbounds: list[dict]) -> list[str]:
     return links
 
 
-def export_v2ray(outbounds: list[dict], output_file: str = "output.txt") -> int:
-    """Экспортирует ноды в файл в формате V2Ray (все типы)."""
-    all_links = (
-        _generate_hy2_links(outbounds)
-        + _generate_vless_grpc_links(outbounds)
-        + _generate_vless_reality_links(outbounds)
-        + _generate_vmess_links(outbounds)
-    )
-    with open(output_file, "w", encoding="utf-8") as f:
-        f.write("\n".join(all_links))
-    print(f"OK Successfully exported {len(all_links)} nodes to {output_file}")
-    return len(all_links)
-
-
 def export_v2ray_by_type(outbounds: list[dict], output_file: str = "output.txt") -> dict:
     """Экспортирует ноды по типам в отдельные файлы.
     

@@ -103,24 +103,4 @@ def clean_outbound(outbound: dict) -> dict:
     return outbound
 
 
-def outbound_to_v2ray_link(outbound: dict) -> str:
-    """Конвертирует объект ноды обратно в VLESS URI для V2Ray."""
-    if not outbound:
-        return ""
-    uuid = outbound.get("uuid", "")
-    server = outbound.get("server", "")
-    port = outbound.get("server_port", 8443)
-    sni = outbound.get("tls", {}).get("server_name", "")
-    service_name = outbound.get("transport", {}).get("service_name", "")
-    tag = outbound.get("tag", "VLESS-Node")
-    packet_encoding = outbound.get("packet_encoding", "xudp")
 
-    params = urllib.parse.urlencode({
-        "encryption": "none",
-        "security": "tls",
-        "sni": sni,
-        "type": "grpc",
-        "serviceName": service_name,
-        "packetEncoding": packet_encoding,
-    })
-    return f"vless://{uuid}@{server}:{port}?{params}#{tag}"

@@ -182,34 +182,4 @@ def clean_outbound(outbound: dict) -> dict:
     return outbound
 
 
-def encode_vless_link(outbound: dict) -> str:
-    """Кодирует outbound обратно в VLESS URL для V2Ray-клиентов."""
-    tag = outbound.get("tag", "node")
-    server = outbound["server"]
-    server_port = outbound["server_port"]
-    uuid = outbound["uuid"]
-    tls = outbound["tls"]
-    sni = tls.get("server_name", "")
-    pbk = tls.get("reality", {}).get("public_key", "")
-    sid = tls.get("reality", {}).get("short_id", "")
-    spider_x = tls.get("reality", {}).get("spider_x", "")
-    flow = tls.get("reality", {}).get("flow", "")
-    fp = tls.get("utls", {}).get("fingerprint", "")
 
-    params = {
-        "sni": sni,
-        "pbk": pbk,
-        "fp": fp,
-        "security": "reality",
-    }
-    if sid:
-        params["sid"] = sid
-    if spider_x:
-        params["spiderX"] = spider_x
-    if flow:
-        params["flow"] = flow
-
-    query = urllib.parse.urlencode(params)
-    fragment = urllib.parse.quote(tag)
-    link = f"vless://{uuid}@{server}:{server_port}?{query}#{fragment}"
-    return link
