@@ -47,7 +47,7 @@ jobs:
       - name: Test all working nodes
         run: |
           cd python
-          python hy2_manage.py test --timeout 10 --stale-days 14
+          python hy2_manage.py test --timeout 10
 
       - name: Export configs
         run: |
