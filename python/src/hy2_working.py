@@ -5,13 +5,9 @@ import os
 from datetime import datetime, timezone
 
 _WORKING_FILE = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    os.path.dirname(os.path.abspath(__file__)),
     "hy2_working.json",
 )
-
-# Нода считается "устаревшей", если последний успешный тест > STALE_DAYS назад
-STALE_DAYS = 14
-
 
 def _cache_key(node: dict) -> str:
     """Уникальный ключ для ноды: server:port:password."""
@@ -39,21 +35,6 @@ def save_working_nodes(nodes: list[dict], path: str = _WORKING_FILE) -> None:
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-
-def remove_stale_nodes(nodes: list[dict], stale_days: int = STALE_DAYS) -> list[dict]:
-    """Удаляет ноды, которые не тестировались дольше stale_days."""
-    cutoff = datetime.now(timezone.utc).timestamp() - stale_days * 86400
-    kept = []
-    removed = 0
-    for node in nodes:
-        last_ok = node.get("_last_ok_ts", 0)
-        if last_ok and last_ok >= cutoff:
-            kept.append(node)
-        else:
-            removed += 1
-    if removed:
-        print(f"  Removed {removed} stale nodes (last test > {stale_days} days ago).")
-    return kept
 
 
 def dedup_nodes(nodes: list[dict]) -> list[dict]:
