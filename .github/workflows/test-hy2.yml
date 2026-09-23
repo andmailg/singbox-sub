@@ -66,3 +66,11 @@ jobs:
             git commit -m "Auto-update Hysteria2 test results [skip ci]"
             git push
           fi
+
+      - name: Delete old workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 0
+          keep_minimum_runs: 3
