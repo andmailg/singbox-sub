@@ -20,7 +20,6 @@ sys.path.insert(0, PYTHON_DIR)
 from src.hy2_working import (
     load_working_nodes,
     save_working_nodes,
-    remove_stale_nodes,
     dedup_nodes,
     merge_new_nodes,
     _WORKING_FILE,
