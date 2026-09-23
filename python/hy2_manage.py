@@ -23,6 +23,7 @@ from src.hy2_working import (
     dedup_nodes,
     merge_new_nodes,
     _WORKING_FILE,
+    _cache_key,
 )
 from src.testers.hy2_node_tester import test_hy2_connectivity
 from src.exporters.singbox_exporter import export_tun, export_router
@@ -31,27 +32,59 @@ from src.common import country_code_to_flag
 
 def cmd_test(args):
     """Тестирование всех нод из hy2_working.json."""
-    print(f"Loading {len(load_working_nodes())} nodes from hy2_working.json...")
+    print(f"Loading nodes from hy2_working.json...")
     nodes = load_working_nodes()
     if not nodes:
         print("No nodes found. Run 'merge' first.")
         return
 
+    now_ts = datetime.now(timezone.utc).timestamp()
+    pending_nodes = [n for n in nodes if n.get("_status") == "pending"]
+    active_nodes = [n for n in nodes if n.get("_status") != "pending"]
+
+    print(f"Active: {len(active_nodes)}, Pending: {len(pending_nodes)}")
+
+    all_to_test = active_nodes + pending_nodes
+
     # Запускаем тестирование через существующий tester
     working = test_hy2_connectivity(
-        nodes,
+        all_to_test,
         timeout=args.timeout,
         prefix="",
     )
 
-    # Обновляем _last_ok_ts для рабочих нод
-    now_ts = datetime.now(timezone.utc).timestamp()
-    for node in working:
-        node["_last_ok_ts"] = now_ts
+    # Разделяем результаты
+    working_set = set(id(n) for n in working)
+    new_working = []
+    new_pending = []
+
+    for node in nodes:
+        node_id = id(node)
+        # Ищем ноду в working по ключу
+        found = False
+        for w in working:
+            if _cache_key(w) == _cache_key(node):
+                found = True
+                break
+
+        if found:
+            # Нода прошла тест
+            node["_last_ok_ts"] = now_ts
+            node.pop("_status", None)
+            node.pop("_pending_since", None)
+            new_working.append(node)
+        elif node.get("_status") == "pending":
+            # Pending нода не прошла — удаляем
+            print(f"  Removing failed pending node: {node.get('server')}:{node.get('server_port')}")
+        else:
+            # Active нода не прошла — помечаем pending
+            node["_status"] = "pending"
+            node["_pending_since"] = now_ts
+            new_pending.append(node)
 
     # Сохраняем
-    save_working_nodes(working)
-    print(f"\nSaved {len(working)} working nodes to hy2_working.json")
+    save_working_nodes(new_working + new_pending)
+    print(f"\nSaved {len(new_working)} working, {len(new_pending)} pending nodes to hy2_working.json")
 
 
 def cmd_merge(args):
