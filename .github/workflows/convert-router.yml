@@ -23,6 +23,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests maxminddb
 
+      - name: Install Hysteria2 CLI
+        run: |
+          curl -L https://github.com/HyNetworks/hysteria/releases/download/app%2Fv2.12.3/hysteria-linux-amd64 -o hy2
+          # Делаем файл исполняемым и переносим в системную директорию
+          chmod +x hy2
+          sudo mv hy2 /usr/local/bin/hy2
+          
+          # Проверяем корректность установки
+          hy2 version
+
       - name: Run scripts
         run: |
           python python/hy2_router.py
