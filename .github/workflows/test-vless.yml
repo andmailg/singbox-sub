@@ -32,8 +32,11 @@ jobs:
 
       - name: Install Xray-core CLI
         run: |
+          # Устанавливаем jq для парсинга JSON
+          sudo apt-get update && sudo apt-get install -y jq unzip
+          
           # Скачиваем последнюю версию Xray-core
-          XRAY_VERSION=$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases/latest | grep '"tag_name"' | sed -E 's/.*"v(.*?)".*/\1/')
+          XRAY_VERSION=$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases/latest | jq -r '.tag_name' | sed 's/^v//')
           curl -L "https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/Xray-linux-64.zip" -o xray.zip
           unzip xray.zip
           chmod +x xray
