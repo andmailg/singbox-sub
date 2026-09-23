@@ -51,7 +51,7 @@ jobs:
       - name: Test nodes
         run: |
           python python/testers/vless_node_tester.py \
-            vless_tun.json \
+            vless_reality_tun.json \
             --output latest_results.json \
             --workers 20 \
             --timeout 5 \

@@ -319,8 +319,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "input",
         nargs="?",
-        default="vless_tun.json",
-        help="Input Sing-box config with VLESS outbounds (default: vless_tun.json)",
+        default="vless_reality_tun.json",
+        help="Input Sing-box config with VLESS outbounds (default: vless_reality_tun.json)",
     )
     parser.add_argument(
         "-o", "--output",
