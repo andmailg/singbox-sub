@@ -30,23 +30,25 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests maxminddb PySocks
 
-      - name: Install Xray-core CLI
+      - name: Install sing-box CLI
         run: |
           # Устанавливаем jq для парсинга JSON
           sudo apt-get update && sudo apt-get install -y jq unzip
           
-          # Скачиваем последнюю версию Xray-core
-          XRAY_VERSION=$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases/latest | jq -r '.tag_name' | sed 's/^v//')
-          curl -L "https://github.com/XTLS/Xray-core/releases/download/v${XRAY_VERSION}/Xray-linux-64.zip" -o xray.zip
-          unzip xray.zip
-          chmod +x xray
-          sudo mv xray /usr/local/bin/xray
+          # Скачиваем последнюю версию sing-box
+          SB_VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest | jq -r '.tag_name')
+          curl -L "https://github.com/SagerNet/sing-box/releases/download/${SB_VERSION}/sing-box-${SB_VERSION#v}-linux-amd64.tar.gz" -o sing-box.tar.gz
+          tar -xzvf sing-box.tar.gz
+          cd sing-box-${SB_VERSION#v}-linux-amd64
+          chmod +x sing-box
+          sudo mv sing-box /usr/local/bin/sing-box
           
           # Удаляем временные файлы
-          rm -rf xray.zip LICENSE README.md geoip.dat geosite.dat
+          cd ..
+          rm -rf sing-box.tar.gz sing-box-${SB_VERSION#v}-linux-amd64
           
           # Проверяем корректность установки
-          xray version
+          sing-box version
 
       - name: Test nodes
         run: |

@@ -50,160 +50,71 @@ def wait_for_port(host: str, port: int, timeout: float = 5.0) -> bool:
     return False
 
 
-def _build_xray_config(node: dict, local_port: int) -> dict:
-    """Генерирует JSON-конфигурацию Xray client на основе ноды."""
-    server = node["server"]
-    port = node["server_port"]
-    uuid = node["uuid"]
-    encryption = node.get("encryption", "none")
-    flow = node.get("flow", "")
-    tls_enabled = node.get("tls", {}).get("enabled", False)
-    server_name = node.get("tls", {}).get("server_name", "")
-    transport = node.get("transport", {})
-
-    outbounds = [
-        {
-            "protocol": "freedom",
-            "tag": "direct"
-        }
-    ]
-
-    vless_outbound = {
-        "protocol": "vless",
-        "settings": {
-            "vnext": [
-                {
-                    "address": server,
-                    "port": port,
-                    "users": [
-                        {
-                            "id": uuid,
-                            "encryption": encryption
-                        }
-                    ]
-                }
-            ]
-        },
-        "streamSettings": {
-            "network": "tcp"
-        },
-        "tag": "proxy"
-    }
-
-    # Добавляем flow если указан
-    if flow:
-        vless_outbound["settings"]["vnext"][0]["users"][0]["flow"] = flow
-
-    # Настраиваем transport
-    if transport and transport.get("type"):
-        t_type = transport["type"]
-        if t_type == "ws":
-            vless_outbound["streamSettings"]["network"] = "ws"
-            ws_settings = {
-                "path": transport.get("path", "/"),
-                "headers": {}
-            }
-            host = transport.get("host", "")
-            if host:
-                ws_settings["headers"]["Host"] = host if isinstance(host, str) else host[0]
-            vless_outbound["streamSettings"]["wsSettings"] = ws_settings
-        elif t_type == "grpc":
-            vless_outbound["streamSettings"]["network"] = "grpc"
-            grpc_settings = {
-                "serviceName": transport.get("service_name", "")
-            }
-            vless_outbound["streamSettings"]["grpcSettings"] = grpc_settings
-        elif t_type == "http":
-            vless_outbound["streamSettings"]["network"] = "http"
-            http_settings = {
-                "host": transport.get("host", [""]),
-                "path": transport.get("path", "/")
-            }
-            vless_outbound["streamSettings"]["httpSettings"] = http_settings
-        elif t_type == "httpupgrade":
-            vless_outbound["streamSettings"]["network"] = "httpupgrade"
-            hu_settings = {
-                "path": transport.get("path", "/"),
-                "host": transport.get("host", "")
-            }
-            vless_outbound["streamSettings"]["httpupgradeSettings"] = hu_settings
-        elif t_type == "xhttp":
-            vless_outbound["streamSettings"]["network"] = "xhttp"
-            xx_settings = {
-                "path": transport.get("path", "/"),
-                "host": transport.get("host", "")
-            }
-            vless_outbound["streamSettings"]["xhttpSettings"] = xx_settings
-
-    # Настраиваем TLS/REALITY
-    if tls_enabled:
-        vless_outbound["streamSettings"]["security"] = "tls"
-        tls_settings = {
-            "allowInsecure": True
-        }
-        if server_name:
-            tls_settings["serverName"] = server_name
-        vless_outbound["streamSettings"]["tlsSettings"] = tls_settings
-
-    outbounds.insert(0, vless_outbound)
-
+def _build_singbox_config(node: dict, local_port: int) -> dict:
+    """
+    Генерирует минимальный sing-box JSON-конфигурацию для тестирования одной ноды.
+    Использует sing-box CLI — нативно понимает формат REALITY, WS, gRPC, HTTP и т.д.
+    """
+    # Клонируем ноду чтобы не мутировать оригинал
+    outbound = dict(node)
+    
+    # Устанавливаем локальный SOCKS5 прокси как detour
+    outbound["detour"] = "socks-out"
+    
+    # Удаляем tag чтобы не конфликтовал
+    if "tag" in outbound:
+        del outbound["tag"]
+    
     config = {
         "log": {
-            "loglevel": "warning"
+            "level": "error"
         },
         "inbounds": [
             {
+                "type": "socks",
+                "tag": "socks-in",
                 "listen": "127.0.0.1",
-                "port": local_port,
-                "protocol": "socks",
-                "settings": {
-                    "auth": "noauth",
-                    "udp": True
-                },
-                "tag": "socks-in"
+                "listen_port": local_port
             }
         ],
-        "outbounds": outbounds,
-        "routing": {
-            "rules": [
-                {
-                    "type": "field",
-                    "outboundTag": "proxy",
-                    "ip": ["geoip:private"]
-                }
-            ]
-        }
+        "outbounds": [
+            outbound,
+            {
+                "type": "direct",
+                "tag": "direct-out"
+            }
+        ]
     }
-
+    
     return config
 
 
 def test_node_vless(node: dict, timeout: int = 5) -> dict | None:
     """
-    Тестирует ноду VLESS, используя Xray CLI с SOCKS5-прокси.
+    Тестирует ноду VLESS, используя sing-box CLI с SOCKS5-прокси.
     """
     server = node["server"]
     port = node["server_port"]
     tag = node.get("tag", f"{server}:{port}")
 
     local_port = get_free_port()
-    xray_config = _build_xray_config(node, local_port)
+    sb_config = _build_singbox_config(node, local_port)
 
     proc = None
     config_file = None
     try:
-        # 1. Создаём временный JSON-файл конфигурации Xray
+        # 1. Создаём временный JSON-файл конфигурации sing-box
         config_file = tempfile.NamedTemporaryFile(
             mode="w", suffix=".json", delete=False, encoding="utf-8"
         )
-        json.dump(xray_config, config_file, indent=2, ensure_ascii=False)
+        json.dump(sb_config, config_file, indent=2, ensure_ascii=False)
         config_file.close()
 
-        # 2. Запускаем Xray с конфигом
-        xray_cmd = ["xray", "run", "-c", config_file.name]
+        # 2. Запускаем sing-box с конфигом
+        sb_cmd = ["sing-box", "run", "-c", config_file.name]
 
         proc = subprocess.Popen(
-            xray_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
+            sb_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True
         )
 
         # Ждём стабильного запуска (3 сек)
@@ -273,7 +184,7 @@ def test_node_vless(node: dict, timeout: int = 5) -> dict | None:
         latency = 0
         details = str(e)
     finally:
-        # 5. Гарантированно убиваем фоновый процесс Xray
+        # 5. Гарантированно убиваем фоновый процесс sing-box
         if proc:
             proc.terminate()
             try:
@@ -314,7 +225,7 @@ def format_table(results: list[dict]) -> str:
 def parse_args() -> argparse.Namespace:
     """Парсит аргументы командной строки для pipeline-интеграции."""
     parser = argparse.ArgumentParser(
-        description="VLESS node connectivity tester (Xray-core based)"
+        description="VLESS node connectivity tester (sing-box based)"
     )
     parser.add_argument(
         "input",
@@ -356,15 +267,15 @@ def parse_args() -> argparse.Namespace:
 def main():
     args = parse_args()
 
-    # Проверка наличия xray CLI
+    # Проверка наличия sing-box CLI
     try:
-        ver = subprocess.run(["xray", "version"], capture_output=True, text=True, timeout=5)
-        print(f"xray CLI: {ver.stdout.strip() or ver.stderr.strip()}")
+        ver = subprocess.run(["sing-box", "version"], capture_output=True, text=True, timeout=5)
+        print(f"sing-box CLI: {ver.stdout.strip() or ver.stderr.strip()}")
     except FileNotFoundError:
-        print("Ошибка: 'xray' не найден в PATH. Убедитесь, что Xray-core CLI установлен.")
+        print("Ошибка: 'sing-box' не найден в PATH. Убедитесь, что sing-box CLI установлен.")
         sys.exit(1)
     except Exception as e:
-        print(f"Ошибка проверки xray CLI: {e}")
+        print(f"Ошибка проверки sing-box CLI: {e}")
         sys.exit(1)
 
     print(f"Loading nodes from {args.input}...")
