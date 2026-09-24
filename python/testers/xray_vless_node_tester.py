@@ -150,23 +150,30 @@ def _build_stream_settings(node: dict, network: str) -> dict:
         transport_cfg = {}
     
     if network in ("ws", "websocket"):
+        path = transport_cfg.get("path") or "/"
+        headers: dict = transport_cfg.get("headers") or {}
         stream_settings["wsSettings"] = {
-            "path": transport_cfg.get("path", "/"),
-            "headers": transport_cfg.get("headers", {})
+            "path": path,
+            "headers": headers
         }
     elif network in ("grpc", "gun"):
+        service_name = transport_cfg.get("service_name") or ""
         stream_settings["grpcSettings"] = {
-            "serviceName": transport_cfg.get("service_name", "")
+            "serviceName": service_name
         }
     elif network in ("http", "h2"):
+        host: list = transport_cfg.get("host") or []
+        path = transport_cfg.get("path") or "/"
         stream_settings["httpSettings"] = {
-            "host": transport_cfg.get("host", []),
-            "path": transport_cfg.get("path", "/")
+            "host": host,
+            "path": path
         }
     elif network == "httpupgrade":
+        host = transport_cfg.get("host") or ""
+        path = transport_cfg.get("path") or "/"
         stream_settings["httpupgradeSettings"] = {
-            "host": transport_cfg.get("host", ""),
-            "path": transport_cfg.get("path", "/")
+            "host": host,
+            "path": path
         }
     
     # Настройки безопасности
