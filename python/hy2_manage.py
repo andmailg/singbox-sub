@@ -137,9 +137,8 @@ def renumber_nodes(nodes: list[dict]) -> list[dict]:
 
     # 3. Нумерация
     for idx, node in enumerate(nodes, start=1):
-        node.pop("_country", None)
+        country = node.pop("_country", None)
         node.pop("_latency_ms", None)
-        country = node.get("_country")
         flag = country_code_to_flag(country) if country else ""
         node["tag"] = f"{flag}node-{idx}" if flag else f"node-{idx}"
     return nodes
@@ -171,28 +170,42 @@ def cmd_run(args):
 def cmd_export(args):
     """Генерирует sing-box конфиг из hy2_working.json.
 
-    Нумерация тэгов (node-1, node-2, ...) выполняется ОДИН РАЗ и сохраняется
-    обратно в hy2_working.json — последующие экспортеры используют уже
-    нумерованные ноды.
+    На экспорт идут только active ноды (без _pending_since).
+    Pending ноды остаются в hy2_working.json для повторного тестирования.
     """
-    nodes = load_working_nodes()
-    if not nodes:
-        print("No working nodes found. Run 'test' or 'merge' first.")
+    all_nodes = load_working_nodes()
+    if not all_nodes:
+        print("No nodes found.")
         return
 
-    # Единая нумерация — один раз
-    nodes = renumber_nodes(nodes)
-    save_working_nodes(nodes)
+    # Разделяем на active и pending
+    active_nodes = [n for n in all_nodes if "_pending_since" not in n]
+    pending_nodes = [n for n in all_nodes if "_pending_since" in n]
 
-    # Экспорт
+    if not active_nodes:
+        print("No active nodes to export.")
+        return
+
+    # Нумеруем только active ноды
+    active_nodes = renumber_nodes(active_nodes)
+
+    # Сохраняем все ноды (active + pending)
+    save_working_nodes(active_nodes + pending_nodes)
+
+    if pending_nodes:
+        print(f"Exporting {len(active_nodes)} active nodes ({len(pending_nodes)} pending kept)")
+    else:
+        print(f"Exporting {len(active_nodes)} nodes")
+
+    # Экспорт только active
     if args.type == "tun":
-        _export_tun(nodes, args.output)
+        _export_tun(active_nodes, args.output)
     elif args.type == "router":
-        _export_router(nodes, args.output)
+        _export_router(active_nodes, args.output)
     elif args.type == "all":
-        _export_tun(nodes, args.output)
-        _export_router(nodes, "config.json")
-        _export_v2ray(nodes)
+        _export_tun(active_nodes, args.output)
+        _export_router(active_nodes, "config.json")
+        _export_v2ray(active_nodes)
     else:
         print(f"Unknown export type: {args.type}")
 
