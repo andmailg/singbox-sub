@@ -11,7 +11,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # Кэш результатов теста подключения
 _CACHE_FILE = os.path.join(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-    "hy2_test_cache.json",
+    "test_cache.json",
 )
 
 

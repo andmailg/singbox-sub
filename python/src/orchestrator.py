@@ -19,7 +19,6 @@ from src.rkn_filter import (
     open_geoip_reader,
     resolve_and_check,
 )
-from src.testers.hy2_node_tester import test_hy2_connectivity
 
 
 SOURCES_JSON_PATH = "./sub_urls.json"
@@ -201,8 +200,8 @@ def run_pipeline(
     protocol: str = "generic",
     tls_required: bool = False,
     port_whitelist: tuple[int, ...] | None = None,
-    hy2_test: bool | None = None,
-    hy2_test_timeout: int = 5,
+    tester_func: Callable | None = None,
+    test_timeout: int = 5,
 ) -> None:
     """Запускает полный pipeline сборки конфига.
 
@@ -217,9 +216,9 @@ def run_pipeline(
         protocol: тип протокола для быстрой фильтрации ("hy2", "vless", "vmess").
         tls_required: если True — требует TLS + server_name.
         port_whitelist: если указан — разрешены только эти порты.
-        hy2_test: если True — запускает проверку работоспособности hy2 нод через hy2 CLI.
-            По умолчанию True для protocol="hy2", False для остальных.
-        hy2_test_timeout: таймаут проверки каждой hy2 ноды в секундах.
+        tester_func: функция тестирования нод (accepts list[dict], timeout, prefix -> list[dict]).
+            Если None — тестирование пропускается.
+        test_timeout: таймаут проверки каждой ноды в секундах.
     """
     print(f"[{output_file}] Starting pipeline (exporter={exporter})...")
 
@@ -270,11 +269,11 @@ def run_pipeline(
         print(f"{prefix}Error: No valid proxy nodes left after RKN+GeoIP filtration!")
         return
 
-    # 4.5. Hysteria 2 connectivity test (pipeline-integrated)
-    if protocol == "hy2" and hy2_test:
-        outbounds = test_hy2_connectivity(
+    # 4.5. Connectivity test (если указан tester_func)
+    if tester_func:
+        outbounds = tester_func(
             outbounds,
-            timeout=hy2_test_timeout,
+            timeout=test_timeout,
             prefix=prefix,
         )
 

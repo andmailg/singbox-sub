@@ -21,6 +21,7 @@ from src.hy2_working import (
     load_working_nodes,
     save_working_nodes,
     merge_new_nodes,
+    _cache_key,
 )
 from src.common import (
     INTERNAL_FIELDS,
@@ -29,6 +30,7 @@ from src.common import (
     country_code_to_flag,
 )
 from src.rkn_filter import resolve_country
+from src.testers.hy2_node_tester import test_hy2_connectivity
 
 
 def cmd_merge(args):
@@ -57,7 +59,7 @@ def cmd_merge(args):
         protocol="hy2",
         tls_required=True,
         port_whitelist=port_whitelist,
-        hy2_test=False,  # тестирование отдельно через cmd_test
+        tester_func=None,  # тестирование отдельно через cmd_test
     )
 
 
@@ -245,11 +247,6 @@ def _export_v2ray(nodes, output_file=None):
     with open(output_file, "w", encoding="utf-8") as f:
         f.write("\n".join(links))
     print(f"Exported {len(links)} Hysteria2 nodes to {output_file}")
-
-
-def _cache_key(node: dict) -> str:
-    """Уникальный ключ для ноды: server:port:password."""
-    return f"{node.get('server')}:{node.get('server_port')}:{node.get('password')}"
 
 
 def main():
