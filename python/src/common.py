@@ -17,6 +17,29 @@ session = requests.Session()
 session.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"})
 session.verify = False
 
+# ============================================================
+# Общие константы и утилиты
+# ============================================================
+
+# Внутренние поля, которые не должны попадать в экспорт
+INTERNAL_FIELDS = frozenset({
+    "_latency_ms", "_last_ok_ts", "_country", "_status", "_pending_since"
+})
+
+
+def clean_internal_fields(node: dict) -> None:
+    """Удаляет внутренние поля из ноды (мутирует на месте)."""
+    for key in INTERNAL_FIELDS:
+        node.pop(key, None)
+
+
+def resolve_server(server: str) -> str | None:
+    """Резолвит домен в IP, если это не IP-адрес. Возвращает None при неудаче."""
+    clean = server.strip("[]")
+    if is_valid_ip(clean):
+        return clean
+    return resolve_domain(clean)
+
 
 @functools.lru_cache(maxsize=4096)
 def is_valid_ip(address: str) -> bool:

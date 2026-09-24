@@ -10,7 +10,6 @@ jobs:
   convert:
     runs-on: ubuntu-latest
     
-    # Права на запись оставляем, они необходимы для git push
     permissions:
       contents: write
       
@@ -22,7 +21,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          # Ошибочная строка кэша удалена
 
       - name: Install dependencies
         run: |
@@ -32,11 +30,8 @@ jobs:
       - name: Install Hysteria2 CLI
         run: |
           curl -L https://github.com/HyNetworks/hysteria/releases/download/app%2Fv2.12.3/hysteria-linux-amd64 -o hy2
-          # Делаем файл исполняемым и переносим в системную директорию
           chmod +x hy2
           sudo mv hy2 /usr/local/bin/hy2
-          
-          # Проверяем корректность установки
           hy2 version
 
       - name: Merge new nodes from subscriptions
@@ -52,24 +47,18 @@ jobs:
       - name: Export configs
         run: |
           cd python
-          python hy2_manage.py export --type tun --output ../hy2_tun.json
-          python hy2_manage.py export --type router --output ../config.json
-          python hy2_v2ray.py
+          python hy2_manage.py export --type all --output ../hy2_tun.json
 
       - name: Commit and push if changed
         run: |
-          # Настройка бота GitHub Actions
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@://github.com"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Добавляем файлы в индекс
           git add hy2_tun.json hy2.txt config.json python/src/hy2_working.json
           
-          # Коммитим и пушим только при наличии изменений
           if git diff --cached --quiet; then
             echo "Нет изменений для коммита."
           else
             git commit -m "Auto-update hy2 configs & working nodes"
             git push
           fi
-

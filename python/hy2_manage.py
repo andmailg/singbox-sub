@@ -1,8 +1,8 @@
 """CLI-менеджер для управления рабочими нодами Hysteria2.
 
 Команды:
-  test    — протестировать все ноды из hy2_working.json, удалить нерабочие
   merge   — подтянуть новые ноды из подписок, добавить в hy2_working.json
+  test    — протестировать все ноды из hy2_working.json, удалить нерабочие
   export  — сгенерировать sing-box конфиг из hy2_working.json
 """
 
@@ -10,29 +10,58 @@ import argparse
 import json
 import os
 import sys
-import time
 from datetime import datetime, timezone
 
-# Добавляем python/ в sys.path
 PYTHON_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, PYTHON_DIR)
 
 from src.hy2_working import (
     load_working_nodes,
     save_working_nodes,
-    dedup_nodes,
     merge_new_nodes,
-    _WORKING_FILE,
-    _cache_key,
 )
-from src.testers.hy2_node_tester import test_hy2_connectivity
-from src.exporters.singbox_exporter import export_tun, export_router
-from src.common import country_code_to_flag
+from src.common import (
+    INTERNAL_FIELDS,
+    clean_internal_fields,
+    resolve_server,
+)
+
+
+def cmd_merge(args):
+    """Подтягивает новые ноды из подписок и добавляет в hy2_working.json.
+
+    Использует run_pipeline() для fetch → parse → filter → DNS → dedup,
+    затем сохраняет результат в hy2_working.json (без нумерации тэгов).
+    """
+    from src.orchestrator import run_pipeline
+    from src.parsers import hy2_parser
+
+    port_whitelist = tuple(int(p) for p in args.ports.split(","))
+
+    # Кастомный export_func: сохраняет ноды в hy2_working.json без нумерации
+    def _save_to_working(outbounds, _output_file):
+        existing = load_working_nodes()
+        merged, added = merge_new_nodes(existing, outbounds)
+        print(f"Merge result: added {added} new nodes (total: {len(merged)})")
+        save_working_nodes(merged)
+
+    run_pipeline(
+        parser_module="src.parsers.hy2_parser",
+        exporter="tun",
+        output_file="hy2_working.json",
+        export_func=_save_to_working,
+        protocol="hy2",
+        tls_required=True,
+        port_whitelist=port_whitelist,
+        hy2_test=False,  # тестирование отдельно через cmd_test
+    )
 
 
 def cmd_test(args):
     """Тестирование всех нод из hy2_working.json."""
-    print(f"Loading nodes from hy2_working.json...")
+    from src.testers.hy2_node_tester import test_hy2_connectivity
+
+    print("Loading nodes from hy2_working.json...")
     nodes = load_working_nodes()
     if not nodes:
         print("No nodes found. Run 'merge' first.")
@@ -45,187 +74,103 @@ def cmd_test(args):
     print(f"Active: {len(active_nodes)}, Pending: {len(pending_nodes)}")
 
     all_to_test = active_nodes + pending_nodes
-
-    # Запускаем тестирование через существующий tester
     working = test_hy2_connectivity(
         all_to_test,
         timeout=args.timeout,
         prefix="",
     )
 
-    # Разделяем результаты
-    working_set = set(id(n) for n in working)
+    # Обновляем статусы
+    working_keys = {_cache_key(w) for w in working}
     new_working = []
     new_pending = []
 
     for node in nodes:
-        node_id = id(node)
-        # Ищем ноду в working по ключу
-        found = False
-        for w in working:
-            if _cache_key(w) == _cache_key(node):
-                found = True
-                break
-
-        if found:
-            # Нода прошла тест
+        key = _cache_key(node)
+        if key in working_keys:
             node["_last_ok_ts"] = now_ts
             node.pop("_status", None)
             node.pop("_pending_since", None)
             new_working.append(node)
         elif node.get("_status") == "pending":
-            # Pending нода не прошла — удаляем
             print(f"  Removing failed pending node: {node.get('server')}:{node.get('server_port')}")
         else:
-            # Active нода не прошла — помечаем pending
             node["_status"] = "pending"
             node["_pending_since"] = now_ts
             new_pending.append(node)
 
-    # Сохраняем
     save_working_nodes(new_working + new_pending)
     print(f"\nSaved {len(new_working)} working, {len(new_pending)} pending nodes to hy2_working.json")
 
 
-def cmd_merge(args):
-    """Подтягивает новые ноды из подписок и добавляет в hy2_working.json."""
-    from src.orchestrator import run_pipeline
-
-    # Сначала запускаем pipeline для сбора новых нод
-    print("Fetching subscriptions and parsing new nodes...")
-
-    # Используем run_pipeline с кастомным export_func для сбора кандидатов
-    from src.parsers.hy2_parser import parse_proxy_link, clean_outbound
-    from src.common import fetch_subscription, should_accept_outbound, resolve_domain, is_valid_ip
-    from concurrent.futures import ThreadPoolExecutor, as_completed
-    import importlib
-
-    # Парсим port whitelist
-    port_whitelist = tuple(int(p) for p in args.ports.split(","))
-
-    # Загрузка подписок
-    sub_urls_path = os.path.join(PYTHON_DIR, "src", "sub_urls.json")
-    with open(sub_urls_path, "r", encoding="utf-8") as f:
-        sub_urls_data = json.load(f)
-    sub_urls = list(sub_urls_data.values()) if isinstance(sub_urls_data, dict) else sub_urls_data
-
-    # Скачиваем все подписки
-    links = []
-    with ThreadPoolExecutor(max_workers=10) as executor:
-        future_to_url = {
-            executor.submit(fetch_subscription, url): url
-            for url in sub_urls
-        }
-        for future in as_completed(future_to_url):
-            try:
-                links.extend(future.result())
-            except Exception as e:
-                print(f"Error fetching: {e}")
-
-    print(f"Collected {len(links)} raw lines")
-
-    # Парсим
-    seen_fps = set()
-    parsed = []
-    for link in links:
-        outbound = parse_proxy_link(link)
-        if not outbound:
-            continue
-        if not should_accept_outbound(
-            outbound, seen_fps,
-            protocol="hy2",
-            tls_required=True,
-            port_whitelist=port_whitelist,
-        ):
-            continue
-        outbound = clean_outbound(outbound)
-        if not outbound:
-            continue
-        parsed.append(outbound)
-
-    print(f"Parsed {len(parsed)} valid nodes")
-
-    # Резолвим DNS
-    unique_servers = {}
-    servers = sorted(set(o.get("server", "").strip("[]").lower() for o in parsed))
-    with ThreadPoolExecutor(max_workers=16) as executor:
-        future_to_server = {
-            executor.submit(_resolve_server, server): server
-            for server in servers
-        }
-        for future in as_completed(future_to_server):
-            server = future_to_server[future]
-            try:
-                unique_servers[server] = future.result()
-            except Exception:
-                unique_servers[server] = None
-
-    seen_ips = set()
-    outbounds = []
-    for o in parsed:
-        server = str(o.get("server", "")).strip("[]").lower()
-        port = o.get("server_port", "")
-        resolved_ip = unique_servers.get(server)
-        if not resolved_ip:
-            continue
-        dedup_val = f"{resolved_ip}:{port}"
-        if dedup_val in seen_ips:
-            continue
-        seen_ips.add(dedup_val)
-        outbounds.append(o)
-
-    print(f"After DNS + dedup: {len(outbounds)} nodes")
-
-    if not outbounds:
-        print("No new nodes found.")
-        return
-
-    # Загружаем существующие
-    existing = load_working_nodes()
-    merged, added = merge_new_nodes(existing, outbounds)
-
-    if added == 0:
-        print("No new nodes to add.")
-    else:
-        print(f"Added {added} new nodes (total: {len(merged)}).")
-
-    save_working_nodes(merged)
-
-
-def cmd_export(args):
-    """Генерирует sing-box конфиг из hy2_working.json."""
-    nodes = load_working_nodes()
-    if not nodes:
-        print("No nodes found. Run 'test' or 'merge' first.")
-        return
-
-    # Сортируем по server + port
+def renumber_nodes(nodes: list[dict]) -> list[dict]:
+    """Сортирует ноды по server:port и назначает тэги node-1, node-2, ..."""
     nodes.sort(key=lambda o: (o.get("server", ""), o.get("server_port", 0)))
     for idx, node in enumerate(nodes, start=1):
         node.pop("_country", None)
         node["tag"] = f"node-{idx}"
+    return nodes
+
+
+def cmd_export(args):
+    """Генерирует sing-box конфиг из hy2_working.json.
+
+    Нумерация тэгов (node-1, node-2, ...) выполняется ОДИН РАЗ и сохраняется
+    обратно в hy2_working.json — последующие экспортеры используют уже
+    нумерованные ноды.
+    """
+    nodes = load_working_nodes()
+    if not nodes:
+        print("No working nodes found. Run 'test' or 'merge' first.")
+        return
+
+    # Единая нумерация — один раз
+    nodes = renumber_nodes(nodes)
+    save_working_nodes(nodes)
 
     # Экспорт
     if args.type == "tun":
-        export_tun(nodes, args.output)
+        _export_tun(nodes, args.output)
     elif args.type == "router":
-        export_router(nodes, args.output)
+        _export_router(nodes, args.output)
+    elif args.type == "all":
+        _export_tun(nodes, args.output)
+        _export_router(nodes, "config.json")
+        _export_v2ray(nodes)
     else:
         print(f"Unknown export type: {args.type}")
 
 
-def _resolve_server(server: str) -> str | None:
-    """Резолвит домен в IP."""
-    import socket
-    from src.common import is_valid_ip
+def _export_tun(nodes, output_file):
+    """Экспорт в sing-box TUN конфиг."""
+    from src.exporters.singbox_exporter import export_tun
+    for n in nodes:
+        clean_internal_fields(n)
+    export_tun(nodes, output_file)
 
-    clean = server.strip("[]")
-    if is_valid_ip(clean):
-        return clean
-    try:
-        return socket.gethostbyname(clean)
-    except socket.gaierror:
-        return None
+
+def _export_router(nodes, output_file):
+    """Экспорт в sing-box router конфиг."""
+    from src.exporters.singbox_exporter import export_router
+    for n in nodes:
+        clean_internal_fields(n)
+    export_router(nodes, output_file)
+
+
+def _export_v2ray(nodes, output_file=None):
+    """Экспорт в V2Ray-ссылки (hy2.txt в корне проекта)."""
+    from src.exporters.v2ray_exporter import _generate_hy2_links
+    if output_file is None:
+        output_file = os.path.join(os.path.dirname(PYTHON_DIR), "hy2.txt")
+    links = _generate_hy2_links(nodes)
+    with open(output_file, "w", encoding="utf-8") as f:
+        f.write("\n".join(links))
+    print(f"Exported {len(links)} Hysteria2 nodes to {output_file}")
+
+
+def _cache_key(node: dict) -> str:
+    """Уникальный ключ для ноды: server:port:password."""
+    return f"{node.get('server')}:{node.get('server_port')}:{node.get('password')}"
 
 
 def main():
@@ -234,25 +179,25 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python hy2_manage.py test              Test all nodes
   python hy2_manage.py merge             Fetch new nodes from subscriptions
-  python hy2_manage.py export --type tun --output hy2_tun.json
+  python hy2_manage.py test              Test all nodes
+  python hy2_manage.py export --type all --output hy2_tun.json
         """,
     )
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
-
-    # test
-    test_parser = subparsers.add_parser("test", help="Test all nodes and remove dead ones")
-    test_parser.add_argument("--timeout", type=int, default=5, help="Test timeout per node (seconds)")
 
     # merge
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
     merge_parser.add_argument("--ports", type=str, default="443,8443,2053,2083,2087,2096,4433",
                               help="Comma-separated port whitelist")
 
+    # test
+    test_parser = subparsers.add_parser("test", help="Test all nodes and remove dead ones")
+    test_parser.add_argument("--timeout", type=int, default=5, help="Test timeout per node (seconds)")
+
     # export
     export_parser = subparsers.add_parser("export", help="Export working nodes to sing-box config")
-    export_parser.add_argument("--type", choices=["tun", "router"], default="tun", help="Export type")
+    export_parser.add_argument("--type", choices=["tun", "router", "all"], default="all", help="Export type")
     export_parser.add_argument("--output", default="hy2_tun.json", help="Output file")
 
     args = parser.parse_args()
@@ -261,11 +206,10 @@ Examples:
         parser.print_help()
         return
 
-    if args.command == "test":
-        cmd_test(args)
-    elif args.command == "merge":
-        port_whitelist = tuple(int(p) for p in args.ports.split(","))
+    if args.command == "merge":
         cmd_merge(args)
+    elif args.command == "test":
+        cmd_test(args)
     elif args.command == "export":
         cmd_export(args)
 

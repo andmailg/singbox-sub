@@ -10,6 +10,7 @@ from src.common import (
     country_code_to_flag,
     fetch_subscription,
     resolve_domain,
+    resolve_server,
     should_accept_outbound,
 )
 from src.rkn_filter import (
@@ -44,17 +45,6 @@ def _fetch_links(sub_urls: list[str], prefix: str = "") -> list[str]:
     # Sort for deterministic deduplication order across runs
     links.sort()
     return links
-
-
-def _resolve_outbound_server(server: str) -> str | None:
-    """Резолвит домен в IP, если это не IP-адрес. Возвращает None при неудаче."""
-    from src.common import is_valid_ip
-
-    clean = server.strip("[]")
-    if is_valid_ip(clean):
-        return clean
-    resolved = resolve_domain(clean)
-    return resolved
 
 
 def _parse_and_deduplicate(
@@ -103,7 +93,7 @@ def _parse_and_deduplicate(
     print(f"{prefix}Resolving {len(servers)} unique servers with {num_workers} workers...")
     with ThreadPoolExecutor(max_workers=num_workers) as executor:
         future_to_server = {
-            executor.submit(_resolve_outbound_server, server): server
+            executor.submit(resolve_server, server): server
             for server in servers
         }
         for future in as_completed(future_to_server):
