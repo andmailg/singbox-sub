@@ -1,6 +1,7 @@
 """CLI-менеджер для управления рабочими нодами Hysteria2.
 
 Команды:
+  run     — полный pipeline: merge → test → export (по умолчанию)
   merge   — подтянуть новые ноды из подписок, добавить в hy2_working.json
   test    — протестировать все ноды из hy2_working.json, удалить нерабочие
   export  — сгенерировать sing-box конфиг из hy2_working.json
@@ -118,6 +119,33 @@ def renumber_nodes(nodes: list[dict]) -> list[dict]:
     return nodes
 
 
+def cmd_run(args):
+    """Полный pipeline: merge -> test -> export."""
+    port_whitelist = tuple(int(p) for p in args.ports.split(","))
+
+    # Step 1: Merge
+    print("=" * 60)
+    print("STEP 1: Merge new nodes from subscriptions")
+    print("=" * 60)
+    cmd_merge(args)
+
+    # Step 2: Test
+    print("\n" + "=" * 60)
+    print("STEP 2: Test all working nodes")
+    print("=" * 60)
+    cmd_test(args)
+
+    # Step 3: Export
+    print("\n" + "=" * 60)
+    print("STEP 3: Export configs")
+    print("=" * 60)
+    args_export = argparse.Namespace(
+        type="all",
+        output=args.output,
+    )
+    cmd_export(args_export)
+
+
 def cmd_export(args):
     """Генерирует sing-box конфиг из hy2_working.json.
 
@@ -185,12 +213,20 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python hy2_manage.py merge             Fetch new nodes from subscriptions
-  python hy2_manage.py test              Test all nodes
-  python hy2_manage.py export --type all --output hy2_tun.json
+  python hy2_manage.py run                     Full pipeline (merge+test+export)
+  python hy2_manage.py merge                   Fetch new nodes from subscriptions
+  python hy2_manage.py test                    Test all nodes
+  python hy2_manage.py export --type all       Export only
         """,
     )
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
+
+    # run (default)
+    run_parser = subparsers.add_parser("run", help="Full pipeline: merge -> test -> export")
+    run_parser.add_argument("--ports", type=str, default="443,8443,2053,2083,2087,2096,4433",
+                            help="Comma-separated port whitelist")
+    run_parser.add_argument("--timeout", type=int, default=10, help="Test timeout per node (seconds)")
+    run_parser.add_argument("--output", default="../hy2_tun.json", help="Output file for tun config")
 
     # merge
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
@@ -212,7 +248,9 @@ Examples:
         parser.print_help()
         return
 
-    if args.command == "merge":
+    if args.command == "run":
+        cmd_run(args)
+    elif args.command == "merge":
         cmd_merge(args)
     elif args.command == "test":
         cmd_test(args)

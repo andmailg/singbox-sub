@@ -21,6 +21,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: pip
 
       - name: Install dependencies
         run: |
@@ -33,22 +34,11 @@ jobs:
           curl -L https://github.com/HyNetworks/hysteria/releases/download/app%2Fv2.12.3/hysteria-linux-amd64 -o hy2
           chmod +x hy2
           sudo mv hy2 /usr/local/bin/hy2
-          hy2 version
 
-      - name: Merge new nodes from subscriptions
+      - name: Run full pipeline
         run: |
           cd python
-          python hy2_manage.py merge
-
-      - name: Test all working nodes
-        run: |
-          cd python
-          python hy2_manage.py test --timeout 10
-
-      - name: Export configs
-        run: |
-          cd python
-          python hy2_manage.py export --type all --output ../hy2_tun.json
+          python hy2_manage.py run --timeout 10
 
       - name: Commit and push if changed
         run: |
