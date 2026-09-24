@@ -202,42 +202,10 @@ def cmd_export(args):
     # Сортируем и нумеруем
     nodes.sort(key=lambda o: (o.get("server", ""), o.get("server_port", 0)))
     for idx, node in enumerate(nodes, start=1):
-        # Определяем страну по latency или серверу
-        flag = ""
-        tag = f"node-{idx}"
-
-        # Простая эвристика: по серверу определяем флаг
-        server = node.get("server", "").lower()
-        if "de" in server or "germany" in server or "berlin" in server:
-            flag = "🇩🇪"
-        elif "dk" in server or "denmark" in server or "copenhagen" in server:
-            flag = "🇩🇰"
-        elif "kr" in server or "korea" in server or "seoul" in server:
-            flag = "🇰🇷"
-        elif "ro" in server or "romania" in server or "bucharest" in server:
-            flag = "🇷🇴"
-        elif "us" in server or "america" in server or "newyork" in server or "losangeles" in server:
-            flag = "🇺🇸"
-        elif "nl" in server or "netherlands" in server or "amsterdam" in server:
-            flag = "🇳🇱"
-        elif "fr" in server or "france" in server or "paris" in server:
-            flag = "🇫🇷"
-        elif "se" in server or "sweden" in server or "stockholm" in server:
-            flag = "🇸🇪"
-        elif "pl" in server or "poland" in server or "warsaw" in server:
-            flag = "🇵🇱"
-        elif "uk" in server or "london" in server or "gb" in server:
-            flag = "🇬🇧"
-        elif "jp" in server or "japan" in server or "tokyo" in server:
-            flag = "🇯🇵"
-
-        node["tag"] = f"{flag}{tag}" if flag else tag
-
-    # Очистка внутренних полей
-    _INTERNAL_FIELDS = {"_latency_ms", "_last_ok_ts", "_country", "_status", "_pending_since"}
-    for node in nodes:
-        for key in _INTERNAL_FIELDS:
-            node.pop(key, None)
+        country = node.pop("_country", None)
+        flag = country_code_to_flag(country) if country else ""
+        tag = f"{flag}node-{idx}" if flag else f"node-{idx}"
+        node["tag"] = tag
 
     # Экспорт
     if args.type == "tun":
