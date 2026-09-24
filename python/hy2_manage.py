@@ -234,10 +234,10 @@ def cmd_export(args):
         node["tag"] = f"{flag}{tag}" if flag else tag
 
     # Очистка внутренних полей
+    _INTERNAL_FIELDS = {"_latency_ms", "_last_ok_ts", "_country", "_status", "_pending_since"}
     for node in nodes:
-        node.pop("_latency_ms", None)
-        node.pop("_last_ok_ts", None)
-        node.pop("_country", None)
+        for key in _INTERNAL_FIELDS:
+            node.pop(key, None)
 
     # Экспорт
     if args.type == "tun":
