@@ -2,8 +2,8 @@ name: Auto Convert Xray to Sing-Box Hy2
 
 on:
   schedule:
-    # Запуск каждые 5 часов
-    - cron: '0 */5 * * *'
+    # Запуск каждые 2 час
+    - cron: '0 */2 * * *'
   workflow_dispatch: # Ручной запуск
 
 jobs:
