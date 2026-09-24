@@ -223,11 +223,13 @@ def _build_stream_settings(node: dict, network: str) -> dict:
     return stream_settings
 
 
-def test_vless_node(node: dict, timeout: int = 5) -> dict | None:
+def test_vless_node(node: dict, timeout: int = 5) -> dict | str | None:
     """
     Тестирует одну ноду VLESS через Xray CLI с SOCKS5-прокси.
-    Возвращает node с добавленным полем "_latency_ms" при успехе,
-    либо None если нода не работает.
+    Возвращает:
+      - node с полем "_latency_ms" при успехе,
+      - строку с причиной провала при ошибке,
+      - None при критической ошибке (нет xray CLI и т.п.).
     """
     server = node["server"]
     port = node["server_port"]
@@ -262,8 +264,7 @@ def test_vless_node(node: dict, timeout: int = 5) -> dict | None:
         if proc.returncode is not None and proc.returncode != 0:
             stdout, stderr = proc.communicate()
             output = (stderr or stdout or "").strip()
-            print(f"  [{tag}] FAIL — CLI exit {proc.returncode}: {output[:200]}")
-            return None
+            return f"CLI exit {proc.returncode}: {output[:200]}"
 
         # 3. Ждём, пока SOCKS5-порт станет доступен
         if not wait_for_port("127.0.0.1", local_port, timeout=5.0):
@@ -272,8 +273,7 @@ def test_vless_node(node: dict, timeout: int = 5) -> dict | None:
                 proc.wait(timeout=1)
             except subprocess.TimeoutExpired:
                 proc.kill()
-            print(f"  [{tag}] FAIL — SOCKS5 port not ready")
-            return None
+            return "SOCKS5 port not ready"
 
         # 4. Выполняем проверку через curl с проксированием
         curl_cmd = [
@@ -297,17 +297,13 @@ def test_vless_node(node: dict, timeout: int = 5) -> dict | None:
                     node["_latency_ms"] = latency
                     return node
                 else:
-                    print(f"  [{tag}] FAIL — HTTP {http_code}")
-                    return None
+                    return f"HTTP {http_code}"
 
-        print(f"  [{tag}] FAIL — curl failed: {res.stderr.strip()[:150]}")
-        return None
+        return f"curl failed: {res.stderr.strip()[:150]}"
 
     except FileNotFoundError:
-        print(f"  [{tag}] ERROR — 'xray' CLI not found in PATH")
         return None
     except Exception as e:
-        print(f"  [{tag}] ERROR — {e}")
         return None
     finally:
         # 5. Гарантированно убиваем фоновый процесс Xray
@@ -398,8 +394,14 @@ def test_vless_connectivity(
                 try:
                     result = future.result()
                     if result is not None:
-                        results_map[node_id] = result
-                        print(f"  [{i}/{len(new_nodes)}] {tag}: OK — {result.get('_latency_ms', '?')}ms")
+                        if isinstance(result, str):
+                            # Строка — причина провала
+                            results_map[node_id] = None
+                            failed += 1
+                            print(f"  [{i}/{len(new_nodes)}] {tag}: FAIL — {result}")
+                        else:
+                            results_map[node_id] = result
+                            print(f"  [{i}/{len(new_nodes)}] {tag}: OK — {result.get('_latency_ms', '?')}ms")
                     else:
                         results_map[node_id] = None
                         failed += 1
