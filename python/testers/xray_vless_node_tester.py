@@ -53,65 +53,43 @@ def wait_for_port(host: str, port: int, timeout: float = 5.0) -> bool:
 def _build_xray_config(node: dict, local_port: int) -> dict:
     """
     Генерирует JSON-конфигурацию Xray для тестирования одной ноды VLESS.
-    Автоматически определяет транспорт из sing-box ноды.
+    Автоматически определяет транспорт и настройки из sing-box ноды.
     """
     server = node["server"]
     port = node["server_port"]
     uuid = node.get("uuid", "")
-    flow = node.get("flow", "")
-    network = node.get("transport", {}).get("type", "tcp")
-    security = node.get("tls", {}).get("enabled", False)
     
-    # Transport settings
-    transport = {}
-    http_settings = node.get("transport", {})
+    # Извлекаем flow из tls.reality если есть
+    flow = ""
+    tls_cfg = node.get("tls", {})
+    if tls_cfg and isinstance(tls_cfg, dict):
+        reality = tls_cfg.get("reality", {})
+        if isinstance(reality, dict):
+            flow = reality.get("flow", "")
     
-    if network == "http":
-        transport["type"] = "http"
-        transport["host"] = http_settings.get("host", [""])
-        transport["path"] = http_settings.get("path", "/")
-        transport["method"] = http_settings.get("method", "GET")
-    elif network == "ws":
-        transport["type"] = "websocket"
-        transport["path"] = http_settings.get("path", "/")
-        transport["headers"] = http_settings.get("headers", {})
-    elif network == "grpc":
-        transport["type"] = "grpc"
-        transport["serviceName"] = http_settings.get("service_name", "")
-    elif network == "h2":
-        transport["type"] = "http"
-        transport["host"] = http_settings.get("host", [""])
-        transport["path"] = http_settings.get("path", "/")
-    elif network == "httpupgrade":
-        transport["type"] = "httpupgrade"
-        transport["host"] = http_settings.get("host", "")
-        transport["path"] = http_settings.get("path", "/")
+    # Определяем транспорт
+    transport_cfg = node.get("transport", {})
+    if not isinstance(transport_cfg, dict):
+        transport_cfg = {}
+    network = transport_cfg.get("type", "tcp")
     
-    # Build stream settings
-    stream_settings = {}
-    
-    if security:
-        tls_settings = node.get("tls", {})
-        stream_settings["security"] = "reality" if tls_settings.get("reality", False) else "tls"
-        stream_settings["tlsSettings"] = _build_tls_settings(tls_settings, node)
-    
-    if transport:
-        stream_settings["networkSettings"] = transport
+    # Build streamSettings для Xray
+    stream_settings = _build_stream_settings(node, network)
     
     # Build VLESS outbound
+    vless_user = {
+        "id": uuid,
+        "encryption": "none"
+    }
+    if flow:
+        vless_user["flow"] = flow
+    
     vless_settings = {
         "vnext": [
             {
                 "address": server,
                 "port": port,
-                "users": [
-                    {
-                        "id": uuid,
-                        "flow": flow,
-                        "encryption": "none",
-                        "security": "auto"
-                    }
-                ]
+                "users": [vless_user]
             }
         ]
     }
@@ -135,7 +113,7 @@ def _build_xray_config(node: dict, local_port: int) -> dict:
             {
                 "protocol": "vless",
                 "settings": vless_settings,
-                "streamSettings": stream_settings if (security or transport) else {},
+                "streamSettings": stream_settings,
                 "tag": "proxy"
             },
             {
@@ -148,22 +126,82 @@ def _build_xray_config(node: dict, local_port: int) -> dict:
     return config
 
 
-def _build_tls_settings(tls_cfg: dict, node: dict) -> dict:
-    """Генерирует TLS настройки для Xray."""
-    tls_settings = {}
+def _build_stream_settings(node: dict, network: str) -> dict:
+    """
+    Генерирует streamSettings для Xray на основе транспорта и TLS/REALITY.
+    """
+    stream_settings = {"network": network}
     
-    server_name = tls_cfg.get("server_name", "")
-    if server_name:
-        tls_settings["serverName"] = server_name
+    tls_cfg = node.get("tls", {})
+    if not isinstance(tls_cfg, dict):
+        tls_cfg = {}
     
-    if tls_cfg.get("reality", False):
-        tls_settings["security"] = "reality"
-        reality_cfg = tls_cfg.get("reality_settings", {})
-        tls_settings["publicKey"] = reality_cfg.get("public_key", "")
-        tls_settings["shortId"] = reality_cfg.get("short_id", "")
-        tls_settings["spiderX"] = reality_cfg.get("spider_x", "/")
+    has_reality = False
+    has_tls = tls_cfg.get("enabled", False)
     
-    return tls_settings
+    if has_tls and isinstance(tls_cfg, dict):
+        reality = tls_cfg.get("reality", {})
+        if isinstance(reality, dict) and reality.get("enabled", False):
+            has_reality = True
+    
+    # Настройки транспорта (на верхнем уровне streamSettings)
+    transport_cfg = node.get("transport", {})
+    if not isinstance(transport_cfg, dict):
+        transport_cfg = {}
+    
+    if network in ("ws", "websocket"):
+        stream_settings["wsSettings"] = {
+            "path": transport_cfg.get("path", "/"),
+            "headers": transport_cfg.get("headers", {})
+        }
+    elif network in ("grpc", "gun"):
+        stream_settings["grpcSettings"] = {
+            "serviceName": transport_cfg.get("service_name", "")
+        }
+    elif network in ("http", "h2"):
+        stream_settings["httpSettings"] = {
+            "host": transport_cfg.get("host", []),
+            "path": transport_cfg.get("path", "/")
+        }
+    elif network == "httpupgrade":
+        stream_settings["httpupgradeSettings"] = {
+            "host": transport_cfg.get("host", ""),
+            "path": transport_cfg.get("path", "/")
+        }
+    
+    # Настройки безопасности
+    if has_reality:
+        stream_settings["security"] = "reality"
+        reality = tls_cfg.get("reality", {})
+        if isinstance(reality, dict):
+            reality_settings = {}
+            sni = tls_cfg.get("server_name", "")
+            if sni:
+                reality_settings["serverName"] = sni
+            public_key = reality.get("public_key", "")
+            if public_key:
+                reality_settings["publicKey"] = public_key
+            short_id = reality.get("short_id", "")
+            if short_id:
+                reality_settings["shortId"] = short_id
+            spider_x = reality.get("spider_x", "/")
+            if spider_x:
+                reality_settings["spiderX"] = spider_x
+            stream_settings["realitySettings"] = reality_settings
+    elif has_tls:
+        stream_settings["security"] = "tls"
+        tls_settings = {}
+        sni = tls_cfg.get("server_name", "")
+        if sni:
+            tls_settings["serverName"] = sni
+        utls = tls_cfg.get("utls", {})
+        if isinstance(utls, dict) and utls.get("enabled", False):
+            fingerprint = utls.get("fingerprint", "")
+            if fingerprint:
+                tls_settings["fingerprint"] = fingerprint
+        stream_settings["tlsSettings"] = tls_settings
+    
+    return stream_settings
 
 
 def test_node_xray_vless(node: dict, timeout: int = 5) -> dict | None:
