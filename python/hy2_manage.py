@@ -122,13 +122,24 @@ def cmd_test(args):
 
 
 def renumber_nodes(nodes: list[dict]) -> list[dict]:
-    """Сортирует ноды по server:port и назначает тэги с флагом страны node-1, node-2, ..."""
-    nodes.sort(key=lambda o: (o.get("server", ""), o.get("server_port", 0)))
+    """Определяет страну, сортирует по флагу, назначает тэги node-1, node-2, ..."""
+    # 1. Определяем страны для всех нод
+    for node in nodes:
+        country = resolve_country(node.get("server", ""))
+        node["_country"] = country
+
+    # 2. Сортируем по стране (флагу), затем по server:port
+    nodes.sort(key=lambda o: (
+        country_code_to_flag(o.get("_country", "")) or "",
+        o.get("server", ""),
+        o.get("server_port", 0),
+    ))
+
+    # 3. Нумерация
     for idx, node in enumerate(nodes, start=1):
         node.pop("_country", None)
         node.pop("_latency_ms", None)
-        # Определяем страну сервера
-        country = resolve_country(node.get("server", ""))
+        country = node.get("_country")
         flag = country_code_to_flag(country) if country else ""
         node["tag"] = f"{flag}node-{idx}" if flag else f"node-{idx}"
     return nodes
