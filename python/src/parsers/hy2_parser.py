@@ -103,8 +103,8 @@ def parse_proxy_link(link: str) -> dict | None:
     if not password:
         return None
 
-    # 4. Тег ноды (fragment)
-    tag = urllib.parse.unquote(parsed.fragment) if parsed.fragment else "Hy2-Node"
+    # 4. Тег ноды — fragment игнорируется, тэг назначается при экспорте (node-N)
+    tag = ""
 
     # 5. SNI (необязателен — fallback на hostname)
     sni = _param(params, "sni")

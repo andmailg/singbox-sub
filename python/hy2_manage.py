@@ -199,13 +199,11 @@ def cmd_export(args):
         print("No nodes found. Run 'test' or 'merge' first.")
         return
 
-    # Сортируем и нумеруем
+    # Сортируем по server + port
     nodes.sort(key=lambda o: (o.get("server", ""), o.get("server_port", 0)))
     for idx, node in enumerate(nodes, start=1):
-        country = node.pop("_country", None)
-        flag = country_code_to_flag(country) if country else ""
-        tag = f"{flag}node-{idx}" if flag else f"node-{idx}"
-        node["tag"] = tag
+        node.pop("_country", None)
+        node["tag"] = f"node-{idx}"
 
     # Экспорт
     if args.type == "tun":
