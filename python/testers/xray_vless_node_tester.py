@@ -6,6 +6,7 @@ import sys
 import tempfile
 import time
 import socket
+from typing import Any
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 
@@ -68,13 +69,13 @@ def _build_xray_config(node: dict, local_port: int) -> dict:
             flow = reality.get("flow", "")
     
     # Определяем транспорт
-    transport_cfg = node.get("transport", {})
+    transport_cfg: dict[str, Any] = node.get("transport", {})
     if not isinstance(transport_cfg, dict):
         transport_cfg = {}
-    network = transport_cfg.get("type", "tcp")
+    network: str = transport_cfg.get("type") or "tcp"
     
     # Build streamSettings для Xray
-    stream_settings = _build_stream_settings(node, network)
+    stream_settings: dict[str, Any] = _build_stream_settings(node, network)
     
     # Build VLESS outbound
     vless_user = {
@@ -130,7 +131,7 @@ def _build_stream_settings(node: dict, network: str) -> dict:
     """
     Генерирует streamSettings для Xray на основе транспорта и TLS/REALITY.
     """
-    stream_settings = {"network": network}
+    stream_settings: dict[str, Any] = {"network": network}
     
     tls_cfg = node.get("tls", {})
     if not isinstance(tls_cfg, dict):
@@ -150,29 +151,29 @@ def _build_stream_settings(node: dict, network: str) -> dict:
         transport_cfg = {}
     
     if network in ("ws", "websocket"):
-        path = transport_cfg.get("path") or "/"
-        headers: dict = transport_cfg.get("headers") or {}
+        path: str = transport_cfg.get("path") or "/"
+        headers: dict[str, Any] = transport_cfg.get("headers") or {}
         stream_settings["wsSettings"] = {
             "path": path,
             "headers": headers
         }
     elif network in ("grpc", "gun"):
-        service_name = transport_cfg.get("service_name") or ""
+        service_name: str = transport_cfg.get("service_name") or ""
         stream_settings["grpcSettings"] = {
             "serviceName": service_name
         }
     elif network in ("http", "h2"):
-        host: list = transport_cfg.get("host") or []
+        host: list[str] = transport_cfg.get("host") or []
         path = transport_cfg.get("path") or "/"
         stream_settings["httpSettings"] = {
             "host": host,
             "path": path
         }
     elif network == "httpupgrade":
-        host = transport_cfg.get("host") or ""
+        httpupgrade_host: str = transport_cfg.get("host") or ""
         path = transport_cfg.get("path") or "/"
         stream_settings["httpupgradeSettings"] = {
-            "host": host,
+            "host": httpupgrade_host,
             "path": path
         }
     
