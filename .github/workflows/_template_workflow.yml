@@ -1,0 +1,58 @@
+name: Auto Convert Sing-Box X Protocol
+
+on:
+  schedule:
+    # Запуск каждые 2 час
+    - cron: '0 */2 * * *'
+  workflow_dispatch: # Ручной запуск
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests maxminddb
+          curl -L https://git.io/GeoLite2-Country.mmdb -o GeoLite2-Country.mmdb
+      
+      # TODO: установи CLI-инструмент для тестирования протокола X
+      # Пример:
+      # - name: Install X CLI
+      #   run: |
+      #     curl -L https://github.com/example/x-cli/releases/download/v1.0/x-cli-linux-amd64 -o x-cli
+      #     chmod +x x-cli
+      #     sudo mv x-cli /usr/local/bin/x-cli
+
+      - name: Run full pipeline
+        run: |
+          cd python
+          # TODO: измени имя файла менеджера
+          python x_manage.py run --timeout 10
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # TODO: измени имена выходных файлов
+          git add x_tun.json x.txt config.json python/src/x_working.json
+          
+          if git diff --cached --quiet; then
+            echo "Нет изменений для коммита."
+          else
+            git commit -m "Auto-update x configs & working nodes"
+            git push
+          fi
