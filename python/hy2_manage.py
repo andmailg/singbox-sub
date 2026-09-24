@@ -140,11 +140,7 @@ def cmd_run(args):
     print("\n" + "=" * 60)
     print("STEP 3: Export configs")
     print("=" * 60)
-    args_export = argparse.Namespace(
-        type="all",
-        output=args.output,
-    )
-    cmd_export(args_export)
+    cmd_export(argparse.Namespace(type="all"))
 
 
 def cmd_export(args):
@@ -237,7 +233,6 @@ Examples:
     run_parser.add_argument("--ports", type=str, default="443,8443,2053,2083,2087,2096,4433",
                             help="Comma-separated port whitelist")
     run_parser.add_argument("--timeout", type=int, default=10, help="Test timeout per node (seconds)")
-    run_parser.add_argument("--output", default="hy2_tun.json", help="Output file for tun config")
 
     # merge
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
