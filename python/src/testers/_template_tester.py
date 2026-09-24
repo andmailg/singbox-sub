@@ -47,16 +47,20 @@ def _save_test_cache(cache: dict) -> None:
         pass
 
 
-def test_node(node: dict, timeout: int = 5) -> dict | None:
+def test_node(node: dict, timeout: int = 5) -> dict | str | None:
     """Тестирует одну ноду протокола X на работоспособность.
+
+    ВАЖНО: Не печатай логи внутри этой функции — возвращай причину провала
+    как строку. Выводом занимается test_connectivity().
 
     Args:
         node: распарсенная нода в формате sing-box outbound.
         timeout: таймаут теста в секундах.
 
     Returns:
-        Но́да с добавленным полем "_latency_ms" при успехе,
-        либо None если нода не работает.
+        - Но́да с полем "_latency_ms" при успехе,
+        - Строка с причиной провала при ошибке (не печатать!),
+        - None при критической ошибке (нет CLI и т.п.).
     """
     server = node["server"]
     port = node["server_port"]
@@ -129,7 +133,7 @@ def test_connectivity(
                 pool.submit(test_node, node, timeout): node
                 for node in new_nodes
             }
-            results_map: dict[int, dict | None] = {}
+            results_map: dict[int, dict | str | None] = {}
 
             for i, future in enumerate(as_completed(futures), 1):
                 node = futures[future]
@@ -138,8 +142,14 @@ def test_connectivity(
                 try:
                     result = future.result()
                     if result is not None:
-                        results_map[node_id] = result
-                        print(f"  [{i}/{len(new_nodes)}] {tag}: OK — {result.get('_latency_ms', '?')}ms")
+                        if isinstance(result, str):
+                            # Строка — причина провала
+                            results_map[node_id] = None
+                            failed += 1
+                            print(f"  [{i}/{len(new_nodes)}] {tag}: FAIL — {result}")
+                        else:
+                            results_map[node_id] = result
+                            print(f"  [{i}/{len(new_nodes)}] {tag}: OK — {result.get('_latency_ms', '?')}ms")
                     else:
                         results_map[node_id] = None
                         failed += 1
@@ -154,7 +164,7 @@ def test_connectivity(
                 for node in new_nodes:
                     if id(node) == node_id:
                         key = _cache_key(node)
-                        if result is not None:
+                        if result is not None and not isinstance(result, str):
                             cache[key] = result.get("_latency_ms", 0)
                             working.append(result)
                         else:
