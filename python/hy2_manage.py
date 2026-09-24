@@ -24,7 +24,9 @@ from src.common import (
     INTERNAL_FIELDS,
     clean_internal_fields,
     resolve_server,
+    country_code_to_flag,
 )
+from src.rkn_filter import resolve_country
 
 
 def cmd_merge(args):
@@ -104,11 +106,15 @@ def cmd_test(args):
 
 
 def renumber_nodes(nodes: list[dict]) -> list[dict]:
-    """Сортирует ноды по server:port и назначает тэги node-1, node-2, ..."""
+    """Сортирует ноды по server:port и назначает тэги с флагом страны node-1, node-2, ..."""
     nodes.sort(key=lambda o: (o.get("server", ""), o.get("server_port", 0)))
     for idx, node in enumerate(nodes, start=1):
         node.pop("_country", None)
-        node["tag"] = f"node-{idx}"
+        node.pop("_latency_ms", None)
+        # Определяем страну сервера
+        country = resolve_country(node.get("server", ""))
+        flag = country_code_to_flag(country) if country else ""
+        node["tag"] = f"{flag}node-{idx}" if flag else f"node-{idx}"
     return nodes
 
 

@@ -6,7 +6,7 @@ import os
 import socket
 from functools import lru_cache
 
-from src.common import is_valid_ip
+from src.common import is_valid_ip, session
 
 try:
     import maxminddb
@@ -197,6 +197,49 @@ def _resolve_dns(domain: str) -> str | None:
         return socket.gethostbyname(domain)
     except socket.gaierror:
         return None
+
+
+def resolve_country(server: str) -> str | None:
+    """Определяет страну по серверу (домен/IP) через GeoIP.
+    Возвращает ISO 3166-1 alpha-2 код (например 'DE', 'PL') или None.
+    
+    GeoLite2-Country.mmdb должна быть доступна в корне репозитория
+    (скачивается в CI/CD на этапе Install dependencies).
+    """
+    from src.common import is_valid_ip
+
+    geoip_path = "GeoLite2-Country.mmdb"
+
+    # 1. Резолвим домен в IP
+    node_ip = server.strip("[]")
+    if not is_valid_ip(node_ip):
+        resolved = _resolve_dns(node_ip)
+        if resolved is None:
+            return None
+        node_ip = resolved
+
+    # 2. Ищем в GeoIP
+    if not maxminddb or not os.path.exists(geoip_path):
+        return None
+
+    try:
+        reader = maxminddb.open_database(geoip_path)
+        geo_data = reader.get(node_ip)
+        reader.close()
+        if geo_data is None:
+            return None
+        # maxminddb returns a Record object; convert to dict for safe access
+        if not isinstance(geo_data, dict):
+            return None
+        country_data = geo_data.get("country")
+        if not isinstance(country_data, dict):
+            return None
+        iso_code = country_data.get("iso_code")
+        if isinstance(iso_code, str) and iso_code:
+            return iso_code
+    except Exception:
+        pass
+    return None
 
 
 def resolve_and_check(

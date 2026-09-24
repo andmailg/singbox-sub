@@ -26,6 +26,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests maxminddb
+          curl -L https://git.io/GeoLite2-Country.mmdb -o GeoLite2-Country.mmdb
       
       - name: Install Hysteria2 CLI
         run: |
