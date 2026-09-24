@@ -140,7 +140,7 @@ def cmd_run(args):
     print("\n" + "=" * 60)
     print("STEP 3: Export configs")
     print("=" * 60)
-    cmd_export(argparse.Namespace(type="all"))
+    cmd_export(argparse.Namespace(type="all", output="hy2_tun.json"))
 
 
 def cmd_export(args):
