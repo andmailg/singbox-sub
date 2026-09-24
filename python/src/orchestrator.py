@@ -224,10 +224,6 @@ def run_pipeline(
 
     prefix = f"[{output_file}] "
 
-    # Default hy2_test: True for hy2 protocol, False otherwise
-    if hy2_test is None:
-        hy2_test = protocol == "hy2"
-
     # 1. Загрузка подписок
     sub_urls_path = os.path.join(os.path.dirname(__file__), SOURCES_JSON_PATH)
     with open(sub_urls_path, "r", encoding="utf-8") as f:
