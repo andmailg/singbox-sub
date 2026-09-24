@@ -17,7 +17,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     # Очистка внутренних полей
-    _INTERNAL_FIELDS = {"_latency_ms", "_last_ok_ts", "_country", "_status", "_pending_since"}
+    _INTERNAL_FIELDS = {"_latency_ms", "_last_ok_ts", "_country", "_pending_since"}
     for node in nodes:
         for key in _INTERNAL_FIELDS:
             node.pop(key, None)

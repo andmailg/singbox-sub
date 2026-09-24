@@ -23,7 +23,7 @@ session.verify = False
 
 # Внутренние поля, которые не должны попадать в экспорт
 INTERNAL_FIELDS = frozenset({
-    "_latency_ms", "_last_ok_ts", "_country", "_status", "_pending_since"
+    "_latency_ms", "_last_ok_ts", "_country", "_pending_since"
 })
 
 

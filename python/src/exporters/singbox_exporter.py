@@ -24,7 +24,7 @@ def _export(
     speed_mbps: int = 20,
 ) -> int:
     """Общий экспорт: speed settings → билд → запись на диск."""
-    _INTERNAL_FIELDS = {"_latency_ms", "_last_ok_ts", "_country", "_status", "_pending_since"}
+    _INTERNAL_FIELDS = {"_latency_ms", "_last_ok_ts", "_country", "_pending_since"}
     for o in outbounds:
         if o.get("type") == "hysteria2":
             o.setdefault("up_mbps", speed_mbps)

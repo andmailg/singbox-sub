@@ -72,8 +72,24 @@ def cmd_test(args):
         return
 
     now_ts = datetime.now(timezone.utc).timestamp()
-    pending_nodes = [n for n in nodes if n.get("_status") == "pending"]
-    active_nodes = [n for n in nodes if n.get("_status") != "pending"]
+    STALE_THRESHOLD = 24 * 3600  # 24 часа
+
+    # 1. Удаляем ноды с просроченным _last_ok_ts (> 24 часов)
+    fresh_nodes = []
+    for node in nodes:
+        last_ok = node.get("_last_ok_ts")
+        if last_ok and (now_ts - last_ok) > STALE_THRESHOLD:
+            print(f"  Removing stale node (24h+): {node.get('server')}:{node.get('server_port')}")
+        else:
+            fresh_nodes.append(node)
+
+    stale_count = len(nodes) - len(fresh_nodes)
+    if stale_count:
+        print(f"  Removed {stale_count} stale node(s)")
+    nodes = fresh_nodes
+
+    pending_nodes = [n for n in nodes if "_pending_since" in n]
+    active_nodes = [n for n in nodes if "_pending_since" not in n]
 
     print(f"Active: {len(active_nodes)}, Pending: {len(pending_nodes)}")
 
@@ -93,13 +109,11 @@ def cmd_test(args):
         key = _cache_key(node)
         if key in working_keys:
             node["_last_ok_ts"] = now_ts
-            node.pop("_status", None)
             node.pop("_pending_since", None)
             new_working.append(node)
-        elif node.get("_status") == "pending":
+        elif "_pending_since" in node:
             print(f"  Removing failed pending node: {node.get('server')}:{node.get('server_port')}")
         else:
-            node["_status"] = "pending"
             node["_pending_since"] = now_ts
             new_pending.append(node)
 
