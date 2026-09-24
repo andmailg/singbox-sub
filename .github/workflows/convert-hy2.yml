@@ -37,7 +37,7 @@ jobs:
       - name: Run full pipeline
         run: |
           cd python
-          python hy2_manage.py run --timeout 10
+          python hy2_manage.py run --timeout 10 --output hy2_tun.json
 
       - name: Commit and push if changed
         run: |

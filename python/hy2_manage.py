@@ -12,6 +12,7 @@ import json
 import os
 import sys
 from datetime import datetime, timezone
+from pathlib import Path
 
 PYTHON_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, PYTHON_DIR)
@@ -180,6 +181,7 @@ def _export_tun(nodes, output_file):
     from src.exporters.singbox_exporter import export_tun
     for n in nodes:
         clean_internal_fields(n)
+    output_file = _resolve_output(output_file)
     export_tun(nodes, output_file)
 
 
@@ -188,7 +190,16 @@ def _export_router(nodes, output_file):
     from src.exporters.singbox_exporter import export_router
     for n in nodes:
         clean_internal_fields(n)
+    output_file = _resolve_output(output_file)
     export_router(nodes, output_file)
+
+
+def _resolve_output(output_file: str) -> str:
+    """Решает абсолютный путь для выходного файла относительно корня проекта."""
+    if os.path.isabs(output_file):
+        return output_file
+    root_dir = Path(PYTHON_DIR).parent
+    return str((root_dir / output_file).resolve())
 
 
 def _export_v2ray(nodes, output_file=None):
@@ -226,7 +237,7 @@ Examples:
     run_parser.add_argument("--ports", type=str, default="443,8443,2053,2083,2087,2096,4433",
                             help="Comma-separated port whitelist")
     run_parser.add_argument("--timeout", type=int, default=10, help="Test timeout per node (seconds)")
-    run_parser.add_argument("--output", default="../hy2_tun.json", help="Output file for tun config")
+    run_parser.add_argument("--output", default="hy2_tun.json", help="Output file for tun config")
 
     # merge
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
