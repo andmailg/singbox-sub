@@ -16,48 +16,14 @@ except ImportError:
 # Источники IP-блэклистов РКН — агрегируются вместе;
 # каждый источник имеет свой формат (CIDR, comment-separated и т.д.).
 RKN_LIST_SOURCES: list[tuple[str, str]] = [
-    # Re-filter-lists (активно обновляется сообществом)
+    # Re-filter-lists (активно обновляется сообществом, широкий охват)
     (
         "https://github.com/1andrevich/Re-filter-lists/raw/refs/heads/main/ipsum.lst",
         "rkn",
     ),
-    # rkn-ip-lists (широкий охват, разные форматы)
+    # Russia blocked IPs (ежедневный автообновляемый CIDR-список)
     (
-        "https://raw.githubusercontent.com/MayersScott/rkn-ip-lists/main/rkn-ip-lists.txt",
-        "rkn",
-    ),
-    # d3blk (классический список, содержит комментарии в начале)
-    (
-        "https://raw.githubusercontent.com/d3ward/toolz/master/src/d3blk",
-        "d3",
-    ),
-    # RKN IP lists — aggregated from multiple community sources
-    (
-        "https://raw.githubusercontent.com/bannedip/rkn-dns/main/ips.txt",
-        "rkn",
-    ),
-    (
-        "https://raw.githubusercontent.com/AdguardTeam/IPFilter/rules.txt",
-        "ads",
-    ),
-    (
-        "https://raw.githubusercontent.com/fkremrousev/rkn-ip-list/main/rkn.txt",
-        "rkn",
-    ),
-    (
-        "https://raw.githubusercontent.com/WooyunGOS/Dorks/main/%E5%B7%A5%E4%BD%9C%E8%80%85/rkn_list",
-        "rkn",
-    ),
-    (
-        "https://anti-copyright.github.io/list/rkn/ru.txt",
-        "rkn",
-    ),
-    (
-        "https://raw.githubusercontent.com/AbcRsm/rkn_russia_list/master/russia.txt",
-        "rkn",
-    ),
-    (
-        "https://raw.githubusercontent.com/ipify/rkn/main/rkn.txt",
+        "https://raw.githubusercontent.com/eduard256/russia-blocked-ips/refs/heads/main/ip.txt",
         "rkn",
     ),
 ]
