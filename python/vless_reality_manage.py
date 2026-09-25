@@ -50,7 +50,7 @@ def cmd_merge(args):
         save_working_nodes(merged)
 
     run_pipeline(
-        parser_module="src.parsers.vless_tcp_reality_parser",
+        parser_module="src.parsers.vless_tcp_parser",
         exporter="tun",
         output_file="vless_reality_working.json",
         export_func=_save_to_working,

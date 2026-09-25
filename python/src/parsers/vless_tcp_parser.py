@@ -1,11 +1,9 @@
-"""Парсинг и фильтрация ссылок VLESS with Reality."""
+"""Парсинг и фильтрация ссылок VLESS TCP (TLS / Reality / None)."""
 
 import base64
 import functools
 import re
 import urllib.parse
-
-
 
 
 @functools.lru_cache(maxsize=4096)
@@ -52,7 +50,15 @@ VALID_FINGERPRINTS = (
 
 
 def parse_proxy_link(link: str) -> dict | None:
-    """Парсит ссылки формата VLESS with Reality."""
+    """Парсит VLESS ссылки с TCP-транспортом.
+
+    Поддерживаемые варианты:
+      - VLESS + TCP + TLS          (security=tls)
+      - VLESS + TCP + Reality       (security=reality)
+      - VLESS + TCP (plain)         (security=none)
+
+    UDP-транспорты (kcp, quic) отбрасываются.
+    """
     link = link.strip()
     if not link or link.startswith("#"):
         return None
@@ -81,7 +87,6 @@ def parse_proxy_link(link: str) -> dict | None:
 
     # 2. Извлечение UUID (пароля для VLESS)
     uuid = parsed.username
-
     if not uuid:
         return None
 
@@ -93,25 +98,16 @@ def parse_proxy_link(link: str) -> dict | None:
         urllib.parse.unquote(parsed.fragment) if parsed.fragment else "VLESS-Node"
     )
 
-    # 3. Обработка SNI (serverName)
-    sni_param = params.get("sni", [None])[0]
-    sni = sni_param.strip() if sni_param else None
-
-    # SNI обязателен для TLS
-    if not sni:
+    # 3. Обработка транспорта (network) — ТОЛЬКО TCP
+    network = params.get("type", [None])[0] or params.get("network", [None])[0]
+    if not network or network.lower() != "tcp":
         return None
 
-    # 4. Сборка TLS options для reality
-    pbk = params.get("pbk", [None])[0]
-    sid = params.get("sid", [None])[0] or ""
-    spider_x = params.get("spiderX", [None])[0] or ""
-    flow = params.get("flow", [None])[0] or ""
-
-    # Универсальная валидация полей reality
-    if not pbk or not _is_valid_reality_public_key(pbk):
-        return None
-    if not _is_valid_hex(sid):
-        return None
+    # 4. Читаем security и fingerprint
+    security = params.get("security", [None])[0]
+    if not security:
+        security = "none"
+    security_lower = security.lower()
 
     # Читаем fp (fingerprint) из URL
     fp = params.get("fp", [None])[0]
@@ -122,45 +118,82 @@ def parse_proxy_link(link: str) -> dict | None:
     if fp.lower() not in VALID_FINGERPRINTS:
         return None
 
-    # Проверяем что security = reality
-    security = params.get("security", [None])[0]
-    if security and security.lower() != "reality":
-        return None
+    # 5. Обработка SNI (serverName)
+    sni_param = params.get("sni", [None])[0]
+    sni = sni_param.strip() if sni_param else None
 
-    tls_opts = {
-        "enabled": True,
-        "server_name": sni,
-        "utls": {
+    # 6. Сборка TLS options в зависимости от security
+    tls_opts = None
+
+    if security_lower == "tls":
+        # VLESS + TCP + TLS
+        if not sni:
+            return None
+        tls_opts = {
             "enabled": True,
-            "fingerprint": fp
-        },
-        "reality": {
-            "enabled": True,
-            "public_key": pbk,
-            "short_id": sid,
+            "server_name": sni,
+            "utls": {
+                "enabled": True,
+                "fingerprint": fp
+            }
         }
-    }
 
-    # spider_x обязателен для sing-box reality
-    if spider_x:
-        tls_opts["reality"]["spider_x"] = spider_x
+    elif security_lower == "reality":
+        # VLESS + TCP + Reality
+        if not sni:
+            return None
+        pbk = params.get("pbk", [None])[0]
+        sid = params.get("sid", [None])[0] or ""
+        spider_x = params.get("spiderX", [None])[0] or ""
 
-    # 5. Обработка транспорта (network)
-    network = params.get("type", [None])[0] or params.get("network", [None])[0]
-    if not network or network.lower() != "tcp":
+        # Валидация reality-полей
+        if not pbk or not _is_valid_reality_public_key(pbk):
+            return None
+        if not _is_valid_hex(sid):
+            return None
+
+        tls_opts = {
+            "enabled": True,
+            "server_name": sni,
+            "utls": {
+                "enabled": True,
+                "fingerprint": fp
+            },
+            "reality": {
+                "enabled": True,
+                "public_key": pbk,
+                "short_id": sid,
+            }
+        }
+
+        # spider_x обязателен для sing-box reality
+        if spider_x:
+            tls_opts["reality"]["spider_x"] = spider_x
+
+    elif security_lower == "none":
+        # VLESS + TCP (plain, без шифрования) — tls не нужен
+        tls_opts = None
+
+    else:
+        # Неизвестный security — отбрасываем
         return None
 
-    # 6. Сборка объекта outbound для sing-box
+    # 7. Читаем flow (например, xtls-rprx-vision)
+    flow = params.get("flow", [None])[0]
+
+    # 8. Сборка объекта outbound для sing-box
     outbound: dict = {
         "type": "vless",
         "tag": tag,
         "server": hostname,
         "server_port": port,
         "uuid": urllib.parse.unquote(uuid),
-        "tls": tls_opts,
     }
 
-    # flow (например, xtls-rprx-vision) — поле уровня vless, а не tls.reality
+    if tls_opts is not None:
+        outbound["tls"] = tls_opts
+
+    # flow — поле уровня vless, а не tls.reality
     if flow:
         outbound["flow"] = flow
 

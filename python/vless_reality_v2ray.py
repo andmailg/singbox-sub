@@ -5,7 +5,7 @@ from src.orchestrator import run_pipeline
 
 if __name__ == "__main__":
     run_pipeline(
-        parser_module="src.parsers.vless_tcp_reality_parser",
+        parser_module="src.parsers.vless_tcp_parser",
         protocol="vless",
         tls_required=True,
         reality=True,

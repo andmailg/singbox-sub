@@ -6,7 +6,7 @@
 3. Добавь case в common.py:_build_fingerprint() для dedup
 
 Примеры:
-  - src/parsers/vless_tcp_reality_parser.py — VLESS with Reality (TLS + reality.public_key)
+  - src/parsers/vless_tcp_parser.py — VLESS TCP (TLS / Reality / None)
   - src/parsers/hy2_parser.py — Hysteria2 (QUIC + auth_password)
   - src/parsers/vless_ws_parser.py — VLESS with WS (TLS + websocket transport)
   - src/parsers/vless_grpc_parser.py — VLESS with gRPC (TLS + gun)

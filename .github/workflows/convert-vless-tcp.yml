@@ -1,4 +1,4 @@
-name: Auto Convert Sing-Box VLESS Reality
+name: Auto Convert Sing-Box VLESS TCP (Reality)
 
 on:
   schedule:
@@ -41,6 +41,7 @@ jobs:
           # Генерирует 2 файла в корне репозитория:
           #   vless_reality_tun.json — sing-box TUN конфиг
           #   vless_reality.txt      — V2Ray-ссылки
+          # Фильтрация: только TCP-транспорт, UDP (kcp, quic) отбрасываются
           python vless_reality_manage.py run --timeout 3
 
       - name: Commit and push if changed
