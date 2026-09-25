@@ -8,37 +8,6 @@ import tempfile
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# Кэш результатов теста подключения
-_CACHE_FILE = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-    "test_cache.json",
-)
-
-
-def _load_test_cache() -> dict:
-    """Загружает кэш результатов теста из JSON-файла."""
-    if os.path.exists(_CACHE_FILE):
-        try:
-            with open(_CACHE_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except Exception:
-            return {}
-    return {}
-
-
-def _save_test_cache(cache: dict) -> None:
-    """Сохраняет кэш результатов теста в JSON-файл."""
-    try:
-        with open(_CACHE_FILE, "w", encoding="utf-8") as f:
-            json.dump(cache, f, ensure_ascii=False, indent=2)
-    except Exception:
-        pass
-
-
-def _cache_key(node: dict) -> str:
-    """Уникальный ключ для кэширования ноды."""
-    return f"{node.get('server')}:{node.get('server_port')}:{node.get('password')}"
-
 
 def _hy2_build_yaml(node: dict, local_port: int) -> str:
     """Генерирует YAML-конфигурацию для Hysteria 2 client на основе ноды."""
@@ -219,8 +188,6 @@ def test_hy2_connectivity(
     """
     Проверяет работоспособность Hysteria2 нод через hy2 CLI + curl.
     Возвращает только рабочие ноды (с добавленным полем _latency_ms).
-    
-    Результаты теста кэшируются в hy2_test_cache.json для детерминизма.
     """
     # Быстрая проверка: есть ли hy2 CLI
     try:
@@ -235,88 +202,46 @@ def test_hy2_connectivity(
         print(f"{prefix}WARNING: hy2 CLI check failed ({e}) — skipping connectivity test")
         return outbounds
 
-    # Загружаем кэш результатов
-    cache = _load_test_cache()
-    
     num_workers = min(20, len(outbounds))
     print(f"{prefix}Testing {len(outbounds)} hy2 nodes with {num_workers} workers ({timeout}s timeout)...")
 
     # Сортируем для детерминизма
     sorted_outbounds = sorted(outbounds, key=lambda o: (o.get("_country", ""), o.get("server", ""), o.get("server_port", 0)))
-    
+
     working: list[dict] = []
     failed = 0
-    cached_ok = 0
-    cached_fail = 0
 
-    # Разделяем ноды на те, что уже в кэше, и новые
-    new_nodes = []
-    for node in sorted_outbounds:
-        key = _cache_key(node)
-        if key in cache:
-            if cache[key]:
-                # Нода прошла тест ранее
-                node["_latency_ms"] = cache[key]
-                working.append(node)
-                cached_ok += 1
-            else:
-                # Нода не прошла тест ранее
-                failed += 1
-                cached_fail += 1
-        else:
-            new_nodes.append(node)
-
-    # Тестируем только новые ноды
-    if new_nodes:
-        with ThreadPoolExecutor(max_workers=num_workers) as pool:
-            futures = {pool.submit(test_hy2_node, node, timeout): node for node in new_nodes}
-            results_map: dict[int, dict | None] = {}
-            for i, future in enumerate(as_completed(futures), 1):
-                node = futures[future]
-                tag = node.get("tag", f"node-{i}")
-                node_id = id(node)
-                try:
-                    result = future.result()
-                    if result is not None:
-                        if isinstance(result, str):
-                            results_map[node_id] = None
-                            failed += 1
-                            print(f"  [{i}/{len(new_nodes)}] {tag}: FAIL — {result}")
-                        else:
-                            results_map[node_id] = result
-                            print(f"  [{i}/{len(new_nodes)}] {tag}: OK — {result.get('_latency_ms', '?')}ms")
-                    else:
+    with ThreadPoolExecutor(max_workers=num_workers) as pool:
+        futures = {pool.submit(test_hy2_node, node, timeout): node for node in sorted_outbounds}
+        results_map: dict[int, dict | None] = {}
+        for i, future in enumerate(as_completed(futures), 1):
+            node = futures[future]
+            tag = node.get("tag", f"node-{i}")
+            node_id = id(node)
+            try:
+                result = future.result()
+                if result is not None:
+                    if isinstance(result, str):
                         results_map[node_id] = None
                         failed += 1
-                        print(f"  [{i}/{len(new_nodes)}] {tag}: FAIL")
-                except Exception as e:
+                        print(f"  [{i}/{len(sorted_outbounds)}] {tag}: FAIL — {result}")
+                    else:
+                        results_map[node_id] = result
+                        working.append(result)
+                        print(f"  [{i}/{len(sorted_outbounds)}] {tag}: OK — {result.get('_latency_ms', '?')}ms")
+                else:
                     results_map[node_id] = None
                     failed += 1
-                    print(f"  [{i}/{len(new_nodes)}] {tag}: ERROR — {e}")
-
-            # Обновляем кэш результатами новых тестов
-            for node_id, result in results_map.items():
-                # Находим ноду по id
-                for node in new_nodes:
-                    if id(node) == node_id:
-                        key = _cache_key(node)
-                        if result is not None:
-                            cache[key] = result.get("_latency_ms", 0)
-                            working.append(result)
-                        else:
-                            cache[key] = None
-                        break
-
-    # Сохраняем кэш
-    _save_test_cache(cache)
+                    print(f"  [{i}/{len(sorted_outbounds)}] {tag}: FAIL")
+            except Exception as e:
+                results_map[node_id] = None
+                failed += 1
+                print(f"  [{i}/{len(sorted_outbounds)}] {tag}: ERROR — {e}")
 
     # Восстанавливаем порядок
     working.sort(key=lambda o: (o.get("_country", ""), o.get("server", ""), o.get("server_port", 0)))
-    
-    removed = failed
-    if removed:
-        print(f"{prefix}Hy2 connectivity: {len(working)} working / {removed} failed ({len(outbounds)} total).")
-        if cached_ok or cached_fail:
-            print(f"{prefix}  (cached: {cached_ok} OK, {cached_fail} FAIL; tested: {len(new_nodes)} new)")
+
+    if failed:
+        print(f"{prefix}Hy2 connectivity: {len(working)} working / {failed} failed ({len(outbounds)} total).")
 
     return working
