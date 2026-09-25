@@ -111,27 +111,22 @@
       "outbounds": [
         "auto",
         "🇨🇭node-1",
-        "🇩🇪node-2",
+        "🇨🇭node-2",
         "🇩🇪node-3",
-        "🇩🇰node-4",
-        "🇫🇮node-5",
-        "🇫🇷node-6",
-        "🇭🇰node-7",
-        "🇯🇵node-8",
-        "🇯🇵node-9",
-        "🇰🇷node-10",
-        "🇰🇷node-11",
-        "🇵🇱node-12",
+        "🇫🇷node-4",
+        "🇭🇰node-5",
+        "🇯🇵node-6",
+        "🇰🇷node-7",
+        "🇰🇷node-8",
+        "🇵🇱node-9",
+        "🇷🇴node-10",
+        "🇷🇴node-11",
+        "🇷🇴node-12",
         "🇷🇴node-13",
-        "🇷🇴node-14",
-        "🇷🇴node-15",
-        "🇷🇴node-16",
-        "🇷🇴node-17",
-        "🇷🇴node-18",
-        "🇺🇸node-19",
-        "🇺🇸node-20",
-        "🇺🇸node-21",
-        "🇺🇸node-22"
+        "🇺🇸node-14",
+        "🇺🇸node-15",
+        "🇺🇸node-16",
+        "🇺🇸node-17"
       ],
       "default": "auto"
     },
@@ -140,27 +135,22 @@
       "tag": "auto",
       "outbounds": [
         "🇨🇭node-1",
-        "🇩🇪node-2",
+        "🇨🇭node-2",
         "🇩🇪node-3",
-        "🇩🇰node-4",
-        "🇫🇮node-5",
-        "🇫🇷node-6",
-        "🇭🇰node-7",
-        "🇯🇵node-8",
-        "🇯🇵node-9",
-        "🇰🇷node-10",
-        "🇰🇷node-11",
-        "🇵🇱node-12",
+        "🇫🇷node-4",
+        "🇭🇰node-5",
+        "🇯🇵node-6",
+        "🇰🇷node-7",
+        "🇰🇷node-8",
+        "🇵🇱node-9",
+        "🇷🇴node-10",
+        "🇷🇴node-11",
+        "🇷🇴node-12",
         "🇷🇴node-13",
-        "🇷🇴node-14",
-        "🇷🇴node-15",
-        "🇷🇴node-16",
-        "🇷🇴node-17",
-        "🇷🇴node-18",
-        "🇺🇸node-19",
-        "🇺🇸node-20",
-        "🇺🇸node-21",
-        "🇺🇸node-22"
+        "🇺🇸node-14",
+        "🇺🇸node-15",
+        "🇺🇸node-16",
+        "🇺🇸node-17"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -169,6 +159,19 @@
     {
       "type": "hysteria2",
       "tag": "🇨🇭node-1",
+      "server": "ch2-hy2.veilvpn.life",
+      "server_port": 443,
+      "password": "5413edfb-08d6-4fba-b51c-809c04feb127",
+      "tls": {
+        "enabled": true,
+        "server_name": "ch2-hy2.veilvpn.life"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇨🇭node-2",
       "server": "hopp-swizland-new.mysynology.net",
       "server_port": 8443,
       "password": "we9_I1893UFj3149xbr1_k8qvJ8734ic_Mx82gH",
@@ -181,7 +184,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-2",
+      "tag": "🇩🇪node-3",
       "server": "de1.apexvpn.space",
       "server_port": 443,
       "password": "af60078b-e956-4752-8728-ce7c9ef630a5",
@@ -194,46 +197,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-3",
-      "server": "de1.xiaoliyu.cyou",
-      "server_port": 4433,
-      "password": "19f72087-4591-4d72-930b-2697078ec2be",
-      "tls": {
-        "enabled": true,
-        "server_name": "de1.xiaoliyu.cyou"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇩🇰node-4",
-      "server": "se.xiaoliyu.cyou",
-      "server_port": 4433,
-      "password": "19f72087-4591-4d72-930b-2697078ec2be",
-      "tls": {
-        "enabled": true,
-        "server_name": "se.xiaoliyu.cyou"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇮node-5",
-      "server": "iq5ny.pleiades.codes",
-      "server_port": 8443,
-      "password": "0dca2cfe-98eb-4f9d-9a47-cf87510c558b",
-      "tls": {
-        "enabled": true,
-        "server_name": "iq5ny.pleiades.codes"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇷node-6",
+      "tag": "🇫🇷node-4",
       "server": "paris.nerabotaet.com",
       "server_port": 443,
       "password": "2561c6b1a3069d3170b4d7e1ecc08c65",
@@ -246,7 +210,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇭🇰node-7",
+      "tag": "🇭🇰node-5",
       "server": "mz.hkychina.com",
       "server_port": 8443,
       "password": "HysTeria2026!Proxy",
@@ -259,20 +223,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇯🇵node-8",
-      "server": "msjp1.mangshe.xyz",
-      "server_port": 20561,
-      "password": "5d0a6445-a30d-4522-bb1f-94f1d3ad63be",
-      "tls": {
-        "enabled": true,
-        "server_name": "msjp1.mangshe.xyz"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇯🇵node-9",
+      "tag": "🇯🇵node-6",
       "server": "open.w2m.ink",
       "server_port": 443,
       "password": "my_super_password_123",
@@ -285,7 +236,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-10",
+      "tag": "🇰🇷node-7",
       "server": "150-230-252-217.liao.kdns.fr",
       "server_port": 50160,
       "password": "9cfc9458e48c028ec03ff86ebc71c744",
@@ -298,7 +249,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-11",
+      "tag": "🇰🇷node-8",
       "server": "152-69-231-175.liao.kdns.fr",
       "server_port": 50160,
       "password": "1beb216e3f60aea9555dae60d219a5ca",
@@ -311,7 +262,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇵🇱node-12",
+      "tag": "🇵🇱node-9",
       "server": "admin.wwwinternetvideo.click",
       "server_port": 443,
       "password": "YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc",
@@ -324,7 +275,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-13",
+      "tag": "🇷🇴node-10",
       "server": "grape-test-italy.dynuddns.net",
       "server_port": 8443,
       "password": "s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z",
@@ -337,7 +288,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-14",
+      "tag": "🇷🇴node-11",
       "server": "hop-germany-september.dynuddns.com",
       "server_port": 8443,
       "password": "9Me_Jx935gnHx13_Nx45M_NYXe037js_Be4z",
@@ -350,7 +301,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-15",
+      "tag": "🇷🇴node-12",
       "server": "hopp-romania-new.roxa.org",
       "server_port": 8080,
       "password": "Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0",
@@ -363,7 +314,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-16",
+      "tag": "🇷🇴node-13",
       "server": "hopp-romania-new.roxa.org",
       "server_port": 8443,
       "password": "Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0",
@@ -376,41 +327,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-17",
-      "server": "hy2-new.aspidnet.xyz",
-      "server_port": 443,
-      "password": "QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s",
-      "tls": {
-        "enabled": true,
-        "server_name": "hy2-new.aspidnet.xyz"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "c1b4086fea89914496c7e10967a419216566"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇷🇴node-18",
-      "server": "hy2.aspidnet.xyz",
-      "server_port": 443,
-      "password": "p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR",
-      "tls": {
-        "enabled": true,
-        "server_name": "hy2.aspidnet.xyz"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "rG07s3COMIEvdnQipRyWzx_H_2xygNC3"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇺🇸node-19",
+      "tag": "🇺🇸node-14",
       "server": "hy2.123266.xyz",
       "server_port": 33333,
       "password": "bce6c821-200d-421f-bf3d-7159e5246ea0",
@@ -423,7 +340,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-20",
+      "tag": "🇺🇸node-15",
       "server": "hy2.561891.xyz",
       "server_port": 44356,
       "password": "dongtaiwang.com",
@@ -436,7 +353,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-21",
+      "tag": "🇺🇸node-16",
       "server": "new-finland-september.bumbleshrimp.com",
       "server_port": 8443,
       "password": "kewr0929_M9ic23iqe_m9E2R93Js8034c_Rt10",
@@ -449,7 +366,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-22",
+      "tag": "🇺🇸node-17",
       "server": "se1.chromevpn.cc",
       "server_port": 443,
       "password": "02bd8b5a-170b-4a79-8e68-9cec710272c7",
