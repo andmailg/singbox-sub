@@ -25,22 +25,21 @@
         "🇨🇭node-1",
         "🇩🇪node-2",
         "🇩🇪node-3",
-        "🇩🇪node-4",
-        "🇩🇰node-5",
-        "🇪🇪node-6",
-        "🇭🇰node-7",
-        "🇯🇵node-8",
-        "🇳🇱node-9",
+        "🇩🇰node-4",
+        "🇪🇪node-5",
+        "🇫🇮node-6",
+        "🇫🇷node-7",
+        "🇭🇰node-8",
+        "🇯🇵node-9",
         "🇵🇱node-10",
         "🇷🇴node-11",
         "🇷🇴node-12",
         "🇷🇴node-13",
         "🇷🇴node-14",
-        "🇷🇴node-15",
+        "🇺🇸node-15",
         "🇺🇸node-16",
         "🇺🇸node-17",
-        "🇺🇸node-18",
-        "🇺🇸node-19"
+        "🇺🇸node-18"
       ],
       "default": "auto"
     },
@@ -51,22 +50,21 @@
         "🇨🇭node-1",
         "🇩🇪node-2",
         "🇩🇪node-3",
-        "🇩🇪node-4",
-        "🇩🇰node-5",
-        "🇪🇪node-6",
-        "🇭🇰node-7",
-        "🇯🇵node-8",
-        "🇳🇱node-9",
+        "🇩🇰node-4",
+        "🇪🇪node-5",
+        "🇫🇮node-6",
+        "🇫🇷node-7",
+        "🇭🇰node-8",
+        "🇯🇵node-9",
         "🇵🇱node-10",
         "🇷🇴node-11",
         "🇷🇴node-12",
         "🇷🇴node-13",
         "🇷🇴node-14",
-        "🇷🇴node-15",
+        "🇺🇸node-15",
         "🇺🇸node-16",
         "🇺🇸node-17",
-        "🇺🇸node-18",
-        "🇺🇸node-19"
+        "🇺🇸node-18"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -101,23 +99,6 @@
     {
       "type": "hysteria2",
       "tag": "🇩🇪node-3",
-      "server": "de1.sferavpn.pro",
-      "server_port": 443,
-      "password": "cd74c0a406664a5bc0bac098220a2468",
-      "tls": {
-        "enabled": true,
-        "server_name": "de1.sferavpn.pro"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "44f1c1e2f8b99e792ceed574627a1eb0"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇩🇪node-4",
       "server": "de1.xiaoliyu.cyou",
       "server_port": 4433,
       "password": "19f72087-4591-4d72-930b-2697078ec2be",
@@ -130,7 +111,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇰node-5",
+      "tag": "🇩🇰node-4",
       "server": "se.xiaoliyu.cyou",
       "server_port": 4433,
       "password": "19f72087-4591-4d72-930b-2697078ec2be",
@@ -143,7 +124,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇪🇪node-6",
+      "tag": "🇪🇪node-5",
       "server": "ee1.sferavpn.pro",
       "server_port": 443,
       "password": "cd74c0a406664a5bc0bac098220a2468",
@@ -160,7 +141,33 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇭🇰node-7",
+      "tag": "🇫🇮node-6",
+      "server": "iq5ny.pleiades.codes",
+      "server_port": 8443,
+      "password": "0dca2cfe-98eb-4f9d-9a47-cf87510c558b",
+      "tls": {
+        "enabled": true,
+        "server_name": "iq5ny.pleiades.codes"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇫🇷node-7",
+      "server": "paris.nerabotaet.com",
+      "server_port": 443,
+      "password": "2561c6b1a3069d3170b4d7e1ecc08c65",
+      "tls": {
+        "enabled": true,
+        "server_name": "paris.nerabotaet.com"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇭🇰node-8",
       "server": "mz.hkychina.com",
       "server_port": 8443,
       "password": "HysTeria2026!Proxy",
@@ -173,26 +180,13 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇯🇵node-8",
+      "tag": "🇯🇵node-9",
       "server": "open.w2m.ink",
       "server_port": 443,
       "password": "my_super_password_123",
       "tls": {
         "enabled": true,
         "server_name": "open.w2m.ink"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇳🇱node-9",
-      "server": "nl.nextgencloud.tech",
-      "server_port": 4433,
-      "password": "d929e993-8053-488a-8a22-0ae09f706a2e",
-      "tls": {
-        "enabled": true,
-        "server_name": "nl.nextgencloud.tech"
       },
       "up_mbps": 20,
       "down_mbps": 20
@@ -268,24 +262,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-15",
-      "server": "hy2.aspidnet.xyz",
-      "server_port": 443,
-      "password": "p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR",
-      "tls": {
-        "enabled": true,
-        "server_name": "hy2.aspidnet.xyz"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "rG07s3COMIEvdnQipRyWzx_H_2xygNC3"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇺🇸node-16",
+      "tag": "🇺🇸node-15",
       "server": "new-finland-september.bumbleshrimp.com",
       "server_port": 8443,
       "password": "kewr0929_M9ic23iqe_m9E2R93Js8034c_Rt10",
@@ -298,7 +275,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-17",
+      "tag": "🇺🇸node-16",
       "server": "nl1.sferavpn.pro",
       "server_port": 443,
       "password": "cd74c0a406664a5bc0bac098220a2468",
@@ -315,7 +292,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-18",
+      "tag": "🇺🇸node-17",
       "server": "ru1.sferavpn.pro",
       "server_port": 443,
       "password": "cd74c0a406664a5bc0bac098220a2468",
@@ -332,7 +309,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-19",
+      "tag": "🇺🇸node-18",
       "server": "se1.chromevpn.cc",
       "server_port": 443,
       "password": "02bd8b5a-170b-4a79-8e68-9cec710272c7",
