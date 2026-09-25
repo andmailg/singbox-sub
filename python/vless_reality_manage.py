@@ -1,9 +1,9 @@
-"""CLI-менеджер для управления рабочими нодами VLESS Reality.
+"""CLI-менеджер для управления рабочими нодами VLESS TCP.
 
 Команды:
   run     — полный pipeline: merge → export (по умолчанию)
-  merge   — подтянуть новые ноды из подписок, добавить в vless_reality_working.json
-  export  — сгенерировать sing-box конфиг из vless_reality_working.json
+  merge   — подтянуть новые ноды из подписок, добавить в vless_tcp_working.json
+  export  — сгенерировать sing-box конфиг из vless_tcp_working.json
 """
 
 import argparse
@@ -33,16 +33,16 @@ from src.testers.vless_node_tester import test_vless_connectivity
 
 
 def cmd_merge(args):
-    """Подтягивает новые ноды из подписок и добавляет в vless_reality_working.json.
+    """Подтягивает новые ноды из подписок и добавляет в vless_tcp_working.json.
 
     Использует run_pipeline() для fetch → parse → filter → DNS → dedup,
-    затем сохраняет результат в vless_reality_working.json (без нумерации тэгов).
+    затем сохраняет результат в vless_tcp_working.json (без нумерации тэгов).
     """
     from src.orchestrator import run_pipeline
 
     port_whitelist = tuple(int(p) for p in args.ports.split(",")) if args.ports else None
 
-    # Кастомный export_func: сохраняет ноды в vless_reality_working.json без нумерации
+    # Кастомный export_func: сохраняет ноды в vless_tcp_working.json без нумерации
     def _save_to_working(outbounds, _output_file):
         existing = load_working_nodes()
         merged, added = merge_new_nodes(existing, outbounds)
@@ -63,8 +63,8 @@ def cmd_merge(args):
 
 
 def cmd_test(args):
-    """Тестирование всех нод из vless_reality_working.json."""
-    print("Loading nodes from vless_reality_working.json...")
+    """Тестирование всех нод из vless_tcp_working.json."""
+    print("Loading nodes from vless_tcp_working.json...")
     nodes = load_working_nodes()
     if not nodes:
         print("No nodes found. Run 'merge' first.")
@@ -234,10 +234,10 @@ def _resolve_output(output_file: str) -> str:
 
 
 def _export_v2ray(nodes, output_file=None):
-    """Экспорт в V2Ray-ссылки (vless_reality.txt в корне проекта)."""
+    """Экспорт в V2Ray-ссылки (vless_tcp.txt в корне проекта)."""
     from src.exporters.v2ray_exporter import _generate_vless_reality_links
     if output_file is None:
-        output_file = os.path.join(os.path.dirname(PYTHON_DIR), "vless_reality.txt")
+        output_file = os.path.join(os.path.dirname(PYTHON_DIR), "vless_tcp.txt")
     links = _generate_vless_reality_links(nodes)
     with open(output_file, "w", encoding="utf-8") as f:
         f.write("\n".join(links))
@@ -246,7 +246,7 @@ def _export_v2ray(nodes, output_file=None):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Manage VLESS Reality working nodes",
+        description="Manage VLESS TCP working nodes",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -295,4 +295,4 @@ Examples:
 
 
 if __name__ == "__main__":
-    main    
+    main()
