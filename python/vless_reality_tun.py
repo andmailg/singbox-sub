@@ -10,5 +10,5 @@ if __name__ == "__main__":
         tls_required=True,
         reality=True,
         exporter="tun",
-        output_file="vless_reality_tun.json",
+        output_file="vless_tcp_tun.json",
     )

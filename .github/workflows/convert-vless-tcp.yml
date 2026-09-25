@@ -39,9 +39,8 @@ jobs:
         run: |
           cd python
           # Генерирует 2 файла в корне репозитория:
-          #   vless_reality_tun.json — sing-box TUN конфиг
-          #   vless_reality.txt      — V2Ray-ссылки
-          # Фильтрация: только TCP-транспорт, UDP (kcp, quic) отбрасываются
+          #   vless_tcp_tun.json — sing-box TUN конфиг
+          #   vless_tcp.txt      — V2Ray-ссылки
           python vless_reality_manage.py run --timeout 3
 
       - name: Commit and push if changed
@@ -49,7 +48,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add vless_reality_tun.json vless_reality.txt python/src/vless_reality_working.json
+          git add vless_tcp_tun.json vless_tcp.txt python/src/vless_reality_working.json
           
           if git diff --cached --quiet; then
             echo "Нет изменений для коммита."

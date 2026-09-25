@@ -138,7 +138,7 @@ def cmd_run(args):
     print("\n" + "=" * 60)
     print("STEP 3: Export configs")
     print("=" * 60)
-    cmd_export(argparse.Namespace(type="all", output="vless_reality_tun.json"))
+    cmd_export(argparse.Namespace(type="all", output="vless_tcp_tun.json"))
 
 
 def cmd_export(args):
@@ -276,7 +276,7 @@ Examples:
     # export
     export_parser = subparsers.add_parser("export", help="Export working nodes to sing-box config")
     export_parser.add_argument("--type", choices=["tun", "router", "all"], default="all", help="Export type")
-    export_parser.add_argument("--output", default="vless_reality_tun.json", help="Output file")
+    export_parser.add_argument("--output", default="vless_tcp_tun.json", help="Output file")
 
     args = parser.parse_args()
 

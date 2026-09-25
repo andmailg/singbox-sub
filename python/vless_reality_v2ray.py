@@ -10,5 +10,5 @@ if __name__ == "__main__":
         tls_required=True,
         reality=True,
         exporter="v2ray",
-        output_file="vless_reality.txt",
+        output_file="vless_tcp.txt",
     )
