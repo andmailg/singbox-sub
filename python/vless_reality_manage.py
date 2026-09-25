@@ -40,7 +40,7 @@ def cmd_merge(args):
     """
     from src.orchestrator import run_pipeline
 
-    port_whitelist = None if args.all_ports else tuple(int(p) for p in args.ports.split(","))
+    port_whitelist = tuple(int(p) for p in args.ports.split(",")) if args.ports else None
 
     # Кастомный export_func: сохраняет ноды в vless_reality_working.json без нумерации
     def _save_to_working(outbounds, _output_file):
@@ -260,18 +260,14 @@ Examples:
 
     # run (default)
     run_parser = subparsers.add_parser("run", help="Full pipeline: merge -> test -> export")
-    run_parser.add_argument("--ports", type=str, default="443,8443,2053,2083,2087,2096,4433",
-                            help="Comma-separated port whitelist")
-    run_parser.add_argument("--all-ports", action="store_true",
-                            help="Disable port filtering (allow all ports)")
+    run_parser.add_argument("--ports", type=str, default=None,
+                            help="Comma-separated port whitelist (default: all ports)")
     run_parser.add_argument("--timeout", type=int, default=10, help="Test timeout per node (seconds)")
 
     # merge
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
-    merge_parser.add_argument("--ports", type=str, default="443,8443,2053,2083,2087,2096,4433",
-                              help="Comma-separated port whitelist")
-    merge_parser.add_argument("--all-ports", action="store_true",
-                              help="Disable port filtering (allow all ports)")
+    merge_parser.add_argument("--ports", type=str, default=None,
+                              help="Comma-separated port whitelist (default: all ports)")
 
     # test
     test_parser = subparsers.add_parser("test", help="Test all nodes and remove dead ones")
