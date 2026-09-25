@@ -6,6 +6,21 @@
 3. Укажи tester_func в pipeline вызове
 
 Если тестирование не нужно — просто передай tester_func=None в run_pipeline().
+
+Примеры:
+  - src/testers/vless_node_tester.py — VLESS через Xray CLI + curl (SOCKS5)
+  - src/testers/hy2_node_tester.py — Hysteria2 через sing-box CLI + curl
+
+Методы тестирования:
+  1. CLI-тест: запустить клиент (xray, sing-box) с конфигом для одной ноды,
+     проверить connectivitycheck.gstatic.com через curl --socks5.
+  2. Прямой TCP: connect(host, port) + протокольный handshake.
+  3. HTTP-запрос: через socks/proxy проверить connectivitycheck.gstatic.com.
+
+Возврат из test_node():
+  - При успехе: но́да (dict) с добавленным полем "_latency_ms".
+  - При провале: строка с причиной (не печатать! — выводит test_connectivity).
+  - При критической ошибке: None (например, нет CLI).
 """
 
 import subprocess
@@ -28,6 +43,18 @@ def test_node(node: dict, timeout: int = 5) -> dict | str | None:
         - Но́да с полем "_latency_ms" при успехе,
         - Строка с причиной провала при ошибке (не печатать!),
         - None при критической ошибке (нет CLI и т.п.).
+
+    Пример реализации через Xray CLI:
+        1. Сгенерировать Xray-конфиг для ноды (включая reality settings).
+        2. Запустить "xray run -c config.json" на локальном порту (SOCKS5).
+        3. Дождаться готовности порта (wait_for_port).
+        4. Выполнить "curl --socks5-hostname 127.0.0.1:{port} ..."
+        5. Вернуть node с _latency_ms при HTTP 204/200, иначе — строку с ошибкой.
+
+    Пример реализации через sing-box CLI:
+        1. Сгенерировать sing-box-конфиг с нодой в outbounds.
+        2. Запустить "sing-box run -c config.json".
+        3. Проверить соединение через встроенный API или curl.
     """
     server = node["server"]
     port = node["server_port"]
@@ -57,6 +84,13 @@ def test_connectivity(
 
     Returns:
         Только рабочие ноды (с добавленным полем _latency_ms).
+
+    Пример реализации:
+        1. Проверить доступность CLI (subprocess.run(["xray", "version"])).
+        2. Если CLI нет — вернуть outbounds без тестирования.
+        3. Запустить test_node в ThreadPoolExecutor (max_workers=20).
+        4. Собрать результаты: working (с _latency_ms) и failed (причины).
+        5. Отсортировать working по (country, server, port).
     """
     # TODO: проверь доступность CLI/зависимостей для тестирования
     # Например: subprocess.run(["sing-box", "version"], ...)

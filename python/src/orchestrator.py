@@ -55,6 +55,7 @@ def _parse_and_deduplicate(
     protocol: str = "generic",
     tls_required: bool = False,
     port_whitelist: tuple[int, ...] | None = None,
+    reality: bool = False,
     prefix: str = "",
 ) -> list[dict]:
     """Парсинг, быстрая фильтрация, DNS-резолвинг (параллельный), дедупликация по IP:port и дополнительные фильтры."""
@@ -73,6 +74,7 @@ def _parse_and_deduplicate(
             protocol=protocol,
             tls_required=tls_required,
             port_whitelist=port_whitelist,
+            reality=reality,
         ):
             continue
         outbound = clean_outbound(outbound)
@@ -203,6 +205,7 @@ def run_pipeline(
     port_whitelist: tuple[int, ...] | None = None,
     tester_func: Callable | None = None,
     test_timeout: int = 5,
+    reality: bool = False,
 ) -> None:
     """Запускает полный pipeline сборки конфига.
 
@@ -220,6 +223,7 @@ def run_pipeline(
         tester_func: функция тестирования нод (accepts list[dict], timeout, prefix -> list[dict]).
             Если None — тестирование пропускается.
         test_timeout: таймаут проверки каждой ноды в секундах.
+        reality: если True — для reality-протоколов не фильтрует SNI по FAKE_DOMAINS.
     """
     print(f"[{output_file}] Starting pipeline (exporter={exporter})...")
 
@@ -252,6 +256,7 @@ def run_pipeline(
         protocol=protocol,
         tls_required=tls_required,
         port_whitelist=port_whitelist,
+        reality=reality,
         prefix=prefix,
     )
 

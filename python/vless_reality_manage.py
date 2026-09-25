@@ -57,6 +57,7 @@ def cmd_merge(args):
         protocol="vless",
         tls_required=True,
         port_whitelist=port_whitelist,
+        reality=True,
         tester_func=None,  # тестирование отдельно через cmd_test (если нужно)
     )
 

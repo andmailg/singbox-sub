@@ -149,6 +149,7 @@ def should_accept_outbound(
     protocol: str = "generic",
     tls_required: bool = False,
     port_whitelist: tuple[int, ...] | None = None,
+    reality: bool = False,
 ) -> bool:
     """Универсальная быстрая фильтрация ноды после парсинга.
 
@@ -158,6 +159,7 @@ def should_accept_outbound(
         protocol: тип протокола ("hy2", "vless", "vmess").
         tls_required: если True — проверяет наличие включённого TLS и server_name.
         port_whitelist: если указан — разрешены только эти порты.
+        reality: если True — для reality-протоколов не фильтрует SNI по FAKE_DOMAINS.
 
     Returns:
         True если нода проходит все проверки.
@@ -200,7 +202,7 @@ def should_accept_outbound(
             return False
         if is_ru_server(sni_val):
             return False
-        if is_fake_domain(sni_val):
+        if not reality and is_fake_domain(sni_val):
             return False
 
     # --- Дедупликация ---
