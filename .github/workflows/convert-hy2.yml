@@ -41,7 +41,7 @@ jobs:
           #   hy2_tun.json — sing-box TUN конфиг
           #   config.json  — sing-box SOCKS конфиг
           #   hy2.txt      — V2Ray-ссылки
-          python hy2_manage.py run --ports 443,8443,2053,2083,2087,2096,4433 --timeout 3
+          python hy2_manage.py run --timeout 3
 
       - name: Commit and push if changed
         run: |
