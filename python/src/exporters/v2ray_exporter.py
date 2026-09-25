@@ -73,33 +73,43 @@ def _generate_vless_grpc_links(outbounds: list[dict]) -> list[str]:
     return links
 
 
-def _generate_vless_reality_links(outbounds: list[dict]) -> list[str]:
-    """Конвертирует VLESS Reality ноды в v2ray-ссылки."""
+def _generate_vless_tcp_links(outbounds: list[dict]) -> list[str]:
+    """Конвертирует VLESS TCP ноды (Reality / TLS) в v2ray-ссылки."""
     links: list[str] = []
     for o in outbounds:
         if o.get("type") != "vless":
             continue
         tls = o.get("tls", {})
-        reality = tls.get("reality", {})
-        if not reality.get("enabled"):
-            continue
+        if not tls or not tls.get("enabled"):
+            continue  # пропускаем ноды без TLS
+
         tag = o.get("tag", "node")
         server = o.get("server", "")
         server_port = o.get("server_port", 443)
         uuid = o.get("uuid", "")
         sni = tls.get("server_name", "")
-        pbk = reality.get("public_key", "")
-        sid = reality.get("short_id", "")
         fp = tls.get("utls", {}).get("fingerprint", "")
 
-        params = {
-            "sni": sni,
-            "pbk": pbk,
-            "fp": fp,
-            "security": "reality",
-        }
-        if sid:
-            params["sid"] = sid
+        reality = tls.get("reality", {})
+        if reality.get("enabled"):
+            # VLESS + TCP + Reality
+            pbk = reality.get("public_key", "")
+            sid = reality.get("short_id", "")
+            params = {
+                "sni": sni,
+                "pbk": pbk,
+                "fp": fp,
+                "security": "reality",
+            }
+            if sid:
+                params["sid"] = sid
+        else:
+            # VLESS + TCP + TLS (без reality)
+            params = {
+                "sni": sni,
+                "fp": fp,
+                "security": "tls",
+            }
 
         query = urllib.parse.urlencode(params)
         fragment = urllib.parse.quote(tag)
@@ -172,7 +182,7 @@ def export_v2ray_by_type(outbounds: list[dict], output_file: str = "output.txt")
     """
     hy2_links = _generate_hy2_links(outbounds)
     grpc_links = _generate_vless_grpc_links(outbounds)
-    reality_links = _generate_vless_reality_links(outbounds)
+    reality_links = _generate_vless_tcp_links(outbounds)
     vmess_links = _generate_vmess_links(outbounds)
 
     result = {}

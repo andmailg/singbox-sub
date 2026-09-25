@@ -235,10 +235,10 @@ def _resolve_output(output_file: str) -> str:
 
 def _export_v2ray(nodes, output_file=None):
     """Экспорт в V2Ray-ссылки (vless_tcp.txt в корне проекта)."""
-    from src.exporters.v2ray_exporter import _generate_vless_reality_links
+    from src.exporters.v2ray_exporter import _generate_vless_tcp_links
     if output_file is None:
         output_file = os.path.join(os.path.dirname(PYTHON_DIR), "vless_tcp.txt")
-    links = _generate_vless_reality_links(nodes)
+    links = _generate_vless_tcp_links(nodes)
     with open(output_file, "w", encoding="utf-8") as f:
         f.write("\n".join(links))
     print(f"Exported {len(links)} VLESS nodes to {output_file}")
