@@ -145,17 +145,13 @@ def parse_proxy_link(link: str) -> dict | None:
     if spider_x:
         tls_opts["reality"]["spider_x"] = spider_x
 
-    # flow (например, xtls-rprx-vision)
-    if flow:
-        tls_opts["reality"]["flow"] = flow
-
     # 5. Обработка транспорта (network)
     network = params.get("type", [None])[0] or params.get("network", [None])[0]
     if not network or network.lower() != "tcp":
         return None
 
     # 6. Сборка объекта outbound для sing-box
-    outbound = {
+    outbound: dict = {
         "type": "vless",
         "tag": tag,
         "server": hostname,
@@ -163,6 +159,10 @@ def parse_proxy_link(link: str) -> dict | None:
         "uuid": urllib.parse.unquote(uuid),
         "tls": tls_opts,
     }
+
+    # flow (например, xtls-rprx-vision) — поле уровня vless, а не tls.reality
+    if flow:
+        outbound["flow"] = flow
 
     return outbound
 
