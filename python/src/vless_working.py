@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 
 _WORKING_FILE = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
-    "vless_reality_working.json",
+    "vless_tcp_working.json",
 )
 
 def _cache_key(node: dict) -> str:

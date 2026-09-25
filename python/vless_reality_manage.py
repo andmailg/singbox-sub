@@ -52,7 +52,7 @@ def cmd_merge(args):
     run_pipeline(
         parser_module="src.parsers.vless_tcp_parser",
         exporter="tun",
-        output_file="vless_reality_working.json",
+        output_file="vless_tcp_working.json",
         export_func=_save_to_working,
         protocol="vless",
         tls_required=True,
@@ -117,7 +117,7 @@ def cmd_test(args):
             new_pending.append(node)
 
     save_working_nodes(new_working + new_pending)
-    print(f"\nSaved {len(new_working)} working, {len(new_pending)} pending nodes to vless_reality_working.json")
+    print(f"\nSaved {len(new_working)} working, {len(new_pending)} pending nodes to vless_tcp_working.json")
 
 
 def cmd_run(args):
@@ -142,10 +142,10 @@ def cmd_run(args):
 
 
 def cmd_export(args):
-    """Генерирует sing-box конфиг из vless_reality_working.json.
+    """Генерирует sing-box конфиг из vless_tcp_working.json.
 
     На экспорт идут только active ноды (без _pending_since).
-    Pending ноды остаются в vless_reality_working.json для повторного тестирования.
+    Pending ноды остаются в vless_tcp_working.json для повторного тестирования.
     """
     all_nodes = load_working_nodes()
     if not all_nodes:
@@ -295,4 +295,4 @@ Examples:
 
 
 if __name__ == "__main__":
-    main()
+    main    
