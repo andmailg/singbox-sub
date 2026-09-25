@@ -41,7 +41,7 @@ jobs:
           # Генерирует 2 файла в корне репозитория:
           #   vless_reality_tun.json — sing-box TUN конфиг
           #   vless_reality.txt      — V2Ray-ссылки
-          python vless_reality_manage.py run --timeout 10
+          python vless_reality_manage.py run --timeout 3 --all-ports
 
       - name: Commit and push if changed
         run: |
