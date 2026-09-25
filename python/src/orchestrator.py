@@ -113,7 +113,8 @@ def _parse_and_deduplicate(
         if not resolved_ip:
             continue
 
-        dedup_val = f"{resolved_ip}:{port}"
+        uuid = outbound.get("uuid", "")
+        dedup_val = f"{resolved_ip}:{port}:{uuid}"
         if dedup_val in seen:
             continue
         seen.add(dedup_val)
