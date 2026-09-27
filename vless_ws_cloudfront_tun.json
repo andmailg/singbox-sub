@@ -120,7 +120,8 @@
         "🇺🇸node-8",
         "🇺🇸node-9",
         "🇺🇸node-10",
-        "🇺🇸node-11"
+        "🇺🇸node-11",
+        "🇺🇸node-12"
       ],
       "default": "auto"
     },
@@ -138,7 +139,8 @@
         "🇺🇸node-8",
         "🇺🇸node-9",
         "🇺🇸node-10",
-        "🇺🇸node-11"
+        "🇺🇸node-11",
+        "🇺🇸node-12"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -287,6 +289,25 @@
     {
       "type": "vless",
       "tag": "🇺🇸node-11",
+      "server": "99.86.12.106",
+      "server_port": 443,
+      "uuid": "ad2603d2-5780-447a-9a27-10525c016037",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "d1m6uggsa6602r.cloudfront.net"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "d1m6uggsa6602r.cloudfront.net",
+        "insecure": false
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-12",
       "server": "www.true.th",
       "server_port": 80,
       "uuid": "ff485c50-b364-4b4f-90be-ea576b949dd3",
