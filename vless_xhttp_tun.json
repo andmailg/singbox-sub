@@ -114,8 +114,7 @@
         "node-2",
         "node-3",
         "node-4",
-        "node-5",
-        "node-6"
+        "node-5"
       ],
       "default": "auto"
     },
@@ -127,8 +126,7 @@
         "node-2",
         "node-3",
         "node-4",
-        "node-5",
-        "node-6"
+        "node-5"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -137,29 +135,6 @@
     {
       "type": "vless",
       "tag": "node-1",
-      "server": "146.75.57.25",
-      "server_port": 443,
-      "uuid": "bf419ba4-2713-474e-a2bb-0d10d3e8fd90",
-      "transport": {
-        "type": "xhttp",
-        "path": "/",
-        "mode": "auto",
-        "host": [
-          "taza1.co"
-        ]
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "community.fastly.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "node-2",
       "server": "185.141.227.180",
       "server_port": 2053,
       "uuid": "2c634977-584e-4e1f-b501-1b70c77a6743",
@@ -182,7 +157,7 @@
     },
     {
       "type": "vless",
-      "tag": "node-3",
+      "tag": "node-2",
       "server": "206.71.158.124",
       "server_port": 443,
       "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
@@ -205,7 +180,7 @@
     },
     {
       "type": "vless",
-      "tag": "node-4",
+      "tag": "node-3",
       "server": "206.71.158.125",
       "server_port": 443,
       "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
@@ -228,7 +203,7 @@
     },
     {
       "type": "vless",
-      "tag": "node-5",
+      "tag": "node-4",
       "server": "94.183.238.15",
       "server_port": 443,
       "uuid": "5edbcb44-8d04-4fa7-a587-bc5d60c24ca1",
@@ -251,7 +226,7 @@
     },
     {
       "type": "vless",
-      "tag": "node-6",
+      "tag": "node-5",
       "server": "host.taghvimtime.ir",
       "server_port": 8443,
       "uuid": "9f44d517-29f2-4c6d-cc06-a1268f13da58",
