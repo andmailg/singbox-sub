@@ -28,6 +28,30 @@ RKN_LIST_SOURCES: list[tuple[str, str]] = [
     ),
 ]
 
+# Сети провайдеров, которые нужно блокировать дополнительно.
+# Добавляются к блэклисту РКН независимо от внешних источников.
+EXTRA_BLOCKED_NETWORKS: list[tuple[str, str]] = [
+    # Hetzner — IP часто используются для обхода блокировок,
+    # а также попадают в блэклист РКН по shared infrastructure.
+    ("5.9.0.0/16", "hetzner"),
+    ("31.220.0.0/16", "hetzner"),
+    ("46.4.0.0/16", "hetzner"),
+    ("65.108.0.0/16", "hetzner"),
+    ("78.46.0.0/16", "hetzner"),
+    ("88.99.0.0/16", "hetzner"),
+    ("91.196.0.0/16", "hetzner"),
+    ("109.69.0.0/16", "hetzner"),
+    ("116.202.0.0/16", "hetzner"),
+    ("116.203.0.0/16", "hetzner"),
+    ("135.181.0.0/16", "hetzner"),
+    ("144.76.0.0/16", "hetzner"),
+    ("148.251.0.0/16", "hetzner"),
+    ("159.69.0.0/16", "hetzner"),
+    ("172.104.0.0/14", "hetzner"),
+    ("178.63.0.0/16", "hetzner"),
+    ("203.23.120.0/22", "hetzner"),  # Hetzner Asia-Pacific (SG)
+]
+
 
 class RKNBlockList:
     """Оптимизированная проверка подсетей РКН через бинарный поиск."""
@@ -111,6 +135,17 @@ def load_rkn_list(session) -> RKNBlockList:
             all_networks.extend(nets)
             print(f"  [{source_type}] Loaded {len(nets)} networks from {url}")
 
+    # Добавляем дополнительные сети (Hetzner и др.)
+    extra_nets: list[ipaddress.IPv4Network | ipaddress.IPv6Network] = []
+    for cidr, provider in EXTRA_BLOCKED_NETWORKS:
+        try:
+            extra_nets.append(ipaddress.ip_network(cidr, strict=False))
+        except ValueError:
+            continue
+    if extra_nets:
+        all_networks.extend(extra_nets)
+        print(f"  [extra] Added {len(extra_nets)} networks from {len(EXTRA_BLOCKED_NETWORKS)} providers")
+
     if not all_networks:
         print("  [WARN] No RKN blocklist sources returned data.")
         return RKNBlockList([])
@@ -122,7 +157,7 @@ def load_rkn_list(session) -> RKNBlockList:
     collapsed_v6 = list(ipaddress.collapse_addresses(v6_nets)) if v6_nets else []
 
     collapsed: list[ipaddress.IPv4Network | ipaddress.IPv6Network] = [*collapsed_v4, *collapsed_v6]
-    print(f"Aggregated {sources_fetched}/{sources_total} sources, "
+    print(f"Aggregated {sources_fetched}/{sources_total} sources + {len(extra_nets)} extra, "
           f"{len(all_networks)} raw -> {len(collapsed)} collapsed networks.")
     return RKNBlockList(collapsed)
 
