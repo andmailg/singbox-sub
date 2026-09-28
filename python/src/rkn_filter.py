@@ -28,29 +28,42 @@ RKN_LIST_SOURCES: list[tuple[str, str]] = [
     ),
 ]
 
-# Сети провайдеров, которые нужно блокировать дополнительно.
-# Добавляются к блэклисту РКН независимо от внешних источников.
-EXTRA_BLOCKED_NETWORKS: list[tuple[str, str]] = [
+# ASN провайдеров, сети которых блокируются дополнительно.
+# CIDR-диапазоны загружаются динамически из RIPE Statistics API.
+EXTRA_BLOCKED_ASNS: list[tuple[str, str]] = [
     # Hetzner — IP часто используются для обхода блокировок,
     # а также попадают в блэклист РКН по shared infrastructure.
-    ("5.9.0.0/16", "hetzner"),
-    ("31.220.0.0/16", "hetzner"),
-    ("46.4.0.0/16", "hetzner"),
-    ("65.108.0.0/16", "hetzner"),
-    ("78.46.0.0/16", "hetzner"),
-    ("88.99.0.0/16", "hetzner"),
-    ("91.196.0.0/16", "hetzner"),
-    ("109.69.0.0/16", "hetzner"),
-    ("116.202.0.0/16", "hetzner"),
-    ("116.203.0.0/16", "hetzner"),
-    ("135.181.0.0/16", "hetzner"),
-    ("144.76.0.0/16", "hetzner"),
-    ("148.251.0.0/16", "hetzner"),
-    ("159.69.0.0/16", "hetzner"),
-    ("172.104.0.0/14", "hetzner"),
-    ("178.63.0.0/16", "hetzner"),
-    ("203.23.120.0/22", "hetzner"),  # Hetzner Asia-Pacific (SG)
+    ("AS24940", "hetzner"),
 ]
+
+# Кэш загруженных сетей по ASN: {asn: [ipaddress.IPv4Network | ipaddress.IPv6Network]}
+_extra_networks_cache: dict[str, list[ipaddress.IPv4Network | ipaddress.IPv6Network]] = {}
+
+
+def _fetch_asn_networks(session, asn: str, source_type: str, timeout: int = 15) -> list[ipaddress.IPv4Network | ipaddress.IPv6Network]:
+    """Загружает все CIDR-диапазоны ASN через RIPE Statistics API."""
+    url = f"https://stat.ripe.net/data/network_usage/data.json?data[asn]={asn}"
+    raw: list[ipaddress.IPv4Network | ipaddress.IPv6Network] = []
+    try:
+        resp = session.get(url, timeout=timeout)
+        if resp.status_code != 200:
+            print(f"  [WARN] {source_type} ({asn}): HTTP {resp.status_code} from RIPE API")
+            return raw
+        data = resp.json()
+        prefixes = data.get("data", {}).get("prefixes", [])
+        for prefix_entry in prefixes:
+            cidr_str = prefix_entry.get("prefix", "")
+            if not cidr_str:
+                continue
+            try:
+                net_obj = ipaddress.ip_network(cidr_str, strict=False)
+                raw.append(net_obj)
+            except ValueError:
+                continue
+        print(f"  [{source_type}] Loaded {len(raw)} networks for {asn} from RIPE API")
+    except Exception as e:
+        print(f"  [WARN] {source_type} ({asn}): {e}")
+    return raw
 
 
 class RKNBlockList:
@@ -135,16 +148,19 @@ def load_rkn_list(session) -> RKNBlockList:
             all_networks.extend(nets)
             print(f"  [{source_type}] Loaded {len(nets)} networks from {url}")
 
-    # Добавляем дополнительные сети (Hetzner и др.)
+    # Добавляем дополнительные сети по ASN (динамическая загрузка из RIPE API)
     extra_nets: list[ipaddress.IPv4Network | ipaddress.IPv6Network] = []
-    for cidr, provider in EXTRA_BLOCKED_NETWORKS:
-        try:
-            extra_nets.append(ipaddress.ip_network(cidr, strict=False))
-        except ValueError:
+    for asn, provider in EXTRA_BLOCKED_ASNS:
+        if asn in _extra_networks_cache:
+            extra_nets.extend(_extra_networks_cache[asn])
             continue
+        nets = _fetch_asn_networks(session, asn, provider)
+        if nets:
+            _extra_networks_cache[asn] = nets
+            extra_nets.extend(nets)
     if extra_nets:
         all_networks.extend(extra_nets)
-        print(f"  [extra] Added {len(extra_nets)} networks from {len(EXTRA_BLOCKED_NETWORKS)} providers")
+        print(f"  [extra] Added {len(extra_nets)} networks from {len(EXTRA_BLOCKED_ASNS)} ASNs")
 
     if not all_networks:
         print("  [WARN] No RKN blocklist sources returned data.")
