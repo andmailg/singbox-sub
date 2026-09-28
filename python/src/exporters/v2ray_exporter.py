@@ -118,6 +118,58 @@ def _generate_vless_tcp_links(outbounds: list[dict]) -> list[str]:
     return links
 
 
+def _generate_vless_xhttp_links(outbounds: list[dict]) -> list[str]:
+    """Конвертирует VLESS xhttp ноды в v2ray-ссылки."""
+    links: list[str] = []
+    for o in outbounds:
+        if o.get("type") != "vless":
+            continue
+        transport = o.get("transport", {})
+        if not isinstance(transport, dict) or transport.get("type") != "xhttp":
+            continue
+
+        tag = o.get("tag", "node")
+        server = o.get("server", "")
+        server_port = o.get("server_port", 443)
+        uuid = o.get("uuid", "")
+        tls = o.get("tls", {})
+        transport_params = o.get("transport", {})
+
+        sni = tls.get("server_name", "") if tls else ""
+        fp = tls.get("utls", {}).get("fingerprint", "") if tls else ""
+
+        path = transport_params.get("path", "/")
+        mode = transport_params.get("mode", "auto")
+        host = transport_params.get("host", [])
+
+        params = {
+            "encryption": "none",
+            "security": "tls" if tls and tls.get("enabled") else "none",
+            "sni": sni,
+            "fp": fp,
+            "type": "xhttp",
+            "path": path,
+            "mode": mode,
+        }
+
+        if host:
+            params["host"] = ",".join(host) if isinstance(host, list) else str(host)
+
+        download_buffer = transport_params.get("downloadBufferSize")
+        if download_buffer:
+            params["downloadBufferSize"] = str(download_buffer)
+
+        upload_buffer = transport_params.get("uploadBufferSize")
+        if upload_buffer:
+            params["uploadBufferSize"] = str(upload_buffer)
+
+        query = urllib.parse.urlencode(params)
+        fragment = urllib.parse.quote(tag)
+        link = f"vless://{uuid}@{server}:{server_port}?{query}#{fragment}"
+        links.append(link)
+    return links
+
+
 def _generate_vmess_links(outbounds: list[dict]) -> list[str]:
     """Конвертирует VMess ноды в v2ray-ссылки (vmess://base64json)."""
     links: list[str] = []
@@ -183,6 +235,7 @@ def export_v2ray_by_type(outbounds: list[dict], output_file: str = "output.txt")
     hy2_links = _generate_hy2_links(outbounds)
     grpc_links = _generate_vless_grpc_links(outbounds)
     reality_links = _generate_vless_tcp_links(outbounds)
+    xhttp_links = _generate_vless_xhttp_links(outbounds)
     vmess_links = _generate_vmess_links(outbounds)
 
     result = {}
@@ -207,6 +260,13 @@ def export_v2ray_by_type(outbounds: list[dict], output_file: str = "output.txt")
             f.write("\n".join(reality_links))
         result["vless-reality.txt"] = len(reality_links)
         print(f"OK Exported {len(reality_links)} VLESS Reality nodes to {path}")
+
+    if xhttp_links:
+        path = f"{output_file}"
+        with open(path, "w", encoding="utf-8") as f:
+            f.write("\n".join(xhttp_links))
+        result["vless-xhttp.txt"] = len(xhttp_links)
+        print(f"OK Exported {len(xhttp_links)} VLESS xhttp nodes to {path}")
 
     if vmess_links:
         path = f"{output_file}"
