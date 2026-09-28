@@ -15,6 +15,7 @@ except ImportError:
 # Файл локального кэша для тяжелых списков ASN
 ASN_CACHE_FILE = "rkn_networks_cache.json"
 
+
 RKN_LIST_SOURCES: list[tuple[str, str]] = [
     ("https://raw.githubusercontent.com/bilibilio/ipv-rkn-list/master/ipv4.txt", "rkn"),
     ("https://raw.githubusercontent.com/bilibilio/ipv-rkn-list/master/ipv6.txt", "rkn"),
@@ -53,19 +54,29 @@ EXTRA_BLOCKED_ASNS: list[tuple[str, str]] = [
 
 def _fetch_asn_networks(session, asn: str, source_type: str, timeout: int = 15) -> list[str]:
     """Загружает CIDR-диапазоны ASN через RIPE Statistics API и возвращает списком строк."""
-    url = f"https://stat.ripe.net/data/prefix-overview/data.json?data[asn]={asn}"
     raw_prefixes = []
     try:
-        resp = session.get(url, timeout=timeout)
+        # RIPEstat prefix-overview требует data[resource] (не data[asn])
+        url = "https://stat.ripe.net/data/prefix-overview/data.json"
+        params = {"data[resource]": asn}
+        resp = session.get(url, params=params, timeout=timeout)
         if resp.status_code != 200:
-            print(f"  [WARN] {source_type} ({asn}): HTTP {resp.status_code}")
+            print(f"  [WARN] {source_type} ({asn}): RIPE HTTP {resp.status_code}")
             return []
         data = resp.json()
-        prefixes = data.get("data", {}).get("prefixes", [])
-        for prefix_entry in prefixes:
-            cidr_str = prefix_entry.get("prefix", "")
-            if cidr_str:
-                raw_prefixes.append(cidr_str)
+        prefixes = data.get("data", {}).get("prefixes", {})
+        # prefixes может быть dict с ключами v4/v6 или list
+        if isinstance(prefixes, dict):
+            for version_key in ("v4", "v6"):
+                for entry in prefixes.get(version_key, []):
+                    cidr_str = entry if isinstance(entry, str) else entry.get("prefix", "")
+                    if cidr_str:
+                        raw_prefixes.append(cidr_str)
+        elif isinstance(prefixes, list):
+            for entry in prefixes:
+                cidr_str = entry if isinstance(entry, str) else entry.get("prefix", "")
+                if cidr_str:
+                    raw_prefixes.append(cidr_str)
         print(f"  [{source_type}] Fetched {len(raw_prefixes)} networks for {asn}")
     except Exception as e:
         print(f"  [WARN] {source_type} ({asn}): {e}")
@@ -145,8 +156,12 @@ class RKNBlockList:
     """Оптимизированная проверка подсетей РКН через бинарный поиск."""
 
     def __init__(self, networks: list[ipaddress.IPv4Network | ipaddress.IPv6Network]):
-        self.v4_networks = sorted([n for n in networks if n.version == 4], key=lambda x: int(x.network_address))
-        self.v6_networks = sorted([n for n in networks if n.version == 6], key=lambda x: int(x.network_address))
+        # Схлопываем перекрывающиеся подсети — без этого bisect ломается
+        v4 = list(ipaddress.collapse_addresses([n for n in networks if n.version == 4]))
+        v6 = list(ipaddress.collapse_addresses([n for n in networks if n.version == 6]))
+
+        self.v4_networks = sorted(v4, key=lambda x: int(x.network_address))
+        self.v6_networks = sorted(v6, key=lambda x: int(x.network_address))
 
         self.v4_ranges = [(int(n.network_address), int(n.broadcast_address)) for n in self.v4_networks]
         self.v6_ranges = [(int(n.network_address), int(n.broadcast_address)) for n in self.v6_networks]
@@ -157,17 +172,30 @@ class RKNBlockList:
         self._cache_max = 8192
 
     def is_blocked(self, ip_str: str) -> bool:
+        # LRU-кэш: проверяем и обновляем порядок
+        if ip_str in self._cache:
+            self._cache.move_to_end(ip_str)
+            return self._cache[ip_str]
         try:
             ip_obj = ipaddress.ip_address(ip_str)
             ip_int = int(ip_obj)
             ranges = self.v4_ranges if ip_obj.version == 4 else self.v6_ranges
 
-            positions = bisect.bisect_right([r[1] for r in ranges], ip_int)
-            if positions > 0:
-                start, end = ranges[positions - 1]
-                return start <= ip_int <= end
-            return False
+            # Бинарный поиск: ищем диапазон с наибольшим start <= ip_int
+            starts = [r[0] for r in ranges]
+            pos = bisect.bisect_right(starts, ip_int)
+            result = False
+            if pos > 0:
+                start, end = ranges[pos - 1]
+                result = start <= ip_int <= end
+
+            # Сохраняем в кэш
+            self._cache[ip_str] = result
+            if len(self._cache) > self._cache_max:
+                self._cache.popitem(last=False)
+            return result
         except ValueError:
+            self._cache[ip_str] = False
             return False
 
 
