@@ -14,7 +14,6 @@ from src.common import (
     should_accept_outbound,
 )
 from src.rkn_filter import (
-    download_geoip,
     load_rkn_list,
     open_geoip_reader,
     resolve_and_check,
@@ -133,7 +132,6 @@ def _rkn_geoip_filter(
     """RKN + GeoIP фильтрация через resolve_and_check."""
     from src.common import session
 
-    download_geoip(session)
     blocked_networks = load_rkn_list(session)
     reader = open_geoip_reader()
 
@@ -174,6 +172,8 @@ def _rkn_geoip_filter(
     removed = len(outbounds) - len(filtered)
     if removed:
         print(f"{prefix}Filtered out {removed} nodes by RKN/GeoIP ({len(filtered)} remaining).")
+    else:
+        print(f"{prefix}No nodes filtered by RKN/GeoIP ({len(filtered)} remaining).")
 
     if reader:
         reader.close()

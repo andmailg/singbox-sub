@@ -16,7 +16,7 @@ from pathlib import Path
 PYTHON_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, PYTHON_DIR)
 
-from src.vless_working import (
+from src.vless_tcp_working import (
     load_working_nodes,
     save_working_nodes,
     merge_new_nodes,
