@@ -111,7 +111,7 @@
       "outbounds": [
         "auto",
         "🇩🇪node-1",
-        "🇩🇪node-2",
+        "🇳🇱node-2",
         "🇳🇱node-3",
         "🇳🇱node-4",
         "🇺🇸node-5"
@@ -123,7 +123,7 @@
       "tag": "auto",
       "outbounds": [
         "🇩🇪node-1",
-        "🇩🇪node-2",
+        "🇳🇱node-2",
         "🇳🇱node-3",
         "🇳🇱node-4",
         "🇺🇸node-5"
@@ -157,30 +157,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-2",
-      "server": "host.taghvimtime.ir",
-      "server_port": 8443,
-      "uuid": "9f44d517-29f2-4c6d-cc06-a1268f13da58",
-      "transport": {
-        "type": "xhttp",
-        "path": "/Meh?di=443",
-        "mode": "auto",
-        "host": [
-          "host.taghvimtime.ir"
-        ]
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "host.taghvimtime.ir",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇳🇱node-3",
+      "tag": "🇳🇱node-2",
       "server": "206.71.158.124",
       "server_port": 443,
       "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
@@ -198,6 +175,29 @@
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-3",
+      "server": "206.71.158.125",
+      "server_port": 443,
+      "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
+      "transport": {
+        "type": "xhttp",
+        "path": "/kavir",
+        "mode": "stream-one",
+        "host": [
+          "dey.lnmarketplace.net"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "dey.lnmarketplace.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
         }
       }
     },
@@ -227,20 +227,20 @@
     {
       "type": "vless",
       "tag": "🇺🇸node-5",
-      "server": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
+      "server": "146.75.57.25",
       "server_port": 443,
-      "uuid": "9fa2fae0-141a-b983-ef0e-b3d5633f9592",
+      "uuid": "bf419ba4-2713-474e-a2bb-0d10d3e8fd90",
       "transport": {
         "type": "xhttp",
-        "path": "/xhttp-siz10/stream-up/9fa2fae0-141a-b983-ef0e-b3d5633f9592",
-        "mode": "stream-up",
+        "path": "/",
+        "mode": "auto",
         "host": [
-          "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev"
+          "taza1.co"
         ]
       },
       "tls": {
         "enabled": true,
-        "server_name": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
+        "server_name": "community.fastly.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
