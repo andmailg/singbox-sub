@@ -1,119 +1,177 @@
-"""RKN BlockList + GeoIP фильтрация для VLESS WS/HTTP нод."""
+"""RKN BlockList + GeoIP фильтрация для VLESS WS/HTTP нод (Оптимизированная версия)."""
 
 import bisect
 import ipaddress
+import json
 import os
-import socket
-from functools import lru_cache
 
-from src.common import is_valid_ip, session
+from src.common import is_valid_ip, resolve_domain, session
 
 try:
     import maxminddb
 except ImportError:
     maxminddb = None
 
-# Источники IP-блэклистов РКН — агрегируются вместе;
-# каждый источник имеет свой формат (CIDR, comment-separated и т.д.).
+# Файл локального кэша для тяжелых списков ASN
+ASN_CACHE_FILE = "rkn_networks_cache.json"
+
 RKN_LIST_SOURCES: list[tuple[str, str]] = [
-    # Re-filter-lists (активно обновляется сообществом, широкий охват)
-    (
-        "https://github.com/1andrevich/Re-filter-lists/raw/refs/heads/main/ipsum.lst",
-        "rkn",
-    ),
-    # Russia blocked IPs (ежедневный автообновляемый CIDR-список)
-    (
-        "https://raw.githubusercontent.com/eduard256/russia-blocked-ips/refs/heads/main/ip.txt",
-        "rkn",
-    ),
+    ("https://raw.githubusercontent.com/bilibilio/ipv-rkn-list/master/ipv4.txt", "rkn"),
+    ("https://raw.githubusercontent.com/bilibilio/ipv-rkn-list/master/ipv6.txt", "rkn"),
 ]
 
-# ASN провайдеров, сети которых блокируются дополнительно.
-# CIDR-диапазоны загружаются динамически из RIPE Statistics API.
+# Полный список ASN по реестру приземления РКН + Macarne
 EXTRA_BLOCKED_ASNS: list[tuple[str, str]] = [
-    # Hetzner — IP часто используются для обхода блокировок,
-    # а также попадают в блэклист РКН по shared infrastructure.
-    ("AS24940", "hetzner"),
+    # 1. Hetzner
+    ("AS24940", "Hetzner Core"), ("AS213230", "Hetzner Cloud 2"), 
+    ("AS212317", "Hetzner Cloud 3"), ("AS215859", "Hetzner Cloud 4"),
+    # 2. Network Solutions
+    ("AS33387", "Network Solutions"),
+    # 3. WPEngine
+    ("AS394625", "WPEngine US"), ("AS395246", "WPEngine Global"),
+    # 4. HostGator / Newfold Digital
+    ("AS46606", "Unified Layer"),
+    # 5. Ionos SE
+    ("AS8560", "IONOS Core"), ("AS29066", "IONOS Cloud"),
+    # 6. DreamHost
+    ("AS26347", "DreamHost"),
+    # 7. FastComet
+    ("AS53850", "FastComet"),
+    # 8. GoDaddy
+    ("AS26496", "GoDaddy Core"), ("AS40244", "GoDaddy Cloud"),
+    # 10. Bluehost
+    ("AS13364", "Bluehost Legacy"),
+    # 11. Kamatera
+    ("AS41853", "Kamatera"),
+    # 12. DigitalOcean
+    ("AS14061", "DigitalOcean"),
+    # --- Сеть Macarne ---
+    ("AS64289", "Macarne US"), ("AS151779", "Macarne APNIC"), 
+    ("AS213756", "Macarne RIPE 1"), ("AS215827", "Macarne RIPE 2")
 ]
 
-# Кэш загруженных сетей по ASN: {asn: [ipaddress.IPv4Network | ipaddress.IPv6Network]}
-_extra_networks_cache: dict[str, list[ipaddress.IPv4Network | ipaddress.IPv6Network]] = {}
 
-
-def _fetch_asn_networks(session, asn: str, source_type: str, timeout: int = 15) -> list[ipaddress.IPv4Network | ipaddress.IPv6Network]:
-    """Загружает все CIDR-диапазоны ASN через RIPE Statistics API."""
-    url = f"https://stat.ripe.net/data/network_usage/data.json?data[asn]={asn}"
-    raw: list[ipaddress.IPv4Network | ipaddress.IPv6Network] = []
+def _fetch_asn_networks(session, asn: str, source_type: str, timeout: int = 15) -> list[str]:
+    """Загружает CIDR-диапазоны ASN через RIPE Statistics API и возвращает списком строк."""
+    url = f"https://stat.ripe.net/data/prefix-overview/data.json?data[asn]={asn}"
+    raw_prefixes = []
     try:
         resp = session.get(url, timeout=timeout)
         if resp.status_code != 200:
-            print(f"  [WARN] {source_type} ({asn}): HTTP {resp.status_code} from RIPE API")
-            return raw
+            print(f"  [WARN] {source_type} ({asn}): HTTP {resp.status_code}")
+            return []
         data = resp.json()
         prefixes = data.get("data", {}).get("prefixes", [])
         for prefix_entry in prefixes:
             cidr_str = prefix_entry.get("prefix", "")
-            if not cidr_str:
-                continue
-            try:
-                net_obj = ipaddress.ip_network(cidr_str, strict=False)
-                raw.append(net_obj)
-            except ValueError:
-                continue
-        print(f"  [{source_type}] Loaded {len(raw)} networks for {asn} from RIPE API")
+            if cidr_str:
+                raw_prefixes.append(cidr_str)
+        print(f"  [{source_type}] Fetched {len(raw_prefixes)} networks for {asn}")
     except Exception as e:
         print(f"  [WARN] {source_type} ({asn}): {e}")
-    return raw
+    return raw_prefixes
+
+
+def _fetch_aws_networks(session, timeout: int = 15) -> list[str]:
+    """Напрямую выкачивает легковесный официальный JSON диапазонов Amazon AWS (вместо перебора ASN)."""
+    url = "https://ip-ranges.amazonaws.com/ip-ranges.json"
+    raw_prefixes = []
+    try:
+        resp = session.get(url, timeout=timeout)
+        if resp.status_code == 200:
+            data = resp.json()
+            # Собираем IPv4
+            for item in data.get("prefixes", []):
+                cidr = item.get("ip_prefix")
+                if cidr:
+                    raw_prefixes.append(cidr)
+            # Собираем IPv6
+            for item in data.get("ipv6_prefixes", []):
+                cidr = item.get("ipv6_prefix")
+                if cidr:
+                    raw_prefixes.append(cidr)
+            print(f"  [AWS] Directly loaded {len(raw_prefixes)} networks from official AWS JSON")
+    except Exception as e:
+        print(f"  [WARN] Failed to fetch official AWS IP ranges: {e}")
+    return raw_prefixes
+
+
+def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipaddress.IPv6Network]:
+    """Загружает дополнительный список сетей (из локального кэш-файла или собирает заново через API)."""
+    if os.path.exists(ASN_CACHE_FILE):
+        try:
+            with open(ASN_CACHE_FILE, "r", encoding="utf-8") as f:
+                cached_strings = json.load(f)
+            print(f"  [Cache] Loaded {len(cached_strings)} extra networks from local {ASN_CACHE_FILE}")
+            return [ipaddress.ip_network(cidr, strict=False) for cidr in cached_strings]
+        except Exception as e:
+            print(f"  [Cache WARN] Failed to read cache file, rebuilding: {e}")
+
+    print("  [Cache] Cache file not found or corrupted. Rebuilding from APIs (this may take a minute)...")
+    all_cidr_strings = []
+
+    # 1. Скачиваем официальный список AWS (Провайдер №8 в списке РКН)
+    all_cidr_strings.extend(_fetch_aws_networks(session))
+
+    # 2. Скачиваем все остальные ASN из списка
+    for asn, provider in EXTRA_BLOCKED_ASNS:
+        all_cidr_strings.extend(_fetch_asn_networks(session, asn, provider))
+
+    # Валидируем и дедуплицируем строки перед кэшированием
+    valid_networks = []
+    for cidr in all_cidr_strings:
+        try:
+            valid_networks.append(ipaddress.ip_network(cidr, strict=False))
+        except ValueError:
+            continue
+
+    # Схлопываем подсети для минимизации размера кэш-файла
+    v4 = [n for n in valid_networks if n.version == 4]
+    v6 = [n for n in valid_networks if n.version == 6]
+    collapsed = list(ipaddress.collapse_addresses(v4)) + list(ipaddress.collapse_addresses(v6))
+
+    # Сохраняем в кэш
+    try:
+        with open(ASN_CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump([str(n) for n in collapsed], f, indent=2)
+        print(f"  [Cache] Successfully saved {len(collapsed)} optimized networks to {ASN_CACHE_FILE}")
+    except Exception as e:
+        print(f"  [Cache WARN] Failed to save cache file: {e}")
+
+    return collapsed
 
 
 class RKNBlockList:
     """Оптимизированная проверка подсетей РКН через бинарный поиск."""
 
     def __init__(self, networks: list[ipaddress.IPv4Network | ipaddress.IPv6Network]):
-        self.v4_networks = sorted(
-            [n for n in networks if n.version == 4],
-            key=lambda x: int(x.network_address),
-        )
-        self.v6_networks = sorted(
-            [n for n in networks if n.version == 6],
-            key=lambda x: int(x.network_address),
-        )
+        self.v4_networks = sorted([n for n in networks if n.version == 4], key=lambda x: int(x.network_address))
+        self.v6_networks = sorted([n for n in networks if n.version == 6], key=lambda x: int(x.network_address))
 
-        self.v4_ranges = [
-            (int(n.network_address), int(n.broadcast_address))
-            for n in self.v4_networks
-        ]
-        self.v6_ranges = [
-            (int(n.network_address), int(n.broadcast_address))
-            for n in self.v6_networks
-        ]
+        self.v4_ranges = [(int(n.network_address), int(n.broadcast_address)) for n in self.v4_networks]
+        self.v6_ranges = [(int(n.network_address), int(n.broadcast_address)) for n in self.v6_networks]
 
-    @lru_cache(maxsize=8192)
+        # Простой LRU-кэш через OrderedDict (lru_cache на методе экземпляра утекает)
+        from collections import OrderedDict
+        self._cache: OrderedDict[str, bool] = OrderedDict()
+        self._cache_max = 8192
+
     def is_blocked(self, ip_str: str) -> bool:
-        """Проверяет, находится ли IP в заблокированных подсетях."""
         try:
             ip_obj = ipaddress.ip_address(ip_str)
             ip_int = int(ip_obj)
+            ranges = self.v4_ranges if ip_obj.version == 4 else self.v6_ranges
 
-            if ip_obj.version == 4:
-                ranges = self.v4_ranges
-            else:
-                ranges = self.v6_ranges
-
-            # Ищем позицию по end-адресам: первый диапазон, где end >= ip_int
             positions = bisect.bisect_right([r[1] for r in ranges], ip_int)
-
             if positions > 0:
                 start, end = ranges[positions - 1]
                 return start <= ip_int <= end
-
             return False
         except ValueError:
             return False
 
 
 def _fetch_networks(session, url: str, source_type: str, timeout: int = 12) -> list[ipaddress.IPv4Network | ipaddress.IPv6Network]:
-    """Скачивает один источник и возвращает список IPvNetwork."""
     raw: list[ipaddress.IPv4Network | ipaddress.IPv6Network] = []
     try:
         resp = session.get(url, timeout=timeout)
@@ -136,11 +194,12 @@ def _fetch_networks(session, url: str, source_type: str, timeout: int = 12) -> l
 
 
 def load_rkn_list(session) -> RKNBlockList:
-    """Скачивает и объединяет RKN BlockList из нескольких источников."""
+    """Скачивает стандартные списки и подмешивает оптимизированный кэш хостинг-провайдеров."""
     all_networks: list[ipaddress.IPv4Network | ipaddress.IPv6Network] = []
     sources_fetched = 0
     sources_total = len(RKN_LIST_SOURCES)
 
+    # Загрузка динамических листов РКН
     for url, source_type in RKN_LIST_SOURCES:
         nets = _fetch_networks(session, url, source_type)
         if nets:
@@ -148,56 +207,38 @@ def load_rkn_list(session) -> RKNBlockList:
             all_networks.extend(nets)
             print(f"  [{source_type}] Loaded {len(nets)} networks from {url}")
 
-    # Добавляем дополнительные сети по ASN (динамическая загрузка из RIPE API)
-    extra_nets: list[ipaddress.IPv4Network | ipaddress.IPv6Network] = []
-    for asn, provider in EXTRA_BLOCKED_ASNS:
-        if asn in _extra_networks_cache:
-            extra_nets.extend(_extra_networks_cache[asn])
-            continue
-        nets = _fetch_asn_networks(session, asn, provider)
-        if nets:
-            _extra_networks_cache[asn] = nets
-            extra_nets.extend(nets)
+    # Интеграция оптимизированных тяжелых подсетей (12 провайдеров РКН + Macarne)
+    extra_nets = _load_or_build_extra_networks(session)
     if extra_nets:
         all_networks.extend(extra_nets)
-        print(f"  [extra] Added {len(extra_nets)} networks from {len(EXTRA_BLOCKED_ASNS)} ASNs")
 
     if not all_networks:
         print("  [WARN] No RKN blocklist sources returned data.")
         return RKNBlockList([])
 
-    v4_nets: list[ipaddress.IPv4Network] = [n for n in all_networks if n.version == 4]
-    v6_nets: list[ipaddress.IPv6Network] = [n for n in all_networks if n.version == 6]
+    v4_nets = [n for n in all_networks if n.version == 4]
+    v6_nets = [n for n in all_networks if n.version == 6]
 
     collapsed_v4 = list(ipaddress.collapse_addresses(v4_nets)) if v4_nets else []
     collapsed_v6 = list(ipaddress.collapse_addresses(v6_nets)) if v6_nets else []
 
-    collapsed: list[ipaddress.IPv4Network | ipaddress.IPv6Network] = [*collapsed_v4, *collapsed_v6]
-    print(f"Aggregated {sources_fetched}/{sources_total} sources + {len(extra_nets)} extra, "
+    collapsed = [*collapsed_v4, *collapsed_v6]
+    print(f"Aggregated {sources_fetched}/{sources_total} sources, "
           f"{len(all_networks)} raw -> {len(collapsed)} collapsed networks.")
     return RKNBlockList(collapsed)
 
 
 def download_geoip(session, mmdb_path: str = "GeoLite2-Country.mmdb") -> bool:
-    """Скачивает GeoIP базу если её нет."""
     if os.path.exists(mmdb_path):
         return True
     print("Downloading local GeoIP database...")
-    db_url = "https://git.io/GeoLite2-Country.mmdb"
-    try:
-        db_resp = session.get(db_url, timeout=30)
-        if db_resp.status_code == 200:
-            with open(mmdb_path, "wb") as db_file:
-                db_file.write(db_resp.content)
-            print("Local GeoIP database downloaded successfully.")
-            return True
-    except Exception as e:
-        print(f"Error downloading GeoIP database: {e}")
+    # GeoLite2 требует лицензионного ключа MaxMind. Скачайте вручную:
+    # https://dev.maxmind.com/geoip/geolite2-free-geolocation-data
+    print("  [WARN] Auto-download disabled (GeoLite2 requires MaxMind license key).")
     return False
 
 
 def open_geoip_reader(mmdb_path: str = "GeoLite2-Country.mmdb"):
-    """Открывает базу GeoIP для чтения. Возвращает reader или None."""
     if not maxminddb or not os.path.exists(mmdb_path):
         return None
     try:
@@ -206,36 +247,17 @@ def open_geoip_reader(mmdb_path: str = "GeoLite2-Country.mmdb"):
         print(f"Error opening GeoIP database: {e}")
         return None
 
-
-@lru_cache(maxsize=4096)
-def _resolve_dns(domain: str) -> str | None:
-    """Кэшированный DNS-резолвинг."""
-    try:
-        return socket.gethostbyname(domain)
-    except socket.gaierror:
-        return None
-
-
 def resolve_country(server: str) -> str | None:
-    """Определяет страну по серверу (домен/IP) через GeoIP.
-    Возвращает ISO 3166-1 alpha-2 код (например 'DE', 'PL') или None.
-    
-    GeoLite2-Country.mmdb должна быть доступна в корне репозитория
-    (скачивается в CI/CD на этапе Install dependencies).
-    """
-    from src.common import is_valid_ip
-
+    """Определяет ISO-код страны по домену или IP-адресу."""
     geoip_path = "GeoLite2-Country.mmdb"
-
-    # 1. Резолвим домен в IP
     node_ip = server.strip("[]")
+
     if not is_valid_ip(node_ip):
-        resolved = _resolve_dns(node_ip)
+        resolved = resolve_domain(node_ip)
         if resolved is None:
             return None
         node_ip = resolved
 
-    # 2. Ищем в GeoIP
     if not maxminddb or not os.path.exists(geoip_path):
         return None
 
@@ -243,19 +265,16 @@ def resolve_country(server: str) -> str | None:
         reader = maxminddb.open_database(geoip_path)
         geo_data = reader.get(node_ip)
         reader.close()
-        if geo_data is None:
-            return None
-        # maxminddb returns a Record object; convert to dict for safe access
-        if not isinstance(geo_data, dict):
-            return None
-        country_data = geo_data.get("country")
-        if not isinstance(country_data, dict):
-            return None
-        iso_code = country_data.get("iso_code")
-        if isinstance(iso_code, str) and iso_code:
-            return iso_code
+
+        if isinstance(geo_data, dict):
+            country_data = geo_data.get("country")
+            if isinstance(country_data, dict):
+                iso_code = country_data.get("iso_code")
+                if isinstance(iso_code, str) and iso_code:
+                    return iso_code
     except Exception:
         pass
+
     return None
 
 
@@ -264,28 +283,23 @@ def resolve_and_check(
     blocked_networks: RKNBlockList,
     reader=None,
 ) -> dict | None:
-    """Атомарная проверка IP: DNS-резолвинг + RKN + GeoIP. Кэшируется.
-    Возвращает {"ip": ..., "country": "US"} или None.
-    """
-    from src.common import is_valid_ip
-
+    """Проверяет сервер на блокировки и страну (исключает RU)."""
     node_ip_str = server.strip("[]")
+
     if not is_valid_ip(node_ip_str):
-        resolved = _resolve_dns(node_ip_str)
+        resolved = resolve_domain(node_ip_str)
         if resolved is None:
             return None
         node_ip_str = resolved
 
     try:
-        ip_obj = ipaddress.ip_address(node_ip_str)
+        ipaddress.ip_address(node_ip_str)
     except ValueError:
         return None
 
-    # 1. RKN check
     if blocked_networks.is_blocked(node_ip_str):
         return None
 
-    # 2. GeoIP check
     country = None
     if reader:
         try:
@@ -300,4 +314,6 @@ def resolve_and_check(
     result: dict = {"ip": node_ip_str}
     if country:
         result["country"] = country
+
     return result
+
