@@ -114,7 +114,16 @@
         "node-2",
         "node-3",
         "node-4",
-        "node-5"
+        "node-5",
+        "node-6",
+        "node-7",
+        "node-8",
+        "node-9",
+        "node-10",
+        "node-11",
+        "node-12",
+        "node-13",
+        "node-14"
       ],
       "default": "auto"
     },
@@ -126,7 +135,16 @@
         "node-2",
         "node-3",
         "node-4",
-        "node-5"
+        "node-5",
+        "node-6",
+        "node-7",
+        "node-8",
+        "node-9",
+        "node-10",
+        "node-11",
+        "node-12",
+        "node-13",
+        "node-14"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -158,6 +176,92 @@
     {
       "type": "vless",
       "tag": "node-2",
+      "server": "165.231.170.34",
+      "server_port": 443,
+      "uuid": "8b1fca23-94f3-498d-b161-c99828ccc8f1",
+      "transport": {
+        "type": "xhttp",
+        "path": "/",
+        "mode": "auto"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "cab-6aba08bf.ferrin.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "node-3",
+      "server": "185.113.142.145",
+      "server_port": 443,
+      "uuid": "5cae8834-c560-43c0-8721-e2c7e760122f",
+      "transport": {
+        "type": "xhttp",
+        "path": "/assets/build/_app/immutable/chunks/stream-data/",
+        "mode": "auto",
+        "host": [
+          "pt1.darknet.lol"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "pt1.darknet.lol",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "node-4",
+      "server": "185.141.227.180",
+      "server_port": 2053,
+      "uuid": "2c634977-584e-4e1f-b501-1b70c77a6743",
+      "transport": {
+        "type": "xhttp",
+        "path": "/api/v1/upload",
+        "mode": "auto",
+        "host": [
+          "dismissaltree.net"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "dismissaltree.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "node-5",
+      "server": "201.78.143.14",
+      "server_port": 443,
+      "uuid": "17c0e022-e193-4e51-9650-1b8124004fb2",
+      "transport": {
+        "type": "xhttp",
+        "path": "/y64dg77dnk7xzr5k",
+        "mode": "auto"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "201.78.143.14",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "node-6",
       "server": "206.71.158.124",
       "server_port": 443,
       "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
@@ -180,7 +284,30 @@
     },
     {
       "type": "vless",
-      "tag": "node-3",
+      "tag": "node-7",
+      "server": "206.71.158.125",
+      "server_port": 443,
+      "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
+      "transport": {
+        "type": "xhttp",
+        "path": "/kavir",
+        "mode": "stream-one",
+        "host": [
+          "dey.lnmarketplace.net"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "dey.lnmarketplace.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "node-8",
       "server": "31.57.24.177",
       "server_port": 443,
       "uuid": "c934b37d-f794-4b7d-a590-13f736ea5cab",
@@ -203,7 +330,30 @@
     },
     {
       "type": "vless",
-      "tag": "node-4",
+      "tag": "node-9",
+      "server": "45.130.254.193",
+      "server_port": 443,
+      "uuid": "7b50da93-0841-4044-af6a-99bb9dcda6fc",
+      "transport": {
+        "type": "xhttp",
+        "path": "/xh",
+        "mode": "auto",
+        "host": [
+          "nd-25-5.anti-zaim.ru"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "nd-25-5.anti-zaim.ru",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "node-10",
       "server": "94.183.238.15",
       "server_port": 443,
       "uuid": "5edbcb44-8d04-4fa7-a587-bc5d60c24ca1",
@@ -226,7 +376,30 @@
     },
     {
       "type": "vless",
-      "tag": "node-5",
+      "tag": "node-11",
+      "server": "fs.koomeh.net",
+      "server_port": 443,
+      "uuid": "74b6a321-2ef0-418c-9888-e171eede0e91",
+      "transport": {
+        "type": "xhttp",
+        "path": "/rmnwv",
+        "mode": "auto",
+        "host": [
+          "Ajbbwuvmiiiiiiir0097.global.ssl.fastly.net"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "ssl.fastly.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "node-12",
       "server": "host.taghvimtime.ir",
       "server_port": 8443,
       "uuid": "9f44d517-29f2-4c6d-cc06-a1268f13da58",
@@ -241,6 +414,49 @@
       "tls": {
         "enabled": true,
         "server_name": "host.taghvimtime.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "node-13",
+      "server": "panel.vortexservice.ir",
+      "server_port": 8443,
+      "uuid": "b2a508ff-99d6-4286-9e9e-e1a895cb4c6d",
+      "transport": {
+        "type": "xhttp",
+        "path": "/?ed",
+        "mode": "auto",
+        "host": [
+          "panel.vortexservice.ir"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "panel.vortexservice.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "node-14",
+      "server": "xuius.907737.xyz",
+      "server_port": 37379,
+      "uuid": "a4bec43e-8073-4725-b307-47edad331fee",
+      "transport": {
+        "type": "xhttp",
+        "path": "/",
+        "mode": "auto"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "xuius.907737.xyz",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
