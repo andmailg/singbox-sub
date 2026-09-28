@@ -114,8 +114,7 @@
         "🇩🇪node-2",
         "🇳🇱node-3",
         "🇳🇱node-4",
-        "🇳🇱node-5",
-        "🇺🇸node-6"
+        "🇳🇱node-5"
       ],
       "default": "auto"
     },
@@ -127,8 +126,7 @@
         "🇩🇪node-2",
         "🇳🇱node-3",
         "🇳🇱node-4",
-        "🇳🇱node-5",
-        "🇺🇸node-6"
+        "🇳🇱node-5"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -243,29 +241,6 @@
       "tls": {
         "enabled": true,
         "server_name": "slv04.subsconnect.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-6",
-      "server": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
-      "server_port": 443,
-      "uuid": "9fa2fae0-141a-b983-ef0e-b3d5633f9592",
-      "transport": {
-        "type": "xhttp",
-        "path": "/xhttp-siz10/stream-up/9fa2fae0-141a-b983-ef0e-b3d5633f9592",
-        "mode": "stream-up",
-        "host": [
-          "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev"
-        ]
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
