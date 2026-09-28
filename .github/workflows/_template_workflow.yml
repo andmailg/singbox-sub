@@ -3,7 +3,7 @@ name: Template Auto Convert Sing-Box X Protocol
 on:
   schedule:
     # Запуск каждые 2 час
-    - cron: '0 */2 * * *'
+    #- cron: '0 */2 * * *'
   workflow_dispatch: # Ручной запуск
 
 jobs:
