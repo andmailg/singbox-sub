@@ -1,0 +1,299 @@
+{
+  "log": {
+    "level": "warn",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "type": "https",
+        "tag": "dns-local",
+        "server": "77.88.8.8"
+      },
+      {
+        "type": "https",
+        "tag": "dns-remote",
+        "server": "8.8.8.8",
+        "detour": "proxy-out",
+        "tls": {
+          "enabled": true,
+          "server_name": "dns.google"
+        }
+      },
+      {
+        "type": "https",
+        "tag": "smart-dns",
+        "server": "xbox-dns.ru",
+        "domain_resolver": "dns-local"
+      },
+      {
+        "type": "fakeip",
+        "tag": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      },
+      {
+        "type": "local",
+        "tag": "local"
+      }
+    ],
+    "rules": [
+      {
+        "domain_suffix": [
+          ".lan",
+          ".local"
+        ],
+        "server": "local"
+      },
+      {
+        "rule_set": [
+          "geosite-category-ai-!cn"
+        ],
+        "server": "smart-dns"
+      },
+      {
+        "rule_set": [
+          "geosite-category-ru"
+        ],
+        "server": "dns-local"
+      },
+      {
+        "query_type": [
+          "HTTPS",
+          "SVCB"
+        ],
+        "rule_set": [
+          "geosite-category-media-ru-blocked",
+          "antizapret"
+        ],
+        "action": "predefined",
+        "rcode": "REFUSED"
+      },
+      {
+        "rule_set": [
+          "geosite-category-media-ru-blocked",
+          "antizapret"
+        ],
+        "server": "fakeip"
+      }
+    ],
+    "final": "dns-remote",
+    "strategy": "prefer_ipv4",
+    "cache_capacity": 2048
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 1420,
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "stack": "mixed",
+      "route_exclude_address": [
+        "10.0.0.0/8",
+        "172.16.0.0/12",
+        "192.168.0.0/16",
+        "169.254.0.0/16",
+        "224.0.0.0/4",
+        "255.255.255.255/32",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "direct",
+      "tag": "direct-out"
+    },
+    {
+      "type": "selector",
+      "tag": "proxy-out",
+      "outbounds": [
+        "auto",
+        "🇩🇪node-1",
+        "🇩🇪node-2",
+        "🇳🇱node-3",
+        "🇳🇱node-4"
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "urltest",
+      "tag": "auto",
+      "outbounds": [
+        "🇩🇪node-1",
+        "🇩🇪node-2",
+        "🇳🇱node-3",
+        "🇳🇱node-4"
+      ],
+      "url": "http://connectivitycheck.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪node-1",
+      "server": "94.183.238.15",
+      "server_port": 443,
+      "uuid": "5edbcb44-8d04-4fa7-a587-bc5d60c24ca1",
+      "transport": {
+        "type": "xhttp",
+        "path": "/xh",
+        "mode": "auto",
+        "host": [
+          "ger-02.letsgodance.site"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "ger-02.letsgodance.site",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪node-2",
+      "server": "host.taghvimtime.ir",
+      "server_port": 8443,
+      "uuid": "9f44d517-29f2-4c6d-cc06-a1268f13da58",
+      "transport": {
+        "type": "xhttp",
+        "path": "/Meh?di=443",
+        "mode": "auto",
+        "host": [
+          "host.taghvimtime.ir"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "host.taghvimtime.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-3",
+      "server": "206.71.158.124",
+      "server_port": 443,
+      "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
+      "transport": {
+        "type": "xhttp",
+        "path": "/kavir/?@MARAMBASHI_MARAMBASHI?ed=2048",
+        "mode": "stream-one",
+        "host": [
+          "dey.lnmarketplace.net"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "dey.lnmarketplace.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-4",
+      "server": "31.57.24.177",
+      "server_port": 443,
+      "uuid": "c934b37d-f794-4b7d-a590-13f736ea5cab",
+      "transport": {
+        "type": "xhttp",
+        "path": "/SmlDER32Ja",
+        "mode": "packet-up",
+        "host": [
+          "slv04.subsconnect.com"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "slv04.subsconnect.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    }
+  ],
+  "http_clients": [
+    {
+      "tag": "rules-downloader"
+    }
+  ],
+  "route": {
+    "default_http_client": "rules-downloader",
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "rule_set": [
+          "geosite-category-media-ru-blocked",
+          "antizapret"
+        ],
+        "outbound": "proxy-out"
+      },
+      {
+        "rule_set": [
+          "geosite-category-ru",
+          "geoip-ru",
+          "geosite-category-ai-!cn"
+        ],
+        "outbound": "direct-out"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "db-github",
+        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-github.srs"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-media-ru-blocked",
+        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-category-media-ru-blocked.srs"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ru",
+        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-category-ru.srs"
+      },
+      {
+        "type": "remote",
+        "tag": "geoip-ru",
+        "url": "https://github.com/SagerNet/sing-geoip/raw/rule-set/geoip-ru.srs"
+      },
+      {
+        "type": "remote",
+        "tag": "antizapret",
+        "url": "https://github.com/savely-krasovsky/antizapret-sing-box/releases/latest/download/antizapret.srs"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ai-!cn",
+        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-category-ai-!cn.srs"
+      }
+    ],
+    "final": "proxy-out",
+    "auto_detect_interface": true,
+    "override_android_vpn": true,
+    "default_domain_resolver": "dns-local"
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    }
+  }
+}
