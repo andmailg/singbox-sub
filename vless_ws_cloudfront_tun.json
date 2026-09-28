@@ -113,15 +113,10 @@
         "node-1",
         "node-2",
         "node-3",
-        "🇮🇷node-4",
-        "🇹🇭node-5",
-        "🇹🇭node-6",
-        "🇹🇭node-7",
-        "🇺🇸node-8",
-        "🇺🇸node-9",
-        "🇺🇸node-10",
-        "🇺🇸node-11",
-        "🇺🇸node-12"
+        "node-4",
+        "node-5",
+        "node-6",
+        "node-7"
       ],
       "default": "auto"
     },
@@ -132,15 +127,10 @@
         "node-1",
         "node-2",
         "node-3",
-        "🇮🇷node-4",
-        "🇹🇭node-5",
-        "🇹🇭node-6",
-        "🇹🇭node-7",
-        "🇺🇸node-8",
-        "🇺🇸node-9",
-        "🇺🇸node-10",
-        "🇺🇸node-11",
-        "🇺🇸node-12"
+        "node-4",
+        "node-5",
+        "node-6",
+        "node-7"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -190,21 +180,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇮🇷node-4",
-      "server": "www.bandmusic.ir",
-      "server_port": 8880,
-      "uuid": "922e96cd-7ed5-4836-a2f3-11c441716e53",
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560",
-        "headers": {
-          "Host": "join.2.kiava.cloud.speedtest.net.xn--mgba2h8quf.cdn.ws80.cloudfront.net.kiava.fun"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇹🇭node-5",
+      "tag": "node-4",
       "server": "143.14.11.236",
       "server_port": 80,
       "uuid": "f55ce6cc-3f6b-40fc-9e3b-abe26db17009",
@@ -218,7 +194,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇹🇭node-6",
+      "tag": "node-5",
       "server": "157.85.105.179",
       "server_port": 80,
       "uuid": "89c3b66f-c849-4602-a5a8-84b6f06af478",
@@ -232,7 +208,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇹🇭node-7",
+      "tag": "node-6",
       "server": "157.85.97.238",
       "server_port": 80,
       "uuid": "ff0c1cde-6f94-4bf1-9774-ab25c6b4977d",
@@ -246,76 +222,15 @@
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-8",
-      "server": "18.172.202.92",
-      "server_port": 80,
-      "uuid": "19668b6f-e215-41e6-8102-b8d29fb5b8ae",
+      "tag": "node-7",
+      "server": "www.bandmusic.ir",
+      "server_port": 8880,
+      "uuid": "922e96cd-7ed5-4836-a2f3-11c441716e53",
       "transport": {
         "type": "ws",
-        "path": "/fnet50",
+        "path": "/?ed=2560",
         "headers": {
-          "Host": "duatoup3wk8q2.cloudfront.net"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-9",
-      "server": "18.239.134.69",
-      "server_port": 80,
-      "uuid": "de27291c-15a9-4256-9ba7-ad517569877e",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-10",
-      "server": "18.239.134.69",
-      "server_port": 80,
-      "uuid": "f55ce6cc-3f6b-40fc-9e3b-abe26db17009",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "d2e1v87ko56lyw.cloudfront.net:assets.opensignal.com"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-11",
-      "server": "99.86.12.106",
-      "server_port": 443,
-      "uuid": "ad2603d2-5780-447a-9a27-10525c016037",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "d1m6uggsa6602r.cloudfront.net"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "d1m6uggsa6602r.cloudfront.net",
-        "insecure": false
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-12",
-      "server": "www.true.th",
-      "server_port": 80,
-      "uuid": "ff485c50-b364-4b4f-90be-ea576b949dd3",
-      "transport": {
-        "type": "ws",
-        "path": "/fnetvpn2026",
-        "headers": {
-          "Host": "d3gxy6d0a9fs18.cloudfront.net"
+          "Host": "join.2.kiava.cloud.speedtest.net.xn--mgba2h8quf.cdn.ws80.cloudfront.net.kiava.fun"
         }
       }
     }
