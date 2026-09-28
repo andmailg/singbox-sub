@@ -250,10 +250,10 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python vless_reality_manage.py run                     Full pipeline (merge+test+export)
-  python vless_reality_manage.py merge                   Fetch new nodes from subscriptions
-  python vless_reality_manage.py test                    Test all nodes
-  python vless_reality_manage.py export --type all       Export only
+  python vless_tcp_manage.py run                     Full pipeline (merge+test+export)
+  python vless_tcp_manage.py merge                   Fetch new nodes from subscriptions
+  python vless_tcp_manage.py test                    Test all nodes
+  python vless_tcp_manage.py export --type all       Export only
         """,
     )
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
