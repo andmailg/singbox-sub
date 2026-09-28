@@ -40,13 +40,8 @@ def _build_xray_config(node: dict, local_port: int) -> dict:
     port = node["server_port"]
     uuid = node.get("uuid", "")
 
-    # Извлекаем flow из tls.reality если есть
-    flow = ""
-    tls_cfg = node.get("tls", {})
-    if tls_cfg and isinstance(tls_cfg, dict):
-        reality = tls_cfg.get("reality", {})
-        if isinstance(reality, dict):
-            flow = reality.get("flow", "")
+    # Извлекаем flow (поле уровня VLESS, не внутри reality/TLS)
+    flow = node.get("flow", "")
 
     # Определяем транспорт
     transport_cfg: dict[str, Any] = node.get("transport", {})
@@ -129,21 +124,23 @@ def _build_stream_settings(node: dict, network: str) -> dict:
     transport_cfg = node.get("transport", {})
     if isinstance(transport_cfg, dict) and transport_cfg.get("type") == "xhttp":
         path: str = transport_cfg.get("path") or "/"
-        host: list[str] = transport_cfg.get("host") or []
+        host_raw: list[str] | str = transport_cfg.get("host") or []
         mode: str = transport_cfg.get("mode") or "auto"
-        download_buffer_size = transport_cfg.get("downloadBufferSize")
-        upload_buffer_size = transport_cfg.get("uploadBufferSize")
 
-        stream_settings["xhttpSettings"] = {
+        # Xray ожидает Host как строку (comma-separated), а не массив
+        if isinstance(host_raw, list) and len(host_raw) > 0:
+            host_str = ",".join(host_raw)
+        else:
+            host_str = host_raw if isinstance(host_raw, str) else ""
+
+        xhttp_settings: dict[str, Any] = {
             "path": path,
             "mode": mode,
         }
-        if host:
-            stream_settings["xhttpSettings"]["host"] = host
-        if download_buffer_size is not None:
-            stream_settings["xhttpSettings"]["downloadBufferSize"] = download_buffer_size
-        if upload_buffer_size is not None:
-            stream_settings["xhttpSettings"]["uploadBufferSize"] = upload_buffer_size
+        if host_str:
+            xhttp_settings["host"] = host_str
+
+        stream_settings["xhttpSettings"] = xhttp_settings
 
     # Настройки безопасности
     if has_reality:
