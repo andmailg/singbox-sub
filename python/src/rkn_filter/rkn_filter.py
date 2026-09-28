@@ -17,7 +17,8 @@ except ImportError:
     maxminddb = None
 
 # Файл локального кэша для тяжелых списков ASN
-ASN_CACHE_FILE = "rkn_networks_cache.json"
+_RKN_FILTER_DIR = os.path.dirname(os.path.abspath(__file__))
+ASN_CACHE_FILE = os.path.join(_RKN_FILTER_DIR, "rkn_networks_cache.json")
 
 
 def _fetch_aws_networks(session, timeout: int = 15) -> list[str]:
@@ -195,6 +196,8 @@ def resolve_country(server: str) -> str | None:
         geo_data = reader.get(node_ip)
         reader.close()
 
+        if isinstance(geo_data, tuple):
+            geo_data = geo_data[0]
         if isinstance(geo_data, dict):
             country_data = geo_data.get("country")
             if isinstance(country_data, dict) and country_data:
@@ -233,6 +236,8 @@ def resolve_and_check(
     if reader:
         try:
             geo_data = reader.get(node_ip_str)
+            if isinstance(geo_data, tuple):
+                geo_data = geo_data[0]
             if geo_data and "country" in geo_data:
                 country_obj = geo_data["country"]
                 if isinstance(country_obj, dict):
