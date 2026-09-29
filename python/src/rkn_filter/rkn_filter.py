@@ -19,6 +19,7 @@ except ImportError:
 # Файл локального кэша для тяжелых списков ASN
 _RKN_FILTER_DIR = os.path.dirname(os.path.abspath(__file__))
 ASN_CACHE_FILE = os.path.join(_RKN_FILTER_DIR, "rkn_networks_cache.json")
+_GEOIP_PATH = os.path.normpath(os.path.join(_RKN_FILTER_DIR, "..", "..", "GeoLite2-Country.mmdb"))
 
 
 def _fetch_aws_networks(session, timeout: int = 15) -> list[str]:
@@ -168,7 +169,7 @@ def load_rkn_list(session) -> RKNBlockList:
     return RKNBlockList(collapsed)
 
 
-def open_geoip_reader(mmdb_path: str = "GeoLite2-Country.mmdb"):
+def open_geoip_reader(mmdb_path: str = _GEOIP_PATH):
     if not maxminddb or not os.path.exists(mmdb_path):
         return None
     try:
@@ -179,7 +180,7 @@ def open_geoip_reader(mmdb_path: str = "GeoLite2-Country.mmdb"):
 
 def resolve_country(server: str) -> str | None:
     """Определяет ISO-код страны по домену или IP-адресу."""
-    geoip_path = "GeoLite2-Country.mmdb"
+    geoip_path = _GEOIP_PATH
     node_ip = server.strip("[]")
 
     if not is_valid_ip(node_ip):
