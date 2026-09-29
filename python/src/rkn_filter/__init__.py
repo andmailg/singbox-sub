@@ -1,6 +1,6 @@
 """RKN Blocklist + GeoIP фильтрация для VLESS WS/HTTP нод."""
 
-from .extra_blocked_cidr import _EXTRA_BLOCKED_CIDR
+from .asn_prefixes import _EXTRA_BLOCKED_CIDR
 from .rkn_filter import (
     ASN_CACHE_FILE,
     RKNBlockList,

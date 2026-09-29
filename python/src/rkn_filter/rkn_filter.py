@@ -10,7 +10,7 @@ import os
 from collections import OrderedDict
 
 from src.common import is_valid_ip, resolve_domain, session
-from .extra_blocked_cidr import _EXTRA_BLOCKED_CIDR, ASN_LIST
+from .asn_prefixes import _EXTRA_BLOCKED_CIDR, ASN_LIST
 
 try:
     import maxminddb

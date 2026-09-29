@@ -14,7 +14,7 @@ _WORKING_FILE = os.path.join(
 def _asn_key() -> str:
     """Хеш текущего ASN_LIST для валидации working-файла."""
     try:
-        from src.rkn_filter.extra_blocked_cidr import ASN_LIST
+        from src.rkn_filter.asn_prefixes import ASN_LIST
         raw = "|".join(sorted(ASN_LIST))
         return hashlib.sha256(raw.encode()).hexdigest()[:16]
     except Exception:
