@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import bisect
+import hashlib
 import ipaddress
 import json
 import os
 from collections import OrderedDict
 
 from src.common import is_valid_ip, resolve_domain, session
-from .extra_blocked_cidr import _EXTRA_BLOCKED_CIDR
+from .extra_blocked_cidr import _EXTRA_BLOCKED_CIDR, ASN_LIST
 
 try:
     import maxminddb
@@ -20,6 +21,15 @@ except ImportError:
 _RKN_FILTER_DIR = os.path.dirname(os.path.abspath(__file__))
 ASN_CACHE_FILE = os.path.join(_RKN_FILTER_DIR, "rkn_networks_cache.json")
 _GEOIP_PATH = os.path.normpath(os.path.join(_RKN_FILTER_DIR, "..", "..", "GeoLite2-Country.mmdb"))
+
+# Версия схемы кэша (увеличивать при изменении формата)
+_CACHE_FORMAT_VERSION = 1
+
+
+def _asn_cache_key() -> str:
+    """Хеш актуального ASN_LIST для валидации кэша."""
+    raw = "|".join(sorted(ASN_LIST))
+    return hashlib.sha256(raw.encode()).hexdigest()[:16]
 
 
 def _fetch_aws_networks(session, timeout: int = 15) -> list[str]:
@@ -48,12 +58,24 @@ def _fetch_aws_networks(session, timeout: int = 15) -> list[str]:
 
 def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipaddress.IPv6Network]:
     """Загружает дополнительный список сетей (из кэша, хардкода + RIPEstat API или AWS JSON)."""
+    current_key = _asn_cache_key()
+
     if os.path.exists(ASN_CACHE_FILE):
         try:
             with open(ASN_CACHE_FILE, "r", encoding="utf-8") as f:
-                cached_strings = json.load(f)
-            print(f"  [Cache] Loaded {len(cached_strings)} extra networks from local {ASN_CACHE_FILE}")
-            return [ipaddress.ip_network(cidr, strict=False) for cidr in cached_strings]
+                cache_data = json.load(f)
+
+            # Проверяем метаданные кэша
+            if isinstance(cache_data, dict) and cache_data.get("_v") == _CACHE_FORMAT_VERSION:
+                if cache_data.get("_asn_key") == current_key:
+                    cached_strings = cache_data.get("_cidrs", [])
+                    print(f"  [Cache] Loaded {len(cached_strings)} extra networks from local {ASN_CACHE_FILE}")
+                    return [ipaddress.ip_network(cidr, strict=False) for cidr in cached_strings]
+                else:
+                    print(f"  [Cache] ASN_LIST changed, rebuilding...")
+            else:
+                print(f"  [Cache] Legacy format, rebuilding...")
+
         except Exception as e:
             print(f"  [Cache WARN] Failed to read cache file, rebuilding: {e}")
 
@@ -80,10 +102,15 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
     v6 = [n for n in valid_networks if n.version == 6]
     collapsed = list(ipaddress.collapse_addresses(v4)) + list(ipaddress.collapse_addresses(v6))
 
-    # Сохраняем в кэш
+    # Сохраняем в кэш с метаданными
     try:
+        cache_payload = {
+            "_v": _CACHE_FORMAT_VERSION,
+            "_asn_key": current_key,
+            "_cidrs": [str(n) for n in collapsed],
+        }
         with open(ASN_CACHE_FILE, "w", encoding="utf-8") as f:
-            json.dump([str(n) for n in collapsed], f, indent=2)
+            json.dump(cache_payload, f, indent=2)
         print(f"  [Cache] Successfully saved {len(collapsed)} optimized networks to {ASN_CACHE_FILE}")
     except Exception as e:
         print(f"  [Cache WARN] Failed to save cache file: {e}")
