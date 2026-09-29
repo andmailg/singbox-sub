@@ -7,7 +7,7 @@ import requests
 
 
 ASN_LIST = [
-    "AS31898", "AS20473"
+    "AS31898", "AS20473", "AS54113"
 ]
 
 API_URL = "https://stat.ripe.net/data/announced-prefixes/data.json"
