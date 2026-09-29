@@ -275,6 +275,39 @@ def resolve_country(server: str) -> str | None:
     return None
 
 
+def resolve_asn(server: str) -> str | None:
+    """Определяет ASN (AS номер) по домену или IP-адресу."""
+    asn_db_path = os.path.normpath(os.path.join(_RKN_FILTER_DIR, "..", "..", "GeoLite2-ASN.mmdb"))
+    node_ip = server.strip("[]")
+
+    if not is_valid_ip(node_ip):
+        resolved = resolve_domain(node_ip)
+        if resolved is None:
+            return None
+        node_ip = resolved
+
+    if not maxminddb or not os.path.exists(asn_db_path):
+        return None
+
+    try:
+        reader = maxminddb.open_database(asn_db_path)
+        asn_data = reader.get(node_ip)
+        reader.close()
+
+        if isinstance(asn_data, tuple):
+            asn_data = asn_data[0]
+        if isinstance(asn_data, dict):
+            asn_record = asn_data.get("autonomous_system_number")
+            if isinstance(asn_record, int):
+                return f"AS{asn_record}"
+            if isinstance(asn_record, str):
+                return asn_record
+    except Exception:
+        pass
+
+    return None
+
+
 def resolve_and_check(
     server: str,
     blocked_networks: RKNBlockList,

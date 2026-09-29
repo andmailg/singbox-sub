@@ -29,7 +29,7 @@ from src.common import (
     resolve_server,
     country_code_to_flag,
 )
-from src.rkn_filter import resolve_country
+from src.rkn_filter import resolve_asn, resolve_country
 from src.testers.vless_xhttp_node_tester import test_vless_xhttp_connectivity
 
 
@@ -171,6 +171,11 @@ def cmd_export(args):
         print(f"Exporting {len(active_nodes)} active nodes ({len(pending_nodes)} pending kept)")
     else:
         print(f"Exporting {len(active_nodes)} nodes")
+
+    # Лог: ASN для каждой ноды
+    for node in active_nodes:
+        asn = resolve_asn(node.get("server", ""))
+        print(f"  [Node] {node.get('tag')} {node.get('server')}:{node.get('server_port')} {asn}")
 
     # Экспорт только active
     if args.type == "tun":
