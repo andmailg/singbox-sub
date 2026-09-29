@@ -25,11 +25,45 @@ _GEOIP_PATH = os.path.normpath(os.path.join(_RKN_FILTER_DIR, "..", "..", "GeoLit
 # Версия схемы кэша (увеличивать при изменении формата)
 _CACHE_FORMAT_VERSION = 1
 
+# Файл метки ASN_LIST для отслеживания изменений
+_ASN_LABEL_FILE = os.path.join(_RKN_FILTER_DIR, ".asn_label")
+
 
 def _asn_cache_key() -> str:
     """Хеш актуального ASN_LIST для валидации кэша."""
     raw = "|".join(sorted(ASN_LIST))
     return hashlib.sha256(raw.encode()).hexdigest()[:16]
+
+
+def _flush_working_nodes_if_asn_changed() -> None:
+    """Удаляет все *_working.json, если ASN_LIST изменился с прошлого запуска."""
+    current_key = _asn_cache_key()
+
+    # Читаем сохранённый ключ
+    prev_key = None
+    if os.path.exists(_ASN_LABEL_FILE):
+        try:
+            with open(_ASN_LABEL_FILE, "r", encoding="utf-8") as f:
+                prev_key = f.read().strip()
+        except Exception:
+            pass
+
+    # Если ключ изменился — удаляем все *_working.json и перегенерируем кэш
+    if prev_key is not None and prev_key != current_key:
+        print(f"  [ASN] ASN_LIST changed, flushing working nodes...")
+        src_dir = os.path.dirname(_RKN_FILTER_DIR)
+        for fname in os.listdir(src_dir):
+            if fname.endswith("_working.json"):
+                fpath = os.path.join(src_dir, fname)
+                os.remove(fpath)
+                print(f"  [ASN] Deleted: {fname}")
+
+    # Сохраняем текущий ключ
+    try:
+        with open(_ASN_LABEL_FILE, "w", encoding="utf-8") as f:
+            f.write(current_key)
+    except Exception:
+        pass
 
 
 def _fetch_aws_networks(session, timeout: int = 15) -> list[str]:
@@ -174,6 +208,9 @@ class RKNBlockList:
 
 def load_rkn_list(session) -> RKNBlockList:
     """Возвращает RKNBlockList на основе оптимизированного кэша хостинг-провайдеров."""
+    # Проверяем, изменился ли ASN_LIST — если да, удаляем *_working.json
+    _flush_working_nodes_if_asn_changed()
+
     all_networks: list[ipaddress.IPv4Network | ipaddress.IPv6Network] = []
 
     # Интеграция оптимизированных тяжелых подсетей (12 провайдеров РКН + Macarne)
