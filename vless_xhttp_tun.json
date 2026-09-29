@@ -110,8 +110,11 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇳🇱node-1",
-        "🇺🇸node-2"
+        "node-1",
+        "🇩🇪node-2",
+        "🇳🇱node-3",
+        "🇳🇱node-4",
+        "🇺🇸node-5"
       ],
       "default": "auto"
     },
@@ -119,8 +122,11 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇳🇱node-1",
-        "🇺🇸node-2"
+        "node-1",
+        "🇩🇪node-2",
+        "🇳🇱node-3",
+        "🇳🇱node-4",
+        "🇺🇸node-5"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -128,7 +134,53 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-1",
+      "tag": "node-1",
+      "server": "104.18.15.190",
+      "server_port": 443,
+      "uuid": "9c781e88-7d5c-49ac-92b0-ef1ade8427aa",
+      "transport": {
+        "type": "xhttp",
+        "path": "/Bf8uiGqzIKgPlKjaGeRFXPM2",
+        "mode": "auto",
+        "host": [
+          "buy.tgseenrobo.ir"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "buy.tgseenrobo.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪node-2",
+      "server": "94.183.238.15",
+      "server_port": 443,
+      "uuid": "5edbcb44-8d04-4fa7-a587-bc5d60c24ca1",
+      "transport": {
+        "type": "xhttp",
+        "path": "/xh",
+        "mode": "auto",
+        "host": [
+          "ger-02.letsgodance.site"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "ger-02.letsgodance.site",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-3",
       "server": "206.71.158.124",
       "server_port": 443,
       "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
@@ -151,7 +203,30 @@
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-2",
+      "tag": "🇳🇱node-4",
+      "server": "206.71.158.125",
+      "server_port": 443,
+      "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
+      "transport": {
+        "type": "xhttp",
+        "path": "/kavir",
+        "mode": "stream-one",
+        "host": [
+          "dey.lnmarketplace.net"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "dey.lnmarketplace.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-5",
       "server": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
       "server_port": 443,
       "uuid": "9fa2fae0-141a-b983-ef0e-b3d5633f9592",
