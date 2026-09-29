@@ -110,10 +110,13 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇳🇱node-1",
-        "🇳🇱node-2",
-        "🇺🇸node-3",
-        "🇺🇸node-4"
+        "🇩🇪node-1",
+        "🇩🇪node-2",
+        "🇳🇱node-3",
+        "🇳🇱node-4",
+        "🇳🇱node-5",
+        "🇸🇨node-6",
+        "🇺🇸node-7"
       ],
       "default": "auto"
     },
@@ -121,10 +124,13 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇳🇱node-1",
-        "🇳🇱node-2",
-        "🇺🇸node-3",
-        "🇺🇸node-4"
+        "🇩🇪node-1",
+        "🇩🇪node-2",
+        "🇳🇱node-3",
+        "🇳🇱node-4",
+        "🇳🇱node-5",
+        "🇸🇨node-6",
+        "🇺🇸node-7"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -132,7 +138,73 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-1",
+      "tag": "🇩🇪node-1",
+      "server": "91.107.191.188",
+      "server_port": 8443,
+      "uuid": "9f44d517-29f2-4c6d-cc06-a1268f13da58",
+      "transport": {
+        "type": "xhttp",
+        "path": "/Meh?di=443",
+        "mode": "auto",
+        "host": [
+          "host.taghvimtime.ir"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "host.taghvimtime.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪node-2",
+      "server": "94.183.238.15",
+      "server_port": 443,
+      "uuid": "5edbcb44-8d04-4fa7-a587-bc5d60c24ca1",
+      "transport": {
+        "type": "xhttp",
+        "path": "/xh",
+        "mode": "auto",
+        "host": [
+          "ger-02.letsgodance.site"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "ger-02.letsgodance.site",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-3",
+      "server": "201.78.143.14",
+      "server_port": 443,
+      "uuid": "17c0e022-e193-4e51-9650-1b8124004fb2",
+      "transport": {
+        "type": "xhttp",
+        "path": "/y64dg77dnk7xzr5k",
+        "mode": "auto"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "201.78.143.14",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-4",
       "server": "206.71.158.124",
       "server_port": 443,
       "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
@@ -155,44 +227,21 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-2",
-      "server": "206.71.158.125",
+      "tag": "🇳🇱node-5",
+      "server": "31.57.24.177",
       "server_port": 443,
-      "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
+      "uuid": "c934b37d-f794-4b7d-a590-13f736ea5cab",
       "transport": {
         "type": "xhttp",
-        "path": "/kavir",
-        "mode": "stream-one",
+        "path": "/SmlDER32Ja",
+        "mode": "packet-up",
         "host": [
-          "dey.lnmarketplace.net"
+          "slv04.subsconnect.com"
         ]
       },
       "tls": {
         "enabled": true,
-        "server_name": "dey.lnmarketplace.net",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-3",
-      "server": "fs.koomeh.net",
-      "server_port": 443,
-      "uuid": "951329fe-08bd-48e9-860c-9bc78505ae93",
-      "transport": {
-        "type": "xhttp",
-        "path": "/rmnwv",
-        "mode": "auto",
-        "host": [
-          "Ajbbwuvmiiiiiiir0097.global.ssl.fastly.net"
-        ]
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "ssl.fastly.com",
+        "server_name": "slv04.subsconnect.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -201,21 +250,41 @@
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-4",
-      "server": "nice.iranapplecenter.com",
+      "tag": "🇸🇨node-6",
+      "server": "165.231.177.58",
       "server_port": 443,
-      "uuid": "6ba68c69-e108-502d-7b1c-e806fbc3cccd",
+      "uuid": "606a5b23-2c53-4994-b698-b11bb0dc8418",
       "transport": {
         "type": "xhttp",
         "path": "/",
-        "mode": "auto",
+        "mode": "auto"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "cab-6abb6a21.ferrin.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-7",
+      "server": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
+      "server_port": 443,
+      "uuid": "9fa2fae0-141a-b983-ef0e-b3d5633f9592",
+      "transport": {
+        "type": "xhttp",
+        "path": "/xhttp-siz10/stream-up/9fa2fae0-141a-b983-ef0e-b3d5633f9592",
+        "mode": "stream-up",
         "host": [
-          "shshsujsjiiyour-name.global.ssl.fastly.net"
+          "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev"
         ]
       },
       "tls": {
         "enabled": true,
-        "server_name": "ssl.fastly.com",
+        "server_name": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
