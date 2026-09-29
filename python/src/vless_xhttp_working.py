@@ -1,5 +1,6 @@
 """Управление рабочими нодами VLESS xhttp — хранение, загрузка, сохранение."""
 
+import hashlib
 import json
 import os
 from datetime import datetime, timezone
@@ -10,6 +11,16 @@ _WORKING_FILE = os.path.join(
 )
 
 
+def _asn_key() -> str:
+    """Хеш текущего ASN_LIST для валидации working-файла."""
+    try:
+        from src.rkn_filter.extra_blocked_cidr import ASN_LIST
+        raw = "|".join(sorted(ASN_LIST))
+        return hashlib.sha256(raw.encode()).hexdigest()[:16]
+    except Exception:
+        return ""
+
+
 def _cache_key(node: dict) -> str:
     """Уникальный ключ для ноды: server:port:uuid:path."""
     path = node.get("transport", {}).get("path", "/")
@@ -17,20 +28,31 @@ def _cache_key(node: dict) -> str:
 
 
 def load_working_nodes(path: str = _WORKING_FILE) -> list[dict]:
-    """Загружает список рабочих нод из JSON-файла."""
+    """Загружает список рабочих нод из JSON-файла.
+    
+    Если _asn_key не совпадает с текущим ASN_LIST — возвращает пустой список.
+    """
     if not os.path.exists(path):
         return []
     try:
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
+        
+        cached_key = data.get("_asn_key", "")
+        current_key = _asn_key()
+        if cached_key and cached_key != current_key:
+            print(f"  [Working] ASN_LIST changed, discarding {os.path.basename(path)}")
+            return []
+        
         return data.get("nodes", [])
     except Exception:
         return []
 
 
 def save_working_nodes(nodes: list[dict], path: str = _WORKING_FILE) -> None:
-    """Сохраняет список рабочих нод в JSON-файл."""
+    """Сохраняет список рабочих нод в JSON-файл с метаданными ASN."""
     data = {
+        "_asn_key": _asn_key(),
         "last_tested": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "nodes": nodes,
     }
