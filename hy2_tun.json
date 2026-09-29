@@ -117,16 +117,17 @@
         "🇭🇰node-5",
         "🇯🇵node-6",
         "🇯🇵node-7",
-        "🇰🇷node-8",
-        "🇵🇱node-9",
-        "🇷🇴node-10",
+        "🇯🇵node-8",
+        "🇰🇷node-9",
+        "🇵🇱node-10",
         "🇷🇴node-11",
         "🇷🇴node-12",
         "🇷🇴node-13",
         "🇷🇴node-14",
-        "🇺🇸node-15",
+        "🇷🇴node-15",
         "🇺🇸node-16",
-        "🇺🇸node-17"
+        "🇺🇸node-17",
+        "🇺🇸node-18"
       ],
       "default": "auto"
     },
@@ -141,16 +142,17 @@
         "🇭🇰node-5",
         "🇯🇵node-6",
         "🇯🇵node-7",
-        "🇰🇷node-8",
-        "🇵🇱node-9",
-        "🇷🇴node-10",
+        "🇯🇵node-8",
+        "🇰🇷node-9",
+        "🇵🇱node-10",
         "🇷🇴node-11",
         "🇷🇴node-12",
         "🇷🇴node-13",
         "🇷🇴node-14",
-        "🇺🇸node-15",
+        "🇷🇴node-15",
         "🇺🇸node-16",
-        "🇺🇸node-17"
+        "🇺🇸node-17",
+        "🇺🇸node-18"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -249,7 +251,20 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-8",
+      "tag": "🇯🇵node-8",
+      "server": "vp3.yysyy.online",
+      "server_port": 443,
+      "password": "96ab5cd282733fd4c312a61f972f330a",
+      "tls": {
+        "enabled": true,
+        "server_name": "vp3.yysyy.online"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇰🇷node-9",
       "server": "152-69-231-175.liao.kdns.fr",
       "server_port": 50160,
       "password": "1beb216e3f60aea9555dae60d219a5ca",
@@ -262,7 +277,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇵🇱node-9",
+      "tag": "🇵🇱node-10",
       "server": "admin.wwwinternetvideo.click",
       "server_port": 443,
       "password": "YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc",
@@ -275,7 +290,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-10",
+      "tag": "🇷🇴node-11",
       "server": "grape-test-italy.dynuddns.net",
       "server_port": 8443,
       "password": "s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z",
@@ -288,7 +303,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-11",
+      "tag": "🇷🇴node-12",
       "server": "hop-germany-september.dynuddns.com",
       "server_port": 8443,
       "password": "9Me_Jx935gnHx13_Nx45M_NYXe037js_Be4z",
@@ -301,7 +316,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-12",
+      "tag": "🇷🇴node-13",
       "server": "hopp-romania-new.roxa.org",
       "server_port": 8443,
       "password": "Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0",
@@ -314,7 +329,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-13",
+      "tag": "🇷🇴node-14",
       "server": "hy2-new.aspidnet.xyz",
       "server_port": 443,
       "password": "QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s",
@@ -331,7 +346,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-14",
+      "tag": "🇷🇴node-15",
       "server": "hy2.aspidnet.xyz",
       "server_port": 443,
       "password": "p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR",
@@ -348,7 +363,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-15",
+      "tag": "🇺🇸node-16",
       "server": "hy2.123266.xyz",
       "server_port": 33333,
       "password": "bce6c821-200d-421f-bf3d-7159e5246ea0",
@@ -361,7 +376,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-16",
+      "tag": "🇺🇸node-17",
       "server": "hy2.561891.xyz",
       "server_port": 44356,
       "password": "dongtaiwang.com",
@@ -374,7 +389,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-17",
+      "tag": "🇺🇸node-18",
       "server": "ss.marmount.space",
       "server_port": 8443,
       "password": "cloud:Wz8cE3yFhL9dXoSp",
