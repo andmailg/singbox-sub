@@ -44,12 +44,10 @@ def cmd_merge(args):
 
     port_whitelist = tuple(int(p) for p in args.ports.split(",")) if args.ports else None
 
-    # Кастомный export_func: сохраняет ноды в hy2_working.json без нумерации
+    # Кастомный export_func: перезаписывает hy2_working.json отфильтрованными нодами
     def _save_to_working(outbounds, _output_file):
-        existing = load_working_nodes()
-        merged, added = merge_new_nodes(existing, outbounds)
-        print(f"Merge result: added {added} new nodes (total: {len(merged)})")
-        save_working_nodes(merged)
+        print(f"Merge result: {len(outbounds)} nodes passed all filters")
+        save_working_nodes(outbounds)
 
     run_pipeline(
         parser_module="src.parsers.hy2_parser",
