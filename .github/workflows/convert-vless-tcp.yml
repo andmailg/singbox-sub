@@ -3,7 +3,7 @@ name: Auto Convert Sing-Box VLESS TCP (Reality)
 on:
   schedule:
     # Запуск каждые 2 часа
-    - cron: '0 */2 * * *'
+    - cron: '10 */2 * * *'
   workflow_dispatch: # Ручной запуск
 
 jobs:
@@ -49,11 +49,17 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # Настраиваем локальный гит на использование rebase при подтягивании изменений
+          git config --local pull.rebase true
+
           git add vless_tcp_tun.json vless_tcp.txt python/src/vless_tcp_working.json
           
           if git diff --cached --quiet; then
             echo "Нет изменений для коммита."
           else
             git commit -m "Auto-update vless_reality configs & working nodes"
-            git push
+            
+            # Сначала стягиваем новые коммиты в режиме rebase, затем пушим
+            git pull origin main
+            git push origin main
           fi
