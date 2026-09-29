@@ -49,17 +49,19 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Включаем rebase по умолчанию для пулов в этой сессии
-          git config --local pull.rebase true
-
-          git add vless_xhttp_tun.json vless_xhttp.txt python/src/vless_xhttp_working.json
+          # 1. Фиксируем только нужные сгенерированные файлы в индекс (Staging)
+          git add vless_tcp_tun.json vless_tcp.txt python/src/vless_tcp_working.json
           
           if git diff --cached --quiet; then
             echo "Нет изменений для коммита."
           else
-            git commit -m "Auto-update vless_xhttp configs & working nodes"
+            # 2. Создаем локальный коммит
+            git commit -m "Auto-update vless_reality configs & working nodes"
             
-            # Скачиваем чужие изменения и ставим свой коммит поверх них
-            git pull origin main
+            # 3. Сбрасываем изменения в недобавленных файлах (базах GeoLite2), чтобы они не мешали rebase
+            git checkout -- python/GeoLite2-Country.mmdb python/GeoLite2-ASN.mmdb
+            
+            # 4. Безопасно подтягиваем изменения из GitHub и пушим
+            git pull --rebase origin main
             git push origin main
           fi
