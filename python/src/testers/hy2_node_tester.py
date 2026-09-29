@@ -76,8 +76,10 @@ def _hy2_get_free_port() -> int:
         return s.getsockname()[1]
 
 
-def _hy2_wait_for_port(host: str, port: int, timeout: float = 5.0) -> bool:
+def _hy2_wait_for_port(host: str, port: int, timeout: float = 15.0) -> bool:
     """Ожидает, пока порт станет доступен."""
+    # Начальная пауза для инициализации hy2 клиента
+    time.sleep(1.0)
     deadline = time.time() + timeout
     while time.time() < deadline:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
@@ -86,7 +88,7 @@ def _hy2_wait_for_port(host: str, port: int, timeout: float = 5.0) -> bool:
                 s.connect((host, port))
                 return True
             except (ConnectionRefusedError, socket.timeout, OSError):
-                time.sleep(0.2)
+                time.sleep(0.3)
     return False
 
 
@@ -120,7 +122,7 @@ def test_hy2_node(node: dict, timeout: int = 5) -> dict | str | None:
         )
 
         try:
-            proc.wait(timeout=3)
+            proc.wait(timeout=5)
         except subprocess.TimeoutExpired:
             pass  # Процесс работает — это хорошо
 
@@ -129,13 +131,15 @@ def test_hy2_node(node: dict, timeout: int = 5) -> dict | str | None:
             output = (stderr or stdout or "").strip()
             return f"CLI exit {proc.returncode}: {output[:200]}"
 
-        if not _hy2_wait_for_port("127.0.0.1", local_port, timeout=5.0):
+        if not _hy2_wait_for_port("127.0.0.1", local_port, timeout=15.0):
             proc.terminate()
             try:
                 proc.wait(timeout=1)
             except subprocess.TimeoutExpired:
                 proc.kill()
-            return "SOCKS5 port not ready"
+            _, stderr = proc.communicate()
+            err_info = stderr.strip()[:200] if stderr else "no output"
+            return f"SOCKS5 port not ready ({err_info})"
 
         curl_cmd = [
             "curl", "-s", "-o", "/dev/null",
