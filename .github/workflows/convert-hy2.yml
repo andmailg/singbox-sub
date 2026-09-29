@@ -2,8 +2,8 @@ name: Auto Convert Sing-Box Hysteria2
 
 on:
   schedule:
-    # Запуск каждые 2 часа со сдвигом в 20 минут (в 00:20, 02:20, 04:20 и т.д.)
-    - cron: '20 */2 * * *'
+    # Запуск каждые 2 час
+    - cron: '0 */2 * * *'
   workflow_dispatch: # Ручной запуск
 
 jobs:
@@ -49,19 +49,11 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # 1. Фиксируем только нужные сгенерированные файлы в индекс (Staging)
-          git add vless_tcp_tun.json vless_tcp.txt python/src/vless_tcp_working.json
+          git add hy2_tun.json hy2.txt config.json python/src/hy2_working.json
           
           if git diff --cached --quiet; then
             echo "Нет изменений для коммита."
           else
-            # 2. Создаем локальный коммит
-            git commit -m "Auto-update vless_reality configs & working nodes"
-            
-            # 3. Сбрасываем изменения в недобавленных файлах (базах GeoLite2), чтобы они не мешали rebase
-            git checkout -- python/GeoLite2-Country.mmdb python/GeoLite2-ASN.mmdb
-            
-            # 4. Безопасно подтягиваем изменения из GitHub и пушим
-            git pull --rebase origin main
-            git push origin main
+            git commit -m "Auto-update hy2 configs & working nodes"
+            git push
           fi
