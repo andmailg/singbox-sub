@@ -215,8 +215,14 @@ def resolve_and_check(
     server: str,
     blocked_networks: RKNBlockList,
     reader=None,
-) -> dict | None:
-    """Проверяет сервер на блокировки и страну (исключает RU)."""
+) -> dict | None | str:
+    """Проверяет сервер на блокировки и страну (исключает RU).
+
+    Returns:
+        dict с ip/country — если нода прошла,
+        None — если не удалось определить IP,
+        str ("rkn" / "ru") — причина отклонения.
+    """
     node_ip_str = server.strip("[]")
 
     if not is_valid_ip(node_ip_str):
@@ -231,7 +237,7 @@ def resolve_and_check(
         return None
 
     if blocked_networks.is_blocked(node_ip_str):
-        return None
+        return "rkn"
 
     country = None
     if reader:
@@ -244,7 +250,7 @@ def resolve_and_check(
                 if isinstance(country_obj, dict):
                     country = country_obj.get("iso_code", "")
                     if country == "RU":
-                        return None
+                        return "ru"
         except Exception:
             pass
 

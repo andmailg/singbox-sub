@@ -161,8 +161,17 @@ def _rkn_geoip_filter(
                 results[idx] = None
 
     filtered: list[dict] = []
+    removed_rkn: list[dict] = []
+    removed_ru: list[dict] = []
     for idx, check_result in enumerate(results):
         if check_result is not None:
+            if isinstance(check_result, str):
+                # Это причина блокировки
+                if check_result == "rkn":
+                    removed_rkn.append(outbounds[idx])
+                elif check_result == "ru":
+                    removed_ru.append(outbounds[idx])
+                continue
             node = outbounds[idx]
             country = check_result.get("country")
             if country:
@@ -172,6 +181,12 @@ def _rkn_geoip_filter(
     removed = len(outbounds) - len(filtered)
     if removed:
         print(f"{prefix}Filtered out {removed} nodes by RKN/GeoIP ({len(filtered)} remaining).")
+        if removed_rkn:
+            for node in removed_rkn:
+                print(f"{prefix}  [RKN] {node.get('server')}:{node.get('server_port')}")
+        if removed_ru:
+            for node in removed_ru:
+                print(f"{prefix}  [RU] {node.get('server')}:{node.get('server_port')}")
     else:
         print(f"{prefix}No nodes filtered by RKN/GeoIP ({len(filtered)} remaining).")
 
