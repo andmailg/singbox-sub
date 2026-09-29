@@ -1,6 +1,7 @@
 """RKN Blocklist + GeoIP фильтрация для VLESS WS/HTTP нод."""
 
-from .asn_prefixes import _EXTRA_BLOCKED_CIDR
+from .asn_prefixes import EXTRA_BLOCKED_CIDR
+from .hardcoded_cidr import HARDCODED_CIDR
 from .rkn_filter import (
     ASN_CACHE_FILE,
     RKNBlockList,
@@ -14,7 +15,8 @@ from .rkn_filter import (
 )
 
 __all__ = [
-    "_EXTRA_BLOCKED_CIDR",
+    "EXTRA_BLOCKED_CIDR",
+    "HARDCODED_CIDR",
     "ASN_CACHE_FILE",
     "RKNBlockList",
     "_fetch_aws_networks",

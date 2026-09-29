@@ -102,7 +102,7 @@ def fetch_all() -> dict[str, list[str]]:
 
 # Генерируем при импорте (если API доступен)
 try:
-    _EXTRA_BLOCKED_CIDR: dict[str, list[str]] = fetch_all()
+    EXTRA_BLOCKED_CIDR: dict[str, list[str]] = fetch_all()
 except Exception:
     # Fallback: пустой словарь, если API недоступен
-    _EXTRA_BLOCKED_CIDR = {}
+    EXTRA_BLOCKED_CIDR = {}

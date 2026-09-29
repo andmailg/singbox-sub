@@ -1,5 +1,5 @@
-# Хардкод CIDR для ASN по реестру приземления РКН + Macarne (данные RIPEstat)
-_EXTRA_BLOCKED_CIDR: dict[str, list[str]] = {
+# CIDR для ASN по реестру приземления РКН + Macarne (данные RIPEstat)
+HARDCODED_CIDR: dict[str, list[str]] = {
     "AS36352": [
         "23.226.140.0/24","66.63.167.0/24","96.47.231.0/24"
     ],

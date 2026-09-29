@@ -10,7 +10,8 @@ import os
 from collections import OrderedDict
 
 from src.common import is_valid_ip, resolve_domain, session
-from .asn_prefixes import _EXTRA_BLOCKED_CIDR, ASN_LIST
+from .asn_prefixes import EXTRA_BLOCKED_CIDR, ASN_LIST
+from .hardcoded_cidr import HARDCODED_CIDR
 
 try:
     import maxminddb
@@ -23,7 +24,7 @@ ASN_CACHE_FILE = os.path.join(_RKN_FILTER_DIR, "rkn_networks_cache.json")
 _GEOIP_PATH = os.path.normpath(os.path.join(_RKN_FILTER_DIR, "..", "..", "GeoLite2-Country.mmdb"))
 
 # Версия схемы кэша (увеличивать при изменении формата)
-_CACHE_FORMAT_VERSION = 1
+_CACHE_FORMAT_VERSION = 2
 
 # Файл метки ASN_LIST для отслеживания изменений
 _ASN_LABEL_FILE = os.path.join(_RKN_FILTER_DIR, ".asn_label")
@@ -32,6 +33,15 @@ _ASN_LABEL_FILE = os.path.join(_RKN_FILTER_DIR, ".asn_label")
 def _asn_cache_key() -> str:
     """Хеш актуального ASN_LIST для валидации кэша."""
     raw = "|".join(sorted(ASN_LIST))
+    return hashlib.sha256(raw.encode()).hexdigest()[:16]
+
+
+def _hardcoded_cache_key() -> str:
+    """Хеш актуального HARDCODED_CIDR для валидации кэша."""
+    raw = "|".join(
+        f"{asn}={','.join(sorted(cidrs))}"
+        for asn, cidrs in sorted(HARDCODED_CIDR.items())
+    )
     return hashlib.sha256(raw.encode()).hexdigest()[:16]
 
 
@@ -92,7 +102,8 @@ def _fetch_aws_networks(session, timeout: int = 15) -> list[str]:
 
 def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipaddress.IPv6Network]:
     """Загружает дополнительный список сетей (из кэша, хардкода + RIPEstat API или AWS JSON)."""
-    current_key = _asn_cache_key()
+    current_asn_key = _asn_cache_key()
+    current_hardcoded_key = _hardcoded_cache_key()
 
     if os.path.exists(ASN_CACHE_FILE):
         try:
@@ -101,12 +112,19 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
 
             # Проверяем метаданные кэша
             if isinstance(cache_data, dict) and cache_data.get("_v") == _CACHE_FORMAT_VERSION:
-                if cache_data.get("_asn_key") == current_key:
+                cached_asn = cache_data.get("_asn_key")
+                cached_hardcoded = cache_data.get("_hardcoded_key")
+                if cached_asn == current_asn_key and cached_hardcoded == current_hardcoded_key:
                     cached_strings = cache_data.get("_cidrs", [])
                     print(f"  [Cache] Loaded {len(cached_strings)} extra networks from local {ASN_CACHE_FILE}")
                     return [ipaddress.ip_network(cidr, strict=False) for cidr in cached_strings]
                 else:
-                    print(f"  [Cache] ASN_LIST changed, rebuilding...")
+                    reasons = []
+                    if cached_asn != current_asn_key:
+                        reasons.append("ASN_LIST")
+                    if cached_hardcoded != current_hardcoded_key:
+                        reasons.append("HARDCODED")
+                    print(f"  [Cache] {'+'.join(reasons)} changed, rebuilding...")
             else:
                 print(f"  [Cache] Legacy format, rebuilding...")
 
@@ -116,14 +134,28 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
     print("  [Cache] Cache file not found or corrupted. Rebuilding...")
     all_cidr_strings: list[str] = []
 
-    # 1. Сети из extra_blocked_cidr.py
-    for asn_cidrs in _EXTRA_BLOCKED_CIDR.values():
+    # 1. Сети из asn_prefixes.py (RIPEstat API)
+    for asn_cidrs in EXTRA_BLOCKED_CIDR.values():
         all_cidr_strings.extend(asn_cidrs)
 
-    # 2. Официальный список AWS
+    # 2. Сети из hardcoded_cidr.py
+    for asn_cidrs in HARDCODED_CIDR.values():
+        all_cidr_strings.extend(asn_cidrs)
+
+    # 3. Официальный список AWS
     all_cidr_strings.extend(_fetch_aws_networks(session))
 
-    # Валидируем и дедуплицируем строки перед кэшированием
+    # Дедупликация и валидация
+    seen: set[str] = set()
+    unique_cidrs: list[str] = []
+    for cidr in all_cidr_strings:
+        s = cidr.strip()
+        if s and s not in seen:
+            seen.add(s)
+            unique_cidrs.append(s)
+
+    all_cidr_strings = unique_cidrs
+
     valid_networks = []
     for cidr in all_cidr_strings:
         try:
@@ -140,7 +172,8 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
     try:
         cache_payload = {
             "_v": _CACHE_FORMAT_VERSION,
-            "_asn_key": current_key,
+            "_asn_key": current_asn_key,
+            "_hardcoded_key": current_hardcoded_key,
             "_cidrs": [str(n) for n in collapsed],
         }
         with open(ASN_CACHE_FILE, "w", encoding="utf-8") as f:
