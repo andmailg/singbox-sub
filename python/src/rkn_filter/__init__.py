@@ -9,6 +9,7 @@ from .rkn_filter import (
     load_rkn_list,
     open_geoip_reader,
     resolve_and_check,
+    resolve_asn,
     resolve_country,
 )
 
@@ -21,5 +22,6 @@ __all__ = [
     "load_rkn_list",
     "open_geoip_reader",
     "resolve_and_check",
+    "resolve_asn",
     "resolve_country",
 ]
