@@ -2,7 +2,7 @@ name: Auto Convert Sing-Box Hysteria2
 
 on:
   schedule:
-    # Запуск каждые 2 час
+    # Запуск каждые 2 часа
     - cron: '0 */2 * * *'
   workflow_dispatch: # Ручной запуск
 

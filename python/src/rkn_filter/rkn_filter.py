@@ -26,8 +26,9 @@ _GEOIP_PATH = os.path.normpath(os.path.join(_RKN_FILTER_DIR, "..", "..", "GeoLit
 # Версия схемы кэша (увеличивать при изменении формата)
 _CACHE_FORMAT_VERSION = 2
 
-# Файл метки ASN_LIST для отслеживания изменений
+# Файлы меток для отслеживания изменений
 _ASN_LABEL_FILE = os.path.join(_RKN_FILTER_DIR, ".asn_label")
+_HARDCODED_LABEL_FILE = os.path.join(_RKN_FILTER_DIR, ".hardcoded_label")
 
 
 def _asn_cache_key() -> str:
@@ -71,6 +72,37 @@ def _flush_working_nodes_if_asn_changed() -> None:
     # Сохраняем текущий ключ
     try:
         with open(_ASN_LABEL_FILE, "w", encoding="utf-8") as f:
+            f.write(current_key)
+    except Exception:
+        pass
+
+
+def _flush_working_nodes_if_hardcoded_changed() -> None:
+    """Удаляет все *_working.json, если HARDCODED_CIDR изменился с прошлого запуска."""
+    current_key = _hardcoded_cache_key()
+
+    # Читаем сохранённый ключ
+    prev_key = None
+    if os.path.exists(_HARDCODED_LABEL_FILE):
+        try:
+            with open(_HARDCODED_LABEL_FILE, "r", encoding="utf-8") as f:
+                prev_key = f.read().strip()
+        except Exception:
+            pass
+
+    # Если ключ изменился — удаляем все *_working.json и перегенерируем кэш
+    if prev_key is not None and prev_key != current_key:
+        print(f"  [HARDCODED] HARDCODED_CIDR changed, flushing working nodes...")
+        src_dir = os.path.dirname(_RKN_FILTER_DIR)
+        for fname in os.listdir(src_dir):
+            if fname.endswith("_working.json"):
+                fpath = os.path.join(src_dir, fname)
+                os.remove(fpath)
+                print(f"  [HARDCODED] Deleted: {fname}")
+
+    # Сохраняем текущий ключ
+    try:
+        with open(_HARDCODED_LABEL_FILE, "w", encoding="utf-8") as f:
             f.write(current_key)
     except Exception:
         pass
@@ -241,8 +273,9 @@ class RKNBlockList:
 
 def load_rkn_list(session) -> RKNBlockList:
     """Возвращает RKNBlockList на основе оптимизированного кэша хостинг-провайдеров."""
-    # Проверяем, изменился ли ASN_LIST — если да, удаляем *_working.json
+    # Проверяем, изменились ли источники — если да, удаляем *_working.json
     _flush_working_nodes_if_asn_changed()
+    _flush_working_nodes_if_hardcoded_changed()
 
     all_networks: list[ipaddress.IPv4Network | ipaddress.IPv6Network] = []
 

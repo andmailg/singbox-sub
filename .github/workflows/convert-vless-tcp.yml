@@ -3,7 +3,7 @@ name: Auto Convert Sing-Box VLESS TCP (Reality)
 on:
   schedule:
     # Запуск каждые 2 часа
-    - cron: '0 */2 * * *'
+    - cron: '20 */2 * * *'
   workflow_dispatch: # Ручной запуск
 
 jobs:
