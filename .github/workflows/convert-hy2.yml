@@ -5,11 +5,6 @@ on:
     # Запуск каждые 2 часа
     - cron: '0 */2 * * *'
   workflow_dispatch: # Ручной запуск
-    inputs:
-      geoblock:
-        description: 'Country codes to block (e.g. "ru,ir"), leave empty to disable'
-        required: false
-        default: ''
 
 jobs:
   convert:
