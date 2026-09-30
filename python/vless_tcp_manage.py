@@ -138,22 +138,7 @@ def cmd_run(args):
     print("\n" + "=" * 60)
     print("STEP 3: Export configs")
     print("=" * 60)
-    # Только TUN + V2Ray-ссылки (роутер не нужен)
-    active_nodes = load_working_nodes()
-    print(f"  Loaded {len(active_nodes)} total nodes from working file")
-    active_nodes = [n for n in active_nodes if "_pending_since" not in n]
-    print(f"  Active nodes (no _pending_since): {len(active_nodes)}")
-    active_nodes = renumber_nodes(active_nodes)
-    
-    # Вывод списка нод
-    for node in active_nodes:
-        asn = resolve_asn(node.get("server", ""))
-        print(f"  [Node] {node.get('tag')} {node.get('server')}:{node.get('server_port')} {asn}")
-    
-    for n in active_nodes:
-        clean_internal_fields(n)
-    _export_tun(active_nodes, "vless_tcp_tun.json")
-    _export_v2ray(active_nodes)
+    cmd_export(argparse.Namespace(type="all", output="vless_tcp_tun.json"))
 
 
 def cmd_export(args):
