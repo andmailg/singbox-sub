@@ -7,6 +7,7 @@ import requests
 
 
 ASN_LIST = [
+    "AS12876",
     "AS13335",
     "AS16276",
     "AS20473",
