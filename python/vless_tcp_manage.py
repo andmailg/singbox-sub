@@ -140,7 +140,9 @@ def cmd_run(args):
     print("=" * 60)
     # Только TUN + V2Ray-ссылки (роутер не нужен)
     active_nodes = load_working_nodes()
+    print(f"  Loaded {len(active_nodes)} total nodes from working file")
     active_nodes = [n for n in active_nodes if "_pending_since" not in n]
+    print(f"  Active nodes (no _pending_since): {len(active_nodes)}")
     active_nodes = renumber_nodes(active_nodes)
     
     # Вывод списка нод
