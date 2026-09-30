@@ -138,7 +138,14 @@ def cmd_run(args):
     print("\n" + "=" * 60)
     print("STEP 3: Export configs")
     print("=" * 60)
-    cmd_export(argparse.Namespace(type="all", output="vless_tcp_tun.json"))
+    # Только TUN + V2Ray-ссылки (роутер не нужен)
+    active_nodes = load_working_nodes()
+    active_nodes = [n for n in active_nodes if "_pending_since" not in n]
+    active_nodes = renumber_nodes(active_nodes)
+    for n in active_nodes:
+        clean_internal_fields(n)
+    _export_tun(active_nodes, "vless_tcp_tun.json")
+    _export_v2ray(active_nodes)
 
 
 def cmd_export(args):
