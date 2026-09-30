@@ -152,15 +152,26 @@ def _parse_and_deduplicate(
 def _rkn_geoip_filter(
     outbounds: list[dict],
     prefix: str = "",
+    geoblock_countries: tuple[str, ...] | None = None,
 ) -> list[dict]:
-    """RKN + GeoIP фильтрация через resolve_and_check."""
+    """RKN + GeoIP фильтрация через resolve_and_check.
+
+    Args:
+        outbounds: список нод для фильтрации.
+        prefix: префикс для логов.
+        geoblock_countries: кортеж ISO-кодов стран для блокировки (например ("ru", "ir")).
+            Если None или пустой — фильтрация по странам отключена.
+    """
     from src.common import session
 
     blocked_networks = load_rkn_list(session)
     reader = open_geoip_reader()
 
     if reader:
-        print(f"{prefix}GeoIP database loaded for geolocation filtering.")
+        if geoblock_countries:
+            print(f"{prefix}GeoIP database loaded for geolocation filtering (block: {', '.join(geoblock_countries)}).")
+        else:
+            print(f"{prefix}GeoIP database loaded for geolocation filtering.")
 
     num_workers = min(8, len(outbounds))
     print(f"{prefix}Filtering {len(outbounds)} nodes with {num_workers} workers...")
@@ -172,6 +183,7 @@ def _rkn_geoip_filter(
                 o.get("server", "").strip("[]"),
                 blocked_networks,
                 reader,
+                geoblock_countries,
             ): idx
             for idx, o in enumerate(outbounds)
         }
@@ -186,15 +198,16 @@ def _rkn_geoip_filter(
 
     filtered: list[dict] = []
     removed_rkn: list[dict] = []
-    removed_ru: list[dict] = []
+    removed_geo: dict[str, list[dict]] = {}
     for idx, check_result in enumerate(results):
         if check_result is not None:
             if isinstance(check_result, str):
                 # Это причина блокировки
                 if check_result == "rkn":
                     removed_rkn.append(outbounds[idx])
-                elif check_result == "ru":
-                    removed_ru.append(outbounds[idx])
+                else:
+                    # Это ISO-код страны (например "ru", "ir")
+                    removed_geo.setdefault(check_result, []).append(outbounds[idx])
                 continue
             node = outbounds[idx]
             country = check_result.get("country")
@@ -208,9 +221,9 @@ def _rkn_geoip_filter(
         if removed_rkn:
             for node in removed_rkn:
                 print(f"{prefix}  [RKN] {node.get('server')}:{node.get('server_port')}")
-        if removed_ru:
-            for node in removed_ru:
-                print(f"{prefix}  [RU] {node.get('server')}:{node.get('server_port')}")
+        for country_code, nodes in sorted(removed_geo.items()):
+            for node in nodes:
+                print(f"  [{country_code.upper()}] {node.get('server')}:{node.get('server_port')}")
     else:
         print(f"{prefix}No nodes filtered by RKN/GeoIP ({len(filtered)} remaining).")
 
@@ -245,6 +258,7 @@ def run_pipeline(
     tester_func: Callable | None = None,
     test_timeout: int = 5,
     reality: bool = False,
+    geoblock_countries: tuple[str, ...] | None = None,
 ) -> None:
     """Запускает полный pipeline сборки конфига.
 
@@ -263,6 +277,8 @@ def run_pipeline(
             Если None — тестирование пропускается.
         test_timeout: таймаут проверки каждой ноды в секундах.
         reality: если True — для reality-протоколов не фильтрует SNI по FAKE_DOMAINS.
+        geoblock_countries: кортеж ISO-кодов стран для блокировки (например ("ru", "ir")).
+            Если None или пустой — фильтрация по странам отключена.
     """
     print(f"[{output_file}] Starting pipeline (exporter={exporter})...")
 
@@ -304,7 +320,7 @@ def run_pipeline(
         return
 
     # 4. RKN + GeoIP фильтрация
-    outbounds = _rkn_geoip_filter(outbounds, prefix=prefix)
+    outbounds = _rkn_geoip_filter(outbounds, prefix=prefix, geoblock_countries=geoblock_countries)
 
     if not outbounds:
         print(f"{prefix}Error: No valid proxy nodes left after RKN+GeoIP filtration!")

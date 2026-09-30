@@ -344,13 +344,21 @@ def resolve_and_check(
     server: str,
     blocked_networks: RKNBlockList,
     reader=None,
+    geoblock_countries: tuple[str, ...] | None = None,
 ) -> dict | None | str:
-    """Проверяет сервер на блокировки и страну (исключает RU).
+    """Проверяет сервер на блокировки и страну.
+
+    Args:
+        server: IP или домен сервера.
+        blocked_networks: RKNBlockList для проверки RKN.
+        reader: GeoIP reader (MaxMind).
+        geoblock_countries: кортеж ISO-кодов стран для блокировки (например ("ru", "ir")).
+            Если None или пустой — фильтрация по странам отключена.
 
     Returns:
         dict с ip/country — если нода прошла,
         None — если не удалось определить IP,
-        str ("rkn" / "ru") — причина отклонения.
+        str ("rkn" / ISO-код страны) — причина отклонения.
     """
     node_ip_str = server.strip("[]")
 
@@ -378,8 +386,9 @@ def resolve_and_check(
                 country_obj = geo_data["country"]
                 if isinstance(country_obj, dict):
                     country = country_obj.get("iso_code", "")
-                    if country == "RU":
-                        return "ru"
+                    # Проверяем, нужно ли блокировать эту страну
+                    if geoblock_countries and country and country.upper() in [c.upper() for c in geoblock_countries]:
+                        return country.lower()
         except Exception:
             pass
 

@@ -5,6 +5,11 @@ on:
     # Запуск каждые 2 часа
     - cron: '0 */2 * * *'
   workflow_dispatch: # Ручной запуск
+    inputs:
+      geoblock:
+        description: 'Country codes to block (e.g. "ru,ir"), leave empty to disable'
+        required: false
+        default: ''
 
 jobs:
   convert:
@@ -42,7 +47,7 @@ jobs:
           #   hy2_tun.json — sing-box TUN конфиг
           #   config.json  — sing-box SOCKS конфиг
           #   hy2.txt      — V2Ray-ссылки
-          python hy2_manage.py run --timeout 3
+          python hy2_manage.py run --timeout 3 --geoblock "ru"
 
       - name: Commit and push if changed
         run: |

@@ -43,6 +43,7 @@ def cmd_merge(args):
     from src.parsers import hy2_parser
 
     port_whitelist = tuple(int(p) for p in args.ports.split(",")) if args.ports else None
+    geoblock_countries = tuple(c.strip().lower() for c in args.geoblock.split(",")) if args.geoblock else None
 
     # Кастомный export_func: перезаписывает hy2_working.json отфильтрованными нодами
     def _save_to_working(outbounds, _output_file):
@@ -58,6 +59,7 @@ def cmd_merge(args):
         tls_required=True,
         port_whitelist=port_whitelist,
         tester_func=None,  # тестирование отдельно через cmd_test
+        geoblock_countries=geoblock_countries,
     )
 
 
@@ -268,11 +270,15 @@ Examples:
     run_parser.add_argument("--ports", type=str, default=None,
                             help="Comma-separated port whitelist (default: all ports)")
     run_parser.add_argument("--timeout", type=int, default=10, help="Test timeout per node (seconds)")
+    run_parser.add_argument("--geoblock", type=str, default=None,
+                            help="Comma-separated list of country codes to block (e.g. 'ru,ir')")
 
     # merge
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
     merge_parser.add_argument("--ports", type=str, default=None,
                               help="Comma-separated port whitelist (default: all ports)")
+    merge_parser.add_argument("--geoblock", type=str, default=None,
+                              help="Comma-separated list of country codes to block (e.g. 'ru,ir')")
 
     # test
     test_parser = subparsers.add_parser("test", help="Test all nodes and remove dead ones")

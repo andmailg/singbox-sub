@@ -5,6 +5,11 @@ on:
     # Запуск каждые 2 часа
     - cron: '20 */2 * * *'
   workflow_dispatch: # Ручной запуск
+    inputs:
+      geoblock:
+        description: 'Country codes to block (e.g. "ru,ir"), leave empty to disable'
+        required: false
+        default: ''
 
 jobs:
   convert:
@@ -42,7 +47,7 @@ jobs:
           # Генерирует 2 файла в корне репозитория:
           #   vless_tcp_tun.json — sing-box TUN конфиг
           #   vless_tcp.txt      — V2Ray-ссылки
-          python vless_tcp_manage.py run --timeout 3
+          python vless_tcp_manage.py run --timeout 3 --geoblock "ru"
           cd ..
 
       - name: Commit and push if changed
