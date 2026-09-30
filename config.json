@@ -23,10 +23,11 @@
       "outbounds": [
         "auto",
         "🇨🇭node-1",
-        "🇷🇴node-2",
+        "🇫🇮node-2",
         "🇷🇴node-3",
         "🇷🇴node-4",
-        "🇺🇸node-5"
+        "🇷🇴node-5",
+        "🇺🇸node-6"
       ],
       "default": "auto"
     },
@@ -35,10 +36,11 @@
       "tag": "auto",
       "outbounds": [
         "🇨🇭node-1",
-        "🇷🇴node-2",
+        "🇫🇮node-2",
         "🇷🇴node-3",
         "🇷🇴node-4",
-        "🇺🇸node-5"
+        "🇷🇴node-5",
+        "🇺🇸node-6"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -59,7 +61,20 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-2",
+      "tag": "🇫🇮node-2",
+      "server": "fi01.clgate.network",
+      "server_port": 443,
+      "password": "06e88dd6-e264-4981-8c26-d7ab17348ab2",
+      "tls": {
+        "enabled": true,
+        "server_name": "fi01.clgate.network"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇷🇴node-3",
       "server": "grape-test-italy.dynuddns.net",
       "server_port": 8443,
       "password": "s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z",
@@ -72,7 +87,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-3",
+      "tag": "🇷🇴node-4",
       "server": "hop-germany-september.dynuddns.com",
       "server_port": 8443,
       "password": "9Me_Jx935gnHx13_Nx45M_NYXe037js_Be4z",
@@ -85,7 +100,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-4",
+      "tag": "🇷🇴node-5",
       "server": "hopp-romania-new.roxa.org",
       "server_port": 8443,
       "password": "Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0",
@@ -98,7 +113,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-5",
+      "tag": "🇺🇸node-6",
       "server": "hopp-transit.1cooldns.com",
       "server_port": 8080,
       "password": "dsmO0439gj_nX942GJRE_9j39fbcxv52_R",
