@@ -111,8 +111,8 @@
       "outbounds": [
         "auto",
         "node-1",
-        "🇩🇪node-2",
-        "🇳🇱node-3",
+        "node-2",
+        "🇩🇪node-3",
         "🇳🇱node-4",
         "🇺🇸node-5"
       ],
@@ -123,8 +123,8 @@
       "tag": "auto",
       "outbounds": [
         "node-1",
-        "🇩🇪node-2",
-        "🇳🇱node-3",
+        "node-2",
+        "🇩🇪node-3",
         "🇳🇱node-4",
         "🇺🇸node-5"
       ],
@@ -135,20 +135,20 @@
     {
       "type": "vless",
       "tag": "node-1",
-      "server": "104.18.15.190",
+      "server": "162.159.243.105",
       "server_port": 443,
-      "uuid": "9c781e88-7d5c-49ac-92b0-ef1ade8427aa",
+      "uuid": "bf10ff7a-087c-4ac8-8048-9fbc26e71e0a",
       "transport": {
         "type": "xhttp",
-        "path": "/Bf8uiGqzIKgPlKjaGeRFXPM2",
+        "path": "/",
         "mode": "auto",
         "host": [
-          "buy.tgseenrobo.ir"
+          "ysmacloud.ru"
         ]
       },
       "tls": {
         "enabled": true,
-        "server_name": "buy.tgseenrobo.ir",
+        "server_name": "ysmacloud.ru",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -157,7 +157,30 @@
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-2",
+      "tag": "node-2",
+      "server": "chatgpt-async-webps-prod-centralus-0.chatgpt.com",
+      "server_port": 443,
+      "uuid": "3666e25b-a1c2-48ec-b060-075392b1aa6e",
+      "transport": {
+        "type": "xhttp",
+        "path": "/Meh?di=443",
+        "mode": "auto",
+        "host": [
+          "ticket.bestsellersd.site"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "ticket.bestsellersd.site",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪node-3",
       "server": "94.183.238.15",
       "server_port": 443,
       "uuid": "5edbcb44-8d04-4fa7-a587-bc5d60c24ca1",
@@ -180,7 +203,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-3",
+      "tag": "🇳🇱node-4",
       "server": "206.71.158.124",
       "server_port": 443,
       "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
@@ -198,29 +221,6 @@
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇳🇱node-4",
-      "server": "206.71.158.125",
-      "server_port": 443,
-      "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
-      "transport": {
-        "type": "xhttp",
-        "path": "/kavir",
-        "mode": "stream-one",
-        "host": [
-          "dey.lnmarketplace.net"
-        ]
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "dey.lnmarketplace.net",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
         }
       }
     },
