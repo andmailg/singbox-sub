@@ -44,13 +44,24 @@ def load_working_nodes(path: str = _WORKING_FILE) -> list[dict]:
             print(f"  [Working] ASN_LIST changed, discarding {os.path.basename(path)}")
             return []
         
-        return data.get("nodes", [])
+        nodes = data.get("nodes", [])
+        # Конвертируем _sub_ids из list обратно в set
+        for node in nodes:
+            sub_ids = node.get("_sub_ids")
+            if isinstance(sub_ids, list):
+                node["_sub_ids"] = set(sub_ids)
+        return nodes
     except Exception:
         return []
 
 
 def save_working_nodes(nodes: list[dict], path: str = _WORKING_FILE) -> None:
     """Сохраняет список рабочих нод в JSON-файл с метаданными ASN."""
+    # Конвертируем _sub_ids из set в list для сериализации
+    for node in nodes:
+        sub_ids = node.get("_sub_ids")
+        if isinstance(sub_ids, set):
+            node["_sub_ids"] = sorted(sub_ids)
     data = {
         "_asn_key": _asn_key(),
         "last_tested": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
