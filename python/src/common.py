@@ -251,23 +251,106 @@ def country_code_to_flag(cc: str) -> str:
     return "".join(chr(ord(c) - ord('A') + 0x1F1E6) for c in cc.upper())
 
 
-def fetch_subscription(url: str) -> list[str]:
-    """Скачивает и декодирует отдельную подписку."""
+# Схемы прокси-форматов для детекции в подписках
+PROXY_SCHEMES = (
+    "sing-box://", "vless://", "vmess://", "hysteria2://",
+    "trojan://", "ss://", "ssr://",
+)
+
+# Строки, характерные для base64-encoded данных
+B64_SIGNATURES = ("sgx://",)  # sing-box sub URL
+
+
+def _detect_proxy_schemes(lines: list[str]) -> dict[str, int]:
+    """Подсчитывает количество ссылок каждого прокси-формата.
+    
+    Returns:
+        Словарь {scheme_name: count}
+    """
+    counts: dict[str, int] = {}
+    for line in lines:
+        line_stripped = line.strip()
+        if not line_stripped or line_stripped.startswith("#"):
+            continue
+        for scheme in PROXY_SCHEMES:
+            if line_stripped.lower().startswith(scheme.lower()):
+                # Извлекаем имя схемы без "://"
+                name = scheme.replace("://", "")
+                counts[name] = counts.get(name, 0) + 1
+                break
+        else:
+            # Не распознанный формат
+            counts["unknown"] = counts.get("unknown", 0) + 1
+    return counts
+
+
+def _detect_sub_format(raw_content: str) -> str:
+    """Определяет формат подписки.
+    
+    Returns:
+        "base64" | "plaintext" | "mixed"
+    """
+    content = raw_content.strip()
+    if not content:
+        return "empty"
+    
+    # Проверяем, является ли содержимое одной строкой (характерно для base64)
+    is_single_line = "\n" not in content and "\r" not in content
+    
+    if is_single_line:
+        # Подписки-однастрока — скорее всего base64
+        return "base64"
+    
+    # В plaintext несколько строк
+    return "plaintext"
+
+
+def fetch_subscription(url: str) -> dict:
+    """Скачивает и декодирует отдельную подписку.
+    
+    Returns:
+        Словарь с информацией о подписке:
+        - url: URL подписки
+        - valid: True если подписка доступна
+        - format: формат подписки (base64/plaintext)
+        - link_count: общее количество строк
+        - proxy_formats: словарь {proxy_scheme: count}
+        - error: сообщение об ошибке (если есть)
+        - lines: список распарсенных строк (если валидна)
+    """
+    result = {
+        "url": url,
+        "valid": False,
+        "format": None,
+        "link_count": 0,
+        "proxy_formats": {},
+        "error": None,
+        "lines": [],
+    }
     try:
         resp = session.get(url, timeout=10)
         if resp.status_code != 200:
-            return []
+            result["error"] = f"HTTP {resp.status_code}"
+            return result
 
-        content = resp.text.strip()
+        raw_content = resp.text.strip()
+        result["format"] = _detect_sub_format(raw_content)
+        
         try:
-            content_padded = content + "=" * (-len(content) % 4)
+            content_padded = raw_content + "=" * (-len(raw_content) % 4)
             decoded_content = base64.b64decode(content_padded).decode("utf-8", errors="ignore")
-            return decoded_content.splitlines()
+            lines = decoded_content.splitlines()
         except Exception:
-            return content.splitlines()
+            lines = raw_content.splitlines()
+
+        result["valid"] = True
+        result["link_count"] = len(lines)
+        result["proxy_formats"] = _detect_proxy_schemes(lines)
+        result["lines"] = lines
+        return result
     except Exception as e:
-        print(f"Error fetching {url}: {e}")
-        return []
+        result["error"] = str(e)
+        return result
 
 
 

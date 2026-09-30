@@ -23,9 +23,20 @@ from src.rkn_filter import (
 SOURCES_JSON_PATH = "./sub_urls.json"
 
 
+def _format_proxy_types(formats: dict) -> str:
+    """Форматирует словарь proxy_formats в строку для лога."""
+    if not formats:
+        return "0 types"
+    parts = []
+    for name, count in sorted(formats.items(), key=lambda x: x[1], reverse=True):
+        parts.append(f"{name}={count}")
+    return ", ".join(parts)
+
+
 def _fetch_links(sub_urls: list[str], prefix: str = "") -> list[str]:
     """Параллельно скачивает все подписки."""
     links: list[str] = []
+    results: list[dict] = []
     max_workers = min(10, len(sub_urls))
     print(f"{prefix}Fetching {len(sub_urls)} subscriptions with {max_workers} workers...")
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -35,10 +46,23 @@ def _fetch_links(sub_urls: list[str], prefix: str = "") -> list[str]:
         }
         for future in as_completed(future_to_url):
             try:
-                links.extend(future.result())
+                result = future.result()
+                results.append(result)
+                if result.get("valid"):
+                    links.extend(result.get("lines", []))
+                else:
+                    err = result.get("error", "unknown")
+                    print(f"{prefix}  [SKIP] {result['url']} — {err}")
             except Exception as e:
                 url = future_to_url[future]
-                print(f"{prefix}Error fetching {url}: {e}")
+                print(f"{prefix}  [ERROR] {url} — {e}")
+    valid = sum(1 for r in results if r.get("valid"))
+    print(f"{prefix}Subscriptions: {valid}/{len(results)} valid")
+    for r in sorted(results, key=lambda x: x.get("link_count", 0), reverse=True):
+        if r.get("valid"):
+            fmt = r.get("format", "?")
+            pf = _format_proxy_types(r.get("proxy_formats", {}))
+            print(f"{prefix}  [OK]   {r['url']} — {fmt} — {r['link_count']} links — {pf}")
     print(f"{prefix}Total raw lines collected: {len(links)}")
     # Sort for deterministic deduplication order across runs
     links.sort()
