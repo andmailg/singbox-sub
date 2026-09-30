@@ -285,24 +285,31 @@ def _detect_proxy_schemes(lines: list[str]) -> dict[str, int]:
 
 
 def _detect_sub_format(raw_content: str) -> str:
-    """Определяет формат подписки.
+    """Определяет формат подписки по его содержимому.
     
     Returns:
-        "base64" | "plaintext" | "mixed"
+        "base64" | "plaintext" | "empty"
     """
     content = raw_content.strip()
     if not content:
         return "empty"
     
-    # Проверяем, является ли содержимое одной строкой (характерно для base64)
+    # Однострочная — однозначно base64 (подписка-ссылка вида sing-box://...)
     is_single_line = "\n" not in content and "\r" not in content
-    
     if is_single_line:
-        # Подписки-однастрока — скорее всего base64
         return "base64"
     
-    # В plaintext несколько строк
-    return "plaintext"
+    # Много строк — проверяем, содержат ли они прокси-схемы
+    for line in content.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            continue
+        for scheme in PROXY_SCHEMES:
+            if stripped.lower().startswith(scheme.lower()):
+                return "plaintext"
+    
+    # Нет прокси-схем, но есть переносы — вероятно base64 с разбивкой
+    return "base64"
 
 
 def fetch_subscription(url: str) -> dict:
@@ -334,14 +341,21 @@ def fetch_subscription(url: str) -> dict:
             return result
 
         raw_content = resp.text.strip()
-        result["format"] = _detect_sub_format(raw_content)
-        
-        try:
-            content_padded = raw_content + "=" * (-len(raw_content) % 4)
-            decoded_content = base64.b64decode(content_padded).decode("utf-8", errors="ignore")
-            lines = decoded_content.splitlines()
-        except Exception:
+        fmt = _detect_sub_format(raw_content)
+        result["format"] = fmt
+
+        if fmt == "plaintext":
+            # Прямые строки, без base64
             lines = raw_content.splitlines()
+        else:
+            # base64 — пытаемся декодировать
+            try:
+                content_padded = raw_content + "=" * (-len(raw_content) % 4)
+                decoded_content = base64.b64decode(content_padded).decode("utf-8", errors="ignore")
+                lines = decoded_content.splitlines()
+            except Exception:
+                # base64 не удался, fallback на plaintext
+                lines = raw_content.splitlines()
 
         result["valid"] = True
         result["link_count"] = len(lines)
