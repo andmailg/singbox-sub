@@ -9,6 +9,10 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
 
+from src.rkn_filter import resolve_asn
+
+
+
 
 def get_free_port() -> int:
     """Находит случайный свободный порт на локальной машине."""
@@ -319,8 +323,11 @@ def test_vless_xhttp_connectivity(
 
         for i, future in enumerate(as_completed(futures), 1):
             node = futures[future]
-            tag = node.get("tag", f"node-{i}")
             node_id = id(node)
+            server = node.get("server", "?")
+            port = node.get("server_port", "?")
+            asn = resolve_asn(server)
+            display = f"{server}:{port} {asn}" if asn else f"{server}:{port}"
             try:
                 result = future.result()
                 if result is not None:
@@ -328,19 +335,19 @@ def test_vless_xhttp_connectivity(
                         # Строка — причина провала
                         results_map[node_id] = None
                         failed += 1
-                        print(f"  [{i}/{len(sorted_outbounds)}] {tag}: FAIL — {result}")
+                        print(f"  [{i}/{len(sorted_outbounds)}] {display}: FAIL — {result}")
                     else:
                         results_map[node_id] = result
                         working.append(result)
-                        print(f"  [{i}/{len(sorted_outbounds)}] {tag}: OK — {result.get('_latency_ms', '?')}ms")
+                        print(f"  [{i}/{len(sorted_outbounds)}] {display}: OK — {result.get('_latency_ms', '?')}ms")
                 else:
                     results_map[node_id] = None
                     failed += 1
-                    print(f"  [{i}/{len(sorted_outbounds)}] {tag}: FAIL")
+                    print(f"  [{i}/{len(sorted_outbounds)}] {display}: FAIL")
             except Exception as e:
                 results_map[node_id] = None
                 failed += 1
-                print(f"  [{i}/{len(sorted_outbounds)}] {tag}: ERROR — {e}")
+                print(f"  [{i}/{len(sorted_outbounds)}] {display}: ERROR — {e}")
 
     # Восстанавливаем порядок
     working.sort(

@@ -1,6 +1,5 @@
 """Hysteria 2 connectivity test functions for pipeline integration."""
 
-import json
 import os
 import socket
 import subprocess
@@ -8,65 +7,9 @@ import tempfile
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
+from src.rkn_filter import resolve_asn
 
-def _hy2_build_yaml(node: dict, local_port: int) -> str:
-    """Генерирует YAML-конфигурацию для Hysteria 2 client на основе ноды."""
-    server = node["server"]
-    port = node["server_port"]
-    password = node["password"]
-    sni = node.get("tls", {}).get("server_name", "")
-    tls_cfg = node.get("tls", {})
-    obfs_cfg = node.get("obfs", {})
 
-    def _esc(value: str) -> str:
-        escaped = value.replace("\\", "\\\\").replace('"', '\\"')
-        return f'"{escaped}"'
-
-    lines = [
-        "server: " + _esc(f"{server}:{port}"),
-        "auth: " + _esc(password),
-        "tls:",
-    ]
-
-    if sni:
-        lines.append("  sni: " + _esc(sni))
-
-    if "pinSHA256" not in tls_cfg:
-        lines.append("  insecure: true")
-
-    if obfs_cfg and obfs_cfg.get("type"):
-        obfs_type = obfs_cfg["type"]
-        lines.append("obfs:")
-        if obfs_type == "salamander":
-            lines.append("  type: salamander")
-            lines.append("  salamander:")
-            lines.append("    password: " + _esc(obfs_cfg.get("password", "")))
-        elif obfs_type == "gecko":
-            lines.append("  type: gecko")
-            lines.append("  gecko:")
-            lines.append("    password: " + _esc(obfs_cfg.get("password", "")))
-            min_pkt = obfs_cfg.get("min_packet_size")
-            max_pkt = obfs_cfg.get("max_packet_size")
-            if min_pkt is not None:
-                lines.append("    min_packet_size: " + str(min_pkt))
-            if max_pkt is not None:
-                lines.append("    max_packet_size: " + str(max_pkt))
-
-    up = node.get("up_mbps")
-    down = node.get("down_mbps")
-    if up is not None or down is not None:
-        lines.append("bandwidth:")
-        if up is not None:
-            lines.append("  up: " + str(up) + " mbps")
-        if down is not None:
-            lines.append("  down: " + str(down) + " mbps")
-
-    lines.append("socks5:")
-    lines.append("  listen: 127.0.0.1:" + str(local_port))
-    lines.append("log:")
-    lines.append("  level: error")
-
-    return "\n".join(lines) + "\n"
 
 
 def _hy2_get_free_port() -> int:
@@ -90,6 +33,58 @@ def _hy2_wait_for_port(host: str, port: int, timeout: float = 15.0) -> bool:
             except (ConnectionRefusedError, socket.timeout, OSError):
                 time.sleep(0.3)
     return False
+
+
+def _hy2_build_yaml(node: dict, local_port: int) -> str:
+    """Генерирует YAML-конфиг для hy2 CLI client из ноды sing-box."""
+    server = node["server"]
+    port = node["server_port"]
+    password = node.get("password", "")
+    tls = node.get("tls", {})
+
+    lines: list[str] = []
+    lines.append(f"server: {server}:{port}")
+    lines.append("protocol: udp")
+    lines.append(f"auth: {password}")
+    lines.append("")
+
+    # TLS секция
+    sni = tls.get("server_name", server)
+    lines.append("tls:")
+    lines.append(f"  sni: {sni}")
+
+    alpn = tls.get("alpn")
+    if alpn:
+        lines.append("  alpn:")
+        for a in alpn:
+            lines.append(f"    - {a}")
+
+    pin_sha256 = tls.get("certificate", {}).get("pin_sha256")
+    if pin_sha256:
+        lines.append("  pin_sha256: " + pin_sha256)
+
+    lines.append("")
+
+    # Obfs (если есть)
+    obfs = node.get("obfs")
+    if obfs and obfs.get("type") == "openssl":
+        lines.append("obfs:")
+        lines.append("  type: openssl")
+        lines.append(f"  password: {obfs.get('password', '')}")
+        lines.append("")
+
+    # Transport
+    lines.append("transport:")
+    lines.append("  type: udp")
+    lines.append("  udp:")
+    lines.append("    hopInterval: 30s")
+    lines.append("")
+
+    # SOCKS5 прокси для локального тестирования
+    lines.append("socks5:")
+    lines.append(f"  listen: 127.0.0.1:{local_port}")
+
+    return "\n".join(lines) + "\n"
 
 
 def test_hy2_node(node: dict, timeout: int = 5) -> dict | str | None:
@@ -220,27 +215,30 @@ def test_hy2_connectivity(
         results_map: dict[int, dict | None] = {}
         for i, future in enumerate(as_completed(futures), 1):
             node = futures[future]
-            tag = node.get("tag", f"node-{i}")
             node_id = id(node)
+            server = node.get("server", "?")
+            port = node.get("server_port", "?")
+            asn = resolve_asn(server)
+            display = f"{server}:{port} {asn}" if asn else f"{server}:{port}"
             try:
                 result = future.result()
                 if result is not None:
                     if isinstance(result, str):
                         results_map[node_id] = None
                         failed += 1
-                        print(f"  [{i}/{len(sorted_outbounds)}] {tag}: FAIL — {result}")
+                        print(f"  [{i}/{len(sorted_outbounds)}] {display}: FAIL — {result}")
                     else:
                         results_map[node_id] = result
                         working.append(result)
-                        print(f"  [{i}/{len(sorted_outbounds)}] {tag}: OK — {result.get('_latency_ms', '?')}ms")
+                        print(f"  [{i}/{len(sorted_outbounds)}] {display}: OK — {result.get('_latency_ms', '?')}ms")
                 else:
                     results_map[node_id] = None
                     failed += 1
-                    print(f"  [{i}/{len(sorted_outbounds)}] {tag}: FAIL")
+                    print(f"  [{i}/{len(sorted_outbounds)}] {display}: FAIL")
             except Exception as e:
                 results_map[node_id] = None
                 failed += 1
-                print(f"  [{i}/{len(sorted_outbounds)}] {tag}: ERROR — {e}")
+                print(f"  [{i}/{len(sorted_outbounds)}] {display}: ERROR — {e}")
 
     # Восстанавливаем порядок
     working.sort(key=lambda o: (o.get("_country", ""), o.get("server", ""), o.get("server_port", 0)))
