@@ -109,168 +109,17 @@
       "type": "selector",
       "tag": "proxy-out",
       "outbounds": [
-        "auto",
-        "node-1",
-        "node-2",
-        "🇩🇪node-3",
-        "🇳🇱node-4",
-        "🇳🇱node-5",
-        "🇺🇸node-6"
+        "auto"
       ],
       "default": "auto"
     },
     {
       "type": "urltest",
       "tag": "auto",
-      "outbounds": [
-        "node-1",
-        "node-2",
-        "🇩🇪node-3",
-        "🇳🇱node-4",
-        "🇳🇱node-5",
-        "🇺🇸node-6"
-      ],
+      "outbounds": [],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
       "tolerance": 50
-    },
-    {
-      "type": "vless",
-      "tag": "node-1",
-      "server": "162.159.243.105",
-      "server_port": 443,
-      "uuid": "bf10ff7a-087c-4ac8-8048-9fbc26e71e0a",
-      "transport": {
-        "type": "xhttp",
-        "path": "/",
-        "mode": "auto",
-        "host": [
-          "ysmacloud.ru"
-        ]
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "ysmacloud.ru",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "node-2",
-      "server": "chatgpt-async-webps-prod-centralus-0.chatgpt.com",
-      "server_port": 443,
-      "uuid": "3666e25b-a1c2-48ec-b060-075392b1aa6e",
-      "transport": {
-        "type": "xhttp",
-        "path": "/Meh?di=443",
-        "mode": "auto",
-        "host": [
-          "ticket.bestsellersd.site"
-        ]
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "ticket.bestsellersd.site",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇩🇪node-3",
-      "server": "94.183.238.15",
-      "server_port": 443,
-      "uuid": "5edbcb44-8d04-4fa7-a587-bc5d60c24ca1",
-      "transport": {
-        "type": "xhttp",
-        "path": "/xh",
-        "mode": "auto",
-        "host": [
-          "ger-02.letsgodance.site"
-        ]
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "ger-02.letsgodance.site",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇳🇱node-4",
-      "server": "206.71.158.124",
-      "server_port": 443,
-      "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
-      "transport": {
-        "type": "xhttp",
-        "path": "/kavir/?@MARAMBASHI_MARAMBASHI?ed=2048",
-        "mode": "stream-one",
-        "host": [
-          "dey.lnmarketplace.net"
-        ]
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "dey.lnmarketplace.net",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇳🇱node-5",
-      "server": "206.71.158.125",
-      "server_port": 443,
-      "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
-      "transport": {
-        "type": "xhttp",
-        "path": "/kavir",
-        "mode": "stream-one",
-        "host": [
-          "dey.lnmarketplace.net"
-        ]
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "dey.lnmarketplace.net",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-6",
-      "server": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
-      "server_port": 443,
-      "uuid": "9fa2fae0-141a-b983-ef0e-b3d5633f9592",
-      "transport": {
-        "type": "xhttp",
-        "path": "/xhttp-siz10/stream-up/9fa2fae0-141a-b983-ef0e-b3d5633f9592",
-        "mode": "stream-up",
-        "host": [
-          "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev"
-        ]
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
     }
   ],
   "http_clients": [
