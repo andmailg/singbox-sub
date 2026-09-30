@@ -49,7 +49,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add vless_xhttp_tun.json vless_xhttp.txt python/src/vless_xhttp_working.json 2>/dev/null || true
+          git add vless_xhttp.txt python/src/vless_xhttp_working.json 2>/dev/null || true
           
           if git diff --cached --quiet; then
             echo "Нет изменений для коммита."

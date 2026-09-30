@@ -139,7 +139,13 @@ def cmd_run(args):
     print("\n" + "=" * 60)
     print("STEP 3: Export configs")
     print("=" * 60)
-    cmd_export(argparse.Namespace(type="all", output="vless_xhttp_tun.json"))
+    # xhttp не поддерживается sing-box, экспортируем только V2Ray-ссылки
+    active_nodes = load_working_nodes()
+    active_nodes = [n for n in active_nodes if "_pending_since" not in n]
+    active_nodes = renumber_nodes(active_nodes)
+    for n in active_nodes:
+        clean_internal_fields(n)
+    _export_v2ray(active_nodes)
 
 
 def cmd_export(args):
