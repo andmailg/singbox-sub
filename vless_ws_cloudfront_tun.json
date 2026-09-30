@@ -116,7 +116,8 @@
         "node-4",
         "node-5",
         "node-6",
-        "node-7"
+        "node-7",
+        "node-8"
       ],
       "default": "auto"
     },
@@ -130,7 +131,8 @@
         "node-4",
         "node-5",
         "node-6",
-        "node-7"
+        "node-7",
+        "node-8"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -139,48 +141,6 @@
     {
       "type": "vless",
       "tag": "node-1",
-      "server": "104.21.48.1",
-      "server_port": 8880,
-      "uuid": "f558f4db-96e5-4e79-8b57-34e39ba4899b",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "join.2.kiava.cloud.speedtest.net.xn--mgba2h8quf.cdn.ws79.cloudfront.net.kiava.fun"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "node-2",
-      "server": "104.21.80.1",
-      "server_port": 8880,
-      "uuid": "f558f4db-96e5-4e79-8b57-34e39ba4899b",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "join.2.kiava.cloud.speedtest.net.xn--mgba2h8quf.cdn.ws79.cloudfront.net.kiava.fun"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "node-3",
-      "server": "104.21.96.1",
-      "server_port": 8880,
-      "uuid": "f558f4db-96e5-4e79-8b57-34e39ba4899b",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "join.2.kiava.cloud.speedtest.net.xn--mgba2h8quf.cdn.ws79.cloudfront.net.kiava.fun"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "node-4",
       "server": "143.14.11.236",
       "server_port": 80,
       "uuid": "f55ce6cc-3f6b-40fc-9e3b-abe26db17009",
@@ -194,7 +154,7 @@
     },
     {
       "type": "vless",
-      "tag": "node-5",
+      "tag": "node-2",
       "server": "157.85.105.179",
       "server_port": 80,
       "uuid": "89c3b66f-c849-4602-a5a8-84b6f06af478",
@@ -208,7 +168,7 @@
     },
     {
       "type": "vless",
-      "tag": "node-6",
+      "tag": "node-3",
       "server": "157.85.97.238",
       "server_port": 80,
       "uuid": "ff0c1cde-6f94-4bf1-9774-ab25c6b4977d",
@@ -217,6 +177,48 @@
         "path": "/knl8",
         "headers": {
           "Host": "d7iwyzy9wpvuu.cloudfront.net"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "node-4",
+      "server": "melonmusic.ir",
+      "server_port": 2052,
+      "uuid": "be2a1410-7f6c-4271-d8b7-4841fad682b3",
+      "transport": {
+        "type": "ws",
+        "path": "/join-kiava,kiava-kiava,kiava-kiava,kiava-kiava,kiava-kiava,kiava-kiava,kiava-kiava,kiava-kiava,kiava-kiava,kiava-kiava,kiava-kiava,kiava-kiava?ed=2048",
+        "headers": {
+          "Host": "join.kiava.cloud.speedtest.net.xn--mgba2h8quf.cdn.t.cloudfront.net.kiava.fun"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "node-5",
+      "server": "metrix.ir",
+      "server_port": 8880,
+      "uuid": "9a015c95-aa54-449f-8604-ecd16d67a38c",
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2560",
+        "headers": {
+          "Host": "join.2.kiava.cloud.speedtest.net.xn--mgba2h8quf.cdn.ws81.cloudfront.net.kiava.fun"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "node-6",
+      "server": "www.bandmusic.ir",
+      "server_port": 8880,
+      "uuid": "1ae8e1c7-ba9b-47e4-e5aa-d450409ff772",
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2560",
+        "headers": {
+          "Host": "join.2.kiava.cloud.speedtest.net.xn--mgba2h8quf.cdn.ws1.cloudfront.net.kiava.fun"
         }
       }
     },
@@ -231,6 +233,20 @@
         "path": "/?ed=2560",
         "headers": {
           "Host": "join.2.kiava.cloud.speedtest.net.xn--mgba2h8quf.cdn.ws80.cloudfront.net.kiava.fun"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "node-8",
+      "server": "www.bandmusic.ir",
+      "server_port": 8880,
+      "uuid": "f558f4db-96e5-4e79-8b57-34e39ba4899b",
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2560",
+        "headers": {
+          "Host": "join.2.kiava.cloud.speedtest.net.xn--mgba2h8quf.cdn.ws79.cloudfront.net.kiava.fun"
         }
       }
     }
