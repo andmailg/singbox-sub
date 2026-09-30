@@ -36,51 +36,65 @@ def _hy2_wait_for_port(host: str, port: int, timeout: float = 15.0) -> bool:
 
 
 def _hy2_build_yaml(node: dict, local_port: int) -> str:
-    """Генерирует YAML-конфиг для hy2 CLI client из ноды sing-box."""
+    """Генерирует YAML-конфиг для hy2 CLI client из ноды sing-box.
+
+    Формат соответствует hysteria v2 config spec.
+    """
     server = node["server"]
     port = node["server_port"]
     password = node.get("password", "")
     tls = node.get("tls", {})
 
     lines: list[str] = []
+
+    # --- Core ---
     lines.append(f"server: {server}:{port}")
-    lines.append("protocol: udp")
     lines.append(f"auth: {password}")
     lines.append("")
 
-    # TLS секция
+    # --- TLS ---
     sni = tls.get("server_name", server)
     lines.append("tls:")
-    lines.append(f"  sni: {sni}")
+    lines.append(f"  sni: {sni!r}")
 
     alpn = tls.get("alpn")
     if alpn:
         lines.append("  alpn:")
         for a in alpn:
-            lines.append(f"    - {a}")
+            lines.append(f"    - {a!r}")
 
     pin_sha256 = tls.get("certificate", {}).get("pin_sha256")
     if pin_sha256:
-        lines.append("  pin_sha256: " + pin_sha256)
+        lines.append(f"  pinSHA256: {pin_sha256!r}")
 
     lines.append("")
 
-    # Obfs (если есть)
+    # --- Obfs (optional) ---
     obfs = node.get("obfs")
     if obfs and obfs.get("type") == "openssl":
         lines.append("obfs:")
         lines.append("  type: openssl")
-        lines.append(f"  password: {obfs.get('password', '')}")
+        lines.append(f"  password: {obfs.get('password', '')!r}")
         lines.append("")
 
-    # Transport
+    # --- QUIC (optional tuning) ---
+    lines.append("QUIC:")
+    lines.append("  initStreamReceiveWindow: 8388608")
+    lines.append("  maxStreamReceiveWindow: 8388608")
+    lines.append("  initConnReceiveWindow: 8388608")
+    lines.append("  maxInFlightReceiveWindow: 8388608")
+    lines.append("  maxIncomingStreams: 1024")
+    lines.append("  disablePathMTUDiscovery: false")
+    lines.append("")
+
+    # --- Transport ---
     lines.append("transport:")
     lines.append("  type: udp")
     lines.append("  udp:")
     lines.append("    hopInterval: 30s")
     lines.append("")
 
-    # SOCKS5 прокси для локального тестирования
+    # --- SOCKS5 (local proxy for testing) ---
     lines.append("socks5:")
     lines.append(f"  listen: 127.0.0.1:{local_port}")
 
