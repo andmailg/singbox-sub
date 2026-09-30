@@ -110,7 +110,8 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇪🇸node-1"
+        "🇪🇸node-1",
+        "🇰🇿node-2"
       ],
       "default": "auto"
     },
@@ -118,7 +119,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇪🇸node-1"
+        "🇪🇸node-1",
+        "🇰🇿node-2"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -141,6 +143,26 @@
           "enabled": true,
           "public_key": "Jh7CocBJSA55VZcLfXwXwoQ_Hi5pV-L1vv1SY-IrSh4",
           "short_id": "7642ce57308852e7"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇰🇿node-2",
+      "server": "83.222.23.81",
+      "server_port": 38065,
+      "uuid": "4b9063e0-3288-44e9-9aac-80fbfce323a0",
+      "tls": {
+        "enabled": true,
+        "server_name": "yahoo.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "dSSDPTK6AHfAdRAXD9i4rzqcNIY65RxlF25UyCKdiyo",
+          "short_id": "fa"
         }
       }
     }
