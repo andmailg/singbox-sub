@@ -110,13 +110,11 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇩🇪node-1",
-        "🇩🇪node-2",
-        "🇳🇱node-3",
+        "node-1",
+        "node-2",
+        "🇩🇪node-3",
         "🇳🇱node-4",
-        "🇳🇱node-5",
-        "🇸🇨node-6",
-        "🇺🇸node-7"
+        "🇺🇸node-5"
       ],
       "default": "auto"
     },
@@ -124,13 +122,11 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇩🇪node-1",
-        "🇩🇪node-2",
-        "🇳🇱node-3",
+        "node-1",
+        "node-2",
+        "🇩🇪node-3",
         "🇳🇱node-4",
-        "🇳🇱node-5",
-        "🇸🇨node-6",
-        "🇺🇸node-7"
+        "🇺🇸node-5"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -138,21 +134,21 @@
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-1",
-      "server": "91.107.191.188",
-      "server_port": 8443,
-      "uuid": "9f44d517-29f2-4c6d-cc06-a1268f13da58",
+      "tag": "node-1",
+      "server": "162.159.243.105",
+      "server_port": 443,
+      "uuid": "bf10ff7a-087c-4ac8-8048-9fbc26e71e0a",
       "transport": {
         "type": "xhttp",
-        "path": "/Meh?di=443",
+        "path": "/",
         "mode": "auto",
         "host": [
-          "host.taghvimtime.ir"
+          "ysmacloud.ru"
         ]
       },
       "tls": {
         "enabled": true,
-        "server_name": "host.taghvimtime.ir",
+        "server_name": "ysmacloud.ru",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -161,7 +157,30 @@
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-2",
+      "tag": "node-2",
+      "server": "chatgpt-async-webps-prod-centralus-0.chatgpt.com",
+      "server_port": 443,
+      "uuid": "3666e25b-a1c2-48ec-b060-075392b1aa6e",
+      "transport": {
+        "type": "xhttp",
+        "path": "/Meh?di=443",
+        "mode": "auto",
+        "host": [
+          "ticket.bestsellersd.site"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "ticket.bestsellersd.site",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪node-3",
       "server": "94.183.238.15",
       "server_port": 443,
       "uuid": "5edbcb44-8d04-4fa7-a587-bc5d60c24ca1",
@@ -176,26 +195,6 @@
       "tls": {
         "enabled": true,
         "server_name": "ger-02.letsgodance.site",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇳🇱node-3",
-      "server": "201.78.143.14",
-      "server_port": 443,
-      "uuid": "17c0e022-e193-4e51-9650-1b8124004fb2",
-      "transport": {
-        "type": "xhttp",
-        "path": "/y64dg77dnk7xzr5k",
-        "mode": "auto"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "201.78.143.14",
         "utls": {
           "enabled": true,
           "fingerprint": "firefox"
@@ -227,50 +226,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-5",
-      "server": "31.57.24.177",
-      "server_port": 443,
-      "uuid": "c934b37d-f794-4b7d-a590-13f736ea5cab",
-      "transport": {
-        "type": "xhttp",
-        "path": "/SmlDER32Ja",
-        "mode": "packet-up",
-        "host": [
-          "slv04.subsconnect.com"
-        ]
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "slv04.subsconnect.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇸🇨node-6",
-      "server": "165.231.177.58",
-      "server_port": 443,
-      "uuid": "606a5b23-2c53-4994-b698-b11bb0dc8418",
-      "transport": {
-        "type": "xhttp",
-        "path": "/",
-        "mode": "auto"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "cab-6abb6a21.ferrin.uk",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-7",
+      "tag": "🇺🇸node-5",
       "server": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
       "server_port": 443,
       "uuid": "9fa2fae0-141a-b983-ef0e-b3d5633f9592",
