@@ -26,7 +26,8 @@
         "🇵🇱node-2",
         "🇷🇴node-3",
         "🇷🇴node-4",
-        "🇷🇴node-5"
+        "🇷🇴node-5",
+        "🇺🇸node-6"
       ],
       "default": "auto"
     },
@@ -38,7 +39,8 @@
         "🇵🇱node-2",
         "🇷🇴node-3",
         "🇷🇴node-4",
-        "🇷🇴node-5"
+        "🇷🇴node-5",
+        "🇺🇸node-6"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -105,6 +107,19 @@
       "tls": {
         "enabled": true,
         "server_name": "hopp-romania-new.roxa.org"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇺🇸node-6",
+      "server": "hopp-transit.1cooldns.com",
+      "server_port": 8080,
+      "password": "dsmO0439gj_nX942GJRE_9j39fbcxv52_R",
+      "tls": {
+        "enabled": true,
+        "server_name": "hopp-transit.1cooldns.com"
       },
       "up_mbps": 20,
       "down_mbps": 20
