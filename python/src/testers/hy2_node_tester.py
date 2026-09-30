@@ -36,67 +36,61 @@ def _hy2_wait_for_port(host: str, port: int, timeout: float = 15.0) -> bool:
 
 
 def _hy2_build_yaml(node: dict, local_port: int) -> str:
-    """Генерирует YAML-конфиг для hy2 CLI client из ноды sing-box.
-
-    Формат соответствует hysteria v2 config spec.
-    """
+    """Генерирует YAML-конфигурацию для Hysteria 2 client на основе ноды."""
     server = node["server"]
     port = node["server_port"]
-    password = node.get("password", "")
-    tls = node.get("tls", {})
+    password = node["password"]
+    sni = node.get("tls", {}).get("server_name", "")
+    tls_cfg = node.get("tls", {})
+    obfs_cfg = node.get("obfs", {})
 
-    lines: list[str] = []
+    def _esc(value: str) -> str:
+        escaped = value.replace("\\", "\\\\").replace('"', '\\"')
+        return f'"{escaped}"'
 
-    # --- Core ---
-    lines.append(f"server: {server}:{port}")
-    lines.append(f"auth: {password}")
-    lines.append("")
+    lines = [
+        "server: " + _esc(f"{server}:{port}"),
+        "auth: " + _esc(password),
+        "tls:",
+    ]
 
-    # --- TLS ---
-    sni = tls.get("server_name", server)
-    lines.append("tls:")
-    lines.append(f"  sni: {sni!r}")
+    if sni:
+        lines.append("  sni: " + _esc(sni))
 
-    alpn = tls.get("alpn")
-    if alpn:
-        lines.append("  alpn:")
-        for a in alpn:
-            lines.append(f"    - {a!r}")
+    if "pinSHA256" not in tls_cfg:
+        lines.append("  insecure: true")
 
-    pin_sha256 = tls.get("certificate", {}).get("pin_sha256")
-    if pin_sha256:
-        lines.append(f"  pinSHA256: {pin_sha256!r}")
-
-    lines.append("")
-
-    # --- Obfs (optional) ---
-    obfs = node.get("obfs")
-    if obfs and obfs.get("type") == "openssl":
+    if obfs_cfg and obfs_cfg.get("type"):
+        obfs_type = obfs_cfg["type"]
         lines.append("obfs:")
-        lines.append("  type: openssl")
-        lines.append(f"  password: {obfs.get('password', '')!r}")
-        lines.append("")
+        if obfs_type == "salamander":
+            lines.append("  type: salamander")
+            lines.append("  salamander:")
+            lines.append("    password: " + _esc(obfs_cfg.get("password", "")))
+        elif obfs_type == "gecko":
+            lines.append("  type: gecko")
+            lines.append("  gecko:")
+            lines.append("    password: " + _esc(obfs_cfg.get("password", "")))
+            min_pkt = obfs_cfg.get("min_packet_size")
+            max_pkt = obfs_cfg.get("max_packet_size")
+            if min_pkt is not None:
+                lines.append("    min_packet_size: " + str(min_pkt))
+            if max_pkt is not None:
+                lines.append("    max_packet_size: " + str(max_pkt))
 
-    # --- QUIC (optional tuning) ---
-    lines.append("QUIC:")
-    lines.append("  initStreamReceiveWindow: 8388608")
-    lines.append("  maxStreamReceiveWindow: 8388608")
-    lines.append("  initConnReceiveWindow: 8388608")
-    lines.append("  maxInFlightReceiveWindow: 8388608")
-    lines.append("  maxIncomingStreams: 1024")
-    lines.append("  disablePathMTUDiscovery: false")
-    lines.append("")
+    up = node.get("up_mbps")
+    down = node.get("down_mbps")
+    if up is not None or down is not None:
+        lines.append("bandwidth:")
+        if up is not None:
+            lines.append("  up: " + str(up) + " mbps")
+        if down is not None:
+            lines.append("  down: " + str(down) + " mbps")
 
-    # --- Transport ---
-    lines.append("transport:")
-    lines.append("  type: udp")
-    lines.append("  udp:")
-    lines.append("    hopInterval: 30s")
-    lines.append("")
-
-    # --- SOCKS5 (local proxy for testing) ---
     lines.append("socks5:")
-    lines.append(f"  listen: 127.0.0.1:{local_port}")
+    lines.append("  listen: 127.0.0.1:" + str(local_port))
+    lines.append("log:")
+    lines.append("  level: error")
 
     return "\n".join(lines) + "\n"
 
