@@ -342,7 +342,9 @@ def test_vless_connectivity(
             server = node.get("server", "?")
             port = node.get("server_port", "?")
             asn = resolve_asn(server)
-            display = f"{server}:{port} {asn}" if asn else f"{server}:{port}"
+            sub_ids = node.get("_sub_ids", set())
+            sub_ids_str = f" [{','.join(sorted(sub_ids))}]" if sub_ids else ""
+            display = f"{server}:{port} AS{asn}" if asn else f"{server}:{port}"
             try:
                 result = future.result()
                 if result is not None:
@@ -350,19 +352,19 @@ def test_vless_connectivity(
                         # Строка — причина провала
                         results_map[node_id] = None
                         failed += 1
-                        print(f"  [{i}/{len(sorted_outbounds)}] {display}: FAIL — {result}")
+                        print(f"  [{i}/{len(sorted_outbounds)}] {display}{sub_ids_str}: FAIL — {result}")
                     else:
                         results_map[node_id] = result
                         working.append(result)
-                        print(f"  [{i}/{len(sorted_outbounds)}] {display}: OK — {result.get('_latency_ms', '?')}ms")
+                        print(f"  [{i}/{len(sorted_outbounds)}] {display}{sub_ids_str}: OK — {result.get('_latency_ms', '?')}ms")
                 else:
                     results_map[node_id] = None
                     failed += 1
-                    print(f"  [{i}/{len(sorted_outbounds)}] {display}: FAIL")
+                    print(f"  [{i}/{len(sorted_outbounds)}] {display}{sub_ids_str}: FAIL")
             except Exception as e:
                 results_map[node_id] = None
                 failed += 1
-                print(f"  [{i}/{len(sorted_outbounds)}] {display}: ERROR — {e}")
+                print(f"  [{i}/{len(sorted_outbounds)}] {display}{sub_ids_str}: ERROR — {e}")
 
     # Восстанавливаем порядок
     working.sort(
