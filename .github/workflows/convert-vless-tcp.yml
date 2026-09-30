@@ -43,6 +43,7 @@ jobs:
           #   vless_tcp_tun.json — sing-box TUN конфиг
           #   vless_tcp.txt      — V2Ray-ссылки
           python vless_tcp_manage.py run --timeout 3
+          cd ..
 
       - name: Commit and push if changed
         run: |
