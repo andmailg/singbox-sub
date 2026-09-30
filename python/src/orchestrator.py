@@ -33,28 +33,34 @@ def _format_proxy_types(formats: dict) -> str:
     return ", ".join(parts)
 
 
-def _fetch_links(sub_urls: list[str], prefix: str = "") -> list[str]:
-    """Параллельно скачивает все подписки."""
-    links: list[str] = []
+def _fetch_links(sub_urls: list[tuple[str, str]], prefix: str = "") -> list[tuple[str, str]]:
+    """Параллельно скачивает все подписки.
+
+    Returns:
+        list of (sub_id, link) tuples.
+    """
+    links: list[tuple[str, str]] = []
     results: list[dict] = []
     max_workers = min(10, len(sub_urls))
     print(f"{prefix}Fetching {len(sub_urls)} subscriptions with {max_workers} workers...")
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         future_to_url = {
-            executor.submit(fetch_subscription, url): url
-            for url in sub_urls
+            executor.submit(fetch_subscription, url): (sid, url)
+            for sid, url in sub_urls
         }
         for future in as_completed(future_to_url):
             try:
                 result = future.result()
                 results.append(result)
                 if result.get("valid"):
-                    links.extend(result.get("lines", []))
+                    sub_id, url = future_to_url[future]
+                    for line in result.get("lines", []):
+                        links.append((sub_id, line))
                 else:
                     err = result.get("error", "unknown")
                     print(f"{prefix}  [SKIP] {result['url']} — {err}")
             except Exception as e:
-                url = future_to_url[future]
+                url = future_to_url[future][1]
                 print(f"{prefix}  [ERROR] {url} — {e}")
     valid = sum(1 for r in results if r.get("valid"))
     print(f"{prefix}Subscriptions: {valid}/{len(results)} valid")
@@ -65,12 +71,12 @@ def _fetch_links(sub_urls: list[str], prefix: str = "") -> list[str]:
             print(f"{prefix}  [OK]   {r['url']} — {fmt} — {r['link_count']} links — {pf}")
     print(f"{prefix}Total raw lines collected: {len(links)}")
     # Sort for deterministic deduplication order across runs
-    links.sort()
+    links.sort(key=lambda x: x[1])
     return links
 
 
 def _parse_and_deduplicate(
-    links: list[str],
+    links: list[tuple[str, str]],
     parse_proxy_link: Callable,
     clean_outbound: Callable,
     extra_filter: Callable[[dict], bool] | None,
@@ -81,14 +87,18 @@ def _parse_and_deduplicate(
     reality: bool = False,
     prefix: str = "",
 ) -> list[dict]:
-    """Парсинг, быстрая фильтрация, DNS-резолвинг (параллельный), дедупликация по IP:port и дополнительные фильтры."""
+    """Парсинг, быстрая фильтрация, DNS-резолвинг (параллельный), дедупликация по IP:port и дополнительные фильтры.
+
+    Каждая нода получает поле _sub_ids — множество ID подписок, в которых она встречается.
+    """
     kw = parse_kwargs or {}
 
     print(f"{prefix}Parsing {len(links)} links...")
     # 1. Парсинг + быстрая фильтрация + очистка — без DNS
-    parsed: list[tuple[int, dict]] = []
+    # parsed: list of (sub_id, outbound)
+    parsed: list[tuple[str, dict]] = []
     seen_fps: set[str] = set()
-    for idx, link in enumerate(links):
+    for sub_id, link in links:
         outbound = parse_proxy_link(link, **kw)
         if not outbound:
             continue
@@ -105,7 +115,7 @@ def _parse_and_deduplicate(
             continue
         if extra_filter and not extra_filter(outbound):
             continue
-        parsed.append((idx, outbound))
+        parsed.append((sub_id, outbound))
 
     print(f"{prefix}Parsed {len(parsed)} valid links, resolving {len(set(o.get('server', '') for _, o in parsed))} unique servers...")
 
@@ -127,10 +137,10 @@ def _parse_and_deduplicate(
             except Exception:
                 unique_servers[server] = None
 
-    # 3. Сборка outbounds с дедупликацией по резолвнутому IP
+    # 3. Сборка outbounds с дедупликацией по резолвнутому IP + сбор sub_ids
     seen: set[str] = set()
     outbounds: list[dict] = []
-    for _idx, outbound in parsed:
+    for sub_id, outbound in parsed:
         server = str(outbound.get("server", "")).strip("[]").lower()
         port = outbound.get("server_port", "")
         resolved_ip = unique_servers.get(server)
@@ -141,9 +151,18 @@ def _parse_and_deduplicate(
         uuid = outbound.get("uuid", "")
         dedup_val = f"{resolved_ip}:{port}:{uuid}"
         if dedup_val in seen:
+            # Нода уже есть — добавляем sub_id в существующую
+            for o in outbounds:
+                o_uuid = o.get("uuid", "")
+                o_ip = str(o.get("server", "")).strip("[]").lower()
+                o_port = o.get("server_port", "")
+                if f"{o_ip}:{o_port}:{o_uuid}" == dedup_val:
+                    o.setdefault("_sub_ids", set()).add(sub_id)
+                    break
             continue
         seen.add(dedup_val)
 
+        outbound.setdefault("_sub_ids", set()).add(sub_id)
         outbounds.append(outbound)
 
     return outbounds
@@ -288,7 +307,10 @@ def run_pipeline(
     sub_urls_path = os.path.join(os.path.dirname(__file__), SOURCES_JSON_PATH)
     with open(sub_urls_path, "r", encoding="utf-8") as f:
         sub_urls_data = json.load(f)
-    sub_urls = list(sub_urls_data.values()) if isinstance(sub_urls_data, dict) else sub_urls_data
+    if isinstance(sub_urls_data, dict):
+        sub_urls = list(sub_urls_data.items())  # [(key, url), ...]
+    else:
+        sub_urls = [(str(i), url) for i, url in enumerate(sub_urls_data, 1)]
     if not sub_urls:
         return
 
