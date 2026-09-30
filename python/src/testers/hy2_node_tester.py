@@ -142,6 +142,9 @@ def test_hy2_node(node: dict, timeout: int = 5) -> dict | str | None:
                 proc.kill()
             _, stderr = proc.communicate()
             err_info = stderr.strip()[:200] if stderr else "no output"
+            # Check if hy2 client already exited with an error (e.g. connection timeout)
+            if proc.returncode is not None and proc.returncode != 0:
+                return f"hy2 client failed (exit {proc.returncode}): {err_info}"
             return f"SOCKS5 port not ready ({err_info})"
 
         curl_cmd = [
