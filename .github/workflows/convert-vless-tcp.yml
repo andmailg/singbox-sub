@@ -39,7 +39,7 @@ jobs:
       - name: Run full pipeline
         run: |
           cd python
-          # Генерирует 2 файла в корне репозитория:
+          # Генерирует файлы в корне репозитория:
           #   vless_tcp_tun.json — sing-box TUN конфиг
           #   vless_tcp.txt      — V2Ray-ссылки
           python vless_tcp_manage.py run --timeout 3 --geoblock ""

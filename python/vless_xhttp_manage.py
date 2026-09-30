@@ -139,17 +139,20 @@ def cmd_run(args):
 
     # Step 3: Export
     print("\n" + "=" * 60)
-    print("STEP 3: Export V2Ray links")
+    print("STEP 3: Export configs")
     print("=" * 60)
-    cmd_export(argparse.Namespace())
+    cmd_export(argparse.Namespace(export=args.export, output="vless_xhttp.txt"))
 
 
 def cmd_export(args):
-    """Экспортирует V2Ray-ссылки из vless_xhttp_working.json.
+    """Экспортирует конфиги из vless_xhttp_working.json.
 
-    xhttp не поддерживается sing-box, поэтому экспортируем только ссылки.
+    xhttp не поддерживается sing-box, поэтому экспортируем только ссылки (xray).
     На экспорт идут только active ноды (без _pending_since).
     Pending ноды остаются в vless_xhttp_working.json для повторного тестирования.
+
+    Аргумент export — список форматов через запятую:
+      xray  — V2Ray-ссылки
     """
     all_nodes = load_working_nodes()
     if not all_nodes:
@@ -179,7 +182,10 @@ def cmd_export(args):
         asn = resolve_asn(node.get("server", ""))
         print(f"  [Node] {node.get('tag')} {node.get('server')}:{node.get('server_port')} {asn}")
 
-    _export_v2ray(active_nodes)
+    export_formats = [f.strip() for f in args.export.split(",")] if args.export else []
+
+    if "xray" in export_formats:
+        _export_v2ray(active_nodes)
 
 
 def renumber_nodes(nodes: list[dict]) -> list[dict]:
@@ -230,10 +236,10 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python vless_xhttp_manage.py run                     Full pipeline (merge+test+export)
-  python vless_xhttp_manage.py merge                   Fetch new nodes from subscriptions
-  python vless_xhttp_manage.py test                    Test all nodes
-   python vless_xhttp_manage.py export                  Export V2Ray links only
+  python vless_xhttp_manage.py run                              Full pipeline (merge+test+export)
+  python vless_xhttp_manage.py merge                            Fetch new nodes from subscriptions
+  python vless_xhttp_manage.py test                             Test all nodes
+  python vless_xhttp_manage.py export                           Export V2Ray links only
         """,
     )
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
@@ -243,6 +249,8 @@ Examples:
     run_parser.add_argument("--ports", type=str, default=None,
                             help="Comma-separated port whitelist (default: all ports)")
     run_parser.add_argument("--timeout", type=int, default=10, help="Test timeout per node (seconds)")
+    run_parser.add_argument("--export", type=str, default="xray",
+                            help="Export formats (default: xray): tun,xray,router")
     run_parser.add_argument("--geoblock", type=str, default=None,
                             help="Comma-separated list of country codes to block (e.g. 'ru,ir')")
 
@@ -259,6 +267,8 @@ Examples:
 
     # export
     export_parser = subparsers.add_parser("export", help="Export working nodes to sing-box config")
+    export_parser.add_argument("--export", type=str, default="xray",
+                               help="Export formats (default: xray): tun,xray,router")
     export_parser.add_argument("--output", default="vless_xhttp.txt", help="Output file")
 
     args = parser.parse_args()

@@ -164,14 +164,19 @@ def cmd_run(args):
     print("\n" + "=" * 60)
     print("STEP 3: Export configs")
     print("=" * 60)
-    cmd_export(argparse.Namespace(type="all", output="hy2_tun.json"))
+    cmd_export(argparse.Namespace(export=args.export, output="hy2_tun.json"))
 
 
 def cmd_export(args):
-    """Генерирует sing-box конфиг из hy2_working.json.
+    """Генерирует конфиги из hy2_working.json.
 
     На экспорт идут только active ноды (без _pending_since).
     Pending ноды остаются в hy2_working.json для повторного тестирования.
+
+    Аргумент export — список форматов через запятую:
+      tun   — sing-box TUN конфиг
+      xray  — V2Ray-ссылки
+      router — sing-box router конфиг
     """
     all_nodes = load_working_nodes()
     if not all_nodes:
@@ -202,16 +207,14 @@ def cmd_export(args):
         print(f"  [Node] {node.get('tag')} {node.get('server')}:{node.get('server_port')} {asn}")
 
     # Экспорт только active
-    if args.type == "tun":
+    export_formats = [f.strip() for f in args.export.split(",")] if args.export else []
+
+    if "tun" in export_formats:
         _export_tun(active_nodes, args.output)
-    elif args.type == "router":
-        _export_router(active_nodes, args.output)
-    elif args.type == "all":
-        _export_tun(active_nodes, args.output)
+    if "router" in export_formats:
         _export_router(active_nodes, "config.json")
+    if "xray" in export_formats:
         _export_v2ray(active_nodes)
-    else:
-        print(f"Unknown export type: {args.type}")
 
 
 def _export_tun(nodes, output_file):
@@ -257,10 +260,10 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python hy2_manage.py run                     Full pipeline (merge+test+export)
-  python hy2_manage.py merge                   Fetch new nodes from subscriptions
-  python hy2_manage.py test                    Test all nodes
-  python hy2_manage.py export --type all       Export only
+  python hy2_manage.py run                              Full pipeline (merge+test+export)
+  python hy2_manage.py merge                            Fetch new nodes from subscriptions
+  python hy2_manage.py test                             Test all nodes
+  python hy2_manage.py export --export tun,xray,router  Export all formats
         """,
     )
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
@@ -270,6 +273,8 @@ Examples:
     run_parser.add_argument("--ports", type=str, default=None,
                             help="Comma-separated port whitelist (default: all ports)")
     run_parser.add_argument("--timeout", type=int, default=10, help="Test timeout per node (seconds)")
+    run_parser.add_argument("--export", type=str, default="tun,xray",
+                            help="Export formats (default: tun,xray): tun,xray,router")
     run_parser.add_argument("--geoblock", type=str, default=None,
                             help="Comma-separated list of country codes to block (e.g. 'ru,ir')")
 
@@ -286,7 +291,8 @@ Examples:
 
     # export
     export_parser = subparsers.add_parser("export", help="Export working nodes to sing-box config")
-    export_parser.add_argument("--type", choices=["tun", "router", "all"], default="all", help="Export type")
+    export_parser.add_argument("--export", type=str, default="tun",
+                               help="Export formats (default: tun): tun,xray,router")
     export_parser.add_argument("--output", default="hy2_tun.json", help="Output file")
 
     args = parser.parse_args()
