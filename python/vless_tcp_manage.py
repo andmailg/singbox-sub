@@ -150,7 +150,7 @@ def cmd_export(args):
     all_nodes = load_working_nodes()
     if not all_nodes:
         print("No nodes found.")
-        return
+        all_nodes = []
 
     # Разделяем на active и pending
     active_nodes = [n for n in all_nodes if "_pending_since" not in n]
@@ -158,7 +158,6 @@ def cmd_export(args):
 
     if not active_nodes:
         print("No active nodes to export.")
-        return
 
     # Нумеруем только active ноды
     active_nodes = renumber_nodes(active_nodes)
