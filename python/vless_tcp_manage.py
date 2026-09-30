@@ -142,6 +142,12 @@ def cmd_run(args):
     active_nodes = load_working_nodes()
     active_nodes = [n for n in active_nodes if "_pending_since" not in n]
     active_nodes = renumber_nodes(active_nodes)
+    
+    # Вывод списка нод
+    for node in active_nodes:
+        asn = resolve_asn(node.get("server", ""))
+        print(f"  [Node] {node.get('tag')} {node.get('server')}:{node.get('server_port')} {asn}")
+    
     for n in active_nodes:
         clean_internal_fields(n)
     _export_tun(active_nodes, "vless_tcp_tun.json")
