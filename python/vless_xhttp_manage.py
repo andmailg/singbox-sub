@@ -137,20 +137,15 @@ def cmd_run(args):
 
     # Step 3: Export
     print("\n" + "=" * 60)
-    print("STEP 3: Export configs")
+    print("STEP 3: Export V2Ray links")
     print("=" * 60)
-    # xhttp не поддерживается sing-box, экспортируем только V2Ray-ссылки
-    active_nodes = load_working_nodes()
-    active_nodes = [n for n in active_nodes if "_pending_since" not in n]
-    active_nodes = renumber_nodes(active_nodes)
-    for n in active_nodes:
-        clean_internal_fields(n)
-    _export_v2ray(active_nodes)
+    cmd_export(argparse.Namespace())
 
 
 def cmd_export(args):
-    """Генерирует sing-box конфиг из vless_xhttp_working.json.
+    """Экспортирует V2Ray-ссылки из vless_xhttp_working.json.
 
+    xhttp не поддерживается sing-box, поэтому экспортируем только ссылки.
     На экспорт идут только active ноды (без _pending_since).
     Pending ноды остаются в vless_xhttp_working.json для повторного тестирования.
     """
@@ -182,17 +177,7 @@ def cmd_export(args):
         asn = resolve_asn(node.get("server", ""))
         print(f"  [Node] {node.get('tag')} {node.get('server')}:{node.get('server_port')} {asn}")
 
-    # Экспорт только active
-    if args.type == "tun":
-        _export_tun(active_nodes, args.output)
-    elif args.type == "router":
-        _export_router(active_nodes, args.output)
-    elif args.type == "all":
-        _export_tun(active_nodes, args.output)
-        _export_router(active_nodes, "config.json")
-        _export_v2ray(active_nodes)
-    else:
-        print(f"Unknown export type: {args.type}")
+    _export_v2ray(active_nodes)
 
 
 def renumber_nodes(nodes: list[dict]) -> list[dict]:
@@ -216,24 +201,6 @@ def renumber_nodes(nodes: list[dict]) -> list[dict]:
         flag = country_code_to_flag(country) if country else ""
         node["tag"] = f"{flag}node-{idx}" if flag else f"node-{idx}"
     return nodes
-
-
-def _export_tun(nodes, output_file):
-    """Экспорт в sing-box TUN конфиг."""
-    from src.exporters.singbox_exporter import export_tun
-    for n in nodes:
-        clean_internal_fields(n)
-    output_file = _resolve_output(output_file)
-    export_tun(nodes, output_file)
-
-
-def _export_router(nodes, output_file):
-    """Экспорт в sing-box router конфиг."""
-    from src.exporters.singbox_exporter import export_router
-    for n in nodes:
-        clean_internal_fields(n)
-    output_file = _resolve_output(output_file)
-    export_router(nodes, output_file)
 
 
 def _resolve_output(output_file: str) -> str:
@@ -264,7 +231,7 @@ Examples:
   python vless_xhttp_manage.py run                     Full pipeline (merge+test+export)
   python vless_xhttp_manage.py merge                   Fetch new nodes from subscriptions
   python vless_xhttp_manage.py test                    Test all nodes
-  python vless_xhttp_manage.py export --type all       Export only
+   python vless_xhttp_manage.py export                  Export V2Ray links only
         """,
     )
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
@@ -286,8 +253,7 @@ Examples:
 
     # export
     export_parser = subparsers.add_parser("export", help="Export working nodes to sing-box config")
-    export_parser.add_argument("--type", choices=["tun", "router", "all"], default="all", help="Export type")
-    export_parser.add_argument("--output", default="vless_xhttp_tun.json", help="Output file")
+    export_parser.add_argument("--output", default="vless_xhttp.txt", help="Output file")
 
     args = parser.parse_args()
 

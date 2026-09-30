@@ -138,7 +138,7 @@ def cmd_run(args):
     print("\n" + "=" * 60)
     print("STEP 3: Export configs")
     print("=" * 60)
-    cmd_export(argparse.Namespace(type="all", output="vless_tcp_tun.json"))
+    cmd_export(argparse.Namespace(type=args.type, output="vless_tcp_tun.json"))
 
 
 def cmd_export(args):
@@ -175,6 +175,7 @@ def cmd_export(args):
         asn = resolve_asn(node.get("server", ""))
         print(f"  [Node] {node.get('tag')} {node.get('server')}:{node.get('server_port')} {asn}")
 
+    # Экспорт только active
     # Экспорт только active
     if args.type == "tun":
         _export_tun(active_nodes, args.output)
@@ -267,6 +268,8 @@ Examples:
     run_parser.add_argument("--ports", type=str, default=None,
                             help="Comma-separated port whitelist (default: all ports)")
     run_parser.add_argument("--timeout", type=int, default=10, help="Test timeout per node (seconds)")
+    run_parser.add_argument("--type", choices=["tun", "router", "all"], default="tun",
+                            help="Export type for run pipeline (default: tun)")
 
     # merge
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
@@ -279,7 +282,8 @@ Examples:
 
     # export
     export_parser = subparsers.add_parser("export", help="Export working nodes to sing-box config")
-    export_parser.add_argument("--type", choices=["tun", "router", "all"], default="all", help="Export type")
+    export_parser.add_argument("--type", choices=["tun", "router", "all"], default="tun",
+                               help="Export type (default: tun)")
     export_parser.add_argument("--output", default="vless_tcp_tun.json", help="Output file")
 
     args = parser.parse_args()
