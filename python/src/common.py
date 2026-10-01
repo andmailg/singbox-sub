@@ -253,12 +253,18 @@ def country_code_to_flag(cc: str) -> str:
 
 # Схемы прокси-форматов для детекции в подписках
 PROXY_SCHEMES = (
-    "sing-box://", "vless://", "vmess://", "hysteria2://",
-    "trojan://", "ss://", "ssr://",
+    "tuic://", "vless://", "vmess://", "hysteria2://",
+    "trojan://", "ss://", "ssr://", "hy2://"
 )
 
 # Строки, характерные для base64-encoded данных
 B64_SIGNATURES = ("sgx://",)  # sing-box sub URL
+
+
+# Алиасы схем, маппящиеся на canonical-имена
+_PROXY_SCHEME_ALIASES: dict[str, str] = {
+    "hy2": "hysteria2",
+}
 
 
 def _detect_proxy_schemes(lines: list[str]) -> dict[str, int]:
@@ -276,7 +282,9 @@ def _detect_proxy_schemes(lines: list[str]) -> dict[str, int]:
             if line_stripped.lower().startswith(scheme.lower()):
                 # Извлекаем имя схемы без "://"
                 name = scheme.replace("://", "")
-                counts[name] = counts.get(name, 0) + 1
+                # Маппим алиасы на canonical-имена
+                canonical = _PROXY_SCHEME_ALIASES.get(name, name)
+                counts[canonical] = counts.get(canonical, 0) + 1
                 break
         else:
             # Не распознанный формат
