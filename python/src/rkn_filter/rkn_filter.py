@@ -116,7 +116,8 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
         try:
             valid_networks.append(ipaddress.ip_network(cidr, strict=False))
         except ValueError:
-            continue
+            print(f"  [ERROR] Invalid CIDR in config: '{cidr}' — aborting workflow.")
+            raise SystemExit(1)
 
     # Схлопываем подсети для минимизации размера кэш-файла
     v4 = [n for n in valid_networks if n.version == 4]
