@@ -171,7 +171,7 @@ def _parse_and_deduplicate(
 def _rkn_geoip_filter(
     outbounds: list[dict],
     prefix: str = "",
-    geoblock_countries: tuple[str, ...] | None = None,
+    geoip_filter_countries: tuple[str, ...] | None = None,
     skip_rkn: bool = False,
 ) -> list[dict]:
     """RKN + GeoIP фильтрация через resolve_and_check.
@@ -179,7 +179,7 @@ def _rkn_geoip_filter(
     Args:
         outbounds: список нод для фильтрации.
         prefix: префикс для логов.
-        geoblock_countries: кортеж ISO-кодов стран для блокировки (например ("ru", "ir")).
+        geoip_filter_countries: кортеж ISO-кодов стран для фильтрации (например ("ru", "ir")).
             Если None или пустой — фильтрация по странам отключена.
         skip_rkn: если True — пропускает проверку RKN (остается только GeoIP).
     """
@@ -192,8 +192,8 @@ def _rkn_geoip_filter(
     reader = open_geoip_reader()
 
     if reader:
-        if geoblock_countries:
-            print(f"{prefix}GeoIP database loaded for geolocation filtering (block: {', '.join(geoblock_countries)}).")
+        if geoip_filter_countries:
+            print(f"{prefix}GeoIP database loaded for geolocation filtering (filter: {', '.join(geoip_filter_countries)}).")
         else:
             print(f"{prefix}GeoIP database loaded for geolocation filtering.")
 
@@ -207,7 +207,7 @@ def _rkn_geoip_filter(
                 o.get("server", "").strip("[]"),
                 blocked_networks if not skip_rkn else None,
                 reader,
-                geoblock_countries,
+                geoip_filter_countries,
             ): idx
             for idx, o in enumerate(outbounds)
         }
@@ -282,7 +282,7 @@ def run_pipeline(
     tester_func: Callable | None = None,
     test_timeout: int = 5,
     reality: bool = False,
-    geoblock_countries: tuple[str, ...] | None = None,
+    geoip_filter_countries: tuple[str, ...] | None = None,
     skip_rkn: bool = False,
 ) -> None:
     """Запускает полный pipeline сборки конфига.
@@ -302,7 +302,7 @@ def run_pipeline(
             Если None — тестирование пропускается.
         test_timeout: таймаут проверки каждой ноды в секундах.
         reality: если True — для reality-протоколов не фильтрует SNI по FAKE_DOMAINS.
-        geoblock_countries: кортеж ISO-кодов стран для блокировки (например ("ru", "ir")).
+        geoip_filter_countries: кортеж ISO-кодов стран для фильтрации (например ("ru", "ir")).
             Если None или пустой — фильтрация по странам отключена.
         skip_rkn: если True — пропускает проверку RKN.
     """
@@ -349,7 +349,7 @@ def run_pipeline(
         return
 
     # 4. RKN + GeoIP фильтрация
-    outbounds = _rkn_geoip_filter(outbounds, prefix=prefix, geoblock_countries=geoblock_countries, skip_rkn=skip_rkn)
+    outbounds = _rkn_geoip_filter(outbounds, prefix=prefix, geoip_filter_countries=geoip_filter_countries, skip_rkn=skip_rkn)
 
     if not outbounds:
         print(f"{prefix}Error: No valid proxy nodes left after RKN+GeoIP filtration!")
