@@ -44,7 +44,7 @@ def cmd_merge(args):
 
     port_whitelist = tuple(int(p) for p in args.ports.split(",")) if args.ports else None
     geoip_filter_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
-    skip_rkn = args.no_rkn
+    skip_rkn = args.rkn_filter == 0
 
     # Кастомный export_func: перезаписывает hy2_working.json отфильтрованными нодами
     def _save_to_working(outbounds, _output_file):
@@ -281,8 +281,8 @@ Examples:
                             help="Export formats (default: tun,xray): tun,xray,router")
     run_parser.add_argument("--geoip-filter", type=str, default=None,
                             help="Comma-separated list of country codes to filter (e.g. 'ru,ir')")
-    run_parser.add_argument("--no-rkn", action="store_true", default=False,
-                            help="Skip RKN blocklist filtering")
+    run_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=1,
+                            help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 1)")
 
     # merge
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
@@ -290,8 +290,8 @@ Examples:
                               help="Comma-separated port whitelist (default: all ports)")
     merge_parser.add_argument("--geoip-filter", type=str, default=None,
                               help="Comma-separated list of country codes to filter (e.g. 'ru,ir')")
-    merge_parser.add_argument("--no-rkn", action="store_true", default=False,
-                              help="Skip RKN blocklist filtering")
+    merge_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=1,
+                              help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 1)")
 
     # test
     test_parser = subparsers.add_parser("test", help="Test all nodes and remove dead ones")
