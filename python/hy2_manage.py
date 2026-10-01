@@ -280,7 +280,7 @@ Examples:
     run_parser.add_argument("--export", type=str, default="tun,xray",
                             help="Export formats (default: tun,xray): tun,xray,router")
     run_parser.add_argument("--geoip-filter", type=str, default=None,
-                            help="Comma-separated list of country codes to filter (e.g. 'ru,ir')")
+                            help="Comma-separated country codes (e.g. --geoip-filter ru,ir)")
     run_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=1,
                             help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 1)")
 
@@ -289,7 +289,7 @@ Examples:
     merge_parser.add_argument("--ports", type=str, default=None,
                               help="Comma-separated port whitelist (default: all ports)")
     merge_parser.add_argument("--geoip-filter", type=str, default=None,
-                              help="Comma-separated list of country codes to filter (e.g. 'ru,ir')")
+                              help="Comma-separated country codes (e.g. --geoip-filter ru,ir)")
     merge_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=1,
                               help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 1)")
 

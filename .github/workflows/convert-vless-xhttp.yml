@@ -42,7 +42,7 @@ jobs:
           # Генерирует 2 файла в корне репозитория:
           #   vless_xhttp_tun.json — sing-box TUN конфиг
           #   vless_xhttp.txt      — V2Ray-ссылки
-          python vless_xhttp_manage.py run --timeout 3 --geoip-filter "ru" --export xray
+          python vless_xhttp_manage.py run --timeout 3 --geoip-filter ru --export xray
 
       - name: Commit and push if changed
         run: |
