@@ -37,6 +37,9 @@ def sort_networks(prefixes: list[str]) -> list[str]:
 
 def fetch_all() -> dict[str, list[str]]:
     """Собирает и возвращает _EXTRA_BLOCKED_CIDR."""
+    print("=" * 60)
+    print("STEP 0: Fetch ASN prefixes from RIPEstat API")
+    print("=" * 60)
     for asn in ASN_LIST:
         try:
             response = session.get(
