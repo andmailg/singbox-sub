@@ -265,16 +265,22 @@ def _rkn_geoip_filter(
                 node["_country"] = country
             filtered.append(node)
 
-    removed = len(outbounds) - len(filtered)
-    if removed:
-        print(f"{prefix}Filtered out {removed} nodes by RKN/GeoIP ({len(filtered)} remaining).")
-        if removed_rkn:
-            for node in removed_rkn:
-                print(f"{prefix}  [RKN] {node.get('server')}:{node.get('server_port')}")
+    removed_rkn_count = len(removed_rkn)
+    removed_geo_count = sum(len(nodes) for nodes in removed_geo.values())
+    removed = removed_rkn_count + removed_geo_count
+
+    if removed_rkn_count:
+        print(f"{prefix}Filtered out {removed_rkn_count} node(s) by RKN ({len(filtered)} remaining).")
+        for node in removed_rkn:
+            print(f"{prefix}  [RKN] {node.get('server')}:{node.get('server_port')}")
+
+    if removed_geo_count:
+        print(f"{prefix}Filtered out {removed_geo_count} node(s) by GeoIP ({len(filtered)} remaining).")
         for country_code, nodes in sorted(removed_geo.items()):
             for node in nodes:
-                print(f"  [{country_code.upper()}] {node.get('server')}:{node.get('server_port')}")
-    else:
+                print(f"{prefix}  [{country_code.upper()}] {node.get('server')}:{node.get('server_port')}")
+
+    if not removed:
         print(f"{prefix}No nodes filtered by RKN/GeoIP ({len(filtered)} remaining).")
 
     if reader:
