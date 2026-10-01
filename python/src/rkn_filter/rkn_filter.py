@@ -14,15 +14,9 @@ from src.common import is_valid_ip, resolve_domain, session
 from .asn_fetcher import EXTRA_BLOCKED_CIDR
 from .rkn_config import ASN_LIST, HARDCODED_CIDR
 
-try:
-    import maxminddb
-except ImportError:
-    maxminddb = None
-
 # Файл локального кэша для тяжелых списков ASN
 _RKN_FILTER_DIR = str(Path(__file__).resolve().parent)
 ASN_CACHE_FILE = os.path.join(_RKN_FILTER_DIR, "rkn_networks_cache.json")
-_GEOIP_PATH = os.path.normpath(os.path.join(_RKN_FILTER_DIR, "..", "..", "GeoLite2-Country.mmdb"))
 
 # Версия схемы кэша (увеличивать при изменении формата)
 _CACHE_FORMAT_VERSION = 2
@@ -269,100 +263,24 @@ def load_rkn_list(session) -> RKNBlockList:
     return RKNBlockList(collapsed)
 
 
-def open_geoip_reader(mmdb_path: str = _GEOIP_PATH):
-    if not maxminddb or not os.path.exists(mmdb_path):
-        return None
-    try:
-        return maxminddb.open_database(mmdb_path)
-    except Exception as e:
-        print(f"Error opening GeoIP database: {e}")
-        return None
-
-def resolve_country(server: str) -> str | None:
-    """Определяет ISO-код страны по домену или IP-адресу."""
-    geoip_path = _GEOIP_PATH
-    node_ip = server.strip("[]")
-
-    if not is_valid_ip(node_ip):
-        resolved = resolve_domain(node_ip)
-        if resolved is None:
-            return None
-        node_ip = resolved
-
-    if not maxminddb or not os.path.exists(geoip_path):
-        return None
-
-    try:
-        reader = maxminddb.open_database(geoip_path)
-        geo_data = reader.get(node_ip)
-        reader.close()
-
-        if isinstance(geo_data, tuple):
-            geo_data = geo_data[0]
-        if isinstance(geo_data, dict):
-            country_data = geo_data.get("country")
-            if isinstance(country_data, dict) and country_data:
-                iso_code = country_data.get("iso_code")
-                if isinstance(iso_code, str) and iso_code:
-                    return iso_code
-    except Exception:
-        pass
-
-    return None
+# GeoIP functions moved to geoip_filter.py
+from .geoip_filter import open_geoip_reader, resolve_asn, resolve_country
 
 
-def resolve_asn(server: str) -> str | None:
-    """Определяет ASN (AS номер) по домену или IP-адресу."""
-    asn_db_path = os.path.normpath(os.path.join(_RKN_FILTER_DIR, "..", "..", "GeoLite2-ASN.mmdb"))
-    node_ip = server.strip("[]")
-
-    if not is_valid_ip(node_ip):
-        resolved = resolve_domain(node_ip)
-        if resolved is None:
-            return None
-        node_ip = resolved
-
-    if not maxminddb or not os.path.exists(asn_db_path):
-        return None
-
-    try:
-        reader = maxminddb.open_database(asn_db_path)
-        asn_data = reader.get(node_ip)
-        reader.close()
-
-        if isinstance(asn_data, tuple):
-            asn_data = asn_data[0]
-        if isinstance(asn_data, dict):
-            asn_record = asn_data.get("autonomous_system_number")
-            if isinstance(asn_record, int):
-                return f"AS{asn_record}"
-            if isinstance(asn_record, str):
-                return asn_record
-    except Exception:
-        pass
-
-    return None
-
-
-def resolve_and_check(
+def check_rkn_blocked(
     server: str,
     blocked_networks: RKNBlockList | None,
-    reader=None,
-    geoip_filter_countries: tuple[str, ...] | None = None,
-) -> dict | None | str:
-    """Проверяет сервер на блокировки и страну.
+) -> bool | None:
+    """Проверяет сервер на попадание в RKN blocklist.
 
     Args:
         server: IP или домен сервера.
-        blocked_networks: RKNBlockList для проверки RKN. Если None — проверка RKN пропускается.
-        reader: GeoIP reader (MaxMind).
-        geoip_filter_countries: кортеж ISO-кодов стран для фильтрации (например ("ru", "ir")).
-            Если None или пустой — фильтрация по странам отключена.
+        blocked_networks: RKNBlockList для проверки. Если None — проверка пропускается.
 
     Returns:
-        dict с ip/country — если нода прошла,
-        None — если не удалось определить IP,
-        str ("rkn" / ISO-код страны) — причина отклонения.
+        True — сервер заблокирован РКН,
+        False — сервер не заблокирован,
+        None — не удалось определить IP (сервер пропускать).
     """
     node_ip_str = server.strip("[]")
 
@@ -378,27 +296,7 @@ def resolve_and_check(
         return None
 
     if blocked_networks is not None and blocked_networks.is_blocked(node_ip_str):
-        return "rkn"
+        return True
 
-    country = None
-    if reader:
-        try:
-            geo_data = reader.get(node_ip_str)
-            if isinstance(geo_data, tuple):
-                geo_data = geo_data[0]
-            if geo_data and "country" in geo_data:
-                country_obj = geo_data["country"]
-                if isinstance(country_obj, dict):
-                    country = country_obj.get("iso_code", "")
-                    # Проверяем, нужно ли блокировать эту страну
-                    if geoip_filter_countries and country and country.upper() in [c.upper() for c in geoip_filter_countries]:
-                        return country.lower()
-        except Exception:
-            pass
-
-    result: dict = {"ip": node_ip_str}
-    if country:
-        result["country"] = country
-
-    return result
+    return False
 

@@ -16,8 +16,9 @@ from src.common import (
 from src.rkn_filter import (
     load_rkn_list,
     open_geoip_reader,
-    resolve_and_check,
 )
+from src.rkn_filter.geoip_filter import check_geoip
+from src.rkn_filter.rkn_filter import check_rkn_blocked
 
 
 SOURCES_JSON_PATH = "./sub_urls.json"
@@ -168,13 +169,38 @@ def _parse_and_deduplicate(
     return outbounds
 
 
+def _check_node(
+    server: str,
+    blocked_networks,
+    reader,
+    geoip_filter_countries: tuple[str, ...] | None,
+) -> dict | None | str:
+    """Вызывает check_rkn_blocked + check_geoip последовательно."""
+    # 1. RKN проверка
+    rkn_result = check_rkn_blocked(server, blocked_networks)
+    if rkn_result is True:
+        return "rkn"
+    if rkn_result is None:
+        return None
+
+    # 2. GeoIP проверка
+    geoip_result = check_geoip(server, reader, geoip_filter_countries)
+    if isinstance(geoip_result, str):
+        return geoip_result
+    if geoip_result is not None:
+        return geoip_result
+
+    # GeoIP база недоступна — нода не заблокирована RKN, пропускаем
+    return {"ip": server}
+
+
 def _rkn_geoip_filter(
     outbounds: list[dict],
     prefix: str = "",
     geoip_filter_countries: tuple[str, ...] | None = None,
     skip_rkn: bool = False,
 ) -> list[dict]:
-    """RKN + GeoIP фильтрация через resolve_and_check.
+    """RKN + GeoIP фильтрация через check_rkn_blocked + check_geoip.
 
     Args:
         outbounds: список нод для фильтрации.
@@ -203,7 +229,7 @@ def _rkn_geoip_filter(
     with ThreadPoolExecutor(max_workers=num_workers) as executor:
         future_to_idx = {
             executor.submit(
-                resolve_and_check,
+                _check_node,
                 o.get("server", "").strip("[]"),
                 blocked_networks if not skip_rkn else None,
                 reader,

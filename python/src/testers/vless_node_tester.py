@@ -9,7 +9,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
 
-from src.rkn_filter import resolve_asn
+from src.rkn_filter.geoip_filter import resolve_asn
 
 
 

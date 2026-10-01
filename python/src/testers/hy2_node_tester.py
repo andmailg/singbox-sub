@@ -7,7 +7,7 @@ import tempfile
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from src.rkn_filter import resolve_asn
+from src.rkn_filter.geoip_filter import resolve_asn
 
 
 

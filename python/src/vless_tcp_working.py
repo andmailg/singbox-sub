@@ -5,7 +5,8 @@ import json
 import os
 from datetime import datetime, timezone
 
-from src.rkn_filter import load_rkn_list, resolve_and_check, open_geoip_reader
+from src.rkn_filter import load_rkn_list
+from src.rkn_filter.rkn_filter import check_rkn_blocked
 from src.common import session as http_session
 
 _WORKING_FILE = os.path.join(
@@ -58,19 +59,16 @@ def load_working_nodes(path: str = _WORKING_FILE) -> list[dict]:
         
         # Загружаем RKNBlockList (перестроит кэш если нужно)
         rkn = load_rkn_list(http_session)
-        geo_reader = open_geoip_reader()
         
         filtered = []
         removed_count = 0
         for node in nodes:
             server = node.get("server", "")
-            result = resolve_and_check(server, rkn, geo_reader)
-            if result == "rkn":
+            result = check_rkn_blocked(server, rkn)
+            if result is True:
                 removed_count += 1
-            elif result is None:
-                # Не удалось определить IP — оставляем
-                filtered.append(node)
             else:
+                # False (не заблокирована) или None (не удалось определить IP) — оставляем
                 filtered.append(node)
         
         if removed_count:
