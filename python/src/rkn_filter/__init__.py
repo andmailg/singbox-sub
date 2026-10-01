@@ -1,7 +1,10 @@
 """RKN Blocklist + GeoIP фильтрация для VLESS WS/HTTP нод."""
 
 from .asn_fetcher import EXTRA_BLOCKED_CIDR
-from .geoip_filter import check_geoip, open_geoip_reader, resolve_asn, resolve_country
+from .geoip_filter import check_geoip, open_geoip_reader, resolve_country
+
+# Re-export from testers for backward compatibility
+from ..testers.asn_resolver import resolve_asn
 from .rkn_config import ASN_LIST, HARDCODED_CIDR
 from .rkn_filter import (
     ASN_CACHE_FILE,

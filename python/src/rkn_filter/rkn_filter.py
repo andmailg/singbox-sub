@@ -1,4 +1,4 @@
-"""RKN BlockList + GeoIP фильтрация для VLESS WS/HTTP нод (Оптимизированная версия)."""
+"""RKN BlockList — оптимизированная проверка подсетей (бинарный поиск)."""
 
 from __future__ import annotations
 
@@ -264,7 +264,7 @@ def load_rkn_list(session) -> RKNBlockList:
 
 
 # GeoIP functions moved to geoip_filter.py
-from .geoip_filter import open_geoip_reader, resolve_asn, resolve_country
+from .geoip_filter import open_geoip_reader, resolve_country
 
 
 def check_rkn_blocked(
