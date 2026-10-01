@@ -8,6 +8,7 @@ import ipaddress
 import json
 import os
 from collections import OrderedDict
+from pathlib import Path
 
 from src.common import is_valid_ip, resolve_domain, session
 from .asn_fetcher import EXTRA_BLOCKED_CIDR
@@ -19,7 +20,7 @@ except ImportError:
     maxminddb = None
 
 # Файл локального кэша для тяжелых списков ASN
-_RKN_FILTER_DIR = os.path.dirname(os.path.abspath(__file__))
+_RKN_FILTER_DIR = str(Path(__file__).resolve().parent)
 ASN_CACHE_FILE = os.path.join(_RKN_FILTER_DIR, "rkn_networks_cache.json")
 _GEOIP_PATH = os.path.normpath(os.path.join(_RKN_FILTER_DIR, "..", "..", "GeoLite2-Country.mmdb"))
 
