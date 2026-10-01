@@ -204,7 +204,9 @@ def cmd_export(args):
     # Лог: ASN для каждой ноды
     for node in active_nodes:
         asn = resolve_asn(node.get("server", ""))
-        print(f"  [Node] {node.get('tag')} {node.get('server')}:{node.get('server_port')} {asn}")
+        sub_ids = node.get("_sub_ids", set())
+        sub_ids_str = f" [{','.join(sorted(sub_ids))}]" if sub_ids else ""
+        print(f"  [Node] {node.get('tag')} {node.get('server')}:{node.get('server_port')} {asn}{sub_ids_str}")
 
     # Экспорт только active
     export_formats = [f.strip() for f in args.export.split(",")] if args.export else []
