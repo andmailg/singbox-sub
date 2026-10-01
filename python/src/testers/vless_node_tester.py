@@ -371,7 +371,12 @@ def test_vless_connectivity(
         key=lambda o: (o.get("_country", ""), o.get("server", ""), o.get("server_port", 0))
     )
 
+    all_sub_ids: set[str] = set()
+    for w in working:
+        all_sub_ids.update(w.get("_sub_ids", set()))
+    sub_ids_summary = f" (subs: {','.join(sorted(all_sub_ids))})" if all_sub_ids else ""
+
     if failed:
-        print(f"{prefix}VLESS connectivity: {len(working)} working / {failed} failed ({len(outbounds)} total).")
+        print(f"{prefix}VLESS connectivity: {len(working)} working / {failed} failed ({len(outbounds)} total){sub_ids_summary}.")
 
     return working
