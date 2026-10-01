@@ -11,8 +11,8 @@ from collections import OrderedDict
 from pathlib import Path
 
 from src.common import is_valid_ip, resolve_domain, session
-from .asn_fetcher import EXTRA_BLOCKED_CIDR
-from .rkn_config import ASN_LIST, HARDCODED_CIDR
+from .asn_fetcher import ASN_CIDR
+from .rkn_config import ASN_LIST, CIDR_LIST
 
 # Файл локального кэша для тяжелых списков ASN
 _RKN_FILTER_DIR = str(Path(__file__).resolve().parent)
@@ -84,7 +84,7 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
     """Загружает дополнительный список сетей (из кэша, хардкода + RIPEstat API или AWS JSON)."""
     current_asn_key = hashlib.sha256("|".join(sorted(ASN_LIST)).encode()).hexdigest()[:16]
     current_hardcoded_key = hashlib.sha256(
-        "|".join(f"{asn}={','.join(sorted(cidrs))}" for asn, cidrs in sorted(HARDCODED_CIDR.items()))
+        "|".join(f"{asn}={','.join(sorted(cidrs))}" for asn, cidrs in sorted(CIDR_LIST.items()))
         .encode()
     ).hexdigest()[:16]
 
@@ -129,11 +129,11 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
     all_cidr_strings: list[str] = []
 
     # 1. Сети из ASN_LIST (RIPEstat API)
-    for asn_cidrs in EXTRA_BLOCKED_CIDR.values():
+    for asn_cidrs in ASN_CIDR.values():
         all_cidr_strings.extend(asn_cidrs)
 
-    # 2. Сети из HARDCODED_CIDR
-    for asn_cidrs in HARDCODED_CIDR.values():
+    # 2. Сети из CIDR_LIST
+    for asn_cidrs in CIDR_LIST.values():
         all_cidr_strings.extend(asn_cidrs)
 
     # 3. Официальный список AWS

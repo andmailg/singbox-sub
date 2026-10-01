@@ -16,11 +16,11 @@ _WORKING_FILE = os.path.join(
 
 
 def _asn_key() -> str:
-    """Хеш ASN_LIST + HARDCODED_CIDR для валидации working-файла."""
+    """Хеш ASN_LIST + CIDR_LIST для валидации working-файла."""
     try:
-        from src.rkn_filter.rkn_config import ASN_LIST, HARDCODED_CIDR
+        from src.rkn_filter.rkn_config import ASN_LIST, CIDR_LIST
         raw = "|".join(sorted(ASN_LIST))
-        hc = "|".join(f"{asn}={','.join(sorted(cidrs))}" for asn, cidrs in sorted(HARDCODED_CIDR.items()))
+        hc = "|".join(f"{asn}={','.join(sorted(cidrs))}" for asn, cidrs in sorted(CIDR_LIST.items()))
         return hashlib.sha256((raw + "|" + hc).encode()).hexdigest()[:16]
     except Exception:
         return ""
