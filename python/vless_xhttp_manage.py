@@ -43,7 +43,7 @@ def cmd_merge(args):
 
     port_whitelist = tuple(int(p) for p in args.ports.split(",")) if args.ports else None
     geoip_filter_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
-    skip_rkn = args.no_rkn
+    skip_rkn = args.rkn_filter == 0
 
     # Кастомный export_func: сохраняет ноды в vless_xhttp_working.json без нумерации
     def _save_to_working(outbounds, _output_file):
