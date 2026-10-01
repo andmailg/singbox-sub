@@ -10,8 +10,8 @@ import os
 from collections import OrderedDict
 
 from src.common import is_valid_ip, resolve_domain, session
-from .asn_prefixes import EXTRA_BLOCKED_CIDR, ASN_LIST
-from .hardcoded_cidr import HARDCODED_CIDR
+from .asn_fetcher import EXTRA_BLOCKED_CIDR
+from .rkn_config import ASN_LIST, HARDCODED_CIDR
 
 try:
     import maxminddb
@@ -25,46 +25,6 @@ _GEOIP_PATH = os.path.normpath(os.path.join(_RKN_FILTER_DIR, "..", "..", "GeoLit
 
 # Версия схемы кэша (увеличивать при изменении формата)
 _CACHE_FORMAT_VERSION = 3
-
-# Файл метки хеша исходных файлов
-_SOURCE_HASH_LABEL_FILE = os.path.join(_RKN_FILTER_DIR, ".source_hash_label")
-
-
-def _source_file_hash(filename: str) -> str:
-    """Хеш содержимого файла-источника для отслеживания изменений."""
-    fpath = os.path.join(_RKN_FILTER_DIR, filename)
-    if not os.path.exists(fpath):
-        return ""
-    with open(fpath, "rb") as f:
-        return hashlib.sha256(f.read()).hexdigest()[:16]
-
-
-def _flush_working_nodes_if_sources_changed() -> None:
-    """Удаляет все *_working.json и кэш, если изменился hardcoded_cidr.py или asn_prefixes.py."""
-    current_key = _source_file_hash("hardcoded_cidr.py") + "|" + _source_file_hash("asn_prefixes.py")
-    prev_key = None
-    if os.path.exists(_SOURCE_HASH_LABEL_FILE):
-        try:
-            with open(_SOURCE_HASH_LABEL_FILE, "r", encoding="utf-8") as f:
-                prev_key = f.read().strip()
-        except Exception:
-            pass
-    if prev_key is not None and prev_key != current_key:
-        print("  [SOURCE] Source files changed, flushing working nodes and cache...")
-        src_dir = os.path.dirname(_RKN_FILTER_DIR)
-        for fname in os.listdir(src_dir):
-            if fname.endswith("_working.json"):
-                fpath = os.path.join(src_dir, fname)
-                os.remove(fpath)
-                print(f"  [SOURCE] Deleted: {fname}")
-        if os.path.exists(ASN_CACHE_FILE):
-            os.remove(ASN_CACHE_FILE)
-            print("  [SOURCE] Deleted: rkn_networks_cache.json")
-    try:
-        with open(_SOURCE_HASH_LABEL_FILE, "w", encoding="utf-8") as f:
-            f.write(current_key)
-    except Exception:
-        pass
 
 
 def _fetch_aws_networks(session, timeout: int = 15) -> list[str]:
@@ -98,7 +58,6 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
         "|".join(f"{asn}={','.join(sorted(cidrs))}" for asn, cidrs in sorted(HARDCODED_CIDR.items()))
         .encode()
     ).hexdigest()[:16]
-    current_source_hash = _source_file_hash("hardcoded_cidr.py") + "|" + _source_file_hash("asn_prefixes.py")
 
     if os.path.exists(ASN_CACHE_FILE):
         try:
@@ -109,8 +68,7 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
             if isinstance(cache_data, dict) and cache_data.get("_v") == _CACHE_FORMAT_VERSION:
                 cached_asn = cache_data.get("_asn_key")
                 cached_hardcoded = cache_data.get("_hardcoded_key")
-                cached_source = cache_data.get("_source_hash")
-                if cached_asn == current_asn_key and cached_hardcoded == current_hardcoded_key and cached_source == current_source_hash:
+                if cached_asn == current_asn_key and cached_hardcoded == current_hardcoded_key:
                     cached_strings = cache_data.get("_cidrs", [])
                     print(f"  [Cache] Loaded {len(cached_strings)} extra networks from local {ASN_CACHE_FILE}")
                     return [ipaddress.ip_network(cidr, strict=False) for cidr in cached_strings]
@@ -120,9 +78,7 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
                         reasons.append("ASN_LIST")
                     if cached_hardcoded != current_hardcoded_key:
                         reasons.append("HARDCODED")
-                    if cached_source != current_source_hash:
-                        reasons.append("SOURCE")
-                    print(f"  [Cache] {'+'.join(reasons)} changed, rebuilding...")
+                    print(f"  [Cache] {'+'.join(reasons) if reasons else 'keys'} changed, rebuilding...")
             else:
                 print(f"  [Cache] Legacy format, rebuilding...")
 
@@ -132,11 +88,11 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
     print("  [Cache] Cache file not found or corrupted. Rebuilding...")
     all_cidr_strings: list[str] = []
 
-    # 1. Сети из asn_prefixes.py (RIPEstat API)
+    # 1. Сети из ASN_LIST (RIPEstat API)
     for asn_cidrs in EXTRA_BLOCKED_CIDR.values():
         all_cidr_strings.extend(asn_cidrs)
 
-    # 2. Сети из hardcoded_cidr.py
+    # 2. Сети из HARDCODED_CIDR
     for asn_cidrs in HARDCODED_CIDR.values():
         all_cidr_strings.extend(asn_cidrs)
 
@@ -172,7 +128,6 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
             "_v": _CACHE_FORMAT_VERSION,
             "_asn_key": current_asn_key,
             "_hardcoded_key": current_hardcoded_key,
-            "_source_hash": current_source_hash,
             "_cidrs": [str(n) for n in collapsed],
         }
         with open(ASN_CACHE_FILE, "w", encoding="utf-8") as f:
@@ -240,9 +195,6 @@ class RKNBlockList:
 
 def load_rkn_list(session) -> RKNBlockList:
     """Возвращает RKNBlockList на основе оптимизированного кэша хостинг-провайдеров."""
-    # Проверяем, изменились ли исходные файлы — если да, удаляем *_working.json и кэш
-    _flush_working_nodes_if_sources_changed()
-
     all_networks: list[ipaddress.IPv4Network | ipaddress.IPv6Network] = []
 
     # Интеграция оптимизированных тяжелых подсетей (12 провайдеров РКН + Macarne)

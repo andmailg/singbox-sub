@@ -5,6 +5,9 @@ import json
 import os
 from datetime import datetime, timezone
 
+from src.rkn_filter import load_rkn_list, resolve_and_check, open_geoip_reader
+from src.common import session as http_session
+
 _WORKING_FILE = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
     "vless_xhttp_working.json",
@@ -12,11 +15,12 @@ _WORKING_FILE = os.path.join(
 
 
 def _asn_key() -> str:
-    """Хеш текущего ASN_LIST для валидации working-файла."""
+    """Хеш ASN_LIST + HARDCODED_CIDR для валидации working-файла."""
     try:
-        from src.rkn_filter.asn_prefixes import ASN_LIST
+        from src.rkn_filter.rkn_config import ASN_LIST, HARDCODED_CIDR
         raw = "|".join(sorted(ASN_LIST))
-        return hashlib.sha256(raw.encode()).hexdigest()[:16]
+        hc = "|".join(f"{asn}={','.join(sorted(cidrs))}" for asn, cidrs in sorted(HARDCODED_CIDR.items()))
+        return hashlib.sha256((raw + "|" + hc).encode()).hexdigest()[:16]
     except Exception:
         return ""
 
@@ -30,9 +34,53 @@ def _cache_key(node: dict) -> str:
 def load_working_nodes(path: str = _WORKING_FILE) -> list[dict]:
     """Загружает список рабочих нод из JSON-файла.
     
-    Если _asn_key не совпадает с текущим ASN_LIST — возвращает пустой список.
+    Если _asn_key не совпадает — фильтрует ноды по обновлённому RKN-кэшу.
     """
     if not os.path.exists(path):
+        return []
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        
+        cached_key = data.get("_asn_key", "")
+        current_key = _asn_key()
+        
+        nodes = data.get("nodes", [])
+        for node in nodes:
+            sub_ids = node.get("_sub_ids")
+            if isinstance(sub_ids, list):
+                node["_sub_ids"] = set(sub_ids)
+        
+        # Если ключ совпадает — возвращаем как есть
+        if not cached_key or cached_key == current_key:
+            return nodes
+        
+        # Ключ не совпадает — фильтруем ноды по обновлённому RKN-кэшу
+        print(f"  [Working] {os.path.basename(path)} ASN key mismatch, filtering nodes...")
+        
+        # Загружаем RKNBlockList (перестроит кэш если нужно)
+        rkn = load_rkn_list(http_session)
+        geo_reader = open_geoip_reader()
+        
+        filtered = []
+        removed_count = 0
+        for node in nodes:
+            server = node.get("server", "")
+            result = resolve_and_check(server, rkn, geo_reader)
+            if result == "rkn":
+                removed_count += 1
+            elif result is None:
+                # Не удалось определить IP — оставляем
+                filtered.append(node)
+            else:
+                filtered.append(node)
+        
+        if removed_count:
+            print(f"  [Working] Removed {removed_count} RKN-blocked node(s)")
+            save_working_nodes(filtered, path)
+        
+        return filtered
+    except Exception:
         return []
     try:
         with open(path, "r", encoding="utf-8") as f:

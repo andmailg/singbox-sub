@@ -5,19 +5,7 @@ import time
 
 import requests
 
-
-ASN_LIST = [
-    "AS12876",
-    "AS13335",
-    "AS16276",
-    "AS20473",
-    "AS24940",
-    "AS31898",
-    "AS54113",
-    "AS63023",
-    "AS63949",
-    "AS141995"
-]
+from .rkn_config import ASN_LIST
 
 API_URL = "https://stat.ripe.net/data/announced-prefixes/data.json"
 
