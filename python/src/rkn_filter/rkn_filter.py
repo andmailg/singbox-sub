@@ -25,13 +25,17 @@ ASN_CACHE_FILE = os.path.join(_RKN_FILTER_DIR, "rkn_networks_cache.json")
 _GEOIP_PATH = os.path.normpath(os.path.join(_RKN_FILTER_DIR, "..", "..", "GeoLite2-Country.mmdb"))
 
 # Версия схемы кэша (увеличивать при изменении формата)
-_CACHE_FORMAT_VERSION = 3
+_CACHE_FORMAT_VERSION = 2
 
 
-def _fetch_aws_networks(session, timeout: int = 15) -> list[str]:
-    """Напрямую выкачивает легковесный официальный JSON диапазонов Amazon AWS (вместо перебора ASN)."""
+def _fetch_aws_networks(session, timeout: int = 15) -> tuple[list[str], str]:
+    """Напрямую выкачивает легковесный официальный JSON диапазонов Amazon AWS (вместо перебора ASN).
+
+    Returns:
+        Кортеж (список CIDR-строк, SHA256 хеш всех CIDR для инвалидации кэша).
+    """
     url = "https://ip-ranges.amazonaws.com/ip-ranges.json"
-    raw_prefixes = []
+    raw_prefixes: list[str] = []
     try:
         resp = session.get(url, timeout=timeout)
         if resp.status_code == 200:
@@ -49,7 +53,37 @@ def _fetch_aws_networks(session, timeout: int = 15) -> list[str]:
             print(f"  [AWS] Directly loaded {len(raw_prefixes)} networks from official AWS JSON")
     except Exception as e:
         print(f"  [WARN] Failed to fetch official AWS IP ranges: {e}")
-    return raw_prefixes
+    # Хеш для инвалидации кэша при изменении AWS диапазонов
+    aws_key = hashlib.sha256("|".join(sorted(raw_prefixes)).encode()).hexdigest()[:16]
+    return raw_prefixes, aws_key
+
+
+def _fetch_cloudflare_networks(session, timeout: int = 15) -> tuple[list[str], str]:
+    """Выкачивает официальные диапазоны Cloudflare (IPv4 и IPv6) из текстовых файлов.
+
+    Returns:
+        Кортеж (список CIDR-строк, SHA256 хеш всех CIDR для инвалидации кэша).
+    """
+    raw_prefixes: list[str] = []
+    urls = [
+        "https://www.cloudflare.com/ips-v4",
+        "https://www.cloudflare.com/ips-v6",
+    ]
+    for url in urls:
+        try:
+            resp = session.get(url, timeout=timeout)
+            if resp.status_code == 200:
+                for line in resp.text.splitlines():
+                    cidr = line.strip()
+                    if cidr and "/" in cidr:
+                        raw_prefixes.append(cidr)
+        except Exception as e:
+            print(f"  [WARN] Failed to fetch Cloudflare ranges from {url}: {e}")
+    if raw_prefixes:
+        print(f"  [CF] Loaded {len(raw_prefixes)} networks from official Cloudflare")
+    # Хеш для инвалидации кэша при изменении Cloudflare диапазонов
+    cf_key = hashlib.sha256("|".join(sorted(raw_prefixes)).encode()).hexdigest()[:16]
+    return raw_prefixes, cf_key
 
 
 def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipaddress.IPv6Network]:
@@ -60,6 +94,11 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
         .encode()
     ).hexdigest()[:16]
 
+    # Загружаем AWS для вычисления ключа
+    aws_cidrs, current_aws_key = _fetch_aws_networks(session)
+    # Загружаем Cloudflare для вычисления ключа
+    cf_cidrs, current_cf_key = _fetch_cloudflare_networks(session)
+
     if os.path.exists(ASN_CACHE_FILE):
         try:
             with open(ASN_CACHE_FILE, "r", encoding="utf-8") as f:
@@ -69,7 +108,9 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
             if isinstance(cache_data, dict) and cache_data.get("_v") == _CACHE_FORMAT_VERSION:
                 cached_asn = cache_data.get("_asn_key")
                 cached_hardcoded = cache_data.get("_hardcoded_key")
-                if cached_asn == current_asn_key and cached_hardcoded == current_hardcoded_key:
+                cached_aws = cache_data.get("_aws_key")
+                cached_cf = cache_data.get("_cf_key")
+                if cached_asn == current_asn_key and cached_hardcoded == current_hardcoded_key and cached_aws == current_aws_key and cached_cf == current_cf_key:
                     cached_strings = cache_data.get("_cidrs", [])
                     print(f"  [Cache] Loaded {len(cached_strings)} extra networks from local {ASN_CACHE_FILE}")
                     return [ipaddress.ip_network(cidr, strict=False) for cidr in cached_strings]
@@ -79,6 +120,10 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
                         reasons.append("ASN_LIST")
                     if cached_hardcoded != current_hardcoded_key:
                         reasons.append("HARDCODED")
+                    if cached_aws != current_aws_key:
+                        reasons.append("AWS")
+                    if cached_cf != current_cf_key:
+                        reasons.append("CF")
                     print(f"  [Cache] {'+'.join(reasons) if reasons else 'keys'} changed, rebuilding...")
             else:
                 print(f"  [Cache] Legacy format, rebuilding...")
@@ -98,7 +143,10 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
         all_cidr_strings.extend(asn_cidrs)
 
     # 3. Официальный список AWS
-    all_cidr_strings.extend(_fetch_aws_networks(session))
+    all_cidr_strings.extend(aws_cidrs)
+
+    # 4. Официальный список Cloudflare
+    all_cidr_strings.extend(cf_cidrs)
 
     # Дедупликация и валидация
     seen: set[str] = set()
@@ -130,6 +178,8 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
             "_v": _CACHE_FORMAT_VERSION,
             "_asn_key": current_asn_key,
             "_hardcoded_key": current_hardcoded_key,
+            "_aws_key": current_aws_key,
+            "_cf_key": current_cf_key,
             "_cidrs": [str(n) for n in collapsed],
         }
         with open(ASN_CACHE_FILE, "w", encoding="utf-8") as f:
