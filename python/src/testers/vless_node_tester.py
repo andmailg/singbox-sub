@@ -344,7 +344,7 @@ def test_vless_connectivity(
             asn = resolve_asn(server)
             sub_ids = node.get("_sub_ids", set())
             sub_ids_str = f" [{','.join(sorted(sub_ids))}]" if sub_ids else ""
-            display = f"{server}:{port} AS{asn}" if asn else f"{server}:{port}"
+            display = f"{server}:{port} {asn}" if asn else f"{server}:{port}"
             try:
                 result = future.result()
                 if result is not None:
