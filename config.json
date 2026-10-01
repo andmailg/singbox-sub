@@ -25,9 +25,9 @@
         "🇨🇭node-1",
         "🇩🇪node-2",
         "🇩🇪node-3",
-        "🇫🇮node-4",
-        "🇳🇱node-5",
-        "🇵🇱node-6",
+        "🇩🇪node-4",
+        "🇫🇮node-5",
+        "🇳🇱node-6",
         "🇷🇴node-7",
         "🇷🇴node-8",
         "🇷🇴node-9",
@@ -43,9 +43,9 @@
         "🇨🇭node-1",
         "🇩🇪node-2",
         "🇩🇪node-3",
-        "🇫🇮node-4",
-        "🇳🇱node-5",
-        "🇵🇱node-6",
+        "🇩🇪node-4",
+        "🇫🇮node-5",
+        "🇳🇱node-6",
         "🇷🇴node-7",
         "🇷🇴node-8",
         "🇷🇴node-9",
@@ -85,14 +85,28 @@
     {
       "type": "hysteria2",
       "tag": "🇩🇪node-3",
-      "server": "de2.nextgencloud.tech",
+      "server": "dehys.superbuba.top",
       "server_port": 443,
-      "password": "d9090ce9-388b-45b9-9e84-64eac5522b8a",
+      "password": "d4cae7df-50a1-428c-bd62-881c8f3bbd90",
       "tls": {
         "enabled": true,
-        "server_name": "de2.nextgencloud.tech",
+        "server_name": "dehys.superbuba.top"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇩🇪node-4",
+      "server": "meow-berlin.nethcloud.top",
+      "server_port": 443,
+      "password": "4cbefb4d-328c-411d-bf76-780df1082df8",
+      "tls": {
+        "enabled": true,
+        "server_name": "meow-berlin.nethcloud.top",
         "alpn": [
-          "h3"
+          "h2",
+          "http/1.1"
         ]
       },
       "up_mbps": 20,
@@ -100,7 +114,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮node-4",
+      "tag": "🇫🇮node-5",
       "server": "fi01.clgate.network",
       "server_port": 443,
       "password": "06e88dd6-e264-4981-8c26-d7ab17348ab2",
@@ -113,32 +127,13 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇳🇱node-5",
-      "server": "nl.nextgencloud.tech",
-      "server_port": 4433,
-      "password": "d9090ce9-388b-45b9-9e84-64eac5522b8a",
-      "tls": {
-        "enabled": true,
-        "server_name": "nl.nextgencloud.tech",
-        "alpn": [
-          "h3"
-        ]
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇵🇱node-6",
-      "server": "pl.nextgencloud.tech",
+      "tag": "🇳🇱node-6",
+      "server": "nl2.nextgencloud.tech",
       "server_port": 443,
       "password": "d9090ce9-388b-45b9-9e84-64eac5522b8a",
       "tls": {
         "enabled": true,
-        "server_name": "pl.nextgencloud.tech",
-        "alpn": [
-          "h3"
-        ]
+        "server_name": "nl2.nextgencloud.tech"
       },
       "up_mbps": 20,
       "down_mbps": 20
