@@ -42,7 +42,7 @@ jobs:
           # Генерирует файлы в корне репозитория:
           #   vless_tcp_tun.json — sing-box TUN конфиг
           #   vless_tcp.txt      — V2Ray-ссылки
-          python vless_tcp_manage.py run --timeout 3 --geoip-filter "" --rkn-filter 1
+          python vless_tcp_manage.py run --timeout 3 --geoip-filter "" --rkn-filter 0
           cd ..
 
       - name: Commit and push if changed
