@@ -36,7 +36,7 @@ def sort_networks(prefixes: list[str]) -> list[str]:
 
 
 def fetch_all() -> dict[str, list[str]]:
-    """Собирает и возвращает _EXTRA_BLOCKED_CIDR."""
+    """Собирает ASN-префиксы из RIPEstat API."""
     print("=" * 60)
     print("STEP 0: Fetch ASN prefixes from RIPEstat API")
     print("=" * 60)
@@ -105,7 +105,4 @@ try:
     ASN_CIDR: dict[str, list[str]] = fetch_all()
 except Exception:
     # Fallback: пустой словарь, если API недоступен
-    ASN_CIDR = {}
-
-# Для обратной совместимости
-EXTRA_BLOCKED_CIDR = ASN_CIDR
+    ASN_CIDR = {}
