@@ -42,6 +42,7 @@ def cmd_merge(args):
 
     port_whitelist = tuple(int(p) for p in args.ports.split(",")) if args.ports else None
     geoblock_countries = tuple(c.strip().lower() for c in args.geoblock.split(",")) if args.geoblock else None
+    skip_rkn = args.no_rkn
 
     # Кастомный export_func: сохраняет ноды в vless_tcp_working.json без нумерации
     def _save_to_working(outbounds, _output_file):
@@ -61,6 +62,7 @@ def cmd_merge(args):
         reality=True,
         tester_func=None,  # тестирование отдельно через cmd_test (если нужно)
         geoblock_countries=geoblock_countries,
+        skip_rkn=skip_rkn,
     )
 
 
@@ -278,6 +280,8 @@ Examples:
                             help="Export formats (default: tun,xray): tun,xray,router")
     run_parser.add_argument("--geoblock", type=str, default=None,
                             help="Comma-separated list of country codes to block (e.g. 'ru,ir')")
+    run_parser.add_argument("--no-rkn", action="store_true", default=False,
+                            help="Skip RKN blocklist filtering")
 
     # merge
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
@@ -285,6 +289,8 @@ Examples:
                               help="Comma-separated port whitelist (default: all ports)")
     merge_parser.add_argument("--geoblock", type=str, default=None,
                               help="Comma-separated list of country codes to block (e.g. 'ru,ir')")
+    merge_parser.add_argument("--no-rkn", action="store_true", default=False,
+                              help="Skip RKN blocklist filtering")
 
     # test
     test_parser = subparsers.add_parser("test", help="Test all nodes and remove dead ones")

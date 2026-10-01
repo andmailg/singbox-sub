@@ -172,6 +172,7 @@ def _rkn_geoip_filter(
     outbounds: list[dict],
     prefix: str = "",
     geoblock_countries: tuple[str, ...] | None = None,
+    skip_rkn: bool = False,
 ) -> list[dict]:
     """RKN + GeoIP фильтрация через resolve_and_check.
 
@@ -180,10 +181,14 @@ def _rkn_geoip_filter(
         prefix: префикс для логов.
         geoblock_countries: кортеж ISO-кодов стран для блокировки (например ("ru", "ir")).
             Если None или пустой — фильтрация по странам отключена.
+        skip_rkn: если True — пропускает проверку RKN (остается только GeoIP).
     """
     from src.common import session
 
-    blocked_networks = load_rkn_list(session)
+    if skip_rkn:
+        print(f"{prefix}RKN filtering is SKIPPED.")
+    else:
+        blocked_networks = load_rkn_list(session)
     reader = open_geoip_reader()
 
     if reader:
@@ -200,7 +205,7 @@ def _rkn_geoip_filter(
             executor.submit(
                 resolve_and_check,
                 o.get("server", "").strip("[]"),
-                blocked_networks,
+                blocked_networks if not skip_rkn else None,
                 reader,
                 geoblock_countries,
             ): idx
@@ -278,6 +283,7 @@ def run_pipeline(
     test_timeout: int = 5,
     reality: bool = False,
     geoblock_countries: tuple[str, ...] | None = None,
+    skip_rkn: bool = False,
 ) -> None:
     """Запускает полный pipeline сборки конфига.
 
@@ -298,6 +304,7 @@ def run_pipeline(
         reality: если True — для reality-протоколов не фильтрует SNI по FAKE_DOMAINS.
         geoblock_countries: кортеж ISO-кодов стран для блокировки (например ("ru", "ir")).
             Если None или пустой — фильтрация по странам отключена.
+        skip_rkn: если True — пропускает проверку RKN.
     """
     print(f"[{output_file}] Starting pipeline (exporter={exporter})...")
 
@@ -342,7 +349,7 @@ def run_pipeline(
         return
 
     # 4. RKN + GeoIP фильтрация
-    outbounds = _rkn_geoip_filter(outbounds, prefix=prefix, geoblock_countries=geoblock_countries)
+    outbounds = _rkn_geoip_filter(outbounds, prefix=prefix, geoblock_countries=geoblock_countries, skip_rkn=skip_rkn)
 
     if not outbounds:
         print(f"{prefix}Error: No valid proxy nodes left after RKN+GeoIP filtration!")

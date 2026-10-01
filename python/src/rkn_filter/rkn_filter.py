@@ -346,7 +346,7 @@ def resolve_asn(server: str) -> str | None:
 
 def resolve_and_check(
     server: str,
-    blocked_networks: RKNBlockList,
+    blocked_networks: RKNBlockList | None,
     reader=None,
     geoblock_countries: tuple[str, ...] | None = None,
 ) -> dict | None | str:
@@ -354,7 +354,7 @@ def resolve_and_check(
 
     Args:
         server: IP или домен сервера.
-        blocked_networks: RKNBlockList для проверки RKN.
+        blocked_networks: RKNBlockList для проверки RKN. Если None — проверка RKN пропускается.
         reader: GeoIP reader (MaxMind).
         geoblock_countries: кортеж ISO-кодов стран для блокировки (например ("ru", "ir")).
             Если None или пустой — фильтрация по странам отключена.
@@ -377,7 +377,7 @@ def resolve_and_check(
     except ValueError:
         return None
 
-    if blocked_networks.is_blocked(node_ip_str):
+    if blocked_networks is not None and blocked_networks.is_blocked(node_ip_str):
         return "rkn"
 
     country = None
