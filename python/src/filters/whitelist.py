@@ -33,10 +33,12 @@ def load_whitelist() -> dict[str, list[dict]]:
 
 
 def save_whitelist(whitelist: dict[str, list[dict]]) -> None:
-    """Сохраняет whitelist в JSON-файл."""
+    """Сохраняет whitelist в JSON-файл с подсчётом количества нод."""
+    counts = {proto: len(entries) for proto, entries in whitelist.items()}
     data = {
         "whitelist": {
-            proto: entries for proto, entries in whitelist.items()
+            **{proto: entries for proto, entries in whitelist.items()},
+            **{f"{proto}_count": counts.get(proto, 0) for proto in whitelist},
         },
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
