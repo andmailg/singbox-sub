@@ -5,7 +5,7 @@ import json
 import os
 from datetime import datetime, timezone
 
-from src.rkn_filter import load_rkn_list
+from src.rkn_filter import load_rkn_list, ASN_LIST, CIDR_LIST
 from src.rkn_filter.rkn_filter import check_rkn_blocked
 from src.common import session as http_session
 
@@ -17,13 +17,10 @@ _WORKING_FILE = os.path.join(
 
 def _asn_key() -> str:
     """Хеш ASN_LIST + CIDR_LIST для валидации working-файла."""
-    try:
-        from src.rkn_filter.rkn_config import ASN_LIST, CIDR_LIST
-        raw = "|".join(sorted(ASN_LIST))
-        hc = "|".join(f"{asn}={','.join(sorted(cidrs))}" for asn, cidrs in sorted(CIDR_LIST.items()))
-        return hashlib.sha256((raw + "|" + hc).encode()).hexdigest()[:16]
-    except Exception:
-        return ""
+    raw = "|".join(sorted(ASN_LIST))
+    hc = "|".join(f"{asn}={','.join(sorted(cidrs))}" for asn, cidrs in sorted(CIDR_LIST.items()))
+    return hashlib.sha256((raw + "|" + hc).encode()).hexdigest()[:16]
+
 
 def _cache_key(node: dict) -> str:
     """Уникальный ключ для ноды: server:port:password."""
