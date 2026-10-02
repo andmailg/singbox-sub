@@ -263,8 +263,7 @@ def load_rkn_list(session) -> RKNBlockList:
     return RKNBlockList(collapsed)
 
 
-# GeoIP functions moved to geoip_filter.py
-from .geoip_filter import open_geoip_reader, resolve_country
+
 
 
 def check_rkn_blocked(

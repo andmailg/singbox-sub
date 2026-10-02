@@ -1,6 +1,6 @@
 """RKN Blocklist + GeoIP фильтрация для VLESS WS/HTTP нод."""
 
-from .geoip_filter import check_geoip, open_geoip_reader, resolve_country
+from ..geoip_filter import check_geoip, open_geoip_reader, resolve_country
 
 # Re-export from testers for backward compatibility
 from ..testers.asn_resolver import resolve_asn
