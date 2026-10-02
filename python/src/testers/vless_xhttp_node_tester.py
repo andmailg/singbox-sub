@@ -363,6 +363,7 @@ def test_vless_xhttp_connectivity(
     sub_ids_summary = f" (subs: {','.join(sorted(all_sub_ids))})" if all_sub_ids else ""
 
     if failed:
+        print()
         print(f"{prefix}VLESS xhttp connectivity: {len(working)} working / {failed} failed ({len(outbounds)} total){sub_ids_summary}.")
 
     return working
