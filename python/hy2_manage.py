@@ -101,7 +101,7 @@ def cmd_test(args):
     all_to_test = active_nodes + pending_nodes
     working, failed, sub_ids_summary = test_hy2_connectivity(
         all_to_test,
-        timeout=args.timeout,
+        timeout=args.test_timeout,
         prefix="",
     )
 
@@ -288,7 +288,7 @@ Examples:
     run_parser = subparsers.add_parser("run", help="Full pipeline: merge -> test -> export")
     run_parser.add_argument("--ports", type=str, default=None,
                             help="Comma-separated port whitelist (default: all ports)")
-    run_parser.add_argument("--timeout", type=int, default=10, help="Test timeout per node (seconds)")
+    run_parser.add_argument("--test-timeout", type=int, default=10, help="Test timeout per node (seconds)")
     run_parser.add_argument("--export", type=str, default="tun,xray",
                             help="Export formats (default: tun,xray): tun,xray,router")
     run_parser.add_argument("--geoip-filter", type=str, default=None,
@@ -309,7 +309,7 @@ Examples:
 
     # test
     test_parser = subparsers.add_parser("test", help="Test all nodes and remove dead ones")
-    test_parser.add_argument("--timeout", type=int, default=5, help="Test timeout per node (seconds)")
+    test_parser.add_argument("--test-timeout", type=int, default=5, help="Test timeout per node (seconds)")
 
     # export
     export_parser = subparsers.add_parser("export", help="Export working nodes to sing-box config")
