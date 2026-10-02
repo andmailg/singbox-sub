@@ -11,7 +11,7 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
-GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "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")
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN","")
 
 
 def parse_http_date(date_str: str) -> str | None:
