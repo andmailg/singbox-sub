@@ -13,7 +13,7 @@ except ImportError:
 from src.common import is_valid_ip, resolve_domain
 
 _FILTERS_DIR = os.path.dirname(os.path.abspath(__file__))
-_GEOIP_PATH = os.path.normpath(os.path.join(_FILTERS_DIR, "..", "GeoLite2-Country.mmdb"))
+_GEOIP_PATH = os.path.normpath(os.path.join(_FILTERS_DIR, "..", "..", "GeoLite2-Country.mmdb"))
 
 
 def open_geoip_reader(mmdb_path: str = _GEOIP_PATH):
