@@ -11,7 +11,7 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
-GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "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")
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "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")
 
 
 def parse_http_date(date_str: str) -> str | None:
@@ -112,7 +112,7 @@ def main():
     print(f"Проверка {len(urls)} подписок...\n")
 
     # Сначала проверяем все URL
-    print(f"{'ID':<5} {'Статус':<7} {'Last-Modified':<25} {'Размер':<15} {'URL'}")
+    print(f"{'ID':<5} {'Last-Modified':<25} {'URL'}")
     print("-" * 120)
 
     results = []
@@ -123,29 +123,35 @@ def main():
 
     results.sort(key=lambda x: int(x["key"]))
 
-    # Собираем GitHub URL для дополнительной проверки
+    # Собираем GitHub URL и получаем даты коммитов
+    github_dates = {}
     github_urls = []
     for r in results:
-        status = str(r["status"]) if r["status"] else "ERR"
-        last_mod = r["last_modified"] or "-"
-        size = "-"
-        if r["content_length"]:
-            size = f"{int(r['content_length']) / 1024:.1f} KB"
-        error = f" ({r['error']})" if r["error"] else ""
-        print(f"{r['key']:<5} {status:<7} {last_mod:<25} {size:<15} {r['url']}{error}")
-
-        # Проверяем, является ли URL GitHub
         gh_info = extract_github_info(r["url"])
         if gh_info:
             github_urls.append((r["key"], gh_info))
 
-    # Для GitHub URL получаем дату последнего коммита
     if github_urls:
         token_status = "с токеном" if GITHUB_TOKEN else "без токена (лимит 60/час)"
-        print(f"\nПолучение дат последнего коммита для {len(github_urls)} GitHub URL ({token_status})...")
+        print(f"Получение дат последнего коммита для {len(github_urls)} GitHub URL ({token_status})...")
         for key, gh_info in github_urls:
             commit_date = get_github_last_commit(gh_info["owner"], gh_info["repo"], gh_info["branch"])
-            print(f"  #{key}: {gh_info['owner']}/{gh_info['repo']}@{gh_info['branch']} -> {commit_date}")
+            github_dates[key] = commit_date
+
+    # Выводим таблицу
+    for r in results:
+        key = r["key"]
+        status = str(r["status"]) if r["status"] else "ERR"
+        size = "-"
+        if r["content_length"]:
+            size = f"{int(r['content_length']) / 1024:.1f} KB"
+        error = f" ({r['error']})" if r["error"] else ""
+        # Для GitHub URL используем дату коммита, иначе Last-Modified
+        if key in github_dates:
+            last_mod = github_dates[key]
+        else:
+            last_mod = r["last_modified"] or "-"
+        print(f"{key:<5} {last_mod:<25} {r['url']}{error}")
 
     # Сводка
     print("\n" + "=" * 120)
