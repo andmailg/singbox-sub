@@ -29,10 +29,11 @@ from src.common import (
     resolve_server,
     country_code_to_flag,
 )
-from src.rkn_filter import resolve_asn, resolve_country
+from src.testers.asn_resolver import resolve_asn
+from src.filters.geoip_filter import resolve_country
 from src.testers.hy2_node_tester import test_hy2_connectivity
-from src.blacklist import add_to_blacklist
-from src.whitelist import load_whitelist, is_whitelisted, add_to_whitelist, get_whitelist_nodes
+from src.filters.blacklist import add_to_blacklist
+from src.filters.whitelist import load_whitelist, is_whitelisted, add_to_whitelist, get_whitelist_nodes
 
 
 def cmd_merge(args):

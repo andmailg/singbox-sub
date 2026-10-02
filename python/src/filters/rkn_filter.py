@@ -11,7 +11,7 @@ from collections import OrderedDict
 from pathlib import Path
 
 from src.common import is_valid_ip, resolve_domain, session
-from .asn_fetcher import ASN_CIDR
+from .rkn_asn_fetcher import ASN_CIDR
 from .rkn_config import ASN_LIST, CIDR_LIST
 
 # Файл локального кэша для тяжелых списков ASN

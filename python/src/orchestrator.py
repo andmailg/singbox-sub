@@ -13,7 +13,7 @@ from src.common import (
     resolve_server,
     should_accept_outbound,
 )
-from src.rkn_filter import (
+from src.filters.rkn_filter import (
     load_rkn_list,
     open_geoip_reader,
 )

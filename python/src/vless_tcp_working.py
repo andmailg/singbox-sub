@@ -5,8 +5,11 @@ import json
 import os
 from datetime import datetime, timezone
 
-from src.rkn_filter import load_rkn_list, ASN_LIST, CIDR_LIST
-from src.rkn_filter.rkn_filter import check_rkn_blocked
+from src.filters.rkn_filter import (
+    load_rkn_list,
+    check_rkn_blocked,
+)
+from src.filters.rkn_config import ASN_LIST, CIDR_LIST
 from src.common import session as http_session
 
 _WORKING_FILE = os.path.join(
