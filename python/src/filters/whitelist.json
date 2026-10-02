@@ -335,6 +335,55 @@
             }
           }
         }
+      },
+      {
+        "key": "151.101.213.164:443:eb98ab60-f16d-4662-a740-c89307400939:/",
+        "node": {
+          "type": "vless",
+          "tag": "🇺🇸node-2264",
+          "server": "151.101.213.164",
+          "server_port": 443,
+          "uuid": "eb98ab60-f16d-4662-a740-c89307400939",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "packet-up",
+            "host": [
+              "fretranxrabet.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "accounts.fastly.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          }
+        }
+      },
+      {
+        "key": "207.246.104.91:37379:a4bec43e-8073-4725-b307-47edad331fee:/",
+        "node": {
+          "type": "vless",
+          "tag": "🇺🇸node-9",
+          "server": "207.246.104.91",
+          "server_port": 37379,
+          "uuid": "a4bec43e-8073-4725-b307-47edad331fee",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "xuius.907737.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -1725,7 +1774,7 @@
         }
       }
     ],
-    "vless_xhttp_count": 13,
+    "vless_xhttp_count": 15,
     "vless_tcp_count": 45,
     "hy2_count_count": 0,
     "vless_xhttp_count_count": 0,
@@ -1901,7 +1950,13 @@
     "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
     "vless_xhttp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
     "vless_tcp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
-    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0
+    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_xhttp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_tcp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_xhttp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_tcp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0
   },
-  "updated": "2026-10-02T21:44:53Z"
+  "updated": "2026-10-02T23:51:58Z"
 }
