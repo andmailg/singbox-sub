@@ -11,8 +11,8 @@ except ImportError:
 
 from src.common import is_valid_ip, resolve_domain
 
-_RKN_FILTER_DIR = os.path.dirname(os.path.abspath(__file__))
-_ASN_DB_PATH = os.path.normpath(os.path.join(_RKN_FILTER_DIR, "..", "rkn_filter", "GeoLite2-ASN.mmdb"))
+_PYTHON_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+_ASN_DB_PATH = os.path.join(_PYTHON_DIR, "GeoLite2-ASN.mmdb")
 
 
 def resolve_asn(server: str) -> str | None:
