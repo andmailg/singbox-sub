@@ -284,7 +284,7 @@ def test_vless_xhttp_connectivity(
     outbounds: list[dict],
     timeout: int = 5,
     prefix: str = "",
-) -> list[dict]:
+) -> tuple[list[dict], int, str]:
     """
     Проверяет работоспособность VLESS xhttp нод через Xray CLI + curl.
     Возвращает только рабочие ноды (с добавленным полем _latency_ms).
@@ -362,8 +362,4 @@ def test_vless_xhttp_connectivity(
         all_sub_ids.update(w.get("_sub_ids", set()))
     sub_ids_summary = f" (subs: {','.join(sorted(all_sub_ids))})" if all_sub_ids else ""
 
-    if failed:
-        print()
-        print(f"{prefix}VLESS xhttp connectivity: {len(working)} working / {failed} failed ({len(outbounds)} total){sub_ids_summary}.")
-
-    return working
+    return working, failed, sub_ids_summary

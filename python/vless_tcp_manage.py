@@ -97,7 +97,7 @@ def cmd_test(args):
     print(f"Active: {len(active_nodes)}, Pending: {len(pending_nodes)}")
 
     all_to_test = active_nodes + pending_nodes
-    working = test_vless_connectivity(
+    working, failed, sub_ids_summary = test_vless_connectivity(
         all_to_test,
         timeout=args.timeout,
         prefix="",
@@ -119,6 +119,10 @@ def cmd_test(args):
         else:
             node["_pending_since"] = now_ts
             new_pending.append(node)
+
+    if failed:
+        print()
+        print(f"VLESS connectivity: {len(working)} working / {failed} failed ({len(all_to_test)} total){sub_ids_summary}.")
 
     save_working_nodes(new_working + new_pending)
     print(f"\nSaved {len(new_working)} working, {len(new_pending)} pending nodes to vless_tcp_working.json")
