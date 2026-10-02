@@ -110,7 +110,7 @@ def cmd_test(args):
     new_working = []
     new_pending = []
 
-    PENDING_REMOVAL_THRESHOLD = 3 * 24 * 3600  # 3 суток в pending перед добавлением в blacklist
+    PENDING_REMOVAL_THRESHOLD = args.blacklist_timeout * 24 * 3600  # N суток в pending перед добавлением в blacklist
 
     for node in nodes:
         key = _cache_key(node)
@@ -295,6 +295,8 @@ Examples:
                             help="Comma-separated country codes (e.g. --geoip-filter ru,ir)")
     run_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=0,
                             help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 1)")
+    run_parser.add_argument("--blacklist-timeout", type=int, default=3,
+                            help="Days in pending before adding to blacklist (default: 3)")
 
     # merge
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
