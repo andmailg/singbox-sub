@@ -31,6 +31,7 @@ from src.common import (
 )
 from src.rkn_filter import resolve_asn, resolve_country
 from src.testers.vless_xhttp_node_tester import test_vless_xhttp_connectivity
+from src.blacklist import add_to_blacklist
 
 
 def cmd_merge(args):
@@ -109,6 +110,8 @@ def cmd_test(args):
     new_working = []
     new_pending = []
 
+    PENDING_REMOVAL_THRESHOLD = 3 * 24 * 3600  # 3 суток в pending перед добавлением в blacklist
+
     for node in nodes:
         key = _cache_key(node)
         if key in working_keys:
@@ -116,7 +119,12 @@ def cmd_test(args):
             node.pop("_pending_since", None)
             new_working.append(node)
         elif "_pending_since" in node:
-            print(f"  Removing failed pending node: {node.get('server')}:{node.get('server_port')}")
+            pending_since = node.get("_pending_since", 0)
+            if (now_ts - pending_since) > PENDING_REMOVAL_THRESHOLD:
+                print(f"  Adding failed pending node to blacklist: {node.get('server')}:{node.get('server_port')}")
+                add_to_blacklist(node, "vless_xhttp")
+            else:
+                new_pending.append(node)
         else:
             node["_pending_since"] = now_ts
             new_pending.append(node)

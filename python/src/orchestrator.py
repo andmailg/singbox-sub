@@ -19,6 +19,7 @@ from src.rkn_filter import (
 )
 from src.rkn_filter.geoip_filter import check_geoip
 from src.rkn_filter.rkn_filter import check_rkn_blocked
+from src.blacklist import load_blacklist, is_blacklisted
 
 
 SOURCES_JSON_PATH = "./sub_urls.json"
@@ -387,7 +388,20 @@ def run_pipeline(
         print(f"{prefix}Error: No valid proxy nodes left after RKN+GeoIP filtration!")
         return
 
-    # 4.5. Connectivity test (если указан tester_func)
+    # 4.5. Blacklist фильтрация
+    blacklist = load_blacklist()
+    blacklist_proto = protocol if protocol in ("vless_xhttp", "vless_tcp", "hy2") else None
+    if blacklist_proto and blacklist.get(blacklist_proto):
+        blacklisted = [o for o in outbounds if is_blacklisted(o, blacklist, blacklist_proto)]
+        if blacklisted:
+            print(f"{prefix}Filtered out {len(blacklisted)} node(s) from blacklist.")
+        outbounds = [o for o in outbounds if not is_blacklisted(o, blacklist, blacklist_proto)]
+
+    if not outbounds:
+        print(f"{prefix}Error: No valid proxy nodes left after all filters!")
+        return
+
+    # 4.6. Connectivity test (если указан tester_func)
     if tester_func:
         outbounds = tester_func(
             outbounds,
