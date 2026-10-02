@@ -119,7 +119,7 @@ def cmd_test(args):
 
     now_ts = datetime.now(timezone.utc).timestamp()
     STALE_THRESHOLD = 24 * 3600  # 24 часа
-    WHITELIST_PROMOTION_THRESHOLD = 3 * 24 * 3600  # 3 суток в working перед добавлением в whitelist
+    WHITELIST_PROMOTION_THRESHOLD = args.whitelist_timeout * 24 * 3600  # N суток в working перед добавлением в whitelist
 
     # Загружаем whitelist
     whitelist = load_whitelist()
@@ -336,6 +336,8 @@ Examples:
                             help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 1)")
     run_parser.add_argument("--blacklist-timeout", type=int, default=3,
                             help="Days in pending before adding to blacklist (default: 3)")
+    run_parser.add_argument("--whitelist-timeout", type=int, default=3,
+                            help="Days in working before promoting to whitelist (default: 3)")
 
     # merge
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
