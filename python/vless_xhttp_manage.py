@@ -32,7 +32,7 @@ from src.common import (
 from src.rkn_filter import resolve_asn, resolve_country
 from src.testers.vless_xhttp_node_tester import test_vless_xhttp_connectivity
 from src.blacklist import add_to_blacklist
-from src.whitelist import load_whitelist, is_whitelisted, add_to_whitelist
+from src.whitelist import load_whitelist, is_whitelisted, add_to_whitelist, get_whitelist_nodes
 
 
 def cmd_merge(args):
@@ -70,35 +70,31 @@ def cmd_merge(args):
 
 
 def _readd_whitelisted():
-    """Добавляет узлы из whitelist обратно в working (если их там нет)."""
-    from src.vless_xhttp_working import load_working_nodes, save_working_nodes, merge_new_nodes, _cache_key
-    from src.orchestrator import run_pipeline
+    """Восстанавливает узлы из whitelist в working (полная конфигурация)."""
+    from src.vless_xhttp_working import load_working_nodes, save_working_nodes, merge_new_nodes
 
     whitelist = load_whitelist()
-    whitelist_keys = whitelist.get("vless_xhttp", set())
-    if not whitelist_keys:
+    whitelist_nodes = get_whitelist_nodes("vless_xhttp", whitelist)
+    if not whitelist_nodes:
         print("  Whitelist is empty, skipping.")
         return
 
     existing = load_working_nodes()
     existing_keys = {_cache_key(n) for n in existing}
 
-    # Создаём фиктивные ноды из whitelist-ключей
-    whitelist_nodes = []
-    for key in whitelist_keys:
-        if key not in existing_keys:
-            parts = key.split(":")
-            if len(parts) >= 3:
-                whitelist_nodes.append({
-                    "server": parts[0],
-                    "server_port": int(parts[1]),
-                    "uuid": parts[2],
-                    "transport": {"type": "xhttp", "path": parts[3] if len(parts) > 3 else "/"},
-                    "tag": "whitelist-node",
-                })
+    # Фильтруем только те, которых нет в working
+    new_nodes = [n for n in whitelist_nodes if _cache_key(n) not in existing_keys]
 
-    if not whitelist_nodes:
-        print(f"  All {len(whitelist_keys)} whitelisted node(s) already in working.")
+    if not new_nodes:
+        print(f"  All {len(whitelist_nodes)} whitelisted node(s) already in working.")
+        return
+
+    merged, added = merge_new_nodes(existing, new_nodes)
+    if added:
+        save_working_nodes(merged)
+        print(f"  Re-added {added} whitelisted node(s) to working (total: {len(merged)})")
+    else:
+        print(f"  All {len(whitelist_nodes)} whitelisted node(s) already in working.")
         return
 
     merged, added = merge_new_nodes(existing, whitelist_nodes)
@@ -165,7 +161,7 @@ def cmd_test(args):
             node.pop("_pending_since", None)
             new_working.append(node)
             # Авто-промоут в whitelist если работает > N суток
-            if key not in whitelist.get("vless_xhttp", set()):
+            if not is_whitelisted(node, whitelist, "vless_xhttp"):
                 whitelist_promoted += 1
         elif "_pending_since" in node:
             pending_since = node.get("_pending_since", 0)
@@ -181,8 +177,7 @@ def cmd_test(args):
     # Сохраняем промоут в whitelist
     if whitelist_promoted:
         for w in working:
-            key = _cache_key(w)
-            if key not in whitelist.get("vless_xhttp", set()):
+            if not is_whitelisted(w, whitelist, "vless_xhttp"):
                 add_to_whitelist(w, "vless_xhttp")
         print(f"  Promoted {whitelist_promoted} node(s) to whitelist")
 

@@ -32,7 +32,7 @@ from src.common import (
 from src.rkn_filter import resolve_asn, resolve_country
 from src.testers.hy2_node_tester import test_hy2_connectivity
 from src.blacklist import add_to_blacklist
-from src.whitelist import load_whitelist, is_whitelisted, add_to_whitelist
+from src.whitelist import load_whitelist, is_whitelisted, add_to_whitelist, get_whitelist_nodes
 
 
 def cmd_merge(args):
@@ -68,40 +68,30 @@ def cmd_merge(args):
 
 
 def _readd_whitelisted():
-    """Добавляет узлы из whitelist обратно в working (если их там нет)."""
-    from src.hy2_working import load_working_nodes, save_working_nodes, merge_new_nodes, _cache_key
+    """Восстанавливает узлы из whitelist в working (полная конфигурация)."""
+    from src.hy2_working import load_working_nodes, save_working_nodes, merge_new_nodes
 
     whitelist = load_whitelist()
-    whitelist_keys = whitelist.get("hy2", set())
-    if not whitelist_keys:
+    whitelist_nodes = get_whitelist_nodes("hy2", whitelist)
+    if not whitelist_nodes:
         print("  Whitelist is empty, skipping.")
         return
 
     existing = load_working_nodes()
     existing_keys = {_cache_key(n) for n in existing}
 
-    whitelist_nodes = []
-    for key in whitelist_keys:
-        if key not in existing_keys:
-            parts = key.split(":")
-            if len(parts) >= 3:
-                whitelist_nodes.append({
-                    "server": parts[0],
-                    "server_port": int(parts[1]),
-                    "password": parts[2],
-                    "tag": "whitelist-node",
-                })
+    new_nodes = [n for n in whitelist_nodes if _cache_key(n) not in existing_keys]
 
-    if not whitelist_nodes:
-        print(f"  All {len(whitelist_keys)} whitelisted node(s) already in working.")
+    if not new_nodes:
+        print(f"  All {len(whitelist_nodes)} whitelisted node(s) already in working.")
         return
 
-    merged, added = merge_new_nodes(existing, whitelist_nodes)
+    merged, added = merge_new_nodes(existing, new_nodes)
     if added:
         save_working_nodes(merged)
         print(f"  Re-added {added} whitelisted node(s) to working (total: {len(merged)})")
     else:
-        print(f"  All {len(whitelist_keys)} whitelisted node(s) already in working.")
+        print(f"  All {len(whitelist_nodes)} whitelisted node(s) already in working.")
 
 
 def cmd_test(args):
@@ -162,7 +152,7 @@ def cmd_test(args):
             node.pop("_pending_since", None)
             new_working.append(node)
             # Авто-промоут в whitelist если работает > N суток
-            if key not in whitelist.get("hy2", set()):
+            if not is_whitelisted(node, whitelist, "hy2"):
                 whitelist_promoted += 1
         elif "_pending_since" in node:
             pending_since = node.get("_pending_since", 0)
@@ -178,8 +168,7 @@ def cmd_test(args):
     # Сохраняем промоут в whitelist
     if whitelist_promoted:
         for w in working:
-            key = _cache_key(w)
-            if key not in whitelist.get("hy2", set()):
+            if not is_whitelisted(w, whitelist, "hy2"):
                 add_to_whitelist(w, "hy2")
         print(f"  Promoted {whitelist_promoted} node(s) to whitelist")
 
