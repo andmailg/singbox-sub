@@ -205,6 +205,136 @@
             }
           }
         }
+      },
+      {
+        "key": "91.107.191.188:8443:9f44d517-29f2-4c6d-cc06-a1268f13da58:/Meh?di=443",
+        "node": {
+          "type": "vless",
+          "tag": "🇩🇪node-3",
+          "server": "91.107.191.188",
+          "server_port": 8443,
+          "uuid": "9f44d517-29f2-4c6d-cc06-a1268f13da58",
+          "transport": {
+            "type": "xhttp",
+            "path": "/Meh?di=443",
+            "mode": "auto",
+            "host": [
+              "host.taghvimtime.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "host.taghvimtime.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "cdn.alihapp.com:443:c4394e27-baeb-422d-8905-a93f8e01126f:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-437",
+          "server": "cdn.alihapp.com",
+          "server_port": 443,
+          "uuid": "c4394e27-baeb-422d-8905-a93f8e01126f",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto",
+            "host": [
+              "cdn.alihapp.com"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "cdn.alihapp.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "cdn10.alihapp.com:443:c4394e27-baeb-422d-8905-a93f8e01126f:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-451",
+          "server": "cdn10.alihapp.com",
+          "server_port": 443,
+          "uuid": "c4394e27-baeb-422d-8905-a93f8e01126f",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto",
+            "host": [
+              "cdn10.alihapp.com"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "cdn10.alihapp.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "chatgpt.com:443:a9a3278d-cdd1-40ac-83bc-adb53ff9be3d:/fe20b2ea9bee5906/10001?ed=2048",
+        "node": {
+          "type": "vless",
+          "tag": "node-466",
+          "server": "chatgpt.com",
+          "server_port": 443,
+          "uuid": "a9a3278d-cdd1-40ac-83bc-adb53ff9be3d",
+          "transport": {
+            "type": "xhttp",
+            "path": "/fe20b2ea9bee5906/10001?ed=2048",
+            "mode": "auto",
+            "host": [
+              "out-cloudflare.royal-me.site"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "tyytout-cloudflare.royal-me.site",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "taha2021.farshadsdrnz.ir:555:e688f2f5-ad67-4530-a3ad-8ea042171217:/nabzyzyzghsdbdbch",
+        "node": {
+          "type": "vless",
+          "tag": "🇹🇷node-2237",
+          "server": "taha2021.farshadsdrnz.ir",
+          "server_port": 555,
+          "uuid": "e688f2f5-ad67-4530-a3ad-8ea042171217",
+          "transport": {
+            "type": "xhttp",
+            "path": "/nabzyzyzghsdbdbch",
+            "mode": "auto",
+            "host": [
+              "taha2021.farshadsdrnz.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "taha2021.farshadsdrnz.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -1581,7 +1711,7 @@
         }
       }
     ],
-    "vless_xhttp_count": 8,
+    "vless_xhttp_count": 13,
     "vless_tcp_count": 45,
     "hy2_count_count": 0,
     "vless_xhttp_count_count": 0,
@@ -1739,7 +1869,22 @@
     "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
     "vless_xhttp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
     "vless_tcp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
-    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0
+    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_xhttp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_tcp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_xhttp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_tcp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_xhttp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_tcp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_xhttp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_tcp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_xhttp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_tcp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0
   },
-  "updated": "2026-10-02T14:56:42Z"
+  "updated": "2026-10-02T16:22:38Z"
 }
