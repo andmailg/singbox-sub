@@ -13,11 +13,8 @@ from src.common import (
     resolve_server,
     should_accept_outbound,
 )
-from src.filters.rkn_filter import (
-    load_rkn_list,
-    open_geoip_reader,
-)
-from src.filters.geoip_filter import check_geoip
+from src.filters.rkn_filter import load_rkn_list
+from src.filters.geoip_filter import check_geoip, open_geoip_reader
 from src.filters.rkn_filter import check_rkn_blocked
 from src.filters.blacklist import load_blacklist, is_blacklisted
 
