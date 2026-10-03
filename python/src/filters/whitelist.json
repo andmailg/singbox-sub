@@ -384,6 +384,84 @@
             }
           }
         }
+      },
+      {
+        "key": "151.101.215.97:443:26becb32-3d57-4b59-9252-3b046768b1ea:/",
+        "node": {
+          "type": "vless",
+          "tag": "🇺🇸node-2262",
+          "server": "151.101.215.97",
+          "server_port": 443,
+          "uuid": "26becb32-3d57-4b59-9252-3b046768b1ea",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto",
+            "host": [
+              "ovd13.global.ssl.fastly.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "accounts.fastly.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "206.71.158.125:443:3536e1fa-0850-44d1-b123-925ce12476cf:/kavir",
+        "node": {
+          "type": "vless",
+          "tag": "🇳🇱node-1321",
+          "server": "206.71.158.125",
+          "server_port": 443,
+          "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
+          "transport": {
+            "type": "xhttp",
+            "path": "/kavir",
+            "mode": "stream-one",
+            "host": [
+              "dey.lnmarketplace.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "dey.lnmarketplace.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "randomquaint.net:2053:c2bbf90c-7f13-47dd-b68d-f0bd38b6b3c8:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "🇷🇺node-2147",
+          "server": "randomquaint.net",
+          "server_port": 2053,
+          "uuid": "c2bbf90c-7f13-47dd-b68d-f0bd38b6b3c8",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "randomquaint.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "randomquaint.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -1791,7 +1869,7 @@
         }
       }
     ],
-    "vless_xhttp_count": 15,
+    "vless_xhttp_count": 18,
     "vless_tcp_count": 45,
     "hy2_count_count": 0,
     "vless_xhttp_count_count": 0,
@@ -1976,7 +2054,16 @@
     "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
     "vless_xhttp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
     "vless_tcp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
-    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0
+    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_xhttp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_tcp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_xhttp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_tcp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_xhttp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "vless_tcp_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0,
+    "hy2_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count_count": 0
   },
-  "updated": "2026-10-03T00:54:10Z"
+  "updated": "2026-10-03T05:17:41Z"
 }
