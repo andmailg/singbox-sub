@@ -362,7 +362,9 @@
         "node-250",
         "node-251",
         "node-252",
-        "node-253"
+        "node-253",
+        "node-254",
+        "node-255"
       ],
       "default": "auto"
     },
@@ -622,7 +624,9 @@
         "node-250",
         "node-251",
         "node-252",
-        "node-253"
+        "node-253",
+        "node-254",
+        "node-255"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -3912,6 +3916,31 @@
     {
       "type": "trojan",
       "tag": "node-252",
+      "server": "node11.starnode.online",
+      "server_port": 8080,
+      "password": "2ad5f69a-0d8f-4e33-af04-6b82d0acc672",
+      "tls": {
+        "enabled": true,
+        "server_name": "node5.servernode.store"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "node-253",
+      "server": "snapp.ir",
+      "server_port": 80,
+      "password": "33ws1asxa8vmbehw",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "web.maxisup.ir"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "node-254",
       "server": "www.zula.ir",
       "server_port": 80,
       "password": "9ZD4MDOq9g",
@@ -3925,7 +3954,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-253",
+      "tag": "node-255",
       "server": "zula.ir",
       "server_port": 2096,
       "password": "98f0c223-cb75-4faa-859e-47110b1f052b",
