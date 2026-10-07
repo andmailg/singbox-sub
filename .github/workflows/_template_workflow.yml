@@ -1,9 +1,10 @@
-name: Template Auto Convert Sing-Box X Protocol
+name: Auto Convert Sing-Box {PROTO_NAME}
 
 on:
+  schedule:
+    # Запуск каждые N часов (например, каждые 5 часов)
+    # - cron: '0 */5 * * *'
   workflow_dispatch: # Ручной запуск
-  # schedule:
-  #   - cron: '0 */2 * * *'  # Раскомментируйте для автозапуска каждые 2 часа
 
 jobs:
   convert:
@@ -15,6 +16,9 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          # Важно: скачиваем полную историю, чтобы git pull/rebase работал корректно
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -25,21 +29,35 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests maxminddb
-          curl -L https://git.io/GeoLite2-Country.mmdb -o GeoLite2-Country.mmdb
+          # GeoLite2-базы (путь зависит от протокола — см. примеры ниже)
+          curl -L https://git.io/GeoLite2-Country.mmdb -o python/GeoLite2-Country.mmdb
+          curl -L https://git.io/GeoLite2-ASN.mmdb -o python/GeoLite2-ASN.mmdb
       
       # TODO: установи CLI-инструмент для тестирования протокола X
-      # Пример:
-      # - name: Install X CLI
+      # Для VLESS (Xray):
+      # - name: Install Xray CLI
       #   run: |
-      #     curl -L https://github.com/example/x-cli/releases/download/v1.0/x-cli-linux-amd64 -o x-cli
-      #     chmod +x x-cli
-      #     sudo mv x-cli /usr/local/bin/x-cli
+      #     curl -L https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip -o xray.zip
+      #     unzip xray.zip -d xray
+      #     sudo mv xray/xray /usr/local/bin/xray
+      #     sudo chmod +x /usr/local/bin/xray
+      #
+      # Для Hysteria2 (hy2):
+      # - name: Install Hysteria2 CLI
+      #   run: |
+      #     curl -L https://github.com/HyNetworks/hysteria/releases/download/app%2Fv2.12.3/hysteria-linux-amd64 -o hy2
+      #     chmod +x hy2
+      #     sudo mv hy2 /usr/local/bin/hy2
 
       - name: Run full pipeline
         run: |
           cd python
-          # TODO: измени имя файла менеджера
-          python x_manage.py run --timeout 10
+          # TODO: измени имя файла менеджера и аргументы
+          # Примеры:
+          #   python vless_tcp_manage.py run --test-timeout 3 --geoip-filter "" --rkn-filter 0 --blacklist-timeout 3 --whitelist-timeout 10
+          #   python hy2_manage.py run --test-timeout 3 --geoip-filter "" --export tun,xray,router --rkn-filter 0 --blacklist-timeout 3 --whitelist-timeout 10
+          #   python vless_xhttp_manage.py run --test-timeout 3 --geoip-filter "" --export xray --rkn-filter 0 --blacklist-timeout 3 --whitelist-timeout 10
+          python {PROTO}_manage.py run --test-timeout 3 --geoip-filter "" --rkn-filter 0 --blacklist-timeout 3 --whitelist-timeout 10
 
       - name: Commit and push if changed
         run: |
@@ -47,11 +65,17 @@ jobs:
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           # TODO: измени имена выходных файлов
-          git add x_tun.json x.txt config.json python/src/x_working.json
+          # Примеры:
+          #   VLESS TCP:   git add vless_tcp_tun.json vless_tcp.txt python/src/vless_tcp_working.json
+          #   Hysteria2:   git add hy2_tun.json hy2.txt config.json python/src/hy2_working.json
+          #   VLESS xhttp: git add vless_xhttp.txt python/src/vless_xhttp_working.json
+          #   Все фильтры: python/src/filters/rkn_networks_cache.json python/src/filters/blacklist.json python/src/filters/whitelist.json
+          git add {PROTO}_tun.json {PROTO}.txt python/src/{PROTO}_working.json python/src/filters/rkn_networks_cache.json python/src/filters/blacklist.json python/src/filters/whitelist.json
           
           if git diff --cached --quiet; then
             echo "Нет изменений для коммита."
           else
-            git commit -m "Auto-update x configs & working nodes"
-            git push
+            git commit -m "Auto-update {PROTO_NAME} configs & working nodes"
+            git pull --rebase origin main || true
+            git push || echo "Push failed (may be rate limited or no changes after rebase)"
           fi
