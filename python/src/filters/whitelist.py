@@ -24,7 +24,8 @@ def load_whitelist() -> dict[str, list[dict]]:
             data = json.load(f)
         result = {}
         for proto, entries in data.get("whitelist", {}).items():
-            result[proto] = entries if isinstance(entries, list) else []
+            if isinstance(entries, list):
+                result[proto] = entries
         for proto in ("vless_xhttp", "vless_tcp", "hy2"):
             result.setdefault(proto, [])
         return result
@@ -34,11 +35,9 @@ def load_whitelist() -> dict[str, list[dict]]:
 
 def save_whitelist(whitelist: dict[str, list[dict]]) -> None:
     """Сохраняет whitelist в JSON-файл с подсчётом количества нод."""
-    counts = {proto: len(entries) for proto, entries in whitelist.items()}
     data = {
         "whitelist": {
-            **{proto: entries for proto, entries in whitelist.items()},
-            **{f"{proto}_count": counts.get(proto, 0) for proto in whitelist},
+            proto: entries for proto, entries in whitelist.items()
         },
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
