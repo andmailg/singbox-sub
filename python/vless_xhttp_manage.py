@@ -23,6 +23,12 @@ from src.vless_xhttp_working import (
     merge_new_nodes,
     _cache_key,
 )
+from src.pending import (
+    load_pending_nodes,
+    save_pending_nodes,
+    merge_pending_nodes,
+    remove_nodes_by_keys,
+)
 from src.common import (
     INTERNAL_FIELDS,
     clean_internal_fields,
@@ -34,6 +40,12 @@ from src.filters.geoip_filter import resolve_country
 from src.testers.vless_xhttp_node_tester import test_vless_xhttp_connectivity
 from src.filters.blacklist import add_to_blacklist
 from src.filters.whitelist import load_whitelist, is_whitelisted, add_to_whitelist, get_whitelist_nodes
+
+_PENDING_FILE = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "src",
+    "vless_xhttp_pending.json",
+)
 
 
 def cmd_merge(args):
@@ -51,7 +63,11 @@ def cmd_merge(args):
     # Кастомный export_func: сохраняет ноды в vless_xhttp_working.json без нумерации
     def _save_to_working(outbounds, _output_file):
         existing = load_working_nodes()
-        merged, added = merge_new_nodes(existing, outbounds)
+        # Исключаем ноды, которые уже есть в pending
+        pending = load_pending_nodes(_PENDING_FILE)
+        pending_keys = {_cache_key(n) for n in pending}
+        candidates = [n for n in outbounds if _cache_key(n) not in pending_keys]
+        merged, added = merge_new_nodes(existing, candidates)
         print(f"Merge result: added {added} new nodes (total: {len(merged)})")
         save_working_nodes(merged)
 
@@ -107,10 +123,21 @@ def _readd_whitelisted():
 
 
 def cmd_test(args):
-    """Тестирование всех нод из vless_xhttp_working.json."""
+    """Тестирование всех нод из vless_xhttp_working.json и vless_xhttp_pending.json.
+
+    Логика:
+      - Working + passed → обновить _last_ok_ts
+      - Working + failed → перенести в pending.json
+      - Pending + passed → перенести в working.json (удалить из pending)
+      - Pending + failed + timeout → blacklist (удалить из pending)
+      - Pending + failed + no timeout → оставить в pending
+    """
     print("Loading nodes from vless_xhttp_working.json...")
-    nodes = load_working_nodes()
-    if not nodes:
+    working = load_working_nodes()
+    print("Loading nodes from vless_xhttp_pending.json...")
+    pending = load_pending_nodes(_PENDING_FILE)
+
+    if not working and not pending:
         print("No nodes found. Run 'merge' first.")
         return
 
@@ -121,73 +148,85 @@ def cmd_test(args):
     # Загружаем whitelist
     whitelist = load_whitelist()
 
-    # 1. Удаляем ноды с просроченным _last_ok_ts (> 24 часов)
-    fresh_nodes = []
-    for node in nodes:
+    # 1. Удаляем ноды с просроченным _last_ok_ts (> 24 часов) из working
+    fresh_working = []
+    for node in working:
         last_ok = node.get("_last_ok_ts")
         if last_ok and (now_ts - last_ok) > STALE_THRESHOLD:
             print(f"  Removing stale node (24h+): {node.get('server')}:{node.get('server_port')}")
         else:
-            fresh_nodes.append(node)
+            fresh_working.append(node)
 
-    stale_count = len(nodes) - len(fresh_nodes)
+    stale_count = len(working) - len(fresh_working)
     if stale_count:
         print(f"  Removed {stale_count} stale node(s)")
-    nodes = fresh_nodes
+    working = fresh_working
 
-    pending_nodes = [n for n in nodes if "_pending_since" in n]
-    active_nodes = [n for n in nodes if "_pending_since" not in n]
+    print(f"Working: {len(working)}, Pending: {len(pending)}")
 
-    print(f"Active: {len(active_nodes)}, Pending: {len(pending_nodes)}")
-
-    all_to_test = active_nodes + pending_nodes
-    working, failed, sub_ids_summary = test_vless_xhttp_connectivity(
+    all_to_test = working + pending
+    tested_working, failed, sub_ids_summary = test_vless_xhttp_connectivity(
         all_to_test,
         timeout=args.test_timeout,
         prefix="",
     )
 
     # Обновляем статусы
-    working_keys = {_cache_key(w) for w in working}
+    working_keys = {_cache_key(w) for w in tested_working}
     new_working = []
     new_pending = []
     whitelist_promoted = 0
 
     PENDING_REMOVAL_THRESHOLD = args.blacklist_timeout * 24 * 3600  # N суток в pending перед добавлением в blacklist
 
-    for node in nodes:
+    # 1. Обработка working: прошедшие тест остаются в working
+    for node in working:
         key = _cache_key(node)
         if key in working_keys:
             node["_last_ok_ts"] = now_ts
-            node.pop("_pending_since", None)
             new_working.append(node)
             # Авто-промоут в whitelist если работает > N суток
             if not is_whitelisted(node, whitelist, "vless_xhttp"):
                 whitelist_promoted += 1
-        elif "_pending_since" in node:
+        else:
+            # Working провалил тест → в pending
+            node["_pending_since"] = now_ts
+            new_pending.append(node)
+
+    # 2. Обработка pending: прошедшие тест → в working, провалившие → blacklist или оставить
+    for node in pending:
+        key = _cache_key(node)
+        if key in working_keys:
+            # Pending прошёл тест → в working
+            node["_last_ok_ts"] = now_ts
+            node.pop("_pending_since", None)
+            new_working.append(node)
+            if not is_whitelisted(node, whitelist, "vless_xhttp"):
+                whitelist_promoted += 1
+        else:
+            # Pending провалил тест → проверяем таймаут
             pending_since = node.get("_pending_since", 0)
             if (now_ts - pending_since) > PENDING_REMOVAL_THRESHOLD:
                 print(f"  Adding failed pending node to blacklist: {node.get('server')}:{node.get('server_port')}")
                 add_to_blacklist(node, "vless_xhttp")
             else:
                 new_pending.append(node)
-        else:
-            node["_pending_since"] = now_ts
-            new_pending.append(node)
 
     # Сохраняем промоут в whitelist
     if whitelist_promoted:
-        for w in working:
+        for w in new_working:
             if not is_whitelisted(w, whitelist, "vless_xhttp"):
                 add_to_whitelist(w, "vless_xhttp")
         print(f"  Promoted {whitelist_promoted} node(s) to whitelist")
 
     if failed:
         print()
-        print(f"VLESS xhttp connectivity: {len(working)} working / {failed} failed ({len(all_to_test)} total){sub_ids_summary}.")
+        print(f"VLESS xhttp connectivity: {len(tested_working)} working / {failed} failed ({len(all_to_test)} total){sub_ids_summary}.")
 
-    save_working_nodes(new_working + new_pending)
-    print(f"\nSaved {len(new_working)} working, {len(new_pending)} pending nodes to vless_xhttp_working.json")
+    save_working_nodes(new_working)
+    save_pending_nodes(new_pending, _PENDING_FILE)
+    print(f"\nSaved {len(new_working)} working to vless_xhttp_working.json")
+    print(f"Saved {len(new_pending)} pending to vless_xhttp_pending.json")
 
 
 def cmd_run(args):
@@ -221,20 +260,19 @@ def cmd_export(args):
     """Экспортирует конфиги из vless_xhttp_working.json.
 
     xhttp не поддерживается sing-box, поэтому экспортируем только ссылки (xray).
-    На экспорт идут только active ноды (без _pending_since).
-    Pending ноды остаются в vless_xhttp_working.json для повторного тестирования.
+    На экспорт идут только active ноды из working файла.
+    Pending ноды остаются в vless_xhttp_pending.json.
 
     Аргумент export — список форматов через запятую:
       xray  — V2Ray-ссылки
     """
     all_nodes = load_working_nodes()
     if not all_nodes:
-        print("No nodes found.")
+        print("No active nodes found in vless_xhttp_working.json.")
         all_nodes = []
 
-    # Разделяем на active и pending
-    active_nodes = [n for n in all_nodes if "_pending_since" not in n]
-    pending_nodes = [n for n in all_nodes if "_pending_since" in n]
+    active_nodes = all_nodes
+    pending_nodes = load_pending_nodes(_PENDING_FILE)
 
     if not active_nodes:
         print("No active nodes to export.")
@@ -242,11 +280,12 @@ def cmd_export(args):
     # Нумеруем только active ноды
     active_nodes = renumber_nodes(active_nodes)
 
-    # Сохраняем все ноды (active + pending)
-    save_working_nodes(active_nodes + pending_nodes)
+    # Сохраняем active ноды в working, pending оставляем в pending
+    save_working_nodes(active_nodes)
+    save_pending_nodes(pending_nodes, _PENDING_FILE)
 
     if pending_nodes:
-        print(f"Exporting {len(active_nodes)} active nodes ({len(pending_nodes)} pending kept)")
+        print(f"Exporting {len(active_nodes)} active nodes ({len(pending_nodes)} pending in vless_xhttp_pending.json)")
     else:
         print(f"Exporting {len(active_nodes)} nodes")
 
