@@ -44,7 +44,7 @@ def _generate_hy2_links(outbounds: list[dict]) -> list[str]:
 
 
 def _generate_vless_grpc_links(outbounds: list[dict]) -> list[str]:
-    """Конвертирует VLESS gRPC ноды в v2ray-ссылки."""
+    """Конвертирует VLESS gRPC ноды в v2ray-ссылки (TLS / Reality)."""
     links: list[str] = []
     for o in outbounds:
         if o.get("type") != "vless":
@@ -54,21 +54,54 @@ def _generate_vless_grpc_links(outbounds: list[dict]) -> list[str]:
             continue
         uuid = o.get("uuid", "")
         server = o.get("server", "")
-        port = o.get("server_port", 8443)
-        sni = o.get("tls", {}).get("server_name", "")
+        port = o.get("server_port", 443)
+        tls = o.get("tls", {})
+        sni = tls.get("server_name", "") if tls else ""
         service_name = transport.get("service_name", "")
         tag = o.get("tag", "VLESS-Node")
         packet_encoding = o.get("packet_encoding", "xudp")
+        fp = tls.get("utls", {}).get("fingerprint", "") if tls else ""
 
-        params = urllib.parse.urlencode({
-            "encryption": "none",
-            "security": "tls",
-            "sni": sni,
-            "type": "grpc",
-            "serviceName": service_name,
-            "packetEncoding": packet_encoding,
-        })
-        link = f"vless://{uuid}@{server}:{port}?{params}#{tag}"
+        reality = tls.get("reality", {}) if tls else {}
+        if reality and reality.get("enabled"):
+            # VLESS + gRPC + Reality
+            pbk = reality.get("public_key", "")
+            sid = reality.get("short_id", "")
+            spider_x = reality.get("spider_x", "")
+            flow = tls.get("flow", "")
+
+            params = {
+                "encryption": "none",
+                "security": "reality",
+                "sni": sni,
+                "type": "grpc",
+                "serviceName": service_name,
+                "pbk": pbk,
+                "fp": fp,
+            }
+            if sid:
+                params["sid"] = sid
+            if spider_x:
+                params["spiderX"] = spider_x
+            if flow:
+                params["flow"] = flow
+            if packet_encoding:
+                params["packetEncoding"] = packet_encoding
+        else:
+            # VLESS + gRPC + TLS (без reality)
+            params = {
+                "encryption": "none",
+                "security": "tls",
+                "sni": sni,
+                "type": "grpc",
+                "serviceName": service_name,
+                "fp": fp,
+            }
+            if packet_encoding:
+                params["packetEncoding"] = packet_encoding
+
+        query = urllib.parse.urlencode(params)
+        link = f"vless://{uuid}@{server}:{port}?{query}#{tag}"
         links.append(link)
     return links
 
