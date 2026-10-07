@@ -1905,6 +1905,55 @@
             }
           }
         }
+      },
+      {
+        "key": "91.107.191.188:8443:20d51411-b4c2-4485-a80b-8f322da808b8:/Meh?di=443",
+        "node": {
+          "type": "vless",
+          "tag": "🇩🇪node-1136",
+          "server": "91.107.191.188",
+          "server_port": 8443,
+          "uuid": "20d51411-b4c2-4485-a80b-8f322da808b8",
+          "transport": {
+            "type": "xhttp",
+            "path": "/Meh?di=443",
+            "mode": "auto",
+            "host": [
+              "host.taghvimtime.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "host.taghvimtime.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "tg1.cdnphotos.org:443:f04cc810-aaf2-4a7b-8cad-356cdd30d394:/api/v1/?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+        "node": {
+          "type": "vless",
+          "tag": "🇷🇺node-2147",
+          "server": "tg1.cdnphotos.org",
+          "server_port": 443,
+          "uuid": "f04cc810-aaf2-4a7b-8cad-356cdd30d394",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "tg1.cdnphotos.org",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -6254,5 +6303,5 @@
       }
     ]
   },
-  "updated": "2026-10-07T09:55:36Z"
+  "updated": "2026-10-07T17:32:49Z"
 }
