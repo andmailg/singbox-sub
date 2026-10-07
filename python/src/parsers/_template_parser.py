@@ -10,6 +10,10 @@
   - src/parsers/hy2_parser.py — Hysteria2 (QUIC + auth_password)
   - src/parsers/vless_ws_parser.py — VLESS with WS (TLS + websocket transport)
   - src/parsers/vless_grpc_parser.py — VLESS with gRPC (TLS + gun)
+  - src/parsers/vless_http_parser.py — VLESS with HTTP transport
+  - src/parsers/vless_xhttp_parser.py — VLESS with xhttp transport
+  - src/parsers/trojan_parser.py — Trojan (TCP/WS/HTTP/gRPC/HTTPUpgrade)
+  - src/parsers/vmess_parser.py — VMess (base64 JSON)
 """
 
 import urllib.parse
@@ -23,12 +27,11 @@ def _param(params: dict, key: str) -> str | None:
     return None
 
 
-def parse_proxy_link(link: str, **kwargs) -> dict | None:
+def parse_proxy_link(link: str) -> dict | None:
     """Парсит ссылку протокола X в формат sing-box outbound.
 
     Args:
         link: строка ссылки (например "vless://uuid@host:port?...")
-        **kwargs: дополнительные аргументы из pipeline.
 
     Returns:
         Словарь в формате sing-box outbound или None если ссылка невалидна.
@@ -64,9 +67,33 @@ def parse_proxy_link(link: str, **kwargs) -> dict | None:
             "tls": {"enabled": True, "server_name": "cdn.example.com"},
         }
 
+    Пример возвращаемого значения для Trojan:
+        {
+            "type": "trojan",
+            "tag": "Trojan-Node",
+            "server": "example.com",
+            "server_port": 443,
+            "password": "xxx-xxx-xxx",
+            "tls": {"enabled": True, "server_name": "cdn.example.com"},
+            "transport": {"type": "ws", "path": "/path", "headers": {"Host": "host"}},
+        }
+
+    Пример возвращаемого значения для VMess:
+        {
+            "type": "vmess",
+            "tag": "VMess-Node",
+            "server": "example.com",
+            "server_port": 443,
+            "uuid": "xxx-xxx-xxx",
+            "security": "aes-128-gcm",
+            "tls": {"enabled": True, "server_name": "cdn.example.com"},
+            "transport": {"type": "ws", "path": "/path"},
+        }
+
     Шаги реализации:
-        1. Определи scheme (vless://, hysteria2://, trojan://, etc.)
+        1. Определи scheme (vless://, hysteria2://, trojan://, vmess://, etc.)
         2. Разбери URL: host, port, username (auth), fragment (tag)
+           Для VMess: декодируй base64 JSON из ссылки.
         3. Извлеки query-параметры (sni, pbk, sid, spiderX, flow, fp, ...).
            Используй _param(params, "key") для безопасного доступа.
         4. Проверь обязательные поля протокола.
@@ -77,7 +104,9 @@ def parse_proxy_link(link: str, **kwargs) -> dict | None:
         - Для reality-протоколов: tls.reality.enabled=True, tls.server_name=SNI,
           tls.reality.public_key=pbk, tls.reality.short_id=sid.
         - Для regular TLS: tls.enabled=True, tls.server_name=SNI.
-        - transport.type определяет тип транспорта: "tcp", "ws", "grpc", "http", "httpupgrade".
+        - transport.type определяет тип транспорта: "tcp", "ws", "grpc", "http",
+          "httpupgrade", "xhttp", "h2".
+        - clean_outbound() должна валидировать транспорт и удалять несовместимые поля.
     """
     link = link.strip()
     if not link or link.startswith("#"):
@@ -109,7 +138,7 @@ def parse_proxy_link(link: str, **kwargs) -> dict | None:
 def clean_outbound(outbound: dict) -> dict | None:
     """Очистка и приведение ноды к спецификации sing-box.
 
-    Удаление несовместимых полей, нормализация значений.
+    Удаление несовместимых полей, нормализация значений, валидация транспорта.
 
     Args:
         outbound: распарсенная нода.
@@ -119,13 +148,16 @@ def clean_outbound(outbound: dict) -> dict | None:
 
     Примеры очистки:
         - Для reality: удалить пустой short_id, если не указан.
-        - Для hy2: проверить, что transport не содержит полей ws/grpc.
-        - Для всех: удалить поля, которые не поддерживаются sing-box.
+        - Для hy2: убрать reality из tls, проверить obfs.
+        - Для WS/HTTP/xhttp: валидировать transport.type и host.
+        - Для Trojan: проверить server_name в TLS, нормализовать Host header.
+        - Для VMess: валидировать network type.
     """
     if not outbound:
         return outbound
 
     # TODO: добавь специфичную для протокола очистку
-    # Например: убрать reality если не используется, убрать лишние поля
+    # Например: убрать reality если не используется, убрать лишние поля,
+    # валидировать transport.type, проверять host
 
     return outbound
