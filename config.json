@@ -43,8 +43,8 @@
         "🇷🇴node-19",
         "🇷🇴node-20",
         "🇷🇴node-21",
-        "🇷🇺node-22",
-        "🇹🇷node-23",
+        "🇷🇴node-22",
+        "🇷🇺node-23",
         "🇺🇸node-24",
         "🇺🇸node-25",
         "🇺🇸node-26",
@@ -77,8 +77,8 @@
         "🇷🇴node-19",
         "🇷🇴node-20",
         "🇷🇴node-21",
-        "🇷🇺node-22",
-        "🇹🇷node-23",
+        "🇷🇴node-22",
+        "🇷🇺node-23",
         "🇺🇸node-24",
         "🇺🇸node-25",
         "🇺🇸node-26",
@@ -152,7 +152,10 @@
       "password": "ca78f919e6",
       "tls": {
         "enabled": true,
-        "server_name": "srv-3fc7c9.21freedom.net"
+        "server_name": "srv-3fc7c9.21freedom.net",
+        "alpn": [
+          "h3"
+        ]
       },
       "obfs": {
         "type": "salamander",
@@ -350,6 +353,19 @@
     {
       "type": "hysteria2",
       "tag": "🇷🇴node-20",
+      "server": "hop-germany-september.dynuddns.com",
+      "server_port": 9443,
+      "password": "9Me_Jx935gnHx13_Nx45M_NYXe037js_Be4z",
+      "tls": {
+        "enabled": true,
+        "server_name": "hop-germany-september.dynuddns.com"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇷🇴node-21",
       "server": "hy2-new.aspidnet.xyz",
       "server_port": 443,
       "password": "QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s",
@@ -366,7 +382,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-21",
+      "tag": "🇷🇴node-22",
       "server": "ocober-romania-new.yyuyy.com",
       "server_port": 8443,
       "password": "Jz40_mIJ934vK0_k9D3jz92_Vx48q_GHa1_sz0",
@@ -379,30 +395,13 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇺node-22",
+      "tag": "🇷🇺node-23",
       "server": "srv-17e124.21freedom.net",
       "server_port": 11592,
       "password": "41edb44c8e",
       "tls": {
         "enabled": true,
         "server_name": "srv-17e124.21freedom.net"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇹🇷node-23",
-      "server": "me17.msjia8844.site",
-      "server_port": 7443,
-      "password": "M8LP9DztTr3znqCkmf-r08CQLBLLFK1r",
-      "tls": {
-        "enabled": true,
-        "server_name": "me17.msjia8844.site"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "u3Soh9_Ui0UmcuY6vk0ug8Lq"
       },
       "up_mbps": 20,
       "down_mbps": 20
