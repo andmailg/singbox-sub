@@ -70,7 +70,7 @@ jobs:
           #   Hysteria2:   git add hy2_tun.json hy2.txt config.json python/src/hy2_working.json
           #   VLESS xhttp: git add vless_xhttp.txt python/src/vless_xhttp_working.json
           #   Все фильтры: python/src/filters/rkn_networks_cache.json python/src/filters/blacklist.json python/src/filters/whitelist.json
-          git add {PROTO}_tun.json {PROTO}.txt python/src/{PROTO}_working.json python/src/filters/rkn_networks_cache.json python/src/filters/blacklist.json python/src/filters/whitelist.json
+          git add {PROTO}_tun.json {PROTO}.txt python/src/{PROTO}_working.json python/src/{PROTO}_pending.json python/src/filters/rkn_networks_cache.json python/src/filters/blacklist.json python/src/filters/whitelist.json
           
           if git diff --cached --quiet; then
             echo "Нет изменений для коммита."

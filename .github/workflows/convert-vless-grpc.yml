@@ -50,7 +50,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add vless_grpc_tun.json vless_grpc.txt python/src/vless_grpc_working.json python/src/filters/rkn_networks_cache.json python/src/filters/blacklist.json python/src/filters/whitelist.json
+          git add vless_grpc_tun.json vless_grpc.txt python/src/vless_grpc_working.json python/src/vless_grpc_pending.json python/src/filters/rkn_networks_cache.json python/src/filters/blacklist.json python/src/filters/whitelist.json
           
           if git diff --cached --quiet; then
             echo "Нет изменений для коммита."
