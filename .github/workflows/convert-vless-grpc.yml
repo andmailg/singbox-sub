@@ -1,54 +1,61 @@
-name: Auto Convert Xray to Sing-Box Vless-gRPC
+name: Auto Convert Sing-Box VLESS gRPC
 
 on:
   schedule:
     # Запуск каждые 5 часов
-    - cron: '0 */5 * * *'
+    - cron: '30 */5 * * *'
   workflow_dispatch: # Ручной запуск
 
 jobs:
   convert:
     runs-on: ubuntu-latest
     
-    # Права на запись оставляем, они необходимы для git push
     permissions:
       contents: write
       
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          # Важно: скачиваем полную историю, чтобы git pull/rebase работал корректно
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          # Ошибочная строка кэша удалена
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests maxminddb
-          curl -L https://git.io/GeoLite2-Country.mmdb -o GeoLite2-Country.mmdb
-
-      - name: Run scripts
+          curl -L https://git.io/GeoLite2-Country.mmdb -o python/GeoLite2-Country.mmdb
+          curl -L https://git.io/GeoLite2-ASN.mmdb -o python/GeoLite2-ASN.mmdb
+      
+      - name: Install Xray CLI
         run: |
-          python python/vless_grpc_tun.py
-          python python/vless_grpc_v2ray.py
+          curl -L https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip -o xray.zip
+          unzip xray.zip -d xray
+          sudo mv xray/xray /usr/local/bin/xray
+          sudo chmod +x /usr/local/bin/xray
+
+      - name: Run full pipeline
+        run: |
+          cd python
+          python vless_grpc_manage.py run --test-timeout 3 --geoip-filter "" --rkn-filter 0 --blacklist-timeout 3 --whitelist-timeout 10
+          cd ..
 
       - name: Commit and push if changed
         run: |
-          # Настройка бота GitHub Actions
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@://github.com"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Добавляем файл в индекс
-          git add vless_grpc_tun.json vless_grpc.txt
+          git add vless_grpc_tun.json vless_grpc.txt python/src/vless_grpc_working.json python/src/filters/rkn_networks_cache.json python/src/filters/blacklist.json python/src/filters/whitelist.json
           
-          # Коммитим и пушим только при наличии изменений
           if git diff --cached --quiet; then
             echo "Нет изменений для коммита."
           else
-            git commit -m "Auto-update vless_grpc_tun.json & vless_grpc.txt"
-            git push
+            git commit -m "Auto-update vless_grpc configs & working nodes"
+            git pull --rebase origin main || true
+            git push || echo "Push failed (may be rate limited or no changes after rebase)"
           fi
-
