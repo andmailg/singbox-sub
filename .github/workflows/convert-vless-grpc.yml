@@ -42,7 +42,7 @@ jobs:
       - name: Run full pipeline
         run: |
           cd python
-          python vless_grpc_manage.py run --test-timeout 3 --geoip-filter "" --rkn-filter 0 --blacklist-timeout 3 --whitelist-timeout 10
+          python vless_grpc_manage.py run --test-timeout 3 --geoip-filter "" --rkn-filter 0 --blacklist-timeout 10 --whitelist-timeout 10
           cd ..
 
       - name: Commit and push if changed
