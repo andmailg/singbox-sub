@@ -387,7 +387,7 @@ def run_pipeline(
 
     # 4.5. Blacklist фильтрация
     blacklist = load_blacklist()
-    blacklist_proto = protocol if protocol in ("vless_xhttp", "vless_tcp", "hy2") else None
+    blacklist_proto = protocol if protocol in ("vless_xhttp", "vless_tcp", "hy2", "vless_grpc") else None
     if blacklist_proto and blacklist.get(blacklist_proto):
         blacklisted = [o for o in outbounds if is_blacklisted(o, blacklist, blacklist_proto)]
         if blacklisted:
