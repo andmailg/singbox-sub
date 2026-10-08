@@ -6236,6 +6236,23 @@
             "server_name": "vpn-fr-001.fastervpn.world"
           }
         }
+      },
+      {
+        "key": "msk.frkn.org:443:f317b5d6-d399-4d3d-a051-89d674ae953c",
+        "node": {
+          "type": "hysteria2",
+          "tag": "🇷🇺node-41",
+          "server": "msk.frkn.org",
+          "server_port": 443,
+          "password": "f317b5d6-d399-4d3d-a051-89d674ae953c",
+          "tls": {
+            "enabled": true,
+            "server_name": "msk.frkn.org",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -7176,5 +7193,5 @@
       }
     ]
   },
-  "updated": "2026-10-08T17:31:33Z"
+  "updated": "2026-10-08T19:39:31Z"
 }
