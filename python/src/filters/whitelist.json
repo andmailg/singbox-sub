@@ -6635,8 +6635,198 @@
             "initial_windows_size": 0
           }
         }
+      },
+      {
+        "key": "5.253.28.240:2443",
+        "node": {
+          "type": "vless",
+          "tag": "🇨🇾node-589",
+          "server": "5.253.28.240",
+          "server_port": 2443,
+          "uuid": "5e679ccd-1586-4d5f-b87b-48251046cad8",
+          "tls": {
+            "enabled": true,
+            "server_name": "deepl.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "h85e28MxBgNyT9d9cNeOLVtWfHq6cT_1_oxZOTajtTg",
+              "short_id": "92c32de179e5d908"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "rex-eb0bf76b710ce763"
+          }
+        }
+      },
+      {
+        "key": "144.31.63.114:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇩🇪node-686",
+          "server": "144.31.63.114",
+          "server_port": 443,
+          "uuid": "c797b9ad-6f9e-4eee-befd-eef119ec3637",
+          "tls": {
+            "enabled": true,
+            "server_name": "assets-de.pleiades.codes",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "cdn.v1.AssetService"
+          }
+        }
+      },
+      {
+        "key": "185.112.59.107:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇳🇱node-1659",
+          "server": "185.112.59.107",
+          "server_port": 443,
+          "uuid": "579b72a5-785a-4fb6-ac64-1de2f8c49601",
+          "tls": {
+            "enabled": true,
+            "server_name": "samsung.com.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "LAIeXhB_Q_APveaVNJDD4svH4esgDVx3qeo-MSfu1Wg"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "vless-grpc",
+            "initial_windows_size": 0
+          }
+        }
+      },
+      {
+        "key": "185.170.211.187:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇳🇱node-1658",
+          "server": "185.170.211.187",
+          "server_port": 443,
+          "uuid": "267b3a79-81f2-42ac-a409-c23b05b6329d",
+          "tls": {
+            "enabled": true,
+            "server_name": "nl2.bbobr.win",
+            "reality": {
+              "enabled": true,
+              "public_key": "eztZ1H-OkkHao6d4FhX8Q728qN1UIeFcYH2jObRq1gc",
+              "short_id": "fbe9c012125d90d2"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "api.v2.nl2e63a0c5",
+            "initial_windows_size": 0
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "185.170.211.189:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇳🇱node-1659",
+          "server": "185.170.211.189",
+          "server_port": 443,
+          "uuid": "267b3a79-81f2-42ac-a409-c23b05b6329d",
+          "tls": {
+            "enabled": true,
+            "server_name": "nl2.bbobr.win",
+            "reality": {
+              "enabled": true,
+              "public_key": "eztZ1H-OkkHao6d4FhX8Q728qN1UIeFcYH2jObRq1gc",
+              "short_id": "fbe9c012125d90d2"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "api.v2.nl2e63a0c5",
+            "initial_windows_size": 0
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "185.170.211.197:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇳🇱node-1660",
+          "server": "185.170.211.197",
+          "server_port": 443,
+          "uuid": "267b3a79-81f2-42ac-a409-c23b05b6329d",
+          "tls": {
+            "enabled": true,
+            "server_name": "nl6.bbobr.win",
+            "reality": {
+              "enabled": true,
+              "public_key": "eZXyfQzQgQSreAbhKSorx38cgnKmGuSOiQbthBfG5k0",
+              "short_id": "0e903b415d812c59"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "api.v2.nl6d19f4b7",
+            "initial_windows_size": 0
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "36a466g.fi1.h1clayd.click:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇷🇺node-1885",
+          "server": "36a466g.fi1.h1clayd.click",
+          "server_port": 443,
+          "uuid": "9a0e84f8-4b58-477f-99da-5fac5a2e58e8",
+          "tls": {
+            "enabled": true,
+            "server_name": "36a466g.fi1.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "pAgrBKJCmuSJHIzYkEJTqsOBOVBK_DMtEqFPo-PaTkg",
+              "short_id": "b3c9d0c6bdd114a6"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "0adb9638509b"
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-08T00:17:16Z"
+  "updated": "2026-10-08T00:31:37Z"
 }
