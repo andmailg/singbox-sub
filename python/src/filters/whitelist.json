@@ -2514,6 +2514,32 @@
             }
           }
         }
+      },
+      {
+        "key": "host.taghvimtime.ir:8443:20d51411-b4c2-4485-a80b-8f322da808b8:/Meh?di=443",
+        "node": {
+          "type": "vless",
+          "tag": "🇩🇪node-1164",
+          "server": "host.taghvimtime.ir",
+          "server_port": 8443,
+          "uuid": "20d51411-b4c2-4485-a80b-8f322da808b8",
+          "transport": {
+            "type": "xhttp",
+            "path": "/Meh?di=443",
+            "mode": "auto",
+            "host": [
+              "host.taghvimtime.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "host.taghvimtime.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -7459,5 +7485,5 @@
       }
     ]
   },
-  "updated": "2026-10-09T08:24:20Z"
+  "updated": "2026-10-09T12:00:14Z"
 }
