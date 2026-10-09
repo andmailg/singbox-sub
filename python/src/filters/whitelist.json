@@ -2413,6 +2413,107 @@
             }
           }
         }
+      },
+      {
+        "key": "185.126.93.227:443:f04cc810-aaf2-4a7b-8cad-356cdd30d394:/api/v1/?ed#",
+        "node": {
+          "type": "vless",
+          "tag": "🇷🇺node-1508",
+          "server": "185.126.93.227",
+          "server_port": 443,
+          "uuid": "f04cc810-aaf2-4a7b-8cad-356cdd30d394",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/?ed#",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "tg1.cdnphotos.org",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          }
+        }
+      },
+      {
+        "key": "162.159.244.153:2053:1e405815-4c78-4967-8f07-1e73270056ae:/api/v2/cdn",
+        "node": {
+          "type": "vless",
+          "tag": "node-305",
+          "server": "162.159.244.153",
+          "server_port": 2053,
+          "uuid": "1e405815-4c78-4967-8f07-1e73270056ae",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v2/cdn",
+            "mode": "auto",
+            "host": [
+              "kosnaneaakhund.kirpeople2sepahkosnaneh.com"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "kosnaneaakhund.kirpeople2sepahkosnaneh.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "188.244.122.111:2096:0c784107-cd05-47e8-9281-c9cba047ea89:/cdn/v1/media",
+        "node": {
+          "type": "vless",
+          "tag": "🇩🇪node-1124",
+          "server": "188.244.122.111",
+          "server_port": 2096,
+          "uuid": "0c784107-cd05-47e8-9281-c9cba047ea89",
+          "transport": {
+            "type": "xhttp",
+            "path": "/cdn/v1/media",
+            "mode": "auto",
+            "host": [
+              "web.studioatlaiouaetopten.info"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "web.studioatlaiouaetopten.info",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "94.103.168.57:2087:ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8:/retasokrer",
+        "node": {
+          "type": "vless",
+          "tag": "🇩🇪node-1153",
+          "server": "94.103.168.57",
+          "server_port": 2087,
+          "uuid": "ecbe8dbc-44f7-4275-8a6c-b0976a7bb5c8",
+          "transport": {
+            "type": "xhttp",
+            "path": "/retasokrer",
+            "mode": "stream-one",
+            "host": [
+              "spp1.localip.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "spp1.localip.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -7235,5 +7336,5 @@
       }
     ]
   },
-  "updated": "2026-10-09T00:08:43Z"
+  "updated": "2026-10-09T00:26:38Z"
 }
