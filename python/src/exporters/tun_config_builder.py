@@ -46,7 +46,7 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                 {
                     "type": "https",
                     "tag": "smart-dns",
-                    "server": "xbox-dns.ru",
+                    "server": "dns.comss.one",
                     "domain_resolver": "dns-local"
                 },
                 {
