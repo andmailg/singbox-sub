@@ -7760,8 +7760,31 @@
             "initial_windows_size": 0
           }
         }
+      },
+      {
+        "key": "170.168.4.59:17170",
+        "node": {
+          "type": "vless",
+          "tag": "🇫🇮node-1186",
+          "server": "170.168.4.59",
+          "server_port": 17170,
+          "uuid": "3eec23c1-2a0d-4d53-afa5-62745a1f5ffe",
+          "tls": {
+            "enabled": true,
+            "server_name": "northerntrail.gazette.help",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "trail-grpc",
+            "initial_windows_size": 0
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-10T00:10:00Z"
+  "updated": "2026-10-10T00:24:57Z"
 }
