@@ -2563,6 +2563,84 @@
             }
           }
         }
+      },
+      {
+        "key": "78.159.246.85:2053:95a608b6-bff1-4e10-bb61-0a39f221bb7d:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "🇷🇺node-2026",
+          "server": "78.159.246.85",
+          "server_port": 2053,
+          "uuid": "95a608b6-bff1-4e10-bb61-0a39f221bb7d",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "fitindoor.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "fitindoor.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "78.159.246.85:2053:6a2aff19-ff1f-4a13-96c8-a4d8986a9699:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "🇷🇺node-2014",
+          "server": "78.159.246.85",
+          "server_port": 2053,
+          "uuid": "6a2aff19-ff1f-4a13-96c8-a4d8986a9699",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "fitindoor.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "fitindoor.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "188.114.97.6:443:a9a3278d-cdd1-40ac-83bc-adb53ff9be3d:/3bbfc1a762fdf5e0/10001?ed=2048",
+        "node": {
+          "type": "vless",
+          "tag": "node-385",
+          "server": "188.114.97.6",
+          "server_port": 443,
+          "uuid": "a9a3278d-cdd1-40ac-83bc-adb53ff9be3d",
+          "transport": {
+            "type": "xhttp",
+            "path": "/3bbfc1a762fdf5e0/10001?ed=2048",
+            "mode": "auto",
+            "host": [
+              "out.roya-me.site"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "out.roya-me.site",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -7834,5 +7912,5 @@
       }
     ]
   },
-  "updated": "2026-10-10T04:00:48Z"
+  "updated": "2026-10-10T05:53:02Z"
 }
