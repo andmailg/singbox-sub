@@ -2817,6 +2817,81 @@
             }
           }
         }
+      },
+      {
+        "key": "fi.alpheratzz.org:443:1bda2ae7-b597-4704-95a8-29c0f76324ba:/",
+        "node": {
+          "type": "vless",
+          "tag": "🇫🇮node-1223",
+          "server": "fi.alpheratzz.org",
+          "server_port": 443,
+          "uuid": "1bda2ae7-b597-4704-95a8-29c0f76324ba",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto",
+            "host": [
+              "fi.alpheratzz.org"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "1bda2ae7.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "ios"
+            }
+          }
+        }
+      },
+      {
+        "key": "151.101.173.16:443:4666231d-af94-44c7-ad2f-c10d725705bd:/",
+        "node": {
+          "type": "vless",
+          "tag": "🇺🇸node-1524",
+          "server": "151.101.173.16",
+          "server_port": 443,
+          "uuid": "4666231d-af94-44c7-ad2f-c10d725705bd",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "packet-up",
+            "host": [
+              "dayka-unkepravber.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "accounts.fastly.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "de.vmagnum.win:443:1bda2ae7-b597-4704-95a8-29c0f76324ba:/",
+        "node": {
+          "type": "vless",
+          "tag": "🇺🇸node-1710",
+          "server": "de.vmagnum.win",
+          "server_port": 443,
+          "uuid": "1bda2ae7-b597-4704-95a8-29c0f76324ba",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "api-v3-1bda2ae7.vmagnum.win",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -9085,5 +9160,5 @@
       }
     ]
   },
-  "updated": "2026-10-11T16:36:32Z"
+  "updated": "2026-10-11T23:49:59Z"
 }
