@@ -2794,6 +2794,29 @@
             }
           }
         }
+      },
+      {
+        "key": "95.140.158.168:443:a96ad3ea-4820-43d2-bbf3-27c6bf19d652:/api/v2/stream",
+        "node": {
+          "type": "vless",
+          "tag": "🇷🇺node-2172",
+          "server": "95.140.158.168",
+          "server_port": 443,
+          "uuid": "a96ad3ea-4820-43d2-bbf3-27c6bf19d652",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v2/stream",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "fi.bootless.ru",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -8635,5 +8658,5 @@
       }
     ]
   },
-  "updated": "2026-10-11T00:42:33Z"
+  "updated": "2026-10-11T05:48:53Z"
 }
