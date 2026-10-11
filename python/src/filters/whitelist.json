@@ -6845,6 +6845,34 @@
             "server_name": "us.australiacaregroup.site"
           }
         }
+      },
+      {
+        "key": "open.2ml.cc.cd:443:my_super_password_123",
+        "node": {
+          "type": "hysteria2",
+          "tag": "🇯🇵node-31",
+          "server": "open.2ml.cc.cd",
+          "server_port": 443,
+          "password": "my_super_password_123",
+          "tls": {
+            "enabled": true,
+            "server_name": "open.2ml.cc.cd"
+          }
+        }
+      },
+      {
+        "key": "jp-x2.vatilon.cc:10004:aec8e5e3-bb81-4b22-8802-0b88c54997b3",
+        "node": {
+          "type": "hysteria2",
+          "tag": "🇺🇸node-50",
+          "server": "jp-x2.vatilon.cc",
+          "server_port": 10004,
+          "password": "aec8e5e3-bb81-4b22-8802-0b88c54997b3",
+          "tls": {
+            "enabled": true,
+            "server_name": "jp-x2.vatilon.cc"
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -8607,5 +8635,5 @@
       }
     ]
   },
-  "updated": "2026-10-10T23:55:45Z"
+  "updated": "2026-10-11T00:42:33Z"
 }
