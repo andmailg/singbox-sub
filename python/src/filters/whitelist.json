@@ -8655,8 +8655,79 @@
             "authority": "us7.bbobr.win"
           }
         }
+      },
+      {
+        "key": "de-gdd-1.unturned-rust-dead.lol:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇦🇪node-411",
+          "server": "de-gdd-1.unturned-rust-dead.lol",
+          "server_port": 443,
+          "uuid": "c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8",
+          "tls": {
+            "enabled": true,
+            "server_name": "de-gdd-1.unturned-rust-dead.lol",
+            "reality": {
+              "enabled": true,
+              "public_key": "aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "gdd-grpc"
+          }
+        }
+      },
+      {
+        "key": "193.233.91.216:8443",
+        "node": {
+          "type": "vless",
+          "tag": "🇷🇺node-1877",
+          "server": "193.233.91.216",
+          "server_port": 8443,
+          "uuid": "efa9d618-443e-0004-9c67-c4b3d9d73995",
+          "tls": {
+            "enabled": true,
+            "server_name": "pitercdn1.surverssss.pro",
+            "reality": {
+              "enabled": true,
+              "public_key": "5GM_0NRxR5zX7i8OfgIlkcA-YmHgv75XNO7JH-z_OF4"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc",
+            "initial_windows_size": 0
+          }
+        }
+      },
+      {
+        "key": "31.207.7.117:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇸🇪node-2034",
+          "server": "31.207.7.117",
+          "server_port": 443,
+          "uuid": "524dd22d-9f8c-4cc4-9e12-f427f497dff4",
+          "tls": {
+            "enabled": true,
+            "server_name": "se-twitch.global-cdn.org",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "content.v1.Feed"
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-11T05:48:53Z"
+  "updated": "2026-10-11T06:23:58Z"
 }
