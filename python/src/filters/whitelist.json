@@ -6964,6 +6964,29 @@
             ]
           }
         }
+      },
+      {
+        "key": "4vs112dq.zibayeman.com:48544:xm32boc9y175kedm",
+        "node": {
+          "type": "hysteria2",
+          "tag": "🇫🇷node-23",
+          "server": "4vs112dq.zibayeman.com",
+          "server_port": 48544,
+          "password": "xm32boc9y175kedm",
+          "tls": {
+            "enabled": true,
+            "server_name": "4vs112dq.zibayeman.com",
+            "alpn": [
+              "h2",
+              "http/1.1",
+              "h3"
+            ]
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "7tqfhx24g5blwlfu"
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -8797,5 +8820,5 @@
       }
     ]
   },
-  "updated": "2026-10-11T08:15:26Z"
+  "updated": "2026-10-11T15:13:39Z"
 }
