@@ -142,6 +142,13 @@ def build_tun_config(outbounds: list[dict]) -> dict:
             "default_http_client": "rules-downloader",
             "rules": [
                 {
+                    "action": "sniff"
+                },
+                {
+                    "protocol": "dns",
+                    "action": "hijack-dns"
+                },
+                {
                     "ip_cidr": [
                     "155.212.204.0/24"
                         ],
@@ -162,13 +169,6 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                             ],
                     "action": "reject",
                     "method": "drop"
-                },
-                {
-                    "action": "sniff"
-                },
-                {
-                    "protocol": "dns",
-                    "action": "hijack-dns"
                 },
                 {
                     "rule_set": [
