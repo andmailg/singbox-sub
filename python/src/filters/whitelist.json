@@ -9157,8 +9157,63 @@
             "service_name": "VideoRenderer"
           }
         }
+      },
+      {
+        "key": "109.172.54.135:8444",
+        "node": {
+          "type": "vless",
+          "tag": "🇫🇮node-1176",
+          "server": "109.172.54.135",
+          "server_port": 8444,
+          "uuid": "f55e9aba-7b14-4f6f-b59a-d5b3d45c9309",
+          "tls": {
+            "enabled": true,
+            "server_name": "github.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "GunService",
+            "initial_windows_size": 0
+          }
+        }
+      },
+      {
+        "key": "185.242.3.97:8443",
+        "node": {
+          "type": "vless",
+          "tag": "🇳🇱node-1677",
+          "server": "185.242.3.97",
+          "server_port": 8443,
+          "uuid": "2422dbe1-83cb-4bae-9b7e-569e6aaaca00",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.cloudflare.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "EoeKDsLFEs6F6XMnkQZgvHJ4FfB4s5g0hSP5JE2RCl0",
+              "short_id": "a1b2c3d4"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "vless-grpc",
+            "initial_windows_size": 0
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-11T23:49:59Z"
+  "updated": "2026-10-12T00:03:30Z"
 }
