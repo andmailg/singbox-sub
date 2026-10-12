@@ -159,21 +159,17 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                 "package_name": [
                     "ru.oneme.app"
                 ],
-                "domain": [
-                    "tracker-api.vk-analytics.ru",
-                    "vk-analytics.ru",
-                    "sdk-api.apptracer.ru",
-                    "main.telegram.org",
-                    "mmg.whatsapp.net",
-                    "api.ipify.org",
-                    "ipify.org",
+                "domain_suffix": [
                     "ifconfig.me",
                     "ifconfig.co",
                     "icanhazip.com",
                     "ident.me",
-                    "wtfismyip.com"
-                ],
-                "domain_suffix": [
+                    "wtfismyip.com",
+                    "ipify.org",
+                    "whatsapp.net",
+                    "telegram.org",
+                    "apptracer.ru",
+                    "vk-analytics.ru",
                     "mytracker.ru",
                     "mail.ru",
                     "amazonaws.com"
