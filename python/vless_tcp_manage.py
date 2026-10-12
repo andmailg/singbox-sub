@@ -85,9 +85,10 @@ def cmd_merge(args):
     )
 
 
-def _readd_whitelisted():
-    """Восстанавливает узлы из whitelist в working (полная конфигурация)."""
+def _readd_whitelisted(geoip_filter_countries=None, skip_rkn=False):
+    """Восстанавливает узлы из whitelist в working с финальной RKN/GeoIP фильтрацией."""
     from src.vless_tcp_working import load_working_nodes, save_working_nodes, merge_new_nodes
+    from src.orchestrator import _rkn_geoip_filter
 
     whitelist = load_whitelist()
     whitelist_nodes = get_whitelist_nodes("vless_tcp", whitelist)
@@ -95,13 +96,27 @@ def _readd_whitelisted():
         print("  Whitelist is empty, skipping.")
         return
 
+    # Применяем RKN + GeoIP фильтрацию к whitelist-нодам
+    print(f"  Applying final RKN/GeoIP filter to {len(whitelist_nodes)} whitelist node(s)...")
+    filtered_nodes = _rkn_geoip_filter(
+        whitelist_nodes,
+        prefix="  ",
+        geoip_filter_countries=geoip_filter_countries,
+        skip_rkn=skip_rkn,
+    )
+    if not filtered_nodes:
+        print("  All whitelist nodes filtered out by RKN/GeoIP.")
+        return
+
+    print(f"  {len(filtered_nodes)} whitelist node(s) passed RKN/GeoIP filter.")
+
     existing = load_working_nodes()
     existing_keys = {_cache_key(n) for n in existing}
 
-    new_nodes = [n for n in whitelist_nodes if _cache_key(n) not in existing_keys]
+    new_nodes = [n for n in filtered_nodes if _cache_key(n) not in existing_keys]
 
     if not new_nodes:
-        print(f"  All {len(whitelist_nodes)} whitelisted node(s) already in working.")
+        print(f"  All {len(filtered_nodes)} whitelisted node(s) already in working.")
         return
 
     merged, added = merge_new_nodes(existing, new_nodes)
@@ -109,7 +124,7 @@ def _readd_whitelisted():
         save_working_nodes(merged)
         print(f"  Re-added {added} whitelisted node(s) to working (total: {len(merged)})")
     else:
-        print(f"  All {len(whitelist_nodes)} whitelisted node(s) already in working.")
+        print(f"  All {len(filtered_nodes)} whitelisted node(s) already in working.")
 
 
 def cmd_test(args):
@@ -221,6 +236,10 @@ def cmd_test(args):
 
 def cmd_run(args):
     """Полный pipeline: merge -> whitelist re-add -> test -> export."""
+    # Извлекаем флаги фильтрации для передачи в _readd_whitelisted
+    geoip_filter_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
+    skip_rkn = args.rkn_filter == 0
+
     # Step 1: Merge
     print("=" * 60)
     print("STEP 1: Merge new nodes from subscriptions")
@@ -231,7 +250,7 @@ def cmd_run(args):
     print("\n" + "=" * 60)
     print("STEP 1.5: Re-add whitelisted nodes to working")
     print("=" * 60)
-    _readd_whitelisted()
+    _readd_whitelisted(geoip_filter_countries=geoip_filter_countries, skip_rkn=skip_rkn)
 
     # Step 2: Test
     print("\n" + "=" * 60)
