@@ -62,6 +62,13 @@ def build_tun_config(outbounds: list[dict]) -> dict:
             ],
             "rules": [
                 {
+                    "ip_cidr": [
+                    "155.212.204.0/24"
+                        ],
+                    "action": "reject",
+                    "method": "drop"
+                },
+                {
                     "domain_suffix": [
                         ".lan",
                         ".local"
