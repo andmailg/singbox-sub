@@ -118,6 +118,7 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                 "mtu": 1420,
                 "address": "172.19.0.1/30",
                 "auto_route": True,
+                "strict_route": True,
                 "stack": "mixed",
                 "route_exclude_address": [
                     "10.0.0.0/8",
