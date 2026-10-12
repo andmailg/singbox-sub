@@ -2892,6 +2892,29 @@
             }
           }
         }
+      },
+      {
+        "key": "50.7.216.174:443:1bda2ae7-b597-4704-95a8-29c0f76324ba:/",
+        "node": {
+          "type": "vless",
+          "tag": "🇬🇧node-1241",
+          "server": "50.7.216.174",
+          "server_port": 443,
+          "uuid": "1bda2ae7-b597-4704-95a8-29c0f76324ba",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "1bda2ae7.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -9229,5 +9252,5 @@
       }
     ]
   },
-  "updated": "2026-10-12T00:59:59Z"
+  "updated": "2026-10-12T06:00:03Z"
 }
