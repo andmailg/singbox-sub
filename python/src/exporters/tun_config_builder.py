@@ -158,7 +158,7 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                 {
                 "package_name": [
                     "ru.oneme.app"
-                        ],
+                ],
                 "domain": [
                     "tracker-api.vk-analytics.ru",
                     "vk-analytics.ru",
@@ -172,12 +172,12 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                     "icanhazip.com",
                     "ident.me",
                     "wtfismyip.com"
-                        ],
+                ],
                 "domain_suffix": [
                     "mytracker.ru",
                     "mail.ru",
                     "amazonaws.com"
-                        ],
+                ],
                 "action": "reject",
                 "method": "drop"
                 },
