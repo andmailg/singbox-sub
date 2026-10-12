@@ -62,13 +62,6 @@ def build_tun_config(outbounds: list[dict]) -> dict:
             ],
             "rules": [
                 {
-                    "ip_cidr": [
-                    "155.212.204.0/24"
-                        ],
-                    "action": "reject",
-                    "method": "drop"
-                },
-                {
                     "domain_suffix": [
                         ".lan",
                         ".local"
@@ -148,6 +141,28 @@ def build_tun_config(outbounds: list[dict]) -> dict:
         "route": {
             "default_http_client": "rules-downloader",
             "rules": [
+                {
+                    "ip_cidr": [
+                    "155.212.204.0/24"
+                        ],
+                    "action": "reject",
+                    "method": "drop"
+                },
+                {
+                    "package_name": [
+                        "ru.oneme.app"
+                            ],
+                    "domain": [
+                        "tracker-api.vk-analytics.ru"
+                        "main.telegram.org",
+                        "mmg.whatsapp.net",
+                        "api.ipify.org",
+                        "amazonaws.com",
+                        "ifconfig.me"
+                            ],
+                    "action": "reject",
+                    "method": "drop"
+                },
                 {
                     "action": "sniff"
                 },
