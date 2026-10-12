@@ -160,12 +160,14 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                         "ru.oneme.app"
                             ],
                     "domain": [
-                        "tracker-api.vk-analytics.ru"
+                        "tracker-api.vk-analytics.ru",
                         "main.telegram.org",
                         "mmg.whatsapp.net",
                         "api.ipify.org",
-                        "amazonaws.com",
                         "ifconfig.me"
+                            ],
+                    "domain_suffix": [
+                        "amazonaws.com"
                             ],
                     "action": "reject",
                     "method": "drop"
