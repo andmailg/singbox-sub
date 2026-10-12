@@ -156,21 +156,30 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                     "method": "drop"
                 },
                 {
-                    "package_name": [
-                        "ru.oneme.app"
-                            ],
-                    "domain": [
-                        "tracker-api.vk-analytics.ru",
-                        "main.telegram.org",
-                        "mmg.whatsapp.net",
-                        "api.ipify.org",
-                        "ifconfig.me"
-                            ],
-                    "domain_suffix": [
-                        "amazonaws.com"
-                            ],
-                    "action": "reject",
-                    "method": "drop"
+                "package_name": [
+                    "ru.oneme.app"
+                        ],
+                "domain": [
+                    "tracker-api.vk-analytics.ru",
+                    "vk-analytics.ru",
+                    "sdk-api.apptracer.ru",
+                    "main.telegram.org",
+                    "mmg.whatsapp.net",
+                    "api.ipify.org",
+                    "ipify.org",
+                    "ifconfig.me",
+                    "ifconfig.co",
+                    "icanhazip.com",
+                    "ident.me",
+                    "wtfismyip.com"
+                        ],
+                "domain_suffix": [
+                    "mytracker.ru",
+                    "mail.ru",
+                    "amazonaws.com"
+                        ],
+                "action": "reject",
+                "method": "drop"
                 },
                 {
                     "rule_set": [
