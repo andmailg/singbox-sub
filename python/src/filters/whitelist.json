@@ -9380,8 +9380,139 @@
             "service_name": "content.v1.Feed"
           }
         }
+      },
+      {
+        "key": "31.58.95.10:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇦🇪node-409",
+          "server": "31.58.95.10",
+          "server_port": 443,
+          "uuid": "c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8",
+          "tls": {
+            "enabled": true,
+            "server_name": "de-gdd-1.unturned-rust-dead.lol",
+            "reality": {
+              "enabled": true,
+              "public_key": "aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "gdd-grpc",
+            "initial_windows_size": 0
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "chart.videofriend.site:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇩🇪node-1106",
+          "server": "chart.videofriend.site",
+          "server_port": 443,
+          "uuid": "ed8704b8-9e9e-48e6-b55b-ae9079ab3a59",
+          "tls": {
+            "enabled": true,
+            "server_name": "chart.videofriend.site",
+            "reality": {
+              "enabled": true,
+              "public_key": "kcXhnfHyVJyjNjIdoLUpM17d2TNrxviP4qGSLmjvLB4"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc-tunnel",
+            "initial_windows_size": 0
+          }
+        }
+      },
+      {
+        "key": "45.129.176.34:8443",
+        "node": {
+          "type": "vless",
+          "tag": "🇳🇱node-1713",
+          "server": "45.129.176.34",
+          "server_port": 8443,
+          "uuid": "d7b4d5b3-2c2d-493c-9b83-f25e3f6771b2",
+          "tls": {
+            "enabled": true,
+            "server_name": "avatars.mds.yandex.net",
+            "reality": {
+              "enabled": true,
+              "public_key": "sgFFdQvfeujBKh6g7N7klU_u0mKYlr800MFbko5FzUg",
+              "short_id": "e67fb918ed6b9ffb"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc-yandex"
+          }
+        }
+      },
+      {
+        "key": "nl-1-6.unturned-rust-dead.lol:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇳🇱node-1777",
+          "server": "nl-1-6.unturned-rust-dead.lol",
+          "server_port": 443,
+          "uuid": "c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8",
+          "tls": {
+            "enabled": true,
+            "server_name": "nl-1-6.unturned-rust-dead.lol",
+            "reality": {
+              "enabled": true,
+              "public_key": "aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "nl-grpc"
+          }
+        }
+      },
+      {
+        "key": "nl.riotvpn.eu:8443",
+        "node": {
+          "type": "vless",
+          "tag": "🇳🇱node-1780",
+          "server": "nl.riotvpn.eu",
+          "server_port": 8443,
+          "uuid": "d7b4d5b3-2c2d-493c-9b83-f25e3f6771b2",
+          "tls": {
+            "enabled": true,
+            "server_name": "avatars.mds.yandex.net",
+            "reality": {
+              "enabled": true,
+              "public_key": "sgFFdQvfeujBKh6g7N7klU_u0mKYlr800MFbko5FzUg",
+              "short_id": "e67fb918ed6b9ffb"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "ios"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc-yandex"
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-12T06:32:28Z"
+  "updated": "2026-10-12T20:10:09Z"
 }
