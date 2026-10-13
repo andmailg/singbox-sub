@@ -2941,6 +2941,58 @@
             }
           }
         }
+      },
+      {
+        "key": "www.speedtest.net:2087:0075be7a-1f52-407b-81c1-7a0cb109e814:/Nothing1",
+        "node": {
+          "type": "vless",
+          "tag": "node-567",
+          "server": "www.speedtest.net",
+          "server_port": 2087,
+          "uuid": "0075be7a-1f52-407b-81c1-7a0cb109e814",
+          "transport": {
+            "type": "xhttp",
+            "path": "/Nothing1",
+            "mode": "stream-one",
+            "host": [
+              "smart-hetzner-ed5b25.mehmapixeo44.com"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "smart-hetzner-ed5b25.mehmapixeo44.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "104.16.174.36:2053:22163079-f078-4667-a019-f10e7b8681c4:/sefo",
+        "node": {
+          "type": "vless",
+          "tag": "node-10",
+          "server": "104.16.174.36",
+          "server_port": 2053,
+          "uuid": "22163079-f078-4667-a019-f10e7b8681c4",
+          "transport": {
+            "type": "xhttp",
+            "path": "/sefo",
+            "mode": "auto",
+            "host": [
+              "panel.karljohnson.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "panel.karljohnson.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -9853,5 +9905,5 @@
       }
     ]
   },
-  "updated": "2026-10-13T12:52:20Z"
+  "updated": "2026-10-13T20:51:41Z"
 }
