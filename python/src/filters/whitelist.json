@@ -3045,6 +3045,52 @@
             }
           }
         }
+      },
+      {
+        "key": "xt.dec.toostep.top:443:ab7f0a2b-87ea-4bf9-8c08-3db4ff6e2980:/api/1ca227be27",
+        "node": {
+          "type": "vless",
+          "tag": "🇩🇪node-1202",
+          "server": "xt.dec.toostep.top",
+          "server_port": 443,
+          "uuid": "ab7f0a2b-87ea-4bf9-8c08-3db4ff6e2980",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/1ca227be27",
+            "mode": "stream-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "xt.dec.toostep.top",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "xt.ded.toostep.top:443:ab7f0a2b-87ea-4bf9-8c08-3db4ff6e2980:/api/1d824de855",
+        "node": {
+          "type": "vless",
+          "tag": "🇩🇪node-1203",
+          "server": "xt.ded.toostep.top",
+          "server_port": 443,
+          "uuid": "ab7f0a2b-87ea-4bf9-8c08-3db4ff6e2980",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/1d824de855",
+            "mode": "stream-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "xt.ded.toostep.top",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -10089,5 +10135,5 @@
       }
     ]
   },
-  "updated": "2026-10-14T09:21:21Z"
+  "updated": "2026-10-14T10:20:40Z"
 }
