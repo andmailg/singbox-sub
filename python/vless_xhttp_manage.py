@@ -376,8 +376,8 @@ Examples:
     run_parser.add_argument("--test-timeout", type=int, default=10, help="Test timeout per node (seconds)")
     run_parser.add_argument("--export", type=str, default="xray",
                             help="Export formats (default: xray): tun,xray,router")
-    run_parser.add_argument("--geoip-filter", type=str, default=None,
-                            help="Comma-separated list of country codes to filter (e.g. 'ru,ir')")
+    run_parser.add_argument("--geoip-block", type=str, default=None,
+                            help="Comma-separated list of country codes to block (e.g. 'ru,ir')")
     run_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=0,
                             help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 1)")
     run_parser.add_argument("--blacklist-timeout", type=int, default=3,
@@ -389,8 +389,8 @@ Examples:
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
     merge_parser.add_argument("--ports", type=str, default=None,
                               help="Comma-separated port whitelist (default: all ports)")
-    merge_parser.add_argument("--geoip-filter", type=str, nargs='*', default=None,
-                              help="Country codes to filter (e.g. --geoip-filter ru ir or --geoip-filter ru,ir)")
+    merge_parser.add_argument("--geoip-block", type=str, nargs='*', default=None,
+                              help="Country codes to block (e.g. --geoip-block ru ir or --geoip-block ru,ir)")
     merge_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=0,
                               help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 1)")
 
@@ -421,4 +421,4 @@ Examples:
 
 
 if __name__ == "__main__":
-   main()
+   main()   

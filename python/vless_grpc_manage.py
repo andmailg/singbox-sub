@@ -85,7 +85,7 @@ def cmd_merge(args):
     )
 
 
-def _readd_whitelisted(geoip_filter_countries=None, skip_rkn=False):
+def _readd_whitelisted(geoip_block_countries=None, skip_rkn=False):
     """Восстанавливает узлы из whitelist в working с финальной RKN/GeoIP фильтрацией."""
     from src.vless_grpc_working import load_working_nodes, save_working_nodes, merge_new_nodes
     from src.orchestrator import _rkn_geoip_filter
@@ -101,7 +101,7 @@ def _readd_whitelisted(geoip_filter_countries=None, skip_rkn=False):
     filtered_nodes = _rkn_geoip_filter(
         whitelist_nodes,
         prefix="  ",
-        geoip_filter_countries=geoip_filter_countries,
+        geoip_block_countries=geoip_block_countries,
         skip_rkn=skip_rkn,
     )
     if not filtered_nodes:
@@ -412,4 +412,4 @@ Examples:
 
 
 if __name__ == "__main__":
-   main()
+   main   

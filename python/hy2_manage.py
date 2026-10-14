@@ -274,7 +274,7 @@ def cmd_run(args):
     print("\n" + "=" * 60)
     print("STEP 1.5: Re-add whitelisted nodes to working")
     print("=" * 60)
-    _readd_whitelisted(geoip_filter_countries=geoip_filter_countries, skip_rkn=skip_rkn)
+    _readd_whitelisted(geoip_block_countries=geoip_block_countries, skip_rkn=skip_rkn)
 
     # Step 2: Test
     print("\n" + "=" * 60)
@@ -444,4 +444,4 @@ Examples:
 
 
 if __name__ == "__main__":
-    main()
+    main(  

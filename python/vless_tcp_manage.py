@@ -56,7 +56,7 @@ def cmd_merge(args):
     from src.orchestrator import run_pipeline
 
     port_whitelist = tuple(int(p) for p in args.ports.split(",")) if args.ports else None
-    geoip_filter_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
+    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_block.split(",")) if args.geoip_block else None
     skip_rkn = args.rkn_filter == 0
 
     # Кастомный export_func: сохраняет ноды в vless_tcp_working.json без нумерации
@@ -80,12 +80,12 @@ def cmd_merge(args):
         port_whitelist=port_whitelist,
         reality=True,
         tester_func=None,  # тестирование отдельно через cmd_test (если нужно)
-        geoip_filter_countries=geoip_filter_countries,
+        geoip_block_countries=geoip_block_countries,
         skip_rkn=skip_rkn,
     )
 
 
-def _readd_whitelisted(geoip_filter_countries=None, skip_rkn=False):
+def _readd_whitelisted(geoip_block_countries=None, skip_rkn=False):
     """Восстанавливает узлы из whitelist в working с финальной RKN/GeoIP фильтрацией."""
     from src.vless_tcp_working import load_working_nodes, save_working_nodes, merge_new_nodes
     from src.orchestrator import _rkn_geoip_filter
@@ -101,7 +101,7 @@ def _readd_whitelisted(geoip_filter_countries=None, skip_rkn=False):
     filtered_nodes = _rkn_geoip_filter(
         whitelist_nodes,
         prefix="  ",
-        geoip_filter_countries=geoip_filter_countries,
+        geoip_block_countries=geoip_block_countries,
         skip_rkn=skip_rkn,
     )
     if not filtered_nodes:
@@ -237,7 +237,7 @@ def cmd_test(args):
 def cmd_run(args):
     """Полный pipeline: merge -> whitelist re-add -> test -> export."""
     # Извлекаем флаги фильтрации для передачи в _readd_whitelisted
-    geoip_filter_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
+    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_block.split(",")) if args.geoip_block else None
     skip_rkn = args.rkn_filter == 0
 
     # Step 1: Merge
@@ -250,7 +250,7 @@ def cmd_run(args):
     print("\n" + "=" * 60)
     print("STEP 1.5: Re-add whitelisted nodes to working")
     print("=" * 60)
-    _readd_whitelisted(geoip_filter_countries=geoip_filter_countries, skip_rkn=skip_rkn)
+    _readd_whitelisted(geoip_block_countries=geoip_block_countries, skip_rkn=skip_rkn)
 
     # Step 2: Test
     print("\n" + "=" * 60)
@@ -393,8 +393,8 @@ Examples:
     run_parser.add_argument("--test-timeout", type=int, default=10, help="Test timeout per node (seconds)")
     run_parser.add_argument("--export", type=str, default="tun,xray",
                             help="Export formats (default: tun,xray): tun,xray,router")
-    run_parser.add_argument("--geoip-filter", type=str, default=None,
-                            help="Comma-separated list of country codes to filter (e.g. 'ru,ir')")
+    run_parser.add_argument("--geoip-block", type=str, default=None,
+                            help="Comma-separated list of country codes to block (e.g. 'ru,ir')")
     run_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=0,
                             help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 1)")
     run_parser.add_argument("--blacklist-timeout", type=int, default=3,
@@ -406,8 +406,8 @@ Examples:
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
     merge_parser.add_argument("--ports", type=str, default=None,
                               help="Comma-separated port whitelist (default: all ports)")
-    merge_parser.add_argument("--geoip-filter", type=str, nargs='*', default=None,
-                              help="Country codes to filter (e.g. --geoip-filter ru ir or --geoip-filter ru,ir)")
+    merge_parser.add_argument("--geoip-block", type=str, nargs='*', default=None,
+                              help="Country codes to block (e.g. --geoip-block ru ir or --geoip-block ru,ir)")
     merge_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=0,
                               help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 1)")
 
@@ -438,4 +438,4 @@ Examples:
 
 
 if __name__ == "__main__":
-   main()
+   mai

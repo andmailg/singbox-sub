@@ -74,20 +74,20 @@ def resolve_country(server: str) -> str | None:
 def check_geoip(
     server: str,
     reader,
-    geoip_filter_countries: tuple[str, ...] | None = None,
+    geoip_block_countries: tuple[str, ...] | None = None,
 ) -> dict | None | str:
     """Проверяет сервер по GeoIP базе.
 
     Args:
         server: IP или домен сервера.
         reader: GeoIP reader (MaxMind).
-        geoip_filter_countries: кортеж ISO-кодов стран для фильтрации (например ("ru", "ir")).
-            Если None или пустой — фильтрация по странам отключена.
+        geoip_block_countries: кортеж ISO-кодов стран для блокировки (например ("ru", "ir")).
+            Если None или пустой — блокировка по странам отключена.
 
     Returns:
         dict с ip/country — если база доступна и страна определена,
         None — если не удалось определить IP или база недоступна,
-        str (ISO-код страны) — если страна попала в фильтр блокировки.
+        str (ISO-код страны) — если страна попала в список блокировки.
     """
     node_ip = server.strip("[]")
 
@@ -115,7 +115,7 @@ def check_geoip(
                 country = country_obj.get("iso_code", "")
                 if country:
                     # Проверяем, нужно ли блокировать эту страну
-                    if geoip_filter_countries and country.upper() in [c.upper() for c in geoip_filter_countries]:
+                    if geoip_block_countries and country.upper() in [c.upper() for c in geoip_block_countries]:
                         return country.lower()
                     return {"ip": node_ip, "country": country}
     except Exception:

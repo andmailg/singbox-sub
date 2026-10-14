@@ -54,10 +54,10 @@ jobs:
           cd python
           # TODO: измени имя файла менеджера и аргументы
           # Примеры:
-          #   python vless_tcp_manage.py run --test-timeout 3 --geoip-filter "" --rkn-filter 0 --blacklist-timeout 3 --whitelist-timeout 10
-          #   python hy2_manage.py run --test-timeout 3 --geoip-filter "" --export tun,xray,router --rkn-filter 0 --blacklist-timeout 3 --whitelist-timeout 10
-          #   python vless_xhttp_manage.py run --test-timeout 3 --geoip-filter "" --export xray --rkn-filter 0 --blacklist-timeout 3 --whitelist-timeout 10
-          python {PROTO}_manage.py run --test-timeout 3 --geoip-filter "" --rkn-filter 0 --blacklist-timeout 3 --whitelist-timeout 10
+          #   python vless_tcp_manage.py run --test-timeout 3 --geoip-block "" --rkn-filter 0 --blacklist-timeout 3 --whitelist-timeout 10
+          #   python hy2_manage.py run --test-timeout 3 --geoip-block "" --export tun,xray,router --rkn-filter 0 --blacklist-timeout 3 --whitelist-timeout 10
+          #   python vless_xhttp_manage.py run --test-timeout 3 --geoip-block "" --export xray --rkn-filter 0 --blacklist-timeout 3 --whitelist-timeout 10
+          python {PROTO}_manage.py run --test-timeout 3 --geoip-block "" --rkn-filter 0 --blacklist-timeout 3 --whitelist-timeout 10
 
       - name: Commit and push if changed
         run: |

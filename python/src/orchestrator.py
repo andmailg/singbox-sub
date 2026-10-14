@@ -195,7 +195,7 @@ def _check_node(
 def _rkn_geoip_filter(
     outbounds: list[dict],
     prefix: str = "",
-    geoip_filter_countries: tuple[str, ...] | None = None,
+    geoip_block_countries: tuple[str, ...] | None = None,
     skip_rkn: bool = False,
 ) -> list[dict]:
     """RKN + GeoIP фильтрация через check_rkn_blocked + check_geoip.
@@ -203,8 +203,8 @@ def _rkn_geoip_filter(
     Args:
         outbounds: список нод для фильтрации.
         prefix: префикс для логов.
-        geoip_filter_countries: кортеж ISO-кодов стран для фильтрации (например ("ru", "ir")).
-            Если None или пустой — фильтрация по странам отключена.
+        geoip_block_countries: кортеж ISO-кодов стран для блокировки (например ("ru", "ir")).
+            Если None или пустой — блокировка по странам отключена.
         skip_rkn: если True — пропускает проверку RKN (остается только GeoIP).
     """
     from src.common import session
@@ -216,10 +216,10 @@ def _rkn_geoip_filter(
     reader = open_geoip_reader()
 
     if reader:
-        if geoip_filter_countries:
-            print(f"{prefix}GeoIP database loaded for geolocation filtering (filter: {', '.join(geoip_filter_countries)}).")
+        if geoip_block_countries:
+            print(f"{prefix}GeoIP database loaded for geolocation blocking (block: {', '.join(geoip_block_countries)}).")
         else:
-            print(f"{prefix}GeoIP database loaded for geolocation filtering.")
+            print(f"{prefix}GeoIP database loaded for geolocation blocking.")
 
     num_workers = min(8, len(outbounds))
     print(f"{prefix}Filtering {len(outbounds)} nodes with {num_workers} workers...")
@@ -431,3 +431,4 @@ def run_pipeline(
     else:
         from src.exporters.singbox_exporter import export_tun
         export_tun(outbounds, output_file)
+     
