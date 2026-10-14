@@ -406,8 +406,8 @@ Examples:
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
     merge_parser.add_argument("--ports", type=str, default=None,
                               help="Comma-separated port whitelist (default: all ports)")
-    merge_parser.add_argument("--geoip-block", type=str, nargs='*', default=None,
-                              help="Country codes to block (e.g. --geoip-block ru ir or --geoip-block ru,ir)")
+    merge_parser.add_argument("--geoip-block", type=str, default=None,
+                              help="Comma-separated country codes to block (e.g. --geoip-block ru,ir)")
     merge_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=0,
                               help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 1)")
 

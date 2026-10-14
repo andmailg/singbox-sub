@@ -56,7 +56,7 @@ def cmd_merge(args):
     from src.orchestrator import run_pipeline
 
     port_whitelist = tuple(int(p) for p in args.ports.split(",")) if args.ports else None
-    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
+    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_block.split(",")) if args.geoip_block else None
     skip_rkn = args.rkn_filter == 0
 
     # Кастомный export_func: сохраняет ноды в vless_grpc_working.json без нумерации
@@ -234,7 +234,7 @@ def cmd_test(args):
 def cmd_run(args):
     """Полный pipeline: merge -> whitelist re-add -> test -> export."""
     # Извлекаем флаги фильтрации для передачи в _readd_whitelisted
-    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
+    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_block.split(",")) if args.geoip_block else None
     skip_rkn = args.rkn_filter == 0
 
     print("=" * 60)
@@ -367,8 +367,8 @@ Examples:
     run_parser.add_argument("--test-timeout", type=int, default=10, help="Test timeout per node (seconds)")
     run_parser.add_argument("--export", type=str, default="tun,xray",
                             help="Export formats (default: tun,xray): tun,xray,router")
-    run_parser.add_argument("--geoip-filter", type=str, default=None,
-                            help="Comma-separated list of country codes to filter (e.g. 'ru,ir')")
+    run_parser.add_argument("--geoip-block", type=str, default=None,
+                            help="Comma-separated list of country codes to block (e.g. 'ru,ir')")
     run_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=0,
                             help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 1)")
     run_parser.add_argument("--blacklist-timeout", type=int, default=3,
@@ -380,8 +380,8 @@ Examples:
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
     merge_parser.add_argument("--ports", type=str, default=None,
                               help="Comma-separated port whitelist (default: all ports)")
-    merge_parser.add_argument("--geoip-filter", type=str, nargs='*', default=None,
-                              help="Country codes to filter (e.g. --geoip-filter ru ir or --geoip-filter ru,ir)")
+    merge_parser.add_argument("--geoip-block", type=str, default=None,
+                              help="Comma-separated country codes to block (e.g. --geoip-block ru,ir)")
     merge_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=0,
                               help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 1)")
 
