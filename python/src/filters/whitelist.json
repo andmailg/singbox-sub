@@ -10132,8 +10132,36 @@
           },
           "packet_encoding": "xudp"
         }
+      },
+      {
+        "key": "se1.h1cloud.net:26128",
+        "node": {
+          "type": "vless",
+          "tag": "🇸🇪node-1888",
+          "server": "se1.h1cloud.net",
+          "server_port": 26128,
+          "uuid": "68c3d665-b2b5-4ffb-9f37-9f3d8c47324d",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.icloud.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "sACiHit5lNtPRK_eFP6jT8dMPUZ4kQRsfPj_LL5p7Uk",
+              "short_id": "13ac4d3bdadf1ea1"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "df50147201bf",
+            "initial_windows_size": 0
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-14T10:20:40Z"
+  "updated": "2026-10-14T10:41:53Z"
 }
