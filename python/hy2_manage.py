@@ -58,7 +58,7 @@ def cmd_merge(args):
     from src.parsers import hy2_parser
 
     port_whitelist = tuple(int(p) for p in args.ports.split(",")) if args.ports else None
-    geoip_filter_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
+    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_block.split(",")) if args.geoip_block else None
     skip_rkn = args.rkn_filter == 0
 
     # Кастомный export_func: перезаписывает hy2_working.json отфильтрованными нодами
@@ -81,12 +81,12 @@ def cmd_merge(args):
         tls_required=True,
         port_whitelist=port_whitelist,
         tester_func=None,  # тестирование отдельно через cmd_test
-        geoip_filter_countries=geoip_filter_countries,
+        geoip_block_countries=geoip_block_countries,
         skip_rkn=skip_rkn,
     )
 
 
-def _readd_whitelisted(geoip_filter_countries=None, skip_rkn=False):
+def _readd_whitelisted(geoip_block_countries=None, skip_rkn=False):
     """Восстанавливает узлы из whitelist в working с финальной RKN/GeoIP фильтрацией."""
     from src.hy2_working import load_working_nodes, save_working_nodes, merge_new_nodes
     from src.orchestrator import _rkn_geoip_filter
@@ -102,7 +102,7 @@ def _readd_whitelisted(geoip_filter_countries=None, skip_rkn=False):
     filtered_nodes = _rkn_geoip_filter(
         whitelist_nodes,
         prefix="  ",
-        geoip_filter_countries=geoip_filter_countries,
+        geoip_block_countries=geoip_block_countries,
         skip_rkn=skip_rkn,
     )
     if not filtered_nodes:
@@ -261,7 +261,7 @@ def renumber_nodes(nodes: list[dict]) -> list[dict]:
 def cmd_run(args):
     """Полный pipeline: merge -> whitelist re-add -> test -> export."""
     # Извлекаем флаги фильтрации для передачи в _readd_whitelisted
-    geoip_filter_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
+    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_block.split(",")) if args.geoip_block else None
     skip_rkn = args.rkn_filter == 0
 
     # Step 1: Merge

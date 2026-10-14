@@ -7,9 +7,7 @@
 """
 
 import argparse
-import json
 import os
-import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -26,13 +24,10 @@ from src.vless_xhttp_working import (
 from src.pending import (
     load_pending_nodes,
     save_pending_nodes,
-    merge_pending_nodes,
-    remove_nodes_by_keys,
+
 )
 from src.common import (
     INTERNAL_FIELDS,
-    clean_internal_fields,
-    resolve_server,
     country_code_to_flag,
 )
 from src.testers.asn_resolver import resolve_asn
@@ -57,7 +52,7 @@ def cmd_merge(args):
     from src.orchestrator import run_pipeline
 
     port_whitelist = tuple(int(p) for p in args.ports.split(",")) if args.ports else None
-    geoip_filter_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
+    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
     skip_rkn = args.rkn_filter == 0
 
     # Кастомный export_func: сохраняет ноды в vless_xhttp_working.json без нумерации
@@ -81,12 +76,12 @@ def cmd_merge(args):
         port_whitelist=port_whitelist,
         reality=False,
         tester_func=None,  # тестирование отдельно через cmd_test (если нужно)
-        geoip_filter_countries=geoip_filter_countries,
+        geoip_block_countries=geoip_block_countries,
         skip_rkn=skip_rkn,
     )
 
 
-def _readd_whitelisted(geoip_filter_countries=None, skip_rkn=False):
+def _readd_whitelisted(geoip_block_countries=None, skip_rkn=False):
     """Восстанавливает узлы из whitelist в working с финальной RKN/GeoIP фильтрацией."""
     from src.vless_xhttp_working import load_working_nodes, save_working_nodes, merge_new_nodes
     from src.orchestrator import _rkn_geoip_filter
@@ -102,7 +97,7 @@ def _readd_whitelisted(geoip_filter_countries=None, skip_rkn=False):
     filtered_nodes = _rkn_geoip_filter(
         whitelist_nodes,
         prefix="  ",
-        geoip_filter_countries=geoip_filter_countries,
+        geoip_block_countries=geoip_block_countries,
         skip_rkn=skip_rkn,
     )
     if not filtered_nodes:
@@ -239,7 +234,7 @@ def cmd_test(args):
 def cmd_run(args):
     """Полный pipeline: merge -> whitelist re-add -> test -> export."""
     # Извлекаем флаги фильтрации для передачи в _readd_whitelisted
-    geoip_filter_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
+    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
     skip_rkn = args.rkn_filter == 0
 
     # Step 1: Merge
@@ -252,7 +247,7 @@ def cmd_run(args):
     print("\n" + "=" * 60)
     print("STEP 1.5: Re-add whitelisted nodes to working")
     print("=" * 60)
-    _readd_whitelisted(geoip_filter_countries=geoip_filter_countries, skip_rkn=skip_rkn)
+    _readd_whitelisted(geoip_block_countries=geoip_block_countries, skip_rkn=skip_rkn)
 
     # Step 2: Test
     print("\n" + "=" * 60)

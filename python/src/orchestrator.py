@@ -171,7 +171,7 @@ def _check_node(
     server: str,
     blocked_networks,
     reader,
-    geoip_filter_countries: tuple[str, ...] | None,
+    geoip_block_countries: tuple[str, ...] | None,
 ) -> dict | None | str:
     """Вызывает check_rkn_blocked + check_geoip последовательно."""
     # 1. RKN проверка
@@ -182,7 +182,7 @@ def _check_node(
         return None
 
     # 2. GeoIP проверка
-    geoip_result = check_geoip(server, reader, geoip_filter_countries)
+    geoip_result = check_geoip(server, reader, geoip_block_countries)
     if isinstance(geoip_result, str):
         return geoip_result
     if geoip_result is not None:
@@ -209,6 +209,7 @@ def _rkn_geoip_filter(
     """
     from src.common import session
 
+    blocked_networks = None
     if skip_rkn:
         print(f"{prefix}RKN filtering is SKIPPED.")
     else:
@@ -231,12 +232,12 @@ def _rkn_geoip_filter(
                 o.get("server", "").strip("[]"),
                 blocked_networks if not skip_rkn else None,
                 reader,
-                geoip_filter_countries,
+                geoip_block_countries,
             ): idx
             for idx, o in enumerate(outbounds)
         }
 
-        results: list[dict | None] = [None] * len(outbounds)
+        results: list[dict | str | None] = [None] * len(outbounds)
         for future in as_completed(future_to_idx):
             idx = future_to_idx[future]
             try:
@@ -312,7 +313,7 @@ def run_pipeline(
     tester_func: Callable | None = None,
     test_timeout: int = 5,
     reality: bool = False,
-    geoip_filter_countries: tuple[str, ...] | None = None,
+    geoip_block_countries: tuple[str, ...] | None = None,
     skip_rkn: bool = False,
 ) -> None:
     """Запускает полный pipeline сборки конфига.
@@ -379,7 +380,7 @@ def run_pipeline(
         return
 
     # 4. RKN + GeoIP фильтрация
-    outbounds = _rkn_geoip_filter(outbounds, prefix=prefix, geoip_filter_countries=geoip_filter_countries, skip_rkn=skip_rkn)
+    outbounds = _rkn_geoip_filter(outbounds, prefix=prefix, geoip_block_countries=geoip_block_countries, skip_rkn=skip_rkn)
 
     if not outbounds:
         print(f"{prefix}Error: No valid proxy nodes left after RKN+GeoIP filtration!")
@@ -431,4 +432,3 @@ def run_pipeline(
     else:
         from src.exporters.singbox_exporter import export_tun
         export_tun(outbounds, output_file)
-     

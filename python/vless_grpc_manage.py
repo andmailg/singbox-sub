@@ -56,7 +56,7 @@ def cmd_merge(args):
     from src.orchestrator import run_pipeline
 
     port_whitelist = tuple(int(p) for p in args.ports.split(",")) if args.ports else None
-    geoip_filter_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
+    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
     skip_rkn = args.rkn_filter == 0
 
     # Кастомный export_func: сохраняет ноды в vless_grpc_working.json без нумерации
@@ -80,7 +80,7 @@ def cmd_merge(args):
         port_whitelist=port_whitelist,
         reality=False,
         tester_func=None,
-        geoip_filter_countries=geoip_filter_countries,
+        geoip_block_countries=geoip_block_countries,
         skip_rkn=skip_rkn,
     )
 
@@ -234,7 +234,7 @@ def cmd_test(args):
 def cmd_run(args):
     """Полный pipeline: merge -> whitelist re-add -> test -> export."""
     # Извлекаем флаги фильтрации для передачи в _readd_whitelisted
-    geoip_filter_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
+    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
     skip_rkn = args.rkn_filter == 0
 
     print("=" * 60)
@@ -245,7 +245,7 @@ def cmd_run(args):
     print("\n" + "=" * 60)
     print("STEP 1.5: Re-add whitelisted nodes to working")
     print("=" * 60)
-    _readd_whitelisted(geoip_filter_countries=geoip_filter_countries, skip_rkn=skip_rkn)
+    _readd_whitelisted(geoip_block_countries=geoip_block_countries, skip_rkn=skip_rkn)
 
     print("\n" + "=" * 60)
     print("STEP 2: Test all working nodes")
