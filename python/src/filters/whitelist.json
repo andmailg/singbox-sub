@@ -7331,6 +7331,55 @@
             "server_name": "ch.newromania.website"
           }
         }
+      },
+      {
+        "key": "match-stream.lovkisport.blog:2053:7ab3c77e-8fcc-4848-918f-cae3d4eac794",
+        "node": {
+          "type": "hysteria2",
+          "tag": "🇷🇺node-40",
+          "server": "match-stream.lovkisport.blog",
+          "server_port": 2053,
+          "password": "7ab3c77e-8fcc-4848-918f-cae3d4eac794",
+          "tls": {
+            "enabled": true,
+            "server_name": "match-stream.lovkisport.blog"
+          }
+        }
+      },
+      {
+        "key": "ru03.arpanet-cdn.com:17701:56ff50da-a238-4646-95ab-dd159634bd87",
+        "node": {
+          "type": "hysteria2",
+          "tag": "🇷🇺node-42",
+          "server": "ru03.arpanet-cdn.com",
+          "server_port": 17701,
+          "password": "56ff50da-a238-4646-95ab-dd159634bd87",
+          "tls": {
+            "enabled": true,
+            "server_name": "ru03.arpanet-cdn.com"
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "588c76723192f87cfe6d6786816177cd2bd9773acdc545928d7d1d5e8338d4ce"
+          }
+        }
+      },
+      {
+        "key": "ees92.shhflow.xyz:5443:43212c32-01f2-4356-b216-67dc1c178262",
+        "node": {
+          "type": "hysteria2",
+          "tag": "🇪🇪node-11",
+          "server": "ees92.shhflow.xyz",
+          "server_port": 5443,
+          "password": "43212c32-01f2-4356-b216-67dc1c178262",
+          "tls": {
+            "enabled": true,
+            "server_name": "ees92.shhflow.xyz",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -10177,5 +10226,5 @@
       }
     ]
   },
-  "updated": "2026-10-14T14:07:53Z"
+  "updated": "2026-10-14T14:21:44Z"
 }
