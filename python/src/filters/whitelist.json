@@ -2993,6 +2993,58 @@
             }
           }
         }
+      },
+      {
+        "key": "188.114.98.0:443:86c0996e-817e-409f-a732-ff9ef94917bd:/3a6b3b038ea34622bd1e13ec5798ab03",
+        "node": {
+          "type": "vless",
+          "tag": "node-406",
+          "server": "188.114.98.0",
+          "server_port": 443,
+          "uuid": "86c0996e-817e-409f-a732-ff9ef94917bd",
+          "transport": {
+            "type": "xhttp",
+            "path": "/3a6b3b038ea34622bd1e13ec5798ab03",
+            "mode": "stream-up",
+            "host": [
+              "s3.bamans.uk"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "s3.bamans.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "78.159.246.179:2053:c2bbf90c-7f13-47dd-b68d-f0bd38b6b3c8:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "🇷🇺node-2002",
+          "server": "78.159.246.179",
+          "server_port": 2053,
+          "uuid": "c2bbf90c-7f13-47dd-b68d-f0bd38b6b3c8",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "randomquaint.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "randomquaint.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "safari"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -9919,5 +9971,5 @@
       }
     ]
   },
-  "updated": "2026-10-14T03:20:02Z"
+  "updated": "2026-10-14T04:59:13Z"
 }
