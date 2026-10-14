@@ -112,27 +112,38 @@
       "outbounds": [
         "auto",
         "🇦🇪node-1",
-        "🇨🇭node-2",
+        "🇨🇾node-2",
         "🇩🇪node-3",
-        "🇪🇪node-4",
-        "🇫🇮node-5",
-        "🇭🇰node-6",
-        "🇯🇵node-7",
-        "🇰🇷node-8",
-        "🇷🇴node-9",
-        "🇷🇺node-10",
+        "🇫🇷node-4",
+        "🇫🇷node-5",
+        "🇫🇷node-6",
+        "🇭🇰node-7",
+        "🇯🇵node-8",
+        "🇰🇷node-9",
+        "🇷🇴node-10",
         "🇷🇺node-11",
         "🇷🇺node-12",
         "🇷🇺node-13",
-        "🇸🇪node-14",
-        "🇸🇪node-15",
-        "🇸🇪node-16",
-        "🇸🇬node-17",
-        "🇸🇬node-18",
-        "🇺🇸node-19",
-        "🇺🇸node-20",
-        "🇺🇸node-21",
-        "🇺🇸node-22"
+        "🇷🇺node-14",
+        "🇷🇺node-15",
+        "🇷🇺node-16",
+        "🇷🇺node-17",
+        "🇷🇺node-18",
+        "🇸🇬node-19",
+        "🇹🇷node-20",
+        "🇹🇷node-21",
+        "🇹🇷node-22",
+        "🇹🇷node-23",
+        "🇹🇷node-24",
+        "🇺🇸node-25",
+        "🇺🇸node-26",
+        "🇺🇸node-27",
+        "🇺🇸node-28",
+        "🇺🇸node-29",
+        "🇺🇸node-30",
+        "🇺🇸node-31",
+        "🇺🇸node-32",
+        "🇺🇸node-33"
       ],
       "default": "auto"
     },
@@ -141,27 +152,38 @@
       "tag": "auto",
       "outbounds": [
         "🇦🇪node-1",
-        "🇨🇭node-2",
+        "🇨🇾node-2",
         "🇩🇪node-3",
-        "🇪🇪node-4",
-        "🇫🇮node-5",
-        "🇭🇰node-6",
-        "🇯🇵node-7",
-        "🇰🇷node-8",
-        "🇷🇴node-9",
-        "🇷🇺node-10",
+        "🇫🇷node-4",
+        "🇫🇷node-5",
+        "🇫🇷node-6",
+        "🇭🇰node-7",
+        "🇯🇵node-8",
+        "🇰🇷node-9",
+        "🇷🇴node-10",
         "🇷🇺node-11",
         "🇷🇺node-12",
         "🇷🇺node-13",
-        "🇸🇪node-14",
-        "🇸🇪node-15",
-        "🇸🇪node-16",
-        "🇸🇬node-17",
-        "🇸🇬node-18",
-        "🇺🇸node-19",
-        "🇺🇸node-20",
-        "🇺🇸node-21",
-        "🇺🇸node-22"
+        "🇷🇺node-14",
+        "🇷🇺node-15",
+        "🇷🇺node-16",
+        "🇷🇺node-17",
+        "🇷🇺node-18",
+        "🇸🇬node-19",
+        "🇹🇷node-20",
+        "🇹🇷node-21",
+        "🇹🇷node-22",
+        "🇹🇷node-23",
+        "🇹🇷node-24",
+        "🇺🇸node-25",
+        "🇺🇸node-26",
+        "🇺🇸node-27",
+        "🇺🇸node-28",
+        "🇺🇸node-29",
+        "🇺🇸node-30",
+        "🇺🇸node-31",
+        "🇺🇸node-32",
+        "🇺🇸node-33"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -186,13 +208,13 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇨🇭node-2",
-      "server": "ch.newromania.website",
-      "server_port": 8443,
-      "password": "d9189eb1-a513-4317-929f-67c07715bf31",
+      "tag": "🇨🇾node-2",
+      "server": "fi1server.rabstvo.shop",
+      "server_port": 443,
+      "password": "9yOIR2_QAChKs26rYaiX_aoNnOALd0aU",
       "tls": {
         "enabled": true,
-        "server_name": "ch.newromania.website"
+        "server_name": "fi1server.rabstvo.shop"
       },
       "up_mbps": 20,
       "down_mbps": 20
@@ -212,36 +234,46 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇪🇪node-4",
-      "server": "ees92.shhflow.xyz",
-      "server_port": 5443,
-      "password": "43212c32-01f2-4356-b216-67dc1c178262",
-      "tls": {
-        "enabled": true,
-        "server_name": "ees92.shhflow.xyz",
-        "alpn": [
-          "h3"
-        ]
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇮node-5",
-      "server": "fi1server.rabstvo.shop",
+      "tag": "🇫🇷node-4",
+      "server": "vpn-fr-001.fastervpn.world",
       "server_port": 443,
-      "password": "9yOIR2_QAChKs26rYaiX_aoNnOALd0aU",
+      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
       "tls": {
         "enabled": true,
-        "server_name": "fi1server.rabstvo.shop"
+        "server_name": "vpn-fr-001.fastervpn.world"
       },
       "up_mbps": 20,
       "down_mbps": 20
     },
     {
       "type": "hysteria2",
-      "tag": "🇭🇰node-6",
+      "tag": "🇫🇷node-5",
+      "server": "vpn-fr-001.fastervpn.world",
+      "server_port": 443,
+      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
+      "tls": {
+        "enabled": true,
+        "server_name": "vpn-fr-001.fastervpn.world"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇫🇷node-6",
+      "server": "vpn-fr-001.fastervpn.world",
+      "server_port": 443,
+      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
+      "tls": {
+        "enabled": true,
+        "server_name": "vpn-fr-001.fastervpn.world"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇭🇰node-7",
       "server": "nas.aizhzo.com",
       "server_port": 5010,
       "password": "eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ",
@@ -258,7 +290,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇯🇵node-7",
+      "tag": "🇯🇵node-8",
       "server": "vp3.yysyy.online",
       "server_port": 443,
       "password": "96ab5cd282733fd4c312a61f972f330a",
@@ -271,7 +303,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-8",
+      "tag": "🇰🇷node-9",
       "server": "152-69-231-175.liao.kdns.fr",
       "server_port": 50160,
       "password": "1beb216e3f60aea9555dae60d219a5ca",
@@ -284,7 +316,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-9",
+      "tag": "🇷🇴node-10",
       "server": "hy2-new.aspidnet.xyz",
       "server_port": 443,
       "password": "QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s",
@@ -301,30 +333,13 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇺node-10",
+      "tag": "🇷🇺node-11",
       "server": "match-stream.lovkisport.blog",
       "server_port": 2053,
       "password": "7ab3c77e-8fcc-4848-918f-cae3d4eac794",
       "tls": {
         "enabled": true,
         "server_name": "match-stream.lovkisport.blog"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇷🇺node-11",
-      "server": "ru03.arpanet-cdn.com",
-      "server_port": 17701,
-      "password": "56ff50da-a238-4646-95ab-dd159634bd87",
-      "tls": {
-        "enabled": true,
-        "server_name": "ru03.arpanet-cdn.com"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "588c76723192f87cfe6d6786816177cd2bd9773acdc545928d7d1d5e8338d4ce"
       },
       "up_mbps": 20,
       "down_mbps": 20
@@ -350,7 +365,20 @@
       "tag": "🇷🇺node-13",
       "server": "spainspeedboostjbl88.qcloud.surf",
       "server_port": 27313,
-      "password": "4ad3dbf5-2005-4d96-b56c-a0ca9905cab6",
+      "password": "8bd04756-3beb-4348-82c9-d35453df50ce",
+      "tls": {
+        "enabled": true,
+        "server_name": "spainspeedboostjbl88.qcloud.surf"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇷🇺node-14",
+      "server": "spainspeedboostjbl88.qcloud.surf",
+      "server_port": 27313,
+      "password": "408c51e8-9246-483d-ba73-34ab4e202eb9",
       "tls": {
         "enabled": true,
         "server_name": "spainspeedboostjbl88.qcloud.surf",
@@ -363,29 +391,26 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇸🇪node-14",
-      "server": "sweedenqfds777.qcloud.surf",
-      "server_port": 21223,
+      "tag": "🇷🇺node-15",
+      "server": "spainspeedboostjbl88.qcloud.surf",
+      "server_port": 27313,
       "password": "8bd04756-3beb-4348-82c9-d35453df50ce",
       "tls": {
         "enabled": true,
-        "server_name": "sweedenqfds777.qcloud.surf",
-        "alpn": [
-          "h3"
-        ]
+        "server_name": "spainspeedboostjbl88.qcloud.surf"
       },
       "up_mbps": 20,
       "down_mbps": 20
     },
     {
       "type": "hysteria2",
-      "tag": "🇸🇪node-15",
-      "server": "sweedenqfds777.qcloud.surf",
-      "server_port": 21223,
+      "tag": "🇷🇺node-16",
+      "server": "spainspeedboostjbl88.qcloud.surf",
+      "server_port": 27313,
       "password": "408c51e8-9246-483d-ba73-34ab4e202eb9",
       "tls": {
         "enabled": true,
-        "server_name": "sweedenqfds777.qcloud.surf",
+        "server_name": "spainspeedboostjbl88.qcloud.surf",
         "alpn": [
           "h3"
         ]
@@ -395,20 +420,36 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇸🇪node-16",
-      "server": "sweedenqfds777.qcloud.surf",
-      "server_port": 21223,
-      "password": "4ad3dbf5-2005-4d96-b56c-a0ca9905cab6",
+      "tag": "🇷🇺node-17",
+      "server": "spainspeedboostjbl88.qcloud.surf",
+      "server_port": 27313,
+      "password": "408c51e8-9246-483d-ba73-34ab4e202eb9",
       "tls": {
         "enabled": true,
-        "server_name": "sweedenqfds777.qcloud.surf"
+        "server_name": "spainspeedboostjbl88.qcloud.surf",
+        "alpn": [
+          "h3"
+        ]
       },
       "up_mbps": 20,
       "down_mbps": 20
     },
     {
       "type": "hysteria2",
-      "tag": "🇸🇬node-17",
+      "tag": "🇷🇺node-18",
+      "server": "spainspeedboostjbl88.qcloud.surf",
+      "server_port": 27313,
+      "password": "8bd04756-3beb-4348-82c9-d35453df50ce",
+      "tls": {
+        "enabled": true,
+        "server_name": "spainspeedboostjbl88.qcloud.surf"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇸🇬node-19",
       "server": "sg4.dexlos.com",
       "server_port": 20654,
       "password": "8A9905B7-801B-41AF-BFC9-2034212770F6",
@@ -425,24 +466,92 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇸🇬node-18",
-      "server": "sg4.dexlos.com",
-      "server_port": 20654,
-      "password": "8A9905B7-801B-41AF-BFC9-2034212770F6",
+      "tag": "🇹🇷node-20",
+      "server": "me17.msjia8844.site",
+      "server_port": 7443,
+      "password": "M8LP9DztTr3znqCkmf-r08CQLBLLFK1r",
       "tls": {
         "enabled": true,
-        "server_name": "sg4.dexlos.com"
+        "server_name": "me17.msjia8844.site"
       },
       "obfs": {
         "type": "salamander",
-        "password": "xK9mN2pLq5vR8wB3"
+        "password": "u3Soh9_Ui0UmcuY6vk0ug8Lq"
       },
       "up_mbps": 20,
       "down_mbps": 20
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-19",
+      "tag": "🇹🇷node-21",
+      "server": "me17.msjia8844.site",
+      "server_port": 7443,
+      "password": "M8LP9DztTr3znqCkmf-r08CQLBLLFK1r",
+      "tls": {
+        "enabled": true,
+        "server_name": "me17.msjia8844.site"
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "u3Soh9_Ui0UmcuY6vk0ug8Lq"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇹🇷node-22",
+      "server": "me17.msjia8844.site",
+      "server_port": 7443,
+      "password": "M8LP9DztTr3znqCkmf-r08CQLBLLFK1r",
+      "tls": {
+        "enabled": true,
+        "server_name": "me17.msjia8844.site"
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "u3Soh9_Ui0UmcuY6vk0ug8Lq"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇹🇷node-23",
+      "server": "me17.msjia8844.site",
+      "server_port": 7443,
+      "password": "M8LP9DztTr3znqCkmf-r08CQLBLLFK1r",
+      "tls": {
+        "enabled": true,
+        "server_name": "me17.msjia8844.site"
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "u3Soh9_Ui0UmcuY6vk0ug8Lq"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇹🇷node-24",
+      "server": "me17.msjia8844.site",
+      "server_port": 7443,
+      "password": "M8LP9DztTr3znqCkmf-r08CQLBLLFK1r",
+      "tls": {
+        "enabled": true,
+        "server_name": "me17.msjia8844.site"
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "u3Soh9_Ui0UmcuY6vk0ug8Lq"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇺🇸node-25",
       "server": "finkawwwbroy5.qcloud.surf",
       "server_port": 20326,
       "password": "8bd04756-3beb-4348-82c9-d35453df50ce",
@@ -455,7 +564,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-20",
+      "tag": "🇺🇸node-26",
       "server": "finkawwwbroy5.qcloud.surf",
       "server_port": 20326,
       "password": "408c51e8-9246-483d-ba73-34ab4e202eb9",
@@ -471,7 +580,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-21",
+      "tag": "🇺🇸node-27",
       "server": "hy2.123266.xyz",
       "server_port": 33333,
       "password": "bce6c821-200d-421f-bf3d-7159e5246ea0",
@@ -484,13 +593,84 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-22",
+      "tag": "🇺🇸node-28",
       "server": "hy2.561891.xyz",
       "server_port": 44356,
       "password": "dongtaiwang.com",
       "tls": {
         "enabled": true,
         "server_name": "hy2.561891.xyz"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇺🇸node-29",
+      "server": "qcloudge1.exitvpn.shop",
+      "server_port": 20270,
+      "password": "8bd04756-3beb-4348-82c9-d35453df50ce",
+      "tls": {
+        "enabled": true,
+        "server_name": "qcloudge1.exitvpn.shop"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇺🇸node-30",
+      "server": "qcloudge1.exitvpn.shop",
+      "server_port": 20270,
+      "password": "4ad3dbf5-2005-4d96-b56c-a0ca9905cab6",
+      "tls": {
+        "enabled": true,
+        "server_name": "qcloudge1.exitvpn.shop",
+        "alpn": [
+          "h3"
+        ]
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇺🇸node-31",
+      "server": "qcloudge1.exitvpn.shop",
+      "server_port": 20270,
+      "password": "4ad3dbf5-2005-4d96-b56c-a0ca9905cab6",
+      "tls": {
+        "enabled": true,
+        "server_name": "qcloudge1.exitvpn.shop",
+        "alpn": [
+          "h3"
+        ]
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇺🇸node-32",
+      "server": "qcloudge1.exitvpn.shop",
+      "server_port": 20270,
+      "password": "8bd04756-3beb-4348-82c9-d35453df50ce",
+      "tls": {
+        "enabled": true,
+        "server_name": "qcloudge1.exitvpn.shop"
+      },
+      "up_mbps": 20,
+      "down_mbps": 20
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇺🇸node-33",
+      "server": "qcloudge1.exitvpn.shop",
+      "server_port": 20270,
+      "password": "8bd04756-3beb-4348-82c9-d35453df50ce",
+      "tls": {
+        "enabled": true,
+        "server_name": "qcloudge1.exitvpn.shop"
       },
       "up_mbps": 20,
       "down_mbps": 20
