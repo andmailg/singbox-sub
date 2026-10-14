@@ -111,6 +111,7 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                 "mtu": 1420,
                 "address": "172.19.0.1/30",
                 "auto_route": True,
+                "strict_route": True,
                 "stack": "mixed",
                 "route_exclude_address": [
                     "10.0.0.0/8",
@@ -146,6 +147,35 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                 {
                     "protocol": "dns",
                     "action": "hijack-dns"
+                },
+                {
+                    "ip_cidr": [
+                        "155.212.204.0/24"
+                    ],
+                    "action": "reject",
+                    "method": "drop"
+                },
+                {
+                    "package_name": [
+                        "ru.oneme.app"
+                    ],
+                    "domain_suffix": [
+                        "ifconfig.me",
+                        "ifconfig.co",
+                        "icanhazip.com",
+                        "ident.me",
+                        "wtfismyip.com",
+                        "ipify.org",
+                        "whatsapp.net",
+                        "telegram.org",
+                        "apptracer.ru",
+                        "vk-analytics.ru",
+                        "mytracker.ru",
+                        "mail.ru",
+                        "amazonaws.com"
+                    ],
+                    "action": "reject",
+                    "method": "drop"
                 },
                 {
                     "rule_set": [
