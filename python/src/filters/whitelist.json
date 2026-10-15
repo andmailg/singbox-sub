@@ -10614,8 +10614,60 @@
             "initial_windows_size": 0
           }
         }
+      },
+      {
+        "key": "31.76.246.39:706",
+        "node": {
+          "type": "vless",
+          "tag": "🇬🇧node-1363",
+          "server": "31.76.246.39",
+          "server_port": 706,
+          "uuid": "e5544327-834c-455a-9db5-2454c788fa17",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.amd.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "6ABNRK-j4hVgo-DwsX3zxMSjMOuudrVZRxLde3XB530"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
+      },
+      {
+        "key": "147.45.139.187:2054",
+        "node": {
+          "type": "vless",
+          "tag": "🇳🇱node-1593",
+          "server": "147.45.139.187",
+          "server_port": 2054,
+          "uuid": "2b173b69-8045-4fb8-b713-6db630337970",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.ibm.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "ZHNVnPSNIvQi7Sunb-pIN7sinF7iwVCmkVdyOtSgNiI"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc-tunnel"
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-14T16:35:20Z"
+  "updated": "2026-10-15T05:15:27Z"
 }
