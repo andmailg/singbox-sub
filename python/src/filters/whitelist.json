@@ -10694,8 +10694,36 @@
             "service_name": "grpc-tunnel"
           }
         }
+      },
+      {
+        "key": "144.31.24.144:444",
+        "node": {
+          "type": "vless",
+          "tag": "🇳🇱node-1622",
+          "server": "144.31.24.144",
+          "server_port": 444,
+          "uuid": "318c935d-c195-41d3-99ad-9bbcfdab3386",
+          "tls": {
+            "enabled": true,
+            "server_name": "nl.srv.vbuste-bot.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "0-or5ogGhYbBgsVSrSC2Fhxyp2BN97Y9pqIdg61Qd08",
+              "short_id": "4be4110078ebed4a"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "",
+            "initial_windows_size": 0
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-15T08:55:39Z"
+  "updated": "2026-10-15T19:34:05Z"
 }
