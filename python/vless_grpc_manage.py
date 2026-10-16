@@ -86,9 +86,9 @@ def cmd_merge(args):
 
 
 def _readd_whitelisted(geoip_block_countries=None, skip_rkn=False):
-    """Восстанавливает узлы из whitelist в working с финальной RKN/GeoIP фильтрацией."""
+    """Восстанавливает узлы из whitelist в working с финальной RKN/GeoIP блокировкой."""
     from src.vless_grpc_working import load_working_nodes, save_working_nodes, merge_new_nodes
-    from src.orchestrator import _rkn_geoip_filter
+    from src.orchestrator import _rkn_filter, _geoip_block
 
     whitelist = load_whitelist()
     whitelist_nodes = get_whitelist_nodes("vless_grpc", whitelist)
@@ -96,14 +96,22 @@ def _readd_whitelisted(geoip_block_countries=None, skip_rkn=False):
         print("  Whitelist is empty, skipping.")
         return
 
-    # Применяем RKN + GeoIP фильтрацию к whitelist-нодам
-    print(f"  Applying final RKN/GeoIP filter to {len(whitelist_nodes)} whitelist node(s)...")
-    filtered_nodes = _rkn_geoip_filter(
+    # Применяем RKN блокировку к whitelist-нодам
+    print(f"  Applying RKN filter to {len(whitelist_nodes)} whitelist node(s)...")
+    filtered_nodes = _rkn_filter(
         whitelist_nodes,
         prefix="  ",
-        geoip_block_countries=geoip_block_countries,
         skip_rkn=skip_rkn,
     )
+
+    # Применяем GeoIP блокировку
+    if geoip_block_countries:
+        print(f"  Blocking countries: {', '.join(geoip_block_countries)} for {len(filtered_nodes)} node(s)...")
+        filtered_nodes = _geoip_block(
+            filtered_nodes,
+            prefix="  ",
+            geoip_block_countries=geoip_block_countries,
+        )
     if not filtered_nodes:
         print("  All whitelist nodes filtered out by RKN/GeoIP.")
         return

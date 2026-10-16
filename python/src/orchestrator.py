@@ -13,9 +13,8 @@ from src.common import (
     resolve_server,
     should_accept_outbound,
 )
-from src.filters.rkn_filter import load_rkn_list
+from src.filters.rkn_filter import load_rkn_list, check_rkn_blocked
 from src.filters.geoip_filter import check_geoip, open_geoip_reader
-from src.filters.rkn_filter import check_rkn_blocked
 from src.filters.blacklist import load_blacklist, is_blacklisted
 
 
@@ -167,68 +166,96 @@ def _parse_and_deduplicate(
     return outbounds
 
 
-def _check_node(
-    server: str,
-    blocked_networks,
-    reader,
-    geoip_block_countries: tuple[str, ...] | None,
-) -> dict | None | str:
-    """Проверяет ноду по RKN и GeoIP независимо."""
-    # 1. RKN проверка
-    rkn_result = check_rkn_blocked(server, blocked_networks)
-    if rkn_result is True:
-        return "rkn"
+def _check_rkn(server: str, blocked_networks) -> bool:
+    """Проверяет ноду по RKN списку.
 
-    # 2. GeoIP проверка (независимо от результата RKN)
-    geoip_result = check_geoip(server, reader, geoip_block_countries)
-    if isinstance(geoip_result, str):
-        return geoip_result
-    if geoip_result is not None:
-        return geoip_result
-
-    # GeoIP база недоступна или IP не найден — пропускаем
-    return {"ip": server}
+    Returns:
+        True если нода заблокирована RKN, False иначе.
+    """
+    return check_rkn_blocked(server, blocked_networks) is True
 
 
-def _rkn_geoip_filter(
+def _rkn_filter(
     outbounds: list[dict],
     prefix: str = "",
-    geoip_block_countries: tuple[str, ...] | None = None,
     skip_rkn: bool = False,
 ) -> list[dict]:
-    """RKN + GeoIP фильтрация через check_rkn_blocked + check_geoip.
+    """RKN фильтрация через check_rkn_blocked.
 
     Args:
         outbounds: список нод для фильтрации.
         prefix: префикс для логов.
-        geoip_block_countries: кортеж ISO-кодов стран для блокировки (например ("ru", "ir")).
-            Если None или пустой — блокировка по странам отключена.
-        skip_rkn: если True — пропускает проверку RKN (остается только GeoIP).
+        skip_rkn: если True — пропускает проверку RKN.
     """
     from src.common import session
 
-    blocked_networks = None
     if skip_rkn:
         print(f"{prefix}RKN filtering is SKIPPED.")
-    else:
-        blocked_networks = load_rkn_list(session)
-    reader = open_geoip_reader()
+        return outbounds
 
-    if reader:
-        if geoip_block_countries:
-            print(f"{prefix}GeoIP database loaded for geolocation blocking (block: {', '.join(geoip_block_countries)}).")
-        else:
-            print(f"{prefix}GeoIP database loaded for geolocation blocking.")
-
+    blocked_networks = load_rkn_list(session)
     num_workers = min(8, len(outbounds))
-    print(f"{prefix}Filtering {len(outbounds)} nodes with {num_workers} workers...")
+    print(f"{prefix}Filtering {len(outbounds)} nodes by RKN with {num_workers} workers...")
+
+    with ThreadPoolExecutor(max_workers=num_workers) as executor:
+        future_to_idx = {
+            executor.submit(_check_rkn, o.get("server", "").strip("[]"), blocked_networks): idx
+            for idx, o in enumerate(outbounds)
+        }
+
+        rkn_blocked: list[dict] = []
+        for future in as_completed(future_to_idx):
+            idx = future_to_idx[future]
+            try:
+                if future.result():
+                    rkn_blocked.append(outbounds[idx])
+            except Exception:
+                pass
+
+    filtered = [o for o in outbounds if o not in rkn_blocked]
+    removed_count = len(rkn_blocked)
+
+    if removed_count:
+        print(f"{prefix}Filtered out {removed_count} node(s) by RKN ({len(filtered)} remaining).")
+        for node in rkn_blocked:
+            print(f"{prefix}  [RKN] {node.get('server')}:{node.get('server_port')}")
+    else:
+        print(f"{prefix}No nodes filtered by RKN ({len(filtered)} remaining).")
+
+    return filtered
+
+
+def _geoip_block(
+    outbounds: list[dict],
+    prefix: str = "",
+    geoip_block_countries: tuple[str, ...] | None = None,
+) -> list[dict]:
+    """Блокирует ноды по GeoIP для указанных стран.
+
+    Args:
+        outbounds: список нод для обработки.
+        prefix: префикс для логов.
+        geoip_block_countries: кортеж ISO-кодов стран для блокировки (например ("ru", "ir")).
+            Если None или пустой — блокировка отключена.
+    """
+    if not geoip_block_countries:
+        print(f"{prefix}GeoIP blocking is SKIPPED (no countries to block).")
+        return outbounds
+
+    reader = open_geoip_reader()
+    if not reader:
+        print(f"{prefix}GeoIP database not available, skipping GeoIP blocking.")
+        return outbounds
+
+    print(f"{prefix}GeoIP database loaded for blocking (block: {', '.join(geoip_block_countries)}).")
+    num_workers = min(8, len(outbounds))
+    print(f"{prefix}Blocking {len(outbounds)} nodes by GeoIP ({', '.join(geoip_block_countries)}) with {num_workers} workers...")
 
     with ThreadPoolExecutor(max_workers=num_workers) as executor:
         future_to_idx = {
             executor.submit(
-                _check_node,
+                check_geoip,
                 o.get("server", "").strip("[]"),
-                blocked_networks if not skip_rkn else None,
                 reader,
                 geoip_block_countries,
             ): idx
@@ -244,45 +271,33 @@ def _rkn_geoip_filter(
                 results[idx] = None
 
     filtered: list[dict] = []
-    removed_rkn: list[dict] = []
     removed_geo: dict[str, list[dict]] = {}
     for idx, check_result in enumerate(results):
         if check_result is not None:
             if isinstance(check_result, str):
-                # Это причина блокировки
-                if check_result == "rkn":
-                    removed_rkn.append(outbounds[idx])
-                else:
-                    # Это ISO-код страны (например "ru", "ir")
-                    removed_geo.setdefault(check_result, []).append(outbounds[idx])
+                # Это ISO-код страны — блокировка
+                removed_geo.setdefault(check_result, []).append(outbounds[idx])
                 continue
             node = outbounds[idx]
             country = check_result.get("country")
             if country:
                 node["_country"] = country
             filtered.append(node)
+        else:
+            # GeoIP база недоступна или IP не найден — пропускаем
+            filtered.append(outbounds[idx])
 
-    removed_rkn_count = len(removed_rkn)
     removed_geo_count = sum(len(nodes) for nodes in removed_geo.values())
-    removed = removed_rkn_count + removed_geo_count
-
-    if removed_rkn_count:
-        print(f"{prefix}Filtered out {removed_rkn_count} node(s) by RKN ({len(filtered)} remaining).")
-        for node in removed_rkn:
-            print(f"{prefix}  [RKN] {node.get('server')}:{node.get('server_port')}")
 
     if removed_geo_count:
-        print(f"{prefix}Filtered out {removed_geo_count} node(s) by GeoIP ({len(filtered)} remaining).")
+        print(f"{prefix}Blocked {removed_geo_count} node(s) by GeoIP ({len(filtered)} remaining).")
         for country_code, nodes in sorted(removed_geo.items()):
             for node in nodes:
                 print(f"{prefix}  [{country_code.upper()}] {node.get('server')}:{node.get('server_port')}")
+    else:
+        print(f"{prefix}No nodes blocked by GeoIP ({len(filtered)} remaining).")
 
-    if not removed:
-        print(f"{prefix}No nodes filtered by RKN/GeoIP ({len(filtered)} remaining).")
-
-    if reader:
-        reader.close()
-
+    reader.close()
     return filtered
 
 
@@ -385,11 +400,18 @@ def run_pipeline(
         print(f"{prefix}Error: No valid proxy nodes left after parsing!")
         return
 
-    # 4. RKN + GeoIP фильтрация
-    outbounds = _rkn_geoip_filter(outbounds, prefix=prefix, geoip_block_countries=geoip_block_countries, skip_rkn=skip_rkn)
+    # 4. RKN фильтрация
+    outbounds = _rkn_filter(outbounds, prefix=prefix, skip_rkn=skip_rkn)
 
     if not outbounds:
-        print(f"{prefix}Error: No valid proxy nodes left after RKN+GeoIP filtration!")
+        print(f"{prefix}Error: No valid proxy nodes left after RKN filtration!")
+        return
+
+    # 4.1. GeoIP блокировка
+    outbounds = _geoip_block(outbounds, prefix=prefix, geoip_block_countries=geoip_block_countries)
+
+    if not outbounds:
+        print(f"{prefix}Error: No valid proxy nodes left after GeoIP filtration!")
         return
 
     # 4.5. Blacklist фильтрация
