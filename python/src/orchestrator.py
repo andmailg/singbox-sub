@@ -186,7 +186,7 @@ def _check_node(
     if geoip_result is not None:
         return geoip_result
 
-    # Ни RKN, ни GeoIP не заблокировали — пропускаем
+    # GeoIP база недоступна или IP не найден — пропускаем
     return {"ip": server}
 
 

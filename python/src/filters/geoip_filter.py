@@ -89,36 +89,18 @@ def check_geoip(
         None — если не удалось определить IP или база недоступна,
         str (ISO-код страны) — если страна попала в список блокировки.
     """
-    node_ip = server.strip("[]")
+    country = resolve_country(server)
+    if not country:
+        return None
 
+    # Проверяем, нужно ли блокировать эту страну
+    if geoip_block_countries and country.upper() in [c.upper() for c in geoip_block_countries]:
+        return country.lower()
+
+    node_ip = server.strip("[]")
     if not is_valid_ip(node_ip):
         resolved = resolve_domain(node_ip)
-        if resolved is None:
-            return None
-        node_ip = resolved
+        if resolved is not None:
+            node_ip = resolved
 
-    try:
-        ipaddress.ip_address(node_ip)
-    except ValueError:
-        return None
-
-    if not reader:
-        return None
-
-    try:
-        geo_data = reader.get(node_ip)
-        if isinstance(geo_data, tuple):
-            geo_data = geo_data[0]
-        if geo_data and "country" in geo_data:
-            country_obj = geo_data["country"]
-            if isinstance(country_obj, dict):
-                country = country_obj.get("iso_code", "")
-                if country:
-                    # Проверяем, нужно ли блокировать эту страну
-                    if geoip_block_countries and country.upper() in [c.upper() for c in geoip_block_countries]:
-                        return country.lower()
-                    return {"ip": node_ip, "country": country}
-    except Exception:
-        pass
-
-    return None
+    return {"ip": node_ip, "country": country}
