@@ -234,7 +234,7 @@ def cmd_test(args):
 def cmd_run(args):
     """Полный pipeline: merge -> whitelist re-add -> test -> export."""
     # Извлекаем флаги фильтрации для передачи в _readd_whitelisted
-    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_filter.split(",")) if args.geoip_filter else None
+    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_block.split(",")) if args.geoip_block else None
     skip_rkn = args.rkn_filter == 0
 
     # Step 1: Merge
