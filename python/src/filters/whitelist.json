@@ -7799,6 +7799,40 @@
             "server_name": "nl1server.rabstvo.shop"
           }
         }
+      },
+      {
+        "key": "hy-fi.bypassme.online:443:e625f8ef-f935-4c7d-a259-0f154b6842fd",
+        "node": {
+          "type": "hysteria2",
+          "tag": "🇫🇮node-20",
+          "server": "hy-fi.bypassme.online",
+          "server_port": 443,
+          "password": "e625f8ef-f935-4c7d-a259-0f154b6842fd",
+          "tls": {
+            "enabled": true,
+            "server_name": "hy-fi.bypassme.online",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
+      },
+      {
+        "key": "outh.yandex-cloud.org:54183:082f5694-9019-4110-b67b-8125dbb9bab8",
+        "node": {
+          "type": "hysteria2",
+          "tag": "🇺🇸node-50",
+          "server": "outh.yandex-cloud.org",
+          "server_port": 54183,
+          "password": "082f5694-9019-4110-b67b-8125dbb9bab8",
+          "tls": {
+            "enabled": true,
+            "server_name": "outh.yandex-cloud.org",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -10831,5 +10865,5 @@
       }
     ]
   },
-  "updated": "2026-10-15T23:26:58Z"
+  "updated": "2026-10-16T02:59:40Z"
 }
