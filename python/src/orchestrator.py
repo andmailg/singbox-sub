@@ -286,12 +286,20 @@ def _rkn_geoip_filter(
     return filtered
 
 
-def _sort_and_tag(outbounds: list[dict]) -> None:
-    """Сортировка по стране и сквозная нумерация с флагами."""
+def _sort_and_tag(outbounds: list[dict], *, keep_country: bool = False) -> None:
+    """Сортировка по стране и сквозная нумерация с флагами.
+    
+    Args:
+        outbounds: список нод для сортировки и нумерации.
+        keep_country: если True — не удаляет _country из нод (для сохранения в working).
+    """
     outbounds.sort(key=lambda o: (o.get("_country", ""), o.get("server", "")))
     for idx, outbound in enumerate(outbounds, start=1):
         outbound.pop("_latency_ms", None)  # internal — не экспортируем
-        country = outbound.pop("_country", None)
+        if not keep_country:
+            country = outbound.pop("_country", None)
+        else:
+            country = outbound.get("_country")
         flag = country_code_to_flag(country) if country else ""
         outbound["tag"] = f"{flag}node-{idx}" if flag else f"node-{idx}"
 
@@ -412,7 +420,7 @@ def run_pipeline(
     print(f"[{output_file}] Total {len(outbounds)} nodes passed all filters.")
 
     # 5. Сортировка + нумерация
-    _sort_and_tag(outbounds)
+    _sort_and_tag(outbounds, keep_country=bool(export_func))
 
     # 6. Постобработка
     if post_process:
