@@ -401,36 +401,39 @@ Examples:
     )
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
 
-    # run (default)
-    run_parser = subparsers.add_parser("run", help="Full pipeline: merge -> test -> export")
-    run_parser.add_argument("--ports", type=str, default=None,
-                            help="Comma-separated port whitelist (default: all ports)")
-    run_parser.add_argument("--test-timeout", type=int, default=10, help="Test timeout per node (seconds)")
+    # Общие аргументы для filter-шагов (merge + run)
+    filter_parser = argparse.ArgumentParser(add_help=False)
+    filter_parser.add_argument("--ports", type=str, default=None,
+                               help="Comma-separated port whitelist (default: all ports)")
+    filter_parser.add_argument("--geoip-block", type=str, default=None,
+                               help="Comma-separated country codes to block (e.g. --geoip-block ru,ir)")
+    filter_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=0,
+                               help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 0)")
+
+    # Общие аргументы для test-шагов (test + run)
+    test_parser_base = argparse.ArgumentParser(add_help=False)
+    test_parser_base.add_argument("--test-timeout", type=int, default=10,
+                                  help="Test timeout per node (seconds)")
+    test_parser_base.add_argument("--blacklist-timeout", type=int, default=3,
+                                  help="Days in pending before adding to blacklist (default: 3)")
+    test_parser_base.add_argument("--whitelist-timeout", type=int, default=3,
+                                  help="Days in working before promoting to whitelist (default: 3)")
+
+    # run — полный pipeline: merge -> test -> export
+    run_parser = subparsers.add_parser("run", help="Full pipeline: merge -> test -> export",
+                                       parents=[filter_parser, test_parser_base])
     run_parser.add_argument("--export", type=str, default="tun,xray",
                             help="Export formats (default: tun,xray): tun,xray,router")
-    run_parser.add_argument("--geoip-block", type=str, default=None,
-                            help="Comma-separated country codes to block (e.g. --geoip-block ru,ir)")
-    run_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=0,
-                            help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 1)")
-    run_parser.add_argument("--blacklist-timeout", type=int, default=3,
-                            help="Days in pending before adding to blacklist (default: 3)")
-    run_parser.add_argument("--whitelist-timeout", type=int, default=3,
-                            help="Days in working before promoting to whitelist (default: 3)")
 
-    # merge
-    merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions")
-    merge_parser.add_argument("--ports", type=str, default=None,
-                              help="Comma-separated port whitelist (default: all ports)")
-    merge_parser.add_argument("--geoip-block", type=str, default=None,
-                              help="Comma-separated country codes to block (e.g. --geoip-block ru,ir)")
-    merge_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=0,
-                              help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 1)")
+    # merge — подтягивает новые ноды из подписок
+    merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions",
+                                         parents=[filter_parser])
 
-    # test
-    test_parser = subparsers.add_parser("test", help="Test all nodes and remove dead ones")
-    test_parser.add_argument("--test-timeout", type=int, default=5, help="Test timeout per node (seconds)")
+    # test — тестирует ноды, управляет pending/blacklist/whitelist
+    test_parser = subparsers.add_parser("test", help="Test all nodes and remove dead ones",
+                                        parents=[test_parser_base])
 
-    # export
+    # export — генерирует конфиги
     export_parser = subparsers.add_parser("export", help="Export working nodes to sing-box config")
     export_parser.add_argument("--export", type=str, default="tun",
                                help="Export formats (default: tun): tun,xray,router")

@@ -14,7 +14,7 @@ from src.common import (
     should_accept_outbound,
 )
 from src.filters.rkn_filter import load_rkn_list, check_rkn_blocked
-from src.filters.geoip_filter import check_geoip, open_geoip_reader
+from src.filters.geoip_filter import lookup_geoip, open_geoip_reader
 from src.filters.blacklist import load_blacklist, is_blacklisted
 
 
@@ -254,7 +254,7 @@ def _geoip_block(
     with ThreadPoolExecutor(max_workers=num_workers) as executor:
         future_to_idx = {
             executor.submit(
-                check_geoip,
+                lookup_geoip,
                 o.get("server", "").strip("[]"),
                 reader,
                 geoip_block_countries,

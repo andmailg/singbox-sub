@@ -1,4 +1,4 @@
-"""GeoIP: фильтрация по стране, определение страны по IP/домену."""
+"""GeoIP: определение страны по IP/домену и фильтрация по стране."""
 
 from __future__ import annotations
 
@@ -31,31 +31,19 @@ def open_geoip_reader(mmdb_path: str = _GEOIP_PATH):
         return None
 
 
-def resolve_country(server: str) -> str | None:
-    """Определяет ISO-код страны по домену или IP-адресу.
-
-    Args:
-        server: IP или домен сервера.
+def _lookup_country_from_ip(reader, server: str) -> dict | None:
+    """Выполняет GeoIP-поиск для IP-адреса (уже резолвнутый домен или IP).
 
     Returns:
-        ISO-код страны (например "RU", "US") или None.
+        dict с ключами "ip" и "country" или None если не найдено.
     """
-    geoip_path = _GEOIP_PATH
     node_ip = server.strip("[]")
 
-    if not is_valid_ip(node_ip):
-        resolved = resolve_domain(node_ip)
-        if resolved is None:
-            return None
-        node_ip = resolved
-
-    if not maxminddb or not os.path.exists(geoip_path):
+    if not maxminddb or not os.path.exists(_GEOIP_PATH):
         return None
 
     try:
-        reader = maxminddb.open_database(geoip_path)
         geo_data = reader.get(node_ip)
-        reader.close()
 
         if isinstance(geo_data, tuple):
             geo_data = geo_data[0]
@@ -64,19 +52,54 @@ def resolve_country(server: str) -> str | None:
             if isinstance(country_data, dict) and country_data:
                 iso_code = country_data.get("iso_code")
                 if isinstance(iso_code, str) and iso_code:
-                    return iso_code
+                    return {"ip": node_ip, "country": iso_code}
     except Exception:
         pass
 
     return None
 
 
-def check_geoip(
+def resolve_country(server: str, reader=None) -> str | None:
+    """Определяет ISO-код страны по домену или IP-адресу.
+
+    Args:
+        server: IP или домен сервера.
+        reader: опциональный GeoIP reader (если уже открыт). Если None — открывается новый.
+
+    Returns:
+        ISO-код страны (например "RU", "US") или None.
+    """
+    node_ip = server.strip("[]")
+
+    if not is_valid_ip(node_ip):
+        resolved = resolve_domain(node_ip)
+        if resolved is None:
+            return None
+        node_ip = resolved
+
+    local_reader = None
+    if reader is None:
+        reader = local_reader = open_geoip_reader()
+
+    try:
+        result = _lookup_country_from_ip(reader, node_ip)
+        if result:
+            return result["country"]
+    finally:
+        if local_reader:
+            local_reader.close()
+
+    return None
+
+
+def lookup_geoip(
     server: str,
     reader,
     geoip_block_countries: tuple[str, ...] | None = None,
 ) -> dict | None | str:
-    """Проверяет сервер по GeoIP базе.
+    """Выполняет GeoIP-поиск с опциональной блокировкой по стране.
+
+    Это единая функция, заменяющая resolve_country + check_geoip.
 
     Args:
         server: IP или домен сервера.
@@ -85,22 +108,26 @@ def check_geoip(
             Если None или пустой — блокировка по странам отключена.
 
     Returns:
-        dict с ip/country — если база доступна и страна определена,
-        None — если не удалось определить IP или база недоступна,
-        str (ISO-код страны) — если страна попала в список блокировки.
+        dict {"ip": ..., "country": ...} — если страна определена и не заблокирована,
+        str (ISO-код страны в нижнем регистре) — если страна попала в список блокировки,
+        None — если не удалось определить страну или база недоступна.
     """
-    country = resolve_country(server)
-    if not country:
-        return None
-
-    # Проверяем, нужно ли блокировать эту страну
-    if geoip_block_countries and country.upper() in [c.upper() for c in geoip_block_countries]:
-        return country.lower()
-
     node_ip = server.strip("[]")
+
     if not is_valid_ip(node_ip):
         resolved = resolve_domain(node_ip)
         if resolved is not None:
             node_ip = resolved
 
-    return {"ip": node_ip, "country": country}
+    result = _lookup_country_from_ip(reader, node_ip)
+    if not result:
+        return None
+
+    country = result["country"]
+    ip = result["ip"]
+
+    # Проверяем, нужно ли блокировать эту страну
+    if geoip_block_countries and country.upper() in [c.upper() for c in geoip_block_countries]:
+        return country.lower()
+
+    return {"ip": ip, "country": country}
