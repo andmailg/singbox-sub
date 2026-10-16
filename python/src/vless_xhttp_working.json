@@ -1,38 +1,97 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-10-16T15:01:56Z",
+  "last_tested": "2026-10-16T19:01:56Z",
   "nodes": [
     {
       "type": "vless",
-      "tag": "🇷🇺node-1",
-      "server": "185.141.227.180",
-      "server_port": 2053,
-      "uuid": "2c634977-584e-4e1f-b501-1b70c77a6743",
+      "tag": "🇩🇪node-1",
+      "server": "91.107.191.188",
+      "server_port": 8443,
+      "uuid": "90c08c98-7ec8-4fab-da36-cf140d18c708",
       "transport": {
         "type": "xhttp",
-        "path": "/api/v1/upload",
+        "path": "/Meh?di=443",
         "mode": "auto",
         "host": [
-          "dismissaltree.net"
+          "host.taghvimtime.ir"
         ]
       },
       "tls": {
         "enabled": true,
-        "server_name": "dismissaltree.net",
+        "server_name": "host.taghvimtime.ir",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
       "_sub_ids": [
-        "7"
+        "1"
       ],
-      "_last_ok_ts": 1792161991.114186,
-      "_country": "RU"
+      "_country": "DE",
+      "_last_ok_ts": 1792176374.345434
     },
     {
       "type": "vless",
-      "tag": "🇷🇺node-2",
+      "tag": "🇳🇱node-2",
+      "server": "206.71.158.124",
+      "server_port": 443,
+      "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
+      "transport": {
+        "type": "xhttp",
+        "path": "/kavir",
+        "mode": "stream-one",
+        "host": [
+          "dey.lnmarketplace.net"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "dey.lnmarketplace.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_sub_ids": [
+        "1",
+        "14",
+        "2"
+      ],
+      "_country": "NL",
+      "_last_ok_ts": 1792176374.345434
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-3",
+      "server": "206.71.158.125",
+      "server_port": 443,
+      "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
+      "transport": {
+        "type": "xhttp",
+        "path": "/kavir",
+        "mode": "stream-one",
+        "host": [
+          "dey.lnmarketplace.net"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "dey.lnmarketplace.net",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_sub_ids": [
+        "2",
+        "21"
+      ],
+      "_country": "NL",
+      "_last_ok_ts": 1792176374.345434
+    },
+    {
+      "type": "vless",
+      "tag": "🇷🇺node-4",
       "server": "tg1.cdnphotos.org",
       "server_port": 443,
       "uuid": "f04cc810-aaf2-4a7b-8cad-356cdd30d394",
@@ -52,12 +111,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792161991.114186,
+      "_last_ok_ts": 1792176374.345434,
       "_country": "RU"
     },
     {
       "type": "vless",
-      "tag": "🇷🇺node-3",
+      "tag": "🇷🇺node-5",
       "server": "tg1.cdnphotos.org",
       "server_port": 443,
       "uuid": "f04cc810-aaf2-4a7b-8cad-356cdd30d394",
@@ -77,12 +136,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792161991.114186,
+      "_last_ok_ts": 1792176374.345434,
       "_country": "RU"
     },
     {
       "type": "vless",
-      "tag": "🇷🇺node-4",
+      "tag": "🇷🇺node-6",
       "server": "tg1.cdnphotos.org",
       "server_port": 443,
       "uuid": "f04cc810-aaf2-4a7b-8cad-356cdd30d394",
@@ -102,82 +161,35 @@
       "_sub_ids": [
         "214"
       ],
-      "_last_ok_ts": 1792161991.114186,
+      "_last_ok_ts": 1792176374.345434,
       "_country": "RU"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-5",
-      "server": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
-      "server_port": 443,
-      "uuid": "9fa2fae0-141a-b983-ef0e-b3d5633f9592",
-      "transport": {
-        "type": "xhttp",
-        "path": "/xhttp-siz10/stream-up/9fa2fae0-141a-b983-ef0e-b3d5633f9592",
-        "mode": "stream-up"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_country": "US",
-      "_last_ok_ts": 1792161991.114186
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-6",
-      "server": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
-      "server_port": 443,
-      "uuid": "9fa2fae0-141a-b983-ef0e-b3d5633f9592",
-      "transport": {
-        "type": "xhttp",
-        "path": "/xhttp-siz10/stream-up/9fa2fae0-141a-b983-ef0e-b3d5633f9592",
-        "mode": "stream-up"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_country": "US",
-      "_last_ok_ts": 1792161991.114186
-    },
-    {
-      "type": "vless",
       "tag": "🇺🇸node-7",
-      "server": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
-      "server_port": 443,
-      "uuid": "9fa2fae0-141a-b983-ef0e-b3d5633f9592",
+      "server": "207.246.104.91",
+      "server_port": 37379,
+      "uuid": "a4bec43e-8073-4725-b307-47edad331fee",
       "transport": {
         "type": "xhttp",
-        "path": "/xhttp-siz10/stream-up/9fa2fae0-141a-b983-ef0e-b3d5633f9592",
-        "mode": "stream-up"
+        "path": "/",
+        "mode": "auto"
       },
       "tls": {
         "enabled": true,
-        "server_name": "1579e6d9-6b57-4fb1-b080-9c9a6da46ae5.fly.dev",
+        "server_name": "xuius.907737.xyz",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
         }
       },
-      "_sub_ids": [
-        "21"
-      ],
-      "_last_ok_ts": 1792161991.114186,
+      "_last_ok_ts": 1792176374.345434,
       "_country": "US"
     },
     {
       "type": "vless",
       "tag": "🇺🇸node-8",
-      "server": "207.246.104.91",
+      "server": "xuius.907737.xyz",
       "server_port": 37379,
       "uuid": "a4bec43e-8073-4725-b307-47edad331fee",
       "transport": {
@@ -194,12 +206,12 @@
         }
       },
       "_country": "US",
-      "_last_ok_ts": 1792161991.114186
+      "_last_ok_ts": 1792176374.345434
     },
     {
       "type": "vless",
       "tag": "🇺🇸node-9",
-      "server": "207.246.104.91",
+      "server": "xuius.907737.xyz",
       "server_port": 37379,
       "uuid": "a4bec43e-8073-4725-b307-47edad331fee",
       "transport": {
@@ -216,12 +228,12 @@
         }
       },
       "_country": "US",
-      "_last_ok_ts": 1792161991.114186
+      "_last_ok_ts": 1792176374.345434
     },
     {
       "type": "vless",
       "tag": "🇺🇸node-10",
-      "server": "207.246.104.91",
+      "server": "xuius.907737.xyz",
       "server_port": 37379,
       "uuid": "a4bec43e-8073-4725-b307-47edad331fee",
       "transport": {
@@ -238,12 +250,12 @@
         }
       },
       "_country": "US",
-      "_last_ok_ts": 1792161991.114186
+      "_last_ok_ts": 1792176374.345434
     },
     {
       "type": "vless",
       "tag": "🇺🇸node-11",
-      "server": "207.246.104.91",
+      "server": "xuius.907737.xyz",
       "server_port": 37379,
       "uuid": "a4bec43e-8073-4725-b307-47edad331fee",
       "transport": {
@@ -260,12 +272,12 @@
         }
       },
       "_country": "US",
-      "_last_ok_ts": 1792161991.114186
+      "_last_ok_ts": 1792176374.345434
     },
     {
       "type": "vless",
       "tag": "🇺🇸node-12",
-      "server": "207.246.104.91",
+      "server": "xuius.907737.xyz",
       "server_port": 37379,
       "uuid": "a4bec43e-8073-4725-b307-47edad331fee",
       "transport": {
@@ -281,7 +293,29 @@
           "fingerprint": "chrome"
         }
       },
-      "_last_ok_ts": 1792161991.114186,
+      "_country": "US",
+      "_last_ok_ts": 1792176374.345434
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-13",
+      "server": "xuius.907737.xyz",
+      "server_port": 37379,
+      "uuid": "a4bec43e-8073-4725-b307-47edad331fee",
+      "transport": {
+        "type": "xhttp",
+        "path": "/",
+        "mode": "auto"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "xuius.907737.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_last_ok_ts": 1792176374.345434,
       "_country": "US"
     }
   ]
