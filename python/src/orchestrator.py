@@ -173,22 +173,20 @@ def _check_node(
     reader,
     geoip_block_countries: tuple[str, ...] | None,
 ) -> dict | None | str:
-    """Вызывает check_rkn_blocked + check_geoip последовательно."""
+    """Проверяет ноду по RKN и GeoIP независимо."""
     # 1. RKN проверка
     rkn_result = check_rkn_blocked(server, blocked_networks)
     if rkn_result is True:
         return "rkn"
-    if rkn_result is None:
-        return None
 
-    # 2. GeoIP проверка
+    # 2. GeoIP проверка (независимо от результата RKN)
     geoip_result = check_geoip(server, reader, geoip_block_countries)
     if isinstance(geoip_result, str):
         return geoip_result
     if geoip_result is not None:
         return geoip_result
 
-    # GeoIP база недоступна — нода не заблокирована RKN, пропускаем
+    # Ни RKN, ни GeoIP не заблокировали — пропускаем
     return {"ip": server}
 
 
