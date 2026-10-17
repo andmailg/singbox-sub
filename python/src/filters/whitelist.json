@@ -11076,8 +11076,60 @@
             "initial_windows_size": 0
           }
         }
+      },
+      {
+        "key": "157.228.132.79:2054",
+        "node": {
+          "type": "vless",
+          "tag": "🇦🇪node-408",
+          "server": "157.228.132.79",
+          "server_port": 2054,
+          "uuid": "cdc72f62-1697-4644-b5a9-ca6308584c86",
+          "tls": {
+            "enabled": true,
+            "server_name": "cloud.ibm.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "UgJ0ENqGGX-ch2mLdRZiw67OhU3Dqz7rDYCPKcdnn0w",
+              "short_id": "d3d9e08a74807928"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc",
+            "initial_windows_size": 0
+          }
+        }
+      },
+      {
+        "key": "45.12.63.96:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇸🇨node-1844",
+          "server": "45.12.63.96",
+          "server_port": 443,
+          "uuid": "9cb8d71c-fe06-4402-a591-eaa1f173b890",
+          "tls": {
+            "enabled": true,
+            "server_name": "studio.10media.top",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "studiofeed",
+            "initial_windows_size": 0
+          },
+          "packet_encoding": "xudp"
+        }
       }
     ]
   },
-  "updated": "2026-10-17T09:53:06Z"
+  "updated": "2026-10-17T14:09:16Z"
 }
