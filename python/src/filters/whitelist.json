@@ -10959,8 +10959,54 @@
             "service_name": "becc6caf9bea"
           }
         }
+      },
+      {
+        "key": "138.124.117.113:9443",
+        "node": {
+          "type": "vless",
+          "tag": "🇳🇱node-1584",
+          "server": "138.124.117.113",
+          "server_port": 9443,
+          "uuid": "8179d7cc-82bc-4eae-a97f-5d30c6c2a812",
+          "tls": {
+            "enabled": true,
+            "server_name": "icloud.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "8bhS-nnIN67a292RpJsCPzXQy4CzpzOVLTPn5CiAFyg",
+              "short_id": "6ba7b810"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "edge-lab-b.10media.top:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇸🇨node-1827",
+          "server": "edge-lab-b.10media.top",
+          "server_port": 443,
+          "uuid": "9cb8d71c-fe06-4402-a591-eaa1f173b890",
+          "tls": {
+            "enabled": true,
+            "server_name": "edge-lab-b.10media.top"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "swedenfeed",
+            "initial_windows_size": 0
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-16T23:02:52Z"
+  "updated": "2026-10-17T05:07:22Z"
 }
