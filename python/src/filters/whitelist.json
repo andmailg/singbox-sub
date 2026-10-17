@@ -11227,8 +11227,35 @@
             "service_name": ""
           }
         }
+      },
+      {
+        "key": "lit.fytpn.com:56791",
+        "node": {
+          "type": "vless",
+          "tag": "🇱🇻node-1539",
+          "server": "lit.fytpn.com",
+          "server_port": 56791,
+          "uuid": "a034eba2-8b2c-40af-9233-629c45b40fc2",
+          "tls": {
+            "enabled": true,
+            "server_name": "lit.fytpn.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "PDHRi_RRFsPhxLoH2C1l9A9HdL2y7g1uOzXmY0XnmzQ",
+              "short_id": "a2aa"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpcsvc"
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-17T22:24:26Z"
+  "updated": "2026-10-17T22:50:14Z"
 }
