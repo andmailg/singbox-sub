@@ -11145,8 +11145,58 @@
           },
           "packet_encoding": "xudp"
         }
+      },
+      {
+        "key": "83.168.91.16:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇵🇱node-1796",
+          "server": "83.168.91.16",
+          "server_port": 443,
+          "uuid": "9cb8d71c-fe06-4402-a591-eaa1f173b890",
+          "tls": {
+            "enabled": true,
+            "server_name": "pl-exit-02.10media.top",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "framefeed",
+            "initial_windows_size": 0
+          }
+        }
+      },
+      {
+        "key": "207.174.31.3:33760",
+        "node": {
+          "type": "vless",
+          "tag": "🇺🇸node-2081",
+          "server": "207.174.31.3",
+          "server_port": 33760,
+          "uuid": "0c8ed652-715f-4e9b-8e21-3a41dc1a7b77",
+          "tls": {
+            "enabled": true,
+            "server_name": "it.nvidia.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "AkjYcLioOmiVX2Q52AqUOPLUw60AK25wAzd8NuLQD0E",
+              "short_id": "ec77210872738961"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-17T17:04:25Z"
+  "updated": "2026-10-17T18:11:33Z"
 }
