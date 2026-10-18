@@ -536,7 +536,8 @@
         "node-423",
         "node-424",
         "node-425",
-        "node-426"
+        "node-426",
+        "node-427"
       ],
       "default": "auto"
     },
@@ -969,7 +970,8 @@
         "node-423",
         "node-424",
         "node-425",
-        "node-426"
+        "node-426",
+        "node-427"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -6623,6 +6625,24 @@
     {
       "type": "trojan",
       "tag": "node-408",
+      "server": "89.150.34.41",
+      "server_port": 2053,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.calmlunch.com"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "node-409",
       "server": "91.209.253.216",
       "server_port": 2096,
       "password": "ttfang",
@@ -6637,7 +6657,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-409",
+      "tag": "node-410",
       "server": "91.220.8.170",
       "server_port": 2053,
       "password": "8r%3C%5B9%27l6hAO%238ZQi",
@@ -6648,7 +6668,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-410",
+      "tag": "node-411",
       "server": "91.245.225.79",
       "server_port": 2053,
       "password": "humanity",
@@ -6666,7 +6686,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-411",
+      "tag": "node-412",
       "server": "92.243.74.216",
       "server_port": 2096,
       "password": "ttfang",
@@ -6681,7 +6701,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-412",
+      "tag": "node-413",
       "server": "92.243.74.23",
       "server_port": 2096,
       "password": "Aimer",
@@ -6692,7 +6712,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-413",
+      "tag": "node-414",
       "server": "92.243.75.216",
       "server_port": 2096,
       "password": "ttfang",
@@ -6707,7 +6727,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-414",
+      "tag": "node-415",
       "server": "92.243.75.49",
       "server_port": 2087,
       "password": "wb6368",
@@ -6725,7 +6745,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-415",
+      "tag": "node-416",
       "server": "92.53.188.216",
       "server_port": 2096,
       "password": "ttfang",
@@ -6740,7 +6760,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-416",
+      "tag": "node-417",
       "server": "92.53.189.216",
       "server_port": 2096,
       "password": "ttfang",
@@ -6755,7 +6775,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-417",
+      "tag": "node-418",
       "server": "92.53.190.161",
       "server_port": 2087,
       "password": "Aimer",
@@ -6766,7 +6786,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-418",
+      "tag": "node-419",
       "server": "92.53.190.216",
       "server_port": 2096,
       "password": "ttfang",
@@ -6781,7 +6801,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-419",
+      "tag": "node-420",
       "server": "92.53.191.216",
       "server_port": 2096,
       "password": "ttfang",
@@ -6796,7 +6816,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-420",
+      "tag": "node-421",
       "server": "92.60.74.216",
       "server_port": 2096,
       "password": "ttfang",
@@ -6811,7 +6831,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-421",
+      "tag": "node-422",
       "server": "94.140.0.216",
       "server_port": 2096,
       "password": "ttfang",
@@ -6826,7 +6846,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-422",
+      "tag": "node-423",
       "server": "94.140.0.238",
       "server_port": 2096,
       "password": "5a2c16f9",
@@ -6837,7 +6857,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-423",
+      "tag": "node-424",
       "server": "94.247.142.216",
       "server_port": 2096,
       "password": "ttfang",
@@ -6852,7 +6872,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-424",
+      "tag": "node-425",
       "server": "95.182.101.74",
       "server_port": 2053,
       "password": "8r%3C%5B9%27l6hAO%238ZQi",
@@ -6863,7 +6883,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-425",
+      "tag": "node-426",
       "server": "95.182.120.208",
       "server_port": 2053,
       "password": "3b38715b-f08a-46dd-9904-7531ca4bb6e8",
@@ -6874,7 +6894,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-426",
+      "tag": "node-427",
       "server": "us.1.diginoisb.ir",
       "server_port": 80,
       "password": "5f205628a5144ee2979c0e1daac9fe6a",
