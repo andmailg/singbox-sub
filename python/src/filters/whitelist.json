@@ -11399,8 +11399,35 @@
             "initial_windows_size": 0
           }
         }
+      },
+      {
+        "key": "157.228.149.211:2054",
+        "node": {
+          "type": "vless",
+          "tag": "🇦🇪node-429",
+          "server": "157.228.149.211",
+          "server_port": 2054,
+          "uuid": "cdc72f62-1697-4644-b5a9-ca6308584c86",
+          "tls": {
+            "enabled": true,
+            "server_name": "cloud.ibm.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "UgJ0ENqGGX-ch2mLdRZiw67OhU3Dqz7rDYCPKcdnn0w",
+              "short_id": "d3d9e08a74807928"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-18T17:20:59Z"
+  "updated": "2026-10-18T18:33:21Z"
 }
