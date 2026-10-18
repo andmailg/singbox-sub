@@ -11329,8 +11329,36 @@
             "service_name": "grpcsvc"
           }
         }
+      },
+      {
+        "key": "2.26.224.25:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇵🇱node-1801",
+          "server": "2.26.224.25",
+          "server_port": 443,
+          "uuid": "355a9948-c284-4669-bd57-43fcdc8dd71e",
+          "tls": {
+            "enabled": true,
+            "server_name": "wifi-pl.convertvideo123.online",
+            "reality": {
+              "enabled": true,
+              "public_key": "zvDl-tnM_FtSLG45j7FXchPAl1dFJaE_T0Lgy26xuXU",
+              "short_id": "b9e7a1c4d8329f10"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "simplegrpc",
+            "initial_windows_size": 0
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-18T04:38:14Z"
+  "updated": "2026-10-18T14:23:58Z"
 }
