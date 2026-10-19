@@ -501,8 +501,7 @@
         "node-388",
         "node-389",
         "node-390",
-        "node-391",
-        "node-392"
+        "node-391"
       ],
       "default": "auto"
     },
@@ -900,8 +899,7 @@
         "node-388",
         "node-389",
         "node-390",
-        "node-391",
-        "node-392"
+        "node-391"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -6425,24 +6423,6 @@
       "tls": {
         "enabled": true,
         "server_name": "joss.gpj.web.id"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-392",
-      "server": "us.1.diginoisb.ir",
-      "server_port": 80,
-      "password": "5f205628a5144ee2979c0e1daac9fe6a",
-      "tls": {
-        "enabled": true,
-        "server_name": "panel.IR.www.vpxpp.ir"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/root",
-        "headers": {
-          "Host": "panel.IR.www.vpxpp.ir"
-        }
       }
     }
   ],
