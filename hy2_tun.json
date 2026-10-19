@@ -113,31 +113,14 @@
         "auto",
         "🇦🇪node-1",
         "🇩🇪node-2",
-        "🇩🇪node-3",
-        "🇩🇪node-4",
-        "🇩🇪node-5",
-        "🇫🇮node-6",
-        "🇬🇧node-7",
-        "🇬🇧node-8",
-        "🇭🇰node-9",
-        "🇯🇵node-10",
-        "🇰🇷node-11",
-        "🇰🇷node-12",
-        "🇰🇷node-13",
-        "🇰🇷node-14",
-        "🇰🇷node-15",
-        "🇰🇷node-16",
-        "🇰🇷node-17",
-        "🇰🇷node-18",
-        "🇰🇷node-19",
-        "🇰🇷node-20",
-        "🇰🇷node-21",
-        "🇰🇷node-22",
-        "🇳🇱node-23",
-        "🇳🇱node-24",
-        "🇷🇴node-25",
-        "🇷🇺node-26",
-        "🇷🇺node-27"
+        "🇫🇷node-3",
+        "🇫🇷node-4",
+        "🇭🇰node-5",
+        "🇰🇷node-6",
+        "🇰🇷node-7",
+        "🇳🇱node-8",
+        "🇷🇴node-9",
+        "🇷🇺node-10"
       ],
       "default": "auto"
     },
@@ -147,31 +130,14 @@
       "outbounds": [
         "🇦🇪node-1",
         "🇩🇪node-2",
-        "🇩🇪node-3",
-        "🇩🇪node-4",
-        "🇩🇪node-5",
-        "🇫🇮node-6",
-        "🇬🇧node-7",
-        "🇬🇧node-8",
-        "🇭🇰node-9",
-        "🇯🇵node-10",
-        "🇰🇷node-11",
-        "🇰🇷node-12",
-        "🇰🇷node-13",
-        "🇰🇷node-14",
-        "🇰🇷node-15",
-        "🇰🇷node-16",
-        "🇰🇷node-17",
-        "🇰🇷node-18",
-        "🇰🇷node-19",
-        "🇰🇷node-20",
-        "🇰🇷node-21",
-        "🇰🇷node-22",
-        "🇳🇱node-23",
-        "🇳🇱node-24",
-        "🇷🇴node-25",
-        "🇷🇺node-26",
-        "🇷🇺node-27"
+        "🇫🇷node-3",
+        "🇫🇷node-4",
+        "🇭🇰node-5",
+        "🇰🇷node-6",
+        "🇰🇷node-7",
+        "🇳🇱node-8",
+        "🇷🇴node-9",
+        "🇷🇺node-10"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -197,19 +163,6 @@
     {
       "type": "hysteria2",
       "tag": "🇩🇪node-2",
-      "server": "de.northvale.cloud",
-      "server_port": 443,
-      "password": "36cd82d2-50b1-400d-b520-2acc9a8a6b40",
-      "tls": {
-        "enabled": true,
-        "server_name": "de.northvale.cloud"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇩🇪node-3",
       "server": "vpn-de-002.fastervpn.world",
       "server_port": 443,
       "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
@@ -222,75 +175,33 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-4",
-      "server": "vpn-de-002.fastervpn.world",
+      "tag": "🇫🇷node-3",
+      "server": "vpn-fr-001.fastervpn.world",
       "server_port": 443,
       "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
       "tls": {
         "enabled": true,
-        "server_name": "vpn-de-002.fastervpn.world"
+        "server_name": "vpn-fr-001.fastervpn.world"
       },
       "up_mbps": 20,
       "down_mbps": 20
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-5",
-      "server": "vpn-de-002.fastervpn.world",
+      "tag": "🇫🇷node-4",
+      "server": "vpn-fr-001.fastervpn.world",
       "server_port": 443,
       "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
       "tls": {
         "enabled": true,
-        "server_name": "vpn-de-002.fastervpn.world"
+        "server_name": "vpn-fr-001.fastervpn.world"
       },
       "up_mbps": 20,
       "down_mbps": 20
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇮node-6",
-      "server": "fi.northvale.cloud",
-      "server_port": 443,
-      "password": "36cd82d2-50b1-400d-b520-2acc9a8a6b40",
-      "tls": {
-        "enabled": true,
-        "server_name": "fi.northvale.cloud"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇬🇧node-7",
-      "server": "uk-d9ca48498a.shamanapp.online",
-      "server_port": 443,
-      "password": "b3a11068-1a7e-4643-85de-7c82cce46943",
-      "tls": {
-        "enabled": true,
-        "server_name": "uk-d9ca48498a.shamanapp.online"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇬🇧node-8",
-      "server": "uk.shamanapp.online",
-      "server_port": 443,
-      "password": "b3a11068-1a7e-4643-85de-7c82cce46943",
-      "tls": {
-        "enabled": true,
-        "server_name": "uk.shamanapp.online",
-        "alpn": [
-          "h3"
-        ]
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇭🇰node-9",
+      "tag": "🇭🇰node-5",
       "server": "nas.aizhzo.com",
       "server_port": 5010,
       "password": "eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ",
@@ -307,20 +218,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇯🇵node-10",
-      "server": "vp3.yysyy.online",
-      "server_port": 443,
-      "password": "96ab5cd282733fd4c312a61f972f330a",
-      "tls": {
-        "enabled": true,
-        "server_name": "vp3.yysyy.online"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇰🇷node-11",
+      "tag": "🇰🇷node-6",
       "server": "150-230-252-217.liao.kdns.fr",
       "server_port": 50160,
       "password": "9cfc9458e48c028ec03ff86ebc71c744",
@@ -333,7 +231,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-12",
+      "tag": "🇰🇷node-7",
       "server": "152-69-231-175.liao.kdns.fr",
       "server_port": 50160,
       "password": "1beb216e3f60aea9555dae60d219a5ca",
@@ -346,137 +244,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-13",
-      "server": "152-69-231-175.liao.kdns.fr",
-      "server_port": 50160,
-      "password": "1beb216e3f60aea9555dae60d219a5ca",
-      "tls": {
-        "enabled": true,
-        "server_name": "152-69-231-175.liao.kdns.fr"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇰🇷node-14",
-      "server": "152-69-231-175.liao.kdns.fr",
-      "server_port": 50160,
-      "password": "1beb216e3f60aea9555dae60d219a5ca",
-      "tls": {
-        "enabled": true,
-        "server_name": "152-69-231-175.liao.kdns.fr"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇰🇷node-15",
-      "server": "152-69-231-175.liao.kdns.fr",
-      "server_port": 50160,
-      "password": "1beb216e3f60aea9555dae60d219a5ca",
-      "tls": {
-        "enabled": true,
-        "server_name": "152-69-231-175.liao.kdns.fr"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇰🇷node-16",
-      "server": "152-69-231-175.liao.kdns.fr",
-      "server_port": 50160,
-      "password": "1beb216e3f60aea9555dae60d219a5ca",
-      "tls": {
-        "enabled": true,
-        "server_name": "152-69-231-175.liao.kdns.fr"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇰🇷node-17",
-      "server": "152-69-231-175.liao.kdns.fr",
-      "server_port": 50160,
-      "password": "1beb216e3f60aea9555dae60d219a5ca",
-      "tls": {
-        "enabled": true,
-        "server_name": "152-69-231-175.liao.kdns.fr"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇰🇷node-18",
-      "server": "152-69-231-175.liao.kdns.fr",
-      "server_port": 50160,
-      "password": "1beb216e3f60aea9555dae60d219a5ca",
-      "tls": {
-        "enabled": true,
-        "server_name": "152-69-231-175.liao.kdns.fr"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇰🇷node-19",
-      "server": "152-69-231-175.liao.kdns.fr",
-      "server_port": 50160,
-      "password": "1beb216e3f60aea9555dae60d219a5ca",
-      "tls": {
-        "enabled": true,
-        "server_name": "152-69-231-175.liao.kdns.fr"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇰🇷node-20",
-      "server": "152-69-231-175.liao.kdns.fr",
-      "server_port": 50160,
-      "password": "1beb216e3f60aea9555dae60d219a5ca",
-      "tls": {
-        "enabled": true,
-        "server_name": "152-69-231-175.liao.kdns.fr"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇰🇷node-21",
-      "server": "152-69-231-175.liao.kdns.fr",
-      "server_port": 50160,
-      "password": "1beb216e3f60aea9555dae60d219a5ca",
-      "tls": {
-        "enabled": true,
-        "server_name": "152-69-231-175.liao.kdns.fr"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇰🇷node-22",
-      "server": "152-69-231-175.liao.kdns.fr",
-      "server_port": 50160,
-      "password": "1beb216e3f60aea9555dae60d219a5ca",
-      "tls": {
-        "enabled": true,
-        "server_name": "152-69-231-175.liao.kdns.fr"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇳🇱node-23",
+      "tag": "🇳🇱node-8",
       "server": "nl-hy-test.tcp-reset-club.net",
       "server_port": 443,
       "password": "dd50a499-7e43-4589-8490-f3b9c2451473",
@@ -489,20 +257,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇳🇱node-24",
-      "server": "nl.northvale.cloud",
-      "server_port": 443,
-      "password": "36cd82d2-50b1-400d-b520-2acc9a8a6b40",
-      "tls": {
-        "enabled": true,
-        "server_name": "nl.northvale.cloud"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇷🇴node-25",
+      "tag": "🇷🇴node-9",
       "server": "hy2-new.aspidnet.xyz",
       "server_port": 443,
       "password": "QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s",
@@ -519,26 +274,13 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇺node-26",
+      "tag": "🇷🇺node-10",
       "server": "match-stream.lovkisport.blog",
       "server_port": 2053,
       "password": "7ab3c77e-8fcc-4848-918f-cae3d4eac794",
       "tls": {
         "enabled": true,
         "server_name": "match-stream.lovkisport.blog"
-      },
-      "up_mbps": 20,
-      "down_mbps": 20
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇷🇺node-27",
-      "server": "srv-17e124.21freedom.net",
-      "server_port": 11592,
-      "password": "41edb44c8e",
-      "tls": {
-        "enabled": true,
-        "server_name": "srv-17e124.21freedom.net"
       },
       "up_mbps": 20,
       "down_mbps": 20
