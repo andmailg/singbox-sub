@@ -11663,8 +11663,61 @@
             "service_name": "df50147201bf"
           }
         }
+      },
+      {
+        "key": "88.218.42.101:443",
+        "node": {
+          "type": "vless",
+          "tag": "🇷🇴node-1836",
+          "server": "88.218.42.101",
+          "server_port": 443,
+          "uuid": "3dced3a1-6510-4c38-afce-df5fea5ba13a",
+          "tls": {
+            "enabled": true,
+            "server_name": "league-stats.russsport.life",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc",
+            "initial_windows_size": 0
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "164.37.224.220:25454",
+        "node": {
+          "type": "vless",
+          "tag": "🇳🇱node-1660",
+          "server": "164.37.224.220",
+          "server_port": 25454,
+          "uuid": "68c3d665-b2b5-4ffb-9f37-9f3d8c47324d",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.ns.nl",
+            "reality": {
+              "enabled": true,
+              "public_key": "YOgsoXtChX3RvA0Gf9SSsP8VLP4GGk7dytVBo9qZCH4",
+              "short_id": "221ba0d14384ccf1"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "ios"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "becc6caf9bea",
+            "initial_windows_size": 0
+          },
+          "packet_encoding": "xudp"
+        }
       }
     ]
   },
-  "updated": "2026-10-19T04:44:46Z"
+  "updated": "2026-10-19T05:24:26Z"
 }
