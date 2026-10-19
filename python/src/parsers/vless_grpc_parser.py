@@ -116,8 +116,6 @@ def parse_proxy_link(link: str) -> dict | None:
         "type": "grpc",
         "service_name": grpc_service_name,
     }
-    if mode:
-        transport["initial_windows_size"] = 0 if mode == "gun" else None
     if authority:
         transport["authority"] = authority
 
