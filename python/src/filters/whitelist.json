@@ -3362,6 +3362,55 @@
             }
           }
         }
+      },
+      {
+        "key": "91.107.191.188:443:3a015ed8-6fac-483b-dba9-f52ea3854a04:/Meh?di=443",
+        "node": {
+          "type": "vless",
+          "tag": "🇩🇪node-1200",
+          "server": "91.107.191.188",
+          "server_port": 443,
+          "uuid": "3a015ed8-6fac-483b-dba9-f52ea3854a04",
+          "transport": {
+            "type": "xhttp",
+            "path": "/Meh?di=443",
+            "mode": "auto",
+            "host": [
+              "kala.bestsellers1.site"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "kala.bestsellers1.site",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "216.24.57.3:443:6a9bd5bf-7fb1-4f42-a49a-141077ea669f:/",
+        "node": {
+          "type": "vless",
+          "tag": "🇺🇸node-1703",
+          "server": "216.24.57.3",
+          "server_port": 443,
+          "uuid": "6a9bd5bf-7fb1-4f42-a49a-141077ea669f",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "mobile.zandix.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -11719,5 +11768,5 @@
       }
     ]
   },
-  "updated": "2026-10-19T05:24:26Z"
+  "updated": "2026-10-19T10:54:23Z"
 }
