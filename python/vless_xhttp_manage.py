@@ -52,7 +52,6 @@ def cmd_merge(args):
     from src.orchestrator import run_pipeline
 
     port_whitelist = tuple(int(p) for p in args.ports.split(",")) if args.ports else None
-    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_block.split(",")) if args.geoip_block else None
     skip_rkn = args.rkn_filter == 0
 
     # Кастомный export_func: сохраняет ноды в vless_xhttp_working.json без нумерации
@@ -76,15 +75,14 @@ def cmd_merge(args):
         port_whitelist=port_whitelist,
         reality=False,
         tester_func=None,  # тестирование отдельно через cmd_test (если нужно)
-        geoip_block_countries=geoip_block_countries,
         skip_rkn=skip_rkn,
     )
 
 
-def _readd_whitelisted(geoip_block_countries=None, skip_rkn=False):
-    """Восстанавливает узлы из whitelist в working с финальной RKN/GeoIP блокировкой."""
+def _readd_whitelisted(skip_rkn=False):
+    """Восстанавливает узлы из whitelist в working с финальной RKN блокировкой."""
     from src.vless_xhttp_working import load_working_nodes, save_working_nodes, merge_new_nodes
-    from src.orchestrator import _rkn_filter, _geoip_block
+    from src.orchestrator import _rkn_filter
 
     whitelist = load_whitelist()
     whitelist_nodes = get_whitelist_nodes("vless_xhttp", whitelist)
@@ -99,20 +97,11 @@ def _readd_whitelisted(geoip_block_countries=None, skip_rkn=False):
         prefix="  ",
         skip_rkn=skip_rkn,
     )
-
-    # Применяем GeoIP блокировку
-    if geoip_block_countries:
-        print(f"  Blocking countries: {', '.join(geoip_block_countries)} for {len(filtered_nodes)} node(s)...")
-        filtered_nodes = _geoip_block(
-            filtered_nodes,
-            prefix="  ",
-            geoip_block_countries=geoip_block_countries,
-        )
     if not filtered_nodes:
-        print("  All whitelist nodes filtered out by RKN/GeoIP.")
+        print("  All whitelist nodes filtered out by RKN.")
         return
 
-    print(f"  {len(filtered_nodes)} whitelist node(s) passed RKN/GeoIP filter.")
+    print(f"  {len(filtered_nodes)} whitelist node(s) passed RKN filter.")
 
     existing = load_working_nodes()
     existing_keys = {_cache_key(n) for n in existing}
@@ -241,8 +230,6 @@ def cmd_test(args):
 
 def cmd_run(args):
     """Полный pipeline: merge -> whitelist re-add -> test -> export."""
-    # Извлекаем флаги фильтрации для передачи в _readd_whitelisted
-    geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_block.split(",")) if args.geoip_block else None
     skip_rkn = args.rkn_filter == 0
 
     # Step 1: Merge
@@ -255,7 +242,7 @@ def cmd_run(args):
     print("\n" + "=" * 60)
     print("STEP 1.5: Re-add whitelisted nodes to working")
     print("=" * 60)
-    _readd_whitelisted(geoip_block_countries=geoip_block_countries, skip_rkn=skip_rkn)
+    _readd_whitelisted(skip_rkn=skip_rkn)
 
     # Step 2: Test
     print("\n" + "=" * 60)
@@ -267,7 +254,7 @@ def cmd_run(args):
     print("\n" + "=" * 60)
     print("STEP 3: Export configs")
     print("=" * 60)
-    cmd_export(argparse.Namespace(export=args.export, output="vless_xhttp.txt"))
+    cmd_export(argparse.Namespace(export=args.export, output="vless_xhttp.txt", geoip_block=args.geoip_block))
 
 
 def cmd_export(args):
@@ -290,6 +277,16 @@ def cmd_export(args):
 
     if not active_nodes:
         print("No active nodes to export.")
+
+    # Применяем фильтрацию geoip-block перед экспортом
+    if args.geoip_block:
+        geoip_block_countries = tuple(c.strip().lower() for c in args.geoip_block.split(","))
+        from src.orchestrator import _geoip_block
+        print(f"Applying GeoIP block: {', '.join(geoip_block_countries)}")
+        active_nodes = _geoip_block(active_nodes, geoip_block_countries=geoip_block_countries)
+        if not active_nodes:
+            print("No active nodes left after GeoIP blocking.")
+            return
 
     # Нумеруем только active ноды
     active_nodes = renumber_nodes(active_nodes)
@@ -377,8 +374,6 @@ Examples:
     filter_parser = argparse.ArgumentParser(add_help=False)
     filter_parser.add_argument("--ports", type=str, default=None,
                                help="Comma-separated port whitelist (default: all ports)")
-    filter_parser.add_argument("--geoip-block", type=str, default=None,
-                               help="Comma-separated country codes to block (e.g. --geoip-block ru,ir)")
     filter_parser.add_argument("--rkn-filter", type=int, choices=[0, 1], default=0,
                                help="RKN filter: 0 = skip filtering, 1 = apply filtering (default: 0)")
 
@@ -396,6 +391,8 @@ Examples:
                                        parents=[filter_parser, test_parser_base])
     run_parser.add_argument("--export", type=str, default="xray",
                             help="Export formats (default: xray): tun,xray,router")
+    run_parser.add_argument("--geoip-block", type=str, default=None,
+                            help="Comma-separated country codes to block (e.g. --geoip-block ru,ir)")
 
     # merge — подтягивает новые ноды из подписок
     merge_parser = subparsers.add_parser("merge", help="Fetch new nodes from subscriptions",
@@ -410,6 +407,8 @@ Examples:
     export_parser.add_argument("--export", type=str, default="xray",
                                help="Export formats (default: xray): tun,xray,router")
     export_parser.add_argument("--output", default="vless_xhttp.txt", help="Output file")
+    export_parser.add_argument("--geoip-block", type=str, default=None,
+                               help="Comma-separated country codes to block (e.g. --geoip-block ru,ir)")
 
     args = parser.parse_args()
 
