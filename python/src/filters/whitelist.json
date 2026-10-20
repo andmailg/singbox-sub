@@ -3437,6 +3437,107 @@
             }
           }
         }
+      },
+      {
+        "key": "185.126.93.226:443:f04cc810-aaf2-4a7b-8cad-356cdd30d394:/api/v1/",
+        "node": {
+          "type": "vless",
+          "tag": "node-602",
+          "server": "185.126.93.226",
+          "server_port": 443,
+          "uuid": "f04cc810-aaf2-4a7b-8cad-356cdd30d394",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "tg1.cdnphotos.org",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "78.159.246.179:2053:6a2aff19-ff1f-4a13-96c8-a4d8986a9699:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-2002",
+          "server": "78.159.246.179",
+          "server_port": 2053,
+          "uuid": "6a2aff19-ff1f-4a13-96c8-a4d8986a9699",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "randomquaint.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "randomquaint.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "78.159.246.179:2053:95a608b6-bff1-4e10-bb61-0a39f221bb7d:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-2004",
+          "server": "78.159.246.179",
+          "server_port": 2053,
+          "uuid": "95a608b6-bff1-4e10-bb61-0a39f221bb7d",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "randomquaint.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "randomquaint.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "78.159.246.85:8443:2c634977-584e-4e1f-b501-1b70c77a6743:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-2006",
+          "server": "78.159.246.85",
+          "server_port": 8443,
+          "uuid": "2c634977-584e-4e1f-b501-1b70c77a6743",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "fitindoor.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "fitindoor.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -11937,5 +12038,5 @@
       }
     ]
   },
-  "updated": "2026-10-20T05:26:47Z"
+  "updated": "2026-10-20T15:15:14Z"
 }
