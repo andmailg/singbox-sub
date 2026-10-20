@@ -12129,8 +12129,35 @@
             "service_name": "grpc"
           }
         }
+      },
+      {
+        "key": "195.189.98.121:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-1077",
+          "server": "195.189.98.121",
+          "server_port": 443,
+          "uuid": "3b1fa839-2cb9-4511-9711-08800450aea3",
+          "tls": {
+            "enabled": true,
+            "server_name": "reg.jarbook.net",
+            "reality": {
+              "enabled": true,
+              "public_key": "SiyX5MHMfE_232cYFpidAhU4eBxaoNphSSnNbVc1xnc",
+              "short_id": "085f6d90"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "BookCatalog"
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-20T18:40:13Z"
+  "updated": "2026-10-20T19:51:21Z"
 }
