@@ -3538,6 +3538,110 @@
             }
           }
         }
+      },
+      {
+        "key": "37.18.14.43:2053:2c634977-584e-4e1f-b501-1b70c77a6743:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-1790",
+          "server": "37.18.14.43",
+          "server_port": 2053,
+          "uuid": "2c634977-584e-4e1f-b501-1b70c77a6743",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "summerculture.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "summerculture.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "81.94.148.232:8443:2c634977-584e-4e1f-b501-1b70c77a6743:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-2074",
+          "server": "81.94.148.232",
+          "server_port": 8443,
+          "uuid": "2c634977-584e-4e1f-b501-1b70c77a6743",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "windytrout.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "windytrout.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "www.canva.com:443:a0431667-fe5b-4a55-b466-49bb04f74120:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-2583",
+          "server": "www.canva.com",
+          "server_port": 443,
+          "uuid": "a0431667-fe5b-4a55-b466-49bb04f74120",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "packet-up",
+            "host": [
+              "kanapucin.tolkun-tv.ru"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "kanapucin.tolkun-tv.ru",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "78.159.246.85:2053:2c634977-584e-4e1f-b501-1b70c77a6743:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-2005",
+          "server": "78.159.246.85",
+          "server_port": 2053,
+          "uuid": "2c634977-584e-4e1f-b501-1b70c77a6743",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "fitindoor.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "fitindoor.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -12159,5 +12263,5 @@
       }
     ]
   },
-  "updated": "2026-10-20T19:51:21Z"
+  "updated": "2026-10-20T23:25:31Z"
 }
