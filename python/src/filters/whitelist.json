@@ -11833,8 +11833,109 @@
           },
           "packet_encoding": "xudp"
         }
+      },
+      {
+        "key": "132.243.186.2:8444",
+        "node": {
+          "type": "vless",
+          "tag": "🇦🇲node-439",
+          "server": "132.243.186.2",
+          "server_port": 8444,
+          "uuid": "a346c521-7a7f-452b-9356-a4893feb5982",
+          "tls": {
+            "enabled": true,
+            "server_name": "github.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "GunService"
+          }
+        }
+      },
+      {
+        "key": "2.56.175.179:9443",
+        "node": {
+          "type": "vless",
+          "tag": "🇨🇾node-541",
+          "server": "2.56.175.179",
+          "server_port": 9443,
+          "uuid": "8179d7cc-82bc-4eae-a97f-5d30c6c2a812",
+          "tls": {
+            "enabled": true,
+            "server_name": "itunes.apple.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "8bhS-nnIN67a292RpJsCPzXQy4CzpzOVLTPn5CiAFyg",
+              "short_id": "6ba7b810"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "66.151.40.60:8444",
+        "node": {
+          "type": "vless",
+          "tag": "🇩🇪node-919",
+          "server": "66.151.40.60",
+          "server_port": 8444,
+          "uuid": "a346c521-7a7f-452b-9356-a4893feb5982",
+          "tls": {
+            "enabled": true,
+            "server_name": "github.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "GunService"
+          }
+        }
+      },
+      {
+        "key": "94.103.2.109:8451",
+        "node": {
+          "type": "vless",
+          "tag": "🇲🇩node-1587",
+          "server": "94.103.2.109",
+          "server_port": 8451,
+          "uuid": "a346c521-7a7f-452b-9356-a4893feb5982",
+          "tls": {
+            "enabled": true,
+            "server_name": "github.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "GunService"
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-20T04:53:24Z"
+  "updated": "2026-10-20T05:26:47Z"
 }
