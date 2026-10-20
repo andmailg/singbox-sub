@@ -1,6 +1,6 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-10-19T20:46:49Z",
+  "last_tested": "2026-10-20T04:53:24Z",
   "nodes": [
     {
       "type": "vless",
@@ -28,7 +28,7 @@
         "1"
       ],
       "_country": "DE",
-      "_last_ok_ts": 1792441996.11332
+      "_last_ok_ts": 1792471208.820882
     },
     {
       "type": "vless",
@@ -58,7 +58,7 @@
         "7"
       ],
       "_country": "DE",
-      "_last_ok_ts": 1792441996.11332
+      "_last_ok_ts": 1792471208.820882
     },
     {
       "type": "vless",
@@ -86,7 +86,7 @@
         "1"
       ],
       "_country": "DE",
-      "_last_ok_ts": 1792441996.11332
+      "_last_ok_ts": 1792471208.820882
     },
     {
       "type": "vless",
@@ -114,7 +114,7 @@
         "1"
       ],
       "_country": "EE",
-      "_last_ok_ts": 1792441996.11332
+      "_last_ok_ts": 1792471208.820882
     },
     {
       "type": "vless",
@@ -143,64 +143,93 @@
         "2"
       ],
       "_country": "NL",
-      "_last_ok_ts": 1792441996.11332
+      "_last_ok_ts": 1792471208.820882
     },
     {
       "type": "vless",
       "tag": "🇳🇱node-6",
-      "server": "50d9ab69755390c8.wgse.info",
+      "server": "206.71.158.125",
       "server_port": 443,
-      "uuid": "9f56bdc2-3238-4190-9b83-1c8332a7f3f8",
+      "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
       "transport": {
         "type": "xhttp",
-        "path": "/xh",
-        "mode": "auto",
+        "path": "/kavir",
+        "mode": "stream-one",
         "host": [
-          "50d9ab69755390c8.wgse.info"
+          "dey.lnmarketplace.net"
         ]
       },
       "tls": {
         "enabled": true,
-        "server_name": "50d9ab69755390c8.wgse.info",
+        "server_name": "dey.lnmarketplace.net",
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         }
       },
       "_country": "NL",
-      "_last_ok_ts": 1792441996.11332
+      "_last_ok_ts": 1792471208.820882
     },
     {
       "type": "vless",
       "tag": "🇳🇱node-7",
-      "server": "50d9ab69755390c8.wgse.info",
+      "server": "206.71.158.125",
       "server_port": 443,
-      "uuid": "9f56bdc2-3238-4190-9b83-1c8332a7f3f8",
+      "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
       "transport": {
         "type": "xhttp",
-        "path": "/xh",
-        "mode": "auto",
+        "path": "/kavir",
+        "mode": "stream-one",
         "host": [
-          "50d9ab69755390c8.wgse.info"
+          "dey.lnmarketplace.net"
         ]
       },
       "tls": {
         "enabled": true,
-        "server_name": "50d9ab69755390c8.wgse.info",
+        "server_name": "dey.lnmarketplace.net",
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         }
       },
       "_sub_ids": [
-        "1"
+        "13",
+        "2"
       ],
       "_country": "NL",
-      "_last_ok_ts": 1792441996.11332
+      "_last_ok_ts": 1792471208.820882
     },
     {
       "type": "vless",
-      "tag": "🇵🇱node-8",
+      "tag": "🇳🇱node-8",
+      "server": "nl7.brightmetric.trade",
+      "server_port": 443,
+      "uuid": "6338c01a-310e-42c3-bf4f-2a20e161054b",
+      "transport": {
+        "type": "xhttp",
+        "path": "/storage/upload/session",
+        "mode": "stream-up",
+        "host": [
+          "nl7.brightmetric.trade"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "nl7.brightmetric.trade",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      },
+      "_sub_ids": [
+        "23"
+      ],
+      "_country": "NL",
+      "_last_ok_ts": 1792471208.820882
+    },
+    {
+      "type": "vless",
+      "tag": "🇵🇱node-9",
       "server": "pl-a50baf0d7f.shamanapp.online",
       "server_port": 443,
       "uuid": "b3a11068-1a7e-4643-85de-7c82cce46943",
@@ -224,11 +253,11 @@
         "1"
       ],
       "_country": "PL",
-      "_last_ok_ts": 1792441996.11332
+      "_last_ok_ts": 1792471208.820882
     },
     {
       "type": "vless",
-      "tag": "🇹🇷node-9",
+      "tag": "🇹🇷node-10",
       "server": "193.223.106.13",
       "server_port": 33742,
       "uuid": "b3a11068-1a7e-4643-85de-7c82cce46943",
@@ -252,7 +281,85 @@
         "14"
       ],
       "_country": "TR",
-      "_last_ok_ts": 1792441996.11332
+      "_last_ok_ts": 1792471208.820882
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-11",
+      "server": "146.75.32.8",
+      "server_port": 443,
+      "uuid": "7eecba82-6a8a-4f6a-bff9-baa092931150",
+      "transport": {
+        "type": "xhttp",
+        "path": "/",
+        "mode": "auto",
+        "host": [
+          "mxnlkmmqi.global.ssl.fastly.net"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "Account.fastly.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "_country": "US",
+      "_last_ok_ts": 1792471208.820882
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-12",
+      "server": "146.75.32.8",
+      "server_port": 443,
+      "uuid": "7eecba82-6a8a-4f6a-bff9-baa092931150",
+      "transport": {
+        "type": "xhttp",
+        "path": "/",
+        "mode": "auto",
+        "host": [
+          "mxnlkmmqi.global.ssl.fastly.net"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "Account.fastly.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "_country": "US",
+      "_last_ok_ts": 1792471208.820882
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-13",
+      "server": "146.75.32.8",
+      "server_port": 443,
+      "uuid": "7eecba82-6a8a-4f6a-bff9-baa092931150",
+      "transport": {
+        "type": "xhttp",
+        "path": "/",
+        "mode": "auto",
+        "host": [
+          "mxnlkmmqi.global.ssl.fastly.net"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "Account.fastly.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "_sub_ids": [
+        "23"
+      ],
+      "_country": "US",
+      "_last_ok_ts": 1792471208.820882
     }
   ]
 }

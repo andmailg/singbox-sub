@@ -3411,6 +3411,32 @@
             }
           }
         }
+      },
+      {
+        "key": "nl7.brightmetric.trade:443:6338c01a-310e-42c3-bf4f-2a20e161054b:/storage/upload/session",
+        "node": {
+          "type": "vless",
+          "tag": "🇳🇱node-1421",
+          "server": "nl7.brightmetric.trade",
+          "server_port": 443,
+          "uuid": "6338c01a-310e-42c3-bf4f-2a20e161054b",
+          "transport": {
+            "type": "xhttp",
+            "path": "/storage/upload/session",
+            "mode": "stream-up",
+            "host": [
+              "nl7.brightmetric.trade"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "nl7.brightmetric.trade",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -11810,5 +11836,5 @@
       }
     ]
   },
-  "updated": "2026-10-19T17:07:10Z"
+  "updated": "2026-10-20T04:53:24Z"
 }
