@@ -1,6 +1,6 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-10-20T09:28:36Z",
+  "last_tested": "2026-10-20T10:37:53Z",
   "nodes": [
     {
       "type": "vless",
@@ -28,7 +28,7 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "BG"
     },
     {
@@ -57,7 +57,7 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "BG"
     },
     {
@@ -87,22 +87,22 @@
         "1",
         "21"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "BG"
     },
     {
       "type": "vless",
-      "tag": "🇧🇬node-4",
-      "server": "45.9.156.42",
-      "server_port": 443,
-      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be",
+      "tag": "🇨🇾node-4",
+      "server": "2.56.175.179",
+      "server_port": 9443,
+      "uuid": "8179d7cc-82bc-4eae-a97f-5d30c6c2a812",
       "tls": {
         "enabled": true,
-        "server_name": "bg5.univesalsrv.com",
+        "server_name": "itunes.apple.com",
         "reality": {
           "enabled": true,
-          "public_key": "RDWvDEygSk1eyAQhIK95H9EteFbrS2d9JEjBrco54Bw",
-          "short_id": "1a3102bb8e51399e"
+          "public_key": "8bhS-nnIN67a292RpJsCPzXQy4CzpzOVLTPn5CiAFyg",
+          "short_id": "6ba7b810"
         },
         "utls": {
           "enabled": true,
@@ -111,18 +111,43 @@
       },
       "transport": {
         "type": "grpc",
-        "service_name": "gw.v2.RelayService"
+        "service_name": "grpc"
       },
-      "_sub_ids": [
-        "1",
-        "21"
-      ],
-      "_last_ok_ts": 1792487420.37946,
-      "_country": "BG"
+      "_country": "CY",
+      "_last_ok_ts": 1792491578.825651
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-5",
+      "tag": "🇨🇾node-5",
+      "server": "2.56.175.179",
+      "server_port": 9443,
+      "uuid": "8179d7cc-82bc-4eae-a97f-5d30c6c2a812",
+      "tls": {
+        "enabled": true,
+        "server_name": "itunes.apple.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "8bhS-nnIN67a292RpJsCPzXQy4CzpzOVLTPn5CiAFyg",
+          "short_id": "6ba7b810"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc"
+      },
+      "_sub_ids": [
+        "1"
+      ],
+      "_country": "CY",
+      "_last_ok_ts": 1792491578.825651
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪node-6",
       "server": "135.125.248.200",
       "server_port": 27250,
       "uuid": "36b98b4a-fc76-4738-bd7d-274ca800c8fd",
@@ -146,12 +171,12 @@
       "_sub_ids": [
         "28"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-6",
+      "tag": "🇩🇪node-7",
       "server": "66.151.40.60",
       "server_port": 8444,
       "uuid": "a346c521-7a7f-452b-9356-a4893feb5982",
@@ -175,11 +200,11 @@
         "1"
       ],
       "_country": "DE",
-      "_last_ok_ts": 1792487420.37946
+      "_last_ok_ts": 1792491578.825651
     },
     {
       "type": "vless",
-      "tag": "🇫🇮node-7",
+      "tag": "🇫🇮node-8",
       "server": "109.172.54.135",
       "server_port": 8444,
       "uuid": "f55e9aba-7b14-4f6f-b59a-d5b3d45c9309",
@@ -202,34 +227,8 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "FI"
-    },
-    {
-      "type": "vless",
-      "tag": "🇫🇮node-8",
-      "server": "2.29.101.158",
-      "server_port": 443,
-      "uuid": "9a0e84f8-4b58-477f-99da-5fac5a2e58e8",
-      "tls": {
-        "enabled": true,
-        "server_name": "36a466g.fi1.h1clayd.click",
-        "reality": {
-          "enabled": true,
-          "public_key": "pAgrBKJCmuSJHIzYkEJTqsOBOVBK_DMtEqFPo-PaTkg",
-          "short_id": "b3c9d0c6bdd114a6"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "random"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "0adb9638509b"
-      },
-      "_country": "FI",
-      "_last_ok_ts": 1792487420.37946
     },
     {
       "type": "vless",
@@ -258,7 +257,7 @@
         "1"
       ],
       "_country": "FI",
-      "_last_ok_ts": 1792487420.37946
+      "_last_ok_ts": 1792491578.825651
     },
     {
       "type": "vless",
@@ -286,7 +285,7 @@
       "_sub_ids": [
         "21"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "FR"
     },
     {
@@ -315,7 +314,7 @@
       "_sub_ids": [
         "7"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "FR"
     },
     {
@@ -345,42 +344,12 @@
         "1",
         "21"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "MD"
     },
     {
       "type": "vless",
       "tag": "🇲🇩node-13",
-      "server": "89.35.14.31",
-      "server_port": 443,
-      "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be",
-      "tls": {
-        "enabled": true,
-        "server_name": "md2.univesalsrv.com",
-        "reality": {
-          "enabled": true,
-          "public_key": "JXFsWHYjhAcR-7yz9tuCTMdcfuiyC9a-C9ewA55Z63o",
-          "short_id": "d36a38659ce106cb"
-        },
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "hub.v1.SyncService"
-      },
-      "_sub_ids": [
-        "1",
-        "21"
-      ],
-      "_last_ok_ts": 1792487420.37946,
-      "_country": "MD"
-    },
-    {
-      "type": "vless",
-      "tag": "🇲🇩node-14",
       "server": "89.35.14.32",
       "server_port": 443,
       "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be",
@@ -405,12 +374,12 @@
         "21",
         "7"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "MD"
     },
     {
       "type": "vless",
-      "tag": "🇲🇩node-15",
+      "tag": "🇲🇩node-14",
       "server": "89.35.14.33",
       "server_port": 443,
       "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be",
@@ -435,12 +404,12 @@
         "1",
         "21"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "MD"
     },
     {
       "type": "vless",
-      "tag": "🇲🇩node-16",
+      "tag": "🇲🇩node-15",
       "server": "89.35.14.34",
       "server_port": 443,
       "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be",
@@ -464,12 +433,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "MD"
     },
     {
       "type": "vless",
-      "tag": "🇲🇩node-17",
+      "tag": "🇲🇩node-16",
       "server": "94.103.2.109",
       "server_port": 8451,
       "uuid": "a346c521-7a7f-452b-9356-a4893feb5982",
@@ -493,11 +462,11 @@
         "1"
       ],
       "_country": "MD",
-      "_last_ok_ts": 1792487420.37946
+      "_last_ok_ts": 1792491578.825651
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-18",
+      "tag": "🇳🇱node-17",
       "server": "138.124.117.113",
       "server_port": 9443,
       "uuid": "8179d7cc-82bc-4eae-a97f-5d30c6c2a812",
@@ -522,11 +491,123 @@
         "1"
       ],
       "_country": "NL",
-      "_last_ok_ts": 1792487420.37946
+      "_last_ok_ts": 1792491578.825651
     },
     {
       "type": "vless",
-      "tag": "🇷🇸node-19",
+      "tag": "🇳🇱node-18",
+      "server": "185.192.22.159",
+      "server_port": 8444,
+      "uuid": "f55e9aba-7b14-4f6f-b59a-d5b3d45c9309",
+      "tls": {
+        "enabled": true,
+        "server_name": "github.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0",
+          "short_id": "457fab2ac885dbe0"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "GunService",
+        "initial_windows_size": 0
+      },
+      "_country": "NL",
+      "_last_ok_ts": 1792491578.825651
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-19",
+      "server": "185.192.22.159",
+      "server_port": 8444,
+      "uuid": "f55e9aba-7b14-4f6f-b59a-d5b3d45c9309",
+      "tls": {
+        "enabled": true,
+        "server_name": "github.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0",
+          "short_id": "457fab2ac885dbe0"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "GunService"
+      },
+      "_sub_ids": [
+        "23"
+      ],
+      "_last_ok_ts": 1792491578.825651,
+      "_country": "NL"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-20",
+      "server": "185.200.199.199",
+      "server_port": 8444,
+      "uuid": "f55e9aba-7b14-4f6f-b59a-d5b3d45c9309",
+      "tls": {
+        "enabled": true,
+        "server_name": "github.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0",
+          "short_id": "457fab2ac885dbe0"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "GunService",
+        "initial_windows_size": 0
+      },
+      "_country": "NL",
+      "_last_ok_ts": 1792491578.825651
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-21",
+      "server": "185.200.199.199",
+      "server_port": 8444,
+      "uuid": "f55e9aba-7b14-4f6f-b59a-d5b3d45c9309",
+      "tls": {
+        "enabled": true,
+        "server_name": "github.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0",
+          "short_id": "457fab2ac885dbe0"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "GunService"
+      },
+      "_sub_ids": [
+        "23"
+      ],
+      "_last_ok_ts": 1792491578.825651,
+      "_country": "NL"
+    },
+    {
+      "type": "vless",
+      "tag": "🇷🇸node-22",
       "server": "150.40.126.18",
       "server_port": 443,
       "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be",
@@ -550,12 +631,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "RS"
     },
     {
       "type": "vless",
-      "tag": "🇷🇸node-20",
+      "tag": "🇷🇸node-23",
       "server": "150.40.126.19",
       "server_port": 443,
       "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be",
@@ -580,12 +661,12 @@
         "1",
         "21"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "RS"
     },
     {
       "type": "vless",
-      "tag": "🇷🇸node-21",
+      "tag": "🇷🇸node-24",
       "server": "150.40.126.21",
       "server_port": 443,
       "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be",
@@ -609,12 +690,12 @@
       "_sub_ids": [
         "21"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "RS"
     },
     {
       "type": "vless",
-      "tag": "🇷🇸node-22",
+      "tag": "🇷🇸node-25",
       "server": "150.40.126.22",
       "server_port": 443,
       "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be",
@@ -638,12 +719,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "RS"
     },
     {
       "type": "vless",
-      "tag": "🇷🇸node-23",
+      "tag": "🇷🇸node-26",
       "server": "150.40.126.24",
       "server_port": 443,
       "uuid": "2f35965a-9a9b-45fd-ba32-987296dfb6be",
@@ -667,12 +748,41 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "RS"
     },
     {
       "type": "vless",
-      "tag": "🇷🇺node-24",
+      "tag": "🇷🇺node-27",
+      "server": "147.45.60.160",
+      "server_port": 8444,
+      "uuid": "f55e9aba-7b14-4f6f-b59a-d5b3d45c9309",
+      "tls": {
+        "enabled": true,
+        "server_name": "github.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "GunService"
+      },
+      "packet_encoding": "xudp",
+      "_sub_ids": [
+        "13"
+      ],
+      "_last_ok_ts": 1792491578.825651,
+      "_country": "RU"
+    },
+    {
+      "type": "vless",
+      "tag": "🇷🇺node-28",
       "server": "193.233.253.180",
       "server_port": 8444,
       "uuid": "f55e9aba-7b14-4f6f-b59a-d5b3d45c9309",
@@ -697,12 +807,12 @@
       "_sub_ids": [
         "13"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "RU"
     },
     {
       "type": "vless",
-      "tag": "🇸🇪node-25",
+      "tag": "🇸🇪node-29",
       "server": "62.60.159.81",
       "server_port": 2053,
       "uuid": "fc00adfb-232a-46ce-8b93-0c70e516aa8a",
@@ -726,41 +836,147 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "SE"
     },
     {
       "type": "vless",
-      "tag": "🇸🇪node-26",
-      "server": "81.90.21.89",
-      "server_port": 8443,
-      "uuid": "89f84dc1-39e4-4302-a455-1e4b946883b0",
+      "tag": "🇸🇪node-30",
+      "server": "se1.h1cloud.net",
+      "server_port": 26128,
+      "uuid": "68c3d665-b2b5-4ffb-9f37-9f3d8c47324d",
       "tls": {
         "enabled": true,
-        "server_name": "deliberi.fi",
+        "server_name": "www.icloud.com",
         "reality": {
           "enabled": true,
-          "public_key": "ib3Kd2S4Y5q_T9UOnOB9d5YCj8bP36lKy6kE75BZ7DQ",
-          "short_id": "6f4e398e3638a914"
+          "public_key": "sACiHit5lNtPRK_eFP6jT8dMPUZ4kQRsfPj_LL5p7Uk",
+          "short_id": "13ac4d3bdadf1ea1"
         },
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
+          "fingerprint": "random"
         }
       },
       "transport": {
         "type": "grpc",
-        "service_name": "fdd375774aa4"
+        "service_name": "df50147201bf",
+        "initial_windows_size": 0
+      },
+      "_country": "SE",
+      "_last_ok_ts": 1792491578.825651
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇪node-31",
+      "server": "se1.h1cloud.net",
+      "server_port": 26128,
+      "uuid": "68c3d665-b2b5-4ffb-9f37-9f3d8c47324d",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.icloud.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "sACiHit5lNtPRK_eFP6jT8dMPUZ4kQRsfPj_LL5p7Uk",
+          "short_id": "13ac4d3bdadf1ea1"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "df50147201bf",
+        "initial_windows_size": 0
+      },
+      "_country": "SE",
+      "_last_ok_ts": 1792491578.825651
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇪node-32",
+      "server": "se1.h1cloud.net",
+      "server_port": 26128,
+      "uuid": "68c3d665-b2b5-4ffb-9f37-9f3d8c47324d",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.icloud.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "sACiHit5lNtPRK_eFP6jT8dMPUZ4kQRsfPj_LL5p7Uk",
+          "short_id": "13ac4d3bdadf1ea1"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "df50147201bf"
+      },
+      "_country": "SE",
+      "_last_ok_ts": 1792491578.825651
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇪node-33",
+      "server": "se1.h1cloud.net",
+      "server_port": 26128,
+      "uuid": "68c3d665-b2b5-4ffb-9f37-9f3d8c47324d",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.icloud.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "sACiHit5lNtPRK_eFP6jT8dMPUZ4kQRsfPj_LL5p7Uk",
+          "short_id": "13ac4d3bdadf1ea1"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "df50147201bf"
+      },
+      "_country": "SE",
+      "_last_ok_ts": 1792491578.825651
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇪node-34",
+      "server": "se1.h1cloud.net",
+      "server_port": 26128,
+      "uuid": "68c3d665-b2b5-4ffb-9f37-9f3d8c47324d",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.icloud.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "sACiHit5lNtPRK_eFP6jT8dMPUZ4kQRsfPj_LL5p7Uk",
+          "short_id": "13ac4d3bdadf1ea1"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "df50147201bf"
       },
       "_sub_ids": [
-        "208"
+        "1"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "SE"
     },
     {
       "type": "vless",
-      "tag": "🇹🇷node-27",
+      "tag": "🇹🇷node-35",
       "server": "62.60.233.157",
       "server_port": 8444,
       "uuid": "f55e9aba-7b14-4f6f-b59a-d5b3d45c9309",
@@ -783,12 +999,92 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "TR"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-28",
+      "tag": "🇺🇸node-36",
+      "server": "147.45.60.160",
+      "server_port": 8444,
+      "uuid": "f55e9aba-7b14-4f6f-b59a-d5b3d45c9309",
+      "tls": {
+        "enabled": true,
+        "server_name": "github.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "GunService",
+        "initial_windows_size": 0
+      },
+      "packet_encoding": "xudp",
+      "_country": "US",
+      "_last_ok_ts": 1792491578.825651
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-37",
+      "server": "147.45.60.160",
+      "server_port": 8444,
+      "uuid": "f55e9aba-7b14-4f6f-b59a-d5b3d45c9309",
+      "tls": {
+        "enabled": true,
+        "server_name": "github.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "GunService",
+        "initial_windows_size": 0
+      },
+      "packet_encoding": "xudp",
+      "_country": "US",
+      "_last_ok_ts": 1792491578.825651
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-38",
+      "server": "147.45.60.160",
+      "server_port": 8444,
+      "uuid": "f55e9aba-7b14-4f6f-b59a-d5b3d45c9309",
+      "tls": {
+        "enabled": true,
+        "server_name": "github.com",
+        "reality": {
+          "enabled": true,
+          "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
+        },
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "GunService"
+      },
+      "packet_encoding": "xudp",
+      "_country": "US",
+      "_last_ok_ts": 1792491578.825651
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-39",
       "server": "216.227.161.95",
       "server_port": 7443,
       "uuid": "218fd696-e3a2-4c33-b397-a5f13a82969e",
@@ -812,7 +1108,7 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792487420.37946,
+      "_last_ok_ts": 1792491578.825651,
       "_country": "US"
     }
   ]
