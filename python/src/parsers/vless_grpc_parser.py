@@ -89,12 +89,11 @@ def parse_proxy_link(link: str) -> dict | None:
                 reality["spider_x"] = spider_x
             tls_opts["reality"] = reality
 
-        utls_opts = {}
-        if fp:
-            utls_opts["enabled"] = True
-            utls_opts["fingerprint"] = fp
-        if utls_opts:
-            tls_opts["utls"] = utls_opts
+        utls_opts = {
+            "enabled": True,
+            "fingerprint": fp or "chrome",
+        }
+        tls_opts["utls"] = utls_opts
 
         if flow:
             tls_opts["flow"] = flow
