@@ -12035,8 +12035,88 @@
             "service_name": "GunService"
           }
         }
+      },
+      {
+        "key": "200.165.231.138:8444",
+        "node": {
+          "type": "vless",
+          "tag": "node-1124",
+          "server": "200.165.231.138",
+          "server_port": 8444,
+          "uuid": "a346c521-7a7f-452b-9356-a4893feb5982",
+          "tls": {
+            "enabled": true,
+            "server_name": "github.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0",
+              "short_id": "457fab2ac885dbe0"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "GunService"
+          }
+        }
+      },
+      {
+        "key": "62.133.63.45:8444",
+        "node": {
+          "type": "vless",
+          "tag": "node-1587",
+          "server": "62.133.63.45",
+          "server_port": 8444,
+          "uuid": "a346c521-7a7f-452b-9356-a4893feb5982",
+          "tls": {
+            "enabled": true,
+            "server_name": "github.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0",
+              "short_id": "457fab2ac885dbe0"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "GunService"
+          }
+        }
+      },
+      {
+        "key": "94.228.112.60:39443",
+        "node": {
+          "type": "vless",
+          "tag": "node-2014",
+          "server": "94.228.112.60",
+          "server_port": 39443,
+          "uuid": "92e135b9-4c04-4e7e-8b28-d8074a202cf8",
+          "tls": {
+            "enabled": true,
+            "server_name": "static.polina.mom",
+            "reality": {
+              "enabled": true,
+              "public_key": "YPsphGkQvosdhqZwi_RJDzFIwjZnt9duNWAOAcqKoUc"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-20T15:15:14Z"
+  "updated": "2026-10-20T15:38:32Z"
 }
