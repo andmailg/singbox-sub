@@ -109,15 +109,11 @@ def parse_proxy_link(link: str) -> dict | None:
 
     # 6. gRPC параметры
     grpc_service_name = _param(params, "serviceName") or ""
-    mode = _param(params, "mode")  # gun / multi
-    authority = _param(params, "authority")
 
     transport = {
         "type": "grpc",
         "service_name": grpc_service_name,
     }
-    if authority:
-        transport["authority"] = authority
 
     # 7. packetEncoding
     packet_encoding = _param(params, "packetEncoding")
