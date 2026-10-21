@@ -66,37 +66,42 @@ def parse_proxy_link(link: str) -> dict | None:
 
     # 5. TLS / Reality
     security = _param(params, "security") or "tls"
+    flow = None
     tls_opts = {
         "enabled": True,
         "server_name": sni,
     }
 
+    alpn = _param(params, "alpn")
+    if alpn:
+        tls_opts["alpn"] = [a.strip() for a in alpn.split(",") if a.strip()]
+    insecure = _param(params, "allowInsecure") or _param(params, "insecure")
+    if insecure and insecure.lower() in ("1", "true"):
+        tls_opts["insecure"] = True
+
     if security == "reality":
         pbk = _param(params, "pbk")
         sid = _param(params, "sid")
         fp = _param(params, "fp")
-        spider_x = _param(params, "spiderX") or _param(params, "spiderx")
+        # spiderX в sing-box не поддерживается (unknown field -> конфиг не стартует)
         flow = _param(params, "flow")
 
-        if pbk:
-            reality = {
-                "enabled": True,
-                "public_key": pbk,
-            }
-            if sid:
-                reality["short_id"] = sid
-            if spider_x:
-                reality["spider_x"] = spider_x
-            tls_opts["reality"] = reality
+        # Reality в sing-box требует public_key и utls-fingerprint;
+        # значения по умолчанию не подставляем — ноду без них пропускаем.
+        if not pbk or not fp:
+            return None
 
-        utls_opts = {
+        reality = {
             "enabled": True,
-            "fingerprint": fp or "chrome",
+            "public_key": pbk,
         }
-        tls_opts["utls"] = utls_opts
-
-        if flow:
-            tls_opts["flow"] = flow
+        if sid:
+            reality["short_id"] = sid
+        tls_opts["reality"] = reality
+        tls_opts["utls"] = {
+            "enabled": True,
+            "fingerprint": fp,
+        }
     else:
         # Regular TLS
         fp = _param(params, "fp")
@@ -116,6 +121,9 @@ def parse_proxy_link(link: str) -> dict | None:
 
     # 7. packetEncoding
     packet_encoding = _param(params, "packetEncoding")
+    # "none" = отключено; в sing-box допустимы только "", "packetaddr", "xudp"
+    if packet_encoding and packet_encoding.lower() == "none":
+        packet_encoding = None
 
     outbound = {
         "type": "vless",
@@ -129,6 +137,9 @@ def parse_proxy_link(link: str) -> dict | None:
     }
     if packet_encoding:
         outbound["packet_encoding"] = packet_encoding
+    # flow в sing-box — поле уровня outbound, а не tls
+    if flow:
+        outbound["flow"] = flow
 
     return outbound
 

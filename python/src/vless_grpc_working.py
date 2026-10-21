@@ -139,7 +139,7 @@ def _update_data_fields(existing: dict, source: dict) -> None:
     """Обновляет data-поля existing ноды из source, сохраняя внутренние поля."""
     _DATA_FIELDS = (
         "server", "server_port", "uuid", "type",
-        "tls", "transport", "packet_encoding",
+        "tls", "transport", "packet_encoding", "flow",
     )
     for field in _DATA_FIELDS:
         if field in source:

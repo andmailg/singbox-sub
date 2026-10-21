@@ -59,7 +59,7 @@ def _generate_vless_grpc_links(outbounds: list[dict]) -> list[str]:
         sni = tls.get("server_name", "") if tls else ""
         service_name = transport.get("service_name", "")
         tag = o.get("tag", "VLESS-Node")
-        packet_encoding = o.get("packet_encoding", "xudp")
+        packet_encoding = o.get("packet_encoding", "")
         fp = tls.get("utls", {}).get("fingerprint", "") if tls else ""
 
         reality = tls.get("reality", {}) if tls else {}
@@ -68,7 +68,7 @@ def _generate_vless_grpc_links(outbounds: list[dict]) -> list[str]:
             pbk = reality.get("public_key", "")
             sid = reality.get("short_id", "")
             spider_x = reality.get("spider_x", "")
-            flow = tls.get("flow", "")
+            flow = o.get("flow", "") or tls.get("flow", "")
 
             params = {
                 "encryption": "none",
@@ -99,6 +99,11 @@ def _generate_vless_grpc_links(outbounds: list[dict]) -> list[str]:
             }
             if packet_encoding:
                 params["packetEncoding"] = packet_encoding
+
+        if tls.get("alpn"):
+            params["alpn"] = ",".join(tls["alpn"])
+        if tls.get("insecure"):
+            params["allowInsecure"] = "1"
 
         query = urllib.parse.urlencode(params)
         link = f"vless://{uuid}@{server}:{port}?{query}#{tag}"

@@ -44,13 +44,14 @@ def _build_xray_config(node: dict, local_port: int) -> dict:
     port = node["server_port"]
     uuid = node.get("uuid", "")
 
-    # Извлекаем flow из tls.reality если есть
-    flow = ""
-    tls_cfg = node.get("tls", {})
-    if tls_cfg and isinstance(tls_cfg, dict):
-        reality = tls_cfg.get("reality", {})
-        if isinstance(reality, dict):
-            flow = reality.get("flow", "")
+    # flow — поле уровня outbound (старые записи могли хранить его в tls.reality)
+    flow = node.get("flow", "")
+    if not flow:
+        tls_cfg = node.get("tls", {})
+        if tls_cfg and isinstance(tls_cfg, dict):
+            reality = tls_cfg.get("reality", {})
+            if isinstance(reality, dict):
+                flow = reality.get("flow", "")
 
     # Определяем транспорт
     transport_cfg: dict[str, Any] = node.get("transport", {})
@@ -179,6 +180,9 @@ def _build_stream_settings(node: dict, network: str) -> dict:
             spider_x = reality.get("spider_x", "/")
             if spider_x:
                 reality_settings["spiderX"] = spider_x
+            utls_cfg = tls_cfg.get("utls", {})
+            if isinstance(utls_cfg, dict) and utls_cfg.get("fingerprint"):
+                reality_settings["fingerprint"] = utls_cfg["fingerprint"]
             stream_settings["realitySettings"] = reality_settings
     elif has_tls:
         stream_settings["security"] = "tls"
