@@ -188,6 +188,7 @@ def parse_proxy_link(link: str) -> dict | None:
         "server": hostname,
         "server_port": port,
         "uuid": urllib.parse.unquote(uuid),
+        "_dedup_key": f"{hostname}:{port}:{urllib.parse.unquote(uuid)}",
     }
 
     if tls_opts is not None:
@@ -203,7 +204,10 @@ def parse_proxy_link(link: str) -> dict | None:
 def clean_outbound(outbound: dict) -> dict:
     """Очистка и приведение VLESS ноды к спецификации sing-box."""
     if not outbound or outbound.get("type") != "vless":
-        return outbound
+        return None
+
+    if "_dedup_key" not in outbound:
+        return None
 
     tls_opts = outbound.get("tls", {})
     if tls_opts and tls_opts.get("enabled"):

@@ -96,6 +96,7 @@ def parse_proxy_link(link: str) -> dict | None:
         "server_port": port,
         "uuid": uuid_str,
         "transport": transport,
+        "_dedup_key": f"{hostname}:{port}:{uuid_str}",
     }
     return outbound
 
@@ -103,6 +104,8 @@ def parse_proxy_link(link: str) -> dict | None:
 def clean_outbound(outbound: dict) -> dict | None:
     """Валидация VLESS HTTP ноды под спецификацию sing-box."""
     if not outbound:
+        return None
+    if "_dedup_key" not in outbound:
         return None
     if outbound.get("type") == "vless":
         transport = outbound.get("transport", {})

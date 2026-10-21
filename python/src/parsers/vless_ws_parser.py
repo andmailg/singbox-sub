@@ -60,6 +60,7 @@ def parse_proxy_link(link: str, require_cloudfront: bool = False) -> dict | None
         "server_port": port,
         "uuid": uuid_str,
         "transport": {"type": "ws", "path": path},
+        "_dedup_key": f"{hostname}:{port}:{uuid_str}",
     }
 
     if host:
@@ -89,6 +90,8 @@ def parse_proxy_link(link: str, require_cloudfront: bool = False) -> dict | None
 def clean_outbound(outbound: dict) -> dict | None:
     """Валидация VLESS WS ноды под спецификацию sing-box."""
     if not outbound:
+        return None
+    if "_dedup_key" not in outbound:
         return None
     if outbound.get("type") == "vless":
         transport = outbound.get("transport", {})

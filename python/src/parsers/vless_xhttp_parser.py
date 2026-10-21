@@ -207,6 +207,7 @@ def parse_proxy_link(link: str) -> dict | None:
         "server_port": port,
         "uuid": urllib.parse.unquote(uuid),
         "transport": transport,
+        "_dedup_key": f"{hostname}:{port}:{urllib.parse.unquote(uuid)}",
     }
 
     if encryption and encryption != "none":
@@ -215,7 +216,7 @@ def parse_proxy_link(link: str) -> dict | None:
     if tls_opts is not None:
         outbound["tls"] = tls_opts
 
-    # flow — поле уровня vless, а не tls
+    # flow — поле уровня vless, а не tls.reality
     if flow:
         outbound["flow"] = flow
 
@@ -225,6 +226,9 @@ def parse_proxy_link(link: str) -> dict | None:
 def clean_outbound(outbound: dict) -> dict | None:
     """Очистка и приведение VLESS xhttp ноды к спецификации sing-box."""
     if not outbound or outbound.get("type") != "vless":
+        return None
+
+    if "_dedup_key" not in outbound:
         return None
 
     transport = outbound.get("transport", {})

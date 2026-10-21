@@ -146,19 +146,18 @@ def _parse_and_deduplicate(
         if not resolved_ip:
             continue
 
-        uuid = outbound.get("uuid", "")
-        dedup_val = f"{resolved_ip}:{port}:{uuid}"
-        if dedup_val in seen:
+        dedup_key = outbound.get("_dedup_key", "")
+        if dedup_key in seen:
             # Нода уже есть — добавляем sub_id в существующую
             for o in outbounds:
-                o_uuid = o.get("uuid", "")
                 o_ip = str(o.get("server", "")).strip("[]").lower()
                 o_port = o.get("server_port", "")
-                if f"{o_ip}:{o_port}:{o_uuid}" == dedup_val:
+                o_dedup = o.get("_dedup_key", f"{o_ip}:{o_port}:{o.get('uuid', '')}")
+                if o_dedup == dedup_key:
                     o.setdefault("_sub_ids", set()).add(sub_id)
                     break
             continue
-        seen.add(dedup_val)
+        seen.add(dedup_key)
 
         outbound.setdefault("_sub_ids", set()).add(sub_id)
         outbounds.append(outbound)

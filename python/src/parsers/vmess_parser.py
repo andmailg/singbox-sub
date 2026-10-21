@@ -171,6 +171,7 @@ def parse_proxy_link(link: str) -> dict | None:
         "uuid": uuid,
         "security": security if security != "auto" else "auto",
         "transport": transport,
+        "_dedup_key": f"{server}:{port}:{uuid}",
     }
 
     if tls_opts:
@@ -182,6 +183,9 @@ def parse_proxy_link(link: str) -> dict | None:
 def clean_outbound(outbound: dict) -> dict | None:
     """Очистка и приведение VMess ноды к спецификации sing-box."""
     if not outbound or outbound.get("type") != "vmess":
+        return None
+
+    if "_dedup_key" not in outbound:
         return None
 
     transport = outbound.get("transport", {})

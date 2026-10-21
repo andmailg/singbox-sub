@@ -98,6 +98,7 @@ def parse_proxy_link(link: str) -> dict | None:
         "server": hostname,
         "server_port": port,
         "password": password,
+        "_dedup_key": f"{hostname}:{port}:{password}",
     }
 
     if tls_enabled:
@@ -148,6 +149,9 @@ def parse_proxy_link(link: str) -> dict | None:
 def clean_outbound(outbound: dict) -> dict | None:
     """Очистка и валидация Trojan ноды под спецификацию sing-box."""
     if not outbound:
+        return None
+
+    if "_dedup_key" not in outbound:
         return None
 
     if has_workers_dev(outbound):

@@ -145,6 +145,7 @@ def parse_proxy_link(link: str) -> dict | None:
         "server_port": port,
         "password": urllib.parse.unquote(password),
         "tls": tls_opts,
+        "_dedup_key": f"{tls_opts['server_name']}:{port}:{urllib.parse.unquote(password)}",
     }
     if obfs:
         result["obfs"] = obfs
@@ -154,7 +155,10 @@ def parse_proxy_link(link: str) -> dict | None:
 def clean_outbound(outbound: dict) -> dict:
     """Очистка и приведение Hysteria2 ноды к спецификации sing-box."""
     if not outbound or outbound.get("type") != "hysteria2":
-        return outbound
+        return None
+
+    if "_dedup_key" not in outbound:
+        return None
 
     tls_opts = outbound.get("tls")
     if tls_opts and tls_opts.get("enabled"):

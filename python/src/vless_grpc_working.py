@@ -98,10 +98,10 @@ def save_working_nodes(nodes: list[dict], path: str = _WORKING_FILE) -> None:
 
 
 def dedup_nodes(nodes: list[dict]) -> list[dict]:
-    """Удаляет дубликаты по ключу server:port:uuid:service_name, оставляя последнюю версию."""
+    """Удаляет дубликаты по _dedup_key, оставляя последнюю версию."""
     seen: dict[str, dict] = {}
     for node in nodes:
-        key = _cache_key(node)
+        key = node.get("_dedup_key", _cache_key(node))
         seen[key] = node
     return list(seen.values())
 

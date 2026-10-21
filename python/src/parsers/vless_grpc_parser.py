@@ -125,6 +125,7 @@ def parse_proxy_link(link: str) -> dict | None:
         "uuid": urllib.parse.unquote(uuid),
         "tls": tls_opts,
         "transport": transport,
+        "_dedup_key": f"{hostname}:{port}:{urllib.parse.unquote(uuid)}:{grpc_service_name}",
     }
     if packet_encoding:
         outbound["packet_encoding"] = packet_encoding
@@ -135,7 +136,10 @@ def parse_proxy_link(link: str) -> dict | None:
 def clean_outbound(outbound: dict) -> dict:
     """Очистка ноды VLESS gRPC. Удаляет несовместимые поля."""
     if not outbound:
-        return outbound
+        return None
+
+    if "_dedup_key" not in outbound:
+        return None
 
     transport = outbound.get("transport", {})
     if isinstance(transport, dict):

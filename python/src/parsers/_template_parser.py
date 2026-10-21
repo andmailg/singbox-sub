@@ -3,7 +3,8 @@
 Для создания нового парсера:
 1. Скопируй этот файл в src/parsers/{proto}_parser.py
 2. Реализуй функции parse_proxy_link() и clean_outbound()
-3. Добавь case в common.py:_build_fingerprint() для dedup
+3. parse_proxy_link() ОБЯЗАН добавлять _dedup_key в outbound
+4. clean_outbound() ОБЯЗАН проверять наличие _dedup_key и возвращать None если его нет
 
 Примеры:
   - src/parsers/vless_tcp_parser.py — VLESS TCP (TLS / Reality / None)
@@ -43,6 +44,7 @@ def parse_proxy_link(link: str) -> dict | None:
             "server": "example.com",
             "server_port": 443,
             "uuid": "xxx-xxx-xxx",
+            "_dedup_key": "example.com:443:xxx-xxx-xxx",  # ОБЯЗАТЕЛЬНО
             "tls": {
                 "enabled": True,
                 "server_name": "cdn.example.com",
@@ -140,6 +142,8 @@ def clean_outbound(outbound: dict) -> dict | None:
 
     Удаление несовместимых полей, нормализация значений, валидация транспорта.
 
+    ВАЖНО: ОБЯЗАТЕЛЬНО проверь наличие _dedup_key и верни None если его нет.
+
     Args:
         outbound: распарсенная нода.
 
@@ -154,7 +158,10 @@ def clean_outbound(outbound: dict) -> dict | None:
         - Для VMess: валидировать network type.
     """
     if not outbound:
-        return outbound
+        return None
+
+    if "_dedup_key" not in outbound:
+        return None
 
     # TODO: добавь специфичную для протокола очистку
     # Например: убрать reality если не используется, убрать лишние поля,
