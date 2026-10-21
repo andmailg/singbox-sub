@@ -12929,8 +12929,88 @@
             "service_name": "TunService"
           }
         }
+      },
+      {
+        "key": "193.202.10.233:8444",
+        "node": {
+          "type": "vless",
+          "tag": "node-1030",
+          "server": "193.202.10.233",
+          "server_port": 8444,
+          "uuid": "a346c521-7a7f-452b-9356-a4893feb5982",
+          "tls": {
+            "enabled": true,
+            "server_name": "github.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "GunService"
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "193.233.90.77:2053",
+        "node": {
+          "type": "vless",
+          "tag": "node-1046",
+          "server": "193.233.90.77",
+          "server_port": 2053,
+          "uuid": "92e135b9-4c04-4e7e-8b28-d8074a202cf8",
+          "tls": {
+            "enabled": true,
+            "server_name": "files.polina.lol",
+            "reality": {
+              "enabled": true,
+              "public_key": "huWYSqGaqUTQWhee7SbQrNZ32qxCWQFvjTVkPRLQYTw"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "finland02.azotvpn.xyz:8443",
+        "node": {
+          "type": "vless",
+          "tag": "🇫🇮node-1326",
+          "server": "finland02.azotvpn.xyz",
+          "server_port": 8443,
+          "uuid": "5a96c1fc-f167-44b9-9020-8f6867537d14",
+          "tls": {
+            "enabled": true,
+            "server_name": "finland02.azotvpn.xyz",
+            "reality": {
+              "enabled": true,
+              "public_key": "fQ1M2sO50w5A3oM55Hfs8vmZ320I8VaKdzRqeXOMMnQ",
+              "short_id": "07f508fe5d2355d3"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-21T10:38:53Z"
+  "updated": "2026-10-21T15:43:27Z"
 }
