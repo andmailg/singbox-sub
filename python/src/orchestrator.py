@@ -82,7 +82,7 @@ def _parse_and_deduplicate(
     protocol: str = "generic",
     tls_required: bool = False,
     port_whitelist: tuple[int, ...] | None = None,
-    reality: bool = False,
+    reality: bool | None = False,
     prefix: str = "",
 ) -> list[dict]:
     """Парсинг, быстрая фильтрация, DNS-резолвинг (параллельный), дедупликация по IP:port и дополнительные фильтры.
@@ -96,9 +96,16 @@ def _parse_and_deduplicate(
     # parsed: list of (sub_id, outbound)
     parsed: list[tuple[str, dict]] = []
     seen_fps: set[str] = set()
+    # _dedup_key принятой ноды -> её outbound: повторы той же ноды из других подписок
+    # не отбрасываются молча, а добавляют свой sub_id (иначе _sub_ids неполный)
+    accepted: dict[str, dict] = {}
     for sub_id, link in links:
         outbound = parse_proxy_link(link, **kw)
         if not outbound:
+            continue
+        dup = accepted.get(outbound.get("_dedup_key", ""))
+        if dup is not None:
+            dup.setdefault("_sub_ids", set()).add(sub_id)
             continue
         if not should_accept_outbound(
             outbound, seen_fps,
@@ -114,6 +121,8 @@ def _parse_and_deduplicate(
         if extra_filter and not extra_filter(outbound):
             continue
         parsed.append((sub_id, outbound))
+        if outbound.get("_dedup_key"):
+            accepted[outbound["_dedup_key"]] = outbound
 
     print(f"{prefix}Parsed {len(parsed)} valid links, resolving {len(set(o.get('server', '') for _, o in parsed))} unique servers...")
 
@@ -136,30 +145,22 @@ def _parse_and_deduplicate(
                 unique_servers[server] = None
 
     # 3. Сборка outbounds с дедупликацией по резолвнутому IP + сбор sub_ids
-    seen: set[str] = set()
+    by_key: dict[str, dict] = {}
     outbounds: list[dict] = []
     for sub_id, outbound in parsed:
         server = str(outbound.get("server", "")).strip("[]").lower()
-        port = outbound.get("server_port", "")
-        resolved_ip = unique_servers.get(server)
-
-        if not resolved_ip:
+        if not unique_servers.get(server):
             continue
 
         dedup_key = outbound.get("_dedup_key", "")
-        if dedup_key in seen:
+        existing = by_key.get(dedup_key)
+        if existing is not None:
             # Нода уже есть — добавляем sub_id в существующую
-            for o in outbounds:
-                o_ip = str(o.get("server", "")).strip("[]").lower()
-                o_port = o.get("server_port", "")
-                o_dedup = o.get("_dedup_key", f"{o_ip}:{o_port}:{o.get('uuid', '')}")
-                if o_dedup == dedup_key:
-                    o.setdefault("_sub_ids", set()).add(sub_id)
-                    break
+            existing.setdefault("_sub_ids", set()).add(sub_id)
             continue
-        seen.add(dedup_key)
 
         outbound.setdefault("_sub_ids", set()).add(sub_id)
+        by_key[dedup_key] = outbound
         outbounds.append(outbound)
 
     return outbounds
@@ -332,7 +333,7 @@ def run_pipeline(
     port_whitelist: tuple[int, ...] | None = None,
     tester_func: Callable | None = None,
     test_timeout: int = 5,
-    reality: bool = False,
+    reality: bool | None = False,
     geoip_block_countries: tuple[str, ...] | None = None,
     skip_rkn: bool = False,
 ) -> None:
@@ -352,7 +353,7 @@ def run_pipeline(
         tester_func: функция тестирования нод (accepts list[dict], timeout, prefix -> list[dict]).
             Если None — тестирование пропускается.
         test_timeout: таймаут проверки каждой ноды в секундах.
-        reality: если True — для reality-протоколов не фильтрует SNI по FAKE_DOMAINS.
+        reality: True — SNI не фильтруется по FAKE_DOMAINS; None — определять по каждой ноде (tls.reality.enabled).
         geoip_filter_countries: кортеж ISO-кодов стран для фильтрации (например ("ru", "ir")).
             Если None или пустой — фильтрация по странам отключена.
         skip_rkn: если True — пропускает проверку RKN.

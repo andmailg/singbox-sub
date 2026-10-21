@@ -54,18 +54,29 @@ def is_whitelisted(node: dict, whitelist: dict[str, list[dict]], protocol: str) 
     return any(e.get("key") == key for e in entries)
 
 
-def add_to_whitelist(node: dict, protocol: str) -> None:
-    """Добавляет ноду в whitelist для данного протокола."""
+def add_many_to_whitelist(nodes: list[dict], protocol: str) -> int:
+    """Добавляет ноды в whitelist одной записью файла. Возвращает число добавленных."""
     whitelist = load_whitelist()
     entries = whitelist.setdefault(protocol, [])
-    key = _cache_key(node, protocol)
-    # Не дублируем
-    if any(e.get("key") == key for e in entries):
-        return
-    # Копируем ноду, убираем внутренние поля
-    node_copy = {k: v for k, v in node.items() if not k.startswith("_")}
-    entries.append({"key": key, "node": node_copy})
-    save_whitelist(whitelist)
+    known = {e.get("key") for e in entries}
+    added = 0
+    for node in nodes:
+        key = _cache_key(node, protocol)
+        if key in known:
+            continue
+        known.add(key)
+        # Копируем ноду, убираем внутренние поля
+        node_copy = {k: v for k, v in node.items() if not k.startswith("_")}
+        entries.append({"key": key, "node": node_copy})
+        added += 1
+    if added:
+        save_whitelist(whitelist)
+    return added
+
+
+def add_to_whitelist(node: dict, protocol: str) -> None:
+    """Добавляет ноду в whitelist для данного протокола."""
+    add_many_to_whitelist([node], protocol)
 
 
 def get_whitelist_nodes(protocol: str, whitelist: dict[str, list[dict]]) -> list[dict]:

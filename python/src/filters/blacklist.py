@@ -40,10 +40,15 @@ def load_blacklist() -> dict[str, set[str]]:
 
 def save_blacklist(blacklist: dict[str, set[str]]) -> None:
     """Сохраняет blacklist в JSON-файл."""
+    content = {proto: sorted(keys) for proto, keys in blacklist.items()}
+    try:
+        with open(_BLACKLIST_FILE, "r", encoding="utf-8") as f:
+            if json.load(f).get("blacklist") == content:
+                return  # без изменений — не трогаем файл (нет лишних коммитов/конфликтов)
+    except Exception:
+        pass
     data = {
-        "blacklist": {
-            proto: sorted(keys) for proto, keys in blacklist.items()
-        },
+        "blacklist": content,
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
     with open(_BLACKLIST_FILE, "w", encoding="utf-8") as f:
@@ -59,12 +64,19 @@ def is_blacklisted(node: dict, blacklist: dict[str, set[str]], protocol: str) ->
     return key in keys
 
 
-def add_to_blacklist(node: dict, protocol: str) -> None:
-    """Добавляет ноду в blacklist для данного протокола."""
+def add_many_to_blacklist(nodes: list[dict], protocol: str) -> None:
+    """Добавляет ноды в blacklist одной записью файла."""
+    if not nodes:
+        return
     blacklist = load_blacklist()
     proto_keys = blacklist.setdefault(protocol, set())
-    proto_keys.add(_cache_key(node, protocol))
+    proto_keys.update(_cache_key(n, protocol) for n in nodes)
     save_blacklist(blacklist)
+
+
+def add_to_blacklist(node: dict, protocol: str) -> None:
+    """Добавляет ноду в blacklist для данного протокола."""
+    add_many_to_blacklist([node], protocol)
 
 
 def _cache_key(node: dict, protocol: str) -> str:

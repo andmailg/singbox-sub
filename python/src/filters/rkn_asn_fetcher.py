@@ -100,9 +100,16 @@ def fetch_all() -> dict[str, list[str]]:
     return extra_blocked
 
 
-# Генерируем при импорте (если API доступен)
-try:
-    ASN_CIDR: dict[str, list[str]] = fetch_all()
-except Exception:
-    # Fallback: пустой словарь, если API недоступен
-    ASN_CIDR = {}
+_asn_cidr_cache: dict[str, list[str]] | None = None
+
+
+def get_asn_cidr() -> dict[str, list[str]]:
+    """Префиксы ASN из RIPEstat. Запрос выполняется при первом вызове, а не при импорте."""
+    global _asn_cidr_cache
+    if _asn_cidr_cache is None:
+        try:
+            _asn_cidr_cache = fetch_all()
+        except Exception:
+            # Fallback: пустой словарь, если API недоступен
+            _asn_cidr_cache = {}
+    return _asn_cidr_cache

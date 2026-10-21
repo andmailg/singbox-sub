@@ -11,7 +11,7 @@ from collections import OrderedDict
 from pathlib import Path
 
 from src.common import is_valid_ip, resolve_domain, session
-from .rkn_asn_fetcher import ASN_CIDR
+from .rkn_asn_fetcher import get_asn_cidr
 from .rkn_config import ASN_LIST, CIDR_LIST
 
 # Файл локального кэша для тяжелых списков ASN
@@ -129,7 +129,7 @@ def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipadd
     all_cidr_strings: list[str] = []
 
     # 1. Сети из ASN_LIST (RIPEstat API)
-    for asn_cidrs in ASN_CIDR.values():
+    for asn_cidrs in get_asn_cidr().values():
         all_cidr_strings.extend(asn_cidrs)
 
     # 2. Сети из CIDR_LIST

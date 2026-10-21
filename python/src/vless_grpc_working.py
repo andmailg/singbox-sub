@@ -144,3 +144,7 @@ def _update_data_fields(existing: dict, source: dict) -> None:
     for field in _DATA_FIELDS:
         if field in source:
             existing[field] = source[field]
+    # подписки объединяем: нода могла появиться в новых источниках
+    sub_ids = set(existing.get("_sub_ids") or ()) | set(source.get("_sub_ids") or ())
+    if sub_ids:
+        existing["_sub_ids"] = sub_ids
