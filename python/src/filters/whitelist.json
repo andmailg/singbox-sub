@@ -19560,8 +19560,61 @@
             "service_name": ""
           }
         }
+      },
+      {
+        "key": "193.233.90.77:10443",
+        "node": {
+          "type": "vless",
+          "tag": "node-1096",
+          "server": "193.233.90.77",
+          "server_port": 10443,
+          "uuid": "92e135b9-4c04-4e7e-8b28-d8074a202cf8",
+          "tls": {
+            "enabled": true,
+            "server_name": "assets.polina.lol",
+            "reality": {
+              "enabled": true,
+              "public_key": "ryOLRaedZ6OIu9hjtw7E6hvi2JwjLHJ_JQ5xx5d7g3c"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "a4d9acg.plp1.h1cloud.net:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-2258",
+          "server": "a4d9acg.plp1.h1cloud.net",
+          "server_port": 443,
+          "uuid": "3acb386b-fdd7-4bc9-911f-159fdcd834ce",
+          "tls": {
+            "enabled": true,
+            "server_name": "a4d9acg.plp1.h1cloud.net",
+            "reality": {
+              "enabled": true,
+              "public_key": "8pz2ja5pjpfnY-ZVymqkB8YmWnI6pkca4CKapBhA1XI",
+              "short_id": "f61a8e2fcf7222a6"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "ce30fc556a31"
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-21T23:30:32Z"
+  "updated": "2026-10-21T23:44:29Z"
 }
