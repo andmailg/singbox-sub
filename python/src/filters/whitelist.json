@@ -12877,8 +12877,60 @@
             "service_name": "rex-eb0bf76b710ce763"
           }
         }
+      },
+      {
+        "key": "162.35.126.130:10453",
+        "node": {
+          "type": "vless",
+          "tag": "node-648",
+          "server": "162.35.126.130",
+          "server_port": 10453,
+          "uuid": "b3a11068-1a7e-4643-85de-7c82cce46943",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.google.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "rAHMmpeUJ6uOoGgk31dTF4-1RTtLZFnOEs_li2AYQWc"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "TunService"
+          }
+        }
+      },
+      {
+        "key": "us-4bf85a22b1.shamanapp.online:10453",
+        "node": {
+          "type": "vless",
+          "tag": "node-2715",
+          "server": "us-4bf85a22b1.shamanapp.online",
+          "server_port": 10453,
+          "uuid": "b3a11068-1a7e-4643-85de-7c82cce46943",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.google.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "rAHMmpeUJ6uOoGgk31dTF4-1RTtLZFnOEs_li2AYQWc"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "TunService"
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-21T09:17:57Z"
+  "updated": "2026-10-21T10:38:53Z"
 }
