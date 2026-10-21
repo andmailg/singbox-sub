@@ -1,6 +1,6 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-10-20T01:17:28Z",
+  "last_tested": "2026-10-21T03:24:59Z",
   "nodes": [
     {
       "type": "hysteria2",
@@ -19,7 +19,7 @@
       "_sub_ids": [
         "20"
       ],
-      "_last_ok_ts": 1792457682.714844,
+      "_last_ok_ts": 1792551622.958742,
       "_country": "AE"
     },
     {
@@ -32,21 +32,24 @@
         "enabled": true,
         "server_name": "vpn-de-002.fastervpn.world"
       },
-      "_last_ok_ts": 1792457682.714844,
+      "_last_ok_ts": 1792551622.958742,
       "_country": "DE"
     },
     {
       "type": "hysteria2",
-      "tag": "🇬🇧node-3",
-      "server": "uk-d9ca48498a.shamanapp.online",
+      "tag": "🇫🇷node-3",
+      "server": "vpn-fr-001.fastervpn.world",
       "server_port": 443,
-      "password": "b3a11068-1a7e-4643-85de-7c82cce46943",
+      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
       "tls": {
         "enabled": true,
-        "server_name": "uk-d9ca48498a.shamanapp.online"
+        "server_name": "vpn-fr-001.fastervpn.world"
       },
-      "_country": "GB",
-      "_last_ok_ts": 1792457682.714844
+      "_sub_ids": [
+        "1"
+      ],
+      "_last_ok_ts": 1792551622.958742,
+      "_country": "FR"
     },
     {
       "type": "hysteria2",
@@ -58,27 +61,24 @@
         "enabled": true,
         "server_name": "uk-d9ca48498a.shamanapp.online"
       },
-      "_sub_ids": [
-        "27"
-      ],
-      "_country": "GB",
-      "_last_ok_ts": 1792457682.714844
+      "_last_ok_ts": 1792551622.958742,
+      "_country": "GB"
     },
     {
       "type": "hysteria2",
       "tag": "🇬🇧node-5",
-      "server": "uk.shamanapp.online",
+      "server": "uk-d9ca48498a.shamanapp.online",
       "server_port": 443,
       "password": "b3a11068-1a7e-4643-85de-7c82cce46943",
       "tls": {
         "enabled": true,
-        "server_name": "uk.shamanapp.online",
-        "alpn": [
-          "h3"
-        ]
+        "server_name": "uk-d9ca48498a.shamanapp.online"
       },
+      "_sub_ids": [
+        "27"
+      ],
       "_country": "GB",
-      "_last_ok_ts": 1792457682.714844
+      "_last_ok_ts": 1792551622.958742
     },
     {
       "type": "hysteria2",
@@ -93,15 +93,31 @@
           "h3"
         ]
       },
-      "_sub_ids": [
-        "27"
-      ],
-      "_last_ok_ts": 1792457682.714844,
+      "_last_ok_ts": 1792551622.958742,
       "_country": "GB"
     },
     {
       "type": "hysteria2",
-      "tag": "🇭🇰node-7",
+      "tag": "🇬🇧node-7",
+      "server": "uk.shamanapp.online",
+      "server_port": 443,
+      "password": "b3a11068-1a7e-4643-85de-7c82cce46943",
+      "tls": {
+        "enabled": true,
+        "server_name": "uk.shamanapp.online",
+        "alpn": [
+          "h3"
+        ]
+      },
+      "_sub_ids": [
+        "27"
+      ],
+      "_last_ok_ts": 1792551622.958742,
+      "_country": "GB"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇭🇰node-8",
       "server": "nas.aizhzo.com",
       "server_port": 5010,
       "password": "eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ",
@@ -113,25 +129,29 @@
         "type": "salamander",
         "password": "7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9"
       },
-      "_last_ok_ts": 1792457682.714844,
+      "_last_ok_ts": 1792551622.958742,
       "_country": "HK"
     },
     {
       "type": "hysteria2",
-      "tag": "🇯🇵node-8",
-      "server": "vp3.yysyy.online",
-      "server_port": 443,
-      "password": "96ab5cd282733fd4c312a61f972f330a",
+      "tag": "🇭🇰node-9",
+      "server": "nas.aizhzo.com",
+      "server_port": 5010,
+      "password": "eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ",
       "tls": {
         "enabled": true,
-        "server_name": "vp3.yysyy.online"
+        "server_name": "nas.aizhzo.com"
       },
-      "_country": "JP",
-      "_last_ok_ts": 1792457682.714844
+      "obfs": {
+        "type": "salamander",
+        "password": "7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9"
+      },
+      "_last_ok_ts": 1792551622.958742,
+      "_country": "HK"
     },
     {
       "type": "hysteria2",
-      "tag": "🇯🇵node-9",
+      "tag": "🇯🇵node-10",
       "server": "vp3.yysyy.online",
       "server_port": 443,
       "password": "96ab5cd282733fd4c312a61f972f330a",
@@ -139,12 +159,12 @@
         "enabled": true,
         "server_name": "vp3.yysyy.online"
       },
-      "_last_ok_ts": 1792457682.714844,
+      "_last_ok_ts": 1792551622.958742,
       "_country": "JP"
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-10",
+      "tag": "🇰🇷node-11",
       "server": "150-230-252-217.liao.kdns.fr",
       "server_port": 50160,
       "password": "9cfc9458e48c028ec03ff86ebc71c744",
@@ -152,12 +172,12 @@
         "enabled": true,
         "server_name": "150-230-252-217.liao.kdns.fr"
       },
-      "_last_ok_ts": 1792457682.714844,
+      "_last_ok_ts": 1792551622.958742,
       "_country": "KR"
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-11",
+      "tag": "🇰🇷node-12",
       "server": "152-69-231-175.liao.kdns.fr",
       "server_port": 50160,
       "password": "1beb216e3f60aea9555dae60d219a5ca",
@@ -165,12 +185,12 @@
         "enabled": true,
         "server_name": "152-69-231-175.liao.kdns.fr"
       },
-      "_last_ok_ts": 1792457682.714844,
+      "_last_ok_ts": 1792551622.958742,
       "_country": "KR"
     },
     {
       "type": "hysteria2",
-      "tag": "🇳🇱node-12",
+      "tag": "🇳🇱node-13",
       "server": "nl-hy-test.tcp-reset-club.net",
       "server_port": 443,
       "password": "dd50a499-7e43-4589-8490-f3b9c2451473",
@@ -182,11 +202,27 @@
         "13"
       ],
       "_country": "NL",
-      "_last_ok_ts": 1792457682.714844
+      "_last_ok_ts": 1792551622.958742
     },
     {
       "type": "hysteria2",
-      "tag": "🇷🇴node-13",
+      "tag": "🇳🇱node-14",
+      "server": "nl-hy-test.tcp-reset-club.net",
+      "server_port": 443,
+      "password": "529f1911-04d5-4427-94b9-c851fd459a27",
+      "tls": {
+        "enabled": true,
+        "server_name": "nl-hy-test.tcp-reset-club.net"
+      },
+      "_sub_ids": [
+        "1"
+      ],
+      "_last_ok_ts": 1792551622.958742,
+      "_country": "NL"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇷🇴node-15",
       "server": "hy2-new.aspidnet.xyz",
       "server_port": 443,
       "password": "QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s",
@@ -201,34 +237,8 @@
       "_sub_ids": [
         "20"
       ],
-      "_last_ok_ts": 1792457682.714844,
+      "_last_ok_ts": 1792551622.958742,
       "_country": "RO"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇺🇸node-14",
-      "server": "hy2.123266.xyz",
-      "server_port": 33333,
-      "password": "bce6c821-200d-421f-bf3d-7159e5246ea0",
-      "tls": {
-        "enabled": true,
-        "server_name": "hy2.123266.xyz"
-      },
-      "_country": "US",
-      "_last_ok_ts": 1792457682.714844
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇺🇸node-15",
-      "server": "hy2.123266.xyz",
-      "server_port": 33333,
-      "password": "bce6c821-200d-421f-bf3d-7159e5246ea0",
-      "tls": {
-        "enabled": true,
-        "server_name": "hy2.123266.xyz"
-      },
-      "_country": "US",
-      "_last_ok_ts": 1792457682.714844
     },
     {
       "type": "hysteria2",
@@ -243,7 +253,7 @@
       "_sub_ids": [
         "20"
       ],
-      "_last_ok_ts": 1792457682.714844,
+      "_last_ok_ts": 1792551622.958742,
       "_country": "US"
     }
   ]
