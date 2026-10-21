@@ -501,7 +501,8 @@
         "node-388",
         "node-389",
         "node-390",
-        "node-391"
+        "node-391",
+        "node-392"
       ],
       "default": "auto"
     },
@@ -899,7 +900,8 @@
         "node-388",
         "node-389",
         "node-390",
-        "node-391"
+        "node-391",
+        "node-392"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -6814,6 +6816,25 @@
       "tls": {
         "enabled": true,
         "server_name": "joss.gpj.web.id"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "node-392",
+      "server": "x.com",
+      "server_port": 2087,
+      "password": "31794262-b429-4f35-8ffe-c1fa8a43b8d7",
+      "_dedup_key": "x.com:2087:31794262-b429-4f35-8ffe-c1fa8a43b8d7",
+      "tls": {
+        "enabled": true,
+        "server_name": "au3.yang-1989.xyz"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/9f81",
+        "headers": {
+          "Host": "au3.yang-1989.xyz"
+        }
       }
     }
   ],
