@@ -112,6 +112,10 @@ def merge_new_nodes(
 ) -> tuple[list[dict], int]:
     """Добавляет новые ноды к существующим (по ключу server:port:uuid:service_name).
 
+    Если нода с таким ключом уже есть — обновляет data-поля из новой ноды
+    (server, server_port, uuid, tls, transport, packet_encoding и т.д.),
+    сохраняя внутренние поля (_last_ok_ts, _pending_since, _country, _sub_ids).
+
     Возвращает (объединённый список, количество добавленных).
     """
     existing_map: dict[str, dict] = {
@@ -123,5 +127,20 @@ def merge_new_nodes(
         if key not in existing_map:
             existing_map[key] = node
             added += 1
+        else:
+            # Обновляем data-поля из новой ноды, сохраняя внутренние
+            existing_node = existing_map[key]
+            _update_data_fields(existing_node, node)
     result = list(existing_map.values())
     return result, added
+
+
+def _update_data_fields(existing: dict, source: dict) -> None:
+    """Обновляет data-поля existing ноды из source, сохраняя внутренние поля."""
+    _DATA_FIELDS = (
+        "server", "server_port", "uuid", "type",
+        "tls", "transport", "packet_encoding",
+    )
+    for field in _DATA_FIELDS:
+        if field in source:
+            existing[field] = source[field]
