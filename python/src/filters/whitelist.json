@@ -21302,8 +21302,63 @@
             "service_name": "grpc"
           }
         }
+      },
+      {
+        "key": "2.26.106.232:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-1181",
+          "server": "2.26.106.232",
+          "server_port": 8443,
+          "uuid": "5a96c1fc-f167-44b9-9020-8f6867537d14",
+          "tls": {
+            "enabled": true,
+            "server_name": "finland02.azotvpn.xyz",
+            "reality": {
+              "enabled": true,
+              "public_key": "fQ1M2sO50w5A3oM55Hfs8vmZ320I8VaKdzRqeXOMMnQ",
+              "short_id": "07f508fe5d2355d3",
+              "spider_x": "/"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
+      },
+      {
+        "key": "77.95.206.236:64563",
+        "node": {
+          "type": "vless",
+          "tag": "node-1833",
+          "server": "77.95.206.236",
+          "server_port": 64563,
+          "uuid": "30572b57-f5ab-4eb8-82d4-a24d399b99f6",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.starlink.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "wtTHheIAfyG6Sis8_GC5aHW06QPs9K-LwTqZ15NHX2M",
+              "short_id": "04bc4a55875f"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-22T15:13:11Z"
+  "updated": "2026-10-22T15:43:56Z"
 }
