@@ -3798,6 +3798,32 @@
             }
           }
         }
+      },
+      {
+        "key": "summerculture.net:2053:2c634977-584e-4e1f-b501-1b70c77a6743:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-2575",
+          "server": "summerculture.net",
+          "server_port": 2053,
+          "uuid": "2c634977-584e-4e1f-b501-1b70c77a6743",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "summerculture.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "summerculture.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -20010,5 +20036,5 @@
       }
     ]
   },
-  "updated": "2026-10-22T09:13:21Z"
+  "updated": "2026-10-22T09:24:46Z"
 }
