@@ -66,6 +66,11 @@ def fetch_all() -> dict[str, list[str]]:
                 if prefix:
                     raw_prefixes.append(prefix)
 
+            if not raw_prefixes:
+                # Пустой ответ для ASN хостера — считаем сбоем API, а не «нет префиксов»
+                print(f"[{asn}] EMPTY response")
+                continue
+
             ipv4_list = sort_networks([p for p in raw_prefixes if ":" not in p])
             ipv6_list = sort_networks([p for p in raw_prefixes if ":" in p])
 
@@ -112,4 +117,10 @@ def get_asn_cidr() -> dict[str, list[str]]:
         except Exception:
             # Fallback: пустой словарь, если API недоступен
             _asn_cidr_cache = {}
-    return _asn_cidr_cache
+    return _asn_cidr_cache
+
+
+def get_failed_asns() -> list[str]:
+    """ASN из ASN_LIST, префиксы которых получить не удалось (после get_asn_cidr)."""
+    get_asn_cidr()
+    return [asn for asn in ASN_LIST if asn not in _full_blocked_cidr]

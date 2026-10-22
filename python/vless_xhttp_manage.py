@@ -33,8 +33,8 @@ from src.common import (
 from src.testers.asn_resolver import resolve_asn
 from src.filters.geoip_filter import resolve_country
 from src.testers.vless_xhttp_node_tester import test_vless_xhttp_connectivity
-from src.filters.blacklist import add_to_blacklist
-from src.filters.whitelist import load_whitelist, is_whitelisted, add_to_whitelist, get_whitelist_nodes
+from src.filters.blacklist import add_many_to_blacklist
+from src.filters.whitelist import load_whitelist, is_whitelisted, add_many_to_whitelist, get_whitelist_nodes
 
 _PENDING_FILE = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
@@ -177,6 +177,7 @@ def cmd_test(args):
     whitelist_promoted = 0
 
     PENDING_REMOVAL_THRESHOLD = args.blacklist_timeout * 24 * 3600  # N суток в pending перед добавлением в blacklist
+    to_blacklist: list[dict] = []
 
     # 1. Обработка working: прошедшие тест остаются в working
     for node in working:
@@ -207,16 +208,15 @@ def cmd_test(args):
             pending_since = node.get("_pending_since", 0)
             if (now_ts - pending_since) > PENDING_REMOVAL_THRESHOLD:
                 print(f"  Adding failed pending node to blacklist: {node.get('server')}:{node.get('server_port')}")
-                add_to_blacklist(node, "vless_xhttp")
+                to_blacklist.append(node)
             else:
                 new_pending.append(node)
 
-    # Сохраняем промоут в whitelist
+    # Одна запись blacklist/whitelist за запуск (раньше — перезапись файла на каждую ноду)
+    add_many_to_blacklist(to_blacklist, "vless_xhttp")
     if whitelist_promoted:
-        for w in new_working:
-            if not is_whitelisted(w, whitelist, "vless_xhttp"):
-                add_to_whitelist(w, "vless_xhttp")
-        print(f"  Promoted {whitelist_promoted} node(s) to whitelist")
+        promoted = add_many_to_whitelist(new_working, "vless_xhttp")
+        print(f"  Promoted {promoted} node(s) to whitelist")
 
     if failed:
         print()

@@ -130,7 +130,7 @@ def _parse_and_deduplicate(
     unique_servers: dict[str, str | None] = {}
     servers = sorted(set(o.get("server", "").strip("[]").lower() for _, o in parsed))
 
-    num_workers = min(16, len(servers))
+    num_workers = max(1, min(16, len(servers)))
     print(f"{prefix}Resolving {len(servers)} unique servers with {num_workers} workers...")
     with ThreadPoolExecutor(max_workers=num_workers) as executor:
         future_to_server = {
@@ -193,6 +193,9 @@ def _rkn_filter(
         print(f"{prefix}RKN filtering is SKIPPED.")
         return outbounds
 
+    if not outbounds:
+        return outbounds
+
     blocked_networks = load_rkn_list(session)
     num_workers = min(8, len(outbounds))
     print(f"{prefix}Filtering {len(outbounds)} nodes by RKN with {num_workers} workers...")
@@ -212,7 +215,8 @@ def _rkn_filter(
             except Exception:
                 pass
 
-    filtered = [o for o in outbounds if o not in rkn_blocked]
+    blocked_ids = {id(o) for o in rkn_blocked}
+    filtered = [o for o in outbounds if id(o) not in blocked_ids]
     removed_count = len(rkn_blocked)
 
     if removed_count:
@@ -240,6 +244,9 @@ def _geoip_block(
     """
     if not geoip_block_countries:
         print(f"{prefix}GeoIP blocking is SKIPPED (no countries to block).")
+        return outbounds
+
+    if not outbounds:
         return outbounds
 
     reader = open_geoip_reader()

@@ -2,57 +2,12 @@
 
 import json
 import os
-import socket
-import subprocess
 import tempfile
-import threading
-import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
 
-from src.testers.asn_resolver import resolve_asn
+from src.testers._proc import Child, probe_socks, release_port, reserve_port, run_connectivity
 
 
-
-
-def get_free_port() -> int:
-    """Находит случайный свободный порт на локальной машине."""
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind(('127.0.0.1', 0))
-        return s.getsockname()[1]
-
-
-_ports_lock = threading.Lock()
-_reserved_ports: set[int] = set()
-
-
-def _reserve_port() -> int:
-    """Свободный порт, не выданный другому потоку (get_free_port сам по себе гоночный)."""
-    with _ports_lock:
-        while True:
-            port = get_free_port()
-            if port not in _reserved_ports:
-                _reserved_ports.add(port)
-                return port
-
-
-def _release_port(port: int) -> None:
-    with _ports_lock:
-        _reserved_ports.discard(port)
-
-
-def wait_for_port(host: str, port: int, timeout: float = 5.0) -> bool:
-    """Ожидает, пока порт станет доступен (поднят)."""
-    deadline = time.time() + timeout
-    while time.time() < deadline:
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            s.settimeout(0.5)
-            try:
-                s.connect((host, port))
-                return True
-            except (ConnectionRefusedError, socket.timeout, OSError):
-                time.sleep(0.2)
-    return False
 
 
 def _build_xray_config(node: dict, local_port: int) -> dict:
@@ -220,40 +175,14 @@ def _build_stream_settings(node: dict, network: str) -> dict:
     return stream_settings
 
 
-def _wait_ready(proc: subprocess.Popen, port: int, timeout: float = 8.0) -> str | None:
-    """Ждёт, пока Xray поднимет SOCKS5-порт. None — готов, строка — причина провала."""
-    deadline = time.time() + timeout
-    while time.time() < deadline:
-        if proc.poll() is not None:
-            err = (proc.stderr.read() if proc.stderr else "") or ""
-            return f"CLI exit {proc.returncode}: {err.strip()[:200]}"
-        try:
-            with socket.create_connection(("127.0.0.1", port), timeout=0.3):
-                return None
-        except OSError:
-            time.sleep(0.1)
-    return "SOCKS5 port not ready"
-
-
-def _stop(proc: subprocess.Popen) -> None:
-    proc.terminate()
-    try:
-        proc.wait(timeout=1)
-    except subprocess.TimeoutExpired:
-        proc.kill()
-        proc.wait()
-
-
 def test_vless_node(node: dict, timeout: int = 5) -> dict | str | None:
     """
     Тестирует одну ноду VLESS через Xray CLI с SOCKS5-прокси.
-    Возвращает:
-      - node с полем "_latency_ms" при успехе,
-      - строку с причиной провала при ошибке.
+    Возвращает node с полем "_latency_ms" при успехе, иначе строку с причиной провала.
     """
-    local_port = _reserve_port()
+    local_port = reserve_port()
     config_path = None
-    proc = None
+    child = None
     try:
         with tempfile.NamedTemporaryFile(
             mode="w", suffix=".json", delete=False, encoding="utf-8"
@@ -261,42 +190,22 @@ def test_vless_node(node: dict, timeout: int = 5) -> dict | str | None:
             json.dump(_build_xray_config(node, local_port), cf, ensure_ascii=False)
             config_path = cf.name
 
-        proc = subprocess.Popen(
-            ["xray", "run", "-c", config_path],
-            stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True,
-        )
-        error = _wait_ready(proc, local_port)
+        child = Child(["xray", "run", "-c", config_path])
+        error = child.wait_ready(local_port, timeout=8.0)
         if error:
             return error
-
-        res = subprocess.run(
-            [
-                "curl", "-s", "-o", "/dev/null",
-                "-w", "%{http_code}:%{time_total}",
-                "--socks5-hostname", f"127.0.0.1:{local_port}",
-                "--max-time", str(timeout),
-                "http://connectivitycheck.gstatic.com/generate_204",
-            ],
-            capture_output=True, text=True,
-        )
-        if res.returncode == 0 and ":" in res.stdout:
-            http_code, time_total = res.stdout.strip().split(":", 1)
-            if http_code in ("204", "200"):
-                node["_latency_ms"] = round(float(time_total) * 1000)
-                return node
-            return f"HTTP {http_code}"
-        return f"curl failed: {res.stderr.strip()[:150]}"
+        return probe_socks(local_port, timeout, node)
     except Exception as e:
         return f"ERROR: {e}"
     finally:
-        if proc:
-            _stop(proc)
+        if child:
+            child.close()
         if config_path:
             try:
                 os.unlink(config_path)
             except OSError:
                 pass
-        _release_port(local_port)
+        release_port(local_port)
 
 
 def test_vless_connectivity(
@@ -304,70 +213,5 @@ def test_vless_connectivity(
     timeout: int = 5,
     prefix: str = "",
 ) -> tuple[list[dict], int, str]:
-    """
-    Проверяет работоспособность VLESS нод через Xray CLI + curl.
-    Возвращает только рабочие ноды (с добавленным полем _latency_ms).
-    """
-    # Без xray результат теста не имеет смысла: падаем, а не считаем все ноды рабочими
-    try:
-        subprocess.run(["xray", "version"], capture_output=True, timeout=5, check=True)
-    except Exception as e:
-        raise RuntimeError(f"xray CLI недоступен: {e}") from e
-
-    if not outbounds:
-        return [], 0, ""
-
-    num_workers = min(20, len(outbounds))
-    print(f"{prefix}Testing {len(outbounds)} vless nodes with {num_workers} workers ({timeout}s timeout)...")
-
-    # Сортируем для детерминизма
-    sorted_outbounds = sorted(
-        outbounds,
-        key=lambda o: (o.get("_country", ""), o.get("server", ""), o.get("server_port", 0)),
-    )
-
-    working: list[dict] = []
-    failed = 0
-
-    with ThreadPoolExecutor(max_workers=num_workers) as pool:
-        futures = {
-            pool.submit(test_vless_node, node, timeout): node
-            for node in sorted_outbounds
-        }
-
-        for i, future in enumerate(as_completed(futures), 1):
-            node = futures[future]
-            server = node.get("server", "?")
-            port = node.get("server_port", "?")
-            asn = resolve_asn(server)
-            sub_ids = node.get("_sub_ids", set())
-            sub_ids_str = f" [{','.join(sorted(sub_ids))}]" if sub_ids else ""
-            display = f"{server}:{port} {asn}" if asn else f"{server}:{port}"
-            try:
-                result = future.result()
-                if result is not None:
-                    if isinstance(result, str):
-                        # Строка — причина провала
-                        failed += 1
-                        print(f"  [{i}/{len(sorted_outbounds)}] {display}{sub_ids_str}: FAIL — {result}")
-                    else:
-                        working.append(result)
-                        print(f"  [{i}/{len(sorted_outbounds)}] {display}{sub_ids_str}: OK — {result.get('_latency_ms', '?')}ms")
-                else:
-                    failed += 1
-                    print(f"  [{i}/{len(sorted_outbounds)}] {display}{sub_ids_str}: FAIL")
-            except Exception as e:
-                failed += 1
-                print(f"  [{i}/{len(sorted_outbounds)}] {display}{sub_ids_str}: ERROR — {e}")
-
-    # Восстанавливаем порядок
-    working.sort(
-        key=lambda o: (o.get("_country", ""), o.get("server", ""), o.get("server_port", 0))
-    )
-
-    all_sub_ids: set[str] = set()
-    for w in working:
-        all_sub_ids.update(w.get("_sub_ids", set()))
-    sub_ids_summary = f" (subs: {','.join(sorted(all_sub_ids))})" if all_sub_ids else ""
-
-    return working, failed, sub_ids_summary
+    """Проверяет работоспособность VLESS нод через Xray CLI + curl (только рабочие ноды)."""
+    return run_connectivity(outbounds, test_vless_node, "vless", "xray", timeout, prefix)

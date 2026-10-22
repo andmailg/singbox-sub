@@ -120,10 +120,10 @@ def parse_proxy_link(link: str) -> dict | None:
     if alpn_raw:
         tls_opts["alpn"] = [h.strip() for h in alpn_raw.split(",") if h.strip()]
 
-    # pinSHA256 (case-insensitive)
-    pin_sha256 = _param(params_lower, "pinsha256")
-    if pin_sha256:
-        tls_opts["certificate"] = {"pin_sha256": pin_sha256}
+    # pinSHA256 в sing-box выразить нельзя (поле tls.certificate — это PEM, а не отпечаток),
+    # а без пина самоподписанный сертификат ноды не пройдёт проверку — такую ноду пропускаем
+    if _param(params_lower, "pinsha256"):
+        return None
 
     # 7. Obfuscation (obfs)
     obfs: dict | None = None
@@ -137,15 +137,16 @@ def parse_proxy_link(link: str) -> dict | None:
         obfs = None
 
     # 8. Сборка outbound
-    # server = tls.server_name (SNI или hostname)
+    # server — адрес из ссылки (куда подключаться); SNI живёт только в tls.server_name.
+    # Раньше server подменялся на SNI, и нода с sni != host подключалась не к тому серверу.
     result: dict = {
         "type": "hysteria2",
         "tag": tag,
-        "server": tls_opts["server_name"],
+        "server": hostname,
         "server_port": port,
         "password": urllib.parse.unquote(password),
         "tls": tls_opts,
-        "_dedup_key": f"{tls_opts['server_name']}:{port}:{urllib.parse.unquote(password)}",
+        "_dedup_key": f"{hostname}:{port}:{urllib.parse.unquote(password)}",
     }
     if obfs:
         result["obfs"] = obfs

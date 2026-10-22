@@ -83,7 +83,8 @@ def parse_proxy_link(link: str) -> dict | None:
         pbk = _param(params, "pbk")
         sid = _param(params, "sid")
         fp = _param(params, "fp")
-        # spiderX в sing-box не поддерживается (unknown field -> конфиг не стартует)
+        # spx/spiderX нужен для ссылок и Xray; из sing-box JSON вырезается при экспорте
+        spider_x = _param(params, "spx") or _param(params, "spiderX")
         flow = _param(params, "flow")
 
         # Reality в sing-box требует public_key и utls-fingerprint;
@@ -97,6 +98,8 @@ def parse_proxy_link(link: str) -> dict | None:
         }
         if sid:
             reality["short_id"] = sid
+        if spider_x:
+            reality["spider_x"] = spider_x
         tls_opts["reality"] = reality
         tls_opts["utls"] = {
             "enabled": True,

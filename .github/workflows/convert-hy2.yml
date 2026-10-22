@@ -6,13 +6,19 @@ on:
     - cron: '0 */2 * * *'
   workflow_dispatch: # Ручной запуск
 
+# Не запускать два прогона одного workflow одновременно
+concurrency:
+  group: convert-hy2
+  cancel-in-progress: false
+
 jobs:
   convert:
     runs-on: ubuntu-latest
-    
+    timeout-minutes: 90
+
     permissions:
       contents: write
-      
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -26,34 +32,23 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests maxminddb
-          curl -L https://git.io/GeoLite2-Country.mmdb -o python/GeoLite2-Country.mmdb
-          curl -L https://git.io/GeoLite2-ASN.mmdb -o python/GeoLite2-ASN.mmdb
-      
+          curl -fsSL --retry 3 https://git.io/GeoLite2-Country.mmdb -o python/GeoLite2-Country.mmdb
+          curl -fsSL --retry 3 https://git.io/GeoLite2-ASN.mmdb -o python/GeoLite2-ASN.mmdb
+
       - name: Install Hysteria2 CLI
         run: |
-          curl -L https://github.com/HyNetworks/hysteria/releases/download/app%2Fv2.12.3/hysteria-linux-amd64 -o hy2
-          chmod +x hy2
-          sudo mv hy2 /usr/local/bin/hy2
+          curl -fsSL --retry 3 https://github.com/HyNetworks/hysteria/releases/download/app%2Fv2.12.3/hysteria-linux-amd64 -o hy2
+          sudo install -m 755 hy2 /usr/local/bin/hy2
+          hy2 version
 
       - name: Run full pipeline
-        run: |
-          cd python
-          # Генерирует 3 файла в корне репозитория:
-          #   hy2_tun.json — sing-box TUN конфиг
-          #   config.json  — sing-box SOCKS конфиг
-          #   hy2.txt      — V2Ray-ссылки
-          python hy2_manage.py run --geoip-block "ru" --rkn-filter 0 --export tun,xray,router --test-timeout 3 --blacklist-timeout 10 --whitelist-timeout 10
+        working-directory: python
+        run: >
+          python hy2_manage.py run
+          --geoip-block "ru" --rkn-filter 0 --export tun,xray,router
+          --test-timeout 3 --blacklist-timeout 10 --whitelist-timeout 10
 
       - name: Commit and push if changed
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add hy2_tun.json hy2.txt config.json python/src/hy2_working.json python/src/hy2_pending.json python/src/filters/rkn_networks_cache.json python/src/filters/blacklist.json python/src/filters/whitelist.json
-          
-          if git diff --cached --quiet; then
-            echo "Нет изменений для коммита."
-          else
-            git commit -m "Auto-update hy2 configs & working nodes"
-            git push
-          fi
+        run: >
+          bash .github/scripts/push_results.sh hy2 "Auto-update hy2 configs & working nodes"
+          hy2_tun.json hy2.txt config.json python/src/hy2_working.json python/src/hy2_pending.json

@@ -27,6 +27,13 @@ INTERNAL_FIELDS = frozenset({
 })
 
 
+def merge_sub_ids(target: dict, source: dict) -> None:
+    """Объединяет _sub_ids двух копий одной ноды (подписки накапливаются, а не теряются)."""
+    sub_ids = set(target.get("_sub_ids") or ()) | set(source.get("_sub_ids") or ())
+    if sub_ids:
+        target["_sub_ids"] = sub_ids
+
+
 def clean_internal_fields(node: dict) -> None:
     """Удаляет внутренние поля из ноды (мутирует на месте)."""
     for key in INTERNAL_FIELDS:

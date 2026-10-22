@@ -10,7 +10,7 @@ from src.filters.rkn_filter import (
     check_rkn_blocked,
 )
 from src.filters.rkn_config import ASN_LIST, CIDR_LIST
-from src.common import session as http_session
+from src.common import merge_sub_ids, session as http_session
 
 _WORKING_FILE = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
@@ -142,5 +142,8 @@ def merge_new_nodes(
         if key not in existing_map:
             existing_map[key] = node
             added += 1
+        else:
+            # нода уже есть — добавляем подписки, в которых она встретилась
+            merge_sub_ids(existing_map[key], node)
     result = list(existing_map.values())
     return result, added

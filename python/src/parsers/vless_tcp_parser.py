@@ -144,7 +144,7 @@ def parse_proxy_link(link: str) -> dict | None:
             return None
         pbk = params.get("pbk", [None])[0]
         sid = params.get("sid", [None])[0] or ""
-        spider_x = params.get("spiderX", [None])[0] or ""
+        spider_x = params.get("spx", [None])[0] or params.get("spiderX", [None])[0] or ""
 
         # Валидация reality-полей
         if not pbk or not _is_valid_reality_public_key(pbk):
@@ -166,7 +166,7 @@ def parse_proxy_link(link: str) -> dict | None:
             }
         }
 
-        # spider_x обязателен для sing-box reality
+        # spx из ссылки сохраняем (для txt/Xray); из sing-box JSON вырезается при экспорте
         if spider_x:
             tls_opts["reality"]["spider_x"] = spider_x
 
@@ -177,6 +177,15 @@ def parse_proxy_link(link: str) -> dict | None:
     else:
         # Неизвестный security — отбрасываем
         return None
+
+    # alpn / allowInsecure — только если есть в ссылке
+    if tls_opts is not None:
+        alpn = params.get("alpn", [None])[0]
+        if alpn:
+            tls_opts["alpn"] = [a.strip() for a in alpn.split(",") if a.strip()]
+        insecure = params.get("allowInsecure", [None])[0] or params.get("insecure", [None])[0]
+        if insecure and insecure.lower() in ("1", "true"):
+            tls_opts["insecure"] = True
 
     # 7. Читаем flow (например, xtls-rprx-vision)
     flow = params.get("flow", [None])[0]

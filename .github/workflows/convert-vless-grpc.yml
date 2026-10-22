@@ -11,11 +11,6 @@ concurrency:
   group: convert-vless-grpc
   cancel-in-progress: false
 
-env:
-  PROTO: vless_grpc
-  OWN_FILES: vless_grpc_tun.json vless_grpc.txt python/src/vless_grpc_working.json python/src/vless_grpc_pending.json
-  SHARED_FILES: python/src/filters/blacklist.json python/src/filters/whitelist.json
-
 jobs:
   convert:
     runs-on: ubuntu-latest
@@ -55,31 +50,6 @@ jobs:
           --test-timeout 3 --blacklist-timeout 10 --whitelist-timeout 10
 
       - name: Commit and push if changed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Забираем результаты прогона: свои файлы целиком, общие — только секцию протокола
-          mkdir -p /tmp/out
-          cp --parents $OWN_FILES $SHARED_FILES /tmp/out/
-
-          for attempt in 1 2 3 4 5; do
-            git fetch origin main
-            git reset --hard origin/main
-            (cd /tmp/out && cp --parents $OWN_FILES "$GITHUB_WORKSPACE"/)
-            python python/sync_shared.py "$PROTO" /tmp/out
-
-            git add $OWN_FILES $SHARED_FILES
-            if git diff --cached --quiet; then
-              echo "Нет изменений для коммита."
-              exit 0
-            fi
-            git commit -m "Auto-update VLESS gRPC configs & working nodes"
-            if git push origin HEAD:main; then
-              exit 0
-            fi
-            echo "Push не удался (попытка $attempt), повтор..."
-            sleep $((RANDOM % 20 + 5))
-          done
-          echo "::error::Не удалось отправить изменения после 5 попыток"
-          exit 1
+        run: >
+          bash .github/scripts/push_results.sh vless_grpc "Auto-update VLESS gRPC configs & working nodes"
+          vless_grpc_tun.json vless_grpc.txt python/src/vless_grpc_working.json python/src/vless_grpc_pending.json

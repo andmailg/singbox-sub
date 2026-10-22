@@ -8,10 +8,11 @@ import ipaddress
 import json
 import os
 from collections import OrderedDict
+from datetime import datetime, timezone
 from pathlib import Path
 
 from src.common import is_valid_ip, resolve_domain, session
-from .rkn_asn_fetcher import get_asn_cidr
+from .rkn_asn_fetcher import get_asn_cidr, get_failed_asns
 from .rkn_config import ASN_LIST, CIDR_LIST
 
 # Файл локального кэша для тяжелых списков ASN
@@ -22,154 +23,163 @@ ASN_CACHE_FILE = os.path.join(_RKN_FILTER_DIR, "rkn_networks_cache.json")
 _CACHE_FORMAT_VERSION = 2
 
 
-def _fetch_aws_networks(session, timeout: int = 15) -> tuple[list[str], str]:
-    """Напрямую выкачивает легковесный официальный JSON диапазонов Amazon AWS (вместо перебора ASN).
+def _fetch_aws_networks(session, timeout: int = 15) -> tuple[list[str] | None, str]:
+    """Напрямую выкачивает официальный JSON диапазонов Amazon AWS.
 
     Returns:
-        Кортеж (список CIDR-строк, SHA256 хеш всех CIDR для инвалидации кэша).
+        (список CIDR, SHA256-хеш для инвалидации кэша). При сбое — (None, ""):
+        пустой результат нельзя отличать от «диапазонов нет», иначе он попадёт в кэш.
     """
     url = "https://ip-ranges.amazonaws.com/ip-ranges.json"
     raw_prefixes: list[str] = []
     try:
         resp = session.get(url, timeout=timeout)
-        if resp.status_code == 200:
-            data = resp.json()
-            # Собираем IPv4
-            for item in data.get("prefixes", []):
-                cidr = item.get("ip_prefix")
-                if cidr:
-                    raw_prefixes.append(cidr)
-            # Собираем IPv6
-            for item in data.get("ipv6_prefixes", []):
-                cidr = item.get("ipv6_prefix")
-                if cidr:
-                    raw_prefixes.append(cidr)
-            print(f"  [AWS] Directly loaded {len(raw_prefixes)} networks from official AWS JSON")
+        resp.raise_for_status()
+        data = resp.json()
+        for item in data.get("prefixes", []):
+            cidr = item.get("ip_prefix")
+            if cidr:
+                raw_prefixes.append(cidr)
+        for item in data.get("ipv6_prefixes", []):
+            cidr = item.get("ipv6_prefix")
+            if cidr:
+                raw_prefixes.append(cidr)
     except Exception as e:
         print(f"  [WARN] Failed to fetch official AWS IP ranges: {e}")
-    # Хеш для инвалидации кэша при изменении AWS диапазонов
-    aws_key = hashlib.sha256("|".join(sorted(raw_prefixes)).encode()).hexdigest()[:16]
-    return raw_prefixes, aws_key
+        return None, ""
+    if not raw_prefixes:
+        print("  [WARN] Official AWS IP ranges response is empty")
+        return None, ""
+    print(f"  [AWS] Directly loaded {len(raw_prefixes)} networks from official AWS JSON")
+    return raw_prefixes, hashlib.sha256("|".join(sorted(raw_prefixes)).encode()).hexdigest()[:16]
 
 
-def _fetch_cloudflare_networks(session, timeout: int = 15) -> tuple[list[str], str]:
-    """Выкачивает официальные диапазоны Cloudflare (IPv4 и IPv6) из текстовых файлов.
+def _fetch_cloudflare_networks(session, timeout: int = 15) -> tuple[list[str] | None, str]:
+    """Выкачивает официальные диапазоны Cloudflare (IPv4 и IPv6).
 
     Returns:
-        Кортеж (список CIDR-строк, SHA256 хеш всех CIDR для инвалидации кэша).
+        (список CIDR, SHA256-хеш). Если любой из файлов не получен — (None, "").
     """
     raw_prefixes: list[str] = []
-    urls = [
-        "https://www.cloudflare.com/ips-v4",
-        "https://www.cloudflare.com/ips-v6",
-    ]
-    for url in urls:
+    for url in ("https://www.cloudflare.com/ips-v4", "https://www.cloudflare.com/ips-v6"):
         try:
             resp = session.get(url, timeout=timeout)
-            if resp.status_code == 200:
-                for line in resp.text.splitlines():
-                    cidr = line.strip()
-                    if cidr and "/" in cidr:
-                        raw_prefixes.append(cidr)
+            resp.raise_for_status()
+            part = [l.strip() for l in resp.text.splitlines() if "/" in l]
+            if not part:
+                raise ValueError("empty response")
+            raw_prefixes.extend(part)
         except Exception as e:
             print(f"  [WARN] Failed to fetch Cloudflare ranges from {url}: {e}")
-    if raw_prefixes:
-        print(f"  [CF] Loaded {len(raw_prefixes)} networks from official Cloudflare")
-    # Хеш для инвалидации кэша при изменении Cloudflare диапазонов
-    cf_key = hashlib.sha256("|".join(sorted(raw_prefixes)).encode()).hexdigest()[:16]
-    return raw_prefixes, cf_key
+            return None, ""
+    print(f"  [CF] Loaded {len(raw_prefixes)} networks from official Cloudflare")
+    return raw_prefixes, hashlib.sha256("|".join(sorted(raw_prefixes)).encode()).hexdigest()[:16]
+
+
+def _read_cache() -> dict | None:
+    """Читает кэш подсетей. None — файла нет, он повреждён или старого формата."""
+    if not os.path.exists(ASN_CACHE_FILE):
+        return None
+    try:
+        with open(ASN_CACHE_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as e:
+        print(f"  [Cache WARN] Failed to read cache file: {e}")
+        return None
+    if isinstance(data, dict) and data.get("_v") == _CACHE_FORMAT_VERSION:
+        return data
+    print("  [Cache] Legacy format")
+    return None
+
+
+def _to_networks(cidrs, strict_abort: bool = False) -> list:
+    nets = []
+    for cidr in cidrs:
+        try:
+            nets.append(ipaddress.ip_network(str(cidr).strip(), strict=False))
+        except ValueError:
+            if strict_abort:
+                print(f"  [ERROR] Invalid CIDR in config: '{cidr}' — aborting workflow.")
+                raise SystemExit(1)
+    return nets
+
+
+def _collapse(networks: list) -> list:
+    v4 = [n for n in networks if n.version == 4]
+    v6 = [n for n in networks if n.version == 6]
+    return list(ipaddress.collapse_addresses(v4)) + list(ipaddress.collapse_addresses(v6))
 
 
 def _load_or_build_extra_networks(session) -> list[ipaddress.IPv4Network | ipaddress.IPv6Network]:
-    """Загружает дополнительный список сетей (из кэша, хардкода + RIPEstat API или AWS JSON)."""
+    """Загружает дополнительный список сетей (из кэша, хардкода + RIPEstat API, AWS и Cloudflare).
+
+    Кэш пишется только если ВСЕ внешние источники ответили. При сбое источника
+    пустые данные в кэш не попадают: берётся прежний кэш, пересборка повторится в следующий запуск.
+    """
     current_asn_key = hashlib.sha256("|".join(sorted(ASN_LIST)).encode()).hexdigest()[:16]
     current_hardcoded_key = hashlib.sha256(
         "|".join(f"{asn}={','.join(sorted(cidrs))}" for asn, cidrs in sorted(CIDR_LIST.items()))
         .encode()
     ).hexdigest()[:16]
 
-    # Загружаем AWS для вычисления ключа
     aws_cidrs, current_aws_key = _fetch_aws_networks(session)
-    # Загружаем Cloudflare для вычисления ключа
     cf_cidrs, current_cf_key = _fetch_cloudflare_networks(session)
 
-    if os.path.exists(ASN_CACHE_FILE):
-        try:
-            with open(ASN_CACHE_FILE, "r", encoding="utf-8") as f:
-                cache_data = json.load(f)
+    cache = _read_cache()
+    cached_cidrs = cache.get("_cidrs", []) if cache else []
+    static_ok = bool(cache) and cache.get("_asn_key") == current_asn_key \
+        and cache.get("_hardcoded_key") == current_hardcoded_key
 
-            # Проверяем метаданные кэша
-            if isinstance(cache_data, dict) and cache_data.get("_v") == _CACHE_FORMAT_VERSION:
-                cached_asn = cache_data.get("_asn_key")
-                cached_hardcoded = cache_data.get("_hardcoded_key")
-                cached_aws = cache_data.get("_aws_key")
-                cached_cf = cache_data.get("_cf_key")
-                if cached_asn == current_asn_key and cached_hardcoded == current_hardcoded_key and cached_aws == current_aws_key and cached_cf == current_cf_key:
-                    cached_strings = cache_data.get("_cidrs", [])
-                    print(f"  [Cache] Loaded {len(cached_strings)} extra networks from local {ASN_CACHE_FILE}")
-                    return [ipaddress.ip_network(cidr, strict=False) for cidr in cached_strings]
-                else:
-                    reasons = []
-                    if cached_asn != current_asn_key:
-                        reasons.append("ASN_LIST")
-                    if cached_hardcoded != current_hardcoded_key:
-                        reasons.append("HARDCODED")
-                    if cached_aws != current_aws_key:
-                        reasons.append("AWS")
-                    if cached_cf != current_cf_key:
-                        reasons.append("CF")
-                    print(f"  [Cache] {'+'.join(reasons) if reasons else 'keys'} changed, rebuilding...")
-            else:
-                print(f"  [Cache] Legacy format, rebuilding...")
+    if static_ok:
+        if aws_cidrs is None or cf_cidrs is None:
+            # Ключи AWS/CF вычислить нельзя — сверять нечего, используем кэш как есть
+            print(f"  [Cache] AWS/Cloudflare unavailable, using {len(cached_cidrs)} cached networks as is")
+            return _to_networks(cached_cidrs)
+        if cache.get("_aws_key") == current_aws_key and cache.get("_cf_key") == current_cf_key:
+            print(f"  [Cache] Loaded {len(cached_cidrs)} extra networks from local {ASN_CACHE_FILE}")
+            return _to_networks(cached_cidrs)
+        print("  [Cache] AWS/CF changed, rebuilding...")
+    elif cache:
+        print("  [Cache] ASN_LIST/HARDCODED changed, rebuilding...")
+    else:
+        print("  [Cache] Cache file not found or corrupted. Rebuilding...")
 
-        except Exception as e:
-            print(f"  [Cache WARN] Failed to read cache file, rebuilding: {e}")
-
-    print("  [Cache] Cache file not found or corrupted. Rebuilding...")
     all_cidr_strings: list[str] = []
 
     # 1. Сети из ASN_LIST (RIPEstat API)
     for asn_cidrs in get_asn_cidr().values():
         all_cidr_strings.extend(asn_cidrs)
-
     # 2. Сети из CIDR_LIST
     for asn_cidrs in CIDR_LIST.values():
         all_cidr_strings.extend(asn_cidrs)
+    # 3. AWS и 4. Cloudflare
+    all_cidr_strings.extend(aws_cidrs or [])
+    all_cidr_strings.extend(cf_cidrs or [])
 
-    # 3. Официальный список AWS
-    all_cidr_strings.extend(aws_cidrs)
+    valid_networks = _to_networks(dict.fromkeys(s.strip() for s in all_cidr_strings if s.strip()), strict_abort=True)
 
-    # 4. Официальный список Cloudflare
-    all_cidr_strings.extend(cf_cidrs)
+    missing = []
+    failed_asns = get_failed_asns()
+    if failed_asns:
+        missing.append("RIPEstat " + ",".join(failed_asns))
+    if aws_cidrs is None:
+        missing.append("AWS")
+    if cf_cidrs is None:
+        missing.append("Cloudflare")
 
-    # Дедупликация и валидация
-    seen: set[str] = set()
-    unique_cidrs: list[str] = []
-    for cidr in all_cidr_strings:
-        s = cidr.strip()
-        if s and s not in seen:
-            seen.add(s)
-            unique_cidrs.append(s)
-
-    all_cidr_strings = unique_cidrs
-
-    valid_networks = []
-    for cidr in all_cidr_strings:
-        try:
-            valid_networks.append(ipaddress.ip_network(cidr, strict=False))
-        except ValueError:
-            print(f"  [ERROR] Invalid CIDR in config: '{cidr}' — aborting workflow.")
-            raise SystemExit(1)
+    if missing:
+        # Данные неполные: в кэш не пишем (иначе пробел закрепится), недостающее добираем из прежнего кэша
+        print(f"  [Cache WARN] Sources unavailable: {'; '.join(missing)}. Cache is NOT updated, "
+              f"{len(cached_cidrs)} previously cached networks added")
+        return _collapse(valid_networks + _to_networks(cached_cidrs))
 
     # Схлопываем подсети для минимизации размера кэш-файла
-    v4 = [n for n in valid_networks if n.version == 4]
-    v6 = [n for n in valid_networks if n.version == 6]
-    collapsed = list(ipaddress.collapse_addresses(v4)) + list(ipaddress.collapse_addresses(v6))
+    collapsed = _collapse(valid_networks)
 
-    # Сохраняем в кэш с метаданными
     try:
         cache_payload = {
             "_v": _CACHE_FORMAT_VERSION,
+            "_built_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "_asn_key": current_asn_key,
             "_hardcoded_key": current_hardcoded_key,
             "_aws_key": current_aws_key,

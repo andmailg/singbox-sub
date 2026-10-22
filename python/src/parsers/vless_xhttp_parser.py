@@ -112,10 +112,8 @@ def parse_proxy_link(link: str) -> dict | None:
     flow = params.get("flow", [None])[0]
 
     # 8. Читаем xhttp-специфичные параметры
-    # path (по умолчанию "/")
-    path = params.get("path", ["/"])[0].strip()
-    if not path:
-        path = "/"
+    # path — только если указан в ссылке
+    path = params.get("path", [""])[0].strip()
 
     # host (поддержка comma-separated list)
     raw_hosts = params.get("host", [""])[0].strip()
@@ -123,8 +121,6 @@ def parse_proxy_link(link: str) -> dict | None:
 
     # mode — режим xhttp ("auto", "packet-up", "stream-up")
     mode = params.get("mode", [None])[0]
-    if not mode:
-        mode = "auto"
 
     # downloadBufferSize
     download_buffer_size = params.get("downloadBufferSize", [None])[0]
@@ -172,11 +168,11 @@ def parse_proxy_link(link: str) -> dict | None:
     method = params.get("method", [""])[0].strip()
 
     # 9. Сборка transport объекта
-    transport: dict = {
-        "type": "xhttp",
-        "path": path,
-        "mode": mode,
-    }
+    transport: dict = {"type": "xhttp"}
+    if path:
+        transport["path"] = path
+    if mode:
+        transport["mode"] = mode
 
     if http_hosts:
         transport["host"] = http_hosts

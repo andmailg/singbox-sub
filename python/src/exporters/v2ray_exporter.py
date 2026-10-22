@@ -16,15 +16,12 @@ def _generate_hy2_links(outbounds: list[dict]) -> list[str]:
         port = o.get("server_port", 443)
         password = o.get("password", "")
         sni = o.get("tls", {}).get("server_name", "")
-        up_mbps = o.get("up_mbps", 20)
-        down_mbps = o.get("down_mbps", 20)
 
-        query_params = {
-            "sni": sni,
-            "security": "tls",
-            "up": up_mbps,
-            "down": down_mbps,
-        }
+        # Только поля исходной ссылки: up/down и security — не часть hysteria2://-ссылки
+        query_params = {"sni": sni}
+        alpn = o.get("tls", {}).get("alpn")
+        if alpn:
+            query_params["alpn"] = ",".join(alpn)
 
         # Obfuscation (obfs)
         obfs = o.get("obfs")
@@ -82,7 +79,7 @@ def _generate_vless_grpc_links(outbounds: list[dict]) -> list[str]:
             if sid:
                 params["sid"] = sid
             if spider_x:
-                params["spiderX"] = spider_x
+                params["spx"] = spider_x
             if flow:
                 params["flow"] = flow
             if packet_encoding:
@@ -141,6 +138,8 @@ def _generate_vless_tcp_links(outbounds: list[dict]) -> list[str]:
             }
             if sid:
                 params["sid"] = sid
+            if reality.get("spider_x"):
+                params["spx"] = reality["spider_x"]
         else:
             # VLESS + TCP + TLS (без reality)
             params = {
@@ -148,6 +147,14 @@ def _generate_vless_tcp_links(outbounds: list[dict]) -> list[str]:
                 "fp": fp,
                 "security": "tls",
             }
+
+        params["type"] = "tcp"
+        if o.get("flow"):
+            params["flow"] = o["flow"]
+        if tls.get("alpn"):
+            params["alpn"] = ",".join(tls["alpn"])
+        if tls.get("insecure"):
+            params["allowInsecure"] = "1"
 
         query = urllib.parse.urlencode(params)
         fragment = urllib.parse.quote(tag)
@@ -176,19 +183,24 @@ def _generate_vless_xhttp_links(outbounds: list[dict]) -> list[str]:
         sni = tls.get("server_name", "") if tls else ""
         fp = tls.get("utls", {}).get("fingerprint", "") if tls else ""
 
-        path = transport_params.get("path", "/")
-        mode = transport_params.get("mode", "auto")
+        path = transport_params.get("path")
+        mode = transport_params.get("mode")
         host = transport_params.get("host", [])
 
         params = {
-            "encryption": "none",
+            "encryption": o.get("encryption", "none"),
             "security": "tls" if tls and tls.get("enabled") else "none",
             "sni": sni,
             "fp": fp,
             "type": "xhttp",
-            "path": path,
-            "mode": mode,
         }
+        # только то, что было в исходной ссылке (без подстановки "/" и "auto")
+        if path:
+            params["path"] = path
+        if mode:
+            params["mode"] = mode
+        if o.get("flow"):
+            params["flow"] = o["flow"]
 
         if host:
             params["host"] = ",".join(host) if isinstance(host, list) else str(host)

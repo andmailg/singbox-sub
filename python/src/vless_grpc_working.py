@@ -10,7 +10,7 @@ from src.filters.rkn_filter import (
     check_rkn_blocked,
 )
 from src.filters.rkn_config import ASN_LIST, CIDR_LIST
-from src.common import session as http_session
+from src.common import merge_sub_ids, session as http_session
 
 _WORKING_FILE = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
@@ -145,6 +145,4 @@ def _update_data_fields(existing: dict, source: dict) -> None:
         if field in source:
             existing[field] = source[field]
     # подписки объединяем: нода могла появиться в новых источниках
-    sub_ids = set(existing.get("_sub_ids") or ()) | set(source.get("_sub_ids") or ())
-    if sub_ids:
-        existing["_sub_ids"] = sub_ids
+    merge_sub_ids(existing, source)
