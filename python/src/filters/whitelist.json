@@ -15113,6 +15113,66 @@
             "server_name": "nl-hy-test.tcp-reset-club.net"
           }
         }
+      },
+      {
+        "key": "alb1337.zaebalsanoproxyklinus.lol:28152:f83ce3c4-07d9-4895-bd14-cb74abbcab37",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-5",
+          "server": "alb1337.zaebalsanoproxyklinus.lol",
+          "server_port": 28152,
+          "password": "f83ce3c4-07d9-4895-bd14-cb74abbcab37",
+          "tls": {
+            "enabled": true,
+            "server_name": "alb1337.zaebalsanoproxyklinus.lol"
+          }
+        }
+      },
+      {
+        "key": "clash2.deep-links.com:443:4c858cccff331e64c711a199a6cb256a",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-7",
+          "server": "clash2.deep-links.com",
+          "server_port": 443,
+          "password": "4c858cccff331e64c711a199a6cb256a",
+          "tls": {
+            "enabled": true,
+            "server_name": "clash2.deep-links.com"
+          }
+        }
+      },
+      {
+        "key": "de2.jey.cc.cd:36264:Telegram:vpnjey",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-8",
+          "server": "de2.jey.cc.cd",
+          "server_port": 36264,
+          "password": "Telegram:vpnjey",
+          "tls": {
+            "enabled": true,
+            "server_name": "de2.jey.cc.cd"
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "Telegram@vpnjey"
+          }
+        }
+      },
+      {
+        "key": "alb1337.zaebalsanoproxyklinus.lol:28152:4ad3dbf5-2005-4d96-b56c-a0ca9905cab6",
+        "node": {
+          "type": "hysteria2",
+          "tag": "🇷🇺node-37",
+          "server": "alb1337.zaebalsanoproxyklinus.lol",
+          "server_port": 28152,
+          "password": "4ad3dbf5-2005-4d96-b56c-a0ca9905cab6",
+          "tls": {
+            "enabled": true,
+            "server_name": "alb1337.zaebalsanoproxyklinus.lol"
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -19616,5 +19676,5 @@
       }
     ]
   },
-  "updated": "2026-10-21T23:44:29Z"
+  "updated": "2026-10-22T03:24:58Z"
 }
