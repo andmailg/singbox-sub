@@ -19699,8 +19699,86 @@
             "service_name": "ce30fc556a31"
           }
         }
+      },
+      {
+        "key": "162.35.126.235:10453",
+        "node": {
+          "type": "vless",
+          "tag": "node-646",
+          "server": "162.35.126.235",
+          "server_port": 10453,
+          "uuid": "b3a11068-1a7e-4643-85de-7c82cce46943",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.google.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "rAHMmpeUJ6uOoGgk31dTF4-1RTtLZFnOEs_li2AYQWc"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "TunService"
+          }
+        }
+      },
+      {
+        "key": "api.mediaklenov.cc:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-2267",
+          "server": "api.mediaklenov.cc",
+          "server_port": 443,
+          "uuid": "8221d527-431a-4a5d-b45a-1af799ebf5e1",
+          "tls": {
+            "enabled": true,
+            "server_name": "api.mediaklenov.cc",
+            "alpn": [
+              "h2"
+            ],
+            "utls": {
+              "enabled": true,
+              "fingerprint": "qq"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "3e99d50d5740985d"
+          }
+        }
+      },
+      {
+        "key": "88.218.95.88:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-1985",
+          "server": "88.218.95.88",
+          "server_port": 443,
+          "uuid": "b8df3f50-ffef-4c7e-9ef3-d5b156a47c02",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.google.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "rRg3JiP2006ldJYh2TDPAn7dtlXLcSHdgHgkGI_HZTE",
+              "short_id": "43adea0ec9f97a0a"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-22T04:48:51Z"
+  "updated": "2026-10-22T05:24:15Z"
 }
