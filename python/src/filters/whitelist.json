@@ -23073,8 +23073,91 @@
             "service_name": ""
           }
         }
+      },
+      {
+        "key": "31.77.161.183:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-1331",
+          "server": "31.77.161.183",
+          "server_port": 8443,
+          "uuid": "5a96c1fc-f167-44b9-9020-8f6867537d14",
+          "tls": {
+            "enabled": true,
+            "server_name": "germany01.azotvpn.xyz",
+            "reality": {
+              "enabled": true,
+              "public_key": "7hHoROf3WLDWI8SQ4B82O00j29Bpwxd49hWe5EMBsgI",
+              "short_id": "8bbb9ef51f37aad7"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
+      },
+      {
+        "key": "germany01.azotvpn.xyz:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-2412",
+          "server": "germany01.azotvpn.xyz",
+          "server_port": 8443,
+          "uuid": "5a96c1fc-f167-44b9-9020-8f6867537d14",
+          "tls": {
+            "enabled": true,
+            "server_name": "germany01.azotvpn.xyz",
+            "reality": {
+              "enabled": true,
+              "public_key": "7hHoROf3WLDWI8SQ4B82O00j29Bpwxd49hWe5EMBsgI",
+              "short_id": "8bbb9ef51f37aad7",
+              "spider_x": "/"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
+      },
+      {
+        "key": "150.241.79.149:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-478",
+          "server": "150.241.79.149",
+          "server_port": 8443,
+          "uuid": "5a96c1fc-f167-44b9-9020-8f6867537d14",
+          "tls": {
+            "enabled": true,
+            "server_name": "germany02.azotvpn.xyz",
+            "reality": {
+              "enabled": true,
+              "public_key": "kS4k7TysigG-AXfCSVeP25qYLNL2opZbPks9dwLrxFw",
+              "short_id": "07c24b8f3ed39da9",
+              "spider_x": "/"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-22T23:02:01Z"
+  "updated": "2026-10-22T23:42:18Z"
 }
