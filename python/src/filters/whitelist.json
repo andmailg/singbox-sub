@@ -3824,6 +3824,58 @@
             }
           }
         }
+      },
+      {
+        "key": "104.21.91.244:443:df2d6626-90e4-4599-a4da-d84352c4907d:/?TELEGRAM-----TOOTFFARANGI-----TOOTFFARANGI",
+        "node": {
+          "type": "vless",
+          "tag": "node-241",
+          "server": "104.21.91.244",
+          "server_port": 443,
+          "uuid": "df2d6626-90e4-4599-a4da-d84352c4907d",
+          "transport": {
+            "type": "xhttp",
+            "path": "/?TELEGRAM-----TOOTFFARANGI-----TOOTFFARANGI",
+            "mode": "auto",
+            "host": [
+              "tivon.servicevip.cc.cd"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "tivon.servicevip.cc.cd",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "78.159.246.179:8443:2c634977-584e-4e1f-b501-1b70c77a6743:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-2001",
+          "server": "78.159.246.179",
+          "server_port": 8443,
+          "uuid": "2c634977-584e-4e1f-b501-1b70c77a6743",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "randomquaint.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "randomquaint.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -20036,5 +20088,5 @@
       }
     ]
   },
-  "updated": "2026-10-22T09:24:46Z"
+  "updated": "2026-10-22T10:08:15Z"
 }
