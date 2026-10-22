@@ -109,7 +109,11 @@ def require_tool(tool: str, *version_args: str) -> None:
 
 
 def _sort_key(o: dict) -> tuple:
-    return (o.get("_country", ""), o.get("server", ""), o.get("server_port", 0))
+    return (
+        o.get("_country") or "",
+        o.get("server") or "",
+        o.get("server_port") or 0,
+    )
 
 
 def run_connectivity(
