@@ -3876,6 +3876,32 @@
             }
           }
         }
+      },
+      {
+        "key": "ticket.bestsellersd.site:443:682feb0b-87c5-45f1-bc58-0a5895e0b867:/Meh?di=443",
+        "node": {
+          "type": "vless",
+          "tag": "node-2563",
+          "server": "ticket.bestsellersd.site",
+          "server_port": 443,
+          "uuid": "682feb0b-87c5-45f1-bc58-0a5895e0b867",
+          "transport": {
+            "type": "xhttp",
+            "path": "/Meh?di=443",
+            "mode": "auto",
+            "host": [
+              "ticket.bestsellersd.site"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "ticket.bestsellersd.site",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -21279,5 +21305,5 @@
       }
     ]
   },
-  "updated": "2026-10-22T10:56:35Z"
+  "updated": "2026-10-22T15:13:11Z"
 }
