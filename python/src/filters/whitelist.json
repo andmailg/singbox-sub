@@ -26155,6 +26155,34 @@
             "service_name": ""
           }
         }
+      },
+      {
+        "key": "46.226.167.213:16388",
+        "node": {
+          "type": "vless",
+          "tag": "node-251",
+          "server": "46.226.167.213",
+          "server_port": 16388,
+          "uuid": "0e9233fa-1fa2-44d0-8cd6-d39c20672782",
+          "tls": {
+            "enabled": true,
+            "server_name": "it.nvidia.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "h3RyzgsJRMW3ii5D1whWYzyhAKb1xp9ReadfRIz1XCg",
+              "short_id": "d2d20c",
+              "spider_x": "/47a85c4575e4b7e"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -29199,5 +29227,5 @@
       }
     ]
   },
-  "updated": "2026-10-23T19:33:42Z"
+  "updated": "2026-10-23T19:35:20Z"
 }
