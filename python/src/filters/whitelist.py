@@ -18,7 +18,7 @@ def load_whitelist() -> dict[str, list[dict]]:
       - node: полная конфигурация ноды для восстановления
     """
     if not os.path.exists(_WHITELIST_FILE):
-        return {"vless_xhttp": [], "vless_tcp": [], "hy2": [], "trojan_ws": []}
+        return {"vless_xhttp": [], "vless_tcp": [], "hy2": [], "trojan_ws": [], "trojan_grpc": []}
     try:
         with open(_WHITELIST_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -26,11 +26,11 @@ def load_whitelist() -> dict[str, list[dict]]:
         for proto, entries in data.get("whitelist", {}).items():
             if isinstance(entries, list):
                 result[proto] = entries
-        for proto in ("vless_xhttp", "vless_tcp", "hy2", "trojan_ws"):
+        for proto in ("vless_xhttp", "vless_tcp", "hy2", "trojan_ws", "trojan_grpc"):
             result.setdefault(proto, [])
         return result
     except Exception:
-        return {"vless_xhttp": [], "vless_tcp": [], "hy2": [], "trojan_ws": []}
+        return {"vless_xhttp": [], "vless_tcp": [], "hy2": [], "trojan_ws": [], "trojan_grpc": []}
 
 
 def save_whitelist(whitelist: dict[str, list[dict]]) -> None:
@@ -97,5 +97,8 @@ def _cache_key(node: dict, protocol: str) -> str:
     elif protocol == "trojan_ws":
         path = (node.get("transport") or {}).get("path", "/")
         return f"{node.get('server')}:{node.get('server_port')}:{node.get('password')}:{path}"
+    elif protocol == "trojan_grpc":
+        service_name = (node.get("transport") or {}).get("service_name", "")
+        return f"{node.get('server')}:{node.get('server_port')}:{node.get('password')}:{service_name}"
     else:
         return f"{node.get('server')}:{node.get('server_port')}"
