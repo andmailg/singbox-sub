@@ -26,10 +26,10 @@
         "🇦🇪node-2",
         "🇦🇺node-3",
         "🇦🇺node-4",
-        "🇦🇺node-5",
-        "🇧🇷node-6",
-        "🇩🇪node-7",
-        "🇭🇰node-8",
+        "🇧🇷node-5",
+        "🇩🇪node-6",
+        "🇫🇷node-7",
+        "🇫🇷node-8",
         "🇭🇰node-9",
         "🇯🇵node-10",
         "🇯🇵node-11",
@@ -44,10 +44,8 @@
         "🇳🇱node-20",
         "🇷🇴node-21",
         "🇷🇴node-22",
-        "🇹🇷node-23",
-        "🇹🇷node-24",
-        "🇺🇸node-25",
-        "🇺🇸node-26"
+        "🇺🇸node-23",
+        "🇺🇸node-24"
       ],
       "default": "auto"
     },
@@ -59,10 +57,10 @@
         "🇦🇪node-2",
         "🇦🇺node-3",
         "🇦🇺node-4",
-        "🇦🇺node-5",
-        "🇧🇷node-6",
-        "🇩🇪node-7",
-        "🇭🇰node-8",
+        "🇧🇷node-5",
+        "🇩🇪node-6",
+        "🇫🇷node-7",
+        "🇫🇷node-8",
         "🇭🇰node-9",
         "🇯🇵node-10",
         "🇯🇵node-11",
@@ -77,10 +75,8 @@
         "🇳🇱node-20",
         "🇷🇴node-21",
         "🇷🇴node-22",
-        "🇹🇷node-23",
-        "🇹🇷node-24",
-        "🇺🇸node-25",
-        "🇺🇸node-26"
+        "🇺🇸node-23",
+        "🇺🇸node-24"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -140,23 +136,6 @@
     {
       "type": "hysteria2",
       "tag": "🇦🇺node-4",
-      "server": "137.23.3.91",
-      "server_port": 20000,
-      "password": "a34f3990b69f44bfa0d32385",
-      "tls": {
-        "enabled": true,
-        "server_name": "rmgyvpn.rest"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "a34f3990b69f44bfa0d32385"
-      },
-      "up_mbps": 100,
-      "down_mbps": 100
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇦🇺node-5",
       "server": "158.178.137.129",
       "server_port": 20000,
       "password": "b42d90fa667942aebc734d60",
@@ -173,7 +152,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇧🇷node-6",
+      "tag": "🇧🇷node-5",
       "server": "147.15.108.14",
       "server_port": 20000,
       "password": "CyG0RFxMjzs41uQD4OLuHQ==",
@@ -190,7 +169,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-7",
+      "tag": "🇩🇪node-6",
       "server": "vpn-de-002.fastervpn.world",
       "server_port": 443,
       "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
@@ -203,17 +182,26 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇭🇰node-8",
-      "server": "152.32.254.68",
-      "server_port": 5010,
-      "password": "eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ",
+      "tag": "🇫🇷node-7",
+      "server": "vpn-fr-001.fastervpn.world",
+      "server_port": 443,
+      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
       "tls": {
         "enabled": true,
-        "server_name": "nas.aizhzo.com"
+        "server_name": "vpn-fr-001.fastervpn.world"
       },
-      "obfs": {
-        "type": "salamander",
-        "password": "7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9"
+      "up_mbps": 100,
+      "down_mbps": 100
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇫🇷node-8",
+      "server": "vpn-fr-001.fastervpn.world",
+      "server_port": 443,
+      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
+      "tls": {
+        "enabled": true,
+        "server_name": "vpn-fr-001.fastervpn.world"
       },
       "up_mbps": 100,
       "down_mbps": 100
@@ -414,41 +402,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇹🇷node-23",
-      "server": "206.1.96.108",
-      "server_port": 7443,
-      "password": "M8LP9DztTr3znqCkmf-r08CQLBLLFK1r",
-      "tls": {
-        "enabled": true,
-        "server_name": "me17.msjia8844.site"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "u3Soh9_Ui0UmcuY6vk0ug8Lq"
-      },
-      "up_mbps": 100,
-      "down_mbps": 100
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇹🇷node-24",
-      "server": "me17.msjia8844.site",
-      "server_port": 7443,
-      "password": "M8LP9DztTr3znqCkmf-r08CQLBLLFK1r",
-      "tls": {
-        "enabled": true,
-        "server_name": "me17.msjia8844.site"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "u3Soh9_Ui0UmcuY6vk0ug8Lq"
-      },
-      "up_mbps": 100,
-      "down_mbps": 100
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇺🇸node-25",
+      "tag": "🇺🇸node-23",
       "server": "155.248.209.237",
       "server_port": 33333,
       "password": "bce6c821-200d-421f-bf3d-7159e5246ea0",
@@ -461,7 +415,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-26",
+      "tag": "🇺🇸node-24",
       "server": "hy2.123266.xyz",
       "server_port": 33333,
       "password": "bce6c821-200d-421f-bf3d-7159e5246ea0",
