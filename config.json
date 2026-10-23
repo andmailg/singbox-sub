@@ -25,9 +25,9 @@
         "🇦🇪node-1",
         "🇦🇪node-2",
         "🇦🇺node-3",
-        "🇧🇷node-4",
-        "🇩🇪node-5",
-        "🇫🇷node-6",
+        "🇦🇺node-4",
+        "🇧🇷node-5",
+        "🇩🇪node-6",
         "🇭🇰node-7",
         "🇭🇰node-8",
         "🇯🇵node-9",
@@ -56,9 +56,9 @@
         "🇦🇪node-1",
         "🇦🇪node-2",
         "🇦🇺node-3",
-        "🇧🇷node-4",
-        "🇩🇪node-5",
-        "🇫🇷node-6",
+        "🇦🇺node-4",
+        "🇧🇷node-5",
+        "🇩🇪node-6",
         "🇭🇰node-7",
         "🇭🇰node-8",
         "🇯🇵node-9",
@@ -119,6 +119,23 @@
     {
       "type": "hysteria2",
       "tag": "🇦🇺node-3",
+      "server": "137.23.3.91",
+      "server_port": 20000,
+      "password": "a34f3990b69f44bfa0d32385",
+      "tls": {
+        "enabled": true,
+        "server_name": "rmgyvpn.rest"
+      },
+      "obfs": {
+        "type": "salamander",
+        "password": "a34f3990b69f44bfa0d32385"
+      },
+      "up_mbps": 100,
+      "down_mbps": 100
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇦🇺node-4",
       "server": "158.178.137.129",
       "server_port": 20000,
       "password": "b42d90fa667942aebc734d60",
@@ -135,7 +152,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇧🇷node-4",
+      "tag": "🇧🇷node-5",
       "server": "147.15.108.14",
       "server_port": 20000,
       "password": "CyG0RFxMjzs41uQD4OLuHQ==",
@@ -152,26 +169,13 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-5",
+      "tag": "🇩🇪node-6",
       "server": "vpn-de-002.fastervpn.world",
       "server_port": 443,
       "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
       "tls": {
         "enabled": true,
         "server_name": "vpn-de-002.fastervpn.world"
-      },
-      "up_mbps": 100,
-      "down_mbps": 100
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇷node-6",
-      "server": "vpn-fr-001.fastervpn.world",
-      "server_port": 443,
-      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
-      "tls": {
-        "enabled": true,
-        "server_name": "vpn-fr-001.fastervpn.world"
       },
       "up_mbps": 100,
       "down_mbps": 100
