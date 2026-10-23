@@ -3928,6 +3928,51 @@
             }
           }
         }
+      },
+      {
+        "key": "144.31.135.70:9443:065faef7-2449-4d29-895b-ce3a696ab7a2:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-7",
+          "server": "144.31.135.70",
+          "server_port": 9443,
+          "uuid": "065faef7-2449-4d29-895b-ce3a696ab7a2",
+          "transport": {
+            "type": "xhttp",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "netherlands01.azotvpn.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "50.7.28.211:443:0af34045-3d5e-4abe-bc8a-16e356daa214:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-76",
+          "server": "50.7.28.211",
+          "server_port": 443,
+          "uuid": "0af34045-3d5e-4abe-bc8a-16e356daa214",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "api-v3-0af34045.vmagnum.win",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -27536,5 +27581,5 @@
       }
     ]
   },
-  "updated": "2026-10-23T09:08:17Z"
+  "updated": "2026-10-23T10:03:30Z"
 }

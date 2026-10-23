@@ -1,6 +1,6 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-10-23T04:42:39Z",
+  "last_tested": "2026-10-23T10:03:29Z",
   "nodes": [
     {
       "type": "vless",
@@ -28,7 +28,7 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792730254.817172,
+      "_last_ok_ts": 1792749500.132873,
       "_country": "DE"
     },
     {
@@ -65,7 +65,7 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1792730254.817172,
+      "_last_ok_ts": 1792749500.132873,
       "_country": "DE"
     },
     {
@@ -95,7 +95,7 @@
         "1",
         "13"
       ],
-      "_last_ok_ts": 1792730254.817172,
+      "_last_ok_ts": 1792749500.132873,
       "_country": "DE"
     },
     {
@@ -131,7 +131,7 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1792730254.817172,
+      "_last_ok_ts": 1792749500.132873,
       "_country": "DE"
     },
     {
@@ -160,7 +160,7 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792730254.817172,
+      "_last_ok_ts": 1792749500.132873,
       "_country": "DE"
     },
     {
@@ -194,12 +194,37 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1792730254.817172,
+      "_last_ok_ts": 1792749500.132873,
       "_country": "DE"
     },
     {
       "type": "vless",
       "tag": "🇳🇱node-7",
+      "server": "144.31.135.70",
+      "server_port": 9443,
+      "uuid": "065faef7-2449-4d29-895b-ce3a696ab7a2",
+      "transport": {
+        "type": "xhttp",
+        "mode": "auto"
+      },
+      "_dedup_key": "144.31.135.70:9443:065faef7-2449-4d29-895b-ce3a696ab7a2",
+      "tls": {
+        "enabled": true,
+        "server_name": "netherlands01.azotvpn.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "_sub_ids": [
+        "1"
+      ],
+      "_last_ok_ts": 1792749500.132873,
+      "_country": "NL"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-8",
       "server": "206.71.158.124",
       "server_port": 443,
       "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
@@ -230,12 +255,12 @@
         "28",
         "7"
       ],
-      "_last_ok_ts": 1792730254.817172,
+      "_last_ok_ts": 1792749500.132873,
       "_country": "NL"
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-8",
+      "tag": "🇳🇱node-9",
       "server": "206.71.158.125",
       "server_port": 443,
       "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
@@ -259,12 +284,12 @@
       "_sub_ids": [
         "13"
       ],
-      "_last_ok_ts": 1792730254.817172,
+      "_last_ok_ts": 1792749500.132873,
       "_country": "NL"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-9",
+      "tag": "🇺🇸node-10",
       "server": "207.246.104.91",
       "server_port": 37379,
       "uuid": "a4bec43e-8073-4725-b307-47edad331fee",
@@ -285,7 +310,81 @@
         "1"
       ],
       "_country": "US",
-      "_last_ok_ts": 1792730254.817172
+      "_last_ok_ts": 1792749500.132873
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-11",
+      "server": "50.7.28.211",
+      "server_port": 443,
+      "uuid": "0af34045-3d5e-4abe-bc8a-16e356daa214",
+      "transport": {
+        "type": "xhttp",
+        "path": "/",
+        "mode": "auto"
+      },
+      "_dedup_key": "50.7.28.211:443:0af34045-3d5e-4abe-bc8a-16e356daa214",
+      "tls": {
+        "enabled": true,
+        "server_name": "api-v3-0af34045.vmagnum.win",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "_sub_ids": [
+        "1"
+      ],
+      "_last_ok_ts": 1792749500.132873,
+      "_country": "US"
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-12",
+      "server": "xuius.907737.xyz",
+      "server_port": 37379,
+      "uuid": "a4bec43e-8073-4725-b307-47edad331fee",
+      "transport": {
+        "type": "xhttp",
+        "path": "/",
+        "mode": "auto"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "xuius.907737.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_last_ok_ts": 1792749500.132873,
+      "_country": "US"
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-13",
+      "server": "xuius.907737.xyz",
+      "server_port": 37379,
+      "uuid": "a4bec43e-8073-4725-b307-47edad331fee",
+      "transport": {
+        "type": "xhttp",
+        "path": "/",
+        "mode": "auto"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "xuius.907737.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_last_ok_ts": 1792749500.132873,
+      "_country": "US",
+      "_sub_ids": [
+        "1",
+        "13"
+      ]
     }
   ]
 }
