@@ -1,0 +1,55 @@
+name: Auto Convert Sing-Box Trojan WS
+
+on:
+  schedule:
+    # Запуск каждые 5 часов
+    - cron: '40 */5 * * *'
+  workflow_dispatch: # Ручной запуск
+
+# Не запускать два прогона одного workflow одновременно
+concurrency:
+  group: convert-trojan-ws
+  cancel-in-progress: false
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests maxminddb
+          curl -fsSL --retry 3 https://git.io/GeoLite2-Country.mmdb -o python/GeoLite2-Country.mmdb
+          curl -fsSL --retry 3 https://git.io/GeoLite2-ASN.mmdb -o python/GeoLite2-ASN.mmdb
+
+      - name: Install Xray CLI
+        run: |
+          curl -fsSL --retry 3 https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip -o xray.zip
+          unzip -q xray.zip xray -d xray
+          sudo install -m 755 xray/xray /usr/local/bin/xray
+          xray version
+
+      - name: Run full pipeline
+        working-directory: python
+        run: >
+          python trojan_ws_manage.py run
+          --geoip-block "ru" --rkn-filter 0 --export tun,xray
+          --test-timeout 3 --blacklist-timeout 10 --whitelist-timeout 10
+
+      - name: Commit and push if changed
+        run: >
+          bash .github/scripts/push_results.sh trojan_ws "Auto-update trojan_ws configs & working nodes"
+          trojan_ws_tun.json trojan_ws.txt python/src/trojan_ws_working.json python/src/trojan_ws_pending.json

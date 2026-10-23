@@ -37,7 +37,7 @@ from src.common import (
 from src.testers.asn_resolver import resolve_asn
 from src.filters.geoip_filter import resolve_country
 from src.testers.vless_grpc_node_tester import test_vless_grpc_connectivity
-from src.filters.blacklist import add_many_to_blacklist
+from src.filters.blacklist import add_many_to_blacklist, load_blacklist, is_blacklisted
 from src.filters.whitelist import load_whitelist, is_whitelisted, add_many_to_whitelist, get_whitelist_nodes
 
 _PENDING_FILE = os.path.join(
@@ -75,6 +75,7 @@ def cmd_merge(args):
         output_file="vless_grpc_working.json",
         export_func=_save_to_working,
         protocol="vless",
+        blacklist_key="vless_grpc",
         tls_required=True,
         port_whitelist=port_whitelist,
         reality=None,  # Reality определяется по каждой ноде: SNI-маскировка допустима только у неё
@@ -90,6 +91,9 @@ def _readd_whitelisted(skip_rkn=False):
 
     whitelist = load_whitelist()
     whitelist_nodes = get_whitelist_nodes("vless_grpc", whitelist)
+    # Нода в blacklist не должна возвращаться из whitelist (иначе цикл: blacklist -> re-add -> pending)
+    blacklist = load_blacklist()
+    whitelist_nodes = [n for n in whitelist_nodes if not is_blacklisted(n, blacklist, "vless_grpc")]
     if not whitelist_nodes:
         print("  Whitelist is empty, skipping.")
         return

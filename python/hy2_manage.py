@@ -38,7 +38,7 @@ from src.common import (
 from src.testers.asn_resolver import resolve_asn
 from src.filters.geoip_filter import resolve_country
 from src.testers.hy2_node_tester import test_hy2_connectivity
-from src.filters.blacklist import add_many_to_blacklist
+from src.filters.blacklist import add_many_to_blacklist, load_blacklist, is_blacklisted
 from src.filters.whitelist import load_whitelist, is_whitelisted, add_many_to_whitelist, get_whitelist_nodes
 
 _PENDING_FILE = os.path.join(
@@ -77,6 +77,7 @@ def cmd_merge(args):
         output_file="hy2_working.json",
         export_func=_save_to_working,
         protocol="hy2",
+        blacklist_key="hy2",
         tls_required=True,
         port_whitelist=port_whitelist,
         tester_func=None,  # тестирование отдельно через cmd_test
@@ -91,6 +92,9 @@ def _readd_whitelisted(skip_rkn=False):
 
     whitelist = load_whitelist()
     whitelist_nodes = get_whitelist_nodes("hy2", whitelist)
+    # Нода в blacklist не должна возвращаться из whitelist (иначе цикл: blacklist -> re-add -> pending)
+    blacklist = load_blacklist()
+    whitelist_nodes = [n for n in whitelist_nodes if not is_blacklisted(n, blacklist, "hy2")]
     if not whitelist_nodes:
         print("  Whitelist is empty, skipping.")
         return

@@ -40,6 +40,45 @@ def _generate_hy2_links(outbounds: list[dict]) -> list[str]:
     return links
 
 
+def _generate_trojan_ws_links(outbounds: list[dict]) -> list[str]:
+    """Конвертирует Trojan WS ноды в v2ray-ссылки (TLS / без TLS)."""
+    links: list[str] = []
+    for o in outbounds:
+        if o.get("type") != "trojan":
+            continue
+        transport = o.get("transport") or {}
+        if transport.get("type") != "ws":
+            continue
+        password = urllib.parse.quote(str(o.get("password", "")), safe="")
+        server = o.get("server", "")
+        port = o.get("server_port", 443)
+        tag = o.get("tag", "Trojan-Node")
+        tls = o.get("tls") or {}
+
+        params = {"type": "ws", "path": transport.get("path", "/")}
+        host = (transport.get("headers") or {}).get("Host", "")
+        if host:
+            params["host"] = host
+
+        if tls.get("enabled"):
+            params["security"] = "tls"
+            if tls.get("server_name"):
+                params["sni"] = tls["server_name"]
+            fp = (tls.get("utls") or {}).get("fingerprint", "")
+            if fp:
+                params["fp"] = fp
+            if tls.get("alpn"):
+                params["alpn"] = ",".join(tls["alpn"])
+            if tls.get("insecure"):
+                params["allowInsecure"] = "1"
+        else:
+            params["security"] = "none"
+
+        query = urllib.parse.urlencode(params)
+        links.append(f"trojan://{password}@{server}:{port}?{query}#{tag}")
+    return links
+
+
 def _generate_vless_grpc_links(outbounds: list[dict]) -> list[str]:
     """Конвертирует VLESS gRPC ноды в v2ray-ссылки (TLS / Reality)."""
     links: list[str] = []

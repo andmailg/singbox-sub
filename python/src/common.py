@@ -246,6 +246,11 @@ def _build_fingerprint(outbound: dict, protocol: str) -> str | None:
             # VLESS WS/HTTP/TCP: server:port:uuid:path
             path = str(transport.get("path", "/")).lower()
             return f"{server}:{port}:{uuid_val}:{path}"
+        case "trojan_ws":
+            password = str(outbound.get("password", ""))
+            transport = outbound.get("transport", {}) or {}
+            path = str(transport.get("path", "/")).lower()
+            return f"{server}:{port}:{password}:{path}"
         case "vmess":
             uuid_val = str(outbound.get("uuid", ""))
             transport = outbound.get("transport", {}) or {}

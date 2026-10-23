@@ -343,6 +343,7 @@ def run_pipeline(
     reality: bool | None = False,
     geoip_block_countries: tuple[str, ...] | None = None,
     skip_rkn: bool = False,
+    blacklist_key: str | None = None,
 ) -> None:
     """Запускает полный pipeline сборки конфига.
 
@@ -364,6 +365,8 @@ def run_pipeline(
         geoip_filter_countries: кортеж ISO-кодов стран для фильтрации (например ("ru", "ir")).
             Если None или пустой — фильтрация по странам отключена.
         skip_rkn: если True — пропускает проверку RKN.
+        blacklist_key: секция blacklist.json для фильтрации (например \"vless_tcp\").
+            Если None — берётся protocol; секции с таким именем нет — фильтрация пропускается.
     """
     print(f"[{output_file}] Starting pipeline (exporter={exporter})...")
 
@@ -421,14 +424,14 @@ def run_pipeline(
         print(f"{prefix}Error: No valid proxy nodes left after GeoIP filtration!")
         return
 
-    # 4.5. Blacklist фильтрация
+    # 4.5. Blacklist фильтрация (ключ секции: blacklist_key, иначе protocol)
+    bl_key = blacklist_key or protocol
     blacklist = load_blacklist()
-    blacklist_proto = protocol if protocol in ("vless_xhttp", "vless_tcp", "hy2", "vless_grpc") else None
-    if blacklist_proto and blacklist.get(blacklist_proto):
-        blacklisted = [o for o in outbounds if is_blacklisted(o, blacklist, blacklist_proto)]
-        if blacklisted:
-            print(f"{prefix}Filtered out {len(blacklisted)} node(s) from blacklist.")
-        outbounds = [o for o in outbounds if not is_blacklisted(o, blacklist, blacklist_proto)]
+    if blacklist.get(bl_key):
+        kept = [o for o in outbounds if not is_blacklisted(o, blacklist, bl_key)]
+        if len(kept) != len(outbounds):
+            print(f"{prefix}Filtered out {len(outbounds) - len(kept)} node(s) from blacklist.")
+        outbounds = kept
 
     if not outbounds:
         print(f"{prefix}Error: No valid proxy nodes left after all filters!")
