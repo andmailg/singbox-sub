@@ -4109,6 +4109,51 @@
             }
           }
         }
+      },
+      {
+        "key": "185.178.208.140:443:928a3079-7c20-40cc-9c92-e878ba959dcd:/connect/stream/xk7Qp2mZ",
+        "node": {
+          "type": "vless",
+          "tag": "node-40",
+          "server": "185.178.208.140",
+          "server_port": 443,
+          "uuid": "928a3079-7c20-40cc-9c92-e878ba959dcd",
+          "transport": {
+            "type": "xhttp",
+            "path": "/connect/stream/xk7Qp2mZ",
+            "mode": "packet-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "smart.werfad.online",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "qq"
+            }
+          }
+        }
+      },
+      {
+        "key": "84.32.108.3:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e:/es/?@MARAMBASHI---MARAMBASHI---MARAMBASHI---MARAMBASHI?ed=2048",
+        "node": {
+          "type": "vless",
+          "tag": "node-90",
+          "server": "84.32.108.3",
+          "server_port": 443,
+          "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+          "transport": {
+            "type": "xhttp",
+            "path": "/es/?@MARAMBASHI---MARAMBASHI---MARAMBASHI---MARAMBASHI?ed=2048"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "7d1a74fd.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -29532,5 +29577,5 @@
       }
     ]
   },
-  "updated": "2026-10-23T19:59:58Z"
+  "updated": "2026-10-23T23:09:42Z"
 }
