@@ -4039,6 +4039,76 @@
             }
           }
         }
+      },
+      {
+        "key": "31.77.158.132:443:52b65306-7529-486c-ae0c-883340ac5300:/hpwpuswlznhk/",
+        "node": {
+          "type": "vless",
+          "tag": "node-70",
+          "server": "31.77.158.132",
+          "server_port": 443,
+          "uuid": "52b65306-7529-486c-ae0c-883340ac5300",
+          "transport": {
+            "type": "xhttp",
+            "path": "/hpwpuswlznhk/",
+            "mode": "auto",
+            "host": [
+              "hittaikea.prizraknode.shop"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "hittaikea.prizraknode.shop",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "31.77.161.183:9443:5a96c1fc-f167-44b9-9020-8f6867537d14:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-71",
+          "server": "31.77.161.183",
+          "server_port": 9443,
+          "uuid": "5a96c1fc-f167-44b9-9020-8f6867537d14",
+          "transport": {
+            "type": "xhttp",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "germany01.azotvpn.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "germany01.azotvpn.xyz:9443:5a96c1fc-f167-44b9-9020-8f6867537d14:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-111",
+          "server": "germany01.azotvpn.xyz",
+          "server_port": 9443,
+          "uuid": "5a96c1fc-f167-44b9-9020-8f6867537d14",
+          "transport": {
+            "type": "xhttp",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "germany01.azotvpn.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -29030,5 +29100,5 @@
       }
     ]
   },
-  "updated": "2026-10-23T15:50:11Z"
+  "updated": "2026-10-23T19:12:03Z"
 }
