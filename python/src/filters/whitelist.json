@@ -19718,6 +19718,23 @@
             "password": "a34f3990b69f44bfa0d32385"
           }
         }
+      },
+      {
+        "key": "194.87.118.184:2053:7ab3c77e-8fcc-4848-918f-cae3d4eac794",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-41",
+          "server": "194.87.118.184",
+          "server_port": 2053,
+          "password": "7ab3c77e-8fcc-4848-918f-cae3d4eac794",
+          "tls": {
+            "enabled": true,
+            "server_name": "match-stream.lovkisport.blog",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -27519,5 +27536,5 @@
       }
     ]
   },
-  "updated": "2026-10-23T08:53:24Z"
+  "updated": "2026-10-23T09:08:17Z"
 }
