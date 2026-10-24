@@ -4270,6 +4270,52 @@
             }
           }
         }
+      },
+      {
+        "key": "84.32.184.219:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e:/es/?@MARAMBASHI---MARAMBASHI---MARAMBASHI---MARAMBASHI?ed=2048",
+        "node": {
+          "type": "vless",
+          "tag": "node-89",
+          "server": "84.32.184.219",
+          "server_port": 443,
+          "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+          "transport": {
+            "type": "xhttp",
+            "path": "/es/?@MARAMBASHI---MARAMBASHI---MARAMBASHI---MARAMBASHI?ed=2048",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "7d1a74fd.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "api.ferrin.uk:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e:/es/?@MARAMBASHI---MARAMBASHI---MARAMBASHI---MARAMBASHI?ed=2048",
+        "node": {
+          "type": "vless",
+          "tag": "node-94",
+          "server": "api.ferrin.uk",
+          "server_port": 443,
+          "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+          "transport": {
+            "type": "xhttp",
+            "path": "/es/?@MARAMBASHI---MARAMBASHI---MARAMBASHI---MARAMBASHI?ed=2048",
+            "mode": "stream-one"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "7d1a74fd.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -32593,5 +32639,5 @@
       }
     ]
   },
-  "updated": "2026-10-24T13:54:35Z"
+  "updated": "2026-10-24T14:03:48Z"
 }
