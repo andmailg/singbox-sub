@@ -27667,6 +27667,32 @@
             "service_name": "google.storage.v2.Storage"
           }
         }
+      },
+      {
+        "key": "94.26.41.147:6437",
+        "node": {
+          "type": "vless",
+          "tag": "node-355",
+          "server": "94.26.41.147",
+          "server_port": 6437,
+          "uuid": "c31dc85a-747e-4dac-94b9-2d5ca7791367",
+          "tls": {
+            "enabled": true,
+            "server_name": "slave.f1web.tech",
+            "reality": {
+              "enabled": true,
+              "public_key": "q4_o7NvD6vQg4hYsyO29Q6PVufjTJHDUbQTqstre9EQ"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -31254,5 +31280,5 @@
       }
     ]
   },
-  "updated": "2026-10-24T09:48:29Z"
+  "updated": "2026-10-24T09:52:40Z"
 }
