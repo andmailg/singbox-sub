@@ -33395,8 +33395,68 @@
             }
           }
         }
+      },
+      {
+        "key": "104.17.121.9:443:humanity:/assignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-71",
+          "server": "104.17.121.9",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "109.234.211.232:443:5504eaa8-1395-402f-8e0e-75ecd762e627:/w4e5yh0p945y3",
+        "node": {
+          "type": "trojan",
+          "tag": "node-429",
+          "server": "109.234.211.232",
+          "server_port": 443,
+          "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+          "tls": {
+            "enabled": true,
+            "server_name": "nat11.outsidemyheart.space"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/w4e5yh0p945y3",
+            "headers": {
+              "Host": "nat11.outsidemyheart.space"
+            }
+          }
+        }
+      },
+      {
+        "key": "8.6.112.206:443:5504eaa8-1395-402f-8e0e-75ecd762e627:/w4e5yh0p945y3?ed=2560",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1366",
+          "server": "8.6.112.206",
+          "server_port": 443,
+          "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+          "tls": {
+            "enabled": true,
+            "server_name": "nat11.outsidemyheart.space"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/w4e5yh0p945y3?ed=2560"
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-24T17:16:29Z"
+  "updated": "2026-10-24T18:23:06Z"
 }
