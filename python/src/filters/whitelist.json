@@ -4176,6 +4176,100 @@
             }
           }
         }
+      },
+      {
+        "key": "2.26.76.201:9443:5a96c1fc-f167-44b9-9020-8f6867537d14:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-65",
+          "server": "2.26.76.201",
+          "server_port": 9443,
+          "uuid": "5a96c1fc-f167-44b9-9020-8f6867537d14",
+          "transport": {
+            "type": "xhttp"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "netherlands01.azotvpn.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "31.56.184.163:443:52b65306-7529-486c-ae0c-883340ac5300:/hpwpuswlznhk/",
+        "node": {
+          "type": "vless",
+          "tag": "node-72",
+          "server": "31.56.184.163",
+          "server_port": 443,
+          "uuid": "52b65306-7529-486c-ae0c-883340ac5300",
+          "transport": {
+            "type": "xhttp",
+            "path": "/hpwpuswlznhk/",
+            "host": [
+              "akede.ghostnode.lol"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "akede.ghostnode.lol",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "31.59.143.242:34451:f259a2e5-fd8d-4db9-a3ac-6b26322cffa9:/ShamanXHTTP2026",
+        "node": {
+          "type": "vless",
+          "tag": "node-73",
+          "server": "31.59.143.242",
+          "server_port": 34451,
+          "uuid": "f259a2e5-fd8d-4db9-a3ac-6b26322cffa9",
+          "transport": {
+            "type": "xhttp",
+            "path": "/ShamanXHTTP2026",
+            "host": [
+              "pl-cfe6b10b7f.shamanapp.online"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "pl-cfe6b10b7f.shamanapp.online",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "api.ferrin.uk:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e:/es",
+        "node": {
+          "type": "vless",
+          "tag": "node-100",
+          "server": "api.ferrin.uk",
+          "server_port": 443,
+          "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+          "transport": {
+            "type": "xhttp",
+            "path": "/es",
+            "mode": "stream-one"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "7d1a74fd.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -31016,5 +31110,5 @@
       }
     ]
   },
-  "updated": "2026-10-24T08:41:56Z"
+  "updated": "2026-10-24T09:32:52Z"
 }
