@@ -29052,6 +29052,60 @@
             "service_name": "grpc"
           }
         }
+      },
+      {
+        "key": "193.111.248.80:2053",
+        "node": {
+          "type": "vless",
+          "tag": "node-159",
+          "server": "193.111.248.80",
+          "server_port": 2053,
+          "uuid": "605dea9b-b485-45c9-af9b-cc2b0195023c",
+          "tls": {
+            "enabled": true,
+            "server_name": "nl3.mycloud1.org",
+            "reality": {
+              "enabled": true,
+              "public_key": "Su5ULcRQKF-0DJIHZeTNEnXHBpyQtizmUrcNIYhZI0E",
+              "short_id": "afee962d"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "api"
+          }
+        }
+      },
+      {
+        "key": "nl3.mycloud1.org:2053",
+        "node": {
+          "type": "vless",
+          "tag": "node-467",
+          "server": "nl3.mycloud1.org",
+          "server_port": 2053,
+          "uuid": "605dea9b-b485-45c9-af9b-cc2b0195023c",
+          "tls": {
+            "enabled": true,
+            "server_name": "nl3.mycloud1.org",
+            "reality": {
+              "enabled": true,
+              "public_key": "Su5ULcRQKF-0DJIHZeTNEnXHBpyQtizmUrcNIYhZI0E",
+              "short_id": "afee962d"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "api"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -32828,5 +32882,5 @@
       }
     ]
   },
-  "updated": "2026-10-24T14:08:41Z"
+  "updated": "2026-10-24T14:13:19Z"
 }
