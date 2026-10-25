@@ -31753,6 +31753,76 @@
             "service_name": "trgrpc"
           }
         }
+      },
+      {
+        "key": "ss.90909.club:2096",
+        "node": {
+          "type": "vless",
+          "tag": "node-530",
+          "server": "ss.90909.club",
+          "server_port": 2096,
+          "uuid": "eeb96fef-4476-4ab0-915e-32e8f014c3b2",
+          "tls": {
+            "enabled": true,
+            "server_name": "id.vk.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "vless-grpc-reality"
+          }
+        }
+      },
+      {
+        "key": "217.12.204.59:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-213",
+          "server": "217.12.204.59",
+          "server_port": 443,
+          "uuid": "7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc",
+          "tls": {
+            "enabled": true,
+            "server_name": "nclirraejd.hat.onl",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "hls-vod.8hvjv0.segment-207-v1-a1.ts"
+          }
+        }
+      },
+      {
+        "key": "195.123.227.162:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-174",
+          "server": "195.123.227.162",
+          "server_port": 443,
+          "uuid": "7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc",
+          "tls": {
+            "enabled": true,
+            "server_name": "zbfkmgdg8.hat.onl",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "hls-vod.ohql91f.segment-26-v1-a1.ts"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -35817,5 +35887,5 @@
       }
     ]
   },
-  "updated": "2026-10-25T09:50:14Z"
+  "updated": "2026-10-25T10:09:36Z"
 }
