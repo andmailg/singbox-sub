@@ -33828,6 +33828,33 @@
             "service_name": "beru-pl"
           }
         }
+      },
+      {
+        "key": "b6a968g.fi7.h1clayd.click:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-390",
+          "server": "b6a968g.fi7.h1clayd.click",
+          "server_port": 443,
+          "uuid": "fafc7c16-f890-45ee-a856-02df225172dd",
+          "tls": {
+            "enabled": true,
+            "server_name": "b6a968g.fi7.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "p5CJCuZrNdf84dMWI-w-t6veMqQzaN6BLM41FxSHBlM",
+              "short_id": "ca89bd67e77b050c"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "617ed18fb1ea"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -38149,5 +38176,5 @@
       }
     ]
   },
-  "updated": "2026-10-25T22:49:48Z"
+  "updated": "2026-10-25T22:54:04Z"
 }
