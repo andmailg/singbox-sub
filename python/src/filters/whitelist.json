@@ -4342,6 +4342,84 @@
             }
           }
         }
+      },
+      {
+        "key": "139.28.233.89:443:7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc:/live/995aao-4ccr8w",
+        "node": {
+          "type": "vless",
+          "tag": "node-4",
+          "server": "139.28.233.89",
+          "server_port": 443,
+          "uuid": "7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc",
+          "transport": {
+            "type": "xhttp",
+            "path": "/live/995aao-4ccr8w",
+            "mode": "auto",
+            "host": [
+              "lqjndcrkxp.hat.onl"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "lqjndcrkxp.hat.onl",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "217.12.204.59:443:7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc:/hls/is1z8lgy/seg",
+        "node": {
+          "type": "vless",
+          "tag": "node-59",
+          "server": "217.12.204.59",
+          "server_port": 443,
+          "uuid": "7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc",
+          "transport": {
+            "type": "xhttp",
+            "path": "/hls/is1z8lgy/seg",
+            "mode": "auto",
+            "host": [
+              "i6c4a6t02b86qw.hat.onl"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "i6c4a6t02b86qw.hat.onl",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "87.58.199.144:443:7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc:/hls/014373eq/seg",
+        "node": {
+          "type": "vless",
+          "tag": "node-85",
+          "server": "87.58.199.144",
+          "server_port": 443,
+          "uuid": "7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc",
+          "transport": {
+            "type": "xhttp",
+            "path": "/hls/014373eq/seg",
+            "mode": "auto",
+            "host": [
+              "dmbdnpctq8hjxx.hat.onl"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "dmbdnpctq8hjxx.hat.onl",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -34373,5 +34451,5 @@
       }
     ]
   },
-  "updated": "2026-10-25T03:28:01Z"
+  "updated": "2026-10-25T04:35:41Z"
 }
