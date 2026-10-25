@@ -36760,7 +36760,27 @@
           }
         }
       }
+    ],
+    "trojan_grpc": [
+      {
+        "key": "45-149-147-213.sslip.io:4444:9b347a9b-d7a6-4b51-9890-eff62b832834:kobedin-server1-trojan",
+        "node": {
+          "type": "trojan",
+          "tag": "node-32",
+          "server": "45-149-147-213.sslip.io",
+          "server_port": 4444,
+          "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
+          "tls": {
+            "enabled": true,
+            "server_name": "45-149-147-213.sslip.io"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "kobedin-server1-trojan"
+          }
+        }
+      }
     ]
   },
-  "updated": "2026-10-25T10:36:37Z"
+  "updated": "2026-10-25T14:35:28Z"
 }
