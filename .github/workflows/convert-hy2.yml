@@ -45,10 +45,10 @@ jobs:
         working-directory: python
         run: >
           python hy2_manage.py run
-          --geoip-block "ru" --rkn-filter 0 --export tun,xray,router
+          --geoip-block "ru" --rkn-filter 0 --export tun,xray
           --test-timeout 3 --blacklist-timeout 10 --whitelist-timeout 10
 
       - name: Commit and push if changed
         run: >
           bash .github/scripts/push_results.sh hy2 "Auto-update hy2 configs & working nodes"
-          hy2_tun.json hy2.txt config.json python/src/hy2_working.json python/src/hy2_pending.json
+          hy2_tun.json hy2.txt python/src/hy2_working.json python/src/hy2_pending.json
