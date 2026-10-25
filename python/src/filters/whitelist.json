@@ -34627,8 +34627,110 @@
             }
           }
         }
+      },
+      {
+        "key": "104.21.88.77:443:2bcfbfba-b446-4ad5-93ad-72af9e008f61:/195.123.218.174-443",
+        "node": {
+          "type": "trojan",
+          "tag": "node-392",
+          "server": "104.21.88.77",
+          "server_port": 443,
+          "password": "2bcfbfba-b446-4ad5-93ad-72af9e008f61",
+          "tls": {
+            "enabled": true,
+            "server_name": "blackshadow.dpdns.org"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/195.123.218.174-443",
+            "headers": {
+              "Host": "blackshadow.dpdns.org"
+            }
+          }
+        }
+      },
+      {
+        "key": "45.130.125.75:443:humanity:/assignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1209",
+          "server": "45.130.125.75",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "blackshadow.dpdns.org:443:2bcfbfba-b446-4ad5-93ad-72af9e008f61:/195.123.218.174-443",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1436",
+          "server": "blackshadow.dpdns.org",
+          "server_port": 443,
+          "password": "2bcfbfba-b446-4ad5-93ad-72af9e008f61",
+          "tls": {
+            "enabled": true,
+            "server_name": "blackshadow.dpdns.org"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/195.123.218.174-443"
+          }
+        }
+      },
+      {
+        "key": "support.zoom.us:443:34bfb8d8-e37f-4872-a452-a2b2b4310aed:/whatever/trojan-ws",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1490",
+          "server": "support.zoom.us",
+          "server_port": 443,
+          "password": "34bfb8d8-e37f-4872-a452-a2b2b4310aed",
+          "tls": {
+            "enabled": true,
+            "server_name": "support.zoom.us.sg4.zidstore.net"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/whatever/trojan-ws",
+            "headers": {
+              "Host": "support.zoom.us.sg4.zidstore.net"
+            }
+          }
+        }
+      },
+      {
+        "key": "www.visa.com.sg:2087:5b670b35-e96d-44d1-8bd8-6582f48e1c42:/wqd3",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1530",
+          "server": "www.visa.com.sg",
+          "server_port": 2087,
+          "password": "5b670b35-e96d-44d1-8bd8-6582f48e1c42",
+          "tls": {
+            "enabled": true,
+            "server_name": "au3.yang-1989.xyz"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/wqd3",
+            "headers": {
+              "Host": "au3.yang-1989.xyz"
+            }
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-25T05:14:40Z"
+  "updated": "2026-10-25T05:16:33Z"
 }
