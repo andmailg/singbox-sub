@@ -32698,6 +32698,55 @@
             "service_name": "hls-vod.ohql91f.segment-26-v1-a1.ts"
           }
         }
+      },
+      {
+        "key": "77.232.135.141:8445",
+        "node": {
+          "type": "vless",
+          "tag": "node-312",
+          "server": "77.232.135.141",
+          "server_port": 8445,
+          "uuid": "36cf792c-f07d-4500-97ea-a395e5178deb",
+          "tls": {
+            "enabled": true,
+            "server_name": "ru1.radiolumens.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "beru-pl"
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "ss.ll0ll.vip:2096",
+        "node": {
+          "type": "vless",
+          "tag": "node-541",
+          "server": "ss.ll0ll.vip",
+          "server_port": 2096,
+          "uuid": "e436321f-24a9-4c38-b935-7d7dee0c3f68",
+          "tls": {
+            "enabled": true,
+            "server_name": "id.vk.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "vless-grpc-reality"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -36782,5 +36831,5 @@
       }
     ]
   },
-  "updated": "2026-10-25T14:35:28Z"
+  "updated": "2026-10-25T14:38:24Z"
 }
