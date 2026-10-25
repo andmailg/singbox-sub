@@ -1,10 +1,71 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-10-25T14:35:53Z",
+  "last_tested": "2026-10-25T18:35:07Z",
   "nodes": [
     {
       "type": "trojan",
       "tag": "node-1",
+      "server": "104.16.6.70",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment"
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-2",
+      "server": "104.16.6.70",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment"
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-3",
+      "server": "104.16.6.70",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "104.16.6.70:443:humanity:/assignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment"
+      },
+      "_sub_ids": [
+        "1",
+        "13",
+        "14",
+        "203",
+        "28",
+        "6",
+        "7"
+      ],
+      "_last_ok_ts": 1792953169.254167,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-4",
       "server": "104.16.7.70",
       "server_port": 443,
       "password": "humanity",
@@ -23,12 +84,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-2",
+      "tag": "node-5",
       "server": "104.16.72.2",
       "server_port": 443,
       "password": "humanity",
@@ -47,12 +108,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-3",
+      "tag": "node-6",
       "server": "104.16.72.41",
       "server_port": 443,
       "password": "humanity",
@@ -75,14 +136,15 @@
         "203",
         "21",
         "28",
-        "7"
+        "7",
+        "8"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-4",
+      "tag": "node-7",
       "server": "104.16.72.50",
       "server_port": 443,
       "password": "humanity",
@@ -101,12 +163,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-5",
+      "tag": "node-8",
       "server": "104.17.121.9",
       "server_port": 443,
       "password": "humanity",
@@ -126,12 +188,12 @@
         "1",
         "4"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-6",
+      "tag": "node-9",
       "server": "104.17.147.22",
       "server_port": 443,
       "password": "humanity",
@@ -151,12 +213,12 @@
         "1",
         "20"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-7",
+      "tag": "node-10",
       "server": "104.17.148.22",
       "server_port": 443,
       "password": "humanity",
@@ -175,13 +237,13 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-8",
-      "server": "104.18.24.120",
+      "tag": "node-11",
+      "server": "104.17.44.17",
       "server_port": 443,
       "password": "humanity",
       "tls": {
@@ -192,12 +254,52 @@
         "type": "ws",
         "path": "/assignment"
       },
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-9",
+      "tag": "node-12",
+      "server": "104.17.44.17",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment"
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-13",
+      "server": "104.17.44.17",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "104.17.44.17:443:humanity:/assignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment"
+      },
+      "_sub_ids": [
+        "1",
+        "13",
+        "18"
+      ],
+      "_last_ok_ts": 1792953169.254167,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-14",
       "server": "104.18.24.120",
       "server_port": 443,
       "password": "humanity",
@@ -213,67 +315,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-10",
-      "server": "104.18.25.120",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-11",
-      "server": "104.18.25.120",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-12",
-      "server": "104.18.25.120",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "104.18.25.120:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-13",
+      "tag": "node-15",
       "server": "104.18.32.47",
       "server_port": 443,
       "password": "humanity",
@@ -301,12 +348,12 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-14",
+      "tag": "node-16",
       "server": "104.18.35.86",
       "server_port": 2096,
       "password": "123456",
@@ -323,14 +370,15 @@
         }
       },
       "_sub_ids": [
-        "13"
+        "13",
+        "4"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-15",
+      "tag": "node-17",
       "server": "104.18.37.228",
       "server_port": 443,
       "password": "humanity",
@@ -349,12 +397,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-16",
+      "tag": "node-18",
       "server": "104.18.45.38",
       "server_port": 443,
       "password": "humanity",
@@ -379,12 +427,12 @@
         "28",
         "7"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-17",
+      "tag": "node-19",
       "server": "104.18.8.83",
       "server_port": 443,
       "password": "humanity",
@@ -406,12 +454,12 @@
         "18",
         "20"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-18",
+      "tag": "node-20",
       "server": "104.18.9.83",
       "server_port": 443,
       "password": "humanity",
@@ -439,12 +487,12 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-19",
+      "tag": "node-21",
       "server": "104.19.173.68",
       "server_port": 443,
       "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
@@ -460,12 +508,12 @@
       "_sub_ids": [
         "13"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-20",
+      "tag": "node-22",
       "server": "104.19.229.21",
       "server_port": 443,
       "password": "humanity",
@@ -489,16 +537,17 @@
         "21",
         "214",
         "215",
+        "216",
         "28",
         "7",
         "8"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-21",
+      "tag": "node-23",
       "server": "104.19.229.21",
       "server_port": 443,
       "password": "humanity",
@@ -517,12 +566,63 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-22",
+      "tag": "node-24",
+      "server": "104.19.229.21",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.calmlunch.com"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-25",
+      "server": "104.19.229.21",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "104.19.229.21:443:humanity:/assignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.calmlunch.com"
+        }
+      },
+      "_sub_ids": [
+        "1",
+        "14",
+        "203",
+        "21",
+        "28",
+        "4",
+        "7",
+        "8"
+      ],
+      "_last_ok_ts": 1792953169.254167,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-26",
       "server": "104.21.103.254",
       "server_port": 443,
       "password": "humanity",
@@ -541,12 +641,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-23",
+      "tag": "node-27",
       "server": "104.21.13.204",
       "server_port": 443,
       "password": "humanity",
@@ -565,67 +665,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-24",
-      "server": "104.21.33.59",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-25",
-      "server": "104.21.33.59",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET"
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-26",
-      "server": "104.21.33.59",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "104.21.33.59:443:humanity:/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET"
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-27",
+      "tag": "node-28",
       "server": "104.21.33.59",
       "server_port": 443,
       "password": "humanity",
@@ -642,82 +687,33 @@
         "1",
         "13"
       ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-28",
-      "server": "104.27.201.80",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
       "tag": "node-29",
-      "server": "104.27.201.80",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "104.27.201.80:443:humanity:/assignment",
+      "server": "104.25.239.113",
+      "server_port": 2053,
+      "password": "gHQP0D7D15",
+      "_dedup_key": "104.25.239.113:2053:gHQP0D7D15:/",
       "tls": {
         "enabled": true,
-        "server_name": "www.pleadcourt.org"
+        "server_name": "marvdasht.phonecomparisonblog.org"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
+        "path": "/"
       },
       "_sub_ids": [
-        "1",
-        "13",
-        "18",
-        "203",
-        "21",
-        "28",
-        "7"
+        "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
       "tag": "node-30",
-      "server": "104.27.203.207",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-31",
       "server": "104.27.203.207",
       "server_port": 443,
       "password": "humanity",
@@ -742,29 +738,12 @@
         "28",
         "7"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-32",
-      "server": "108.162.194.134",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-33",
+      "tag": "node-31",
       "server": "108.162.194.134",
       "server_port": 443,
       "password": "humanity",
@@ -791,16 +770,36 @@
         "6",
         "7"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-34",
-      "server": "141.101.115.104",
+      "tag": "node-32",
+      "server": "162.159.244.91",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "141.101.115.104:443:humanity:/assignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.calmlunch.com"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-33",
+      "server": "162.159.244.91",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "162.159.244.91:443:humanity:/assignment",
       "tls": {
         "enabled": true,
         "server_name": "www.calmlunch.com"
@@ -813,82 +812,53 @@
         }
       },
       "_sub_ids": [
-        "1",
-        "18",
-        "203",
-        "28",
-        "7"
+        "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-34",
+      "server": "162.159.36.20",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment"
+      },
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
       "tag": "node-35",
-      "server": "162.159.228.224",
+      "server": "162.159.36.20",
       "server_port": 443,
       "password": "humanity",
+      "_dedup_key": "162.159.36.20:443:humanity:/assignment",
       "tls": {
         "enabled": true,
-        "server_name": "www.pleadcourt.org"
+        "server_name": "www.calmlunch.com"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
+        "path": "/assignment"
       },
-      "_last_ok_ts": 1792938811.342829,
+      "_sub_ids": [
+        "1",
+        "4"
+      ],
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
       "tag": "node-36",
-      "server": "162.159.228.224",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "162.159.228.224:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-37",
-      "server": "172.64.145.133",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-38",
       "server": "172.64.145.133",
       "server_port": 443,
       "password": "humanity",
@@ -915,16 +885,36 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-39",
-      "server": "172.64.152.23",
+      "tag": "node-37",
+      "server": "172.64.150.28",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "172.64.152.23:443:humanity:/assignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.calmlunch.com"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-38",
+      "server": "172.64.150.28",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "172.64.150.28:443:humanity:/assignment",
       "tls": {
         "enabled": true,
         "server_name": "www.calmlunch.com"
@@ -938,20 +928,14 @@
       },
       "_sub_ids": [
         "1",
-        "14",
-        "18",
-        "203",
-        "21",
-        "28",
-        "7",
-        "8"
+        "20"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-40",
+      "tag": "node-39",
       "server": "172.64.190.13",
       "server_port": 443,
       "password": "humanity",
@@ -976,12 +960,12 @@
         "28",
         "7"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-41",
+      "tag": "node-40",
       "server": "172.66.40.99",
       "server_port": 443,
       "password": "humanity",
@@ -1010,12 +994,12 @@
         "6",
         "7"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-42",
+      "tag": "node-41",
       "server": "172.66.40.99",
       "server_port": 443,
       "password": "humanity",
@@ -1034,12 +1018,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-43",
+      "tag": "node-42",
       "server": "172.66.40.99",
       "server_port": 443,
       "password": "humanity",
@@ -1058,275 +1042,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-44",
-      "server": "172.67.200.219",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "172.67.200.219:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "18"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-45",
-      "server": "172.67.217.240",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "172.67.217.240:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-46",
-      "server": "188.114.97.1",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-47",
-      "server": "188.114.97.1",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-48",
-      "server": "188.114.97.1",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "188.114.97.1:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "17",
-        "18"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-49",
-      "server": "188.114.97.4",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-50",
-      "server": "188.114.97.4",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "188.114.97.4:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "17",
-        "18",
-        "20"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-51",
-      "server": "188.114.97.5",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-52",
-      "server": "188.114.97.5",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "188.114.97.5:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "14",
-        "18",
-        "203",
-        "28",
-        "7"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-53",
-      "server": "188.114.97.6",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "188.114.97.6:443:humanity:/assignment#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-54",
-      "server": "188.114.97.6",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "188.114.97.6:443:humanity:/assignment?ed#Telegram---MTMVPN---MTMVPN---MTMVPN---MTMVPN",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment?ed#Telegram---MTMVPN---MTMVPN---MTMVPN---MTMVPN",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "14",
-        "17"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-55",
+      "tag": "node-43",
       "server": "188.114.97.6",
       "server_port": 443,
       "password": "humanity",
@@ -1345,52 +1066,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-56",
-      "server": "188.114.97.6",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-57",
-      "server": "188.114.97.6",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-58",
+      "tag": "node-44",
       "server": "188.114.97.6",
       "server_port": 443,
       "password": "humanity",
@@ -1410,12 +1091,12 @@
         "1",
         "14"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-59",
+      "tag": "node-45",
       "server": "188.114.98.0",
       "server_port": 443,
       "password": "humanity",
@@ -1435,12 +1116,12 @@
         "14",
         "5"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-60",
+      "tag": "node-46",
       "server": "188.114.98.0",
       "server_port": 443,
       "password": "humanity",
@@ -1467,12 +1148,12 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-61",
+      "tag": "node-47",
       "server": "188.114.98.0",
       "server_port": 443,
       "password": "humanity",
@@ -1491,12 +1172,12 @@
       "_sub_ids": [
         "5"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-62",
+      "tag": "node-48",
       "server": "188.114.98.0",
       "server_port": 443,
       "password": "humanity",
@@ -1526,12 +1207,12 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-63",
+      "tag": "node-49",
       "server": "188.114.98.0",
       "server_port": 443,
       "password": "humanity",
@@ -1558,12 +1239,12 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-64",
+      "tag": "node-50",
       "server": "188.114.98.0",
       "server_port": 443,
       "password": "humanity",
@@ -1582,12 +1263,12 @@
       "_sub_ids": [
         "5"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-65",
+      "tag": "node-51",
       "server": "188.114.98.0",
       "server_port": 443,
       "password": "humanity",
@@ -1609,12 +1290,12 @@
         "20",
         "5"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-66",
+      "tag": "node-52",
       "server": "190.93.245.148",
       "server_port": 443,
       "password": "humanity",
@@ -1640,87 +1321,12 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-67",
-      "server": "8.47.69.0",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-68",
-      "server": "8.47.69.0",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "8.47.69.0:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "14",
-        "17",
-        "18",
-        "20",
-        "203",
-        "21",
-        "22",
-        "27",
-        "28",
-        "7"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-69",
-      "server": "8.47.69.60",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-70",
+      "tag": "node-53",
       "server": "8.47.69.60",
       "server_port": 443,
       "password": "humanity",
@@ -1744,12 +1350,12 @@
         "28",
         "7"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-71",
+      "tag": "node-54",
       "server": "8.6.112.206",
       "server_port": 443,
       "password": "humanity",
@@ -1775,12 +1381,12 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-72",
+      "tag": "node-55",
       "server": "chat.openai.com",
       "server_port": 443,
       "password": "humanity",
@@ -1799,12 +1405,97 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-73",
+      "tag": "node-56",
+      "server": "uwu.blueknightnet.qzz.io",
+      "server_port": 2087,
+      "password": "0y7hid61k3k2vuy1",
+      "tls": {
+        "enabled": true,
+        "server_name": "uwu.dianaw.cc.cd"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@BlueKnight_net--@BlueKnight_net--@BlueKnight_net",
+        "headers": {
+          "Host": "uwu.dianaw.cc.cd"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-57",
+      "server": "uwu.blueknightnet.qzz.io",
+      "server_port": 2087,
+      "password": "0y7hid61k3k2vuy1",
+      "tls": {
+        "enabled": true,
+        "server_name": "uwu.dianaw.cc.cd"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@BlueKnight_net--@BlueKnight_net--@BlueKnight_net",
+        "headers": {
+          "Host": "uwu.dianaw.cc.cd"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-58",
+      "server": "uwu.blueknightnet.qzz.io",
+      "server_port": 2087,
+      "password": "0y7hid61k3k2vuy1",
+      "tls": {
+        "enabled": true,
+        "server_name": "uwu.dianaw.cc.cd"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@BlueKnight_net--@BlueKnight_net--@BlueKnight_net",
+        "headers": {
+          "Host": "uwu.dianaw.cc.cd"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-59",
+      "server": "uwu.blueknightnet.qzz.io",
+      "server_port": 2087,
+      "password": "0y7hid61k3k2vuy1",
+      "_dedup_key": "uwu.blueknightnet.qzz.io:2087:0y7hid61k3k2vuy1:/@BlueKnight_net--@BlueKnight_net--@BlueKnight_net",
+      "tls": {
+        "enabled": true,
+        "server_name": "uwu.dianaw.cc.cd"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@BlueKnight_net--@BlueKnight_net--@BlueKnight_net",
+        "headers": {
+          "Host": "uwu.dianaw.cc.cd"
+        }
+      },
+      "_sub_ids": [
+        "1",
+        "13"
+      ],
+      "_last_ok_ts": 1792953169.254167,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-60",
       "server": "www.calmlunch.com",
       "server_port": 443,
       "password": "humanity",
@@ -1823,67 +1514,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-74",
-      "server": "www.speedtest.net",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "www.speedtest.net:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "14",
-        "18",
-        "203",
-        "21",
-        "28",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-75",
-      "server": "www.speedtest.net",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "www.speedtest.net:443:humanity:/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-76",
+      "tag": "node-61",
       "server": "www.visa.com.sg",
       "server_port": 2053,
       "password": "f7c5011b-84cc-45d4-a0b3-ce28be0f5807",
@@ -1903,12 +1539,12 @@
         "1",
         "4"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-77",
+      "tag": "node-62",
       "server": "www.visa.com.sg",
       "server_port": 2087,
       "password": "5b670b35-e96d-44d1-8bd8-6582f48e1c42",
@@ -1927,12 +1563,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-78",
+      "tag": "node-63",
       "server": "www.visa.com.sg",
       "server_port": 8443,
       "password": "9d033eb1-22c7-4ae9-9d59-783e40c8eec3",
@@ -1953,13 +1589,13 @@
         "20",
         "4"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "🇦🇪node-79",
-      "server": "31.57.190.71",
+      "tag": "🇦🇪node-64",
+      "server": "31.57.190.34",
       "server_port": 443,
       "password": "humanity",
       "tls": {
@@ -1973,16 +1609,15 @@
           "Host": "www.pleadcourt.org"
         }
       },
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "AE"
     },
     {
       "type": "trojan",
-      "tag": "🇦🇪node-80",
-      "server": "31.57.190.71",
+      "tag": "🇦🇪node-65",
+      "server": "31.57.190.34",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "31.57.190.71:443:humanity:/assignment",
       "tls": {
         "enabled": true,
         "server_name": "www.pleadcourt.org"
@@ -1992,47 +1627,47 @@
         "path": "/assignment",
         "headers": {
           "Host": "www.pleadcourt.org"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "AE"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇦🇪node-66",
+      "server": "31.57.190.34",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "31.57.190.34:443:humanity:/assignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.volumeroot.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.volumeroot.com"
         }
       },
       "_sub_ids": [
         "1",
         "13",
         "14",
-        "20",
+        "18",
         "203",
         "21",
         "28",
         "4",
         "6",
-        "7",
-        "8"
+        "7"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "AE"
     },
     {
       "type": "trojan",
-      "tag": "🇦🇪node-81",
-      "server": "31.57.190.89",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "AE"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇦🇪node-82",
+      "tag": "🇦🇪node-67",
       "server": "31.57.190.89",
       "server_port": 443,
       "password": "humanity",
@@ -2051,12 +1686,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "AE"
     },
     {
       "type": "trojan",
-      "tag": "🇦🇹node-83",
+      "tag": "🇦🇹node-68",
       "server": "212.183.88.136",
       "server_port": 443,
       "password": "humanity",
@@ -2084,42 +1719,12 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "AT"
     },
     {
       "type": "trojan",
-      "tag": "🇦🇹node-84",
-      "server": "212.183.88.136",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "212.183.88.136:443:humanity://assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "//assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "14",
-        "18",
-        "203",
-        "21",
-        "28",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "AT"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇦🇹node-85",
+      "tag": "🇦🇹node-69",
       "server": "212.183.88.136",
       "server_port": 443,
       "password": "humanity",
@@ -2138,23 +1743,139 @@
       "_sub_ids": [
         "14"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "AT"
     },
     {
       "type": "trojan",
-      "tag": "🇨🇭node-86",
-      "server": "185.18.250.245",
+      "tag": "🇧🇬node-70",
+      "server": "192.145.30.27",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "185.18.250.245:443:humanity:/assignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment"
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "BG"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇧🇬node-71",
+      "server": "192.145.30.27",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment"
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "BG"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇧🇬node-72",
+      "server": "192.145.30.27",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "192.145.30.27:443:humanity:/assignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment"
+      },
+      "_sub_ids": [
+        "1",
+        "13"
+      ],
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "BG"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇧🇬node-73",
+      "server": "193.239.160.134",
+      "server_port": 443,
+      "password": "humanity",
       "tls": {
         "enabled": true,
         "server_name": "www.calmlunch.com"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
+        "path": "%2Fassignment",
+        "headers": {
+          "Host": "www.calmlunch.com"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "BG"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇧🇬node-74",
+      "server": "193.239.160.134",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "%2Fassignment",
+        "headers": {
+          "Host": "www.calmlunch.com"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "BG"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇧🇬node-75",
+      "server": "193.239.160.134",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "%2Fassignment",
+        "headers": {
+          "Host": "www.calmlunch.com"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "BG"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇧🇬node-76",
+      "server": "193.239.160.134",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "193.239.160.134:443:humanity:%2Fassignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "%2Fassignment",
         "headers": {
           "Host": "www.calmlunch.com"
         }
@@ -2162,12 +1883,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "CH"
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "BG"
     },
     {
       "type": "trojan",
-      "tag": "🇨🇭node-87",
+      "tag": "🇨🇭node-77",
       "server": "185.18.250.252",
       "server_port": 443,
       "password": "humanity",
@@ -2187,32 +1908,12 @@
         "1",
         "14"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "CH"
     },
     {
       "type": "trojan",
-      "tag": "🇨🇭node-88",
-      "server": "91.245.225.79",
-      "server_port": 2053,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "CH"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇨🇭node-89",
+      "tag": "🇨🇭node-78",
       "server": "91.245.225.79",
       "server_port": 2053,
       "password": "humanity",
@@ -2232,32 +1933,12 @@
         "1",
         "13"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "CH"
     },
     {
       "type": "trojan",
-      "tag": "🇩🇪node-90",
-      "server": "161.35.192.122",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "DE"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇩🇪node-91",
+      "tag": "🇩🇪node-79",
       "server": "161.35.192.122",
       "server_port": 443,
       "password": "humanity",
@@ -2284,33 +1965,12 @@
         "6",
         "7"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "DE"
     },
     {
       "type": "trojan",
-      "tag": "🇩🇪node-92",
-      "server": "166.1.36.83",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "166.1.36.83:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_sub_ids": [
-        "13"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "DE"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇩🇪node-93",
+      "tag": "🇩🇪node-80",
       "server": "185.220.100.168",
       "server_port": 443,
       "password": "humanity",
@@ -2339,182 +1999,60 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "DE"
     },
     {
       "type": "trojan",
-      "tag": "🇩🇪node-94",
-      "server": "185.255.179.166",
+      "tag": "🇩🇪node-81",
+      "server": "45.80.111.7",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "185.255.179.166:443:humanity:/assignment",
       "tls": {
         "enabled": true,
         "server_name": "www.calmlunch.com"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
+        "path": "/assignment"
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "DE"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇩🇪node-82",
+      "server": "45.80.111.7",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "45.80.111.7:443:humanity:/assignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment"
       },
       "_sub_ids": [
         "1",
-        "13",
+        "14",
+        "17",
         "18",
         "203",
         "21",
+        "27",
         "28",
         "4",
-        "6",
         "7",
         "8"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "DE"
     },
     {
       "type": "trojan",
-      "tag": "🇩🇪node-95",
-      "server": "191.96.94.226",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "DE"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇩🇪node-96",
-      "server": "191.96.94.226",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "DE"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇩🇪node-97",
-      "server": "191.96.94.226",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "DE"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇩🇪node-98",
-      "server": "191.96.94.226",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "191.96.94.226:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_sub_ids": [
-        "1",
-        "13"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "DE"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇩🇪node-99",
-      "server": "46.225.77.98",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "DE"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇩🇪node-100",
-      "server": "46.225.77.98",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "46.225.77.98:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "20"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "DE"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇩🇪node-101",
-      "server": "5.44.46.142",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "5.44.46.142:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "DE"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇩🇪node-102",
+      "tag": "🇩🇪node-83",
       "server": "64.227.115.28",
       "server_port": 443,
       "password": "humanity",
@@ -2534,12 +2072,12 @@
         "1",
         "13"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "DE"
     },
     {
       "type": "trojan",
-      "tag": "🇩🇪node-103",
+      "tag": "🇩🇪node-84",
       "server": "77.239.121.232",
       "server_port": 443,
       "password": "humanity",
@@ -2559,12 +2097,12 @@
         "1",
         "13"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "DE"
     },
     {
       "type": "trojan",
-      "tag": "🇩🇪node-104",
+      "tag": "🇩🇪node-85",
       "server": "82.117.245.125",
       "server_port": 2053,
       "password": "humanity",
@@ -2584,53 +2122,12 @@
         "20",
         "4"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "DE"
     },
     {
       "type": "trojan",
-      "tag": "🇪🇪node-105",
-      "server": "185.36.141.81",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "185.36.141.81:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_sub_ids": [
-        "13"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "EE"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇪🇪node-106",
-      "server": "38.180.163.250",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "EE"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇪🇪node-107",
+      "tag": "🇪🇪node-86",
       "server": "38.180.163.250",
       "server_port": 443,
       "password": "humanity",
@@ -2650,66 +2147,56 @@
         "1",
         "20"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "EE"
     },
     {
       "type": "trojan",
-      "tag": "🇪🇸node-108",
-      "server": "109.234.211.232",
-      "server_port": 443,
+      "tag": "🇪🇸node-87",
+      "server": "212.227.144.37",
+      "server_port": 8443,
       "password": "humanity",
       "tls": {
         "enabled": true,
-        "server_name": "www.pleadcourt.org"
+        "server_name": "www.calmlunch.com"
       },
       "transport": {
         "type": "ws",
         "path": "/assignment",
         "headers": {
-          "Host": "www.pleadcourt.org"
+          "Host": "www.calmlunch.com"
         }
       },
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "ES"
     },
     {
       "type": "trojan",
-      "tag": "🇪🇸node-109",
-      "server": "109.234.211.232",
-      "server_port": 443,
+      "tag": "🇪🇸node-88",
+      "server": "212.227.144.37",
+      "server_port": 8443,
       "password": "humanity",
-      "_dedup_key": "109.234.211.232:443:humanity:/assignment",
       "tls": {
         "enabled": true,
-        "server_name": "www.pleadcourt.org"
+        "server_name": "www.calmlunch.com"
       },
       "transport": {
         "type": "ws",
         "path": "/assignment",
         "headers": {
-          "Host": "www.pleadcourt.org"
+          "Host": "www.calmlunch.com"
         }
       },
-      "_sub_ids": [
-        "1",
-        "13",
-        "18",
-        "203",
-        "21",
-        "28",
-        "7"
-      ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "ES"
     },
     {
       "type": "trojan",
-      "tag": "🇪🇸node-110",
-      "server": "185.114.72.31",
-      "server_port": 2053,
+      "tag": "🇪🇸node-89",
+      "server": "212.227.144.37",
+      "server_port": 8443,
       "password": "humanity",
-      "_dedup_key": "185.114.72.31:2053:humanity:/assignment",
+      "_dedup_key": "212.227.144.37:8443:humanity:/assignment",
       "tls": {
         "enabled": true,
         "server_name": "www.calmlunch.com"
@@ -2723,22 +2210,16 @@
       },
       "_sub_ids": [
         "1",
-        "13",
-        "203",
         "21",
-        "28",
-        "4",
-        "5",
-        "7",
-        "8"
+        "4"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "ES"
     },
     {
       "type": "trojan",
-      "tag": "🇫🇮node-111",
-      "server": "46.62.204.134",
+      "tag": "🇫🇮node-90",
+      "server": "46.62.164.121",
       "server_port": 443,
       "password": "humanity",
       "tls": {
@@ -2747,51 +2228,53 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
+        "path": "/assignment"
       },
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "FI"
     },
     {
       "type": "trojan",
-      "tag": "🇫🇮node-112",
-      "server": "46.62.204.134",
+      "tag": "🇫🇮node-91",
+      "server": "46.62.164.121",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "46.62.204.134:443:humanity:/assignment",
       "tls": {
         "enabled": true,
         "server_name": "www.pleadcourt.org"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
+        "path": "/assignment"
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "FI"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇫🇮node-92",
+      "server": "46.62.164.121",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "46.62.164.121:443:humanity:/assignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment"
       },
       "_sub_ids": [
         "1",
-        "13",
-        "14",
-        "18",
-        "20",
-        "203",
-        "21",
-        "28",
-        "4",
-        "6",
-        "7"
+        "13"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "FI"
     },
     {
       "type": "trojan",
-      "tag": "🇫🇮node-113",
+      "tag": "🇫🇮node-93",
       "server": "46.62.230.149",
       "server_port": 443,
       "password": "humanity",
@@ -2813,16 +2296,113 @@
         "14",
         "20"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "FI"
     },
     {
       "type": "trojan",
-      "tag": "🇫🇷node-114",
-      "server": "57.128.183.108",
+      "tag": "🇬🇧node-94",
+      "server": "138.68.131.253",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "57.128.183.108:443:humanity:/assignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment"
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "GB"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇬🇧node-95",
+      "server": "138.68.131.253",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment"
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "GB"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇬🇧node-96",
+      "server": "138.68.131.253",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "138.68.131.253:443:humanity:/assignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment"
+      },
+      "_sub_ids": [
+        "1",
+        "13",
+        "4"
+      ],
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "GB"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇬🇧node-97",
+      "server": "178.128.45.156",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.pleadcourt.org"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "GB"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇬🇧node-98",
+      "server": "178.128.45.156",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.pleadcourt.org"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "GB"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇬🇧node-99",
+      "server": "178.128.45.156",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "178.128.45.156:443:humanity:/assignment",
       "tls": {
         "enabled": true,
         "server_name": "www.pleadcourt.org"
@@ -2838,115 +2418,12 @@
         "1",
         "13"
       ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "FR"
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "GB"
     },
     {
       "type": "trojan",
-      "tag": "🇭🇰node-115",
-      "server": "219.76.13.177",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "HK"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇭🇰node-116",
-      "server": "219.76.13.177",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "HK"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇭🇰node-117",
-      "server": "219.76.13.177",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "219.76.13.177:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "17",
-        "18",
-        "203",
-        "21",
-        "28",
-        "7"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "HK"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇭🇺node-118",
-      "server": "185.225.68.232",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "185.225.68.232:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "13",
-        "18",
-        "203",
-        "21",
-        "28",
-        "4",
-        "5",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "HU"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇱🇹node-119",
+      "tag": "🇱🇹node-100",
       "server": "195.181.244.216",
       "server_port": 443,
       "password": "humanity",
@@ -2963,62 +2440,12 @@
         "1",
         "13"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "LT"
     },
     {
       "type": "trojan",
-      "tag": "🇱🇹node-120",
-      "server": "88.216.69.253",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "LT"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇱🇹node-121",
-      "server": "88.216.69.253",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "88.216.69.253:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "18",
-        "203",
-        "21",
-        "28",
-        "7"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "LT"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇱🇻node-122",
+      "tag": "🇱🇻node-101",
       "server": "185.22.172.249",
       "server_port": 443,
       "password": "humanity",
@@ -3042,40 +2469,33 @@
         "28",
         "7"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "LV"
     },
     {
       "type": "trojan",
-      "tag": "🇱🇻node-123",
-      "server": "85.31.102.163",
+      "tag": "🇱🇻node-102",
+      "server": "94.158.219.126",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "85.31.102.163:443:humanity:/assignment",
       "tls": {
         "enabled": true,
-        "server_name": "www.calmlunch.com"
+        "server_name": "www.pleadcourt.org"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment"
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.pleadcourt.org"
+        }
       },
-      "_sub_ids": [
-        "1",
-        "13",
-        "14",
-        "20",
-        "203",
-        "28",
-        "7"
-      ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "LV"
     },
     {
       "type": "trojan",
-      "tag": "🇳🇱node-124",
-      "server": "164.92.223.252",
+      "tag": "🇱🇻node-103",
+      "server": "94.158.219.126",
       "server_port": 443,
       "password": "humanity",
       "tls": {
@@ -3089,93 +2509,16 @@
           "Host": "www.pleadcourt.org"
         }
       },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "NL"
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "LV"
     },
     {
       "type": "trojan",
-      "tag": "🇳🇱node-125",
-      "server": "164.92.223.252",
+      "tag": "🇱🇻node-104",
+      "server": "94.158.219.126",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "164.92.223.252:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "20"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "NL"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇳🇱node-126",
-      "server": "188.226.181.61",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "188.226.181.61:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "14",
-        "18",
-        "20",
-        "203",
-        "28",
-        "7"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "NL"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇳🇱node-127",
-      "server": "45.131.4.38",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "NL"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇳🇱node-128",
-      "server": "45.131.4.38",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "45.131.4.38:443:humanity:/assignment",
+      "_dedup_key": "94.158.219.126:443:humanity:/assignment",
       "tls": {
         "enabled": true,
         "server_name": "www.pleadcourt.org"
@@ -3191,72 +2534,18 @@
         "1",
         "13",
         "18",
-        "27"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "NL"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇳🇱node-129",
-      "server": "45.87.41.18",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "45.87.41.18:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "18",
-        "20",
         "203",
         "21",
         "28",
-        "4",
-        "7",
-        "8"
+        "7"
       ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "NL"
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "LV"
     },
     {
       "type": "trojan",
-      "tag": "🇳🇱node-130",
-      "server": "5.253.189.238",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "5.253.189.238:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "NL"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇳🇱node-131",
-      "server": "83.217.222.170",
+      "tag": "🇳🇱node-105",
+      "server": "95.85.32.57",
       "server_port": 443,
       "password": "humanity",
       "tls": {
@@ -3270,16 +2559,56 @@
           "Host": "www.pleadcourt.org"
         }
       },
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "NL"
     },
     {
       "type": "trojan",
-      "tag": "🇳🇱node-132",
-      "server": "83.217.222.170",
+      "tag": "🇳🇱node-106",
+      "server": "95.85.32.57",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "83.217.222.170:443:humanity:/assignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.pleadcourt.org"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "NL"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇳🇱node-107",
+      "server": "95.85.32.57",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.pleadcourt.org"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "NL"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇳🇱node-108",
+      "server": "95.85.32.57",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "95.85.32.57:443:humanity:/assignment",
       "tls": {
         "enabled": true,
         "server_name": "www.pleadcourt.org"
@@ -3295,13 +2624,13 @@
         "1",
         "13"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "NL"
     },
     {
       "type": "trojan",
-      "tag": "🇵🇱node-133",
-      "server": "148.253.212.42",
+      "tag": "🇳🇱node-109",
+      "server": "95.85.54.197",
       "server_port": 443,
       "password": "humanity",
       "tls": {
@@ -3315,68 +2644,13 @@
           "Host": "www.pleadcourt.org"
         }
       },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "PL"
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "NL"
     },
     {
       "type": "trojan",
-      "tag": "🇵🇱node-134",
-      "server": "148.253.212.42",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "148.253.212.42:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "203",
-        "28",
-        "7"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "PL"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇸🇨node-135",
-      "server": "154.81.141.42",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "154.81.141.42:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "18",
-        "203",
-        "21",
-        "28",
-        "7"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "SC"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇸🇨node-136",
-      "server": "45.128.76.242",
+      "tag": "🇳🇱node-110",
+      "server": "95.85.54.197",
       "server_port": 443,
       "password": "humanity",
       "tls": {
@@ -3390,16 +2664,16 @@
           "Host": "www.pleadcourt.org"
         }
       },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "SC"
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "NL"
     },
     {
       "type": "trojan",
-      "tag": "🇸🇨node-137",
-      "server": "45.128.76.242",
+      "tag": "🇳🇱node-111",
+      "server": "95.85.54.197",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "45.128.76.242:443:humanity:/assignment",
+      "_dedup_key": "95.85.54.197:443:humanity:/assignment",
       "tls": {
         "enabled": true,
         "server_name": "www.pleadcourt.org"
@@ -3413,35 +2687,14 @@
       },
       "_sub_ids": [
         "1",
-        "13",
-        "18",
-        "203",
-        "28",
-        "7"
+        "13"
       ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "SC"
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "NL"
     },
     {
       "type": "trojan",
-      "tag": "🇸🇨node-138",
-      "server": "45.130.125.112",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "SC"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇸🇨node-139",
+      "tag": "🇸🇨node-112",
       "server": "45.130.125.112",
       "server_port": 443,
       "password": "humanity",
@@ -3457,82 +2710,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "SC"
     },
     {
       "type": "trojan",
-      "tag": "🇸🇨node-140",
-      "server": "45.130.125.126",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "45.130.125.126:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "SC"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇸🇨node-141",
-      "server": "45.130.125.190",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "45.130.125.190:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "20"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "SC"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇸🇨node-142",
-      "server": "45.130.125.75",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "45.130.125.75:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "18"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "SC"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇸🇨node-143",
+      "tag": "🇸🇨node-113",
       "server": "45.130.125.76",
       "server_port": 443,
       "password": "humanity",
@@ -3552,33 +2735,77 @@
         "1",
         "14"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "SC"
     },
     {
       "type": "trojan",
-      "tag": "🇸🇪node-144",
-      "server": "77.221.138.199",
-      "server_port": 8443,
+      "tag": "🇹🇷node-114",
+      "server": "139.28.240.24",
+      "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "77.221.138.199:8443:humanity:/assignment",
       "tls": {
         "enabled": true,
-        "server_name": "www.calmlunch.com"
+        "server_name": "www.pleadcourt.org"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment"
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.pleadcourt.org"
+        }
       },
-      "_sub_ids": [
-        "13"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "SE"
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "TR"
     },
     {
       "type": "trojan",
-      "tag": "🇹🇷node-145",
+      "tag": "🇹🇷node-115",
+      "server": "139.28.240.24",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.pleadcourt.org"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "TR"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇹🇷node-116",
+      "server": "139.28.240.24",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "139.28.240.24:443:humanity:/assignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.pleadcourt.org"
+        }
+      },
+      "_sub_ids": [
+        "1",
+        "13"
+      ],
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "TR"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇹🇷node-117",
       "server": "155.103.71.142",
       "server_port": 443,
       "password": "humanity",
@@ -3598,41 +2825,152 @@
         "1",
         "20"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "TR"
     },
     {
       "type": "trojan",
-      "tag": "🇺🇸node-146",
-      "server": "162.159.133.152",
+      "tag": "🇺🇸node-118",
+      "server": "141.193.213.172",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "162.159.133.152:443:humanity:/assignment",
       "tls": {
         "enabled": true,
-        "server_name": "www.pleadcourt.org"
+        "server_name": "www.calmlunch.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+        "headers": {
+          "Host": "www.calmlunch.com"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "US"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸node-119",
+      "server": "141.193.213.172",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment?ed#Telegram---v2ray_configs_pools",
+        "headers": {
+          "Host": "www.calmlunch.com"
+        }
+      },
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "US"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸node-120",
+      "server": "141.193.213.172",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com"
       },
       "transport": {
         "type": "ws",
         "path": "/assignment",
         "headers": {
-          "Host": "www.pleadcourt.org"
+          "Host": "www.calmlunch.com"
         }
       },
-      "_sub_ids": [
-        "1",
-        "13",
-        "18",
-        "203",
-        "28",
-        "7"
-      ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "US"
     },
     {
       "type": "trojan",
-      "tag": "🇺🇸node-147",
+      "tag": "🇺🇸node-121",
+      "server": "141.193.213.172",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "141.193.213.172:443:humanity:/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+        "headers": {
+          "Host": "www.calmlunch.com"
+        }
+      },
+      "_sub_ids": [
+        "1"
+      ],
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "US"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸node-122",
+      "server": "141.193.213.172",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "141.193.213.172:443:humanity:/assignment",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.calmlunch.com"
+        }
+      },
+      "_sub_ids": [
+        "1",
+        "14",
+        "18",
+        "203",
+        "21",
+        "27",
+        "28",
+        "7",
+        "8"
+      ],
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "US"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸node-123",
+      "server": "141.193.213.172",
+      "server_port": 443,
+      "password": "humanity",
+      "_dedup_key": "141.193.213.172:443:humanity:/assignment?ed#Telegram---v2ray_configs_pools",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.calmlunch.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment?ed#Telegram---v2ray_configs_pools",
+        "headers": {
+          "Host": "www.calmlunch.com"
+        }
+      },
+      "_sub_ids": [
+        "1"
+      ],
+      "_last_ok_ts": 1792953169.254167,
+      "_country": "US"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇺🇸node-124",
       "server": "165.215.250.14",
       "server_port": 443,
       "password": "humanity",
@@ -3651,137 +2989,60 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "US"
     },
     {
       "type": "trojan",
-      "tag": "🇺🇸node-148",
-      "server": "168.235.125.93",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "168.235.125.93:443:humanity:/assignment",
+      "tag": "🇺🇸node-125",
+      "server": "216.24.57.225",
+      "server_port": 2083,
+      "password": "8yup05o4lz0csoxb",
       "tls": {
         "enabled": true,
-        "server_name": "www.pleadcourt.org"
+        "server_name": "fin.netvia.ir"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
+        "path": "/YaujaGsyr",
         "headers": {
-          "Host": "www.pleadcourt.org"
+          "Host": "fin.netvia.ir"
         }
       },
-      "_sub_ids": [
-        "1",
-        "13",
-        "14",
-        "203",
-        "28",
-        "7"
-      ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "US"
     },
     {
       "type": "trojan",
-      "tag": "🇺🇸node-149",
-      "server": "172.66.1.36",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "172.66.1.36:443:humanity:/assignment",
+      "tag": "🇺🇸node-126",
+      "server": "216.24.57.225",
+      "server_port": 2083,
+      "password": "8yup05o4lz0csoxb",
+      "_dedup_key": "216.24.57.225:2083:8yup05o4lz0csoxb:/YaujaGsyr",
       "tls": {
         "enabled": true,
-        "server_name": "www.pleadcourt.org"
+        "server_name": "fin.netvia.ir"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
+        "path": "/YaujaGsyr",
         "headers": {
-          "Host": "www.pleadcourt.org"
+          "Host": "fin.netvia.ir"
         }
       },
       "_sub_ids": [
         "1",
         "13",
         "18",
-        "203",
-        "21",
+        "20",
+        "202",
+        "22",
+        "27",
         "28",
+        "4",
         "7"
       ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "US"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-150",
-      "server": "193.23.202.65",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "US"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-151",
-      "server": "193.23.202.65",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "193.23.202.65:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "20"
-      ],
-      "_last_ok_ts": 1792938811.342829,
-      "_country": "US"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-152",
-      "server": "5.78.92.27",
-      "server_port": 8443,
-      "password": "humanity",
-      "_dedup_key": "5.78.92.27:8443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13"
-      ],
-      "_last_ok_ts": 1792938811.342829,
+      "_last_ok_ts": 1792953169.254167,
       "_country": "US"
     }
   ]
