@@ -1,6 +1,6 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-10-24T20:11:58Z",
+  "last_tested": "2026-10-25T00:03:35Z",
   "nodes": [
     {
       "type": "hysteria2",
@@ -26,7 +26,7 @@
         "4",
         "7"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "AE"
     },
     {
@@ -48,7 +48,7 @@
         "14",
         "20"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "AE"
     },
     {
@@ -71,7 +71,7 @@
         "13",
         "20"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "AU"
     },
     {
@@ -93,7 +93,7 @@
         "1",
         "20"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "AU"
     },
     {
@@ -115,7 +115,7 @@
         "1",
         "20"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "BR"
     },
     {
@@ -128,46 +128,78 @@
         "enabled": true,
         "server_name": "vpn-de-002.fastervpn.world"
       },
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "DE"
     },
     {
       "type": "hysteria2",
-      "tag": "🇭🇰node-7",
-      "server": "152.32.254.68",
-      "server_port": 5010,
-      "password": "eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ",
+      "tag": "🇫🇷node-7",
+      "server": "143.246.211.163",
+      "server_port": 443,
+      "password": "b3d079ff-b775-4ffe-bac9-41228b08b15b",
       "tls": {
         "enabled": true,
-        "server_name": "nas.aizhzo.com"
+        "server_name": "fr.gorobsub.com",
+        "alpn": [
+          "h3"
+        ]
       },
-      "obfs": {
-        "type": "salamander",
-        "password": "7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9"
-      },
-      "_last_ok_ts": 1792872348.173859,
-      "_country": "HK"
+      "_last_ok_ts": 1792886220.905893,
+      "_country": "FR"
     },
     {
       "type": "hysteria2",
-      "tag": "🇭🇰node-8",
-      "server": "152.32.254.68",
-      "server_port": 5010,
-      "password": "eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ",
+      "tag": "🇫🇷node-8",
+      "server": "143.246.211.163",
+      "server_port": 443,
+      "password": "b3d079ff-b775-4ffe-bac9-41228b08b15b",
       "tls": {
         "enabled": true,
-        "server_name": "nas.aizhzo.com"
+        "server_name": "fr.gorobsub.com",
+        "alpn": [
+          "h3"
+        ]
       },
-      "obfs": {
-        "type": "salamander",
-        "password": "7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9"
-      },
-      "_last_ok_ts": 1792872348.173859,
-      "_country": "HK"
+      "_dedup_key": "143.246.211.163:443:b3d079ff-b775-4ffe-bac9-41228b08b15b",
+      "_sub_ids": [
+        "1",
+        "27"
+      ],
+      "_last_ok_ts": 1792886220.905893,
+      "_country": "FR"
     },
     {
       "type": "hysteria2",
-      "tag": "🇭🇰node-9",
+      "tag": "🇫🇷node-9",
+      "server": "vpn-fr-001.fastervpn.world",
+      "server_port": 443,
+      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
+      "tls": {
+        "enabled": true,
+        "server_name": "vpn-fr-001.fastervpn.world"
+      },
+      "_last_ok_ts": 1792886220.905893,
+      "_country": "FR"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇫🇷node-10",
+      "server": "vpn-fr-001.fastervpn.world",
+      "server_port": 443,
+      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
+      "tls": {
+        "enabled": true,
+        "server_name": "vpn-fr-001.fastervpn.world"
+      },
+      "_sub_ids": [
+        "1"
+      ],
+      "_last_ok_ts": 1792886220.905893,
+      "_country": "FR"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇭🇰node-11",
       "server": "152.32.254.68",
       "server_port": 5010,
       "password": "eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ",
@@ -190,41 +222,7 @@
         "4",
         "7"
       ],
-      "_last_ok_ts": 1792872348.173859,
-      "_country": "HK"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇭🇰node-10",
-      "server": "nas.aizhzo.com",
-      "server_port": 5010,
-      "password": "eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ",
-      "tls": {
-        "enabled": true,
-        "server_name": "nas.aizhzo.com"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9"
-      },
-      "_last_ok_ts": 1792872348.173859,
-      "_country": "HK"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇭🇰node-11",
-      "server": "nas.aizhzo.com",
-      "server_port": 5010,
-      "password": "eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ",
-      "tls": {
-        "enabled": true,
-        "server_name": "nas.aizhzo.com"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9"
-      },
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "HK"
     },
     {
@@ -241,7 +239,7 @@
         "type": "salamander",
         "password": "7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9"
       },
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "HK",
       "_sub_ids": [
         "14",
@@ -267,7 +265,7 @@
       "_sub_ids": [
         "13"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "JP"
     },
     {
@@ -287,7 +285,7 @@
         "14",
         "20"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "JP"
     },
     {
@@ -305,7 +303,7 @@
         "1",
         "20"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "JP"
     },
     {
@@ -318,12 +316,13 @@
         "enabled": true,
         "server_name": "vp3.yysyy.online"
       },
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "JP",
       "_sub_ids": [
         "1",
         "13",
         "14",
+        "20",
         "3"
       ]
     },
@@ -337,7 +336,7 @@
         "enabled": true,
         "server_name": "150-230-252-217.liao.kdns.fr"
       },
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "KR",
       "_sub_ids": [
         "1",
@@ -355,7 +354,7 @@
         "enabled": true,
         "server_name": "152-69-231-175.liao.kdns.fr"
       },
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "KR",
       "_sub_ids": [
         "13"
@@ -377,7 +376,7 @@
         "14",
         "20"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "KR"
     },
     {
@@ -396,7 +395,7 @@
         "13",
         "20"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "KR"
     },
     {
@@ -416,7 +415,7 @@
         "14",
         "20"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "NL"
     },
     {
@@ -436,7 +435,7 @@
         "14",
         "20"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "NL"
     },
     {
@@ -456,7 +455,7 @@
         "20"
       ],
       "_country": "NL",
-      "_last_ok_ts": 1792872348.173859
+      "_last_ok_ts": 1792886220.905893
     },
     {
       "type": "hysteria2",
@@ -474,7 +473,7 @@
         "14",
         "20"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "NL"
     },
     {
@@ -501,7 +500,7 @@
         "4",
         "7"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "RO"
     },
     {
@@ -519,105 +518,15 @@
         "password": "c1b4086fea89914496c7e10967a419216566"
       },
       "_sub_ids": [
+        "1",
         "20"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "RO"
     },
     {
       "type": "hysteria2",
-      "tag": "🇸🇪node-27",
-      "server": "50.7.38.243",
-      "server_port": 443,
-      "password": "d4ca9415f0eac7897472e1e5b86d2e96",
-      "tls": {
-        "enabled": true,
-        "server_name": "promo.betust.net"
-      },
-      "_dedup_key": "50.7.38.243:443:d4ca9415f0eac7897472e1e5b86d2e96",
-      "_sub_ids": [
-        "1",
-        "13",
-        "20",
-        "27",
-        "3",
-        "4"
-      ],
-      "_last_ok_ts": 1792872348.173859,
-      "_country": "SE"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇸🇪node-28",
-      "server": "promo.betust.net",
-      "server_port": 443,
-      "password": "d4ca9415f0eac7897472e1e5b86d2e96",
-      "tls": {
-        "enabled": true,
-        "server_name": "promo.betust.net",
-        "alpn": [
-          "h3"
-        ]
-      },
-      "_dedup_key": "promo.betust.net:443:d4ca9415f0eac7897472e1e5b86d2e96",
-      "_sub_ids": [
-        "1",
-        "13",
-        "27"
-      ],
-      "_last_ok_ts": 1792872348.173859,
-      "_country": "SE"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇹🇷node-29",
-      "server": "206.1.96.108",
-      "server_port": 7443,
-      "password": "M8LP9DztTr3znqCkmf-r08CQLBLLFK1r",
-      "tls": {
-        "enabled": true,
-        "server_name": "me17.msjia8844.site"
-      },
-      "_dedup_key": "206.1.96.108:7443:M8LP9DztTr3znqCkmf-r08CQLBLLFK1r",
-      "obfs": {
-        "type": "salamander",
-        "password": "u3Soh9_Ui0UmcuY6vk0ug8Lq"
-      },
-      "_sub_ids": [
-        "1",
-        "20"
-      ],
-      "_last_ok_ts": 1792872348.173859,
-      "_country": "TR"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇹🇷node-30",
-      "server": "me17.msjia8844.site",
-      "server_port": 7443,
-      "password": "M8LP9DztTr3znqCkmf-r08CQLBLLFK1r",
-      "tls": {
-        "enabled": true,
-        "server_name": "me17.msjia8844.site"
-      },
-      "obfs": {
-        "type": "salamander",
-        "password": "u3Soh9_Ui0UmcuY6vk0ug8Lq"
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "14",
-        "20",
-        "3",
-        "4"
-      ],
-      "_last_ok_ts": 1792872348.173859,
-      "_country": "TR"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇺🇸node-31",
+      "tag": "🇺🇸node-27",
       "server": "155.248.209.237",
       "server_port": 33333,
       "password": "bce6c821-200d-421f-bf3d-7159e5246ea0",
@@ -632,12 +541,12 @@
         "14",
         "20"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "US"
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-32",
+      "tag": "🇺🇸node-28",
       "server": "84.32.129.182",
       "server_port": 443,
       "password": "94c2b91777f8de3a5bc12d2a91b732c2",
@@ -650,37 +559,12 @@
         "1",
         "27"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "US"
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-33",
-      "server": "hy2.123266.xyz",
-      "server_port": 33333,
-      "password": "bce6c821-200d-421f-bf3d-7159e5246ea0",
-      "tls": {
-        "enabled": true,
-        "server_name": "hy2.123266.xyz"
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "14",
-        "20",
-        "201",
-        "215",
-        "28",
-        "3",
-        "4",
-        "7"
-      ],
-      "_last_ok_ts": 1792872348.173859,
-      "_country": "US"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇺🇸node-34",
+      "tag": "🇺🇸node-29",
       "server": "promo3.betust.net",
       "server_port": 443,
       "password": "94c2b91777f8de3a5bc12d2a91b732c2",
@@ -694,7 +578,7 @@
         "13",
         "27"
       ],
-      "_last_ok_ts": 1792872348.173859,
+      "_last_ok_ts": 1792886220.905893,
       "_country": "US"
     }
   ]
