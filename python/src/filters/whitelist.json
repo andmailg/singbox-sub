@@ -30489,6 +30489,185 @@
             "service_name": ""
           }
         }
+      },
+      {
+        "key": "31.59.218.35:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-214",
+          "server": "31.59.218.35",
+          "server_port": 443,
+          "uuid": "7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc",
+          "tls": {
+            "enabled": true,
+            "server_name": "g-ee1.hat.onl",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "cdn.v2.StreamService"
+          }
+        }
+      },
+      {
+        "key": "82.202.178.142:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-296",
+          "server": "82.202.178.142",
+          "server_port": 443,
+          "uuid": "54f22246-cc9c-4315-907a-6c94c901d20f",
+          "tls": {
+            "enabled": true,
+            "server_name": "h9.smart-life.agency",
+            "reality": {
+              "enabled": true,
+              "public_key": "1A9loATtqTbKfErpj24clMebWdbmBRDgUIADwtlvtAw",
+              "short_id": "70c20a2f5a7d542e"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "google.storage.v2.Storage"
+          }
+        }
+      },
+      {
+        "key": "87.58.199.144:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-315",
+          "server": "87.58.199.144",
+          "server_port": 443,
+          "uuid": "7f6adf9d-42f1-4fec-ab22-fb7f66bf3adc",
+          "tls": {
+            "enabled": true,
+            "server_name": "i4kht12omvvhyz.hat.onl",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "hls-vod.imbsklb92t.segment-75-v1-a1.ts"
+          }
+        }
+      },
+      {
+        "key": "h8.smart-life.agency:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-423",
+          "server": "h8.smart-life.agency",
+          "server_port": 443,
+          "uuid": "54f22246-cc9c-4315-907a-6c94c901d20f",
+          "tls": {
+            "enabled": true,
+            "server_name": "h8.smart-life.agency",
+            "reality": {
+              "enabled": true,
+              "public_key": "w_hrubefrDzoh5rEB3jFTx4j-t7o1HMyyo1bAE1a8D0",
+              "short_id": "316d0a3751f3122d"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "google.storage.v2.Storage"
+          }
+        }
+      },
+      {
+        "key": "h9.smart-life.agency:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-424",
+          "server": "h9.smart-life.agency",
+          "server_port": 443,
+          "uuid": "54f22246-cc9c-4315-907a-6c94c901d20f",
+          "tls": {
+            "enabled": true,
+            "server_name": "h9.smart-life.agency",
+            "reality": {
+              "enabled": true,
+              "public_key": "1A9loATtqTbKfErpj24clMebWdbmBRDgUIADwtlvtAw",
+              "short_id": "70c20a2f5a7d542e"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "google.storage.v2.Storage"
+          }
+        }
+      },
+      {
+        "key": "static.freeinternet.skin:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-507",
+          "server": "static.freeinternet.skin",
+          "server_port": 443,
+          "uuid": "55c98c63-8e67-4750-a574-5f586782c1ab",
+          "tls": {
+            "enabled": true,
+            "server_name": "static.freeinternet.skin",
+            "reality": {
+              "enabled": true,
+              "public_key": "f2evGKO94_eMGIuWv7OXrcVXTnqJjSxoflPqb24DFg0",
+              "short_id": "f362281040d91a1e"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "95.182.82.14:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-356",
+          "server": "95.182.82.14",
+          "server_port": 443,
+          "uuid": "55c98c63-8e67-4750-a574-5f586782c1ab",
+          "tls": {
+            "enabled": true,
+            "server_name": "static.freeinternet.skin",
+            "reality": {
+              "enabled": true,
+              "public_key": "f2evGKO94_eMGIuWv7OXrcVXTnqJjSxoflPqb24DFg0",
+              "short_id": "f362281040d91a1e"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -34451,5 +34630,5 @@
       }
     ]
   },
-  "updated": "2026-10-25T04:35:41Z"
+  "updated": "2026-10-25T05:14:40Z"
 }
