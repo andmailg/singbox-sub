@@ -4732,6 +4732,57 @@
             }
           }
         }
+      },
+      {
+        "key": "185.178.208.140:443:ea277838-a188-44f1-a2e8-94aa110c4f27:/api/v2/events",
+        "node": {
+          "type": "vless",
+          "tag": "node-42",
+          "server": "185.178.208.140",
+          "server_port": 443,
+          "uuid": "ea277838-a188-44f1-a2e8-94aa110c4f27",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v2/events",
+            "mode": "packet-up",
+            "host": [
+              "static.bakarova-top.ru"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "static.bakarova-top.ru",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "91.107.169.224:443:682feb0b-87c5-45f1-bc58-0a5895e0b867:/Meh?di=443",
+        "node": {
+          "type": "vless",
+          "tag": "node-105",
+          "server": "91.107.169.224",
+          "server_port": 443,
+          "uuid": "682feb0b-87c5-45f1-bc58-0a5895e0b867",
+          "transport": {
+            "type": "xhttp",
+            "path": "/Meh?di=443",
+            "host": [
+              "ticket.bestsellersd.site"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "ticket.bestsellersd.site",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -38380,5 +38431,5 @@
       }
     ]
   },
-  "updated": "2026-10-26T02:58:07Z"
+  "updated": "2026-10-26T04:40:55Z"
 }
