@@ -4783,6 +4783,32 @@
             }
           }
         }
+      },
+      {
+        "key": "8.6.112.0:443:2c14bb3c-ad83-4801-b475-9704dbc81b20:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-101",
+          "server": "8.6.112.0",
+          "server_port": 443,
+          "uuid": "2c14bb3c-ad83-4801-b475-9704dbc81b20",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "packet-up",
+            "host": [
+              "germany.wspocket1.online"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "germany.wspocket1.online",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -40050,5 +40076,5 @@
       }
     ]
   },
-  "updated": "2026-10-26T16:32:27Z"
+  "updated": "2026-10-26T20:31:52Z"
 }
