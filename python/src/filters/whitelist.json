@@ -38655,8 +38655,26 @@
             "service_name": "kobedin-server1-trojan"
           }
         }
+      },
+      {
+        "key": "45.149.147.213:4444:9b347a9b-d7a6-4b51-9890-eff62b832834:kobedin-server1-trojan",
+        "node": {
+          "type": "trojan",
+          "tag": "node-33",
+          "server": "45.149.147.213",
+          "server_port": 4444,
+          "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
+          "tls": {
+            "enabled": true,
+            "server_name": "45-149-147-213.sslip.io"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "kobedin-server1-trojan"
+          }
+        }
       }
     ]
   },
-  "updated": "2026-10-26T05:19:23Z"
+  "updated": "2026-10-26T05:22:09Z"
 }

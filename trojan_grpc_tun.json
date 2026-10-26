@@ -111,7 +111,8 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇫🇮node-1"
+        "🇫🇮node-1",
+        "🇫🇮node-2"
       ],
       "default": "auto"
     },
@@ -119,7 +120,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇫🇮node-1"
+        "🇫🇮node-1",
+        "🇫🇮node-2"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -129,6 +131,21 @@
       "type": "trojan",
       "tag": "🇫🇮node-1",
       "server": "45-149-147-213.sslip.io",
+      "server_port": 4444,
+      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
+      "tls": {
+        "enabled": true,
+        "server_name": "45-149-147-213.sslip.io"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "kobedin-server1-trojan"
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "🇫🇮node-2",
+      "server": "45.149.147.213",
       "server_port": 4444,
       "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
       "tls": {
