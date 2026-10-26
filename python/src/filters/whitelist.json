@@ -40035,6 +40035,90 @@
             }
           }
         }
+      },
+      {
+        "key": "chatgpt.com:443:humanity:/assignment?Telegram---Config7x--CONFIG7X",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1454",
+          "server": "chatgpt.com",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment?Telegram---Config7x--CONFIG7X",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "chatgpt.com:443:humanity:/assignment?TELEGRAM--CONFIG7x",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1456",
+          "server": "chatgpt.com",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.pleadcourt.org"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment?TELEGRAM--CONFIG7x",
+            "headers": {
+              "Host": "www.pleadcourt.org"
+            }
+          }
+        }
+      },
+      {
+        "key": "www.speedtest.net:443:humanity:/assignment?TELEGRAM--CONFIG7X--CONFIG7X",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1537",
+          "server": "www.speedtest.net",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment?TELEGRAM--CONFIG7X--CONFIG7X",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "www.visa.com.sg:2096:3aa78b49-5530-45a2-93cb-b093745824f1:/ya87",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1543",
+          "server": "www.visa.com.sg",
+          "server_port": 2096,
+          "password": "3aa78b49-5530-45a2-93cb-b093745824f1",
+          "tls": {
+            "enabled": true,
+            "server_name": "au4.yang-1989.xyz"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/ya87",
+            "headers": {
+              "Host": "au4.yang-1989.xyz"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -40076,5 +40160,5 @@
       }
     ]
   },
-  "updated": "2026-10-26T20:31:52Z"
+  "updated": "2026-10-26T20:46:53Z"
 }
