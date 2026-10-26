@@ -38408,6 +38408,48 @@
             }
           }
         }
+      },
+      {
+        "key": "104.25.124.54:443:humanity://assignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-403",
+          "server": "104.25.124.54",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "//assignment",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "uwu.blueknightnet.qzz.io:2087:w4rv08rp3tegsco6:/@BlueKnight_net--@BlueKnight_net--@BlueKnight_net",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1502",
+          "server": "uwu.blueknightnet.qzz.io",
+          "server_port": 2087,
+          "password": "w4rv08rp3tegsco6",
+          "tls": {
+            "enabled": true,
+            "server_name": "uwu.dianaw.cc.cd"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/@BlueKnight_net--@BlueKnight_net--@BlueKnight_net",
+            "headers": {
+              "Host": "uwu.dianaw.cc.cd"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -38431,5 +38473,5 @@
       }
     ]
   },
-  "updated": "2026-10-26T04:40:55Z"
+  "updated": "2026-10-26T05:16:45Z"
 }
