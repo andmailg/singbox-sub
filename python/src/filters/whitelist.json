@@ -39470,6 +39470,27 @@
             }
           }
         }
+      },
+      {
+        "key": "188.114.98.0:443:34bfb8d8-e37f-4872-a452-a2b2b4310aed:/whatever/trojan-ws",
+        "node": {
+          "type": "trojan",
+          "tag": "node-889",
+          "server": "188.114.98.0",
+          "server_port": 443,
+          "password": "34bfb8d8-e37f-4872-a452-a2b2b4310aed",
+          "tls": {
+            "enabled": true,
+            "server_name": "support.zoom.us.sg4.zidstore.net"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/whatever/trojan-ws",
+            "headers": {
+              "Host": "support.zoom.us.sg4.zidstore.net"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -39511,5 +39532,5 @@
       }
     ]
   },
-  "updated": "2026-10-26T09:42:43Z"
+  "updated": "2026-10-26T11:33:29Z"
 }
