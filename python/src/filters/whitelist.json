@@ -35130,6 +35130,100 @@
             "service_name": "dedede.nisimo.xyz"
           }
         }
+      },
+      {
+        "key": "62.233.33.44:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-294",
+          "server": "62.233.33.44",
+          "server_port": 443,
+          "uuid": "d6b6461a-59b1-4aaf-89a0-6e051e7f215c",
+          "tls": {
+            "enabled": true,
+            "server_name": "uk-room08.filesnap.tech",
+            "reality": {
+              "enabled": true,
+              "public_key": "Jlu3ZYGtXSuj-Q-RhwifmGmRajmdcxSmX5qoS9U3AFA",
+              "short_id": "d1bf27e64c82aad2"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "community.events.v1"
+          }
+        }
+      },
+      {
+        "key": "85.198.83.46:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-342",
+          "server": "85.198.83.46",
+          "server_port": 443,
+          "uuid": "27653b37-603c-4c90-b1f5-25c4d23f8932",
+          "tls": {
+            "enabled": true,
+            "server_name": "renderer-bridge-1-881.mirra.now",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "VideoRenderer"
+          }
+        }
+      },
+      {
+        "key": "nl1.fluxorvpn.net:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-495",
+          "server": "nl1.fluxorvpn.net",
+          "server_port": 8443,
+          "uuid": "6c713691-3ca2-002b-ad25-113d1bed6b03",
+          "tls": {
+            "enabled": true,
+            "server_name": "strm.yandex.net",
+            "reality": {
+              "enabled": true,
+              "public_key": "86EUYgrS7mazQ-GsiMnStyHSx9AlG8B_-KgXluNdWXI",
+              "short_id": "d3ab13e9c496c399"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "google.storage.v2.Storage"
+          }
+        }
+      },
+      {
+        "key": "renderer-bridge-1-881.mirra.now:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-522",
+          "server": "renderer-bridge-1-881.mirra.now",
+          "server_port": 443,
+          "uuid": "27653b37-603c-4c90-b1f5-25c4d23f8932",
+          "tls": {
+            "enabled": true,
+            "server_name": "renderer-bridge-1-881.mirra.now"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "VideoRenderer"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -39532,5 +39626,5 @@
       }
     ]
   },
-  "updated": "2026-10-26T11:33:29Z"
+  "updated": "2026-10-26T11:35:30Z"
 }
