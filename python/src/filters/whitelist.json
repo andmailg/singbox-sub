@@ -4809,6 +4809,53 @@
             }
           }
         }
+      },
+      {
+        "key": "146.75.35.31:443:f29bb776-4e2d-4884-b628-98d8907132be:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-10",
+          "server": "146.75.35.31",
+          "server_port": 443,
+          "uuid": "f29bb776-4e2d-4884-b628-98d8907132be",
+          "transport": {
+            "type": "xhttp",
+            "mode": "auto",
+            "host": [
+              "ovd13.global.ssl.fastly.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "accounts.fastly.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "31.76.2.57:443:abca037b-bee5-41cc-a888-0668e4c66176:/conv4/stream/77dd2aeeb94331fbff325bb48850392b",
+        "node": {
+          "type": "vless",
+          "tag": "node-74",
+          "server": "31.76.2.57",
+          "server_port": 443,
+          "uuid": "abca037b-bee5-41cc-a888-0668e4c66176",
+          "transport": {
+            "type": "xhttp",
+            "path": "/conv4/stream/77dd2aeeb94331fbff325bb48850392b"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "823bcb90.con.fernarchive.online",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -41242,5 +41289,5 @@
       }
     ]
   },
-  "updated": "2026-10-27T03:30:37Z"
+  "updated": "2026-10-27T04:58:57Z"
 }
