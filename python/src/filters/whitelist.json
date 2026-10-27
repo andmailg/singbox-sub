@@ -39366,6 +39366,157 @@
             "service_name": "f345a414c040"
           }
         }
+      },
+      {
+        "key": "136.148.211.243:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-35",
+          "server": "136.148.211.243",
+          "server_port": 443,
+          "uuid": "4b1be712-774c-4b65-8491-a3339e124a70",
+          "tls": {
+            "enabled": true,
+            "server_name": "se1-cl3.vless-fiberstasis.top",
+            "reality": {
+              "enabled": true,
+              "public_key": "qJja_3vaCxm3As6alnqjpIIThwGm4e4m_MOluQBNFgo",
+              "short_id": "11d37dd92940329e"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc-se-3"
+          }
+        }
+      },
+      {
+        "key": "72.56.242.232:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-312",
+          "server": "72.56.242.232",
+          "server_port": 443,
+          "uuid": "27653b37-603c-4c90-b1f5-25c4d23f8932",
+          "tls": {
+            "enabled": true,
+            "server_name": "renderer-bridge-1-881.mirra.now",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "VideoRenderer"
+          }
+        }
+      },
+      {
+        "key": "74.0.48.173:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-315",
+          "server": "74.0.48.173",
+          "server_port": 443,
+          "uuid": "4b1be712-774c-4b65-8491-a3339e124a70",
+          "tls": {
+            "enabled": true,
+            "server_name": "nl-all.vless-bitrhythmia.top",
+            "reality": {
+              "enabled": true,
+              "public_key": "WJrP73M7px11xkHKhmEMKnaqUR-DPZnKbR2m_N3TwEE",
+              "short_id": "724d6cab"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc-nl-stream"
+          }
+        }
+      },
+      {
+        "key": "nl-all.vless-bitrhythmia.top:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-493",
+          "server": "nl-all.vless-bitrhythmia.top",
+          "server_port": 443,
+          "uuid": "4b1be712-774c-4b65-8491-a3339e124a70",
+          "tls": {
+            "enabled": true,
+            "server_name": "nl-all.vless-bitrhythmia.top",
+            "reality": {
+              "enabled": true,
+              "public_key": "WJrP73M7px11xkHKhmEMKnaqUR-DPZnKbR2m_N3TwEE",
+              "short_id": "724d6cab"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc-nl-stream"
+          }
+        }
+      },
+      {
+        "key": "ru1.radiolumens.uk:8444",
+        "node": {
+          "type": "vless",
+          "tag": "node-530",
+          "server": "ru1.radiolumens.uk",
+          "server_port": 8444,
+          "uuid": "36cf792c-f07d-4500-97ea-a395e5178deb",
+          "tls": {
+            "enabled": true,
+            "server_name": "ru1.radiolumens.uk",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ],
+            "utls": {
+              "enabled": true,
+              "fingerprint": "qq"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "beru-uk"
+          }
+        }
+      },
+      {
+        "key": "ru3.radiolumens.uk:8444",
+        "node": {
+          "type": "vless",
+          "tag": "node-531",
+          "server": "ru3.radiolumens.uk",
+          "server_port": 8444,
+          "uuid": "36cf792c-f07d-4500-97ea-a395e5178deb",
+          "tls": {
+            "enabled": true,
+            "server_name": "ru3.radiolumens.uk",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "beru-uk"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -43969,5 +44120,5 @@
       }
     ]
   },
-  "updated": "2026-10-27T23:49:50Z"
+  "updated": "2026-10-27T23:58:25Z"
 }
