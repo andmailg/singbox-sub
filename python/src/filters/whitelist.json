@@ -43205,6 +43205,27 @@
             }
           }
         }
+      },
+      {
+        "key": "188.114.98.0:443:humanity:/assignment?TELEGRAM--CONFIG7X--CONFIG7X",
+        "node": {
+          "type": "trojan",
+          "tag": "node-911",
+          "server": "188.114.98.0",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment?TELEGRAM--CONFIG7X--CONFIG7X",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -43246,5 +43267,5 @@
       }
     ]
   },
-  "updated": "2026-10-27T15:47:55Z"
+  "updated": "2026-10-27T20:16:49Z"
 }
