@@ -42145,6 +42145,27 @@
             "path": "/?ed=2560"
           }
         }
+      },
+      {
+        "key": "212.227.90.142:443:humanity:/assignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1157",
+          "server": "212.227.90.142",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -42186,5 +42207,5 @@
       }
     ]
   },
-  "updated": "2026-10-27T10:31:58Z"
+  "updated": "2026-10-27T10:58:07Z"
 }
