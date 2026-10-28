@@ -1,6 +1,79 @@
 {
-  "last_updated": "2026-10-28T06:20:04Z",
+  "last_updated": "2026-10-28T16:50:45Z",
   "nodes": [
+    {
+      "type": "trojan",
+      "tag": "🇫🇮node-1",
+      "server": "45-149-147-213.sslip.io",
+      "server_port": 4444,
+      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
+      "_dedup_key": "45-149-147-213.sslip.io:4444:9b347a9b-d7a6-4b51-9890-eff62b832834:kobedin-server1-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "45-149-147-213.sslip.io"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "kobedin-server1-trojan"
+      },
+      "_sub_ids": [
+        "1",
+        "13",
+        "14",
+        "20",
+        "202",
+        "203",
+        "22",
+        "28",
+        "7",
+        "8"
+      ],
+      "_last_ok_ts": 1793168399.40226,
+      "_country": "FI",
+      "_pending_since": 1793206240.450074
+    },
+    {
+      "type": "trojan",
+      "tag": "🇫🇮node-2",
+      "server": "45.149.147.213",
+      "server_port": 4444,
+      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
+      "_dedup_key": "45.149.147.213:4444:9b347a9b-d7a6-4b51-9890-eff62b832834:kobedin-server1-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "45-149-147-213.sslip.io"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "kobedin-server1-trojan"
+      },
+      "_sub_ids": [
+        "1"
+      ],
+      "_last_ok_ts": 1793168399.40226,
+      "_country": "FI",
+      "_pending_since": 1793206240.450074
+    },
+    {
+      "type": "trojan",
+      "tag": "node-9",
+      "server": "125.227.86.45",
+      "server_port": 443,
+      "password": "0a9f1f5a397bd427",
+      "_dedup_key": "125.227.86.45:443:0a9f1f5a397bd427:db",
+      "tls": {
+        "enabled": true,
+        "server_name": "TG.freecodes"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "db"
+      },
+      "_sub_ids": [
+        "13"
+      ],
+      "_pending_since": 1793206240.450074
+    },
     {
       "type": "trojan",
       "tag": "node-1",
