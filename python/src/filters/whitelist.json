@@ -46327,6 +46327,90 @@
             }
           }
         }
+      },
+      {
+        "key": "104.18.19.2:443:humanity://assignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-150",
+          "server": "104.18.19.2",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "//assignment",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "172.67.203.46:443:humanity:/assignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-865",
+          "server": "172.67.203.46",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.cordweave.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.cordweave.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "45.128.76.242:443:humanity:/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1310",
+          "server": "45.128.76.242",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.trusteeforward.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+            "headers": {
+              "Host": "www.trusteeforward.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "45.128.76.242:443:humanity:/assignment?TELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1311",
+          "server": "45.128.76.242",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.trusteeforward.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment?TELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM",
+            "headers": {
+              "Host": "www.trusteeforward.com"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -46368,5 +46452,5 @@
       }
     ]
   },
-  "updated": "2026-10-28T16:40:52Z"
+  "updated": "2026-10-28T16:52:12Z"
 }
