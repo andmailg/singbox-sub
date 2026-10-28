@@ -1,473 +1,850 @@
 {
-  "last_updated": "2026-10-27T20:16:48Z",
+  "last_updated": "2026-10-28T00:01:38Z",
   "nodes": [
     {
       "type": "trojan",
-      "tag": "node-4",
-      "server": "104.16.72.2",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "104.16.72.2:443:humanity:/assignment",
+      "tag": "node-16",
+      "server": "104.18.35.86",
+      "server_port": 2096,
+      "password": "123456",
+      "_dedup_key": "104.18.35.86:2096:123456:/",
       "tls": {
         "enabled": true,
-        "server_name": "www.calmlunch.com"
+        "server_name": "321dfbc6.uir-9i6.pages.dev"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
+        "path": "/",
         "headers": {
-          "Host": "www.calmlunch.com"
+          "Host": "321dfbc6.uir-9i6.pages.dev"
         }
       },
       "_sub_ids": [
-        "1",
-        "27"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-7",
-      "server": "104.17.121.43",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "104.17.121.43:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_sub_ids": [
-        "27"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-13",
-      "server": "104.18.37.228",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "104.18.37.228:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "27"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-23",
-      "server": "104.20.61.103",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "104.20.61.103:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_sub_ids": [
-        "1",
-        "27"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-27",
-      "server": "104.25.124.54",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "104.25.124.54:443:humanity://assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "//assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-29",
-      "server": "141.101.115.104",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "141.101.115.104:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "18",
-        "203",
-        "28",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-30",
-      "server": "162.159.244.91",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "162.159.244.91:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "27"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-31",
-      "server": "162.159.253.41",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "162.159.253.41:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "27"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-32",
-      "server": "162.159.36.20",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "162.159.36.20:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_sub_ids": [
-        "1",
-        "27",
-        "4",
-        "8"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-33",
-      "server": "162.159.91.211",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "162.159.91.211:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-35",
-      "server": "172.64.152.23",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "172.64.152.23:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "14",
-        "18",
-        "203",
-        "21",
-        "28",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-42",
-      "server": "172.67.231.254",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "172.67.231.254:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1",
+        "13",
         "20",
-        "27",
         "4"
       ],
-      "_last_ok_ts": 1793098528.828027,
+      "_last_ok_ts": 1793132037.078212,
       "_country": null,
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "node-45",
-      "server": "188.114.98.0",
+      "tag": "node-20",
+      "server": "104.19.173.68",
       "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "188.114.98.0:443:humanity:/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
+      "_dedup_key": "104.19.173.68:443:d0298536-d670-4045-bbb1-ddd5ea68683e:/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan",
       "tls": {
         "enabled": true,
-        "server_name": "www.calmlunch.com"
+        "server_name": "azadnet-5vk.pages.dev"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
+        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
       },
       "_sub_ids": [
-        "14",
-        "5"
+        "13"
       ],
-      "_last_ok_ts": 1793098528.828027,
+      "_last_ok_ts": 1793132037.078212,
       "_country": null,
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "node-47",
-      "server": "188.114.98.0",
+      "tag": "🇹🇷node-136",
+      "server": "139.28.240.24",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "188.114.98.0:443:humanity:/%2Fassignment",
+      "_dedup_key": "139.28.240.24:443:humanity:/assignment",
       "tls": {
         "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/%2Fassignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "20",
-        "5"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-48",
-      "server": "188.114.98.0",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "188.114.98.0:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
+        "server_name": "www.pleadcourt.org"
       },
       "transport": {
         "type": "ws",
         "path": "/assignment",
         "headers": {
-          "Host": "www.calmlunch.com"
+          "Host": "www.pleadcourt.org"
         }
       },
       "_sub_ids": [
         "1",
         "13",
-        "14",
-        "17",
-        "18",
-        "20",
-        "203",
-        "21",
-        "27",
-        "28",
-        "5",
-        "7",
-        "8"
+        "27"
       ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
+      "_last_ok_ts": 1793132037.078212,
+      "_country": "TR",
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "node-49",
-      "server": "188.114.98.0",
+      "tag": "🇺🇸node-141",
+      "server": "172.66.1.36",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "188.114.98.0:443:humanity://assignment",
+      "_dedup_key": "172.66.1.36:443:humanity:/assignment",
       "tls": {
         "enabled": true,
-        "server_name": "www.calmlunch.com"
+        "server_name": "www.pleadcourt.org"
       },
       "transport": {
         "type": "ws",
-        "path": "//assignment",
+        "path": "/assignment",
         "headers": {
-          "Host": "www.calmlunch.com"
+          "Host": "www.pleadcourt.org"
         }
       },
       "_sub_ids": [
         "1",
-        "14",
-        "20",
+        "13",
+        "18",
         "203",
         "21",
         "28",
-        "5",
         "7",
         "8"
       ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
+      "_last_ok_ts": 1793132037.078212,
+      "_country": "US",
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "node-54",
-      "server": "188.114.98.0",
+      "tag": "node-483",
+      "server": "151.101.36.244",
       "server_port": 443,
-      "password": "34bfb8d8-e37f-4872-a452-a2b2b4310aed",
-      "_dedup_key": "188.114.98.0:443:34bfb8d8-e37f-4872-a452-a2b2b4310aed:/whatever/trojan-ws",
+      "password": "mitivpn",
+      "_dedup_key": "151.101.36.244:443:mitivpn:/",
       "tls": {
         "enabled": true,
-        "server_name": "support.zoom.us.sg4.zidstore.net"
+        "server_name": "ns2.firefox.com"
       },
       "transport": {
         "type": "ws",
-        "path": "/whatever/trojan-ws",
         "headers": {
-          "Host": "support.zoom.us.sg4.zidstore.net"
-        }
+          "Host": "mitivpn-mitivpn.ac.ir"
+        },
+        "path": "/"
       },
       "_sub_ids": [
-        "5"
+        "203",
+        "28",
+        "3",
+        "7"
       ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "node-65",
-      "server": "uwu.blueknightnet.qzz.io",
+      "tag": "node-484",
+      "server": "151.101.36.244",
+      "server_port": 443,
+      "password": "mitivpn",
+      "_dedup_key": "151.101.36.244:443:mitivpn:/MTMVPN",
+      "tls": {
+        "enabled": true,
+        "server_name": "ns2.firefox.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/MTMVPN",
+        "headers": {
+          "Host": "mitivpn-mitivpn.ac.ir"
+        }
+      },
+      "_sub_ids": [
+        "204",
+        "28",
+        "7"
+      ],
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1468",
+      "server": "node11.botkeep.cloud",
+      "server_port": 53567,
+      "password": "d32bf278-9687-47b5-8258-99ca8a985b8d",
+      "_dedup_key": "node11.botkeep.cloud:53567:d32bf278-9687-47b5-8258-99ca8a985b8d:/public-jqA5Llzymm2RhE58-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "node11.botkeep.cloud"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/public-jqA5Llzymm2RhE58-trojan",
+        "headers": {
+          "Host": "node11.botkeep.cloud"
+        }
+      },
+      "_sub_ids": [
+        "203",
+        "28",
+        "7"
+      ],
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-17",
+      "server": "104.16.148.5",
+      "server_port": 443,
+      "password": "19877587-ed94-4033-88cd-4ac50a5e8718",
+      "tls": {
+        "enabled": true,
+        "server_name": "dimskiee.biz.id"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/WangCai-8"
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-104",
+      "server": "104.18.12.229",
+      "server_port": 8443,
+      "password": "trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "longwanghen.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/"
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-140",
+      "server": "104.18.153.182",
+      "server_port": 443,
+      "password": "19877587-ed94-4033-88cd-4ac50a5e8718",
+      "tls": {
+        "enabled": true,
+        "server_name": "dimskiee.biz.id"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/WangCai-8"
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-160",
+      "server": "104.18.35.86",
+      "server_port": 8443,
+      "password": "trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "longwanghen.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "longwanghen.pages.dev"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-168",
+      "server": "104.18.41.190",
+      "server_port": 443,
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+      "tls": {
+        "enabled": true,
+        "server_name": "nat11.outsidemyheart.space"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/w4e5yh0p945y3?ed=2560",
+        "headers": {
+          "Host": "nat11.outsidemyheart.space"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-177",
+      "server": "104.18.65.57",
+      "server_port": 443,
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+      "tls": {
+        "enabled": true,
+        "server_name": "nat3.xxai.dpdns.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/anyway",
+        "headers": {
+          "Host": "nat3.xxai.dpdns.org"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-178",
+      "server": "104.18.66.57",
+      "server_port": 443,
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+      "tls": {
+        "enabled": true,
+        "server_name": "nat3.xxai.dpdns.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/anyway",
+        "headers": {
+          "Host": "nat3.xxai.dpdns.org"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-336",
+      "server": "104.21.26.36",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "vless.herogoing.top"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tr?ed=2560"
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-393",
+      "server": "104.25.47.216",
+      "server_port": 443,
+      "password": "mitivpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "de.mitivpn.in.net"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/"
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-639",
+      "server": "172.64.146.66",
+      "server_port": 443,
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+      "tls": {
+        "enabled": true,
+        "server_name": "nat11.outsidemyheart.space"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/w4e5yh0p945y3?ed=2560",
+        "headers": {
+          "Host": "nat11.outsidemyheart.space"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-650",
+      "server": "172.64.152.241",
+      "server_port": 443,
+      "password": "xhl549341",
+      "tls": {
+        "enabled": true,
+        "server_name": "tro.baiyi.cloudns.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/"
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-669",
+      "server": "172.64.80.1",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "vless.herogoing.top"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tr?ed=2560"
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-794",
+      "server": "178.128.45.156",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.pleadcourt.org"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-877",
+      "server": "188.114.97.6",
+      "server_port": 443,
+      "password": "mitivpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "de.mitivpn.in.net"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/?TELEGRAM--BYA--CHANEL---@V2ray_AM---@V2ray_AM---@V2ray_AM---@V2ray_AM---@V2ray_AM---@V2ray_AM---@V2ray_AM",
+        "headers": {
+          "Host": "de.mitivpn.in.net"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-890",
+      "server": "188.114.98.0",
+      "server_port": 443,
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+      "tls": {
+        "enabled": true,
+        "server_name": "nat11.outsidemyheart.space"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/w4e5yh0p945y3?ed=2560",
+        "headers": {
+          "Host": "nat11.outsidemyheart.space"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-891",
+      "server": "188.114.98.0",
+      "server_port": 443,
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+      "tls": {
+        "enabled": true,
+        "server_name": "nat3.xxai.dpdns.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/anyway",
+        "headers": {
+          "Host": "nat3.xxai.dpdns.org"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-903",
+      "server": "188.114.98.0",
+      "server_port": 443,
+      "password": "mitivpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "de.mitivpn.in.net"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/--@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1",
+        "headers": {
+          "Host": "de.mitivpn.in.net"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1159",
+      "server": "31.57.190.17",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.pleadcourt.org"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1161",
+      "server": "31.57.190.40",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.pleadcourt.org"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1163",
+      "server": "31.57.190.71",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.pleadcourt.org"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1166",
+      "server": "31.57.190.89",
+      "server_port": 443,
+      "password": "humanity",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.pleadcourt.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.pleadcourt.org"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1395",
+      "server": "b2n.ir",
+      "server_port": 443,
+      "password": "mitivpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "de.mitivpn.in.net"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/--@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN"
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1396",
+      "server": "b2n.ir",
+      "server_port": 443,
+      "password": "mitivpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "de.mitivpn.in.net"
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "de.mitivpn.in.net"
+        },
+        "path": "/"
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1397",
+      "server": "b2n.ir",
+      "server_port": 443,
+      "password": "mitivpn",
+      "tls": {
+        "enabled": true,
+        "server_name": "de.mitivpn.in.net"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1/--@VPNine1---@VPNine1/---@VPNine1---@VPNine1/---@VPNine1---@VPNine1",
+        "headers": {
+          "Host": "de.mitivpn.in.net"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1436",
+      "server": "jp3.998998.best",
+      "server_port": 443,
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+      "tls": {
+        "enabled": true,
+        "server_name": "nat11.outsidemyheart.space"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/w4e5yh0p945y3?ed=2560"
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1454",
+      "server": "sg2.998998.best",
+      "server_port": 443,
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+      "tls": {
+        "enabled": true,
+        "server_name": "nat6.outsidemyheart.space"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/eriujtheriughwiue?ed=2560"
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1468",
+      "server": "us3-2.998998.best",
+      "server_port": 443,
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+      "tls": {
+        "enabled": true,
+        "server_name": "nat3.xxai.dpdns.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/anyway",
+        "headers": {
+          "Host": "nat3.xxai.dpdns.org"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1500",
+      "server": "www.visa.com.sg",
+      "server_port": 2053,
+      "password": "040870be-ae04-43d7-b265-bbe7b64b60db",
+      "tls": {
+        "enabled": true,
+        "server_name": "au1.yang-1989.xyz"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/872y",
+        "headers": {
+          "Host": "au1.yang-1989.xyz"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1501",
+      "server": "www.visa.com.sg",
+      "server_port": 8443,
+      "password": "7a041e6c-642e-4f14-ad8f-a7aa1d3e2dac",
+      "tls": {
+        "enabled": true,
+        "server_name": "au5.yang-1989.xyz"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/iw8i",
+        "headers": {
+          "Host": "au5.yang-1989.xyz"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1507",
+      "server": "x.com",
+      "server_port": 2053,
+      "password": "040870be-ae04-43d7-b265-bbe7b64b60db",
+      "tls": {
+        "enabled": true,
+        "server_name": "au1.yang-1989.xyz"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/872y",
+        "headers": {
+          "Host": "au1.yang-1989.xyz"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1508",
+      "server": "x.com",
       "server_port": 2087,
-      "password": "0y7hid61k3k2vuy1",
-      "_dedup_key": "uwu.blueknightnet.qzz.io:2087:0y7hid61k3k2vuy1:/@BlueKnight_net--@BlueKnight_net--@BlueKnight_net",
+      "password": "31794262-b429-4f35-8ffe-c1fa8a43b8d7",
+      "tls": {
+        "enabled": true,
+        "server_name": "au3.yang-1989.xyz"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/9f81",
+        "headers": {
+          "Host": "au3.yang-1989.xyz"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1509",
+      "server": "x.com",
+      "server_port": 2096,
+      "password": "aa308698-d9a4-43ff-a563-14636919c971",
+      "tls": {
+        "enabled": true,
+        "server_name": "au4.yang-1989.xyz"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/qpf7",
+        "headers": {
+          "Host": "au4.yang-1989.xyz"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1510",
+      "server": "x.com",
+      "server_port": 2083,
+      "password": "e0303a31-0daf-4d45-ae1e-2bc0544f0ad2",
+      "tls": {
+        "enabled": true,
+        "server_name": "au2.yang-1989.xyz"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/as2u",
+        "headers": {
+          "Host": "au2.yang-1989.xyz"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-172",
+      "server": "104.18.43.174",
+      "server_port": 443,
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+      "tls": {
+        "enabled": true,
+        "server_name": "server41.9966338.xyz"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/angles",
+        "headers": {
+          "Host": "server41.9966338.xyz"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-636",
+      "server": "172.64.144.82",
+      "server_port": 443,
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+      "tls": {
+        "enabled": true,
+        "server_name": "server41.9966338.xyz"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/angles",
+        "headers": {
+          "Host": "server41.9966338.xyz"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-649",
+      "server": "172.64.152.241",
+      "server_port": 443,
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+      "tls": {
+        "enabled": true,
+        "server_name": "server41.9966338.xyz"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/angles",
+        "headers": {
+          "Host": "server41.9966338.xyz"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-727",
+      "server": "172.67.140.126",
+      "server_port": 2087,
+      "password": "av7fquzvuc99xcs9",
       "tls": {
         "enabled": true,
         "server_name": "uwu.dianaw.cc.cd"
@@ -476,26 +853,52 @@
         "type": "ws",
         "path": "/@BlueKnight_net--@BlueKnight_net--@BlueKnight_net"
       },
-      "_sub_ids": [
-        "1",
-        "13",
-        "20",
-        "202",
-        "27",
-        "28",
-        "7"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "node-66",
-      "server": "uwu.blueknightnet.qzz.io",
+      "tag": "node-1466",
+      "server": "uk8.998998.best",
+      "server_port": 443,
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+      "tls": {
+        "enabled": true,
+        "server_name": "server41.9966338.xyz"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/angles",
+        "headers": {
+          "Host": "server41.9966338.xyz"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-882",
+      "server": "188.114.98.0",
+      "server_port": 443,
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
+      "tls": {
+        "enabled": true,
+        "server_name": "nat11.outsidemyheart.space"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/w4e5yh0p945y3",
+        "headers": {
+          "Host": "nat11.outsidemyheart.space"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-354",
+      "server": "104.21.65.43",
       "server_port": 2087,
-      "password": "w4rv08rp3tegsco6",
-      "_dedup_key": "uwu.blueknightnet.qzz.io:2087:w4rv08rp3tegsco6:/@BlueKnight_net--@BlueKnight_net--@BlueKnight_net",
+      "password": "0y7hid61k3k2vuy1",
       "tls": {
         "enabled": true,
         "server_name": "uwu.dianaw.cc.cd"
@@ -507,190 +910,33 @@
           "Host": "uwu.dianaw.cc.cd"
         }
       },
-      "_sub_ids": [
-        "1",
-        "27"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "node-67",
-      "server": "www.calmlunch.com",
+      "tag": "node-1443",
+      "server": "panel-production-4c69.up.railway.app",
       "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "www.calmlunch.com:443:humanity://assignment",
+      "password": "ce852641-b913-4597-ab61-d734e1a953c6",
       "tls": {
         "enabled": true,
-        "server_name": "www.calmlunch.com"
+        "server_name": "panel-production-4c69.up.railway.app"
       },
       "transport": {
         "type": "ws",
-        "path": "//assignment",
+        "path": "/tr",
         "headers": {
-          "Host": "www.calmlunch.com"
+          "Host": "panel-production-4c69.up.railway.app"
         }
       },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "node-68",
-      "server": "www.speedtest.net",
+      "tag": "node-633",
+      "server": "168.235.125.93",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "www.speedtest.net:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_sub_ids": [
-        "1",
-        "14",
-        "18",
-        "20",
-        "203",
-        "21",
-        "28",
-        "4",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-70",
-      "server": "www.speedtest.net",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "www.speedtest.net:443:humanity:/assignment?TELEGRAM--CONFIG7X--CONFIG7X",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment?TELEGRAM--CONFIG7X--CONFIG7X",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "203",
-        "28",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": null,
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "🇦🇹node-76",
-      "server": "212.183.88.136",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "212.183.88.136:443:humanity:/%2Fassignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/%2Fassignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "14"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "AT",
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "🇦🇹node-77",
-      "server": "212.183.88.136",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "212.183.88.136:443:humanity://assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "//assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "14",
-        "18",
-        "203",
-        "21",
-        "28",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "AT",
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "🇨🇭node-81",
-      "server": "185.18.250.245",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "185.18.250.245:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "203",
-        "28",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "CH",
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "🇩🇪node-86",
-      "server": "144.31.205.106",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "144.31.205.106:443:humanity:/assignment",
       "tls": {
         "enabled": true,
         "server_name": "www.pleadcourt.org"
@@ -702,172 +948,14 @@
           "Host": "www.pleadcourt.org"
         }
       },
-      "_sub_ids": [
-        "1",
-        "13",
-        "14",
-        "18",
-        "203",
-        "21",
-        "28",
-        "6",
-        "7"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "DE",
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "🇩🇪node-92",
-      "server": "45.80.111.7",
+      "tag": "node-1160",
+      "server": "31.57.190.34",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "45.80.111.7:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_sub_ids": [
-        "1",
-        "14",
-        "17",
-        "18",
-        "20",
-        "203",
-        "21",
-        "27",
-        "28",
-        "4",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "DE",
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "🇩🇪node-93",
-      "server": "46.225.77.98",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "46.225.77.98:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "20"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "DE",
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "🇩🇪node-94",
-      "server": "5.44.46.142",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "5.44.46.142:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "DE",
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "🇪🇸node-99",
-      "server": "185.114.72.31",
-      "server_port": 2053,
-      "password": "humanity",
-      "_dedup_key": "185.114.72.31:2053:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "14",
-        "20",
-        "203",
-        "21",
-        "28",
-        "4",
-        "5",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "ES",
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "🇪🇸node-102",
-      "server": "212.227.144.37",
-      "server_port": 8443,
-      "password": "humanity",
-      "_dedup_key": "212.227.144.37:8443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "21",
-        "4"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "ES",
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "🇫🇮node-106",
-      "server": "46.62.204.134",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "46.62.204.134:443:humanity:/assignment",
       "tls": {
         "enabled": true,
         "server_name": "www.pleadcourt.org"
@@ -879,30 +967,49 @@
           "Host": "www.pleadcourt.org"
         }
       },
-      "_sub_ids": [
-        "1",
-        "13",
-        "14",
-        "18",
-        "20",
-        "203",
-        "21",
-        "28",
-        "4",
-        "6",
-        "7"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "FI",
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "🇫🇮node-107",
-      "server": "46.62.230.149",
+      "tag": "node-46",
+      "server": "104.16.246.173",
+      "server_port": 443,
+      "password": "123456",
+      "tls": {
+        "enabled": true,
+        "server_name": "now-pages-sub-em4.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/?ed=2560"
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-83",
+      "server": "104.17.156.140",
+      "server_port": 443,
+      "password": "d9f20a29-239e-46ab-82bb-fa0d69e480f9",
+      "tls": {
+        "enabled": true,
+        "server_name": "zxcvz.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand",
+        "headers": {
+          "Host": "zxcvz.pages.dev"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1235",
+      "server": "45.147.48.28",
       "server_port": 443,
       "password": "humanity",
-      "_dedup_key": "46.62.230.149:443:humanity:/assignment",
       "tls": {
         "enabled": true,
         "server_name": "www.pleadcourt.org"
@@ -914,386 +1021,217 @@
           "Host": "www.pleadcourt.org"
         }
       },
-      "_sub_ids": [
-        "1",
-        "13",
-        "14",
-        "20"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "FI",
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "🇫🇷node-108",
-      "server": "57.128.183.108",
+      "tag": "node-171",
+      "server": "104.18.42.98",
       "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "57.128.183.108:443:humanity:/assignment",
+      "password": "xhl549341",
       "tls": {
         "enabled": true,
-        "server_name": "www.pleadcourt.org"
+        "server_name": "tro.baiyi.cloudns.org"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
+        "path": "/?ed=2560"
       },
-      "_sub_ids": [
-        "1",
-        "13"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "FR",
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "🇭🇰node-110",
-      "server": "219.76.13.177",
+      "tag": "node-734",
+      "server": "172.67.135.88",
       "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "219.76.13.177:443:humanity:/assignment",
+      "password": "bpb-trojan",
       "tls": {
         "enabled": true,
-        "server_name": "www.pleadcourt.org"
+        "server_name": "vless.herogoing.top"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
+        "path": "/tr?ed=2560"
       },
-      "_sub_ids": [
-        "1",
-        "13",
-        "17",
-        "18",
-        "203",
-        "21",
-        "28",
-        "7"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "HK",
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "🇱🇻node-116",
-      "server": "94.158.219.126",
+      "tag": "node-1365",
+      "server": "8.47.69.60",
       "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "94.158.219.126:443:humanity:/assignment",
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
       "tls": {
         "enabled": true,
-        "server_name": "www.pleadcourt.org"
+        "server_name": "nat11.outsidemyheart.space"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
+        "path": "/w4e5yh0p945y3",
         "headers": {
-          "Host": "www.pleadcourt.org"
+          "Host": "nat11.outsidemyheart.space"
         }
       },
-      "_sub_ids": [
-        "1",
-        "13",
-        "18",
-        "203",
-        "21",
-        "28",
-        "7"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "LV",
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "🇳🇱node-119",
-      "server": "45.87.41.18",
+      "tag": "node-1471",
+      "server": "uwu.blueknightnet.qzz.io",
+      "server_port": 2087,
+      "password": "av7fquzvuc99xcs9",
+      "tls": {
+        "enabled": true,
+        "server_name": "uwu.dianaw.cc.cd"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@BlueKnight_net--@BlueKnight_net--@BlueKnight_net",
+        "headers": {
+          "Host": "uwu.dianaw.cc.cd"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-429",
+      "server": "109.234.211.232",
       "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "45.87.41.18:443:humanity:/assignment",
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
       "tls": {
         "enabled": true,
-        "server_name": "www.calmlunch.com"
+        "server_name": "nat11.outsidemyheart.space"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
+        "path": "/w4e5yh0p945y3",
         "headers": {
-          "Host": "www.calmlunch.com"
+          "Host": "nat11.outsidemyheart.space"
         }
       },
-      "_sub_ids": [
-        "1",
-        "13",
-        "14",
-        "18",
-        "20",
-        "203",
-        "21",
-        "28",
-        "4",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "NL",
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "🇳🇱node-120",
-      "server": "5.253.189.238",
+      "tag": "node-1366",
+      "server": "8.6.112.206",
       "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "5.253.189.238:443:humanity:/assignment",
+      "password": "5504eaa8-1395-402f-8e0e-75ecd762e627",
       "tls": {
         "enabled": true,
-        "server_name": "www.calmlunch.com"
+        "server_name": "nat11.outsidemyheart.space"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
+        "path": "/w4e5yh0p945y3?ed=2560"
       },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "NL",
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "🇳🇱node-122",
-      "server": "89.150.34.41",
-      "server_port": 2053,
-      "password": "humanity",
-      "_dedup_key": "89.150.34.41:2053:humanity:/assignment",
+      "tag": "node-1147",
+      "server": "216.24.57.225",
+      "server_port": 2083,
+      "password": "8yup05o4lz0csoxb",
       "tls": {
         "enabled": true,
-        "server_name": "www.calmlunch.com"
+        "server_name": "fin.netvia.ir"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
+        "path": "/YaujaGsyr",
         "headers": {
-          "Host": "www.calmlunch.com"
+          "Host": "fin.netvia.ir"
         }
       },
-      "_sub_ids": [
-        "1",
-        "13",
-        "14",
-        "20"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "NL",
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "🇳🇱node-123",
-      "server": "95.85.32.57",
+      "tag": "node-392",
+      "server": "104.21.88.77",
       "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "95.85.32.57:443:humanity:/assignment",
+      "password": "2bcfbfba-b446-4ad5-93ad-72af9e008f61",
       "tls": {
         "enabled": true,
-        "server_name": "www.pleadcourt.org"
+        "server_name": "blackshadow.dpdns.org"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
+        "path": "/195.123.218.174-443",
         "headers": {
-          "Host": "www.pleadcourt.org"
+          "Host": "blackshadow.dpdns.org"
         }
       },
-      "_sub_ids": [
-        "1",
-        "13"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "NL",
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "🇸🇨node-128",
-      "server": "45.130.125.76",
+      "tag": "node-1437",
+      "server": "cdn.ir53.indevs.in",
+      "server_port": 2087,
+      "password": "x6x80rh7lr7jjqo6",
+      "tls": {
+        "enabled": true,
+        "server_name": "cdn.ir53.indevs.in"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/snapp.ir",
+        "headers": {
+          "Host": "cdn.ir53.indevs.in"
+        }
+      },
+      "_pending_since": 1793145527.915875
+    },
+    {
+      "type": "trojan",
+      "tag": "node-179",
+      "server": "104.18.43.174",
       "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "45.130.125.76:443:humanity:/assignment",
+      "password": "xhl549341",
       "tls": {
         "enabled": true,
-        "server_name": "www.calmlunch.com"
+        "server_name": "tro.baiyi.cloudns.org"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
+        "path": "/"
       },
-      "_sub_ids": [
-        "1",
-        "14",
-        "27"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "SC",
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "🇹🇷node-130",
-      "server": "155.103.71.142",
+      "tag": "node-372",
+      "server": "104.21.71.249",
       "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "155.103.71.142:443:humanity:/assignment",
+      "password": "xhl549341",
       "tls": {
         "enabled": true,
-        "server_name": "www.calmlunch.com"
+        "server_name": "tro.baiyi.cloudns.org"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
+        "path": "/"
       },
-      "_sub_ids": [
-        "1",
-        "20"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "TR",
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
-      "tag": "🇺🇸node-131",
-      "server": "141.193.213.172",
+      "tag": "node-647",
+      "server": "172.64.145.158",
       "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "141.193.213.172:443:humanity:/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+      "password": "xhl549341",
       "tls": {
         "enabled": true,
-        "server_name": "www.calmlunch.com"
+        "server_name": "tro.baiyi.cloudns.org"
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
+        "path": "/?ed=2560"
       },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "US",
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-133",
-      "server": "141.193.213.172",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "141.193.213.172:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "14",
-        "18",
-        "20",
-        "203",
-        "21",
-        "27",
-        "28",
-        "4",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "US",
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-134",
-      "server": "165.215.250.14",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "165.215.250.14:443:humanity://assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "//assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "US",
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-135",
-      "server": "5.78.92.27",
-      "server_port": 8443,
-      "password": "humanity",
-      "_dedup_key": "5.78.92.27:8443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.calmlunch.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.calmlunch.com"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "203",
-        "28",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1793098528.828027,
-      "_country": "US",
-      "_pending_since": 1793132037.078212
+      "_pending_since": 1793145527.915875
     },
     {
       "type": "trojan",
@@ -1433,22 +1371,6 @@
       "transport": {
         "type": "ws",
         "path": "/WangCai-8"
-      },
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-49",
-      "server": "104.16.6.70",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
       },
       "_pending_since": 1793132037.078212
     },
@@ -1683,22 +1605,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-888",
-      "server": "188.114.97.9",
-      "server_port": 443,
-      "password": "TsX0XJKMa2h$CbKr0k",
-      "tls": {
-        "enabled": true,
-        "server_name": "IDB8onmVBntUyt5T7T6cEjFW8VLRB.PAGES.DeV"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr/mPwnfIHtx0vldKy0A5AGJTZB"
-      },
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
       "tag": "node-890",
       "server": "188.114.98.0",
       "server_port": 443,
@@ -1832,25 +1738,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1393",
-      "server": "95.85.54.197",
-      "server_port": 443,
-      "password": "humanity",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
       "tag": "node-1395",
       "server": "b2n.ir",
       "server_port": 443,
@@ -1921,38 +1808,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
       "tag": "node-1454",
       "server": "sg2.998998.best",
       "server_port": 443,
@@ -1983,22 +1838,6 @@
         "headers": {
           "Host": "nat3.xxai.dpdns.org"
         }
-      },
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1472",
-      "server": "vless.herogoing.top",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "vless.herogoing.top"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr?ed=2560"
       },
       "_pending_since": 1793132037.078212
     },
@@ -2037,22 +1876,6 @@
         "headers": {
           "Host": "au5.yang-1989.xyz"
         }
-      },
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1504",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/"
       },
       "_pending_since": 1793132037.078212
     },
@@ -2356,38 +2179,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-560",
-      "server": "162.159.152.31",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-564",
-      "server": "162.159.152.81",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
       "tag": "node-1235",
       "server": "45.147.48.28",
       "server_port": 443,
@@ -2402,22 +2193,6 @@
         "headers": {
           "Host": "www.pleadcourt.org"
         }
-      },
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1431",
-      "server": "cf.090227.xyz",
-      "server_port": 443,
-      "password": "xhl549341",
-      "tls": {
-        "enabled": true,
-        "server_name": "tro.baiyi.cloudns.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
       },
       "_pending_since": 1793132037.078212
     },
@@ -2566,41 +2341,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1436",
-      "server": "blackshadow.dpdns.org",
-      "server_port": 443,
-      "password": "2bcfbfba-b446-4ad5-93ad-72af9e008f61",
-      "tls": {
-        "enabled": true,
-        "server_name": "blackshadow.dpdns.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/195.123.218.174-443"
-      },
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1490",
-      "server": "support.zoom.us",
-      "server_port": 443,
-      "password": "34bfb8d8-e37f-4872-a452-a2b2b4310aed",
-      "tls": {
-        "enabled": true,
-        "server_name": "support.zoom.us.sg4.zidstore.net"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/whatever/trojan-ws",
-        "headers": {
-          "Host": "support.zoom.us.sg4.zidstore.net"
-        }
-      },
-      "_pending_since": 1793132037.078212
-    },
-    {
-      "type": "trojan",
       "tag": "node-1437",
       "server": "cdn.ir53.indevs.in",
       "server_port": 2087,
@@ -2683,35 +2423,6 @@
       },
       "_sub_ids": [
         "13"
-      ],
-      "_last_ok_ts": 1793079148.864031,
-      "_country": null,
-      "_pending_since": 1793098528.828027
-    },
-    {
-      "type": "trojan",
-      "tag": "node-5",
-      "server": "104.16.6.70",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "104.16.6.70:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment"
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "14",
-        "203",
-        "27",
-        "28",
-        "6",
-        "7"
       ],
       "_last_ok_ts": 1793079148.864031,
       "_country": null,
@@ -2998,94 +2709,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-101",
-      "server": "188.114.97.9",
-      "server_port": 443,
-      "password": "TsX0XJKMa2h$CbKr0k",
-      "_dedup_key": "188.114.97.9:443:TsX0XJKMa2h$CbKr0k:/tr/mPwnfIHtx0vldKy0A5AGJTZB",
-      "tls": {
-        "enabled": true,
-        "server_name": "IDB8onmVBntUyt5T7T6cEjFW8VLRB.PAGES.DeV"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr/mPwnfIHtx0vldKy0A5AGJTZB"
-      },
-      "_sub_ids": [
-        "13"
-      ],
-      "_last_ok_ts": 1793079148.864031,
-      "_country": null,
-      "_pending_since": 1793098528.828027
-    },
-    {
-      "type": "trojan",
-      "tag": "node-116",
-      "server": "blackshadow.dpdns.org",
-      "server_port": 443,
-      "password": "2bcfbfba-b446-4ad5-93ad-72af9e008f61",
-      "_dedup_key": "blackshadow.dpdns.org:443:2bcfbfba-b446-4ad5-93ad-72af9e008f61:/195.123.218.174-443",
-      "tls": {
-        "enabled": true,
-        "server_name": "support.zoom.us.blackshadow.dpdns.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/195.123.218.174-443"
-      },
-      "_sub_ids": [
-        "13"
-      ],
-      "_last_ok_ts": 1793079148.864031,
-      "_country": null,
-      "_pending_since": 1793098528.828027
-    },
-    {
-      "type": "trojan",
-      "tag": "node-119",
-      "server": "cf.090227.xyz",
-      "server_port": 443,
-      "password": "xhl549341",
-      "_dedup_key": "cf.090227.xyz:443:xhl549341:/?ed=2560",
-      "tls": {
-        "enabled": true,
-        "server_name": "tro.baiyi.cloudns.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_sub_ids": [
-        "13"
-      ],
-      "_last_ok_ts": 1793079148.864031,
-      "_country": null,
-      "_pending_since": 1793098528.828027
-    },
-    {
-      "type": "trojan",
-      "tag": "node-124",
-      "server": "vless.herogoing.top",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "_dedup_key": "vless.herogoing.top:443:bpb-trojan:/tr?ed=2560",
-      "tls": {
-        "enabled": true,
-        "server_name": "vless.herogoing.top"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr?ed=2560"
-      },
-      "_sub_ids": [
-        "13"
-      ],
-      "_last_ok_ts": 1793079148.864031,
-      "_country": null,
-      "_pending_since": 1793098528.828027
-    },
-    {
-      "type": "trojan",
       "tag": "🇬🇧node-163",
       "server": "178.128.45.156",
       "server_port": 443,
@@ -3111,32 +2734,6 @@
       ],
       "_last_ok_ts": 1793079148.864031,
       "_country": "GB",
-      "_pending_since": 1793098528.828027
-    },
-    {
-      "type": "trojan",
-      "tag": "🇳🇱node-179",
-      "server": "95.85.54.197",
-      "server_port": 443,
-      "password": "humanity",
-      "_dedup_key": "95.85.54.197:443:humanity:/assignment",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.pleadcourt.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/assignment",
-        "headers": {
-          "Host": "www.pleadcourt.org"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13"
-      ],
-      "_last_ok_ts": 1793079148.864031,
-      "_country": "NL",
       "_pending_since": 1793098528.828027
     },
     {
@@ -3455,38 +3052,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1793098528.828027
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1793098528.828027
-    },
-    {
-      "type": "trojan",
       "tag": "node-1454",
       "server": "sg2.998998.best",
       "server_port": 443,
@@ -3555,22 +3120,6 @@
         "headers": {
           "Host": "au5.yang-1989.xyz"
         }
-      },
-      "_pending_since": 1793098528.828027
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1504",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/"
       },
       "_pending_since": 1793098528.828027
     },
@@ -3874,38 +3423,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-560",
-      "server": "162.159.152.31",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1793098528.828027
-    },
-    {
-      "type": "trojan",
-      "tag": "node-564",
-      "server": "162.159.152.81",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1793098528.828027
-    },
-    {
-      "type": "trojan",
       "tag": "node-1235",
       "server": "45.147.48.28",
       "server_port": 443,
@@ -4017,25 +3534,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1490",
-      "server": "support.zoom.us",
-      "server_port": 443,
-      "password": "34bfb8d8-e37f-4872-a452-a2b2b4310aed",
-      "tls": {
-        "enabled": true,
-        "server_name": "support.zoom.us.sg4.zidstore.net"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/whatever/trojan-ws",
-        "headers": {
-          "Host": "support.zoom.us.sg4.zidstore.net"
-        }
-      },
-      "_pending_since": 1793098528.828027
-    },
-    {
-      "type": "trojan",
       "tag": "node-1437",
       "server": "cdn.ir53.indevs.in",
       "server_port": 2087,
@@ -4113,33 +3611,6 @@
         "28",
         "4",
         "7"
-      ],
-      "_last_ok_ts": 1793047457.859123,
-      "_country": "US",
-      "_pending_since": 1793079148.864031
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-188",
-      "server": "support.zoom.us",
-      "server_port": 443,
-      "password": "34bfb8d8-e37f-4872-a452-a2b2b4310aed",
-      "_dedup_key": "support.zoom.us:443:34bfb8d8-e37f-4872-a452-a2b2b4310aed:/whatever/trojan-ws",
-      "tls": {
-        "enabled": true,
-        "server_name": "support.zoom.us.sg4.zidstore.net"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/whatever/trojan-ws",
-        "headers": {
-          "Host": "support.zoom.us.sg4.zidstore.net"
-        }
-      },
-      "_sub_ids": [
-        "14",
-        "20",
-        "27"
       ],
       "_last_ok_ts": 1793047457.859123,
       "_country": "US",
@@ -4697,38 +4168,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1793079148.864031
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1793079148.864031
-    },
-    {
-      "type": "trojan",
       "tag": "node-1454",
       "server": "sg2.998998.best",
       "server_port": 443,
@@ -4797,22 +4236,6 @@
         "headers": {
           "Host": "au5.yang-1989.xyz"
         }
-      },
-      "_pending_since": 1793079148.864031
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1504",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/"
       },
       "_pending_since": 1793079148.864031
     },
@@ -5092,38 +4515,6 @@
         "headers": {
           "Host": "zxcvz.pages.dev"
         }
-      },
-      "_pending_since": 1793079148.864031
-    },
-    {
-      "type": "trojan",
-      "tag": "node-560",
-      "server": "162.159.152.31",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1793079148.864031
-    },
-    {
-      "type": "trojan",
-      "tag": "node-564",
-      "server": "162.159.152.81",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
       },
       "_pending_since": 1793079148.864031
     },
@@ -5929,38 +5320,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1793047457.859123
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1793047457.859123
-    },
-    {
-      "type": "trojan",
       "tag": "node-1454",
       "server": "sg2.998998.best",
       "server_port": 443,
@@ -6029,22 +5388,6 @@
         "headers": {
           "Host": "au5.yang-1989.xyz"
         }
-      },
-      "_pending_since": 1793047457.859123
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1504",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/"
       },
       "_pending_since": 1793047457.859123
     },
@@ -6305,38 +5648,6 @@
         "headers": {
           "Host": "zxcvz.pages.dev"
         }
-      },
-      "_pending_since": 1793047457.859123
-    },
-    {
-      "type": "trojan",
-      "tag": "node-560",
-      "server": "162.159.152.31",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1793047457.859123
-    },
-    {
-      "type": "trojan",
-      "tag": "node-564",
-      "server": "162.159.152.81",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
       },
       "_pending_since": 1793047457.859123
     },
@@ -6892,38 +6203,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1793014264.473076
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1793014264.473076
-    },
-    {
-      "type": "trojan",
       "tag": "node-1454",
       "server": "sg2.998998.best",
       "server_port": 443,
@@ -6992,22 +6271,6 @@
         "headers": {
           "Host": "au5.yang-1989.xyz"
         }
-      },
-      "_pending_since": 1793014264.473076
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1504",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/"
       },
       "_pending_since": 1793014264.473076
     },
@@ -7249,38 +6512,6 @@
         "headers": {
           "Host": "zxcvz.pages.dev"
         }
-      },
-      "_pending_since": 1793014264.473076
-    },
-    {
-      "type": "trojan",
-      "tag": "node-560",
-      "server": "162.159.152.31",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1793014264.473076
-    },
-    {
-      "type": "trojan",
-      "tag": "node-564",
-      "server": "162.159.152.81",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
       },
       "_pending_since": 1793014264.473076
     },
@@ -8243,38 +7474,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1792991670.716724
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1792991670.716724
-    },
-    {
-      "type": "trojan",
       "tag": "node-1454",
       "server": "sg2.998998.best",
       "server_port": 443,
@@ -8343,22 +7542,6 @@
         "headers": {
           "Host": "au5.yang-1989.xyz"
         }
-      },
-      "_pending_since": 1792991670.716724
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1504",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/"
       },
       "_pending_since": 1792991670.716724
     },
@@ -8600,38 +7783,6 @@
         "headers": {
           "Host": "zxcvz.pages.dev"
         }
-      },
-      "_pending_since": 1792991670.716724
-    },
-    {
-      "type": "trojan",
-      "tag": "node-560",
-      "server": "162.159.152.31",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1792991670.716724
-    },
-    {
-      "type": "trojan",
-      "tag": "node-564",
-      "server": "162.159.152.81",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
       },
       "_pending_since": 1792991670.716724
     },
@@ -9307,38 +8458,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1792968448.584831
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1792968448.584831
-    },
-    {
-      "type": "trojan",
       "tag": "node-1454",
       "server": "sg2.998998.best",
       "server_port": 443,
@@ -9407,22 +8526,6 @@
         "headers": {
           "Host": "au5.yang-1989.xyz"
         }
-      },
-      "_pending_since": 1792968448.584831
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1504",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/"
       },
       "_pending_since": 1792968448.584831
     },
@@ -9664,38 +8767,6 @@
         "headers": {
           "Host": "zxcvz.pages.dev"
         }
-      },
-      "_pending_since": 1792968448.584831
-    },
-    {
-      "type": "trojan",
-      "tag": "node-560",
-      "server": "162.159.152.31",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1792968448.584831
-    },
-    {
-      "type": "trojan",
-      "tag": "node-564",
-      "server": "162.159.152.81",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
       },
       "_pending_since": 1792968448.584831
     },
@@ -10153,38 +9224,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1792953169.254167
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1792953169.254167
-    },
-    {
-      "type": "trojan",
       "tag": "node-1454",
       "server": "sg2.998998.best",
       "server_port": 443,
@@ -10253,22 +9292,6 @@
         "headers": {
           "Host": "au5.yang-1989.xyz"
         }
-      },
-      "_pending_since": 1792953169.254167
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1504",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/"
       },
       "_pending_since": 1792953169.254167
     },
@@ -10510,38 +9533,6 @@
         "headers": {
           "Host": "zxcvz.pages.dev"
         }
-      },
-      "_pending_since": 1792953169.254167
-    },
-    {
-      "type": "trojan",
-      "tag": "node-560",
-      "server": "162.159.152.31",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1792953169.254167
-    },
-    {
-      "type": "trojan",
-      "tag": "node-564",
-      "server": "162.159.152.81",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
       },
       "_pending_since": 1792953169.254167
     },
@@ -10918,33 +9909,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-74",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "_dedup_key": "www.wto.org:8443:ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f:/",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "jiangjc.pages.dev"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "18"
-      ],
-      "_last_ok_ts": 1792922811.856663,
-      "_country": null,
-      "_pending_since": 1792938811.342829
-    },
-    {
-      "type": "trojan",
       "tag": "node-488",
       "server": "151.101.38.6",
       "server_port": 443,
@@ -11196,38 +10160,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1792938811.342829
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1792938811.342829
-    },
-    {
-      "type": "trojan",
       "tag": "node-1454",
       "server": "sg2.998998.best",
       "server_port": 443,
@@ -11442,38 +10374,6 @@
         "headers": {
           "Host": "zxcvz.pages.dev"
         }
-      },
-      "_pending_since": 1792938811.342829
-    },
-    {
-      "type": "trojan",
-      "tag": "node-560",
-      "server": "162.159.152.31",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1792938811.342829
-    },
-    {
-      "type": "trojan",
-      "tag": "node-564",
-      "server": "162.159.152.81",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
       },
       "_pending_since": 1792938811.342829
     },
@@ -11834,38 +10734,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1792922811.856663
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1792922811.856663
-    },
-    {
-      "type": "trojan",
       "tag": "node-1500",
       "server": "www.visa.com.sg",
       "server_port": 2053,
@@ -12029,38 +10897,6 @@
         "headers": {
           "Host": "zxcvz.pages.dev"
         }
-      },
-      "_pending_since": 1792922811.856663
-    },
-    {
-      "type": "trojan",
-      "tag": "node-560",
-      "server": "162.159.152.31",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1792922811.856663
-    },
-    {
-      "type": "trojan",
-      "tag": "node-564",
-      "server": "162.159.152.81",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
       },
       "_pending_since": 1792922811.856663
     },
@@ -12298,38 +11134,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1792905274.888511
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1792905274.888511
-    },
-    {
-      "type": "trojan",
       "tag": "node-1500",
       "server": "www.visa.com.sg",
       "server_port": 2053,
@@ -12493,38 +11297,6 @@
         "headers": {
           "Host": "zxcvz.pages.dev"
         }
-      },
-      "_pending_since": 1792905274.888511
-    },
-    {
-      "type": "trojan",
-      "tag": "node-560",
-      "server": "162.159.152.31",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1792905274.888511
-    },
-    {
-      "type": "trojan",
-      "tag": "node-564",
-      "server": "162.159.152.81",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
       },
       "_pending_since": 1792905274.888511
     },
@@ -12679,38 +11451,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1792881784.750256
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1792881784.750256
-    },
-    {
-      "type": "trojan",
       "tag": "node-1500",
       "server": "www.visa.com.sg",
       "server_port": 2053,
@@ -12874,38 +11614,6 @@
         "headers": {
           "Host": "zxcvz.pages.dev"
         }
-      },
-      "_pending_since": 1792881784.750256
-    },
-    {
-      "type": "trojan",
-      "tag": "node-560",
-      "server": "162.159.152.31",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1792881784.750256
-    },
-    {
-      "type": "trojan",
-      "tag": "node-564",
-      "server": "162.159.152.81",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
       },
       "_pending_since": 1792881784.750256
     },
@@ -13138,38 +11846,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1792866058.749443
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1792866058.749443
-    },
-    {
-      "type": "trojan",
       "tag": "node-1500",
       "server": "www.visa.com.sg",
       "server_port": 2053,
@@ -13333,38 +12009,6 @@
         "headers": {
           "Host": "zxcvz.pages.dev"
         }
-      },
-      "_pending_since": 1792866058.749443
-    },
-    {
-      "type": "trojan",
-      "tag": "node-560",
-      "server": "162.159.152.31",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1792866058.749443
-    },
-    {
-      "type": "trojan",
-      "tag": "node-564",
-      "server": "162.159.152.81",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
       },
       "_pending_since": 1792866058.749443
     },
@@ -13689,38 +12333,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1792850806.173951
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1792850806.173951
-    },
-    {
-      "type": "trojan",
       "tag": "node-1500",
       "server": "www.visa.com.sg",
       "server_port": 2053,
@@ -13889,38 +12501,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-560",
-      "server": "162.159.152.31",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1792850806.173951
-    },
-    {
-      "type": "trojan",
-      "tag": "node-564",
-      "server": "162.159.152.81",
-      "server_port": 443,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_pending_since": 1792850806.173951
-    },
-    {
-      "type": "trojan",
       "tag": "node-5",
       "server": "104.16.246.173",
       "server_port": 443,
@@ -13964,52 +12544,6 @@
       ],
       "_last_ok_ts": 1792817974.862903,
       "_country": null,
-      "_pending_since": 1792835187.086738
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-222",
-      "server": "162.159.152.31",
-      "server_port": 443,
-      "password": "123456",
-      "_dedup_key": "162.159.152.31:443:123456:/?ed=2560",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_sub_ids": [
-        "13"
-      ],
-      "_last_ok_ts": 1792817974.862903,
-      "_country": "US",
-      "_pending_since": 1792835187.086738
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-223",
-      "server": "162.159.152.81",
-      "server_port": 443,
-      "password": "123456",
-      "_dedup_key": "162.159.152.81:443:123456:/?ed=2560",
-      "tls": {
-        "enabled": true,
-        "server_name": "now-pages-sub-em4.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560"
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "18"
-      ],
-      "_last_ok_ts": 1792817974.862903,
-      "_country": "US",
       "_pending_since": 1792835187.086738
     },
     {
@@ -14136,38 +12670,6 @@
         "headers": {
           "Host": "de.mitivpn.in.net"
         }
-      },
-      "_pending_since": 1792835187.086738
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1792835187.086738
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
       },
       "_pending_since": 1792835187.086738
     },
@@ -14783,46 +13285,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1197",
-      "server": "45.130.125.0",
-      "server_port": 443,
-      "password": "Telegram-Config0plus-983ced63-fcf0-4d15-b81b-432e32e9b932",
-      "_dedup_key": "45.130.125.0:443:Telegram-Config0plus-983ced63-fcf0-4d15-b81b-432e32e9b932:/us-gllc",
-      "tls": {
-        "enabled": true,
-        "server_name": "api24-normal.tiktokv.com.r3xxe.eu.cc"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/us-gllc"
-      },
-      "_sub_ids": [
-        "13"
-      ],
-      "_pending_since": 1792817974.862903
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1201",
-      "server": "45.130.125.160",
-      "server_port": 443,
-      "password": "ff5aeddc-8fea-4d17-b504-1a9fdacca802",
-      "_dedup_key": "45.130.125.160:443:ff5aeddc-8fea-4d17-b504-1a9fdacca802:/br-orcl",
-      "tls": {
-        "enabled": true,
-        "server_name": "go.appsflyer.com.r3xxe.eu.cc"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/br-orcl"
-      },
-      "_sub_ids": [
-        "13"
-      ],
-      "_pending_since": 1792817974.862903
-    },
-    {
-      "type": "trojan",
       "tag": "node-1159",
       "server": "31.57.190.17",
       "server_port": 443,
@@ -14837,38 +13299,6 @@
         "headers": {
           "Host": "www.pleadcourt.org"
         }
-      },
-      "_pending_since": 1792817974.862903
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1792817974.862903
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
       },
       "_pending_since": 1792817974.862903
     },
@@ -15123,38 +13553,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1792798060.652907
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1792798060.652907
-    },
-    {
-      "type": "trojan",
       "tag": "node-1500",
       "server": "www.visa.com.sg",
       "server_port": 2053,
@@ -15288,38 +13686,6 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1451",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_pending_since": 1792783909.54345
-    },
-    {
-      "type": "trojan",
-      "tag": "node-1452",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_pending_since": 1792783909.54345
-    },
-    {
-      "type": "trojan",
       "tag": "node-1500",
       "server": "www.visa.com.sg",
       "server_port": 2053,
@@ -15431,51 +13797,6 @@
         }
       },
       "_pending_since": 1792783909.54345
-    },
-    {
-      "type": "trojan",
-      "tag": "node-68",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "_dedup_key": "russia.com:443:bpb-trojan:/tr",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr"
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1792745502.763456,
-      "_country": null,
-      "_pending_since": 1792769156.378596
-    },
-    {
-      "type": "trojan",
-      "tag": "node-69",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "_dedup_key": "russia.com:443:bpb-trojan:/trh3",
-      "tls": {
-        "enabled": true,
-        "server_name": "6982410.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/trh3"
-      },
-      "_sub_ids": [
-        "1",
-        "13"
-      ],
-      "_last_ok_ts": 1792745502.763456,
-      "_country": null,
-      "_pending_since": 1792769156.378596
     },
     {
       "type": "trojan",

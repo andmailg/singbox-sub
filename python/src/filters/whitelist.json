@@ -44079,6 +44079,63 @@
             }
           }
         }
+      },
+      {
+        "key": "104.19.95.153:443:humanity:/assignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-218",
+          "server": "104.19.95.153",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "45.130.125.0:443:Telegram-Config0plus-983ced63-fcf0-4d15-b81b-432e32e9b932:/us-gllc",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1197",
+          "server": "45.130.125.0",
+          "server_port": 443,
+          "password": "Telegram-Config0plus-983ced63-fcf0-4d15-b81b-432e32e9b932",
+          "tls": {
+            "enabled": true,
+            "server_name": "api24-normal.tiktokv.com.r3xxe.eu.cc"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/us-gllc"
+          }
+        }
+      },
+      {
+        "key": "45.130.125.160:443:ff5aeddc-8fea-4d17-b504-1a9fdacca802:/br-orcl",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1201",
+          "server": "45.130.125.160",
+          "server_port": 443,
+          "password": "ff5aeddc-8fea-4d17-b504-1a9fdacca802",
+          "tls": {
+            "enabled": true,
+            "server_name": "go.appsflyer.com.r3xxe.eu.cc"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/br-orcl"
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -44120,5 +44177,5 @@
       }
     ]
   },
-  "updated": "2026-10-27T23:58:25Z"
+  "updated": "2026-10-28T00:01:39Z"
 }
