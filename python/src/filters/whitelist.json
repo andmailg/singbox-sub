@@ -4968,6 +4968,54 @@
             }
           }
         }
+      },
+      {
+        "key": "144.31.213.229:443:abca037b-bee5-41cc-a888-0668e4c66176:/conv4/stream/77dd2aeeb94331fbff325bb48850392b",
+        "node": {
+          "type": "vless",
+          "tag": "node-10",
+          "server": "144.31.213.229",
+          "server_port": 443,
+          "uuid": "abca037b-bee5-41cc-a888-0668e4c66176",
+          "transport": {
+            "type": "xhttp",
+            "path": "/conv4/stream/77dd2aeeb94331fbff325bb48850392b"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "6d160a52.con.fernarchive.online",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "37.18.14.43:8443:7dd69047-047e-422e-a2ba-ed773c34fd1a:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-87",
+          "server": "37.18.14.43",
+          "server_port": 8443,
+          "uuid": "7dd69047-047e-422e-a2ba-ed773c34fd1a",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "flatcrest.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "flatcrest.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -44904,5 +44952,5 @@
       }
     ]
   },
-  "updated": "2026-10-28T01:01:57Z"
+  "updated": "2026-10-28T05:34:28Z"
 }
