@@ -40292,6 +40292,33 @@
             "service_name": "beru-uk"
           }
         }
+      },
+      {
+        "key": "217.60.182.138:8843",
+        "node": {
+          "type": "vless",
+          "tag": "node-208",
+          "server": "217.60.182.138",
+          "server_port": 8843,
+          "uuid": "f7274516-0050-4544-9462-0f1ca689db54",
+          "tls": {
+            "enabled": true,
+            "server_name": "myschoolonline.cvedcmimikal.space",
+            "reality": {
+              "enabled": true,
+              "public_key": "XD-GOGR9K3rGRCfpytDaJZmtXOr7ZO6OdczpjUE0Dh8",
+              "short_id": "a4f8c92d"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "46205b"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -44952,5 +44979,5 @@
       }
     ]
   },
-  "updated": "2026-10-28T05:34:28Z"
+  "updated": "2026-10-28T06:06:25Z"
 }
