@@ -5016,6 +5016,54 @@
             }
           }
         }
+      },
+      {
+        "key": "api.ferrin.uk:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e:/es/?TELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM?ed=2048",
+        "node": {
+          "type": "vless",
+          "tag": "node-92",
+          "server": "api.ferrin.uk",
+          "server_port": 443,
+          "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+          "transport": {
+            "type": "xhttp",
+            "path": "/es/?TELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM?ed=2048",
+            "mode": "stream-one"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "7d1a74fd.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "f2d0ba8dc394.fuhuovps.xyz:443:30e52776-55ac-3cb4-8d36-e2910f07e2c3:/f00757d3fec0e7aca102e554fb32f21e",
+        "node": {
+          "type": "vless",
+          "tag": "node-101",
+          "server": "f2d0ba8dc394.fuhuovps.xyz",
+          "server_port": 443,
+          "uuid": "30e52776-55ac-3cb4-8d36-e2910f07e2c3",
+          "transport": {
+            "type": "xhttp",
+            "path": "/f00757d3fec0e7aca102e554fb32f21e",
+            "host": [
+              "f0c5bfd6s394.fuhuovps.xyz"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "f0c5bfd6s394.fuhuovps.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "ios"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -46320,5 +46368,5 @@
       }
     ]
   },
-  "updated": "2026-10-28T14:54:18Z"
+  "updated": "2026-10-28T16:40:52Z"
 }
