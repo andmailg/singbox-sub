@@ -44362,6 +44362,34 @@
             "service_name": "grpc_common3"
           }
         }
+      },
+      {
+        "key": "de.privatevip.ir:445",
+        "node": {
+          "type": "vless",
+          "tag": "node-400",
+          "server": "de.privatevip.ir",
+          "server_port": 445,
+          "uuid": "7c730089-1791-4828-89b2-86e7e1663063",
+          "tls": {
+            "enabled": true,
+            "server_name": "microsoft.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "u4H-22awUU-h0nzyKN36r9tkWRXQzJTjeqM8SwX6bVA",
+              "short_id": "0c69",
+              "spider_x": "/d9003604c154ca8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -49331,5 +49359,5 @@
       }
     ]
   },
-  "updated": "2026-10-29T16:56:38Z"
+  "updated": "2026-10-29T17:06:21Z"
 }
