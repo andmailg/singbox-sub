@@ -8,6 +8,8 @@ Pending-ноды — это узлы, которые провалили тест
 
 import json
 import os
+
+from src.common import drop_reality_without_utls
 from datetime import datetime, timezone
 
 
@@ -18,7 +20,7 @@ def load_pending_nodes(path: str) -> list[dict]:
     try:
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
-        nodes = data.get("nodes", [])
+        nodes = drop_reality_without_utls(data.get("nodes", []), "Pending")
         for node in nodes:
             sub_ids = node.get("_sub_ids")
             if isinstance(sub_ids, list):

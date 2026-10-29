@@ -3,6 +3,8 @@
 
 def build_tun_config(outbounds: list[dict]) -> dict:
     """Собирает полный мобильный конфиг sing-box из списка outbounds."""
+    from src.common import drop_reality_without_utls
+    outbounds = drop_reality_without_utls(outbounds, "Export")
     node_tags = [o["tag"] for o in outbounds]
 
     selector_outbound = {

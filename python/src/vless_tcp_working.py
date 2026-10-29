@@ -10,7 +10,7 @@ from src.filters.rkn_filter import (
     check_rkn_blocked,
 )
 from src.filters.rkn_config import ASN_LIST, CIDR_LIST
-from src.common import merge_sub_ids, session as http_session
+from src.common import drop_reality_without_utls, merge_sub_ids, session as http_session
 
 _WORKING_FILE = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
@@ -44,7 +44,7 @@ def load_working_nodes(path: str = _WORKING_FILE) -> list[dict]:
         cached_key = data.get("_asn_key", "")
         current_key = _asn_key()
         
-        nodes = data.get("nodes", [])
+        nodes = drop_reality_without_utls(data.get("nodes", []), "Working")
         for node in nodes:
             sub_ids = node.get("_sub_ids")
             if isinstance(sub_ids, list):

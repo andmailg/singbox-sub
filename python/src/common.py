@@ -149,6 +149,31 @@ def _cached_networks():
     return tuple(ipaddress.ip_network(n) for n in RESERVED_IP_RANGES)
 
 
+def lacks_required_utls(node: dict) -> bool:
+    """True, если у ноды включён REALITY, но нет uTLS-fingerprint.
+
+    sing-box отвергает такой outbound ("reality requires uTLS"), и один такой
+    узел ломает весь конфиг, поэтому подобные ноды отбрасываются везде.
+    """
+    tls = node.get("tls") if isinstance(node, dict) else None
+    if not isinstance(tls, dict):
+        return False
+    reality = tls.get("reality")
+    if not (isinstance(reality, dict) and reality.get("enabled")):
+        return False
+    utls = tls.get("utls")
+    return not (isinstance(utls, dict) and utls.get("enabled") and utls.get("fingerprint"))
+
+
+def drop_reality_without_utls(nodes: list[dict], label: str = "") -> list[dict]:
+    """Фильтрует список нод, убирая REALITY без uTLS (для загрузки из файлов)."""
+    kept = [n for n in nodes if not lacks_required_utls(n)]
+    removed = len(nodes) - len(kept)
+    if removed:
+        print(f"  [{label or 'Filter'}] Dropped {removed} REALITY node(s) without uTLS")
+    return kept
+
+
 def should_accept_outbound(
     outbound: dict,
     seen_fingerprints: set[str],
@@ -190,6 +215,10 @@ def should_accept_outbound(
     if is_fake_domain(server_val):
         return False
     if is_fake_ip(clean_server):
+        return False
+
+    # --- REALITY без uTLS sing-box не принимает ---
+    if lacks_required_utls(outbound):
         return False
 
     # --- Фильтр по порту ---

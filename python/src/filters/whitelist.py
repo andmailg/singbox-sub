@@ -82,7 +82,9 @@ def add_to_whitelist(node: dict, protocol: str) -> None:
 def get_whitelist_nodes(protocol: str, whitelist: dict[str, list[dict]]) -> list[dict]:
     """Возвращает список полных нод из whitelist для данного протокола."""
     entries = whitelist.get(protocol, [])
-    return [e.get("node", {}) for e in entries if "node" in e]
+    from src.common import drop_reality_without_utls
+    nodes = [e.get("node", {}) for e in entries if "node" in e]
+    return drop_reality_without_utls(nodes, "Whitelist")
 
 
 def _cache_key(node: dict, protocol: str) -> str:

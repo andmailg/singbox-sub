@@ -77,6 +77,9 @@ def parse_proxy_link(link: str, require_cloudfront: bool = False) -> dict | None
         if security == "reality":
             pbk = params.get("pbk", [""])[0].strip()
             sid = params.get("sid", [""])[0].strip()
+            fp = params.get("fp", [""])[0].strip()
+            if fp:
+                outbound["tls"]["utls"] = {"enabled": True, "fingerprint": fp}
             if pbk:
                 outbound["tls"]["reality"] = {
                     "enabled": True,
