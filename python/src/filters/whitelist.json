@@ -49223,6 +49223,45 @@
             }
           }
         }
+      },
+      {
+        "key": "104.18.33.97:443:humanity://assignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-170",
+          "server": "104.18.33.97",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "//assignment",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "188.114.97.6:443:xhl549341:/?ed=2560",
+        "node": {
+          "type": "trojan",
+          "tag": "node-994",
+          "server": "188.114.97.6",
+          "server_port": 443,
+          "password": "xhl549341",
+          "tls": {
+            "enabled": true,
+            "server_name": "tro.baiyi.cloudns.org"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/?ed=2560"
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -49264,5 +49303,5 @@
       }
     ]
   },
-  "updated": "2026-10-29T06:18:38Z"
+  "updated": "2026-10-29T06:28:13Z"
 }
