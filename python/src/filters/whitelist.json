@@ -5373,6 +5373,182 @@
             }
           }
         }
+      },
+      {
+        "key": "146.75.35.81:443:751d501f-6164-4820-8873-0558de4f7f1b:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-14",
+          "server": "146.75.35.81",
+          "server_port": 443,
+          "uuid": "751d501f-6164-4820-8873-0558de4f7f1b",
+          "transport": {
+            "type": "xhttp",
+            "mode": "auto",
+            "host": [
+              "ovd9.global.ssl.fastly.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "accounts.fastly.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "87.58.201.174:443:4c9f78a0-5ff8-485d-b783-e8672d566dc3:/assets/5db926783d9bc5c7597fc0f5/",
+        "node": {
+          "type": "vless",
+          "tag": "node-101",
+          "server": "87.58.201.174",
+          "server_port": 443,
+          "uuid": "4c9f78a0-5ff8-485d-b783-e8672d566dc3",
+          "transport": {
+            "type": "xhttp",
+            "path": "/assets/5db926783d9bc5c7597fc0f5/",
+            "mode": "packet-up",
+            "host": [
+              "qwinnl.underground.company"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "qwinnl.underground.company",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "87.58.201.203:443:4c9f78a0-5ff8-485d-b783-e8672d566dc3:/assets/217878f147bbcaa18b6d024f/",
+        "node": {
+          "type": "vless",
+          "tag": "node-102",
+          "server": "87.58.201.203",
+          "server_port": 443,
+          "uuid": "4c9f78a0-5ff8-485d-b783-e8672d566dc3",
+          "transport": {
+            "type": "xhttp",
+            "path": "/assets/217878f147bbcaa18b6d024f/",
+            "mode": "packet-up",
+            "host": [
+              "adminnl2.underground.company"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "adminnl2.underground.company",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "87.58.201.242:443:4c9f78a0-5ff8-485d-b783-e8672d566dc3:/assets/97f758f37574516310426560/",
+        "node": {
+          "type": "vless",
+          "tag": "node-103",
+          "server": "87.58.201.242",
+          "server_port": 443,
+          "uuid": "4c9f78a0-5ff8-485d-b783-e8672d566dc3",
+          "transport": {
+            "type": "xhttp",
+            "path": "/assets/97f758f37574516310426560/",
+            "mode": "packet-up",
+            "host": [
+              "adminnl.underground.company"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "adminnl.underground.company",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "89.41.181.164:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e:/es",
+        "node": {
+          "type": "vless",
+          "tag": "node-106",
+          "server": "89.41.181.164",
+          "server_port": 443,
+          "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+          "transport": {
+            "type": "xhttp",
+            "path": "/es",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "7d1a74fd.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "7427b4edc101.fuhuovps.xyz:443:30e52776-55ac-3cb4-8d36-e2910f07e2c3:/f00757d3fec0e7aca102e554fb32f21e",
+        "node": {
+          "type": "vless",
+          "tag": "node-78",
+          "server": "7427b4edc101.fuhuovps.xyz",
+          "server_port": 443,
+          "uuid": "30e52776-55ac-3cb4-8d36-e2910f07e2c3",
+          "transport": {
+            "type": "xhttp",
+            "path": "/f00757d3fec0e7aca102e554fb32f21e",
+            "host": [
+              "f0c5bfd6s394.fuhuovps.xyz"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "f0c5bfd6s394.fuhuovps.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "ios"
+            }
+          }
+        }
+      },
+      {
+        "key": "69d2cbcdc461.fuhuovps.xyz:443:30e52776-55ac-3cb4-8d36-e2910f07e2c3:/f00757d3fec0e7aca102e554fb32f21e",
+        "node": {
+          "type": "vless",
+          "tag": "node-71",
+          "server": "69d2cbcdc461.fuhuovps.xyz",
+          "server_port": 443,
+          "uuid": "30e52776-55ac-3cb4-8d36-e2910f07e2c3",
+          "transport": {
+            "type": "xhttp",
+            "path": "/f00757d3fec0e7aca102e554fb32f21e",
+            "host": [
+              "f0c5bfd6s394.fuhuovps.xyz"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "f0c5bfd6s394.fuhuovps.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "ios"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -49043,5 +49219,5 @@
       }
     ]
   },
-  "updated": "2026-10-29T01:35:04Z"
+  "updated": "2026-10-29T05:43:41Z"
 }

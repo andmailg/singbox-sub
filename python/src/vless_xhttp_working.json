@@ -1,10 +1,66 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-10-29T00:04:28Z",
+  "last_tested": "2026-10-29T05:43:40Z",
   "nodes": [
     {
       "type": "vless",
       "tag": "node-1",
+      "server": "69d2cbcdc461.fuhuovps.xyz",
+      "server_port": 443,
+      "uuid": "30e52776-55ac-3cb4-8d36-e2910f07e2c3",
+      "transport": {
+        "type": "xhttp",
+        "path": "/f00757d3fec0e7aca102e554fb32f21e",
+        "host": [
+          "f0c5bfd6s394.fuhuovps.xyz"
+        ]
+      },
+      "_dedup_key": "69d2cbcdc461.fuhuovps.xyz:443:30e52776-55ac-3cb4-8d36-e2910f07e2c3",
+      "tls": {
+        "enabled": true,
+        "server_name": "f0c5bfd6s394.fuhuovps.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "_sub_ids": [
+        "13"
+      ],
+      "_last_ok_ts": 1793252265.964775,
+      "_country": null
+    },
+    {
+      "type": "vless",
+      "tag": "node-2",
+      "server": "7427b4edc101.fuhuovps.xyz",
+      "server_port": 443,
+      "uuid": "30e52776-55ac-3cb4-8d36-e2910f07e2c3",
+      "transport": {
+        "type": "xhttp",
+        "path": "/f00757d3fec0e7aca102e554fb32f21e",
+        "host": [
+          "f0c5bfd6s394.fuhuovps.xyz"
+        ]
+      },
+      "_dedup_key": "7427b4edc101.fuhuovps.xyz:443:30e52776-55ac-3cb4-8d36-e2910f07e2c3",
+      "tls": {
+        "enabled": true,
+        "server_name": "f0c5bfd6s394.fuhuovps.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "_sub_ids": [
+        "13"
+      ],
+      "_last_ok_ts": 1793252265.964775,
+      "_country": null
+    },
+    {
+      "type": "vless",
+      "tag": "node-3",
       "server": "d9def735c462.fuhuovps.xyz",
       "server_port": 443,
       "uuid": "30e52776-55ac-3cb4-8d36-e2910f07e2c3",
@@ -25,14 +81,15 @@
         }
       },
       "_sub_ids": [
+        "1",
         "13"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": null
     },
     {
       "type": "vless",
-      "tag": "node-2",
+      "tag": "node-4",
       "server": "f2d0ba8dc394.fuhuovps.xyz",
       "server_port": 443,
       "uuid": "30e52776-55ac-3cb4-8d36-e2910f07e2c3",
@@ -55,12 +112,12 @@
       "_sub_ids": [
         "13"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": null
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-3",
+      "tag": "🇩🇪node-5",
       "server": "144.31.217.28",
       "server_port": 443,
       "uuid": "abca037b-bee5-41cc-a888-0668e4c66176",
@@ -84,12 +141,12 @@
         "28",
         "7"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-4",
+      "tag": "🇩🇪node-6",
       "server": "91.107.169.224",
       "server_port": 443,
       "uuid": "682feb0b-87c5-45f1-bc58-0a5895e0b867",
@@ -112,12 +169,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-5",
+      "tag": "🇩🇪node-7",
       "server": "91.107.191.188",
       "server_port": 443,
       "uuid": "3a015ed8-6fac-483b-dba9-f52ea3854a04",
@@ -141,12 +198,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-6",
+      "tag": "🇩🇪node-8",
       "server": "91.107.191.188",
       "server_port": 8443,
       "uuid": "90c08c98-7ec8-4fab-da36-cf140d18c708",
@@ -179,12 +236,12 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-7",
+      "tag": "🇩🇪node-9",
       "server": "9187bd6f.con.fernarchive.online",
       "server_port": 443,
       "uuid": "abca037b-bee5-41cc-a888-0668e4c66176",
@@ -205,12 +262,12 @@
       "_sub_ids": [
         "13"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-8",
+      "tag": "🇩🇪node-10",
       "server": "host.taghvimtime.ir",
       "server_port": 8443,
       "uuid": "90c08c98-7ec8-4fab-da36-cf140d18c708",
@@ -243,12 +300,12 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-9",
+      "tag": "🇩🇪node-11",
       "server": "kala.bestsellers1.site",
       "server_port": 443,
       "uuid": "3a015ed8-6fac-483b-dba9-f52ea3854a04",
@@ -272,12 +329,12 @@
       "_sub_ids": [
         "1"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-10",
+      "tag": "🇩🇪node-12",
       "server": "ticket.bestsellersd.site",
       "server_port": 443,
       "uuid": "682feb0b-87c5-45f1-bc58-0a5895e0b867",
@@ -307,12 +364,12 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇬🇧node-11",
+      "tag": "🇬🇧node-13",
       "server": "144.31.213.229",
       "server_port": 443,
       "uuid": "abca037b-bee5-41cc-a888-0668e4c66176",
@@ -334,12 +391,12 @@
         "13",
         "211"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "GB"
     },
     {
       "type": "vless",
-      "tag": "🇬🇧node-12",
+      "tag": "🇬🇧node-14",
       "server": "50.7.216.174",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -365,12 +422,99 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "GB"
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-13",
+      "tag": "🇬🇧node-15",
+      "server": "api.ferrin.uk",
+      "server_port": 443,
+      "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+      "transport": {
+        "type": "xhttp",
+        "path": "/es",
+        "mode": "stream-one"
+      },
+      "_dedup_key": "api.ferrin.uk:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+      "tls": {
+        "enabled": true,
+        "server_name": "7d1a74fd.ferrin.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "_sub_ids": [
+        "1"
+      ],
+      "_last_ok_ts": 1793252265.964775,
+      "_country": "GB"
+    },
+    {
+      "type": "vless",
+      "tag": "🇬🇧node-16",
+      "server": "api.ferrin.uk",
+      "server_port": 443,
+      "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+      "transport": {
+        "type": "xhttp",
+        "path": "/es/?@MARAMBASHI---MARAMBASHI---MARAMBASHI---MARAMBASHI?ed=2048",
+        "mode": "stream-one"
+      },
+      "_dedup_key": "api.ferrin.uk:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+      "tls": {
+        "enabled": true,
+        "server_name": "7d1a74fd.ferrin.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_sub_ids": [
+        "1",
+        "208",
+        "209",
+        "21",
+        "28",
+        "7",
+        "8"
+      ],
+      "_last_ok_ts": 1793252265.964775,
+      "_country": "GB"
+    },
+    {
+      "type": "vless",
+      "tag": "🇬🇧node-17",
+      "server": "api.ferrin.uk",
+      "server_port": 443,
+      "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+      "transport": {
+        "type": "xhttp",
+        "path": "/es/?TELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM?ed=2048",
+        "mode": "stream-one"
+      },
+      "_dedup_key": "api.ferrin.uk:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+      "tls": {
+        "enabled": true,
+        "server_name": "7d1a74fd.ferrin.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_sub_ids": [
+        "1",
+        "209",
+        "21",
+        "8"
+      ],
+      "_last_ok_ts": 1793252265.964775,
+      "_country": "GB"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-18",
       "server": "206.71.158.124",
       "server_port": 443,
       "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
@@ -403,12 +547,12 @@
         "28",
         "7"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "NL"
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-14",
+      "tag": "🇳🇱node-19",
       "server": "206.71.158.125",
       "server_port": 443,
       "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
@@ -432,12 +576,12 @@
       "_sub_ids": [
         "13"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "NL"
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-15",
+      "tag": "🇳🇱node-20",
       "server": "84.32.108.4",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -456,14 +600,15 @@
         }
       },
       "_sub_ids": [
-        "1"
+        "1",
+        "13"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "NL"
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-16",
+      "tag": "🇳🇱node-21",
       "server": "84.32.184.218",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -482,49 +627,111 @@
         }
       },
       "_sub_ids": [
-        "1"
+        "1",
+        "13"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "NL"
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-17",
-      "server": "api.ferrin.uk",
+      "tag": "🇳🇱node-22",
+      "server": "87.58.201.174",
       "server_port": 443,
-      "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+      "uuid": "4c9f78a0-5ff8-485d-b783-e8672d566dc3",
       "transport": {
         "type": "xhttp",
-        "path": "/es",
-        "mode": "stream-one"
+        "path": "/assets/5db926783d9bc5c7597fc0f5/",
+        "mode": "packet-up",
+        "host": [
+          "qwinnl.underground.company"
+        ]
       },
-      "_dedup_key": "api.ferrin.uk:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+      "_dedup_key": "87.58.201.174:443:4c9f78a0-5ff8-485d-b783-e8672d566dc3",
       "tls": {
         "enabled": true,
-        "server_name": "7d1a74fd.ferrin.uk",
+        "server_name": "qwinnl.underground.company",
         "utls": {
           "enabled": true,
           "fingerprint": "firefox"
         }
       },
       "_sub_ids": [
-        "1"
+        "23"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "NL"
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-18",
-      "server": "api.ferrin.uk",
+      "tag": "🇳🇱node-23",
+      "server": "87.58.201.203",
+      "server_port": 443,
+      "uuid": "4c9f78a0-5ff8-485d-b783-e8672d566dc3",
+      "transport": {
+        "type": "xhttp",
+        "path": "/assets/217878f147bbcaa18b6d024f/",
+        "mode": "packet-up",
+        "host": [
+          "adminnl2.underground.company"
+        ]
+      },
+      "_dedup_key": "87.58.201.203:443:4c9f78a0-5ff8-485d-b783-e8672d566dc3",
+      "tls": {
+        "enabled": true,
+        "server_name": "adminnl2.underground.company",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "_sub_ids": [
+        "23"
+      ],
+      "_last_ok_ts": 1793252265.964775,
+      "_country": "NL"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-24",
+      "server": "87.58.201.242",
+      "server_port": 443,
+      "uuid": "4c9f78a0-5ff8-485d-b783-e8672d566dc3",
+      "transport": {
+        "type": "xhttp",
+        "path": "/assets/97f758f37574516310426560/",
+        "mode": "packet-up",
+        "host": [
+          "adminnl.underground.company"
+        ]
+      },
+      "_dedup_key": "87.58.201.242:443:4c9f78a0-5ff8-485d-b783-e8672d566dc3",
+      "tls": {
+        "enabled": true,
+        "server_name": "adminnl.underground.company",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "_sub_ids": [
+        "23"
+      ],
+      "_last_ok_ts": 1793252265.964775,
+      "_country": "NL"
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-25",
+      "server": "89.41.181.164",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
       "transport": {
         "type": "xhttp",
-        "path": "/es/?@MARAMBASHI---MARAMBASHI---MARAMBASHI---MARAMBASHI?ed=2048",
-        "mode": "stream-one"
+        "path": "/es",
+        "mode": "auto"
       },
-      "_dedup_key": "api.ferrin.uk:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+      "_dedup_key": "89.41.181.164:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e",
       "tls": {
         "enabled": true,
         "server_name": "7d1a74fd.ferrin.uk",
@@ -534,49 +741,14 @@
         }
       },
       "_sub_ids": [
-        "1",
-        "208",
-        "209",
-        "21",
-        "28",
-        "7",
-        "8"
+        "13"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "NL"
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-19",
-      "server": "api.ferrin.uk",
-      "server_port": 443,
-      "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
-      "transport": {
-        "type": "xhttp",
-        "path": "/es/?TELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM?ed=2048",
-        "mode": "stream-one"
-      },
-      "_dedup_key": "api.ferrin.uk:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e",
-      "tls": {
-        "enabled": true,
-        "server_name": "7d1a74fd.ferrin.uk",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "209",
-        "21",
-        "8"
-      ],
-      "_last_ok_ts": 1793231941.272715,
-      "_country": "NL"
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-20",
+      "tag": "🇺🇸node-26",
       "server": "144.31.242.142",
       "server_port": 443,
       "uuid": "abca037b-bee5-41cc-a888-0668e4c66176",
@@ -598,12 +770,12 @@
         "1",
         "13"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-21",
+      "tag": "🇺🇸node-27",
       "server": "146.75.35.80",
       "server_port": 443,
       "uuid": "d96afc0e-c57c-4030-83c2-5b4b0ccbaa89",
@@ -626,42 +798,45 @@
       },
       "_sub_ids": [
         "1",
+        "13",
         "23"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-22",
-      "server": "167.82.76.31",
+      "tag": "🇺🇸node-28",
+      "server": "146.75.35.81",
       "server_port": 443,
-      "uuid": "a7e9fc98-25a2-4801-961c-7a6ed9d69328",
+      "uuid": "751d501f-6164-4820-8873-0558de4f7f1b",
       "transport": {
         "type": "xhttp",
         "mode": "auto",
         "host": [
-          "Cheerfully-frozen-mongoose-beryl.global.ssl.fastly.net"
+          "ovd9.global.ssl.fastly.net"
         ]
       },
-      "_dedup_key": "167.82.76.31:443:a7e9fc98-25a2-4801-961c-7a6ed9d69328",
+      "_dedup_key": "146.75.35.81:443:751d501f-6164-4820-8873-0558de4f7f1b",
       "tls": {
         "enabled": true,
-        "server_name": "default.ssl.fastly.net",
+        "server_name": "accounts.fastly.com",
         "utls": {
           "enabled": true,
-          "fingerprint": "random"
+          "fingerprint": "chrome"
         }
       },
       "_sub_ids": [
-        "24"
+        "1",
+        "13",
+        "23"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-23",
+      "tag": "🇺🇸node-29",
       "server": "199.232.239.239",
       "server_port": 443,
       "uuid": "71a195c5-df47-47ad-81be-f4d3a3a21be3",
@@ -682,11 +857,11 @@
         }
       },
       "_country": "US",
-      "_last_ok_ts": 1793231941.272715
+      "_last_ok_ts": 1793252265.964775
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-24",
+      "tag": "🇺🇸node-30",
       "server": "1e626999.con.metricdraft.tech",
       "server_port": 443,
       "uuid": "abca037b-bee5-41cc-a888-0668e4c66176",
@@ -708,68 +883,12 @@
         "1",
         "13"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-25",
-      "server": "31.76.2.57",
-      "server_port": 443,
-      "uuid": "abca037b-bee5-41cc-a888-0668e4c66176",
-      "transport": {
-        "type": "xhttp",
-        "path": "/conv4/stream/77dd2aeeb94331fbff325bb48850392b"
-      },
-      "_dedup_key": "31.76.2.57:443:abca037b-bee5-41cc-a888-0668e4c66176",
-      "tls": {
-        "enabled": true,
-        "server_name": "823bcb90.con.fernarchive.online",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "210",
-        "28",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1793231941.272715,
-      "_country": "US"
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-26",
-      "server": "31.76.3.248",
-      "server_port": 4443,
-      "uuid": "10be1dad-9952-4c5e-aa30-db435f69b727",
-      "transport": {
-        "type": "xhttp",
-        "path": "/api/v1/sync/",
-        "mode": "auto"
-      },
-      "_dedup_key": "31.76.3.248:4443:10be1dad-9952-4c5e-aa30-db435f69b727",
-      "tls": {
-        "enabled": true,
-        "server_name": "swo3.nexfile.net",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "204"
-      ],
-      "_last_ok_ts": 1793231941.272715,
-      "_country": "US"
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-27",
+      "tag": "🇺🇸node-31",
       "server": "31.76.70.90",
       "server_port": 443,
       "uuid": "abca037b-bee5-41cc-a888-0668e4c66176",
@@ -795,12 +914,12 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-28",
+      "tag": "🇺🇸node-32",
       "server": "46.16.34.234",
       "server_port": 443,
       "uuid": "abca037b-bee5-41cc-a888-0668e4c66176",
@@ -825,12 +944,12 @@
         "28",
         "7"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-29",
+      "tag": "🇺🇸node-33",
       "server": "597dad6b.con.fernarchive.online",
       "server_port": 443,
       "uuid": "abca037b-bee5-41cc-a888-0668e4c66176",
@@ -852,45 +971,12 @@
         "1",
         "13"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-30",
-      "server": "823bcb90.con.fernarchive.online",
-      "server_port": 443,
-      "uuid": "abca037b-bee5-41cc-a888-0668e4c66176",
-      "transport": {
-        "type": "xhttp",
-        "path": "/conv4/stream/77dd2aeeb94331fbff325bb48850392b",
-        "mode": "auto"
-      },
-      "_dedup_key": "823bcb90.con.fernarchive.online:443:abca037b-bee5-41cc-a888-0668e4c66176",
-      "tls": {
-        "enabled": true,
-        "server_name": "823bcb90.con.fernarchive.online",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "21",
-        "210",
-        "211",
-        "28",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1793231941.272715,
-      "_country": "US"
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-31",
+      "tag": "🇺🇸node-34",
       "server": "883f1393.con.rasterparcel.tech",
       "server_port": 443,
       "uuid": "abca037b-bee5-41cc-a888-0668e4c66176",
@@ -911,12 +997,12 @@
       "_sub_ids": [
         "13"
       ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-32",
+      "tag": "🇺🇸node-35",
       "server": "e2865c20.con.rasterparcel.tech",
       "server_port": 443,
       "uuid": "abca037b-bee5-41cc-a888-0668e4c66176",
@@ -938,41 +1024,7 @@
         "1",
         "13"
       ],
-      "_last_ok_ts": 1793231941.272715,
-      "_country": "US"
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-33",
-      "server": "f1.greewebservices.ir",
-      "server_port": 443,
-      "uuid": "a7e9fc98-25a2-4801-961c-7a6ed9d69328",
-      "transport": {
-        "type": "xhttp",
-        "path": "/",
-        "mode": "auto",
-        "host": [
-          "Cheerfully-frozen-mongoose-beryl.global.ssl.fastly.net"
-        ]
-      },
-      "_dedup_key": "f1.greewebservices.ir:443:a7e9fc98-25a2-4801-961c-7a6ed9d69328",
-      "tls": {
-        "enabled": true,
-        "server_name": "default.ssl.fastly.net",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "random"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "17",
-        "211",
-        "22",
-        "23"
-      ],
-      "_last_ok_ts": 1793231941.272715,
+      "_last_ok_ts": 1793252265.964775,
       "_country": "US"
     }
   ]
