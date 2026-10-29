@@ -44250,6 +44250,51 @@
             "service_name": "hub.v1.ApiService"
           }
         }
+      },
+      {
+        "key": "196.196.204.182:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-179",
+          "server": "196.196.204.182",
+          "server_port": 443,
+          "uuid": "9a0e84f8-4b58-477f-99da-5fac5a2e58e8",
+          "tls": {
+            "enabled": true,
+            "server_name": "36a466g.fi1.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "pAgrBKJCmuSJHIzYkEJTqsOBOVBK_DMtEqFPo-PaTkg",
+              "short_id": "b3c9d0c6bdd114a6"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "0adb9638509b"
+          }
+        }
+      },
+      {
+        "key": "5.253.29.253:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-255",
+          "server": "5.253.29.253",
+          "server_port": 443,
+          "uuid": "76ef5ab3-7075-4e23-b445-f3b1bd05d431",
+          "tls": {
+            "enabled": true,
+            "server_name": "indi.qikbro.com"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "assets"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -49219,5 +49264,5 @@
       }
     ]
   },
-  "updated": "2026-10-29T05:43:41Z"
+  "updated": "2026-10-29T06:18:38Z"
 }
