@@ -5549,6 +5549,32 @@
             }
           }
         }
+      },
+      {
+        "key": "132.243.231.14:33744:5d9fb46f-c4bc-4d6e-9a26-a4d5f51abd28:/ShamanXHTTP2026",
+        "node": {
+          "type": "vless",
+          "tag": "node-3",
+          "server": "132.243.231.14",
+          "server_port": 33744,
+          "uuid": "5d9fb46f-c4bc-4d6e-9a26-a4d5f51abd28",
+          "transport": {
+            "type": "xhttp",
+            "path": "/ShamanXHTTP2026",
+            "mode": "stream-up",
+            "host": [
+              "se-5060f39afb.shamanapp.online"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "se-5060f39afb.shamanapp.online",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -49305,5 +49331,5 @@
       }
     ]
   },
-  "updated": "2026-10-29T15:03:11Z"
+  "updated": "2026-10-29T16:56:38Z"
 }
