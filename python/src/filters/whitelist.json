@@ -5798,6 +5798,109 @@
             }
           }
         }
+      },
+      {
+        "key": "146.75.35.210:443:d657d272-50ae-47bc-87a4-3106676f1e90:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-11",
+          "server": "146.75.35.210",
+          "server_port": 443,
+          "uuid": "d657d272-50ae-47bc-87a4-3106676f1e90",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto",
+            "host": [
+              "Fassfastly.global.ssl.fastly.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "mail.fastly.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "92.38.145.145:443:d16adb04-d2f4-40c5-a573-19248b9b7662:/sakeneko?ed=2048",
+        "node": {
+          "type": "vless",
+          "tag": "node-113",
+          "server": "92.38.145.145",
+          "server_port": 443,
+          "uuid": "d16adb04-d2f4-40c5-a573-19248b9b7662",
+          "transport": {
+            "type": "xhttp",
+            "path": "/sakeneko?ed=2048",
+            "mode": "auto",
+            "host": [
+              "wire-3122259s115.gcorecdn.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "gcore.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "gcore.com:443:d16adb04-d2f4-40c5-a573-19248b9b7662:/sakeneko?ed=2048",
+        "node": {
+          "type": "vless",
+          "tag": "node-135",
+          "server": "gcore.com",
+          "server_port": 443,
+          "uuid": "d16adb04-d2f4-40c5-a573-19248b9b7662",
+          "transport": {
+            "type": "xhttp",
+            "path": "/sakeneko?ed=2048",
+            "mode": "auto",
+            "host": [
+              "wire-3122259s115.gcorecdn.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "gcore.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "9792205ac100.fuhuovps.xyz:443:30e52776-55ac-3cb4-8d36-e2910f07e2c3:/f00757d3fec0e7aca102e554fb32f21e",
+        "node": {
+          "type": "vless",
+          "tag": "node-110",
+          "server": "9792205ac100.fuhuovps.xyz",
+          "server_port": 443,
+          "uuid": "30e52776-55ac-3cb4-8d36-e2910f07e2c3",
+          "transport": {
+            "type": "xhttp",
+            "path": "/f00757d3fec0e7aca102e554fb32f21e",
+            "host": [
+              "f0c5bfd6s394.fuhuovps.xyz"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "f0c5bfd6s394.fuhuovps.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "ios"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -53367,5 +53470,5 @@
       }
     ]
   },
-  "updated": "2026-10-30T20:26:57Z"
+  "updated": "2026-10-30T23:44:01Z"
 }
