@@ -44975,6 +44975,80 @@
             "service_name": ""
           }
         }
+      },
+      {
+        "key": "2.27.243.10:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-174",
+          "server": "2.27.243.10",
+          "server_port": 443,
+          "uuid": "7b22dce8-7ebd-425b-8ca4-7b6190321985",
+          "tls": {
+            "enabled": true,
+            "server_name": "a.nl-2.bnc-gt.co.uk",
+            "alpn": [
+              "h2"
+            ],
+            "utls": {
+              "enabled": true,
+              "fingerprint": "ios"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "5.149.249.94:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-236",
+          "server": "5.149.249.94",
+          "server_port": 443,
+          "uuid": "4a140c2f-5b0c-4524-950c-026de74fcf69",
+          "tls": {
+            "enabled": true,
+            "server_name": "nlb.kosmosapp.net",
+            "reality": {
+              "enabled": true,
+              "public_key": "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ",
+              "short_id": "27350908de933e09"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "neurex"
+          }
+        }
+      },
+      {
+        "key": "xssite.webredirect.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-550",
+          "server": "xssite.webredirect.org",
+          "server_port": 443,
+          "uuid": "c90395e6-2140-47ad-a54d-9b166729d3ef",
+          "tls": {
+            "enabled": true,
+            "server_name": "xssite.webredirect.org",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc-ru"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -50091,5 +50165,5 @@
       }
     ]
   },
-  "updated": "2026-10-29T23:59:20Z"
+  "updated": "2026-10-30T00:11:43Z"
 }
