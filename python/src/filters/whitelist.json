@@ -39385,6 +39385,37 @@
             "server_name": "onecloudstream.com"
           }
         }
+      },
+      {
+        "key": "13.184.188.220:443:H7mP2xY9kJ4nQ8wR5tF6vB3z",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-21",
+          "server": "13.184.188.220",
+          "server_port": 443,
+          "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
+          "tls": {
+            "enabled": true,
+            "server_name": "vpn-us-004.fastervpn.world"
+          }
+        }
+      },
+      {
+        "key": "186.246.18.62:443:f4b80b26-b6d4-49a6-a460-f50efb7a457c",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-57",
+          "server": "186.246.18.62",
+          "server_port": 443,
+          "password": "f4b80b26-b6d4-49a6-a460-f50efb7a457c",
+          "tls": {
+            "enabled": true,
+            "server_name": "hy.cardlist24.shop",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -51932,5 +51963,5 @@
       }
     ]
   },
-  "updated": "2026-10-30T08:05:50Z"
+  "updated": "2026-10-30T15:04:04Z"
 }
