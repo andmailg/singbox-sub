@@ -52174,6 +52174,129 @@
             "path": "/tr/60XnEWrAQkStT4oTTwmkao9a4sc"
           }
         }
+      },
+      {
+        "key": "104.16.0.1:443:humanity://assignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-10",
+          "server": "104.16.0.1",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "//assignment",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "104.17.175.201:443:humanity:/assignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-94",
+          "server": "104.17.175.201",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "104.26.0.1:443:humanity:/assignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-420",
+          "server": "104.26.0.1",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "45.130.125.18:443:humanity:/assignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1334",
+          "server": "45.130.125.18",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment"
+          }
+        }
+      },
+      {
+        "key": "chatgpt.com:443:k3hlvcxvbol6p6dh:/---@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY/--@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1595",
+          "server": "chatgpt.com",
+          "server_port": 443,
+          "password": "k3hlvcxvbol6p6dh",
+          "tls": {
+            "enabled": true,
+            "server_name": "cafetanoos.pecasoou.ir"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/---@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY/--@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY",
+            "headers": {
+              "Host": "wenoos.pecasoou.ir"
+            }
+          }
+        }
+      },
+      {
+        "key": "openai.com:443:k3hlvcxvbol6p6dh:/---@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY/--@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1630",
+          "server": "openai.com",
+          "server_port": 443,
+          "password": "k3hlvcxvbol6p6dh",
+          "tls": {
+            "enabled": true,
+            "server_name": "dl-61sv.pecasoou.ir"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/---@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY/--@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY/---@SGV2RAY---@SGV2RAY",
+            "headers": {
+              "Host": "wenoos.pecasoou.ir"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -52215,5 +52338,5 @@
       }
     ]
   },
-  "updated": "2026-10-30T16:52:46Z"
+  "updated": "2026-10-30T16:53:00Z"
 }
