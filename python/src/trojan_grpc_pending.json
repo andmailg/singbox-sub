@@ -1,6 +1,38 @@
 {
-  "last_updated": "2026-10-29T17:05:55Z",
+  "last_updated": "2026-10-30T00:26:11Z",
   "nodes": [
+    {
+      "type": "trojan",
+      "tag": "node-32",
+      "server": "45-149-147-213.sslip.io",
+      "server_port": 4444,
+      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
+      "tls": {
+        "enabled": true,
+        "server_name": "45-149-147-213.sslip.io"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "kobedin-server1-trojan"
+      },
+      "_pending_since": 1793319965.35442
+    },
+    {
+      "type": "trojan",
+      "tag": "node-33",
+      "server": "45.149.147.213",
+      "server_port": 4444,
+      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
+      "tls": {
+        "enabled": true,
+        "server_name": "45-149-147-213.sslip.io"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "kobedin-server1-trojan"
+      },
+      "_pending_since": 1793319965.35442
+    },
     {
       "type": "trojan",
       "tag": "node-32",
