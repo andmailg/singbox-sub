@@ -50124,6 +50124,132 @@
             }
           }
         }
+      },
+      {
+        "key": "104.17.0.1:443:humanity:/assignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-72",
+          "server": "104.17.0.1",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "104.17.148.22:443:humanity:%2Fassignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-89",
+          "server": "104.17.148.22",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "%2Fassignment",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "162.159.84.189:443:humanity:/assignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-681",
+          "server": "162.159.84.189",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.trusteeforward.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.trusteeforward.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "172.64.231.133:443:humanity:/assignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-763",
+          "server": "172.64.231.133",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.trusteeforward.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/assignment",
+            "headers": {
+              "Host": "www.trusteeforward.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "45.130.125.69:443:humanity:%2Fassignment",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1330",
+          "server": "45.130.125.69",
+          "server_port": 443,
+          "password": "humanity",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.calmlunch.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "%2Fassignment",
+            "headers": {
+              "Host": "www.calmlunch.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "188.114.96.3:2096:vP!XvZBNdw.e*ddSgmH!:/tr/ZFttmjSqvda5ohOQ?ed=2560",
+        "node": {
+          "type": "trojan",
+          "tag": "node-967",
+          "server": "188.114.96.3",
+          "server_port": 2096,
+          "password": "vP!XvZBNdw.e*ddSgmH!",
+          "tls": {
+            "enabled": true,
+            "server_name": "n0q4XPrJ2D4X4PRCQ29L8JKCZd0.pAGES.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/tr/ZFttmjSqvda5ohOQ?ed=2560",
+            "headers": {
+              "Host": "n0q4xprj2d4x4prcq29l8jkczd0.pages.dev"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -50165,5 +50291,5 @@
       }
     ]
   },
-  "updated": "2026-10-30T00:11:43Z"
+  "updated": "2026-10-30T00:21:14Z"
 }
