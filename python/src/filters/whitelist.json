@@ -5746,6 +5746,58 @@
             }
           }
         }
+      },
+      {
+        "key": "177.3.214.133:443:4023b626-ce42-4a8f-a1c4-93e263118e7c:/assets/e4e35f44b368/3eaeda2dcb5e/index.html",
+        "node": {
+          "type": "vless",
+          "tag": "node-38",
+          "server": "177.3.214.133",
+          "server_port": 443,
+          "uuid": "4023b626-ce42-4a8f-a1c4-93e263118e7c",
+          "transport": {
+            "type": "xhttp",
+            "path": "/assets/e4e35f44b368/3eaeda2dcb5e/index.html",
+            "mode": "auto",
+            "host": [
+              "planktonmanager.xyz"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "planktonmanager.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "217.60.183.95:443:d666e16b-2b64-4499-bb32-896c26dc2e3d:/ShamanXHTTP2026",
+        "node": {
+          "type": "vless",
+          "tag": "node-67",
+          "server": "217.60.183.95",
+          "server_port": 443,
+          "uuid": "d666e16b-2b64-4499-bb32-896c26dc2e3d",
+          "transport": {
+            "type": "xhttp",
+            "path": "/ShamanXHTTP2026",
+            "mode": "packet-up",
+            "host": [
+              "de-1e51a8f925.shamanapp.online"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "de-1e51a8f925.shamanapp.online",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -51963,5 +52015,5 @@
       }
     ]
   },
-  "updated": "2026-10-30T15:04:04Z"
+  "updated": "2026-10-30T16:44:55Z"
 }
