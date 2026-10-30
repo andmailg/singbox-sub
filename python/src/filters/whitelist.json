@@ -46476,6 +46476,206 @@
           },
           "packet_encoding": "xudp"
         }
+      },
+      {
+        "key": "13.143.176.83:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-23",
+          "server": "13.143.176.83",
+          "server_port": 443,
+          "uuid": "7b22dce8-7ebd-425b-8ca4-7b6190321985",
+          "tls": {
+            "enabled": true,
+            "server_name": "a.es-1.bnc-gt-r1.co.uk",
+            "alpn": [
+              "h2"
+            ],
+            "utls": {
+              "enabled": true,
+              "fingerprint": "qq"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "130.78.190.21:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-25",
+          "server": "130.78.190.21",
+          "server_port": 443,
+          "uuid": "7b22dce8-7ebd-425b-8ca4-7b6190321985",
+          "tls": {
+            "enabled": true,
+            "server_name": "a.es-2.bnc-gt.co.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "qq"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "217.16.31.218:5003",
+        "node": {
+          "type": "vless",
+          "tag": "node-195",
+          "server": "217.16.31.218",
+          "server_port": 5003,
+          "uuid": "ddc27ad2-631e-4431-b380-0045547acef4",
+          "tls": {
+            "enabled": true,
+            "server_name": "de1.frost-api.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "media.playback.v1.SessionGateway"
+          }
+        }
+      },
+      {
+        "key": "31.76.91.31:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-208",
+          "server": "31.76.91.31",
+          "server_port": 443,
+          "uuid": "7b22dce8-7ebd-425b-8ca4-7b6190321985",
+          "tls": {
+            "enabled": true,
+            "server_name": "b.jp-1.bnc-gt.co.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "qq"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "45.152.202.55:10345",
+        "node": {
+          "type": "vless",
+          "tag": "node-223",
+          "server": "45.152.202.55",
+          "server_port": 10345,
+          "uuid": "38b20d9a-be1c-41a6-b9bb-99eb92b68d31",
+          "tls": {
+            "enabled": true,
+            "server_name": "it.nvidia.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "ahZyYS48WeDeUbSzSoj00AlXoWV9VsDO8V6d0VGjDSE",
+              "short_id": "aeb6",
+              "spider_x": "/f3782b6b52f1fbb"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
+      },
+      {
+        "key": "82.202.178.141:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-298",
+          "server": "82.202.178.141",
+          "server_port": 443,
+          "uuid": "928a3079-7c20-40cc-9c92-e878ba959dcd",
+          "tls": {
+            "enabled": true,
+            "server_name": "h8.smart-life.agency",
+            "reality": {
+              "enabled": true,
+              "public_key": "w_hrubefrDzoh5rEB3jFTx4j-t7o1HMyyo1bAE1a8D0",
+              "short_id": "316d0a3751f3122d"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "google.storage.v2.Storage"
+          }
+        }
+      },
+      {
+        "key": "82.202.183.9:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-300",
+          "server": "82.202.183.9",
+          "server_port": 443,
+          "uuid": "1ba0439d-384c-4a6e-9560-0439698beb2a",
+          "tls": {
+            "enabled": true,
+            "server_name": "h4.smart-life.agency",
+            "reality": {
+              "enabled": true,
+              "public_key": "1A9loATtqTbKfErpj24clMebWdbmBRDgUIADwtlvtAw",
+              "short_id": "70c20a2f5a7d542e"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "google.storage.v2.Storage"
+          }
+        }
+      },
+      {
+        "key": "c3f630g.es4.h1clayd.click:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-371",
+          "server": "c3f630g.es4.h1clayd.click",
+          "server_port": 443,
+          "uuid": "fafc7c16-f890-45ee-a856-02df225172dd",
+          "tls": {
+            "enabled": true,
+            "server_name": "c3f630g.es4.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "BzM-6A4DGbjpquuwUmotiamNZlamur11IXX5Xyh_wBg",
+              "short_id": "2d2d5faf568b584d"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "7e802b075a7c"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -52015,5 +52215,5 @@
       }
     ]
   },
-  "updated": "2026-10-30T16:44:55Z"
+  "updated": "2026-10-30T16:52:46Z"
 }
