@@ -50026,6 +50026,56 @@
             "service_name": "assets"
           }
         }
+      },
+      {
+        "key": "147.45.175.81:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-39",
+          "server": "147.45.175.81",
+          "server_port": 443,
+          "uuid": "c90395e6-2140-47ad-a54d-9b166729d3ef",
+          "tls": {
+            "enabled": true,
+            "server_name": "xsru1.ddnsfree.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc-ru"
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "83.171.241.199:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-300",
+          "server": "83.171.241.199",
+          "server_port": 443,
+          "uuid": "fafc7c16-f890-45ee-a856-02df225172dd",
+          "tls": {
+            "enabled": true,
+            "server_name": "c3f630g.es4.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "BzM-6A4DGbjpquuwUmotiamNZlamur11IXX5Xyh_wBg",
+              "short_id": "2d2d5faf568b584d"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "7e802b075a7c"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -60935,5 +60985,5 @@
       }
     ]
   },
-  "updated": "2026-10-31T19:48:24Z"
+  "updated": "2026-10-31T23:39:38Z"
 }
