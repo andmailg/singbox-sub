@@ -41991,6 +41991,51 @@
             ]
           }
         }
+      },
+      {
+        "key": "13.143.189.96:4444:a35c508f-4d5d-4531-842e-6e9d43c762c0",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-20",
+          "server": "13.143.189.96",
+          "server_port": 4444,
+          "password": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "tls": {
+            "enabled": true,
+            "server_name": "pl3.nexfile.net"
+          }
+        }
+      },
+      {
+        "key": "144.31.109.240:4444:a35c508f-4d5d-4531-842e-6e9d43c762c0",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-29",
+          "server": "144.31.109.240",
+          "server_port": 4444,
+          "password": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "tls": {
+            "enabled": true,
+            "server_name": "fl3.nexfile.net"
+          }
+        }
+      },
+      {
+        "key": "fi1.obxodvpn.us:443:2a0fc918-9c61-451b-a9ad-e8f796e70f52",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-111",
+          "server": "fi1.obxodvpn.us",
+          "server_port": 443,
+          "password": "2a0fc918-9c61-451b-a9ad-e8f796e70f52",
+          "tls": {
+            "enabled": true,
+            "server_name": "nl1.obxodvpn.us",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -58270,5 +58315,5 @@
       }
     ]
   },
-  "updated": "2026-10-31T08:02:10Z"
+  "updated": "2026-10-31T14:22:43Z"
 }
