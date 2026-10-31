@@ -13,7 +13,14 @@ def export_tun(outbounds: list[dict], output_file: str = "output.json") -> int:
 
 
 def export_router(outbounds: list[dict], output_file: str = "config.json") -> int:
-    """Экспортирует ноды в роутер-конфиг sing-box."""
+    """Экспортирует ноды в роутер-конфиг sing-box.
+
+    Если нод нет, файл не трогаем: конфиг с пустыми selector/urltest невалиден
+    и затёр бы рабочий config.json.
+    """
+    if not outbounds:
+        print(f"SKIP {output_file}: no nodes, existing file left untouched.")
+        return 0
     return _export(outbounds, output_file, build_router_config, 100)
 
 

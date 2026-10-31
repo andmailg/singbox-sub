@@ -301,6 +301,8 @@ def cmd_export(args):
 
     if "tun" in export_formats:
         _export_tun(active_nodes, args.output)
+    if "router" in export_formats:
+        _export_router(active_nodes, "config.json")
     if "xray" in export_formats:
         _export_v2ray(active_nodes)
 
@@ -345,6 +347,15 @@ def _export_tun(nodes, output_file):
     export_tun(nodes, output_file)
 
 
+def _export_router(nodes, output_file):
+    """Экспорт в sing-box router конфиг."""
+    from src.exporters.singbox_exporter import export_router
+    for n in nodes:
+        clean_internal_fields(n)
+    output_file = _resolve_output(output_file)
+    export_router(nodes, output_file)
+
+
 def _export_v2ray(nodes, output_file=None):
     """Экспорт в V2Ray-ссылки (trojan_grpc.txt в корне проекта)."""
     from src.exporters.v2ray_exporter import _generate_trojan_grpc_links
@@ -365,7 +376,7 @@ Examples:
   python trojan_grpc_manage.py run                              Full pipeline (merge+test+export)
   python trojan_grpc_manage.py merge                            Fetch new nodes from subscriptions
   python trojan_grpc_manage.py test                             Test all nodes
-  python trojan_grpc_manage.py export --export tun,xray         Export all formats
+  python trojan_grpc_manage.py export --export tun,xray,router  Export all formats
         """,
     )
     subparsers = parser.add_subparsers(dest="command", help="Command to run")
