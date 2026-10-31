@@ -5950,6 +5950,29 @@
             }
           }
         }
+      },
+      {
+        "key": "fl3.nexfile.net:4443:a35c508f-4d5d-4531-842e-6e9d43c762c0:/api/v1/sync/",
+        "node": {
+          "type": "vless",
+          "tag": "node-106",
+          "server": "fl3.nexfile.net",
+          "server_port": 4443,
+          "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/sync/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "fl3.nexfile.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -58315,5 +58338,5 @@
       }
     ]
   },
-  "updated": "2026-10-31T14:22:43Z"
+  "updated": "2026-10-31T15:45:37Z"
 }
