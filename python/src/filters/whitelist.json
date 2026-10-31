@@ -5901,6 +5901,55 @@
             }
           }
         }
+      },
+      {
+        "key": "6d160a52.con.fernarchive.online:443:abca037b-bee5-41cc-a888-0668e4c66176:/conv4/stream/77dd2aeeb94331fbff325bb48850392b",
+        "node": {
+          "type": "vless",
+          "tag": "node-68",
+          "server": "6d160a52.con.fernarchive.online",
+          "server_port": 443,
+          "uuid": "abca037b-bee5-41cc-a888-0668e4c66176",
+          "transport": {
+            "type": "xhttp",
+            "path": "/conv4/stream/77dd2aeeb94331fbff325bb48850392b",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "6d160a52.con.fernarchive.online",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "violet-cedar-47.vercel.app:443:5020bd3c-c41a-4011-836d-cf8cbaa2e8b8:/subgift",
+        "node": {
+          "type": "vless",
+          "tag": "node-142",
+          "server": "violet-cedar-47.vercel.app",
+          "server_port": 443,
+          "uuid": "5020bd3c-c41a-4011-836d-cf8cbaa2e8b8",
+          "transport": {
+            "type": "xhttp",
+            "path": "/subgift",
+            "mode": "auto",
+            "host": [
+              "violet-cedar-47.vercel.app"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "violet-cedar-47.vercel.app",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -54525,5 +54574,5 @@
       }
     ]
   },
-  "updated": "2026-10-31T01:29:38Z"
+  "updated": "2026-10-31T05:28:58Z"
 }
