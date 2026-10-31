@@ -49394,6 +49394,24 @@
           },
           "packet_encoding": "xudp"
         }
+      },
+      {
+        "key": "147.45.126.220:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-37",
+          "server": "147.45.126.220",
+          "server_port": 443,
+          "uuid": "452a5bbc-d938-4904-99d3-7db2075d0f3e",
+          "tls": {
+            "enabled": true,
+            "server_name": "pol.qikbro.com"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "assets"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -58338,5 +58356,5 @@
       }
     ]
   },
-  "updated": "2026-10-31T15:45:37Z"
+  "updated": "2026-10-31T15:55:34Z"
 }
