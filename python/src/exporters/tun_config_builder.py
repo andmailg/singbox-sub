@@ -84,7 +84,7 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                     "rule_set": [
                         "geosite-category-ru"
                     ],
-                    "server": "dns-local"
+                    "server": "dns-direct"
                 },
                 {
                     "query_type": [
