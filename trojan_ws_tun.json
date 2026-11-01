@@ -119,8 +119,7 @@
         "node-2",
         "node-3",
         "node-4",
-        "node-5",
-        "node-6"
+        "node-5"
       ],
       "default": "auto"
     },
@@ -132,8 +131,7 @@
         "node-2",
         "node-3",
         "node-4",
-        "node-5",
-        "node-6"
+        "node-5"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -158,24 +156,6 @@
       "type": "trojan",
       "tag": "node-2",
       "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-3",
-      "server": "104.18.35.86",
       "server_port": 8443,
       "password": "trojan",
       "tls": {
@@ -192,7 +172,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-4",
+      "tag": "node-3",
       "server": "104.19.173.68",
       "server_port": 443,
       "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
@@ -207,7 +187,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-5",
+      "tag": "node-4",
       "server": "104.25.239.113",
       "server_port": 2053,
       "password": "gHQP0D7D15",
@@ -225,7 +205,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-6",
+      "tag": "node-5",
       "server": "172.67.118.45",
       "server_port": 2053,
       "password": "gHQP0D7D15",
