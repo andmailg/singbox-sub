@@ -6021,6 +6021,52 @@
             }
           }
         }
+      },
+      {
+        "key": "5.42.118.163:443:4777d90d-265b-4927-a0d1-63f36ed1421c:/assets/twru01/",
+        "node": {
+          "type": "vless",
+          "tag": "node-65",
+          "server": "5.42.118.163",
+          "server_port": 443,
+          "uuid": "4777d90d-265b-4927-a0d1-63f36ed1421c",
+          "transport": {
+            "type": "xhttp",
+            "path": "/assets/twru01/",
+            "mode": "packet-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "5.42.118.163",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "safari"
+            }
+          }
+        }
+      },
+      {
+        "key": "50.7.87.93:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e:/es/?@VPNine1---MARAMBASHI---MARAMBASHI---MARAMBASHI?ed=2048",
+        "node": {
+          "type": "vless",
+          "tag": "node-67",
+          "server": "50.7.87.93",
+          "server_port": 443,
+          "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+          "transport": {
+            "type": "xhttp",
+            "path": "/es/?@VPNine1---MARAMBASHI---MARAMBASHI---MARAMBASHI?ed=2048",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "7d1a74fd.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -65527,5 +65573,5 @@
       }
     ]
   },
-  "updated": "2026-11-01T11:08:15Z"
+  "updated": "2026-11-01T16:50:01Z"
 }
