@@ -32,7 +32,7 @@ def build_tun_config(outbounds: list[dict]) -> dict:
             "servers": [
                 {
                     "type": "https",
-                    "tag": "dns-local",
+                    "tag": "dns-direct",
                     "server": "77.88.8.8",
                     "tls": {
                         "enabled": True,
@@ -53,7 +53,7 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                     "type": "https",
                     "tag": "smart-dns",
                     "server": "dns.comss.one",
-                    "domain_resolver": "dns-local"
+                    "domain_resolver": "dns-direct"
                 },
                 {
                     "type": "fakeip",
