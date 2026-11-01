@@ -33,7 +33,11 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                 {
                     "type": "https",
                     "tag": "dns-local",
-                    "server": "77.88.8.8"
+                    "server": "77.88.8.8",
+                    "tls": {
+                        "enabled": True,
+                        "server_name": "common.dot.dns.yandex.net"
+                    }
                 },
                 {
                     "type": "https",
