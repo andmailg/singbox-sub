@@ -44149,6 +44149,128 @@
             ]
           }
         }
+      },
+      {
+        "key": "13.143.189.142:4444:a35c508f-4d5d-4531-842e-6e9d43c762c0",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-20",
+          "server": "13.143.189.142",
+          "server_port": 4444,
+          "password": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "tls": {
+            "enabled": true,
+            "server_name": "pl3.nexfile.net"
+          }
+        }
+      },
+      {
+        "key": "13.143.189.146:4444:a35c508f-4d5d-4531-842e-6e9d43c762c0",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-21",
+          "server": "13.143.189.146",
+          "server_port": 4444,
+          "password": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "tls": {
+            "enabled": true,
+            "server_name": "pl3.nexfile.net"
+          }
+        }
+      },
+      {
+        "key": "198.13.140.193:443:59018379-d5df-4314-ab23-df0e838d7953",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-63",
+          "server": "198.13.140.193",
+          "server_port": 443,
+          "password": "59018379-d5df-4314-ab23-df0e838d7953",
+          "tls": {
+            "enabled": true,
+            "server_name": "efa11.lumariqis.com",
+            "alpn": [
+              "h3"
+            ]
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "litevpn"
+          }
+        }
+      },
+      {
+        "key": "45.88.12.141:443:b61bd5c6-7f9d-4fa0-8e8e-1eb236c5e4dd",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-84",
+          "server": "45.88.12.141",
+          "server_port": 443,
+          "password": "b61bd5c6-7f9d-4fa0-8e8e-1eb236c5e4dd",
+          "tls": {
+            "enabled": true,
+            "server_name": "crt.molniya.sbs",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
+      },
+      {
+        "key": "45.88.12.144:443:b61bd5c6-7f9d-4fa0-8e8e-1eb236c5e4dd",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-85",
+          "server": "45.88.12.144",
+          "server_port": 443,
+          "password": "b61bd5c6-7f9d-4fa0-8e8e-1eb236c5e4dd",
+          "tls": {
+            "enabled": true,
+            "server_name": "crt.molniya.sbs"
+          }
+        }
+      },
+      {
+        "key": "45.88.12.85:443:b61bd5c6-7f9d-4fa0-8e8e-1eb236c5e4dd",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-86",
+          "server": "45.88.12.85",
+          "server_port": 443,
+          "password": "b61bd5c6-7f9d-4fa0-8e8e-1eb236c5e4dd",
+          "tls": {
+            "enabled": true,
+            "server_name": "crt.molniya.sbs"
+          }
+        }
+      },
+      {
+        "key": "45.88.12.122:443:e5ec2586-59b3-40fa-91b7-bb37a2f7744e",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-49",
+          "server": "45.88.12.122",
+          "server_port": 443,
+          "password": "e5ec2586-59b3-40fa-91b7-bb37a2f7744e",
+          "tls": {
+            "enabled": true,
+            "server_name": "crt.onecloudstream.com"
+          }
+        }
+      },
+      {
+        "key": "45.88.12.26:443:e5ec2586-59b3-40fa-91b7-bb37a2f7744e",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-50",
+          "server": "45.88.12.26",
+          "server_port": 443,
+          "password": "e5ec2586-59b3-40fa-91b7-bb37a2f7744e",
+          "tls": {
+            "enabled": true,
+            "server_name": "crt.onecloudstream.com"
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -64039,5 +64161,5 @@
       }
     ]
   },
-  "updated": "2026-11-01T00:31:39Z"
+  "updated": "2026-11-01T04:04:11Z"
 }
