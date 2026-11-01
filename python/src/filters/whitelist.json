@@ -5973,6 +5973,54 @@
             }
           }
         }
+      },
+      {
+        "key": "tg1.cdnphotos.org:443:f04cc810-aaf2-4a7b-8cad-356cdd30d394:/api/v1/",
+        "node": {
+          "type": "vless",
+          "tag": "node-115",
+          "server": "tg1.cdnphotos.org",
+          "server_port": 443,
+          "uuid": "f04cc810-aaf2-4a7b-8cad-356cdd30d394",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "tg1.cdnphotos.org",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "flatcrest.net:2053:7dd69047-047e-422e-a2ba-ed773c34fd1a:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-125",
+          "server": "flatcrest.net",
+          "server_port": 2053,
+          "uuid": "7dd69047-047e-422e-a2ba-ed773c34fd1a",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "flatcrest.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "flatcrest.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -64161,5 +64209,5 @@
       }
     ]
   },
-  "updated": "2026-11-01T04:04:11Z"
+  "updated": "2026-11-01T05:55:05Z"
 }
