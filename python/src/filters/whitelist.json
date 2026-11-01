@@ -6067,6 +6067,52 @@
             }
           }
         }
+      },
+      {
+        "key": "179.253.82.19:4443:a35c508f-4d5d-4531-842e-6e9d43c762c0:/api/v1/sync/",
+        "node": {
+          "type": "vless",
+          "tag": "node-29",
+          "server": "179.253.82.19",
+          "server_port": 4443,
+          "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/sync/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "fl3.nexfile.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "50.7.216.174:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e:/es/?@VPNine1---MARAMBASHI---MARAMBASHI---MARAMBASHI?ed=2048",
+        "node": {
+          "type": "vless",
+          "tag": "node-62",
+          "server": "50.7.216.174",
+          "server_port": 443,
+          "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+          "transport": {
+            "type": "xhttp",
+            "path": "/es/?@VPNine1---MARAMBASHI---MARAMBASHI---MARAMBASHI?ed=2048",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "7d1a74fd.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -67569,5 +67615,5 @@
       }
     ]
   },
-  "updated": "2026-11-01T21:44:54Z"
+  "updated": "2026-11-01T23:33:50Z"
 }
