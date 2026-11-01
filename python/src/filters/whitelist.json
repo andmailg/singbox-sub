@@ -52387,6 +52387,34 @@
             "service_name": "7e802b075a7c"
           }
         }
+      },
+      {
+        "key": "79.141.164.81:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-281",
+          "server": "79.141.164.81",
+          "server_port": 443,
+          "uuid": "117a94af-00b3-44cb-b82d-fb005276ec8b",
+          "tls": {
+            "enabled": true,
+            "server_name": "nla.kosmosapp.net",
+            "reality": {
+              "enabled": true,
+              "public_key": "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ",
+              "short_id": "27350908de933e09"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "neurex"
+          },
+          "packet_encoding": "xudp"
+        }
       }
     ],
     "trojan_ws": [
@@ -65573,5 +65601,5 @@
       }
     ]
   },
-  "updated": "2026-11-01T16:50:01Z"
+  "updated": "2026-11-01T17:00:52Z"
 }
