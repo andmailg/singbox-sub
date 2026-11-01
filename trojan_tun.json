@@ -2829,6 +2829,13 @@
       "tls": {
         "enabled": true,
         "server_name": "www.cordweave.com"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/assignment",
+        "headers": {
+          "Host": "www.cordweave.com"
+        }
       }
     },
     {
