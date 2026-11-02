@@ -6113,6 +6113,31 @@
             }
           }
         }
+      },
+      {
+        "key": "185.86.145.142:2096:b877b58f-5995-4b25-abec-3213a2f95512:/chxh",
+        "node": {
+          "type": "vless",
+          "tag": "node-35",
+          "server": "185.86.145.142",
+          "server_port": 2096,
+          "uuid": "b877b58f-5995-4b25-abec-3213a2f95512",
+          "transport": {
+            "type": "xhttp",
+            "path": "/chxh",
+            "host": [
+              "cdn.freetato-converting.ru"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "cdn.freetato-converting.ru",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -68404,5 +68429,5 @@
       }
     ]
   },
-  "updated": "2026-11-02T01:22:17Z"
+  "updated": "2026-11-02T05:54:52Z"
 }
