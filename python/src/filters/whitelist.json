@@ -6138,6 +6138,84 @@
             }
           }
         }
+      },
+      {
+        "key": "82.40.62.112:443:4d8132cb-f4e3-428c-91ff-2b4f7a868551:/usaxh61006",
+        "node": {
+          "type": "vless",
+          "tag": "node-71",
+          "server": "82.40.62.112",
+          "server_port": 443,
+          "uuid": "4d8132cb-f4e3-428c-91ff-2b4f7a868551",
+          "transport": {
+            "type": "xhttp",
+            "path": "/usaxh61006",
+            "mode": "auto",
+            "host": [
+              "us-aeza.chick-chirik.com"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "us-aeza.chick-chirik.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "31.56.187.35:34451:5d9fb46f-c4bc-4d6e-9a26-a4d5f51abd28:/ShamanXHTTP2026",
+        "node": {
+          "type": "vless",
+          "tag": "node-72",
+          "server": "31.56.187.35",
+          "server_port": 34451,
+          "uuid": "5d9fb46f-c4bc-4d6e-9a26-a4d5f51abd28",
+          "transport": {
+            "type": "xhttp",
+            "path": "/ShamanXHTTP2026",
+            "mode": "stream-up",
+            "host": [
+              "ee-2e06d85dc0.shamanapp.online"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "ee-2e06d85dc0.shamanapp.online",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "89.125.37.175:33744:5d9fb46f-c4bc-4d6e-9a26-a4d5f51abd28:/ShamanXHTTP2026",
+        "node": {
+          "type": "vless",
+          "tag": "node-105",
+          "server": "89.125.37.175",
+          "server_port": 33744,
+          "uuid": "5d9fb46f-c4bc-4d6e-9a26-a4d5f51abd28",
+          "transport": {
+            "type": "xhttp",
+            "path": "/ShamanXHTTP2026",
+            "mode": "stream-up",
+            "host": [
+              "se-5060f39afb.shamanapp.online"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "se-5060f39afb.shamanapp.online",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -68611,5 +68689,5 @@
       }
     ]
   },
-  "updated": "2026-11-02T20:05:35Z"
+  "updated": "2026-11-02T20:19:58Z"
 }
