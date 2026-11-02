@@ -55503,6 +55503,31 @@
           },
           "packet_encoding": "xudp"
         }
+      },
+      {
+        "key": "renderer-bridge-2-129.mirra.now:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-486",
+          "server": "renderer-bridge-2-129.mirra.now",
+          "server_port": 443,
+          "uuid": "27653b37-603c-4c90-b1f5-25c4d23f8932",
+          "tls": {
+            "enabled": true,
+            "server_name": "renderer-bridge-2-129.mirra.now",
+            "alpn": [
+              "h2"
+            ],
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "VideoRenderer"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -68689,5 +68714,5 @@
       }
     ]
   },
-  "updated": "2026-11-02T20:19:58Z"
+  "updated": "2026-11-02T20:36:46Z"
 }
