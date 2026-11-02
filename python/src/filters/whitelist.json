@@ -47764,6 +47764,29 @@
             "server_name": "bl1.nexfile.net"
           }
         }
+      },
+      {
+        "key": "dlwww.mymuic.ir:19883:0zy7kb86chk9ktbn",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-98",
+          "server": "dlwww.mymuic.ir",
+          "server_port": 19883,
+          "password": "0zy7kb86chk9ktbn",
+          "tls": {
+            "enabled": true,
+            "server_name": "dlwww.mymuic.ir",
+            "alpn": [
+              "h3",
+              "h2",
+              "http/1.1"
+            ]
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "otwmdcyqh98idcxv"
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -68381,5 +68404,5 @@
       }
     ]
   },
-  "updated": "2026-11-02T00:08:27Z"
+  "updated": "2026-11-02T01:22:17Z"
 }
