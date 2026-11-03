@@ -6664,6 +6664,29 @@
             }
           }
         }
+      },
+      {
+        "key": "78.17.39.129:443:c04522c4-3d53-4eab-b5b5-25385d5f11b1:/assets/finvip02/",
+        "node": {
+          "type": "vless",
+          "tag": "node-65",
+          "server": "78.17.39.129",
+          "server_port": 443,
+          "uuid": "c04522c4-3d53-4eab-b5b5-25385d5f11b1",
+          "transport": {
+            "type": "xhttp",
+            "path": "/assets/finvip02/",
+            "mode": "packet-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "78.17.39.129",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "qq"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -71452,5 +71475,5 @@
       }
     ]
   },
-  "updated": "2026-11-03T13:10:37Z"
+  "updated": "2026-11-03T17:47:35Z"
 }
