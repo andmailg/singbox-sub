@@ -234,7 +234,7 @@ def build_tun_config(outbounds: list[dict]) -> dict:
             "final": "proxy-out",
             "auto_detect_interface": True,
             "override_android_vpn": True,
-            "default_domain_resolver": "dns-local"
+            "default_domain_resolver": "dns-direct"
         },
         "experimental": {
             "cache_file": {
