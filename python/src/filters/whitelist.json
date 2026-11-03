@@ -69656,6 +69656,24 @@
             "path": "/assignment"
           }
         }
+      },
+      {
+        "key": "172.67.135.88:443:bpb-trojan:/tr",
+        "node": {
+          "type": "trojan",
+          "tag": "node-995",
+          "server": "172.67.135.88",
+          "server_port": 443,
+          "password": "bpb-trojan",
+          "tls": {
+            "enabled": true,
+            "server_name": "vless.herogoing.top"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/tr"
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -69697,5 +69715,5 @@
       }
     ]
   },
-  "updated": "2026-11-03T02:44:25Z"
+  "updated": "2026-11-03T02:47:44Z"
 }
