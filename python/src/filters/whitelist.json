@@ -6812,6 +6812,75 @@
             }
           }
         }
+      },
+      {
+        "key": "193.160.208.240:443:4777d90d-265b-4927-a0d1-63f36ed1421c:/assets/twru01/",
+        "node": {
+          "type": "vless",
+          "tag": "node-29",
+          "server": "193.160.208.240",
+          "server_port": 443,
+          "uuid": "4777d90d-265b-4927-a0d1-63f36ed1421c",
+          "transport": {
+            "type": "xhttp",
+            "path": "/assets/twru01/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "193.160.208.240",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "193.160.208.240:443:c04522c4-3d53-4eab-b5b5-25385d5f11b1:/assets/twru01/",
+        "node": {
+          "type": "vless",
+          "tag": "node-30",
+          "server": "193.160.208.240",
+          "server_port": 443,
+          "uuid": "c04522c4-3d53-4eab-b5b5-25385d5f11b1",
+          "transport": {
+            "type": "xhttp",
+            "path": "/assets/twru01/",
+            "mode": "packet-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "193.160.208.240",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "201.34.142.108:443:4777d90d-265b-4927-a0d1-63f36ed1421c:/assets/nlrelay01/",
+        "node": {
+          "type": "vless",
+          "tag": "node-38",
+          "server": "201.34.142.108",
+          "server_port": 443,
+          "uuid": "4777d90d-265b-4927-a0d1-63f36ed1421c",
+          "transport": {
+            "type": "xhttp",
+            "path": "/assets/nlrelay01/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "201.34.142.108",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -75131,5 +75200,5 @@
       }
     ]
   },
-  "updated": "2026-11-04T18:29:04Z"
+  "updated": "2026-11-04T21:17:57Z"
 }
