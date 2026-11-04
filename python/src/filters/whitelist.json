@@ -6760,6 +6760,58 @@
             }
           }
         }
+      },
+      {
+        "key": "31.77.13.20:443:ae666618-738b-4b15-bbec-f0b00747d229:/sync/v2/push",
+        "node": {
+          "type": "vless",
+          "tag": "node-38",
+          "server": "31.77.13.20",
+          "server_port": 443,
+          "uuid": "ae666618-738b-4b15-bbec-f0b00747d229",
+          "transport": {
+            "type": "xhttp",
+            "path": "/sync/v2/push",
+            "mode": "auto",
+            "host": [
+              "se-sto.dontblockmepls.com"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "se-sto.dontblockmepls.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "cdn.privatevip.ir:2087:7a015962-482c-44ce-abd3-3810e324c64c:/rypni2i6",
+        "node": {
+          "type": "vless",
+          "tag": "node-66",
+          "server": "cdn.privatevip.ir",
+          "server_port": 2087,
+          "uuid": "7a015962-482c-44ce-abd3-3810e324c64c",
+          "transport": {
+            "type": "xhttp",
+            "path": "/rypni2i6",
+            "mode": "packet-up",
+            "host": [
+              "cdn.privatevip.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "cdn.privatevip.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -74656,5 +74708,5 @@
       }
     ]
   },
-  "updated": "2026-11-04T07:09:27Z"
+  "updated": "2026-11-04T12:58:13Z"
 }
