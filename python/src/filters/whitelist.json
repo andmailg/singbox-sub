@@ -75012,6 +75012,84 @@
             }
           }
         }
+      },
+      {
+        "key": "104.16.186.130:2053:gHQP0D7D15:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-11",
+          "server": "104.16.186.130",
+          "server_port": 2053,
+          "password": "gHQP0D7D15",
+          "tls": {
+            "enabled": true,
+            "server_name": "marvdasht.phonecomparisonblog.org"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/"
+          }
+        }
+      },
+      {
+        "key": "188.114.96.3:2053:gHQP0D7D15:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-446",
+          "server": "188.114.96.3",
+          "server_port": 2053,
+          "password": "gHQP0D7D15",
+          "tls": {
+            "enabled": true,
+            "server_name": "marvdasht.phonecomparisonblog.org"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "marvdasht.phonecomparisonblog.org"
+            }
+          }
+        }
+      },
+      {
+        "key": "de01.node.qixi.best:443:7e9facb8-b5e1-4a00-8295-2bf6e2e60a70:/download",
+        "node": {
+          "type": "trojan",
+          "tag": "node-665",
+          "server": "de01.node.qixi.best",
+          "server_port": 443,
+          "password": "7e9facb8-b5e1-4a00-8295-2bf6e2e60a70",
+          "tls": {
+            "enabled": true,
+            "server_name": "de01.node.qixi.best"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/download",
+            "headers": {
+              "Host": "de01.node.qixi.best"
+            }
+          }
+        }
+      },
+      {
+        "key": "jp07.node.qixi.best:443:7e9facb8-b5e1-4a00-8295-2bf6e2e60a70:/download",
+        "node": {
+          "type": "trojan",
+          "tag": "node-669",
+          "server": "jp07.node.qixi.best",
+          "server_port": 443,
+          "password": "7e9facb8-b5e1-4a00-8295-2bf6e2e60a70",
+          "tls": {
+            "enabled": true,
+            "server_name": "de01.node.qixi.best"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/download"
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -75053,5 +75131,5 @@
       }
     ]
   },
-  "updated": "2026-11-04T18:20:30Z"
+  "updated": "2026-11-04T18:29:04Z"
 }
