@@ -60415,6 +60415,33 @@
           },
           "packet_encoding": "xudp"
         }
+      },
+      {
+        "key": "188.225.79.22:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-87",
+          "server": "188.225.79.22",
+          "server_port": 443,
+          "uuid": "d16f7276-b967-440d-88b7-76945654ed55",
+          "tls": {
+            "enabled": true,
+            "server_name": "quartzops.blog",
+            "reality": {
+              "enabled": true,
+              "public_key": "LqyEitRDFcMxFuH45Vx1551cOqrI6UHYvkKgs7gNaho",
+              "short_id": "e347493990237143"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc-baf3bc8498"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -75026,5 +75053,5 @@
       }
     ]
   },
-  "updated": "2026-11-04T17:51:22Z"
+  "updated": "2026-11-04T18:20:30Z"
 }
