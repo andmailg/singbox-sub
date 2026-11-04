@@ -59989,6 +59989,62 @@
             "service_name": "neurex"
           }
         }
+      },
+      {
+        "key": "5406e6g.de27.h1clayd.click:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-234",
+          "server": "5406e6g.de27.h1clayd.click",
+          "server_port": 443,
+          "uuid": "3ceda178-78fe-4695-a1ef-a591ae7a2c97",
+          "tls": {
+            "enabled": true,
+            "server_name": "5406e6g.de27.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "AN1ASOcjxq1GWkCMBFT_yBRPkCbDr8i58S7o_CzMQmI",
+              "short_id": "8ddf8704a2cdcbc7"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "97fb546ddb99"
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "79.141.164.83:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-267",
+          "server": "79.141.164.83",
+          "server_port": 443,
+          "uuid": "0760406c-3f19-47b1-b332-f59270adf431",
+          "tls": {
+            "enabled": true,
+            "server_name": "nlb.kosmosapp.net",
+            "reality": {
+              "enabled": true,
+              "public_key": "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ",
+              "short_id": "27350908de933e09"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "neurex"
+          },
+          "packet_encoding": "xudp"
+        }
       }
     ],
     "trojan_ws": [
@@ -74558,5 +74614,5 @@
       }
     ]
   },
-  "updated": "2026-11-04T01:14:49Z"
+  "updated": "2026-11-04T07:02:46Z"
 }
