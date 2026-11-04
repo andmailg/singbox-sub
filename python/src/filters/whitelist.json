@@ -6687,6 +6687,79 @@
             }
           }
         }
+      },
+      {
+        "key": "cf-cname.xingpingcn.top:443:30e52776-55ac-3cb4-8d36-e2910f07e2c3:/0b02d05c82e3f3516948e99f6e59758a",
+        "node": {
+          "type": "vless",
+          "tag": "node-80",
+          "server": "cf-cname.xingpingcn.top",
+          "server_port": 443,
+          "uuid": "30e52776-55ac-3cb4-8d36-e2910f07e2c3",
+          "transport": {
+            "type": "xhttp",
+            "path": "/0b02d05c82e3f3516948e99f6e59758a",
+            "host": [
+              "ffb30d2fs8746.fuhuovps.xyz"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "ffb30d2fs8746.fuhuovps.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "cf.090227.xyz:443:30e52776-55ac-3cb4-8d36-e2910f07e2c3:/0b02d05c82e3f3516948e99f6e59758a",
+        "node": {
+          "type": "vless",
+          "tag": "node-81",
+          "server": "cf.090227.xyz",
+          "server_port": 443,
+          "uuid": "30e52776-55ac-3cb4-8d36-e2910f07e2c3",
+          "transport": {
+            "type": "xhttp",
+            "path": "/0b02d05c82e3f3516948e99f6e59758a",
+            "host": [
+              "ffb30d2fs8746.fuhuovps.xyz"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "ffb30d2fs8746.fuhuovps.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "swo2.nexfile.net:4443:a35c508f-4d5d-4531-842e-6e9d43c762c0:/api/v1/sync/",
+        "node": {
+          "type": "vless",
+          "tag": "node-113",
+          "server": "swo2.nexfile.net",
+          "server_port": 4443,
+          "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/sync/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "swo2.nexfile.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -72871,5 +72944,5 @@
       }
     ]
   },
-  "updated": "2026-11-04T00:29:02Z"
+  "updated": "2026-11-04T00:37:04Z"
 }
