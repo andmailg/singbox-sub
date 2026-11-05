@@ -2,14 +2,15 @@ name: Delete Old Workflows
 
 on:
   schedule:
-    # Запуск каждое воскресенье в 00:00 UTC (1 раз в неделю)
-    - cron: '0 0 * * 0'
+    # Запуск каждое воскресенье в 01:00 UTC (1 раз в неделю)
+    - cron: '0 1 * * 0'
   workflow_dispatch: # Ручной запуск остается доступен
 
 jobs:
   delete-runs:
     runs-on: ubuntu-latest
     
+    # Явно разрешаем этому запуску запись в Actions
     permissions:
       actions: write
       contents: read
@@ -18,7 +19,7 @@ jobs:
       - name: Delete old workflow runs
         uses: Mattraks/delete-workflow-runs@v2
         with:
-          token: ${{ secrets.delete_old_workflows }}
+          token: ${{ secrets.GITHUB_TOKEN }} # Используем встроенный безопасный токен
           repository: ${{ github.repository }}
           retain_days: 0
           keep_minimum_runs: 3
