@@ -5,6 +5,7 @@
 кортежа при отсутствии CLI.
 """
 
+import re
 import socket
 import subprocess
 import tempfile
@@ -40,6 +41,11 @@ def release_port(port: int) -> None:
         _reserved_ports.discard(port)
 
 
+# Шапка Xray и информационные строки не содержат причины падения
+_BANNER_LINE = re.compile(r"^(Xray \d|A unified platform|.*\[Info\])")
+_CONFIG_PREFIX = re.compile(r"Failed to start: main: failed to load config files: \[[^\]]*\] > ")
+
+
 class Child:
     """Фоновый CLI-клиент. Вывод идёт во временный файл, а не в PIPE: переполненный
     неprочитанный PIPE блокирует процесс."""
@@ -48,12 +54,21 @@ class Child:
         self.log = tempfile.TemporaryFile()
         self.proc = subprocess.Popen(cmd, stdout=self.log, stderr=subprocess.STDOUT)
 
-    def output(self, limit: int = 200) -> str:
+    def output(self, limit: int = 300) -> str:
+        """Суть вывода CLI без баннера и [Info]-строк: иначе первые символы — одна шапка Xray,
+        а причина падения (она в конце) обрезается."""
         try:
             self.log.seek(0)
-            return self.log.read().decode("utf-8", "replace").strip()[:limit]
+            text = self.log.read().decode("utf-8", "replace")
         except Exception:
             return ""
+        lines = [
+            ln.strip() for ln in text.splitlines()
+            if ln.strip() and not _BANNER_LINE.match(ln.strip())
+        ]
+        msg = " | ".join(lines)
+        msg = _CONFIG_PREFIX.sub("", msg)
+        return msg[:limit]
 
     def wait_ready(self, port: int, timeout: float, label: str = "CLI") -> str | None:
         """Ждёт SOCKS5-порт без фиксированной паузы. None — готов, иначе причина провала."""
@@ -136,6 +151,7 @@ def run_connectivity(
     sorted_outbounds = sorted(outbounds, key=_sort_key)
     working: list[dict] = []
     failed = 0
+    reasons: list[str] = []
 
     with ThreadPoolExecutor(max_workers=num_workers) as pool:
         futures = {pool.submit(test_fn, node, timeout): node for node in sorted_outbounds}
@@ -159,7 +175,17 @@ def run_connectivity(
                 print(f"{head}: OK — {result.get('_latency_ms', '?')}ms")
             else:
                 failed += 1
+                reasons.append(result or "")
                 print(f"{head}: FAIL" + (f" — {result}" if result else ""))
+
+    # Ни одна нода не дошла до проверки сети, у всех CLI завершился сам: это не «мёртвые ноды»,
+    # а несовместимая версия CLI или сломанный конфиг. Падаем, чтобы не перенести все ноды в pending.
+    if (not working and len(sorted_outbounds) >= 20 and failed == len(sorted_outbounds)
+            and all(r.startswith("CLI exit") for r in reasons)):
+        raise RuntimeError(
+            f"{label}: у всех {failed} нод '{tool}' завершился с ошибкой до проверки сети "
+            f"(пример: {reasons[0]}). Состояние не сохранено — проверьте версию и конфиг {tool}."
+        )
 
     working.sort(key=_sort_key)
     all_sub_ids: set[str] = set()

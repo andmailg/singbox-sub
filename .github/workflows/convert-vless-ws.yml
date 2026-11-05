@@ -36,8 +36,13 @@ jobs:
           curl -fsSL --retry 3 https://git.io/GeoLite2-ASN.mmdb -o python/GeoLite2-ASN.mmdb
 
       - name: Install Xray CLI
+        env:
+          # Xray >= 26.7.11 не загружает конфиг с VLESS без TLS/Reality на публичный адрес
+          # (exit 23: "vless without TLS or other encryption is prohibited ..."), а здесь такие
+          # ноды — основной объект проверки. v26.6.27 — последний релиз без этого запрета.
+          XRAY_VERSION: v26.6.27
         run: |
-          curl -fsSL --retry 3 https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip -o xray.zip
+          curl -fsSL --retry 3 "https://github.com/XTLS/Xray-core/releases/download/${XRAY_VERSION}/Xray-linux-64.zip" -o xray.zip
           unzip -q xray.zip xray -d xray
           sudo install -m 755 xray/xray /usr/local/bin/xray
           xray version
