@@ -76304,6 +76304,27 @@
             "path": "/download"
           }
         }
+      },
+      {
+        "key": "185.209.179.23:443:fa6559bc-f43b-4d86-b7c5-13cca522e3f2:/Telegram=@AmyraxVPN",
+        "node": {
+          "type": "trojan",
+          "tag": "node-240",
+          "server": "185.209.179.23",
+          "server_port": 443,
+          "password": "fa6559bc-f43b-4d86-b7c5-13cca522e3f2",
+          "tls": {
+            "enabled": true,
+            "server_name": "rich-claw.nyc.boxd.sh"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/Telegram=@AmyraxVPN",
+            "headers": {
+              "Host": "rich-claw.nyc.boxd.sh"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -76345,5 +76366,5 @@
       }
     ]
   },
-  "updated": "2026-11-05T07:26:58Z"
+  "updated": "2026-11-05T13:45:30Z"
 }
