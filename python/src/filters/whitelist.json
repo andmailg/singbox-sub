@@ -53486,6 +53486,46 @@
             "password": "sbxbz19890604"
           }
         }
+      },
+      {
+        "key": "31.76.62.148:4444:a35c508f-4d5d-4531-842e-6e9d43c762c0",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-61",
+          "server": "31.76.62.148",
+          "server_port": 4444,
+          "password": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "tls": {
+            "enabled": true,
+            "server_name": "lv2.nexfile.net",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
+      },
+      {
+        "key": "mein-1.octavia.dpdns.org:50000:xo43w4tc13ou2h3x",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-94",
+          "server": "mein-1.octavia.dpdns.org",
+          "server_port": 50000,
+          "password": "xo43w4tc13ou2h3x",
+          "tls": {
+            "enabled": true,
+            "server_name": "main-1.octavia.dpdns.org",
+            "alpn": [
+              "h3",
+              "h2",
+              "http/1.1"
+            ]
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "a99lje1n7ystml9q"
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -75817,5 +75857,5 @@
       }
     ]
   },
-  "updated": "2026-11-05T01:09:50Z"
+  "updated": "2026-11-05T04:57:12Z"
 }
