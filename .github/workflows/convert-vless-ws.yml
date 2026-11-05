@@ -1,20 +1,27 @@
-name: Auto Convert Xray to Sing-Box vless-ws
+name: Auto Convert Sing-Box VLESS WS
 
 on:
   schedule:
     # Запуск каждые 5 часов
-    - cron: '0 */5 * * *'
+    - cron: '45 */5 * * *'
   workflow_dispatch: # Ручной запуск
+
+# Не запускать два прогона одного workflow одновременно
+concurrency:
+  group: convert-vless-ws
+  cancel-in-progress: false
 
 jobs:
   convert:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    permissions:
+      contents: write
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-        with:
-          # Важно: скачиваем всю историю, чтобы git pull работал корректно
-          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -25,33 +32,24 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests maxminddb
-          curl -L https://git.io/GeoLite2-Country.mmdb -o GeoLite2-Country.mmdb
+          curl -fsSL --retry 3 https://git.io/GeoLite2-Country.mmdb -o python/GeoLite2-Country.mmdb
+          curl -fsSL --retry 3 https://git.io/GeoLite2-ASN.mmdb -o python/GeoLite2-ASN.mmdb
 
-      - name: Run scripts
+      - name: Install Xray CLI
         run: |
-          python python/vless_ws_cloudfront_tun.py
-          python python/vless_ws_tun.py
+          curl -fsSL --retry 3 https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip -o xray.zip
+          unzip -q xray.zip xray -d xray
+          sudo install -m 755 xray/xray /usr/local/bin/xray
+          xray version
+
+      - name: Run full pipeline
+        working-directory: python
+        run: >
+          python vless_ws_manage.py run
+          --geoip-block "ru" --rkn-filter 0 --export tun,xray,cloudfront
+          --test-timeout 3 --blacklist-timeout 10 --whitelist-timeout 10
 
       - name: Commit and push if changed
-        run: |
-          # 1. Настройка бота GitHub Actions
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # 2. Добавляем файлы в индекс
-          git add vless_ws_tun.json vless_ws_cloudfront_tun.json
-          git status
-          
-          # 3. Коммитим и пушим с предварительным rebase
-          if git diff --cached --quiet; then
-            echo "Нет изменений для коммита."
-          else
-            git commit -m "Auto-update vless_ws_tun.json & vless_ws_cloudfront_tun.json"
-            
-            # Подтягиваем изменения из удаленного репозитория, накладывая наш коммит поверх них
-            git pull origin main --rebase
-            
-            # Отправляем изменения в репозиторий
-            git push origin main
-          fi
-
+        run: >
+          bash .github/scripts/push_results.sh vless_ws "Auto-update VLESS WS configs & working nodes"
+          vless_ws_tun.json vless_ws.txt vless_ws_cloudfront_tun.json python/src/vless_ws_working.json python/src/vless_ws_pending.json

@@ -296,6 +296,97 @@ def _generate_vless_xhttp_links(outbounds: list[dict]) -> list[str]:
     return links
 
 
+def _generate_vless_http_links(outbounds: list[dict]) -> list[str]:
+    """Конвертирует VLESS HTTP ноды (TCP + HTTP-обфускация, без TLS) в v2ray-ссылки."""
+    links: list[str] = []
+    for o in outbounds:
+        if o.get("type") != "vless":
+            continue
+        transport = o.get("transport", {})
+        if not isinstance(transport, dict) or transport.get("type") != "http":
+            continue
+
+        tag = o.get("tag", "node")
+        server = o.get("server", "")
+        server_port = o.get("server_port", 80)
+        uuid = o.get("uuid", "")
+
+        params = {
+            "encryption": "none",
+            "security": "none",
+            "type": "tcp",
+            "headerType": "http",
+        }
+        host = transport.get("host")
+        if host:
+            params["host"] = ",".join(host) if isinstance(host, list) else str(host)
+        if transport.get("path"):
+            params["path"] = transport["path"]
+        if transport.get("method"):
+            params["method"] = transport["method"]
+        if transport.get("headers"):
+            params["header"] = json.dumps(transport["headers"], ensure_ascii=False, separators=(",", ":"))
+
+        query = urllib.parse.urlencode(params)
+        fragment = urllib.parse.quote(tag)
+        links.append(f"vless://{uuid}@{server}:{server_port}?{query}#{fragment}")
+    return links
+
+
+def _generate_vless_ws_links(outbounds: list[dict]) -> list[str]:
+    """Конвертирует VLESS WebSocket ноды (TLS или без шифрования) в v2ray-ссылки."""
+    links: list[str] = []
+    for o in outbounds:
+        if o.get("type") != "vless":
+            continue
+        transport = o.get("transport", {})
+        if not isinstance(transport, dict) or transport.get("type") != "ws":
+            continue
+
+        tag = o.get("tag", "node")
+        server = o.get("server", "")
+        server_port = o.get("server_port", 80)
+        uuid = o.get("uuid", "")
+        tls = o.get("tls") or {}
+
+        headers = transport.get("headers")
+        host = ""
+        if isinstance(headers, dict):
+            host = headers.get("Host") or headers.get("host") or ""
+        if isinstance(host, list):
+            host = host[0] if host else ""
+
+        params = {"encryption": "none", "type": "ws"}
+        if tls.get("enabled"):
+            reality = tls.get("reality") or {}
+            params["security"] = "reality" if reality.get("enabled") else "tls"
+            if tls.get("server_name"):
+                params["sni"] = tls["server_name"]
+            fp = (tls.get("utls") or {}).get("fingerprint", "")
+            if fp:
+                params["fp"] = fp
+            if reality.get("enabled"):
+                params["pbk"] = reality.get("public_key", "")
+                if reality.get("short_id"):
+                    params["sid"] = reality["short_id"]
+                if reality.get("spider_x"):
+                    params["spx"] = reality["spider_x"]
+            if tls.get("alpn"):
+                params["alpn"] = ",".join(tls["alpn"])
+            if tls.get("insecure"):
+                params["allowInsecure"] = "1"
+        else:
+            params["security"] = "none"
+        if host:
+            params["host"] = host
+        params["path"] = transport.get("path") or "/"
+
+        query = urllib.parse.urlencode(params)
+        fragment = urllib.parse.quote(tag)
+        links.append(f"vless://{uuid}@{server}:{server_port}?{query}#{fragment}")
+    return links
+
+
 def _generate_vmess_links(outbounds: list[dict]) -> list[str]:
     """Конвертирует VMess ноды в v2ray-ссылки (vmess://base64json)."""
     links: list[str] = []

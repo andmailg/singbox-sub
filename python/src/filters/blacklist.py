@@ -1,6 +1,6 @@
 """Blacklist for permanently blocked proxy nodes.
 
-Format: {"blacklist": {"vless_xhttp": [...], "vless_tcp": [...], "hy2": [...], "vless_grpc": [...], "trojan_ws": [...], "trojan_grpc": [...]}}
+Format: {"blacklist": {"vless_xhttp": [...], "vless_tcp": [...], "hy2": [...], "vless_grpc": [...], "vless_http": [...], "vless_ws": [...], "trojan_ws": [...], "trojan_grpc": [...]}}
 """
 
 import json
@@ -21,11 +21,13 @@ def load_blacklist() -> dict[str, set[str]]:
       vless_tcp   — server:port:uuid
       hy2         — server:port:password
       vless_grpc  — server:port:uuid:service_name
+      vless_http  — server:port:uuid:path
+      vless_ws    — server:port:uuid:path
       trojan_ws   — server:port:password:path
       trojan_grpc — server:port:password:service_name
     """
     if not os.path.exists(_BLACKLIST_FILE):
-        return {"vless_xhttp": set(), "vless_tcp": set(), "hy2": set(), "vless_grpc": set(), "trojan_ws": set(), "trojan_grpc": set()}
+        return {"vless_xhttp": set(), "vless_tcp": set(), "hy2": set(), "vless_grpc": set(), "vless_http": set(), "vless_ws": set(), "trojan_ws": set(), "trojan_grpc": set()}
     try:
         with open(_BLACKLIST_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -33,11 +35,11 @@ def load_blacklist() -> dict[str, set[str]]:
         for proto, keys in data.get("blacklist", {}).items():
             result[proto] = set(keys)
         # Ensure all protocols exist
-        for proto in ("vless_xhttp", "vless_tcp", "hy2", "vless_grpc", "trojan_ws", "trojan_grpc"):
+        for proto in ("vless_xhttp", "vless_tcp", "hy2", "vless_grpc", "vless_http", "vless_ws", "trojan_ws", "trojan_grpc"):
             result.setdefault(proto, set())
         return result
     except Exception:
-        return {"vless_xhttp": set(), "vless_tcp": set(), "hy2": set(), "vless_grpc": set(), "trojan_ws": set(), "trojan_grpc": set()}
+        return {"vless_xhttp": set(), "vless_tcp": set(), "hy2": set(), "vless_grpc": set(), "vless_http": set(), "vless_ws": set(), "trojan_ws": set(), "trojan_grpc": set()}
 
 
 def save_blacklist(blacklist: dict[str, set[str]]) -> None:
@@ -93,6 +95,9 @@ def _cache_key(node: dict, protocol: str) -> str:
     elif protocol == "vless_grpc":
         service_name = node.get("transport", {}).get("service_name", "")
         return f"{node.get('server')}:{node.get('server_port')}:{node.get('uuid')}:{service_name}"
+    elif protocol in ("vless_http", "vless_ws"):
+        path = (node.get("transport") or {}).get("path") or "/"
+        return f"{node.get('server')}:{node.get('server_port')}:{node.get('uuid')}:{path}"
     elif protocol == "trojan_ws":
         path = (node.get("transport") or {}).get("path", "/")
         return f"{node.get('server')}:{node.get('server_port')}:{node.get('password')}:{path}"
