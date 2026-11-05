@@ -62020,6 +62020,28 @@
             "service_name": "67h2o3erm0t9imsj"
           }
         }
+      },
+      {
+        "key": "138.124.86.230:48115",
+        "node": {
+          "type": "vless",
+          "tag": "node-25",
+          "server": "138.124.86.230",
+          "server_port": 48115,
+          "uuid": "b2fe1fa4-6a79-4938-a3f4-63b54ae7f16b",
+          "tls": {
+            "enabled": true,
+            "server_name": "138-124-86-230.sslip.io",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "138-124-86-230-sslip-io"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -79039,5 +79061,5 @@
       }
     ]
   },
-  "updated": "2026-11-05T21:04:48Z"
+  "updated": "2026-11-05T21:43:20Z"
 }
