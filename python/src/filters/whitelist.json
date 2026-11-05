@@ -76711,6 +76711,69 @@
             }
           }
         }
+      },
+      {
+        "key": "199.68.156.121:2087:7bpe9s002exll38s:/wss",
+        "node": {
+          "type": "trojan",
+          "tag": "node-221",
+          "server": "199.68.156.121",
+          "server_port": 2087,
+          "password": "7bpe9s002exll38s",
+          "tls": {
+            "enabled": true,
+            "server_name": "nexoshop.netvia.ir"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/wss",
+            "headers": {
+              "Host": "nexoshop.netvia.ir"
+            }
+          }
+        }
+      },
+      {
+        "key": "chatgpt.com:443:Telegram--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X-:/7x-tj-cdn",
+        "node": {
+          "type": "trojan",
+          "tag": "node-294",
+          "server": "chatgpt.com",
+          "server_port": 443,
+          "password": "Telegram--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X-",
+          "tls": {
+            "enabled": true,
+            "server_name": "cdn.config7x.site"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/7x-tj-cdn",
+            "headers": {
+              "Host": "cdn.config7x.site"
+            }
+          }
+        }
+      },
+      {
+        "key": "www.speedtest.net:443:Telegram--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X-:/7x-tj-cdn",
+        "node": {
+          "type": "trojan",
+          "tag": "node-306",
+          "server": "www.speedtest.net",
+          "server_port": 443,
+          "password": "Telegram--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X-",
+          "tls": {
+            "enabled": true,
+            "server_name": "cdn.config7x.site"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/7x-tj-cdn",
+            "headers": {
+              "Host": "cdn.config7x.site"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -79061,5 +79124,5 @@
       }
     ]
   },
-  "updated": "2026-11-05T21:43:20Z"
+  "updated": "2026-11-05T21:51:43Z"
 }
