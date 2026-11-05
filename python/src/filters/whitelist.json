@@ -61079,6 +61079,55 @@
             "service_name": "grpc-baf3bc8498"
           }
         }
+      },
+      {
+        "key": "79.141.164.124:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-263",
+          "server": "79.141.164.124",
+          "server_port": 443,
+          "uuid": "78c6b54f-3057-4af2-9ceb-1d1e3b12c623",
+          "tls": {
+            "enabled": true,
+            "server_name": "nla.kosmosapp.net",
+            "reality": {
+              "enabled": true,
+              "public_key": "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ",
+              "short_id": "27350908de933e09"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "neurex"
+          }
+        }
+      },
+      {
+        "key": "87.232.116.20:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-311",
+          "server": "87.232.116.20",
+          "server_port": 443,
+          "uuid": "d86e6fda-e519-46ab-98eb-9ff9a9da5984",
+          "tls": {
+            "enabled": true,
+            "server_name": "fafeqdhlett2p5la6d.cdn.cachefleet.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "67h2o3erm0t9imsj"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -75768,5 +75817,5 @@
       }
     ]
   },
-  "updated": "2026-11-04T23:15:43Z"
+  "updated": "2026-11-05T01:09:50Z"
 }
