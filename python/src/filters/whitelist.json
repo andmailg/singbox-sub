@@ -63068,6 +63068,59 @@
             "service_name": "138-124-86-230-sslip-io"
           }
         }
+      },
+      {
+        "key": "179.253.98.66:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-110",
+          "server": "179.253.98.66",
+          "server_port": 8443,
+          "uuid": "af185070-7170-46a8-b1e9-d61a035f4691",
+          "tls": {
+            "enabled": true,
+            "server_name": "skskks.top",
+            "reality": {
+              "enabled": true,
+              "public_key": "am-3rjmrITvv3q3smauPEtMZYnwvt-48611YJfKQhig",
+              "short_id": "e722d6ff",
+              "spider_x": "/"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
+      },
+      {
+        "key": "falmero.store:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-430",
+          "server": "falmero.store",
+          "server_port": 443,
+          "uuid": "8fb19a9e-ca2b-433a-8469-e4c7796033b2",
+          "tls": {
+            "enabled": true,
+            "server_name": "falmero.store",
+            "alpn": [
+              "h2"
+            ],
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "glush.de1.v1"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -82941,5 +82994,5 @@
       }
     ]
   },
-  "updated": "2026-11-06T13:41:48Z"
+  "updated": "2026-11-06T17:52:06Z"
 }
