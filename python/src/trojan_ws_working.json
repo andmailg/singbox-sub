@@ -1,6 +1,6 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-11-05T21:51:42Z",
+  "last_tested": "2026-11-06T07:40:14Z",
   "nodes": [
     {
       "type": "trojan",
@@ -22,14 +22,79 @@
       },
       "_sub_ids": [
         "13",
-        "27"
+        "27",
+        "3"
       ],
-      "_last_ok_ts": 1793914418.715348,
+      "_last_ok_ts": 1793949656.661244,
       "_country": null
     },
     {
       "type": "trojan",
       "tag": "node-2",
+      "server": "104.17.156.140",
+      "server_port": 443,
+      "password": "d9f20a29-239e-46ab-82bb-fa0d69e480f9",
+      "tls": {
+        "enabled": true,
+        "server_name": "zxcvz.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand",
+        "headers": {
+          "Host": "zxcvz.pages.dev"
+        }
+      },
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-3",
+      "server": "104.17.156.140",
+      "server_port": 443,
+      "password": "d9f20a29-239e-46ab-82bb-fa0d69e480f9",
+      "tls": {
+        "enabled": true,
+        "server_name": "zxcvz.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand",
+        "headers": {
+          "Host": "zxcvz.pages.dev"
+        }
+      },
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-4",
+      "server": "104.17.156.140",
+      "server_port": 443,
+      "password": "d9f20a29-239e-46ab-82bb-fa0d69e480f9",
+      "_dedup_key": "104.17.156.140:443:d9f20a29-239e-46ab-82bb-fa0d69e480f9:/proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand",
+      "tls": {
+        "enabled": true,
+        "server_name": "zxcvz.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/proxyip=proxy.seeck.cn/api/nodes?region=JP&limit=10&format=brand",
+        "headers": {
+          "Host": "zxcvz.pages.dev"
+        }
+      },
+      "_sub_ids": [
+        "13"
+      ],
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-5",
       "server": "104.18.0.1",
       "server_port": 2053,
       "password": "gHQP0D7D15",
@@ -52,12 +117,157 @@
         "21",
         "27"
       ],
-      "_last_ok_ts": 1793914418.715348,
+      "_last_ok_ts": 1793949656.661244,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-3",
+      "tag": "node-6",
+      "server": "104.19.173.68",
+      "server_port": 443,
+      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
+      "tls": {
+        "enabled": true,
+        "server_name": "azadnet-5vk.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
+      },
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-7",
+      "server": "104.19.173.68",
+      "server_port": 443,
+      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
+      "tls": {
+        "enabled": true,
+        "server_name": "azadnet-5vk.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
+      },
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-8",
+      "server": "104.19.173.68",
+      "server_port": 443,
+      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
+      "tls": {
+        "enabled": true,
+        "server_name": "azadnet-5vk.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
+      },
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-9",
+      "server": "104.19.173.68",
+      "server_port": 443,
+      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
+      "tls": {
+        "enabled": true,
+        "server_name": "azadnet-5vk.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
+      },
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-10",
+      "server": "104.19.173.68",
+      "server_port": 443,
+      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
+      "_dedup_key": "104.19.173.68:443:d0298536-d670-4045-bbb1-ddd5ea68683e:/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "azadnet-5vk.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
+      },
+      "_sub_ids": [
+        "13"
+      ],
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-11",
+      "server": "104.21.26.36",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "vless.herogoing.top"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tr?ed=2560"
+      },
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-12",
+      "server": "104.21.26.36",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "vless.herogoing.top"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tr?ed=2560"
+      },
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-13",
+      "server": "104.21.26.36",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "_dedup_key": "104.21.26.36:443:bpb-trojan:/tr?ed=2560",
+      "tls": {
+        "enabled": true,
+        "server_name": "vless.herogoing.top"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tr?ed=2560"
+      },
+      "_sub_ids": [
+        "1",
+        "13"
+      ],
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-14",
       "server": "104.24.0.1",
       "server_port": 2053,
       "password": "gHQP0D7D15",
@@ -80,29 +290,12 @@
         "21",
         "27"
       ],
-      "_last_ok_ts": 1793914418.715348,
+      "_last_ok_ts": 1793949656.661244,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-4",
-      "server": "104.25.239.113",
-      "server_port": 2053,
-      "password": "gHQP0D7D15",
-      "tls": {
-        "enabled": true,
-        "server_name": "marvdasht.phonecomparisonblog.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/"
-      },
-      "_last_ok_ts": 1793914418.715348,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-5",
+      "tag": "node-15",
       "server": "104.25.239.113",
       "server_port": 2053,
       "password": "gHQP0D7D15",
@@ -124,20 +317,22 @@
         "203",
         "204",
         "21",
+        "27",
         "28",
         "3",
         "7",
         "8"
       ],
-      "_last_ok_ts": 1793914418.715348,
+      "_last_ok_ts": 1793949656.661244,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-6",
+      "tag": "node-16",
       "server": "104.27.0.1",
       "server_port": 2053,
       "password": "gHQP0D7D15",
+      "_dedup_key": "104.27.0.1:2053:gHQP0D7D15:/",
       "tls": {
         "enabled": true,
         "server_name": "marvdasht.phonecomparisonblog.org"
@@ -149,34 +344,73 @@
           "Host": "marvdasht.phonecomparisonblog.org"
         }
       },
-      "_last_ok_ts": 1793914418.715348,
+      "_sub_ids": [
+        "13",
+        "204",
+        "27"
+      ],
+      "_last_ok_ts": 1793949656.661244,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-7",
-      "server": "104.27.0.1",
-      "server_port": 2053,
-      "password": "gHQP0D7D15",
-      "_dedup_key": "104.27.0.1:2053:gHQP0D7D15:/",
+      "tag": "node-17",
+      "server": "172.64.80.1",
+      "server_port": 443,
+      "password": "bpb-trojan",
       "tls": {
         "enabled": true,
-        "server_name": "marvdasht.phonecomparisonblog.org"
+        "server_name": "vless.herogoing.top"
       },
       "transport": {
         "type": "ws",
-        "path": "/"
+        "path": "/tr?ed=2560"
       },
-      "_sub_ids": [
-        "13",
-        "204"
-      ],
-      "_last_ok_ts": 1793914418.715348,
+      "_last_ok_ts": 1793949656.661244,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-8",
+      "tag": "node-18",
+      "server": "172.64.80.1",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "vless.herogoing.top"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tr?ed=2560"
+      },
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-19",
+      "server": "172.64.80.1",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "_dedup_key": "172.64.80.1:443:bpb-trojan:/tr?ed=2560",
+      "tls": {
+        "enabled": true,
+        "server_name": "vless.herogoing.top"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tr?ed=2560"
+      },
+      "_sub_ids": [
+        "1",
+        "13"
+      ],
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-20",
       "server": "172.67.118.45",
       "server_port": 2053,
       "password": "gHQP0D7D15",
@@ -195,34 +429,125 @@
         "20",
         "203",
         "204",
-        "21"
+        "21",
+        "3"
       ],
-      "_last_ok_ts": 1793914418.715348,
+      "_last_ok_ts": 1793949656.661244,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-9",
-      "server": "188.114.96.3",
-      "server_port": 2053,
-      "password": "gHQP0D7D15",
+      "tag": "node-21",
+      "server": "172.67.135.88",
+      "server_port": 443,
+      "password": "bpb-trojan",
       "tls": {
         "enabled": true,
-        "server_name": "marvdasht.phonecomparisonblog.org"
+        "server_name": "vless.herogoing.top"
       },
       "transport": {
         "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "marvdasht.phonecomparisonblog.org"
-        }
+        "path": "/tr?ed=2560"
       },
-      "_last_ok_ts": 1793914418.715348,
+      "_last_ok_ts": 1793949656.661244,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-10",
+      "tag": "node-22",
+      "server": "172.67.135.88",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "vless.herogoing.top"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tr"
+      },
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-23",
+      "server": "172.67.135.88",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "vless.herogoing.top"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tr?ed=2560"
+      },
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-24",
+      "server": "172.67.135.88",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "vless.herogoing.top"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tr"
+      },
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-25",
+      "server": "172.67.135.88",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "_dedup_key": "172.67.135.88:443:bpb-trojan:/tr?ed=2560",
+      "tls": {
+        "enabled": true,
+        "server_name": "vless.herogoing.top"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tr?ed=2560"
+      },
+      "_sub_ids": [
+        "13"
+      ],
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-26",
+      "server": "172.67.135.88",
+      "server_port": 443,
+      "password": "bpb-trojan",
+      "_dedup_key": "172.67.135.88:443:bpb-trojan:/tr",
+      "tls": {
+        "enabled": true,
+        "server_name": "vless.herogoing.top"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tr"
+      },
+      "_sub_ids": [
+        "1"
+      ],
+      "_last_ok_ts": 1793949656.661244,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-27",
       "server": "188.114.96.3",
       "server_port": 2053,
       "password": "gHQP0D7D15",
@@ -240,62 +565,36 @@
       },
       "_sub_ids": [
         "13",
-        "204"
+        "204",
+        "27"
       ],
-      "_last_ok_ts": 1793914418.715348,
+      "_last_ok_ts": 1793949656.661244,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-11",
-      "server": "chatgpt.com",
+      "tag": "node-28",
+      "server": "cdn.kavosiprotocol.shop",
       "server_port": 443,
-      "password": "Telegram--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X-",
-      "_dedup_key": "chatgpt.com:443:Telegram--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X-:/7x-tj-cdn",
+      "password": "5bb1fda3-0b8a-41d5-a803-b48e180ad718",
+      "_dedup_key": "cdn.kavosiprotocol.shop:443:5bb1fda3-0b8a-41d5-a803-b48e180ad718:/@KVPROTOCOlVPN--@KVPROTOCOlVPN--@KVPROTOCOlVPN--@KVPROTOCOlVPN--trojan/s_48738e13cc",
       "tls": {
         "enabled": true,
-        "server_name": "cdn.config7x.site"
+        "server_name": "cdn.kavosiprotocol.shop"
       },
       "transport": {
         "type": "ws",
-        "path": "/7x-tj-cdn",
-        "headers": {
-          "Host": "cdn.config7x.site"
-        }
+        "path": "/@KVPROTOCOlVPN--@KVPROTOCOlVPN--@KVPROTOCOlVPN--@KVPROTOCOlVPN--trojan/s_48738e13cc"
       },
       "_sub_ids": [
-        "1"
+        "20"
       ],
-      "_last_ok_ts": 1793914418.715348,
+      "_last_ok_ts": 1793949656.661244,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-12",
-      "server": "www.speedtest.net",
-      "server_port": 443,
-      "password": "Telegram--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X-",
-      "_dedup_key": "www.speedtest.net:443:Telegram--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X-:/7x-tj-cdn",
-      "tls": {
-        "enabled": true,
-        "server_name": "cdn.config7x.site"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/7x-tj-cdn",
-        "headers": {
-          "Host": "cdn.config7x.site"
-        }
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1793914418.715348,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-13",
+      "tag": "🇺🇸node-29",
       "server": "172.66.0.1",
       "server_port": 2053,
       "password": "gHQP0D7D15",
@@ -314,38 +613,15 @@
       "_sub_ids": [
         "1",
         "13",
-        "27"
+        "27",
+        "3"
       ],
-      "_last_ok_ts": 1793914418.715348,
+      "_last_ok_ts": 1793949656.661244,
       "_country": "US"
     },
     {
       "type": "trojan",
-      "tag": "🇺🇸node-14",
-      "server": "185.209.179.23",
-      "server_port": 443,
-      "password": "fa6559bc-f43b-4d86-b7c5-13cca522e3f2",
-      "_dedup_key": "185.209.179.23:443:fa6559bc-f43b-4d86-b7c5-13cca522e3f2:/Telegram=@AmyraxVPN",
-      "tls": {
-        "enabled": true,
-        "server_name": "rich-claw.nyc.boxd.sh"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/Telegram=@AmyraxVPN",
-        "headers": {
-          "Host": "rich-claw.nyc.boxd.sh"
-        }
-      },
-      "_sub_ids": [
-        "204"
-      ],
-      "_last_ok_ts": 1793914418.715348,
-      "_country": "US"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-15",
+      "tag": "🇺🇸node-30",
       "server": "199.68.156.121",
       "server_port": 2087,
       "password": "7bpe9s002exll38s",
@@ -366,12 +642,12 @@
         "204",
         "27"
       ],
-      "_last_ok_ts": 1793914418.715348,
+      "_last_ok_ts": 1793949656.661244,
       "_country": "US"
     },
     {
       "type": "trojan",
-      "tag": "🇺🇸node-16",
+      "tag": "🇺🇸node-31",
       "server": "199.68.156.250",
       "server_port": 2087,
       "password": "7bpe9s002exll38s",
@@ -394,7 +670,7 @@
         "21",
         "27"
       ],
-      "_last_ok_ts": 1793914418.715348,
+      "_last_ok_ts": 1793949656.661244,
       "_country": "US"
     }
   ]
