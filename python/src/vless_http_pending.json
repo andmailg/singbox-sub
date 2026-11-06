@@ -1,6 +1,44 @@
 {
-  "last_updated": "2026-11-05T21:35:18Z",
+  "last_updated": "2026-11-06T06:48:39Z",
   "nodes": [
+    {
+      "type": "vless",
+      "tag": "node-599",
+      "server": "1v.outline-vpn.cloud",
+      "server_port": 24124,
+      "uuid": "4e94f5e0-24c3-11ee-946c-9f91ac38e018",
+      "transport": {
+        "type": "http",
+        "host": [
+          "bomino.ir"
+        ],
+        "path": "/"
+      },
+      "_dedup_key": "1v.outline-vpn.cloud:24124:4e94f5e0-24c3-11ee-946c-9f91ac38e018",
+      "_sub_ids": [
+        "2"
+      ],
+      "_pending_since": 1793947345.553896
+    },
+    {
+      "type": "vless",
+      "tag": "node-2243",
+      "server": "pk.outline-vpn.cloud",
+      "server_port": 17945,
+      "uuid": "b03a5e65-c8a4-47ad-b683-889beac10c4f",
+      "transport": {
+        "type": "http",
+        "host": [
+          "speedtest.net"
+        ],
+        "path": "/"
+      },
+      "_dedup_key": "pk.outline-vpn.cloud:17945:b03a5e65-c8a4-47ad-b683-889beac10c4f",
+      "_sub_ids": [
+        "2"
+      ],
+      "_pending_since": 1793947345.553896
+    },
     {
       "type": "vless",
       "tag": "node-1127",
