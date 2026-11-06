@@ -7074,6 +7074,27 @@
             }
           }
         }
+      },
+      {
+        "key": "198.202.24.27:443:64c5f924-1c24-44a5-acff-2e3ebcd2f807:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-41",
+          "server": "198.202.24.27",
+          "server_port": 443,
+          "uuid": "64c5f924-1c24-44a5-acff-2e3ebcd2f807",
+          "transport": {
+            "type": "xhttp"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "nl29.dr-ping.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -82492,5 +82513,5 @@
       }
     ]
   },
-  "updated": "2026-11-06T09:12:26Z"
+  "updated": "2026-11-06T12:56:27Z"
 }
