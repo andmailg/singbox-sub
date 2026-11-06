@@ -77871,6 +77871,27 @@
             "path": "/@KVPROTOCOlVPN--@KVPROTOCOlVPN--@KVPROTOCOlVPN--@KVPROTOCOlVPN--trojan/s_48738e13cc"
           }
         }
+      },
+      {
+        "key": "66.81.247.8:2087:em6lOI9zhk:/2087",
+        "node": {
+          "type": "trojan",
+          "tag": "node-304",
+          "server": "66.81.247.8",
+          "server_port": 2087,
+          "password": "em6lOI9zhk",
+          "tls": {
+            "enabled": true,
+            "server_name": "t0f.tupn.org"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/2087",
+            "headers": {
+              "Host": "t0f.tupn.org"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -82994,5 +83015,5 @@
       }
     ]
   },
-  "updated": "2026-11-06T17:52:06Z"
+  "updated": "2026-11-06T18:02:56Z"
 }
