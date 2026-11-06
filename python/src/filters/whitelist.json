@@ -54938,6 +54938,23 @@
             "server_name": "steel7.hadsvpn.com"
           }
         }
+      },
+      {
+        "key": "193.23.216.179:443:ce29a04d-c95a-4451-9518-bae0c074e0d7",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-47",
+          "server": "193.23.216.179",
+          "server_port": 443,
+          "password": "ce29a04d-c95a-4451-9518-bae0c074e0d7",
+          "tls": {
+            "enabled": true,
+            "server_name": "crt.onecloudstream.com",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -82475,5 +82492,5 @@
       }
     ]
   },
-  "updated": "2026-11-06T08:41:56Z"
+  "updated": "2026-11-06T09:12:26Z"
 }
