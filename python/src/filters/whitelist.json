@@ -79065,6 +79065,27 @@
             }
           }
         }
+      },
+      {
+        "key": "singapore.com:443:bpb-trojan:/tr?ed=2560",
+        "node": {
+          "type": "trojan",
+          "tag": "node-341",
+          "server": "singapore.com",
+          "server_port": 443,
+          "password": "bpb-trojan",
+          "tls": {
+            "enabled": true,
+            "server_name": "kargar001.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/tr?ed=2560",
+            "headers": {
+              "Host": "kargar001.pages.dev"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -84383,5 +84404,5 @@
       }
     ]
   },
-  "updated": "2026-11-07T00:25:37Z"
+  "updated": "2026-11-07T00:39:16Z"
 }
