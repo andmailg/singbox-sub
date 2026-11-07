@@ -57416,6 +57416,24 @@
             "server_name": "mshvpn.online"
           }
         }
+      },
+      {
+        "key": "edge.hankli1214.xyz:8445:02df03e3-3029-4c95-bffe-8f211b480672",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-64",
+          "server": "edge.hankli1214.xyz",
+          "server_port": 8445,
+          "password": "02df03e3-3029-4c95-bffe-8f211b480672",
+          "tls": {
+            "enabled": true,
+            "server_name": "hank.hankli1214.xyz"
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "MeJA9qgoYMH4UMunHowisrbd"
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -95647,5 +95665,5 @@
       }
     ]
   },
-  "updated": "2026-11-07T07:56:36Z"
+  "updated": "2026-11-07T12:29:20Z"
 }
