@@ -64134,6 +64134,166 @@
             "service_name": "glush.de1.v1"
           }
         }
+      },
+      {
+        "key": "0592efg.us9.h1clayd.click:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-1",
+          "server": "0592efg.us9.h1clayd.click",
+          "server_port": 443,
+          "uuid": "cda0862a-0f87-4be9-8ed8-1d0c9e382839",
+          "tls": {
+            "enabled": true,
+            "server_name": "0592efg.us9.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "cO3wYHISTeorXcM8ffaDCDdqZ-olBQL-GyZqb-W7rTk",
+              "short_id": "bd8f712209a9c283"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "99f2107b03f8"
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "15b171g.nl7.h1clayd.click:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-30",
+          "server": "15b171g.nl7.h1clayd.click",
+          "server_port": 443,
+          "uuid": "cda0862a-0f87-4be9-8ed8-1d0c9e382839",
+          "tls": {
+            "enabled": true,
+            "server_name": "15b171g.nl7.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "zbz--PMjcIC4Ggr3j-ibDf0fzXRTj0lM_HzjPJyMkVE",
+              "short_id": "50a749f0eccb628c"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "5b79e8a94241"
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "82.148.225.244:8445",
+        "node": {
+          "type": "vless",
+          "tag": "node-94",
+          "server": "82.148.225.244",
+          "server_port": 8445,
+          "uuid": "0fdb1df7-b3b6-4d29-9fd6-2b92fc80b852",
+          "tls": {
+            "enabled": true,
+            "server_name": "sw2.cloudvienta.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "ndIKnA3ySMv5vBJ-OfP8IhFWVu7mtK0nzhgSil1NaVg",
+              "short_id": "00f7359d92c884cc"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc-reality"
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "961ec0g.nl13.h1clayd.click:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-110",
+          "server": "961ec0g.nl13.h1clayd.click",
+          "server_port": 443,
+          "uuid": "cda0862a-0f87-4be9-8ed8-1d0c9e382839",
+          "tls": {
+            "enabled": true,
+            "server_name": "961ec0g.nl13.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "xn7KVKS5MOnsFrYrEeRS04JssBCOxh12rxegaDFyGkA",
+              "short_id": "6d289ff0f47c0aac"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "7d5abcd7d8a1"
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "renderer-bridge-2-133.mirra.now:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-155",
+          "server": "renderer-bridge-2-133.mirra.now",
+          "server_port": 443,
+          "uuid": "27653b37-603c-4c90-b1f5-25c4d23f8932",
+          "tls": {
+            "enabled": true,
+            "server_name": "renderer-bridge-2-133.mirra.now",
+            "alpn": [
+              "h2"
+            ],
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "VideoRenderer"
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "5.83.129.236:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-273",
+          "server": "5.83.129.236",
+          "server_port": 443,
+          "uuid": "d86e6fda-e519-46ab-98eb-9ff9a9da5984",
+          "tls": {
+            "enabled": true,
+            "server_name": "host-de-upscale.cdn.cachefleet.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "a9w9wmko0k2od14hv8v"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -84223,5 +84383,5 @@
       }
     ]
   },
-  "updated": "2026-11-06T22:48:35Z"
+  "updated": "2026-11-07T00:25:37Z"
 }
