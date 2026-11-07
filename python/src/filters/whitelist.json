@@ -7319,6 +7319,32 @@
             }
           }
         }
+      },
+      {
+        "key": "185.173.179.218:443:f219ffe2-bc36-495f-a83d-8f9ac4af05fd:/assets/api/v3/connect/",
+        "node": {
+          "type": "vless",
+          "tag": "node-29",
+          "server": "185.173.179.218",
+          "server_port": 443,
+          "uuid": "f219ffe2-bc36-495f-a83d-8f9ac4af05fd",
+          "transport": {
+            "type": "xhttp",
+            "path": "/assets/api/v3/connect/",
+            "mode": "auto",
+            "host": [
+              "ru1.cdn-space.org"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "ru1.cdn-space.org",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -96782,5 +96808,5 @@
       }
     ]
   },
-  "updated": "2026-11-07T23:31:53Z"
+  "updated": "2026-11-07T23:40:01Z"
 }
