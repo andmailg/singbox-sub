@@ -7219,6 +7219,106 @@
             }
           }
         }
+      },
+      {
+        "key": "157.22.240.124:443:380fc46b-28cb-41a8-9879-38a898ab05d0:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-20",
+          "server": "157.22.240.124",
+          "server_port": 443,
+          "uuid": "380fc46b-28cb-41a8-9879-38a898ab05d0",
+          "transport": {
+            "type": "xhttp",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "call.meettech.org",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "safari"
+            }
+          }
+        }
+      },
+      {
+        "key": "188.114.98.0:443:64c5f924-1c24-44a5-acff-2e3ebcd2f807:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-35",
+          "server": "188.114.98.0",
+          "server_port": 443,
+          "uuid": "64c5f924-1c24-44a5-acff-2e3ebcd2f807",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto",
+            "host": [
+              "nl29.dr-ping.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "nl29.dr-ping.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "193.233.127.149:443:3c4aa500-e3ae-4778-837b-f02dfea8c85f:/static/js/chunk",
+        "node": {
+          "type": "vless",
+          "tag": "node-42",
+          "server": "193.233.127.149",
+          "server_port": 443,
+          "uuid": "3c4aa500-e3ae-4778-837b-f02dfea8c85f",
+          "transport": {
+            "type": "xhttp",
+            "path": "/static/js/chunk",
+            "mode": "stream-one",
+            "host": [
+              "nep.qiksme.com"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "nep.qiksme.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "91.107.191.188:8443:da8b92e3-537f-4630-9a04-0869344f4354:/Meh?di=443",
+        "node": {
+          "type": "vless",
+          "tag": "node-73",
+          "server": "91.107.191.188",
+          "server_port": 8443,
+          "uuid": "da8b92e3-537f-4630-9a04-0869344f4354",
+          "transport": {
+            "type": "xhttp",
+            "path": "/Meh?di=443",
+            "mode": "auto",
+            "host": [
+              "host.taghvimtime.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "host.taghvimtime.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -95665,5 +95765,5 @@
       }
     ]
   },
-  "updated": "2026-11-07T12:29:20Z"
+  "updated": "2026-11-07T16:23:45Z"
 }
