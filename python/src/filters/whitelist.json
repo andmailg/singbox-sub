@@ -80085,6 +80085,42 @@
             }
           }
         }
+      },
+      {
+        "key": "104.25.95.49:443:883e3cc8-9613-4f2d-8c42-0dd3d429db55:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-52",
+          "server": "104.25.95.49",
+          "server_port": 443,
+          "password": "883e3cc8-9613-4f2d-8c42-0dd3d429db55",
+          "tls": {
+            "enabled": true,
+            "server_name": "ltf8.jueson.de5.net"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/"
+          }
+        }
+      },
+      {
+        "key": "172.67.118.45:2053:gHQP0D7D15:/?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+        "node": {
+          "type": "trojan",
+          "tag": "node-184",
+          "server": "172.67.118.45",
+          "server_port": 2053,
+          "password": "gHQP0D7D15",
+          "tls": {
+            "enabled": true,
+            "server_name": "marvdasht.phonecomparisonblog.org"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET"
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -95325,5 +95361,5 @@
       }
     ]
   },
-  "updated": "2026-11-07T06:44:19Z"
+  "updated": "2026-11-07T06:55:42Z"
 }
