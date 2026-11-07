@@ -65411,6 +65411,33 @@
             "service_name": "a9w9wmko0k2od14hv8v"
           }
         }
+      },
+      {
+        "key": "79.137.196.75:8445",
+        "node": {
+          "type": "vless",
+          "tag": "node-90",
+          "server": "79.137.196.75",
+          "server_port": 8445,
+          "uuid": "34ef2fdf-8cec-4e38-a834-3cfcedc45517",
+          "tls": {
+            "enabled": true,
+            "server_name": "nl1.cloudvienta.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "6iZl57ijW4u5Xi68GER60l09-qVpeXweskDR3wOo81c",
+              "short_id": "ca579e0c8bfb1c3d"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc-reality"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -95765,5 +95792,5 @@
       }
     ]
   },
-  "updated": "2026-11-07T16:23:45Z"
+  "updated": "2026-11-07T16:47:22Z"
 }
