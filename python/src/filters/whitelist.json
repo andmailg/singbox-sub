@@ -83645,6 +83645,27 @@
             }
           }
         }
+      },
+      {
+        "key": "russia.com:443:bpb-trojan:/tr?ed=2560",
+        "node": {
+          "type": "trojan",
+          "tag": "node-220",
+          "server": "russia.com",
+          "server_port": 443,
+          "password": "bpb-trojan",
+          "tls": {
+            "enabled": true,
+            "server_name": "kargar001.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/tr?ed=2560",
+            "headers": {
+              "Host": "kargar001.pages.dev"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -102650,5 +102671,5 @@
       }
     ]
   },
-  "updated": "2026-11-08T06:50:00Z"
+  "updated": "2026-11-08T07:08:30Z"
 }
