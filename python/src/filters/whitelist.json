@@ -83769,6 +83769,48 @@
             }
           }
         }
+      },
+      {
+        "key": "104.25.95.49:443:883e3cc8-9613-4f2d-8c42-0dd3d429db55:/?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+        "node": {
+          "type": "trojan",
+          "tag": "node-42",
+          "server": "104.25.95.49",
+          "server_port": 443,
+          "password": "883e3cc8-9613-4f2d-8c42-0dd3d429db55",
+          "tls": {
+            "enabled": true,
+            "server_name": "ltf8.jueson.de5.net"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+            "headers": {
+              "Host": "ltf8.jueson.de5.net"
+            }
+          }
+        }
+      },
+      {
+        "key": "4okhrijuyjytflnvowhl3zfw5wsgi34o.pages.dev:443:Nd2bFutZK2ma29bYqC@z:/tr/2W6ONoBA1CTMk80znuAVgQ9dvWey2KD8?ed=2560",
+        "node": {
+          "type": "trojan",
+          "tag": "node-178",
+          "server": "4okhrijuyjytflnvowhl3zfw5wsgi34o.pages.dev",
+          "server_port": 443,
+          "password": "Nd2bFutZK2ma29bYqC@z",
+          "tls": {
+            "enabled": true,
+            "server_name": "4oKhrijUyjyTFlnvoWhL3ZFW5wSGI34O.PAGeS.DeV"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/tr/2W6ONoBA1CTMk80znuAVgQ9dvWey2KD8?ed=2560",
+            "headers": {
+              "Host": "4okhrijuyjytflnvowhl3zfw5wsgi34o.pages.dev"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -104876,5 +104918,5 @@
       }
     ]
   },
-  "updated": "2026-11-08T16:56:55Z"
+  "updated": "2026-11-08T17:15:44Z"
 }

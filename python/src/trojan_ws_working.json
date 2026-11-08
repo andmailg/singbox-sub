@@ -1,10 +1,57 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-11-08T07:08:28Z",
+  "last_tested": "2026-11-08T17:15:43Z",
   "nodes": [
     {
       "type": "trojan",
       "tag": "node-1",
+      "server": "104.16.186.130",
+      "server_port": 2053,
+      "password": "gHQP0D7D15",
+      "tls": {
+        "enabled": true,
+        "server_name": "marvdasht.phonecomparisonblog.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/"
+      },
+      "_last_ok_ts": 1794156433.807071,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-2",
+      "server": "104.16.186.130",
+      "server_port": 2053,
+      "password": "gHQP0D7D15",
+      "_dedup_key": "104.16.186.130:2053:gHQP0D7D15:/",
+      "tls": {
+        "enabled": true,
+        "server_name": "marvdasht.phonecomparisonblog.org"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "marvdasht.phonecomparisonblog.org"
+        }
+      },
+      "_sub_ids": [
+        "1",
+        "13",
+        "17",
+        "204",
+        "21",
+        "27",
+        "3"
+      ],
+      "_last_ok_ts": 1794156433.807071,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-3",
       "server": "104.17.10.171",
       "server_port": 443,
       "password": "883e3cc8-9613-4f2d-8c42-0dd3d429db55",
@@ -25,292 +72,12 @@
         "203",
         "204"
       ],
-      "_last_ok_ts": 1794120005.598793,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-2",
-      "server": "104.18.0.1",
-      "server_port": 2053,
-      "password": "gHQP0D7D15",
-      "tls": {
-        "enabled": true,
-        "server_name": "marvdasht.phonecomparisonblog.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "marvdasht.phonecomparisonblog.org"
-        }
-      },
-      "_last_ok_ts": 1794120005.598793,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-3",
-      "server": "104.18.0.1",
-      "server_port": 2053,
-      "password": "gHQP0D7D15",
-      "_dedup_key": "104.18.0.1:2053:gHQP0D7D15:/",
-      "tls": {
-        "enabled": true,
-        "server_name": "marvdasht.phonecomparisonblog.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "marvdasht.phonecomparisonblog.org"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "204",
-        "21",
-        "27"
-      ],
-      "_last_ok_ts": 1794120005.598793,
+      "_last_ok_ts": 1794156433.807071,
       "_country": null
     },
     {
       "type": "trojan",
       "tag": "node-4",
-      "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
-        }
-      },
-      "_last_ok_ts": 1794120005.598793,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-5",
-      "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
-        }
-      },
-      "_last_ok_ts": 1794120005.598793,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-6",
-      "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
-      "_dedup_key": "104.18.35.86:2096:123456:/",
-      "tls": {
-        "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
-        }
-      },
-      "_sub_ids": [
-        "13",
-        "20",
-        "4"
-      ],
-      "_last_ok_ts": 1794120005.598793,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-7",
-      "server": "104.19.173.68",
-      "server_port": 443,
-      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
-      "tls": {
-        "enabled": true,
-        "server_name": "azadnet-5vk.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
-      },
-      "_last_ok_ts": 1794120005.598793,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-8",
-      "server": "104.19.173.68",
-      "server_port": 443,
-      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
-      "tls": {
-        "enabled": true,
-        "server_name": "azadnet-5vk.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
-      },
-      "_last_ok_ts": 1794120005.598793,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-9",
-      "server": "104.19.173.68",
-      "server_port": 443,
-      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
-      "_dedup_key": "104.19.173.68:443:d0298536-d670-4045-bbb1-ddd5ea68683e:/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "azadnet-5vk.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
-      },
-      "_sub_ids": [
-        "13",
-        "27"
-      ],
-      "_last_ok_ts": 1794120005.598793,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-10",
-      "server": "104.21.26.36",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "_dedup_key": "104.21.26.36:443:bpb-trojan:/tr?ed=2560",
-      "tls": {
-        "enabled": true,
-        "server_name": "vless.herogoing.top"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr?ed=2560"
-      },
-      "_sub_ids": [
-        "1",
-        "13"
-      ],
-      "_last_ok_ts": 1794120005.598793,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-11",
-      "server": "104.21.88.77",
-      "server_port": 443,
-      "password": "2bcfbfba-b446-4ad5-93ad-72af9e008f61",
-      "_dedup_key": "104.21.88.77:443:2bcfbfba-b446-4ad5-93ad-72af9e008f61:/195.123.218.174-443",
-      "tls": {
-        "enabled": true,
-        "server_name": "blackshadow.dpdns.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/195.123.218.174-443",
-        "headers": {
-          "Host": "blackshadow.dpdns.org"
-        }
-      },
-      "_sub_ids": [
-        "13"
-      ],
-      "_last_ok_ts": 1794120005.598793,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-12",
-      "server": "104.24.0.1",
-      "server_port": 2053,
-      "password": "gHQP0D7D15",
-      "_dedup_key": "104.24.0.1:2053:gHQP0D7D15:/",
-      "tls": {
-        "enabled": true,
-        "server_name": "marvdasht.phonecomparisonblog.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "marvdasht.phonecomparisonblog.org"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "204",
-        "21",
-        "27"
-      ],
-      "_last_ok_ts": 1794120005.598793,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-13",
-      "server": "104.25.239.113",
-      "server_port": 2053,
-      "password": "gHQP0D7D15",
-      "_dedup_key": "104.25.239.113:2053:gHQP0D7D15:/",
-      "tls": {
-        "enabled": true,
-        "server_name": "marvdasht.phonecomparisonblog.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "marvdasht.phonecomparisonblog.org"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "14",
-        "17",
-        "20",
-        "203",
-        "204",
-        "21",
-        "27",
-        "28",
-        "3",
-        "7",
-        "8"
-      ],
-      "_last_ok_ts": 1794120005.598793,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-14",
       "server": "104.25.95.49",
       "server_port": 443,
       "password": "883e3cc8-9613-4f2d-8c42-0dd3d429db55",
@@ -329,65 +96,40 @@
       "_sub_ids": [
         "1",
         "13",
+        "14",
         "203",
         "3"
       ],
-      "_last_ok_ts": 1794120005.598793,
+      "_last_ok_ts": 1794156433.807071,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-15",
-      "server": "104.27.0.1",
-      "server_port": 2053,
-      "password": "gHQP0D7D15",
-      "_dedup_key": "104.27.0.1:2053:gHQP0D7D15:/",
+      "tag": "node-5",
+      "server": "104.25.95.49",
+      "server_port": 443,
+      "password": "883e3cc8-9613-4f2d-8c42-0dd3d429db55",
+      "_dedup_key": "104.25.95.49:443:883e3cc8-9613-4f2d-8c42-0dd3d429db55:/?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
       "tls": {
         "enabled": true,
-        "server_name": "marvdasht.phonecomparisonblog.org"
+        "server_name": "ltf8.jueson.de5.net"
       },
       "transport": {
         "type": "ws",
-        "path": "/",
+        "path": "/?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
         "headers": {
-          "Host": "marvdasht.phonecomparisonblog.org"
+          "Host": "ltf8.jueson.de5.net"
         }
       },
       "_sub_ids": [
-        "1",
-        "13",
-        "204",
-        "27"
+        "203"
       ],
-      "_last_ok_ts": 1794120005.598793,
+      "_last_ok_ts": 1794156433.807071,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-16",
-      "server": "172.64.80.1",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "_dedup_key": "172.64.80.1:443:bpb-trojan:/tr?ed=2560",
-      "tls": {
-        "enabled": true,
-        "server_name": "vless.herogoing.top"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr?ed=2560"
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "27"
-      ],
-      "_last_ok_ts": 1794120005.598793,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-17",
+      "tag": "node-6",
       "server": "172.67.118.45",
       "server_port": 2053,
       "password": "gHQP0D7D15",
@@ -413,12 +155,12 @@
         "27",
         "3"
       ],
-      "_last_ok_ts": 1794120005.598793,
+      "_last_ok_ts": 1794156433.807071,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-18",
+      "tag": "node-7",
       "server": "172.67.118.45",
       "server_port": 2053,
       "password": "gHQP0D7D15",
@@ -437,54 +179,59 @@
         "204",
         "27"
       ],
-      "_last_ok_ts": 1794120005.598793,
+      "_last_ok_ts": 1794156433.807071,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-19",
-      "server": "172.67.135.88",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "_dedup_key": "172.67.135.88:443:bpb-trojan:/tr?ed=2560",
+      "tag": "node-8",
+      "server": "188.114.96.3",
+      "server_port": 2053,
+      "password": "gHQP0D7D15",
       "tls": {
         "enabled": true,
-        "server_name": "vless.herogoing.top"
+        "server_name": "marvdasht.phonecomparisonblog.org"
       },
       "transport": {
         "type": "ws",
-        "path": "/tr?ed=2560"
+        "path": "/",
+        "headers": {
+          "Host": "marvdasht.phonecomparisonblog.org"
+        }
       },
-      "_sub_ids": [
-        "13"
-      ],
-      "_last_ok_ts": 1794120005.598793,
+      "_last_ok_ts": 1794156433.807071,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-20",
-      "server": "172.67.135.88",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "_dedup_key": "172.67.135.88:443:bpb-trojan:/tr",
+      "tag": "node-9",
+      "server": "188.114.96.3",
+      "server_port": 2053,
+      "password": "gHQP0D7D15",
+      "_dedup_key": "188.114.96.3:2053:gHQP0D7D15:/",
       "tls": {
         "enabled": true,
-        "server_name": "vless.herogoing.top"
+        "server_name": "marvdasht.phonecomparisonblog.org"
       },
       "transport": {
         "type": "ws",
-        "path": "/tr"
+        "path": "/",
+        "headers": {
+          "Host": "marvdasht.phonecomparisonblog.org"
+        }
       },
       "_sub_ids": [
-        "1"
+        "1",
+        "13",
+        "204",
+        "27"
       ],
-      "_last_ok_ts": 1794120005.598793,
+      "_last_ok_ts": 1794156433.807071,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-21",
+      "tag": "node-10",
       "server": "188.114.98.0",
       "server_port": 443,
       "password": "883e3cc8-9613-4f2d-8c42-0dd3d429db55",
@@ -502,14 +249,16 @@
       },
       "_sub_ids": [
         "13",
+        "20",
+        "27",
         "5"
       ],
-      "_last_ok_ts": 1794120005.598793,
+      "_last_ok_ts": 1794156433.807071,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-22",
+      "tag": "node-11",
       "server": "188.114.98.0",
       "server_port": 443,
       "password": "883e3cc8-9613-4f2d-8c42-0dd3d429db55",
@@ -526,115 +275,41 @@
         }
       },
       "_sub_ids": [
+        "20",
         "203",
+        "3",
         "5"
       ],
-      "_last_ok_ts": 1794120005.598793,
+      "_last_ok_ts": 1794156433.807071,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-23",
-      "server": "russia.com",
+      "tag": "node-12",
+      "server": "4okhrijuyjytflnvowhl3zfw5wsgi34o.pages.dev",
       "server_port": 443,
-      "password": "bpb-trojan",
-      "_dedup_key": "russia.com:443:bpb-trojan:/tr?ed=2560",
+      "password": "Nd2bFutZK2ma29bYqC@z",
+      "_dedup_key": "4okhrijuyjytflnvowhl3zfw5wsgi34o.pages.dev:443:Nd2bFutZK2ma29bYqC@z:/tr/2W6ONoBA1CTMk80znuAVgQ9dvWey2KD8?ed=2560",
       "tls": {
         "enabled": true,
-        "server_name": "kargar001.pages.dev"
+        "server_name": "4oKhrijUyjyTFlnvoWhL3ZFW5wSGI34O.PAGeS.DeV"
       },
       "transport": {
         "type": "ws",
-        "path": "/tr?ed=2560",
+        "path": "/tr/2W6ONoBA1CTMk80znuAVgQ9dvWey2KD8?ed=2560",
         "headers": {
-          "Host": "kargar001.pages.dev"
+          "Host": "4okhrijuyjytflnvowhl3zfw5wsgi34o.pages.dev"
         }
       },
       "_sub_ids": [
-        "27"
+        "204"
       ],
-      "_last_ok_ts": 1794120005.598793,
+      "_last_ok_ts": 1794156433.807071,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-24",
-      "server": "singapore.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "_dedup_key": "singapore.com:443:bpb-trojan:/tr?ed=2560",
-      "tls": {
-        "enabled": true,
-        "server_name": "kargar001.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr?ed=2560",
-        "headers": {
-          "Host": "kargar001.pages.dev"
-        }
-      },
-      "_sub_ids": [
-        "27"
-      ],
-      "_last_ok_ts": 1794120005.598793,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-25",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "_dedup_key": "www.wto.org:8443:ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f:/",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/"
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "18",
-        "203",
-        "27"
-      ],
-      "_last_ok_ts": 1794120005.598793,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-26",
-      "server": "172.66.0.1",
-      "server_port": 2053,
-      "password": "gHQP0D7D15",
-      "_dedup_key": "172.66.0.1:2053:gHQP0D7D15:/",
-      "tls": {
-        "enabled": true,
-        "server_name": "marvdasht.phonecomparisonblog.org"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "marvdasht.phonecomparisonblog.org"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "27",
-        "3"
-      ],
-      "_last_ok_ts": 1794120005.598793,
-      "_country": "US"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-27",
+      "tag": "🇺🇸node-13",
       "server": "199.68.156.121",
       "server_port": 2087,
       "password": "7bpe9s002exll38s",
@@ -656,12 +331,12 @@
         "204",
         "27"
       ],
-      "_last_ok_ts": 1794120005.598793,
+      "_last_ok_ts": 1794156433.807071,
       "_country": "US"
     },
     {
       "type": "trojan",
-      "tag": "🇺🇸node-28",
+      "tag": "🇺🇸node-14",
       "server": "199.68.156.250",
       "server_port": 2087,
       "password": "7bpe9s002exll38s",
@@ -684,7 +359,7 @@
         "21",
         "27"
       ],
-      "_last_ok_ts": 1794120005.598793,
+      "_last_ok_ts": 1794156433.807071,
       "_country": "US"
     }
   ]
