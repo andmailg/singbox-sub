@@ -81628,6 +81628,48 @@
             "path": "/categories/community/"
           }
         }
+      },
+      {
+        "key": "188.114.98.0:443:883e3cc8-9613-4f2d-8c42-0dd3d429db55:/categories/community/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-125",
+          "server": "188.114.98.0",
+          "server_port": 443,
+          "password": "883e3cc8-9613-4f2d-8c42-0dd3d429db55",
+          "tls": {
+            "enabled": true,
+            "server_name": "ltf8.jueson.de5.net"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/categories/community/",
+            "headers": {
+              "Host": "ltf8.jueson.de5.net"
+            }
+          }
+        }
+      },
+      {
+        "key": "188.114.98.0:443:883e3cc8-9613-4f2d-8c42-0dd3d429db55:/order/ads/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-126",
+          "server": "188.114.98.0",
+          "server_port": 443,
+          "password": "883e3cc8-9613-4f2d-8c42-0dd3d429db55",
+          "tls": {
+            "enabled": true,
+            "server_name": "ltf8.jueson.de5.net"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/order/ads/",
+            "headers": {
+              "Host": "ltf8.jueson.de5.net"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -97234,5 +97276,5 @@
       }
     ]
   },
-  "updated": "2026-11-08T00:00:16Z"
+  "updated": "2026-11-08T00:21:17Z"
 }
