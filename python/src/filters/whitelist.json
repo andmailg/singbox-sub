@@ -70352,6 +70352,85 @@
             "service_name": "becc6caf9bea"
           }
         }
+      },
+      {
+        "key": "194.55.239.39:3443",
+        "node": {
+          "type": "vless",
+          "tag": "node-56",
+          "server": "194.55.239.39",
+          "server_port": 3443,
+          "uuid": "68a67906-5b37-4779-a6cc-58a1655f18b4",
+          "tls": {
+            "enabled": true,
+            "server_name": "orbdash.fun",
+            "reality": {
+              "enabled": true,
+              "public_key": "sj9jXacuSqKItqV-mBbv7O-puk3RX5stKYTSCG2y6ic"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "media.v1.Relay78bc"
+          }
+        }
+      },
+      {
+        "key": "194.87.190.163:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-57",
+          "server": "194.87.190.163",
+          "server_port": 443,
+          "uuid": "27653b37-603c-4c90-b1f5-25c4d23f8932",
+          "tls": {
+            "enabled": true,
+            "server_name": "renderer-bridge-2-133.mirra.now",
+            "alpn": [
+              "h2"
+            ],
+            "utls": {
+              "enabled": true,
+              "fingerprint": "ios"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "VideoRenderer"
+          }
+        }
+      },
+      {
+        "key": "7cabc1g.de-p1.h1clayd.click:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-108",
+          "server": "7cabc1g.de-p1.h1clayd.click",
+          "server_port": 443,
+          "uuid": "13e6bdfd-d51b-4e57-a40e-b88784cba8bd",
+          "tls": {
+            "enabled": true,
+            "server_name": "7cabc1g.de-p1.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "mhIAHuZIEr2NpdGGSeOxar7VRSgEfVoNwb_G8Y0073E",
+              "short_id": "3b84fc70657725af"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "8cb5baa18cd7"
+          },
+          "packet_encoding": "xudp"
+        }
       }
     ],
     "trojan_ws": [
@@ -108430,5 +108509,5 @@
       }
     ]
   },
-  "updated": "2026-11-09T01:34:31Z"
+  "updated": "2026-11-09T07:12:34Z"
 }
