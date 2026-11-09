@@ -1,6 +1,6 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-11-09T07:41:14Z",
+  "last_tested": "2026-11-09T21:14:35Z",
   "nodes": [
     {
       "type": "trojan",
@@ -22,10 +22,13 @@
       },
       "_sub_ids": [
         "13",
+        "14",
+        "17",
         "203",
-        "204"
+        "204",
+        "3"
       ],
-      "_last_ok_ts": 1794208103.095477,
+      "_last_ok_ts": 1794256903.026737,
       "_country": null
     },
     {
@@ -47,9 +50,11 @@
         "path": "/"
       },
       "_sub_ids": [
+        "1",
+        "204",
         "27"
       ],
-      "_last_ok_ts": 1794208103.095477,
+      "_last_ok_ts": 1794256903.026737,
       "_country": null
     },
     {
@@ -75,9 +80,10 @@
         "13",
         "14",
         "203",
+        "204",
         "3"
       ],
-      "_last_ok_ts": 1794208103.095477,
+      "_last_ok_ts": 1794256903.026737,
       "_country": null
     },
     {
@@ -101,9 +107,10 @@
       "_sub_ids": [
         "14",
         "203",
+        "204",
         "3"
       ],
-      "_last_ok_ts": 1794208103.095477,
+      "_last_ok_ts": 1794256903.026737,
       "_country": null
     },
     {
@@ -131,7 +138,7 @@
         "27",
         "5"
       ],
-      "_last_ok_ts": 1794208103.095477,
+      "_last_ok_ts": 1794256903.026737,
       "_country": null
     },
     {
@@ -155,10 +162,11 @@
       "_sub_ids": [
         "20",
         "203",
+        "204",
         "3",
         "5"
       ],
-      "_last_ok_ts": 1794208103.095477,
+      "_last_ok_ts": 1794256903.026737,
       "_country": null
     },
     {
@@ -181,10 +189,11 @@
       },
       "_sub_ids": [
         "203",
+        "204",
         "3",
         "5"
       ],
-      "_last_ok_ts": 1794208103.095477,
+      "_last_ok_ts": 1794256903.026737,
       "_country": null
     },
     {
@@ -209,88 +218,32 @@
         "203",
         "5"
       ],
-      "_last_ok_ts": 1794208103.095477,
+      "_last_ok_ts": 1794256903.026737,
       "_country": null
     },
     {
       "type": "trojan",
-      "tag": "node-9",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "_dedup_key": "www.wto.org:8443:ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f:/",
+      "tag": "🇩🇪node-9",
+      "server": "191.44.112.170.sslip.io",
+      "server_port": 443,
+      "password": "46d221fa-e9b4-748c-4eae-019a88e42991",
+      "_dedup_key": "191.44.112.170.sslip.io:443:46d221fa-e9b4-748c-4eae-019a88e42991:/tvpn-trojan/bg",
       "tls": {
         "enabled": true,
-        "server_name": "jiangjc.pages.dev"
+        "server_name": "orbylume.my.to"
       },
       "transport": {
         "type": "ws",
-        "path": "/"
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "18",
-        "203",
-        "27"
-      ],
-      "_last_ok_ts": 1794208103.095477,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-10",
-      "server": "199.68.156.121",
-      "server_port": 2087,
-      "password": "7bpe9s002exll38s",
-      "_dedup_key": "199.68.156.121:2087:7bpe9s002exll38s:/wss",
-      "tls": {
-        "enabled": true,
-        "server_name": "nexoshop.netvia.ir"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/wss",
+        "path": "/tvpn-trojan/bg",
         "headers": {
-          "Host": "nexoshop.netvia.ir"
+          "Host": "orbylume.my.to"
         }
       },
       "_sub_ids": [
-        "1",
-        "13",
-        "204",
-        "27"
+        "4"
       ],
-      "_last_ok_ts": 1794208103.095477,
-      "_country": "US"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-11",
-      "server": "199.68.156.250",
-      "server_port": 2087,
-      "password": "7bpe9s002exll38s",
-      "_dedup_key": "199.68.156.250:2087:7bpe9s002exll38s:/wss",
-      "tls": {
-        "enabled": true,
-        "server_name": "nexoshop.netvia.ir"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/wss",
-        "headers": {
-          "Host": "nexoshop.netvia.ir"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "204",
-        "21",
-        "27"
-      ],
-      "_last_ok_ts": 1794208103.095477,
-      "_country": "US"
+      "_last_ok_ts": 1794256903.026737,
+      "_country": "DE"
     }
   ]
 }

@@ -123,9 +123,7 @@
         "node-6",
         "node-7",
         "node-8",
-        "node-9",
-        "🇺🇸node-10",
-        "🇺🇸node-11"
+        "🇩🇪node-9"
       ],
       "default": "auto"
     },
@@ -141,9 +139,7 @@
         "node-6",
         "node-7",
         "node-8",
-        "node-9",
-        "🇺🇸node-10",
-        "🇺🇸node-11"
+        "🇩🇪node-9"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -295,52 +291,19 @@
     },
     {
       "type": "trojan",
-      "tag": "node-9",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
+      "tag": "🇩🇪node-9",
+      "server": "191.44.112.170.sslip.io",
+      "server_port": 443,
+      "password": "46d221fa-e9b4-748c-4eae-019a88e42991",
       "tls": {
         "enabled": true,
-        "server_name": "jiangjc.pages.dev"
+        "server_name": "orbylume.my.to"
       },
       "transport": {
         "type": "ws",
-        "path": "/"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-10",
-      "server": "199.68.156.121",
-      "server_port": 2087,
-      "password": "7bpe9s002exll38s",
-      "tls": {
-        "enabled": true,
-        "server_name": "nexoshop.netvia.ir"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/wss",
+        "path": "/tvpn-trojan/bg",
         "headers": {
-          "Host": "nexoshop.netvia.ir"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-11",
-      "server": "199.68.156.250",
-      "server_port": 2087,
-      "password": "7bpe9s002exll38s",
-      "tls": {
-        "enabled": true,
-        "server_name": "nexoshop.netvia.ir"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/wss",
-        "headers": {
-          "Host": "nexoshop.netvia.ir"
+          "Host": "orbylume.my.to"
         }
       }
     }

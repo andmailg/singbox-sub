@@ -86985,6 +86985,27 @@
             "path": "/"
           }
         }
+      },
+      {
+        "key": "191.44.112.170.sslip.io:443:46d221fa-e9b4-748c-4eae-019a88e42991:/tvpn-trojan/bg",
+        "node": {
+          "type": "trojan",
+          "tag": "node-139",
+          "server": "191.44.112.170.sslip.io",
+          "server_port": 443,
+          "password": "46d221fa-e9b4-748c-4eae-019a88e42991",
+          "tls": {
+            "enabled": true,
+            "server_name": "orbylume.my.to"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/tvpn-trojan/bg",
+            "headers": {
+              "Host": "orbylume.my.to"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -110290,5 +110311,5 @@
       }
     ]
   },
-  "updated": "2026-11-09T21:08:27Z"
+  "updated": "2026-11-09T21:14:37Z"
 }
