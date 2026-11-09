@@ -3,7 +3,7 @@ name: Auto Convert Sing-Box VLESS xhttp
 on:
   schedule:
     # Запуск каждые 5 часов
-    - cron: '10 */5 * * *'
+    - cron: '45 */5 * * *'
   workflow_dispatch: # Ручной запуск
 
 # Не запускать два прогона одного workflow одновременно

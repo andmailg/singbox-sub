@@ -3,7 +3,7 @@ name: Auto Convert Sing-Box Trojan WS
 on:
   schedule:
     # Запуск каждые 5 часов
-    - cron: '40 */5 * * *'
+    - cron: '15 */5 * * *'
   workflow_dispatch: # Ручной запуск
 
 # Не запускать два прогона одного workflow одновременно
