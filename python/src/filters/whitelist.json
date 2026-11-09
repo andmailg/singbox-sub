@@ -69214,6 +69214,143 @@
             "service_name": "204adda7e3da"
           }
         }
+      },
+      {
+        "key": "0592efg.us8.h1clayd.click:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-2",
+          "server": "0592efg.us8.h1clayd.click",
+          "server_port": 443,
+          "uuid": "cda0862a-0f87-4be9-8ed8-1d0c9e382839",
+          "tls": {
+            "enabled": true,
+            "server_name": "0592efg.us8.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "cO3wYHISTeorXcM8ffaDCDdqZ-olBQL-GyZqb-W7rTk",
+              "short_id": "bd8f712209a9c283",
+              "spider_x": "/"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "99f2107b03f8"
+          }
+        }
+      },
+      {
+        "key": "122.8.46.9:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-18",
+          "server": "122.8.46.9",
+          "server_port": 8443,
+          "uuid": "de3592c8-3e77-ea26-c465-d6e6f487597d",
+          "tls": {
+            "enabled": true,
+            "server_name": "cdn.steamstatic.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "sRTNjrosfFSiuQX7Yt7Ub5DJvFznfHSC3nlzFQ3H2WU"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "TunService"
+          }
+        }
+      },
+      {
+        "key": "212.69.86.159:8447",
+        "node": {
+          "type": "vless",
+          "tag": "node-66",
+          "server": "212.69.86.159",
+          "server_port": 8447,
+          "uuid": "52030136-eee3-4675-baae-a50f17b2bb8b",
+          "tls": {
+            "enabled": true,
+            "server_name": "github.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "Pe1-DgXHoB_IGysYKHHhjppQD88mHkzYkqISdSXQxT4",
+              "short_id": "732ef4f5320b5e19"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "84.32.96.251:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-112",
+          "server": "84.32.96.251",
+          "server_port": 443,
+          "uuid": "95d0e214-eab0-4701-93ed-fea4f1b56062",
+          "tls": {
+            "enabled": true,
+            "server_name": "reg.jarbook.net",
+            "reality": {
+              "enabled": true,
+              "public_key": "nUUSNvkc5Xy6LRCP4yeFvbI8wFMx7gdgruPMNBq7jzo",
+              "short_id": "dceb4214",
+              "spider_x": "/"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "BookCatalog"
+          }
+        }
+      },
+      {
+        "key": "nl2.h1cloud.net:25454",
+        "node": {
+          "type": "vless",
+          "tag": "node-168",
+          "server": "nl2.h1cloud.net",
+          "server_port": 25454,
+          "uuid": "95c2ba1e-a330-4e6b-bd81-bf9c0f647b2f",
+          "tls": {
+            "enabled": true,
+            "server_name": "s-25454.nl2.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "YOgsoXtChX3RvA0Gf9SSsP8VLP4GGk7dytVBo9qZCH4",
+              "short_id": "221ba0d14384ccf1",
+              "spider_x": "/"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "becc6caf9bea"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -105404,5 +105541,5 @@
       }
     ]
   },
-  "updated": "2026-11-08T23:42:50Z"
+  "updated": "2026-11-09T00:06:20Z"
 }
