@@ -84302,6 +84302,48 @@
             }
           }
         }
+      },
+      {
+        "key": "188.114.98.0:443:883e3cc8-9613-4f2d-8c42-0dd3d429db55:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-130",
+          "server": "188.114.98.0",
+          "server_port": 443,
+          "password": "883e3cc8-9613-4f2d-8c42-0dd3d429db55",
+          "tls": {
+            "enabled": true,
+            "server_name": "ltf8.jueson.de5.net"
+          },
+          "transport": {
+            "type": "ws",
+            "headers": {
+              "Host": "ltf8.jueson.de5.net"
+            },
+            "path": "/"
+          }
+        }
+      },
+      {
+        "key": "188.114.98.0:443:883e3cc8-9613-4f2d-8c42-0dd3d429db55:/?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+        "node": {
+          "type": "trojan",
+          "tag": "node-131",
+          "server": "188.114.98.0",
+          "server_port": 443,
+          "password": "883e3cc8-9613-4f2d-8c42-0dd3d429db55",
+          "tls": {
+            "enabled": true,
+            "server_name": "ltf8.jueson.de5.net"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+            "headers": {
+              "Host": "ltf8.jueson.de5.net"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -105541,5 +105583,5 @@
       }
     ]
   },
-  "updated": "2026-11-09T00:06:20Z"
+  "updated": "2026-11-09T00:30:47Z"
 }
