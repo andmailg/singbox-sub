@@ -7627,6 +7627,333 @@
             }
           }
         }
+      },
+      {
+        "key": "151.101.36.88:443:67cd3349-f789-4cbb-8b91-4b6b1654ce7c:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-30",
+          "server": "151.101.36.88",
+          "server_port": 443,
+          "uuid": "67cd3349-f789-4cbb-8b91-4b6b1654ce7c",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto",
+            "host": [
+              "ovd5.global.ssl.fastly.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "accounts.fastly.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          }
+        }
+      },
+      {
+        "key": "2.26.93.109:4443:a35c508f-4d5d-4531-842e-6e9d43c762c0:/api/v1/sync/",
+        "node": {
+          "type": "vless",
+          "tag": "node-73",
+          "server": "2.26.93.109",
+          "server_port": 4443,
+          "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/sync/",
+            "host": [
+              "swo2.nexfile.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "swo2.nexfile.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "46.33.8.246:443:0ad875ef-b751-46e3-aa89-e1ae20e43bcc:/assets/v1/ingest/5y2XX8T5BC",
+        "node": {
+          "type": "vless",
+          "tag": "node-82",
+          "server": "46.33.8.246",
+          "server_port": 443,
+          "uuid": "0ad875ef-b751-46e3-aa89-e1ae20e43bcc",
+          "transport": {
+            "type": "xhttp",
+            "path": "/assets/v1/ingest/5y2XX8T5BC",
+            "mode": "stream-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "upload.onecloudtraining.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "46.33.8.252:443:0ad875ef-b751-46e3-aa89-e1ae20e43bcc:/stream/v3/upload/KAawhnLCtp",
+        "node": {
+          "type": "vless",
+          "tag": "node-83",
+          "server": "46.33.8.252",
+          "server_port": 443,
+          "uuid": "0ad875ef-b751-46e3-aa89-e1ae20e43bcc",
+          "transport": {
+            "type": "xhttp",
+            "path": "/stream/v3/upload/KAawhnLCtp",
+            "mode": "stream-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "download.onecloudtraining.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "46.33.8.253:443:0ad875ef-b751-46e3-aa89-e1ae20e43bcc:/static/v3/object/OqyozN63ao",
+        "node": {
+          "type": "vless",
+          "tag": "node-84",
+          "server": "46.33.8.253",
+          "server_port": 443,
+          "uuid": "0ad875ef-b751-46e3-aa89-e1ae20e43bcc",
+          "transport": {
+            "type": "xhttp",
+            "path": "/static/v3/object/OqyozN63ao",
+            "mode": "stream-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "link.onecloudtraining.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "assets.onecloudtraining.com:443:0ad875ef-b751-46e3-aa89-e1ae20e43bcc:/static/v1/blob/SUBAhgozTk",
+        "node": {
+          "type": "vless",
+          "tag": "node-100",
+          "server": "assets.onecloudtraining.com",
+          "server_port": 443,
+          "uuid": "0ad875ef-b751-46e3-aa89-e1ae20e43bcc",
+          "transport": {
+            "type": "xhttp",
+            "path": "/static/v1/blob/SUBAhgozTk",
+            "mode": "stream-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "assets.onecloudtraining.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "download.onecloudtraining.com:443:0ad875ef-b751-46e3-aa89-e1ae20e43bcc:/stream/v3/upload/KAawhnLCtp",
+        "node": {
+          "type": "vless",
+          "tag": "node-110",
+          "server": "download.onecloudtraining.com",
+          "server_port": 443,
+          "uuid": "0ad875ef-b751-46e3-aa89-e1ae20e43bcc",
+          "transport": {
+            "type": "xhttp",
+            "path": "/stream/v3/upload/KAawhnLCtp",
+            "mode": "stream-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "download.onecloudtraining.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "fetch.onecloudtraining.com:443:0ad875ef-b751-46e3-aa89-e1ae20e43bcc:/cdn/v2/blob/uvUWSZiudw",
+        "node": {
+          "type": "vless",
+          "tag": "node-114",
+          "server": "fetch.onecloudtraining.com",
+          "server_port": 443,
+          "uuid": "0ad875ef-b751-46e3-aa89-e1ae20e43bcc",
+          "transport": {
+            "type": "xhttp",
+            "path": "/cdn/v2/blob/uvUWSZiudw",
+            "mode": "stream-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "fetch.onecloudtraining.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "link.onecloudtraining.com:443:0ad875ef-b751-46e3-aa89-e1ae20e43bcc:/static/v3/object/OqyozN63ao",
+        "node": {
+          "type": "vless",
+          "tag": "node-121",
+          "server": "link.onecloudtraining.com",
+          "server_port": 443,
+          "uuid": "0ad875ef-b751-46e3-aa89-e1ae20e43bcc",
+          "transport": {
+            "type": "xhttp",
+            "path": "/static/v3/object/OqyozN63ao",
+            "mode": "stream-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "link.onecloudtraining.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "main.onecloudtraining.com:443:0ad875ef-b751-46e3-aa89-e1ae20e43bcc:/stream/v1/chunk/m6OfwfAj3W",
+        "node": {
+          "type": "vless",
+          "tag": "node-122",
+          "server": "main.onecloudtraining.com",
+          "server_port": 443,
+          "uuid": "0ad875ef-b751-46e3-aa89-e1ae20e43bcc",
+          "transport": {
+            "type": "xhttp",
+            "path": "/stream/v1/chunk/m6OfwfAj3W",
+            "mode": "stream-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "main.onecloudtraining.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "media.onecloudtraining.com:443:0ad875ef-b751-46e3-aa89-e1ae20e43bcc:/media/v2/ingest/YH4m9gMDye",
+        "node": {
+          "type": "vless",
+          "tag": "node-123",
+          "server": "media.onecloudtraining.com",
+          "server_port": 443,
+          "uuid": "0ad875ef-b751-46e3-aa89-e1ae20e43bcc",
+          "transport": {
+            "type": "xhttp",
+            "path": "/media/v2/ingest/YH4m9gMDye",
+            "mode": "stream-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "media.onecloudtraining.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "proxy.onecloudtraining.com:443:0ad875ef-b751-46e3-aa89-e1ae20e43bcc:/assets/v1/segment/tNDnAEKWSp",
+        "node": {
+          "type": "vless",
+          "tag": "node-127",
+          "server": "proxy.onecloudtraining.com",
+          "server_port": 443,
+          "uuid": "0ad875ef-b751-46e3-aa89-e1ae20e43bcc",
+          "transport": {
+            "type": "xhttp",
+            "path": "/assets/v1/segment/tNDnAEKWSp",
+            "mode": "stream-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "proxy.onecloudtraining.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "upload.onecloudtraining.com:443:0ad875ef-b751-46e3-aa89-e1ae20e43bcc:/assets/v1/ingest/5y2XX8T5BC",
+        "node": {
+          "type": "vless",
+          "tag": "node-141",
+          "server": "upload.onecloudtraining.com",
+          "server_port": 443,
+          "uuid": "0ad875ef-b751-46e3-aa89-e1ae20e43bcc",
+          "transport": {
+            "type": "xhttp",
+            "path": "/assets/v1/ingest/5y2XX8T5BC",
+            "mode": "stream-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "upload.onecloudtraining.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "us.onecloudtraining.com:443:0ad875ef-b751-46e3-aa89-e1ae20e43bcc:/media/v1/push/NKdRufUu3q",
+        "node": {
+          "type": "vless",
+          "tag": "node-143",
+          "server": "us.onecloudtraining.com",
+          "server_port": 443,
+          "uuid": "0ad875ef-b751-46e3-aa89-e1ae20e43bcc",
+          "transport": {
+            "type": "xhttp",
+            "path": "/media/v1/push/NKdRufUu3q",
+            "mode": "stream-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "us.onecloudtraining.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -109874,5 +110201,5 @@
       }
     ]
   },
-  "updated": "2026-11-09T08:34:20Z"
+  "updated": "2026-11-09T08:49:25Z"
 }
