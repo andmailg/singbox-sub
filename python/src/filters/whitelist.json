@@ -86548,6 +86548,27 @@
             }
           }
         }
+      },
+      {
+        "key": "104.17.10.171:443:883e3cc8-9613-4f2d-8c42-0dd3d429db55:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-9",
+          "server": "104.17.10.171",
+          "server_port": 443,
+          "password": "883e3cc8-9613-4f2d-8c42-0dd3d429db55",
+          "tls": {
+            "enabled": true,
+            "server_name": "ltf8.jueson.de5.net"
+          },
+          "transport": {
+            "type": "ws",
+            "headers": {
+              "Host": "ltf8.jueson.de5.net"
+            },
+            "path": "/"
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -109633,5 +109654,5 @@
       }
     ]
   },
-  "updated": "2026-11-09T07:17:02Z"
+  "updated": "2026-11-09T07:41:16Z"
 }
