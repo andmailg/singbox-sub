@@ -72752,6 +72752,561 @@
           },
           "packet_encoding": "xudp"
         }
+      },
+      {
+        "key": "201.58.189.104:2083",
+        "node": {
+          "type": "vless",
+          "tag": "node-57",
+          "server": "201.58.189.104",
+          "server_port": 2083,
+          "uuid": "d7ddade6-b7a0-4cab-a910-d5d5c378d98a",
+          "tls": {
+            "enabled": true,
+            "server_name": "dl.google.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "B7x5bYp-YhtLeH31zYcilpKFCkGTMe3jtSECSw-bMC4",
+              "short_id": "8bd80253",
+              "spider_x": "/"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "google.storage.v2.Storage"
+          }
+        }
+      },
+      {
+        "key": "201.58.189.105:2083",
+        "node": {
+          "type": "vless",
+          "tag": "node-58",
+          "server": "201.58.189.105",
+          "server_port": 2083,
+          "uuid": "d7ddade6-b7a0-4cab-a910-d5d5c378d98a",
+          "tls": {
+            "enabled": true,
+            "server_name": "dl.google.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "B7x5bYp-YhtLeH31zYcilpKFCkGTMe3jtSECSw-bMC4",
+              "short_id": "8bd80253",
+              "spider_x": "/"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "google.storage.v2.Storage"
+          }
+        }
+      },
+      {
+        "key": "45.81.252.143:2053",
+        "node": {
+          "type": "vless",
+          "tag": "node-70",
+          "server": "45.81.252.143",
+          "server_port": 2053,
+          "uuid": "53555197-bf0a-49e6-bea1-211fcfc1d962",
+          "tls": {
+            "enabled": true,
+            "server_name": "germany3.banovano.space",
+            "alpn": [
+              "h2"
+            ]
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
+      },
+      {
+        "key": "84.32.209.103:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-106",
+          "server": "84.32.209.103",
+          "server_port": 443,
+          "uuid": "3f25b15b-1777-4c08-9ade-60336ac92a82",
+          "tls": {
+            "enabled": true,
+            "server_name": "edge-lt.lindenpixel.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "89.105.195.147:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-110",
+          "server": "89.105.195.147",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "live.mediacorphub.org"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "home.v1.ObjectService"
+          }
+        }
+      },
+      {
+        "key": "89.105.195.148:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-111",
+          "server": "89.105.195.148",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "api.mediacorphub.org",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "gw.v2.PushService"
+          }
+        }
+      },
+      {
+        "key": "89.105.195.149:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-112",
+          "server": "89.105.195.149",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "img.mediacorphub.org"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "home.v2.MetricsService"
+          }
+        }
+      },
+      {
+        "key": "89.105.195.150:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-113",
+          "server": "89.105.195.150",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "images.mediacorphub.org",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "stats.v2.StreamService"
+          }
+        }
+      },
+      {
+        "key": "89.105.195.151:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-114",
+          "server": "89.105.195.151",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "assets.mediacorphub.org",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "hub.v1.ObjectService"
+          }
+        }
+      },
+      {
+        "key": "89.105.195.152:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-115",
+          "server": "89.105.195.152",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "fetch.mediacorphub.org",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "api.v1.FeedService"
+          }
+        }
+      },
+      {
+        "key": "api.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-128",
+          "server": "api.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "api.mediacorphub.org",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "gw.v2.PushService"
+          }
+        }
+      },
+      {
+        "key": "app.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-129",
+          "server": "app.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "app.mediacorphub.org"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "stats.v2.StreamService"
+          }
+        }
+      },
+      {
+        "key": "assets.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-130",
+          "server": "assets.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "assets.mediacorphub.org",
+            "alpn": [
+              "h2"
+            ],
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "hub.v1.ObjectService"
+          }
+        }
+      },
+      {
+        "key": "cdn.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-140",
+          "server": "cdn.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "cdn.mediacorphub.org",
+            "alpn": [
+              "h2"
+            ]
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "stats.v2.StreamService"
+          }
+        }
+      },
+      {
+        "key": "data.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-142",
+          "server": "data.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "data.mediacorphub.org"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "home.v2.MetricsService"
+          }
+        }
+      },
+      {
+        "key": "ec7a81g.de15.h1clayd.click:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-147",
+          "server": "ec7a81g.de15.h1clayd.click",
+          "server_port": 443,
+          "uuid": "13e6bdfd-d51b-4e57-a40e-b88784cba8bd",
+          "tls": {
+            "enabled": true,
+            "server_name": "ec7a81g.de15.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "shUbIWcBJdXaDzO80KqTU9exgMarUCOiiZ56Dwl7XVU",
+              "short_id": "7a8e24da4eb2c1b5"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "43f41cd7fee0"
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "fetch.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-151",
+          "server": "fetch.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "fetch.mediacorphub.org",
+            "alpn": [
+              "h2"
+            ]
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "api.v1.FeedService"
+          }
+        }
+      },
+      {
+        "key": "gateway.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-153",
+          "server": "gateway.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "gateway.mediacorphub.org",
+            "alpn": [
+              "h2"
+            ]
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "home.v1.ObjectService"
+          }
+        }
+      },
+      {
+        "key": "germany3.banovano.space:2053",
+        "node": {
+          "type": "vless",
+          "tag": "node-154",
+          "server": "germany3.banovano.space",
+          "server_port": 2053,
+          "uuid": "53555197-bf0a-49e6-bea1-211fcfc1d962",
+          "tls": {
+            "enabled": true,
+            "server_name": "germany3.banovano.space",
+            "alpn": [
+              "h2"
+            ]
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
+      },
+      {
+        "key": "get.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-155",
+          "server": "get.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "get.mediacorphub.org"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "gw.v2.PushService"
+          }
+        }
+      },
+      {
+        "key": "hub.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-157",
+          "server": "hub.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "hub.mediacorphub.org"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "hub.v1.ObjectService"
+          }
+        }
+      },
+      {
+        "key": "images.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-158",
+          "server": "images.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "images.mediacorphub.org",
+            "alpn": [
+              "h2"
+            ]
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "stats.v2.StreamService"
+          }
+        }
+      },
+      {
+        "key": "img.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-159",
+          "server": "img.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "img.mediacorphub.org",
+            "alpn": [
+              "h2"
+            ]
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "home.v2.MetricsService"
+          }
+        }
+      },
+      {
+        "key": "net.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-177",
+          "server": "net.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "net.mediacorphub.org"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "home.v2.MetricsService"
+          }
+        }
+      },
+      {
+        "key": "relay.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-178",
+          "server": "relay.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "relay.mediacorphub.org"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "api.v1.FeedService"
+          }
+        }
+      },
+      {
+        "key": "stats.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-189",
+          "server": "stats.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "stats.mediacorphub.org",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "gw.v2.PushService"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -112016,5 +112571,5 @@
       }
     ]
   },
-  "updated": "2026-11-09T22:29:33Z"
+  "updated": "2026-11-10T06:35:22Z"
 }
