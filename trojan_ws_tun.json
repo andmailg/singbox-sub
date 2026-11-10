@@ -115,18 +115,7 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "node-1",
-        "node-2",
-        "node-3",
-        "node-4",
-        "node-5",
-        "node-6",
-        "node-7",
-        "node-8",
-        "node-9",
-        "node-10",
-        "node-11",
-        "🇩🇪node-12"
+        "🇩🇪node-1"
       ],
       "default": "auto"
     },
@@ -134,18 +123,7 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "node-1",
-        "node-2",
-        "node-3",
-        "node-4",
-        "node-5",
-        "node-6",
-        "node-7",
-        "node-8",
-        "node-9",
-        "node-10",
-        "node-11",
-        "🇩🇪node-12"
+        "🇩🇪node-1"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -153,193 +131,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1",
-      "server": "104.19.173.68",
-      "server_port": 443,
-      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
-      "tls": {
-        "enabled": true,
-        "server_name": "azadnet-5vk.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-2",
-      "server": "104.19.173.68",
-      "server_port": 443,
-      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
-      "tls": {
-        "enabled": true,
-        "server_name": "azadnet-5vk.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-3",
-      "server": "104.19.173.68",
-      "server_port": 443,
-      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
-      "tls": {
-        "enabled": true,
-        "server_name": "azadnet-5vk.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-4",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "kargar001.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr?ed=2560",
-        "headers": {
-          "Host": "kargar001.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-5",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "kargar001.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr?ed=2560",
-        "headers": {
-          "Host": "kargar001.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-6",
-      "server": "russia.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "kargar001.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr?ed=2560",
-        "headers": {
-          "Host": "kargar001.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-7",
-      "server": "singapore.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "kargar001.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr?ed=2560",
-        "headers": {
-          "Host": "kargar001.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-8",
-      "server": "singapore.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "kargar001.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr?ed=2560",
-        "headers": {
-          "Host": "kargar001.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-9",
-      "server": "singapore.com",
-      "server_port": 443,
-      "password": "bpb-trojan",
-      "tls": {
-        "enabled": true,
-        "server_name": "kargar001.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/tr?ed=2560",
-        "headers": {
-          "Host": "kargar001.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-10",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-11",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "jiangjc.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇩🇪node-12",
+      "tag": "🇩🇪node-1",
       "server": "191.44.112.170.sslip.io",
       "server_port": 443,
       "password": "46d221fa-e9b4-748c-4eae-019a88e42991",
@@ -349,7 +141,10 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/tvpn-trojan/bg"
+        "path": "/tvpn-trojan/bg",
+        "headers": {
+          "Host": "orbylume.my.to"
+        }
       }
     }
   ],
