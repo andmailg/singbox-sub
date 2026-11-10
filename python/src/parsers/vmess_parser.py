@@ -32,6 +32,18 @@ def _decode_vmess_json(link: str) -> dict | None:
         return None
 
 
+# Транспорты, актуальные в Xray и однозначно определяемые по vmess-ссылке:
+#   tcp          — raw без HTTP-маскировки (net=tcp, type=none)
+#   ws           — WebSocket (алиас net=websocket приводится к ws)
+#   httpupgrade  — HTTPUpgrade
+# Исключены: h2/http (транспорт удалён из Xray, а "http" неоднозначен: HTTP/2 или TCP с
+# HTTP-маскировкой, причём у маскировки парсер теряет host/path), grpc (в Xray deprecated).
+CURRENT_TRANSPORTS = ("tcp", "ws", "httpupgrade")
+
+# security у VMess в актуальном Xray: none/zero удалены
+CURRENT_SECURITY = ("auto", "aes-128-gcm", "chacha20-poly1305")
+
+
 def parse_proxy_link(link: str) -> dict | None:
     """
     Парсит VMess ссылку формата vmess://base64json.
@@ -190,10 +202,19 @@ def clean_outbound(outbound: dict) -> dict | None:
 
     transport = outbound.get("transport", {})
     net_type = transport.get("type", "tcp")
+    net_type = {"websocket": "ws"}.get(net_type, net_type)
+    transport["type"] = net_type
 
-    # Валидация transport
-    valid_networks = ("tcp", "ws", "h2", "http", "grpc", "httpupgrade")
-    if net_type not in valid_networks:
+    # Оставляем только актуальные транспорты, однозначно определяемые по ссылке
+    if net_type not in CURRENT_TRANSPORTS:
         return None
+
+    # В актуальном Xray у VMess нет security none/zero
+    if str(outbound.get("security") or "auto").lower() not in CURRENT_SECURITY:
+        return None
+
+    # У sing-box-транспорта httpupgrade нет поля method (его добавляет общая ветка выше)
+    if net_type == "httpupgrade":
+        transport.pop("method", None)
 
     return outbound

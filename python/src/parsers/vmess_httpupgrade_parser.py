@@ -1,0 +1,41 @@
+"""Парсинг и фильтрация ссылок VMess + HTTPUpgrade.
+
+Использует общий парсер VMess (src.parsers.vmess_parser), но оставляет только
+транспорт httpupgrade и строит ключ дедупликации с учётом path.
+"""
+
+from src.parsers import vmess_parser
+
+TRANSPORT = "httpupgrade"
+
+
+def _transport_type(outbound: dict) -> str | None:
+    transport = outbound.get("transport")
+    if not isinstance(transport, dict):
+        return None
+    t = transport.get("type")
+    return "ws" if t == "websocket" else t
+
+
+def parse_proxy_link(link: str) -> dict | None:
+    """Парсит ссылку vmess://, пропуская всё, что не HTTPUpgrade."""
+    outbound = vmess_parser.parse_proxy_link(link)
+    if not outbound or _transport_type(outbound) != TRANSPORT:
+        return None
+
+    transport = outbound["transport"]
+    transport.setdefault("path", "/")
+    outbound["_dedup_key"] = (
+        f"{outbound['server']}:{outbound['server_port']}:"
+        f"{outbound['uuid']}:{transport['path']}"
+    )
+
+    return outbound
+
+
+def clean_outbound(outbound: dict) -> dict | None:
+    """Валидация VMess HTTPUpgrade ноды под спецификацию sing-box."""
+    outbound = vmess_parser.clean_outbound(outbound)
+    if not outbound or _transport_type(outbound) != TRANSPORT:
+        return None
+    return outbound
