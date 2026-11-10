@@ -1,0 +1,210 @@
+{
+  "log": {
+    "level": "warn",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "type": "https",
+        "tag": "dns-direct",
+        "server": "77.88.8.8",
+        "tls": {
+          "enabled": true,
+          "server_name": "common.dot.dns.yandex.net"
+        }
+      },
+      {
+        "type": "https",
+        "tag": "dns-remote",
+        "server": "8.8.8.8",
+        "detour": "proxy-out",
+        "tls": {
+          "enabled": true,
+          "server_name": "dns.google"
+        }
+      },
+      {
+        "type": "https",
+        "tag": "smart-dns",
+        "server": "dns.comss.one",
+        "domain_resolver": "dns-direct"
+      },
+      {
+        "type": "fakeip",
+        "tag": "fakeip",
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
+      },
+      {
+        "type": "local",
+        "tag": "local"
+      }
+    ],
+    "rules": [
+      {
+        "domain_suffix": [
+          ".lan",
+          ".local"
+        ],
+        "server": "local"
+      },
+      {
+        "rule_set": [
+          "geosite-category-ai-!cn"
+        ],
+        "server": "smart-dns"
+      },
+      {
+        "rule_set": [
+          "geosite-category-ru"
+        ],
+        "server": "dns-direct"
+      },
+      {
+        "query_type": [
+          "HTTPS",
+          "SVCB"
+        ],
+        "rule_set": [
+          "geosite-category-media-ru-blocked",
+          "antizapret"
+        ],
+        "action": "predefined",
+        "rcode": "REFUSED"
+      },
+      {
+        "rule_set": [
+          "geosite-category-media-ru-blocked",
+          "antizapret"
+        ],
+        "server": "fakeip"
+      }
+    ],
+    "final": "dns-remote",
+    "strategy": "prefer_ipv4",
+    "cache_capacity": 2048
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "mtu": 1420,
+      "address": "172.19.0.1/30",
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "mixed",
+      "route_exclude_address": [
+        "10.0.0.0/8",
+        "172.16.0.0/12",
+        "192.168.0.0/16",
+        "169.254.0.0/16",
+        "224.0.0.0/4",
+        "255.255.255.255/32",
+        "fc00::/7"
+      ]
+    }
+  ],
+  "http_clients": [
+    {
+      "tag": "rules-downloader"
+    }
+  ],
+  "route": {
+    "default_http_client": "rules-downloader",
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "ip_cidr": [
+          "155.212.204.0/24"
+        ],
+        "action": "reject",
+        "method": "drop"
+      },
+      {
+        "package_name": [
+          "ru.oneme.app"
+        ],
+        "domain_suffix": [
+          "ifconfig.me",
+          "ifconfig.co",
+          "icanhazip.com",
+          "ident.me",
+          "wtfismyip.com",
+          "ipify.org",
+          "whatsapp.net",
+          "telegram.org",
+          "apptracer.ru",
+          "vk-analytics.ru",
+          "mytracker.ru",
+          "mail.ru",
+          "amazonaws.com"
+        ],
+        "action": "reject",
+        "method": "drop"
+      },
+      {
+        "rule_set": [
+          "geosite-category-media-ru-blocked",
+          "antizapret"
+        ],
+        "outbound": "proxy-out"
+      },
+      {
+        "rule_set": [
+          "geosite-category-ru",
+          "geoip-ru",
+          "geosite-category-ai-!cn"
+        ],
+        "outbound": "direct-out"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "db-github",
+        "url": "https://github.com"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-media-ru-blocked",
+        "url": "https://github.com"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ru",
+        "url": "https://github.com"
+      },
+      {
+        "type": "remote",
+        "tag": "geoip-ru",
+        "url": "https://github.com"
+      },
+      {
+        "type": "remote",
+        "tag": "antizapret",
+        "url": "https://github.com"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-category-ai-!cn",
+        "url": "https://github.com"
+      }
+    ],
+    "final": "proxy-out",
+    "auto_detect_interface": true,
+    "override_android_vpn": true,
+    "default_domain_resolver": "dns-direct"
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    }
+  }
+}
