@@ -73321,6 +73321,78 @@
             "service_name": "gw.v2.PushService"
           }
         }
+      },
+      {
+        "key": "edge.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-148",
+          "server": "edge.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "edge.mediacorphub.org"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "hub.v1.ObjectService"
+          }
+        }
+      },
+      {
+        "key": "live.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-164",
+          "server": "live.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "live.mediacorphub.org"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "home.v1.ObjectService"
+          }
+        }
+      },
+      {
+        "key": "rpc.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-180",
+          "server": "rpc.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "rpc.mediacorphub.org"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "api.v1.FeedService"
+          }
+        }
+      },
+      {
+        "key": "tracker.mediacorphub.org:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-191",
+          "server": "tracker.mediacorphub.org",
+          "server_port": 443,
+          "uuid": "1653818d-532e-46be-b825-384107fb7c3a",
+          "tls": {
+            "enabled": true,
+            "server_name": "tracker.mediacorphub.org"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "home.v1.ObjectService"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -112585,5 +112657,5 @@
       }
     ]
   },
-  "updated": "2026-11-10T07:16:06Z"
+  "updated": "2026-11-10T07:41:21Z"
 }
