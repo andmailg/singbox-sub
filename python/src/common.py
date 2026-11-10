@@ -99,6 +99,7 @@ FAKE_DOMAINS = ("whatsapp.com", "vk.com", "huawei", "bing.com", "google.com")
 
 # Зарезервированные IP-диапазоны (RFC 1918 + др.), которые блокируются
 RESERVED_IP_RANGES = (
+    "0.0.0.0/8",
     "10.0.0.0/8",
     "172.16.0.0/12",
     "192.168.0.0/16",
