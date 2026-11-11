@@ -122993,6 +122993,94 @@
             "insecure": false
           }
         }
+      },
+      {
+        "key": "141.193.213.21:8443:bd67fcd2-ec34-40a6-aac6-67731f2d7011:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-2936",
+          "server": "141.193.213.21",
+          "server_port": 8443,
+          "uuid": "bd67fcd2-ec34-40a6-aac6-67731f2d7011",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "matrix.phonicsindia.mobi"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "matrix.phonicsindia.mobi",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "188.114.99.137:443:6a89a215-22bf-4bd7-9642-b95b2e09583a:/hls/cctv5phd.m3u8",
+        "node": {
+          "type": "vmess",
+          "tag": "node-4221",
+          "server": "188.114.99.137",
+          "server_port": 443,
+          "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/hls/cctv5phd.m3u8",
+            "headers": {
+              "Host": "guanwang.awsno.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "guanwang.awsno.com",
+            "insecure": false,
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "news.zoom.us:8443:bd67fcd2-ec34-40a6-aac6-67731f2d7011:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5904",
+          "server": "news.zoom.us",
+          "server_port": 8443,
+          "uuid": "bd67fcd2-ec34-40a6-aac6-67731f2d7011",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "matrix.phonicsindia.mobi"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "matrix.phonicsindia.mobi",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "156.239.224.107:57278:1270bed5-f908-4ecc-f1c8-de246033b186:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-3189",
+          "server": "156.239.224.107",
+          "server_port": 57278,
+          "uuid": "1270bed5-f908-4ecc-f1c8-de246033b186",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/"
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -123115,5 +123203,5 @@
       }
     ]
   },
-  "updated": "2026-11-11T18:09:36Z"
+  "updated": "2026-11-11T18:10:56Z"
 }
