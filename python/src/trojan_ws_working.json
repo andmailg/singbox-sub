@@ -1,10 +1,99 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-11-10T18:20:45Z",
+  "last_tested": "2026-11-11T13:13:35Z",
   "nodes": [
     {
       "type": "trojan",
-      "tag": "🇩🇪node-1",
+      "tag": "node-1",
+      "server": "104.19.173.68",
+      "server_port": 443,
+      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
+      "tls": {
+        "enabled": true,
+        "server_name": "azadnet-5vk.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
+      },
+      "_last_ok_ts": 1794400864.163114,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-2",
+      "server": "104.19.173.68",
+      "server_port": 443,
+      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
+      "_dedup_key": "104.19.173.68:443:d0298536-d670-4045-bbb1-ddd5ea68683e:/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "azadnet-5vk.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
+      },
+      "_sub_ids": [
+        "13",
+        "26",
+        "27",
+        "29"
+      ],
+      "_last_ok_ts": 1794400864.163114,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-3",
+      "server": "www.digitalocean.com",
+      "server_port": 443,
+      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
+      "_dedup_key": "www.digitalocean.com:443:d0298536-d670-4045-bbb1-ddd5ea68683e:/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan",
+      "tls": {
+        "enabled": true,
+        "server_name": "azadnet-5vk.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_last_ok_ts": 1794400864.163114,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "🇩🇪node-4",
+      "server": "191.44.112.170",
+      "server_port": 443,
+      "password": "46d221fa-e9b4-748c-4eae-019a88e42991",
+      "_dedup_key": "191.44.112.170:443:46d221fa-e9b4-748c-4eae-019a88e42991:/tvpn-trojan/bg",
+      "tls": {
+        "enabled": true,
+        "server_name": "orbylume.my.to"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/tvpn-trojan/bg",
+        "headers": {
+          "Host": "orbylume.my.to"
+        }
+      },
+      "_sub_ids": [
+        "1",
+        "26",
+        "29",
+        "300"
+      ],
+      "_last_ok_ts": 1794400864.163114,
+      "_country": "DE"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇩🇪node-5",
       "server": "191.44.112.170.sslip.io",
       "server_port": 443,
       "password": "46d221fa-e9b4-748c-4eae-019a88e42991",
@@ -32,7 +121,32 @@
         "4",
         "9"
       ],
-      "_last_ok_ts": 1794332751.881331,
+      "_last_ok_ts": 1794400864.163114,
+      "_country": "DE"
+    },
+    {
+      "type": "trojan",
+      "tag": "🇩🇪node-6",
+      "server": "nava.zandix.ir",
+      "server_port": 2087,
+      "password": "QzVKeGlc2qYRxyzWb3xZFjHbqY2JmOfZ",
+      "_dedup_key": "nava.zandix.ir:2087:QzVKeGlc2qYRxyzWb3xZFjHbqY2JmOfZ:/wss",
+      "tls": {
+        "enabled": true,
+        "server_name": "astra.zandix.ir"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/wss",
+        "headers": {
+          "Host": "astra.zandix.ir"
+        }
+      },
+      "_sub_ids": [
+        "100",
+        "105"
+      ],
+      "_last_ok_ts": 1794400864.163114,
       "_country": "DE"
     }
   ]

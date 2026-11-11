@@ -94244,6 +94244,66 @@
             }
           }
         }
+      },
+      {
+        "key": "191.44.112.170:443:46d221fa-e9b4-748c-4eae-019a88e42991:/tvpn-trojan/bg",
+        "node": {
+          "type": "trojan",
+          "tag": "node-654",
+          "server": "191.44.112.170",
+          "server_port": 443,
+          "password": "46d221fa-e9b4-748c-4eae-019a88e42991",
+          "tls": {
+            "enabled": true,
+            "server_name": "orbylume.my.to"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/tvpn-trojan/bg",
+            "headers": {
+              "Host": "orbylume.my.to"
+            }
+          }
+        }
+      },
+      {
+        "key": "nava.zandix.ir:2087:QzVKeGlc2qYRxyzWb3xZFjHbqY2JmOfZ:/wss",
+        "node": {
+          "type": "trojan",
+          "tag": "node-948",
+          "server": "nava.zandix.ir",
+          "server_port": 2087,
+          "password": "QzVKeGlc2qYRxyzWb3xZFjHbqY2JmOfZ",
+          "tls": {
+            "enabled": true,
+            "server_name": "astra.zandix.ir"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/wss",
+            "headers": {
+              "Host": "astra.zandix.ir"
+            }
+          }
+        }
+      },
+      {
+        "key": "www.digitalocean.com:443:d0298536-d670-4045-bbb1-ddd5ea68683e:/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1073",
+          "server": "www.digitalocean.com",
+          "server_port": 443,
+          "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
+          "tls": {
+            "enabled": true,
+            "server_name": "azadnet-5vk.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -121809,5 +121869,5 @@
       }
     ]
   },
-  "updated": "2026-11-11T13:00:44Z"
+  "updated": "2026-11-11T13:13:36Z"
 }
