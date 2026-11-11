@@ -115,12 +115,8 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "node-1",
-        "node-2",
-        "node-3",
-        "🇩🇪node-4",
-        "🇩🇪node-5",
-        "🇩🇪node-6"
+        "🇩🇪node-1",
+        "🇩🇪node-2"
       ],
       "default": "auto"
     },
@@ -128,12 +124,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "node-1",
-        "node-2",
-        "node-3",
-        "🇩🇪node-4",
-        "🇩🇪node-5",
-        "🇩🇪node-6"
+        "🇩🇪node-1",
+        "🇩🇪node-2"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -141,52 +133,7 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1",
-      "server": "104.19.173.68",
-      "server_port": 443,
-      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
-      "tls": {
-        "enabled": true,
-        "server_name": "azadnet-5vk.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-2",
-      "server": "104.19.173.68",
-      "server_port": 443,
-      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
-      "tls": {
-        "enabled": true,
-        "server_name": "azadnet-5vk.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-3",
-      "server": "www.digitalocean.com",
-      "server_port": 443,
-      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
-      "tls": {
-        "enabled": true,
-        "server_name": "azadnet-5vk.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇩🇪node-4",
+      "tag": "🇩🇪node-1",
       "server": "191.44.112.170",
       "server_port": 443,
       "password": "46d221fa-e9b4-748c-4eae-019a88e42991",
@@ -204,7 +151,7 @@
     },
     {
       "type": "trojan",
-      "tag": "🇩🇪node-5",
+      "tag": "🇩🇪node-2",
       "server": "191.44.112.170.sslip.io",
       "server_port": 443,
       "password": "46d221fa-e9b4-748c-4eae-019a88e42991",
@@ -217,24 +164,6 @@
         "path": "/tvpn-trojan/bg",
         "headers": {
           "Host": "orbylume.my.to"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇩🇪node-6",
-      "server": "nava.zandix.ir",
-      "server_port": 2087,
-      "password": "QzVKeGlc2qYRxyzWb3xZFjHbqY2JmOfZ",
-      "tls": {
-        "enabled": true,
-        "server_name": "astra.zandix.ir"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/wss",
-        "headers": {
-          "Host": "astra.zandix.ir"
         }
       }
     }
