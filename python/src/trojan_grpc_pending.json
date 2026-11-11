@@ -1,6 +1,25 @@
 {
-  "last_updated": "2026-11-11T12:40:59Z",
+  "last_updated": "2026-11-11T21:54:43Z",
   "nodes": [
+    {
+      "type": "trojan",
+      "tag": "node-33",
+      "server": "83.228.230.226",
+      "server_port": 2087,
+      "password": "SoftNetConnect",
+      "_dedup_key": "83.228.230.226:2087:SoftNetConnect:",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "26"
+      ],
+      "_pending_since": 1794434073.598496
+    },
     {
       "type": "trojan",
       "tag": "node-39",
@@ -1355,38 +1374,6 @@
         "service_name": "kobedin-server1-trojan"
       },
       "_pending_since": 1793577307.421768
-    },
-    {
-      "type": "trojan",
-      "tag": "node-32",
-      "server": "45-149-147-213.sslip.io",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
-      "tls": {
-        "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
-      },
-      "_pending_since": 1793552126.696226
-    },
-    {
-      "type": "trojan",
-      "tag": "node-33",
-      "server": "45.149.147.213",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
-      "tls": {
-        "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
-      },
-      "_pending_since": 1793552126.696226
     }
   ]
 }
