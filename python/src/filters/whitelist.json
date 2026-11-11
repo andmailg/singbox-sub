@@ -8867,6 +8867,109 @@
             }
           }
         }
+      },
+      {
+        "key": "151.101.36.246:443:9a46fb8c-fde6-492c-b5c6-8b44af0ce75f:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-76",
+          "server": "151.101.36.246",
+          "server_port": 443,
+          "uuid": "9a46fb8c-fde6-492c-b5c6-8b44af0ce75f",
+          "transport": {
+            "type": "xhttp",
+            "mode": "auto",
+            "host": [
+              "ovd12.global.ssl.fastly.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "accounts.fastly.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "172.86.112.136:2053:901c1ed2-be44-4c97-843e-7bcdcce28e04:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-105",
+          "server": "172.86.112.136",
+          "server_port": 2053,
+          "uuid": "901c1ed2-be44-4c97-843e-7bcdcce28e04",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto",
+            "host": [
+              "usa.amosh.sbs"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "usa.amosh.sbs",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "188.114.96.3:443:a60777ef-1a2e-429b-a45e-97c81492b4d8:/9edb8020b3a6",
+        "node": {
+          "type": "vless",
+          "tag": "node-126",
+          "server": "188.114.96.3",
+          "server_port": 443,
+          "uuid": "a60777ef-1a2e-429b-a45e-97c81492b4d8",
+          "transport": {
+            "type": "xhttp",
+            "path": "/9edb8020b3a6",
+            "mode": "packet-up",
+            "host": [
+              "next-ni2.earthlink.work"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "next-ni2.earthlink.work",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "37.18.15.112:8443:37af0181-5598-4aad-a040-d926bcb65757:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-274",
+          "server": "37.18.15.112",
+          "server_port": 8443,
+          "uuid": "37af0181-5598-4aad-a040-d926bcb65757",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "earlytrain.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "earlytrain.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -123455,5 +123558,5 @@
       }
     ]
   },
-  "updated": "2026-11-11T22:13:07Z"
+  "updated": "2026-11-11T22:19:39Z"
 }
