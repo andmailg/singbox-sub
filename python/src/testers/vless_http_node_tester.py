@@ -11,7 +11,9 @@ import os
 import tempfile
 from typing import Any
 
-from src.testers._proc import Child, probe_socks, release_port, reserve_port, run_connectivity
+from src.testers._proc import (
+    Child, probe_socks, release_port, reserve_port, run_connectivity, transport_selector,
+)
 
 
 def _as_list(value: Any) -> list[str]:
@@ -70,7 +72,7 @@ def _build_stream_settings(node: dict) -> dict:
         request["headers"] = headers
 
     return {
-        "network": "tcp",
+        **transport_selector("tcp"),
         "security": "none",
         "tcpSettings": {"header": {"type": "http", "request": request}},
     }

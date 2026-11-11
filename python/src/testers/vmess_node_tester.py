@@ -2,8 +2,8 @@
 
 Под актуальный Xray (26.x):
 - outbound в плоском формате settings {address, port, id, security} (без vnext);
-- network: raw / ws / httpupgrade — остальные транспорты (h2/http, grpc) парсер не пропускает;
-- security none/zero у VMess удалены, парсер такие ноды отбрасывает.
+- network + method (см. transport_selector): raw / ws / httpupgrade — остальные транспорты (h2/http, grpc) парсер не пропускает;
+- security none/zero Xray сам заменяет на auto (парсер делает то же самое заранее).
 """
 
 import json
@@ -11,7 +11,9 @@ import os
 import tempfile
 from typing import Any
 
-from src.testers._proc import Child, probe_socks, release_port, reserve_port, run_connectivity
+from src.testers._proc import (
+    Child, probe_socks, release_port, reserve_port, run_connectivity, transport_selector,
+)
 
 
 def _build_tls_settings(tls_cfg: dict, fallback_host: str) -> dict:
@@ -41,16 +43,16 @@ def _build_stream_settings(node: dict) -> dict:
     net = transport.get("type") or "tcp"
 
     if net == "ws":
-        stream: dict[str, Any] = {"network": "ws", "wsSettings": {"path": _ws_path(transport)}}
+        stream: dict[str, Any] = {**transport_selector("ws"), "wsSettings": {"path": _ws_path(transport)}}
         host = (transport.get("headers") or {}).get("Host")
         if host:
             stream["wsSettings"]["host"] = host
     elif net == "httpupgrade":
-        stream = {"network": "httpupgrade", "httpupgradeSettings": {"path": transport.get("path") or "/"}}
+        stream = {**transport_selector("httpupgrade"), "httpupgradeSettings": {"path": transport.get("path") or "/"}}
         if transport.get("host"):
             stream["httpupgradeSettings"]["host"] = transport["host"]
     elif net == "tcp":
-        stream = {"network": "raw"}
+        stream = transport_selector("raw")
     else:
         raise ValueError(f"unsupported transport: {net}")
 
@@ -61,6 +63,11 @@ def _build_stream_settings(node: dict) -> dict:
     else:
         stream["security"] = "none"
     return stream
+
+
+def _vmess_security(node: dict) -> str:
+    security = str(node.get("security") or "auto").lower()
+    return "auto" if security in ("none", "zero") else security
 
 
 def _build_xray_config(node: dict, local_port: int) -> dict:
@@ -82,7 +89,7 @@ def _build_xray_config(node: dict, local_port: int) -> dict:
                     "address": node["server"],
                     "port": node["server_port"],
                     "id": node.get("uuid", ""),
-                    "security": str(node.get("security") or "auto").lower(),
+                    "security": _vmess_security(node),
                 },
                 "streamSettings": _build_stream_settings(node),
                 "tag": "proxy",

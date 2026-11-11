@@ -5,7 +5,7 @@ import os
 import tempfile
 from typing import Any
 
-from src.testers._proc import Child, probe_socks, release_port, reserve_port, run_connectivity
+from src.testers._proc import Child, probe_socks, release_port, reserve_port, run_connectivity, transport_selector
 
 
 
@@ -85,7 +85,7 @@ def _build_stream_settings(node: dict, network: str) -> dict:
     """
     Генерирует streamSettings для Xray на основе транспорта и TLS/REALITY.
     """
-    stream_settings: dict[str, Any] = {"network": network}
+    stream_settings: dict[str, Any] = transport_selector(network)
 
     tls_cfg = node.get("tls", {})
     if not isinstance(tls_cfg, dict):

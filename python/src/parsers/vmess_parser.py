@@ -40,8 +40,10 @@ def _decode_vmess_json(link: str) -> dict | None:
 # HTTP-маскировкой, причём у маскировки парсер теряет host/path), grpc (в Xray deprecated).
 CURRENT_TRANSPORTS = ("tcp", "ws", "httpupgrade")
 
-# security у VMess в актуальном Xray: none/zero удалены
+# Допустимые security у VMess. none/zero в Xray (>= 26.7.11) не отбрасываются, а заменяются на
+# auto независимо от адреса, при этом сервер такого клиента принимает; приводим их к auto так же.
 CURRENT_SECURITY = ("auto", "aes-128-gcm", "chacha20-poly1305")
+LEGACY_SECURITY = ("none", "zero")
 
 
 def parse_proxy_link(link: str) -> dict | None:
@@ -209,12 +211,27 @@ def clean_outbound(outbound: dict) -> dict | None:
     if net_type not in CURRENT_TRANSPORTS:
         return None
 
-    # В актуальном Xray у VMess нет security none/zero
-    if str(outbound.get("security") or "auto").lower() not in CURRENT_SECURITY:
+    security = str(outbound.get("security") or "auto").lower()
+    if security in LEGACY_SECURITY:
+        security = "auto"
+    if security not in CURRENT_SECURITY:
         return None
+    outbound["security"] = security
 
     # У sing-box-транспорта httpupgrade нет поля method (его добавляет общая ветка выше)
     if net_type == "httpupgrade":
         transport.pop("method", None)
 
+    # В sing-box обычный TCP — это отсутствие поля transport (type "tcp" там не существует)
+    if net_type == "tcp":
+        outbound.pop("transport", None)
+
     return outbound
+
+
+def strip_tcp_transport(outbounds: list[dict]) -> None:
+    """Убирает transport {"type": "tcp"} у нод, сохранённых до исправления (sing-box его не знает)."""
+    for outbound in outbounds:
+        transport = outbound.get("transport")
+        if isinstance(transport, dict) and transport.get("type") == "tcp":
+            outbound.pop("transport", None)

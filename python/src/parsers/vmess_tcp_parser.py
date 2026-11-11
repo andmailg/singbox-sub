@@ -12,7 +12,7 @@ TRANSPORT = "tcp"
 def _transport_type(outbound: dict) -> str | None:
     transport = outbound.get("transport")
     if not isinstance(transport, dict):
-        return None
+        return "tcp"  # у sing-box обычный TCP — это отсутствие поля transport
     t = transport.get("type")
     return "ws" if t == "websocket" else t
 

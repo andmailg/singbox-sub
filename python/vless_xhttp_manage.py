@@ -72,7 +72,7 @@ def cmd_merge(args):
         export_func=_save_to_working,
         protocol="vless",
         blacklist_key="vless_xhttp",
-        tls_required=False,  # xhttp может быть без TLS
+        tls_required=True,  # ноды без TLS Xray >= 26.7.11 не запускает (VLESS/Trojan на публичный адрес)
         port_whitelist=port_whitelist,
         reality=False,
         tester_func=None,  # тестирование отдельно через cmd_test (если нужно)
@@ -125,6 +125,12 @@ def _readd_whitelisted(skip_rkn=False):
         print(f"  All {len(filtered_nodes)} whitelisted node(s) already in working.")
 
 
+def _drop_without_tls(nodes: list[dict]) -> tuple[list[dict], int]:
+    """Убирает ноды без TLS: Xray >= 26.7.11 не загружает такие конфиги, проверить их нельзя."""
+    kept = [n for n in nodes if (n.get("tls") or {}).get("enabled")]
+    return kept, len(nodes) - len(kept)
+
+
 def cmd_test(args):
     """Тестирование всех нод из vless_xhttp_working.json и vless_xhttp_pending.json.
 
@@ -139,6 +145,15 @@ def cmd_test(args):
     working = load_working_nodes()
     print("Loading nodes from vless_xhttp_pending.json...")
     pending = load_pending_nodes(_PENDING_FILE)
+
+    # Ноды без TLS (в т.ч. накопленные до tls_required=True) Xray >= 26.7.11 запустить не может
+    working, dropped_working = _drop_without_tls(working)
+    pending, dropped_pending = _drop_without_tls(pending)
+    if dropped_working or dropped_pending:
+        print(f"  Dropped nodes without TLS: {dropped_working} working, {dropped_pending} pending")
+        if not working and not pending:
+            save_working_nodes([])
+            save_pending_nodes([], _PENDING_FILE)
 
     if not working and not pending:
         print("No nodes found. Run 'merge' first.")

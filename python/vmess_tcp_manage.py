@@ -25,6 +25,7 @@ from src.pending import (
     load_pending_nodes,
     save_pending_nodes,
 )
+from src.parsers.vmess_parser import strip_tcp_transport
 from src.common import (
     clean_internal_fields,
     country_code_to_flag,
@@ -340,6 +341,7 @@ def _export_tun(nodes, output_file):
     from src.exporters.singbox_exporter import export_tun
     for n in nodes:
         clean_internal_fields(n)
+    strip_tcp_transport(nodes)
     output_file = _resolve_output(output_file)
     export_tun(nodes, output_file)
 
@@ -349,6 +351,7 @@ def _export_router(nodes, output_file):
     from src.exporters.singbox_exporter import export_router
     for n in nodes:
         clean_internal_fields(n)
+    strip_tcp_transport(nodes)
     output_file = _resolve_output(output_file)
     export_router(nodes, output_file)
 

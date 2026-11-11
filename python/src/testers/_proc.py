@@ -20,6 +20,29 @@ _ports_lock = threading.Lock()
 _reserved_ports: set[int] = set()
 
 
+# Селектор транспорта в streamSettings. В новых Xray его ключ — "method" (приоритетнее),
+# в прежних — "network". Прежние версии молча игнорируют незнакомый "method" (и берут "network"),
+# новые принимают оба, поэтому пишем оба ключа, каждый — своим каноническим именем.
+_METHOD_NAMES = {
+    "tcp": "raw", "raw": "raw",
+    "ws": "websocket", "websocket": "websocket",
+    "kcp": "mkcp", "mkcp": "mkcp",
+    "grpc": "grpc", "httpupgrade": "httpupgrade", "xhttp": "xhttp",
+}
+
+
+def transport_selector(network: str) -> dict:
+    """{"network": ..., "method": ...} для streamSettings Xray.
+
+    Для транспортов, которых нет у "method" (h2/http, quic), ключ "method" не добавляется.
+    """
+    selector = {"network": network}
+    method = _METHOD_NAMES.get(network)
+    if method:
+        selector["method"] = method
+    return selector
+
+
 def _free_port() -> int:
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind(("127.0.0.1", 0))
