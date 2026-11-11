@@ -1,6 +1,27 @@
 {
-  "last_updated": "2026-11-11T00:38:18Z",
+  "last_updated": "2026-11-11T12:40:59Z",
   "nodes": [
+    {
+      "type": "trojan",
+      "tag": "node-39",
+      "server": "stream.yabenzin.app",
+      "server_port": 443,
+      "password": "duJyVGgB2y0tCFs37Y89NE1fMHXk8C5j",
+      "_dedup_key": "stream.yabenzin.app:443:duJyVGgB2y0tCFs37Y89NE1fMHXk8C5j:TrojanGRPC",
+      "tls": {
+        "enabled": true,
+        "server_name": "cdn12.yabenzin.app"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "TrojanGRPC"
+      },
+      "_sub_ids": [
+        "26",
+        "29"
+      ],
+      "_pending_since": 1794400849.706017
+    },
     {
       "type": "trojan",
       "tag": "node-1",
@@ -1366,38 +1387,6 @@
         "service_name": "kobedin-server1-trojan"
       },
       "_pending_since": 1793552126.696226
-    },
-    {
-      "type": "trojan",
-      "tag": "node-32",
-      "server": "45-149-147-213.sslip.io",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
-      "tls": {
-        "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
-      },
-      "_pending_since": 1793515984.330404
-    },
-    {
-      "type": "trojan",
-      "tag": "node-33",
-      "server": "45.149.147.213",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
-      "tls": {
-        "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
-      },
-      "_pending_since": 1793515984.330404
     }
   ]
 }
