@@ -46,10 +46,10 @@ jobs:
         working-directory: python
         run: >
           python vless_grpc_manage.py run
-          --geoip-block "ru" --rkn-filter 0 --export tun,xray
+          --geoip-block "ru" --rkn-filter 0 --export tun,xray,router
           --test-timeout 3 --blacklist-timeout 10 --whitelist-timeout 10
 
       - name: Commit and push if changed
         run: >
           bash .github/scripts/push_results.sh vless_grpc "Auto-update VLESS gRPC configs & working nodes"
-          vless_grpc_tun.json vless_grpc.txt python/src/vless_grpc_working.json python/src/vless_grpc_pending.json
+          vless_grpc_tun.json vless_grpc.txt config.json python/src/vless_grpc_working.json python/src/vless_grpc_pending.json
