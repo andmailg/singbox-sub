@@ -116,7 +116,10 @@
       "outbounds": [
         "auto",
         "node-1",
-        "node-2"
+        "node-2",
+        "node-3",
+        "🇩🇪node-4",
+        "🇮🇷node-5"
       ],
       "default": "auto"
     },
@@ -125,7 +128,10 @@
       "tag": "auto",
       "outbounds": [
         "node-1",
-        "node-2"
+        "node-2",
+        "node-3",
+        "🇩🇪node-4",
+        "🇮🇷node-5"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -136,25 +142,69 @@
       "tag": "node-1",
       "server": "bmi.ir.kolman.com.de",
       "server_port": 80,
-      "uuid": "f0f50ad5-ccec-431c-92de-5cb203209fb0",
+      "uuid": "a564987a-380a-4c21-a462-a011863ca9be",
       "security": "auto",
       "transport": {
         "type": "httpupgrade",
         "path": "/f9bGbG7ZNy5L0tzXKZNxSX4q",
-        "host": "KbzewP.6.server.marandcity.com.de."
+        "host": "2jTG5v5R0UqwXZ.6.server.marandcity.com.de."
       }
     },
     {
       "type": "vmess",
       "tag": "node-2",
+      "server": "bmi2.kolman.com.de",
+      "server_port": 80,
+      "uuid": "a564987a-380a-4c21-a462-a011863ca9be",
+      "security": "auto",
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/f9bGbG7ZNy5L0tzXKZNxSX4q",
+        "host": "zeo6-lylp.uti.realoslo-norg.maniyadg7shard.ir."
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3",
       "server": "cd0.bmi.ir.kolman.com.de",
       "server_port": 80,
-      "uuid": "f0f50ad5-ccec-431c-92de-5cb203209fb0",
+      "uuid": "a564987a-380a-4c21-a462-a011863ca9be",
       "security": "auto",
       "transport": {
         "type": "httpupgrade",
         "path": "/f9bGbG7ZNy5L0tzXKZNxSX4q",
         "host": "bmi.ir.draft.co.impossible.com.ir.bmi.ir.com.iran.ir6.ifilmino.com."
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "🇩🇪node-4",
+      "server": "91.107.169.224",
+      "server_port": 80,
+      "uuid": "014f8bf6-9221-4f99-838f-4c16ca90334f",
+      "security": "auto",
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/",
+        "host": "google.whatsapp.snapp.torob.basalam.dns-look.space."
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "🇮🇷node-5",
+      "server": "91.199.19.62",
+      "server_port": 443,
+      "uuid": "fb38f723-410d-4bfa-9ba6-a2895305a169",
+      "security": "auto",
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/",
+        "host": "liteb.mine-beauty.ir"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "liteb.mine-beauty.ir",
+        "insecure": false
       }
     }
   ],
