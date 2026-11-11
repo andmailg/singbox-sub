@@ -1,29 +1,223 @@
 {
-  "last_updated": "2026-11-10T21:20:33Z",
+  "last_updated": "2026-11-11T06:02:05Z",
   "nodes": [
     {
       "type": "vmess",
-      "tag": "🇨🇦node-4",
-      "server": "134.195.196.211",
-      "server_port": 18000,
-      "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+      "tag": "🇨🇦node-3",
+      "server": "134.195.196.154",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
       "security": "auto",
       "transport": {
         "type": "tcp"
       },
-      "_dedup_key": "134.195.196.211:18000:f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
+      "_dedup_key": "134.195.196.154:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "134.195.196.154",
+        "insecure": false
+      },
       "_sub_ids": [
-        "1",
-        "10",
         "100",
-        "103",
         "104",
         "105",
         "107",
+        "13",
+        "18",
+        "20",
+        "201",
+        "21",
+        "26",
+        "29",
+        "6",
+        "8"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "CA",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇨🇦node-4",
+      "server": "158.51.121.246",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "158.51.121.246:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "158.51.121.246",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "100",
+        "104",
+        "105",
+        "107",
+        "13",
+        "18",
+        "20",
+        "201",
+        "21",
+        "26",
+        "29",
+        "6",
+        "8",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "CA",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇩🇪node-6",
+      "server": "109.70.74.202",
+      "server_port": 54668,
+      "uuid": "591efc40-2e4e-4d17-a06b-b61d5533139d",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "109.70.74.202:54668:591efc40-2e4e-4d17-a06b-b61d5533139d",
+      "_sub_ids": [
+        "100",
+        "104",
+        "201",
+        "26",
+        "29"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "DE",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇩🇪node-7",
+      "server": "109.70.74.202",
+      "server_port": 54668,
+      "uuid": "96421d01-0dc0-4413-b570-df8711d9ba6f",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "109.70.74.202:54668:96421d01-0dc0-4413-b570-df8711d9ba6f",
+      "_sub_ids": [
+        "100",
+        "104",
+        "105",
+        "201",
+        "26",
+        "29"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "DE",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇩🇪node-11",
+      "server": "de.zhou-yufan.com",
+      "server_port": 443,
+      "uuid": "f38e591d-d13a-4c30-9763-6be3ad65f3ec",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "de.zhou-yufan.com:443:f38e591d-d13a-4c30-9763-6be3ad65f3ec",
+      "tls": {
+        "enabled": true,
+        "server_name": "de.zhou-yufan.com",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "100",
+        "104",
+        "105",
+        "14",
+        "18",
+        "20",
+        "26",
+        "27",
+        "29",
+        "300"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "DE",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇫🇮node-12",
+      "server": "65.108.240.210",
+      "server_port": 39018,
+      "uuid": "77fb7a80-4724-4e33-9558-4f20c1634c5a",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "65.108.240.210:39018:77fb7a80-4724-4e33-9558-4f20c1634c5a",
+      "_sub_ids": [
+        "104",
+        "201",
+        "21",
+        "26",
+        "29"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "FI",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇫🇮node-14",
+      "server": "65.108.240.210",
+      "server_port": 39018,
+      "uuid": "45dc10c6-04c8-4c70-a06a-d396254a6c0b",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "65.108.240.210:39018:45dc10c6-04c8-4c70-a06a-d396254a6c0b",
+      "_sub_ids": [
+        "104",
+        "105",
+        "26",
+        "29"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "FI",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇫🇷node-15",
+      "server": "162.19.82.57",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "162.19.82.57:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "162.19.82.57",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "100",
+        "104",
+        "105",
         "108",
         "109",
         "13",
-        "14",
+        "18",
         "20",
         "201",
         "21",
@@ -31,16 +225,788 @@
         "29",
         "3",
         "300",
+        "6",
+        "8",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "FR",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇬🇧node-19",
+      "server": "149.7.16.228",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "149.7.16.228:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "149.7.16.228",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "104",
+        "105",
+        "108",
+        "109",
+        "13",
+        "14",
+        "18",
+        "20",
+        "26",
+        "29",
+        "3",
+        "300",
+        "8",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "GB",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇭🇰node-20",
+      "server": "dog-us.kunlun01dns.com",
+      "server_port": 21009,
+      "uuid": "9464ca40-dd75-3742-a628-d931a9f413b2",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "dog-us.kunlun01dns.com:21009:9464ca40-dd75-3742-a628-d931a9f413b2",
+      "_sub_ids": [
+        "104",
+        "18",
+        "21",
+        "26",
+        "29",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "HK",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇭🇰node-21",
+      "server": "dog-us.kunlun01dns.com",
+      "server_port": 21012,
+      "uuid": "9464ca40-dd75-3742-a628-d931a9f413b2",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "dog-us.kunlun01dns.com:21012:9464ca40-dd75-3742-a628-d931a9f413b2",
+      "_sub_ids": [
+        "104",
+        "26",
+        "29"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "HK",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇭🇰node-22",
+      "server": "zfd-jpv2.kunlun01dns.com",
+      "server_port": 16120,
+      "uuid": "0802ac03-7973-39ef-a019-ba02de6c01e1",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "zfd-jpv2.kunlun01dns.com:16120:0802ac03-7973-39ef-a019-ba02de6c01e1",
+      "_sub_ids": [
+        "104",
+        "26",
+        "29"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "HK",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇭🇰node-23",
+      "server": "zfd-jpv2.kunlun01dns.com",
+      "server_port": 16122,
+      "uuid": "0802ac03-7973-39ef-a019-ba02de6c01e1",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "zfd-jpv2.kunlun01dns.com:16122:0802ac03-7973-39ef-a019-ba02de6c01e1",
+      "_sub_ids": [
+        "104",
+        "26",
+        "29"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "HK",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇯🇵node-27",
+      "server": "141.11.139.102",
+      "server_port": 32515,
+      "uuid": "081dbf5a-d8b6-40c8-96f8-3c4ca9f50442",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "141.11.139.102:32515:081dbf5a-d8b6-40c8-96f8-3c4ca9f50442",
+      "_sub_ids": [
+        "1",
+        "104",
+        "20",
+        "201",
+        "26",
+        "29",
+        "300",
+        "6",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "JP",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇰🇷node-29",
+      "server": "140.238.2.250",
+      "server_port": 443,
+      "uuid": "41a7089a-040b-4538-8b8d-010902405bde",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "140.238.2.250:443:41a7089a-040b-4538-8b8d-010902405bde",
+      "_sub_ids": [
+        "1",
+        "10",
+        "100",
+        "104",
+        "105",
+        "108",
+        "109",
+        "13",
+        "18",
+        "20",
+        "21",
+        "26",
+        "29",
+        "300",
+        "322",
+        "8"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "KR",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇰🇷node-30",
+      "server": "146.56.112.110",
+      "server_port": 8888,
+      "uuid": "e7c302f3-90d6-42dd-9d7d-94a3683a3707",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "146.56.112.110:8888:e7c302f3-90d6-42dd-9d7d-94a3683a3707",
+      "_sub_ids": [
+        "104",
+        "13",
+        "18",
+        "20",
+        "201",
+        "26",
+        "29",
+        "3",
+        "322",
+        "8"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "KR",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇲🇾node-32",
+      "server": "47.250.135.244",
+      "server_port": 10000,
+      "uuid": "aedc66b8-99d7-4a21-8310-61870e7f870d",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "47.250.135.244:10000:aedc66b8-99d7-4a21-8310-61870e7f870d",
+      "_sub_ids": [
+        "100",
+        "104",
+        "13",
+        "18",
+        "201",
+        "26",
+        "29",
         "311",
-        "313",
-        "316",
+        "318",
         "319",
         "8",
         "9"
       ],
-      "_last_ok_ts": 1794317167.862371,
-      "_country": "CA",
-      "_pending_since": 1794345425.925395
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "MY",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-42",
+      "server": "129.146.143.80",
+      "server_port": 48111,
+      "uuid": "d4603cc2-e0ee-4651-83f5-1db5b7168177",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "129.146.143.80:48111:d4603cc2-e0ee-4651-83f5-1db5b7168177",
+      "_sub_ids": [
+        "1",
+        "100",
+        "104",
+        "105",
+        "109",
+        "13",
+        "18",
+        "201",
+        "26",
+        "29",
+        "300",
+        "311",
+        "316",
+        "318",
+        "319",
+        "8",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "US",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-43",
+      "server": "142.202.48.87",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "142.202.48.87:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "142.202.48.87",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "100",
+        "104",
+        "105",
+        "107",
+        "13",
+        "18",
+        "20",
+        "201",
+        "26",
+        "29",
+        "6"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "US",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-46",
+      "server": "162.251.62.31",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "162.251.62.31:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "162.251.62.31",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "104",
+        "105",
+        "13",
+        "18",
+        "26",
+        "29",
+        "6",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "US",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-51",
+      "server": "167.88.62.51",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "167.88.62.51:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "167.88.62.51",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "100",
+        "104",
+        "105",
+        "107",
+        "13",
+        "18",
+        "20",
+        "201",
+        "21",
+        "26",
+        "29",
+        "6",
+        "8",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "US",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-55",
+      "server": "167.88.63.99",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "167.88.63.99:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "167.88.63.99",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "104",
+        "105",
+        "107",
+        "13",
+        "18",
+        "201",
+        "21",
+        "26",
+        "29",
+        "6",
+        "8",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "US",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-59",
+      "server": "172.111.36.126",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "172.111.36.126:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "172.111.36.126",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "100",
+        "104",
+        "105",
+        "107",
+        "13",
+        "18",
+        "20",
+        "201",
+        "21",
+        "26",
+        "29",
+        "6",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "US",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-64",
+      "server": "216.106.182.225",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "216.106.182.225:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "216.106.182.225",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "100",
+        "104",
+        "105",
+        "107",
+        "13",
+        "18",
+        "201",
+        "26",
+        "29",
+        "6",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "US",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-73",
+      "server": "38.22.17.89",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "38.22.17.89:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "38.22.17.89",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "100",
+        "104",
+        "105",
+        "13",
+        "18",
+        "20",
+        "201",
+        "26",
+        "29",
+        "6",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "US",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-74",
+      "server": "38.64.138.135",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "38.64.138.135:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "38.64.138.135",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "104",
+        "105",
+        "13",
+        "18",
+        "26",
+        "29",
+        "6",
+        "8",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "US",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-79",
+      "server": "38.91.107.188",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "38.91.107.188:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "38.91.107.188",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "104",
+        "105",
+        "13",
+        "18",
+        "26",
+        "29",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "US",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-84",
+      "server": "67.220.74.188",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "67.220.74.188:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "67.220.74.188",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "100",
+        "104",
+        "105",
+        "107",
+        "18",
+        "201",
+        "26",
+        "29",
+        "6",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "US",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-85",
+      "server": "67.220.74.197",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "67.220.74.197:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "67.220.74.197",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "100",
+        "104",
+        "105",
+        "107",
+        "13",
+        "18",
+        "201",
+        "26",
+        "29",
+        "6",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "US",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-86",
+      "server": "67.220.74.250",
+      "server_port": 1270,
+      "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "67.220.74.250:1270:5c040f1d-45db-43bd-8d46-e4950e433735",
+      "tls": {
+        "enabled": true,
+        "server_name": "67.220.74.250",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "104",
+        "105",
+        "13",
+        "18",
+        "26",
+        "29",
+        "6",
+        "9"
+      ],
+      "_last_ok_ts": 1794345425.925395,
+      "_country": "US",
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "node-13",
+      "server": "104.21.41.92",
+      "server_port": 443,
+      "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "104.21.41.92:443:6a89a215-22bf-4bd7-9642-b95b2e09583a",
+      "tls": {
+        "enabled": true,
+        "server_name": "104.21.41.92",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "10",
+        "26"
+      ],
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "node-78",
+      "server": "109.70.74.202",
+      "server_port": 51018,
+      "uuid": "25987409-b779-47e2-a475-3bfbfa54f55b",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "109.70.74.202:51018:25987409-b779-47e2-a475-3bfbfa54f55b",
+      "_sub_ids": [
+        "100",
+        "104",
+        "105",
+        "19",
+        "20",
+        "201",
+        "26",
+        "3"
+      ],
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "node-419",
+      "server": "185.212.149.7",
+      "server_port": 52080,
+      "uuid": "ec3c8b97-f308-4fee-aa16-95e2c7595acd",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "185.212.149.7:52080:ec3c8b97-f308-4fee-aa16-95e2c7595acd",
+      "_sub_ids": [
+        "18"
+      ],
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "node-614",
+      "server": "217.142.138.61",
+      "server_port": 80,
+      "uuid": "ac1b933d-afff-4487-93ef-f57130a55dff",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "217.142.138.61:80:ac1b933d-afff-4487-93ef-f57130a55dff",
+      "_sub_ids": [
+        "18"
+      ],
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "node-863",
+      "server": "54.229.151.97",
+      "server_port": 59236,
+      "uuid": "2387bfbc-10a6-4bd7-dc55-7cba954ce6e8",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_dedup_key": "54.229.151.97:59236:2387bfbc-10a6-4bd7-dc55-7cba954ce6e8",
+      "_sub_ids": [
+        "18"
+      ],
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "node-56",
+      "server": "109.70.74.138",
+      "server_port": 58856,
+      "uuid": "43fceaa9-b712-4024-9119-50f4a609d87f",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_pending_since": 1794376712.995959
+    },
+    {
+      "type": "vmess",
+      "tag": "node-882",
+      "server": "65.108.240.210",
+      "server_port": 39018,
+      "uuid": "96c987c9-c2d9-4993-b9bd-c9bc36255ee1",
+      "security": "auto",
+      "transport": {
+        "type": "tcp"
+      },
+      "_pending_since": 1794376712.995959
     },
     {
       "type": "vmess",
@@ -82,82 +1048,6 @@
       ],
       "_last_ok_ts": 1794317167.862371,
       "_country": "FI",
-      "_pending_since": 1794345425.925395
-    },
-    {
-      "type": "vmess",
-      "tag": "🇳🇱node-24",
-      "server": "176.65.151.175",
-      "server_port": 11674,
-      "uuid": "a98a98cb-ae86-43ae-b695-cf0dbcad3fc2",
-      "security": "auto",
-      "transport": {
-        "type": "tcp"
-      },
-      "_dedup_key": "176.65.151.175:11674:a98a98cb-ae86-43ae-b695-cf0dbcad3fc2",
-      "_sub_ids": [
-        "1",
-        "100",
-        "104",
-        "105",
-        "108",
-        "109",
-        "14",
-        "19",
-        "20",
-        "201",
-        "21",
-        "26",
-        "29",
-        "3",
-        "300",
-        "6"
-      ],
-      "_last_ok_ts": 1794317167.862371,
-      "_country": "NL",
-      "_pending_since": 1794345425.925395
-    },
-    {
-      "type": "vmess",
-      "tag": "🇺🇸node-78",
-      "server": "67.220.95.3",
-      "server_port": 18000,
-      "uuid": "f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-      "security": "aes-128-gcm",
-      "transport": {
-        "type": "tcp"
-      },
-      "_dedup_key": "67.220.95.3:18000:f8c8dc3d-0d37-46b0-8b34-a7232882fcfe",
-      "_sub_ids": [
-        "1",
-        "10",
-        "100",
-        "103",
-        "104",
-        "105",
-        "107",
-        "108",
-        "109",
-        "13",
-        "14",
-        "19",
-        "20",
-        "201",
-        "21",
-        "26",
-        "29",
-        "3",
-        "300",
-        "302",
-        "311",
-        "316",
-        "318",
-        "319",
-        "8",
-        "9"
-      ],
-      "_last_ok_ts": 1794317167.862371,
-      "_country": "US",
       "_pending_since": 1794345425.925395
     },
     {
@@ -1978,35 +2868,6 @@
         "26",
         "300",
         "319"
-      ],
-      "_pending_since": 1794317167.862371
-    },
-    {
-      "type": "vmess",
-      "tag": "node-101",
-      "server": "116.88.224.217",
-      "server_port": 8080,
-      "uuid": "6f4f0eb5-fe86-41ca-eccb-a6ca68f88d9b",
-      "security": "auto",
-      "transport": {
-        "type": "tcp"
-      },
-      "_dedup_key": "116.88.224.217:8080:6f4f0eb5-fe86-41ca-eccb-a6ca68f88d9b",
-      "_sub_ids": [
-        "1",
-        "100",
-        "104",
-        "109",
-        "13",
-        "20",
-        "201",
-        "21",
-        "26",
-        "27",
-        "29",
-        "3",
-        "300",
-        "8"
       ],
       "_pending_since": 1794317167.862371
     },
@@ -20270,24 +21131,6 @@
       "_sub_ids": [
         "104",
         "26"
-      ],
-      "_pending_since": 1794317167.862371
-    },
-    {
-      "type": "vmess",
-      "tag": "node-1198",
-      "server": "dog-hk.kunlun01dns.com",
-      "server_port": 21019,
-      "uuid": "9464ca40-dd75-3742-a628-d931a9f413b2",
-      "security": "auto",
-      "transport": {
-        "type": "tcp"
-      },
-      "_dedup_key": "dog-hk.kunlun01dns.com:21019:9464ca40-dd75-3742-a628-d931a9f413b2",
-      "_sub_ids": [
-        "104",
-        "26",
-        "29"
       ],
       "_pending_since": 1794317167.862371
     },
