@@ -1,6 +1,757 @@
 {
-  "last_updated": "2026-11-09T20:41:13Z",
+  "last_updated": "2026-11-11T00:38:18Z",
   "nodes": [
+    {
+      "type": "trojan",
+      "tag": "node-1",
+      "server": "104.21.51.242",
+      "server_port": 2087,
+      "password": "241f01b9-8dfc-474f-8342-3fbd5c46417e",
+      "_dedup_key": "104.21.51.242:2087:241f01b9-8dfc-474f-8342-3fbd5c46417e:grpc",
+      "tls": {
+        "enabled": true,
+        "server_name": "grpcfr.arminhadadi.site"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc"
+      },
+      "_sub_ids": [
+        "311",
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-2",
+      "server": "104.21.71.83",
+      "server_port": 443,
+      "password": "3792b958-c945-4a40-a2ad-586070c3a82a",
+      "_dedup_key": "104.21.71.83:443:3792b958-c945-4a40-a2ad-586070c3a82a:pEbwh6Px7dQGOpufnxBjUe",
+      "tls": {
+        "enabled": true,
+        "server_name": "658c775e-1272-bffc-f6bd-c57d4c2b69d1.777162.xyz"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "pEbwh6Px7dQGOpufnxBjUe"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-3",
+      "server": "109.230.91.202",
+      "server_port": 443,
+      "password": "b6f0c135-043a-40e3-863a-08fba589034c",
+      "_dedup_key": "109.230.91.202:443:b6f0c135-043a-40e3-863a-08fba589034c:gr1.grtj.sulindac.top",
+      "tls": {
+        "enabled": true,
+        "server_name": "gr1.grtj.sulindac.top"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "gr1.grtj.sulindac.top"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-4",
+      "server": "172.67.132.6",
+      "server_port": 2096,
+      "password": "4db45bb4-dcca-4d37-a639-cb55213ee406",
+      "_dedup_key": "172.67.132.6:2096:4db45bb4-dcca-4d37-a639-cb55213ee406:lK1wclmJRbMxj4FxIzvwxUDoX",
+      "tls": {
+        "enabled": true,
+        "server_name": "channel.v2bamdad.tech"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "lK1wclmJRbMxj4FxIzvwxUDoX"
+      },
+      "_sub_ids": [
+        "311",
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-5",
+      "server": "177.3.208.169",
+      "server_port": 443,
+      "password": "581e14a5fcc14107b9326cc54f047891",
+      "_dedup_key": "177.3.208.169:443:581e14a5fcc14107b9326cc54f047891:/43588/G43plZahWW",
+      "tls": {
+        "enabled": true,
+        "server_name": "titandarkness.mooo.com"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "/43588/G43plZahWW"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-6",
+      "server": "179.237.74.104",
+      "server_port": 361,
+      "password": "---------%42%61%6E%56%32%72%61%79------------",
+      "_dedup_key": "179.237.74.104:361:---------%42%61%6E%56%32%72%61%79------------:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "318"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-7",
+      "server": "179.237.74.104",
+      "server_port": 3611,
+      "password": "---------%42%61%6E%56%32%72%61%79---------",
+      "_dedup_key": "179.237.74.104:3611:---------%42%61%6E%56%32%72%61%79---------:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "318"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-8",
+      "server": "179.237.74.104",
+      "server_port": 361,
+      "password": "---------%42%61%6e%56%32%72%61%79------------",
+      "_dedup_key": "179.237.74.104:361:---------%42%61%6e%56%32%72%61%79------------:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-9",
+      "server": "179.237.74.104",
+      "server_port": 361,
+      "password": "---------BanV2ray------------",
+      "_dedup_key": "179.237.74.104:361:---------BanV2ray------------:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "306",
+        "311",
+        "318",
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-10",
+      "server": "179.237.74.104",
+      "server_port": 584,
+      "password": "---------BanV2ray------------",
+      "_dedup_key": "179.237.74.104:584:---------BanV2ray------------:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "306",
+        "311",
+        "318",
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-11",
+      "server": "179.237.74.104",
+      "server_port": 1527,
+      "password": "1-----------------%42%61%6E%56%32%72%61%79-----------------1",
+      "_dedup_key": "179.237.74.104:1527:1-----------------%42%61%6E%56%32%72%61%79-----------------1:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "318"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-12",
+      "server": "179.237.74.104",
+      "server_port": 5181,
+      "password": "1-----------------%42%61%6E%56%32%72%61%79-----------------1",
+      "_dedup_key": "179.237.74.104:5181:1-----------------%42%61%6E%56%32%72%61%79-----------------1:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "318"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-13",
+      "server": "179.237.74.104",
+      "server_port": 1527,
+      "password": "1-----------------%42%61nV2ray-----------------1",
+      "_dedup_key": "179.237.74.104:1527:1-----------------%42%61nV2ray-----------------1:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-14",
+      "server": "179.237.75.149",
+      "server_port": 35679,
+      "password": "YyBkRtve84",
+      "_dedup_key": "179.237.75.149:35679:YyBkRtve84:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-15",
+      "server": "179.237.75.149",
+      "server_port": 36029,
+      "password": "yBN5491Fle",
+      "_dedup_key": "179.237.75.149:36029:yBN5491Fle:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-16",
+      "server": "179.237.75.217",
+      "server_port": 8880,
+      "password": "uESA3PX0XW",
+      "_dedup_key": "179.237.75.217:8880:uESA3PX0XW:",
+      "tls": {
+        "enabled": true,
+        "server_name": "yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-17",
+      "server": "188.114.98.0",
+      "server_port": 443,
+      "password": "01596265-168b-46a7-bcb7-25662c7a9546",
+      "_dedup_key": "188.114.98.0:443:01596265-168b-46a7-bcb7-25662c7a9546:fYn1ncaQMA1foaK1hpquM",
+      "tls": {
+        "enabled": true,
+        "server_name": "hdfy7c1.foriran2.eu.org"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "fYn1ncaQMA1foaK1hpquM"
+      },
+      "_sub_ids": [
+        "311",
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-19",
+      "server": "31.76.11.46",
+      "server_port": 443,
+      "password": "581e14a5fcc14107b9326cc54f047891",
+      "_dedup_key": "31.76.11.46:443:581e14a5fcc14107b9326cc54f047891:/50779/NQmry9z8yR",
+      "tls": {
+        "enabled": true,
+        "server_name": "31.76.11.46.cdn-one.org"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "/50779/NQmry9z8yR"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-20",
+      "server": "31.76.11.46.cdn-one.org",
+      "server_port": 443,
+      "password": "32b2m2w7hsdd93z7",
+      "_dedup_key": "31.76.11.46.cdn-one.org:443:32b2m2w7hsdd93z7:/50779/NQmry9z8yR",
+      "tls": {
+        "enabled": true,
+        "server_name": "31.76.11.46.cdn-one.org"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "/50779/NQmry9z8yR"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-21",
+      "server": "31.76.11.46.cdn-one.org",
+      "server_port": 443,
+      "password": "581e14a5fcc14107b9326cc54f047891",
+      "_dedup_key": "31.76.11.46.cdn-one.org:443:581e14a5fcc14107b9326cc54f047891:/50779/NQmry9z8yR",
+      "tls": {
+        "enabled": true,
+        "server_name": "31.76.11.46.cdn-one.org"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "/50779/NQmry9z8yR"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-22",
+      "server": "37.156.45.60",
+      "server_port": 438,
+      "password": "-----------%42%61%6E%56%32%72%61%79----------",
+      "_dedup_key": "37.156.45.60:438:-----------%42%61%6E%56%32%72%61%79----------:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "318"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-23",
+      "server": "37.156.45.60",
+      "server_port": 438,
+      "password": "-----------%42%61%6e%56%32%72%61%79----------",
+      "_dedup_key": "37.156.45.60:438:-----------%42%61%6e%56%32%72%61%79----------:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-24",
+      "server": "37.156.45.60",
+      "server_port": 438,
+      "password": "-----------BanV2ray----------",
+      "_dedup_key": "37.156.45.60:438:-----------BanV2ray----------:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "318"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-25",
+      "server": "37.156.45.60",
+      "server_port": 2387,
+      "password": "1------------------%42%61%6e%56%32%72%61%79------------------1",
+      "_dedup_key": "37.156.45.60:2387:1------------------%42%61%6e%56%32%72%61%79------------------1:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-26",
+      "server": "37.156.45.60",
+      "server_port": 37161,
+      "password": "1------------------%42%61%6e%56%32%72%61%79------------------1",
+      "_dedup_key": "37.156.45.60:37161:1------------------%42%61%6e%56%32%72%61%79------------------1:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-27",
+      "server": "37.156.45.60",
+      "server_port": 3716,
+      "password": "1------------------%42%61%6e%56%32%72%61%79------------------1",
+      "_dedup_key": "37.156.45.60:3716:1------------------%42%61%6e%56%32%72%61%79------------------1:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-28",
+      "server": "37.156.45.60",
+      "server_port": 51816,
+      "password": "1------------------%42%61%6e%56%32%72%61%79------------------1",
+      "_dedup_key": "37.156.45.60:51816:1------------------%42%61%6e%56%32%72%61%79------------------1:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-29",
+      "server": "37.156.45.60",
+      "server_port": 1726,
+      "password": "1------------------%42%61nV2ray------------------1",
+      "_dedup_key": "37.156.45.60:1726:1------------------%42%61nV2ray------------------1:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-30",
+      "server": "37.156.45.60",
+      "server_port": 2387,
+      "password": "1------------------%42%61nV2ray------------------1",
+      "_dedup_key": "37.156.45.60:2387:1------------------%42%61nV2ray------------------1:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-31",
+      "server": "37.156.45.60",
+      "server_port": 4611,
+      "password": "1------------------%42%61nV2ray------------------1",
+      "_dedup_key": "37.156.45.60:4611:1------------------%42%61nV2ray------------------1:",
+      "tls": {
+        "enabled": true,
+        "server_name": "world.yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-32",
+      "server": "78.39.9.168",
+      "server_port": 6161,
+      "password": "-EleP1yiGc6SD72p-m8Brw",
+      "_dedup_key": "78.39.9.168:6161:-EleP1yiGc6SD72p-m8Brw:gg",
+      "tls": {
+        "enabled": true,
+        "server_name": "speedtest.net"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "gg"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-33",
+      "server": "83.228.235.99",
+      "server_port": 19289,
+      "password": "0A0kFGWA0t",
+      "_dedup_key": "83.228.235.99:19289:0A0kFGWA0t:",
+      "tls": {
+        "enabled": true,
+        "server_name": "yahoo.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-34",
+      "server": "94.131.122.157",
+      "server_port": 8443,
+      "password": "da86c6b5-a130-4bb8-a6ef-00b77b85b9e7",
+      "_dedup_key": "94.131.122.157:8443:da86c6b5-a130-4bb8-a6ef-00b77b85b9e7:grpc",
+      "tls": {
+        "enabled": true,
+        "server_name": "uk2.safecdn.site"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-35",
+      "server": "cf.dalazhi.eu.org",
+      "server_port": 443,
+      "password": "4807b8ab-d74a-445e-9556-45a7ace4f6d6",
+      "_dedup_key": "cf.dalazhi.eu.org:443:4807b8ab-d74a-445e-9556-45a7ace4f6d6:puijtrojangrpc",
+      "tls": {
+        "enabled": true,
+        "server_name": "tj2.dalazhi.eu.org"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "puijtrojangrpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-36",
+      "server": "cf.dalazhi.eu.org",
+      "server_port": 8443,
+      "password": "e14c0c0e-f838-49e9-bcee-01ead9208af2",
+      "_dedup_key": "cf.dalazhi.eu.org:8443:e14c0c0e-f838-49e9-bcee-01ead9208af2:unlotrojangrpc",
+      "tls": {
+        "enabled": true,
+        "server_name": "us.dalazhi.eu.org"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "unlotrojangrpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-37",
+      "server": "cf3.dalazhi.eu.org",
+      "server_port": 8443,
+      "password": "e14c0c0e-f838-49e9-bcee-01ead9208af2",
+      "_dedup_key": "cf3.dalazhi.eu.org:8443:e14c0c0e-f838-49e9-bcee-01ead9208af2:unlotrojangrpc",
+      "tls": {
+        "enabled": true,
+        "server_name": "us.dalazhi.eu.org"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "unlotrojangrpc"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-38",
+      "server": "ru-5b7331.atlanta-games.com",
+      "server_port": 443,
+      "password": "HaZLUMP__fVySm7WzxFcnk7Nm8-f1CCK",
+      "_dedup_key": "ru-5b7331.atlanta-games.com:443:HaZLUMP__fVySm7WzxFcnk7Nm8-f1CCK:ajv",
+      "tls": {
+        "enabled": true,
+        "server_name": "ru-5b7331.atlanta-games.com"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "ajv"
+      },
+      "_sub_ids": [
+        "306",
+        "310",
+        "311",
+        "313",
+        "320"
+      ],
+      "_pending_since": 1794332709.812329
+    },
+    {
+      "type": "trojan",
+      "tag": "node-39",
+      "server": "vip.speedwshop.ir",
+      "server_port": 10108,
+      "password": "1ssmtdeckx5sfk9o",
+      "_dedup_key": "vip.speedwshop.ir:10108:1ssmtdeckx5sfk9o:",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.m.amazon.com"
+      },
+      "transport": {
+        "type": "grpc"
+      },
+      "_sub_ids": [
+        "26",
+        "29"
+      ],
+      "_pending_since": 1794332709.812329
+    },
     {
       "type": "trojan",
       "tag": "node-32",
@@ -647,134 +1398,6 @@
         "service_name": "kobedin-server1-trojan"
       },
       "_pending_since": 1793515984.330404
-    },
-    {
-      "type": "trojan",
-      "tag": "node-32",
-      "server": "45-149-147-213.sslip.io",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
-      "tls": {
-        "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
-      },
-      "_pending_since": 1793490447.036031
-    },
-    {
-      "type": "trojan",
-      "tag": "node-33",
-      "server": "45.149.147.213",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
-      "tls": {
-        "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
-      },
-      "_pending_since": 1793490447.036031
-    },
-    {
-      "type": "trojan",
-      "tag": "node-32",
-      "server": "45-149-147-213.sslip.io",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
-      "tls": {
-        "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
-      },
-      "_pending_since": 1793462045.890474
-    },
-    {
-      "type": "trojan",
-      "tag": "node-33",
-      "server": "45.149.147.213",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
-      "tls": {
-        "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
-      },
-      "_pending_since": 1793462045.890474
-    },
-    {
-      "type": "trojan",
-      "tag": "node-32",
-      "server": "45-149-147-213.sslip.io",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
-      "tls": {
-        "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
-      },
-      "_pending_since": 1793427608.825976
-    },
-    {
-      "type": "trojan",
-      "tag": "node-33",
-      "server": "45.149.147.213",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
-      "tls": {
-        "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
-      },
-      "_pending_since": 1793427608.825976
-    },
-    {
-      "type": "trojan",
-      "tag": "node-32",
-      "server": "45-149-147-213.sslip.io",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
-      "tls": {
-        "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
-      },
-      "_pending_since": 1793405205.641969
-    },
-    {
-      "type": "trojan",
-      "tag": "node-33",
-      "server": "45.149.147.213",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
-      "tls": {
-        "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
-      },
-      "_pending_since": 1793405205.641969
     }
   ]
 }
