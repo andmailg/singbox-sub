@@ -8970,6 +8970,32 @@
             }
           }
         }
+      },
+      {
+        "key": "199.232.202.152:443:1e875335-e46a-49ce-9f8f-208962c16884:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-235",
+          "server": "199.232.202.152",
+          "server_port": 443,
+          "uuid": "1e875335-e46a-49ce-9f8f-208962c16884",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "packet-up",
+            "host": [
+              "yeternek-blookwn.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "accounts.fastly.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -127690,5 +127716,5 @@
       }
     ]
   },
-  "updated": "2026-11-12T07:37:24Z"
+  "updated": "2026-11-12T07:47:09Z"
 }
