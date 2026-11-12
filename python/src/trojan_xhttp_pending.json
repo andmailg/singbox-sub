@@ -1,0 +1,273 @@
+{
+  "last_updated": "2026-11-12T21:54:55Z",
+  "nodes": [
+    {
+      "type": "trojan",
+      "tag": "node-1",
+      "server": "151.101.34.144",
+      "server_port": 443,
+      "password": "4aFbwy5BHa",
+      "_dedup_key": "151.101.34.144:443:4aFbwy5BHa:/db",
+      "tls": {
+        "enabled": true,
+        "server_name": "global.fastly.com"
+      },
+      "transport": {
+        "type": "xhttp",
+        "path": "/db",
+        "host": [
+          "edgezvx.global.ssl.fastly.net"
+        ],
+        "mode": "auto"
+      },
+      "_sub_ids": [
+        "319",
+        "321"
+      ],
+      "_pending_since": 1794520494.840013
+    },
+    {
+      "type": "trojan",
+      "tag": "node-2",
+      "server": "151.101.34.144",
+      "server_port": 443,
+      "password": "4aFbwy5BHa",
+      "_dedup_key": "151.101.34.144:443:4aFbwy5BHa:/",
+      "tls": {
+        "enabled": true,
+        "server_name": "global.fastly.com"
+      },
+      "transport": {
+        "type": "xhttp",
+        "mode": "auto",
+        "path": "/"
+      },
+      "_sub_ids": [
+        "319",
+        "321"
+      ],
+      "_pending_since": 1794520494.840013
+    },
+    {
+      "type": "trojan",
+      "tag": "node-3",
+      "server": "162.159.38.183",
+      "server_port": 443,
+      "password": "VPNCUSTOMIZE",
+      "_dedup_key": "162.159.38.183:443:VPNCUSTOMIZE:/config",
+      "tls": {
+        "enabled": true,
+        "server_name": "ww.offers.de5.net"
+      },
+      "transport": {
+        "type": "xhttp",
+        "path": "/config",
+        "host": [
+          "bvck-oizksj-swin-usje-c-o.offers.de5.net"
+        ],
+        "mode": "stream-one"
+      },
+      "_sub_ids": [
+        "319",
+        "321"
+      ],
+      "_pending_since": 1794520494.840013
+    },
+    {
+      "type": "trojan",
+      "tag": "node-4",
+      "server": "162.159.38.183",
+      "server_port": 443,
+      "password": "VPNCUSTOMIZE",
+      "_dedup_key": "162.159.38.183:443:VPNCUSTOMIZE:/",
+      "tls": {
+        "enabled": true,
+        "server_name": "ww.offers.de5.net"
+      },
+      "transport": {
+        "type": "xhttp",
+        "mode": "auto",
+        "path": "/"
+      },
+      "_sub_ids": [
+        "319",
+        "321"
+      ],
+      "_pending_since": 1794520494.840013
+    },
+    {
+      "type": "trojan",
+      "tag": "node-5",
+      "server": "167.82.101.159",
+      "server_port": 443,
+      "password": "2223970e6a0b8ad289d3c43dd85dd2c9",
+      "_dedup_key": "167.82.101.159:443:2223970e6a0b8ad289d3c43dd85dd2c9:/",
+      "tls": {
+        "enabled": true,
+        "server_name": "ssl.fastly.com"
+      },
+      "transport": {
+        "type": "xhttp",
+        "host": [
+          "denyyyour-name.global.ssl.fastly.net"
+        ],
+        "mode": "auto",
+        "path": "/"
+      },
+      "_sub_ids": [
+        "100",
+        "104",
+        "201",
+        "21",
+        "26"
+      ],
+      "_pending_since": 1794520494.840013
+    },
+    {
+      "type": "trojan",
+      "tag": "node-6",
+      "server": "194.147.33.207",
+      "server_port": 443,
+      "password": "c16a577c-1dbd-41b0-90c7-d7177ce0bd1f",
+      "_dedup_key": "194.147.33.207:443:c16a577c-1dbd-41b0-90c7-d7177ce0bd1f:/xhttp",
+      "tls": {
+        "enabled": true,
+        "server_name": "nl.xtls.sitespeedtest.net"
+      },
+      "transport": {
+        "type": "xhttp",
+        "path": "/xhttp",
+        "mode": "auto"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794520494.840013
+    },
+    {
+      "type": "trojan",
+      "tag": "node-7",
+      "server": "199.232.206.245",
+      "server_port": 443,
+      "password": "7b12dfabbe374661a12d11d698d86fbd",
+      "_dedup_key": "199.232.206.245:443:7b12dfabbe374661a12d11d698d86fbd:/",
+      "tls": {
+        "enabled": true,
+        "server_name": "ssl.fastly.com"
+      },
+      "transport": {
+        "type": "xhttp",
+        "host": [
+          "networkzvx.global.ssl.fastly.net"
+        ],
+        "mode": "packet-up",
+        "path": "/"
+      },
+      "_sub_ids": [
+        "319"
+      ],
+      "_pending_since": 1794520494.840013
+    },
+    {
+      "type": "trojan",
+      "tag": "node-8",
+      "server": "199.232.8.223",
+      "server_port": 443,
+      "password": "65IHvp68B85OE3zc2K9VwUShp8ibgFOq",
+      "_dedup_key": "199.232.8.223:443:65IHvp68B85OE3zc2K9VwUShp8ibgFOq:/",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.firefox.com"
+      },
+      "transport": {
+        "type": "xhttp",
+        "path": "/",
+        "host": [
+          "gahgs6.global.ssl.fastly.net"
+        ],
+        "mode": "auto"
+      },
+      "_sub_ids": [
+        "14"
+      ],
+      "_pending_since": 1794520494.840013
+    },
+    {
+      "type": "trojan",
+      "tag": "node-9",
+      "server": "45.130.125.2",
+      "server_port": 443,
+      "password": "VPNCUSTOMIZE",
+      "_dedup_key": "45.130.125.2:443:VPNCUSTOMIZE:/config",
+      "tls": {
+        "enabled": true,
+        "server_name": "ww.offers.de5.net"
+      },
+      "transport": {
+        "type": "xhttp",
+        "path": "/config",
+        "host": [
+          "bvck-oizksj-swin-usje-c-o.offers.de5.net"
+        ],
+        "mode": "stream-one"
+      },
+      "_sub_ids": [
+        "319",
+        "321"
+      ],
+      "_pending_since": 1794520494.840013
+    },
+    {
+      "type": "trojan",
+      "tag": "node-10",
+      "server": "rvg-production-0061.up.railway.app",
+      "server_port": 443,
+      "password": "6eb1e2aa-d6dd-c43a-23f8-37cf2883f952",
+      "_dedup_key": "rvg-production-0061.up.railway.app:443:6eb1e2aa-d6dd-c43a-23f8-37cf2883f952:/txhttp-siz10/packet-up/6eb1e2aa-d6dd-c43a-23f8-37cf2883f952",
+      "tls": {
+        "enabled": true,
+        "server_name": "rvg-production-0061.up.railway.app"
+      },
+      "transport": {
+        "type": "xhttp",
+        "path": "/txhttp-siz10/packet-up/6eb1e2aa-d6dd-c43a-23f8-37cf2883f952",
+        "host": [
+          "rvg-production-0061.up.railway.app"
+        ],
+        "mode": "packet-up"
+      },
+      "_sub_ids": [
+        "313",
+        "320"
+      ],
+      "_pending_since": 1794520494.840013
+    },
+    {
+      "type": "trojan",
+      "tag": "node-11",
+      "server": "rvg-production-6c35.up.railway.app",
+      "server_port": 443,
+      "password": "2cdcceba-68e9-6855-3e86-c92fb6706ce5",
+      "_dedup_key": "rvg-production-6c35.up.railway.app:443:2cdcceba-68e9-6855-3e86-c92fb6706ce5:/txhttp-siz10/packet-up/2cdcceba-68e9-6855-3e86-c92fb6706ce5",
+      "tls": {
+        "enabled": true,
+        "server_name": "rvg-production-6c35.up.railway.app"
+      },
+      "transport": {
+        "type": "xhttp",
+        "path": "/txhttp-siz10/packet-up/2cdcceba-68e9-6855-3e86-c92fb6706ce5",
+        "host": [
+          "rvg-production-6c35.up.railway.app"
+        ],
+        "mode": "packet-up"
+      },
+      "_sub_ids": [
+        "306",
+        "311",
+        "313",
+        "318"
+      ],
+      "_pending_since": 1794520494.840013
+    }
+  ]
+}
