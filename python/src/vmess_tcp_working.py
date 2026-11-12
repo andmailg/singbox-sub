@@ -11,6 +11,7 @@ from src.filters.rkn_filter import (
 )
 from src.filters.rkn_config import ASN_LIST, CIDR_LIST
 from src.common import drop_reality_without_utls, merge_sub_ids, session as http_session
+from src.parsers.vmess_parser import drop_slashless_duplicates, normalize_path
 
 _WORKING_FILE = os.path.join(
     os.path.dirname(os.path.abspath(__file__)),
@@ -27,7 +28,7 @@ def _asn_key() -> str:
 
 def _cache_key(node: dict) -> str:
     """Уникальный ключ для ноды: server:port:uuid:path."""
-    path = (node.get("transport") or {}).get("path") or "/"
+    path = normalize_path((node.get("transport") or {}).get("path"))
     return f"{node.get('server')}:{node.get('server_port')}:{node.get('uuid')}:{path}"
 
 
@@ -118,6 +119,8 @@ def merge_new_nodes(
 
     Возвращает (объединённый список, количество добавленных).
     """
+    # Если уже накопились копии, различающиеся только ведущим слэшем в path, оставляем версию со слэшем
+    existing = drop_slashless_duplicates(existing)
     existing_map: dict[str, dict] = {
         _cache_key(n): n for n in existing
     }

@@ -4,6 +4,8 @@ import base64
 import functools
 import json
 
+from src.common import merge_sub_ids
+
 
 @functools.lru_cache(maxsize=4096)
 def _is_valid_uuid(s: str) -> bool:
@@ -227,6 +229,38 @@ def clean_outbound(outbound: dict) -> dict | None:
         outbound.pop("transport", None)
 
     return outbound
+
+
+def normalize_path(path) -> str:
+    """Путь с ведущим слэшем: "x" -> "/x", "/x" и "//x" остаются как есть, пустой -> "/"."""
+    path = str(path or "/")
+    return path if path.startswith("/") else "/" + path
+
+
+def drop_slashless_duplicates(nodes: list[dict]) -> list[dict]:
+    """Среди нод, различающихся только ведущим слэшем в path, оставляет версию со слэшем.
+
+    Подписки (_sub_ids) отброшенных копий переносятся в оставшуюся. Порядок групп сохраняется.
+    """
+    groups: dict[tuple, dict] = {}
+    for node in nodes:
+        transport = node.get("transport") or {}
+        raw_path = str(transport.get("path") or "/")
+        key = (
+            node.get("server"), node.get("server_port"), node.get("uuid"),
+            transport.get("type", "tcp"), normalize_path(raw_path),
+        )
+        kept = groups.get(key)
+        if kept is None:
+            groups[key] = node
+            continue
+        kept_has_slash = str((kept.get("transport") or {}).get("path") or "/").startswith("/")
+        if not kept_has_slash and raw_path.startswith("/"):
+            merge_sub_ids(node, kept)
+            groups[key] = node
+        else:
+            merge_sub_ids(kept, node)
+    return list(groups.values())
 
 
 def strip_tcp_transport(outbounds: list[dict]) -> None:

@@ -113,10 +113,17 @@ def _build_stream_settings(node: dict, network: str) -> dict:
     if network in ("ws", "websocket"):
         path: str = transport_cfg.get("path") or "/"
         headers: dict[str, Any] = transport_cfg.get("headers") or {}
-        stream_settings["wsSettings"] = {
+        ws_settings: dict[str, Any] = {
             "path": path,
             "headers": headers
         }
+        # Актуальный Xray: Host задаётся полем host (приоритетнее Host в headers)
+        ws_host = headers.get("Host") or headers.get("host")
+        if isinstance(ws_host, list):
+            ws_host = ws_host[0] if ws_host else ""
+        if ws_host:
+            ws_settings["host"] = ws_host
+        stream_settings["wsSettings"] = ws_settings
     elif network in ("grpc", "gun"):
         service_name: str = transport_cfg.get("service_name") or ""
         stream_settings["grpcSettings"] = {

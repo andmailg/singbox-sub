@@ -96,17 +96,11 @@ def _parse_and_deduplicate(
     # parsed: list of (sub_id, outbound)
     parsed: list[tuple[str, dict]] = []
     seen_fps: set[str] = set()
-    # _dedup_key принятой ноды -> её outbound: повторы той же ноды из других подписок
-    # не отбрасываются молча, а добавляют свой sub_id (иначе _sub_ids неполный)
-    accepted: dict[str, dict] = {}
-    for sub_id, link in links:
-        outbound = parse_proxy_link(link, **kw)
-        if not outbound:
-            continue
-        dup = accepted.get(outbound.get("_dedup_key", ""))
-        if dup is not None:
-            dup.setdefault("_sub_ids", set()).add(sub_id)
-            continue
+    # _dedup_key принятой ноды -> (индекс в parsed, её outbound): повторы той же ноды из других
+    # подписок не отбрасываются молча, а добавляют свой sub_id (иначе _sub_ids неполный)
+    accepted: dict[str, tuple[int, dict]] = {}
+
+    def accept(outbound: dict) -> dict | None:
         if not should_accept_outbound(
             outbound, seen_fps,
             protocol=protocol,
@@ -114,15 +108,37 @@ def _parse_and_deduplicate(
             port_whitelist=port_whitelist,
             reality=reality,
         ):
-            continue
+            return None
         outbound = clean_outbound(outbound)
         if not outbound:
-            continue
+            return None
         if extra_filter and not extra_filter(outbound):
+            return None
+        return outbound
+
+    for sub_id, link in links:
+        outbound = parse_proxy_link(link, **kw)
+        if not outbound:
+            continue
+        found = accepted.get(outbound.get("_dedup_key", ""))
+        if found is not None:
+            index, dup = found
+            dup.setdefault("_sub_ids", set()).add(sub_id)
+            # Дубль с большим _dedup_rank (например, path со слэшем) заменяет уже принятую ноду
+            if outbound.get("_dedup_rank", 0) > dup.get("_dedup_rank", 0):
+                better = accept(outbound)
+                if better:
+                    # sub_id первой ссылки лежит в parsed, а не в _sub_ids ноды — переносим его явно
+                    better["_sub_ids"] = set(dup.get("_sub_ids") or ()) | {parsed[index][0], sub_id}
+                    parsed[index] = (sub_id, better)
+                    accepted[better["_dedup_key"]] = (index, better)
+            continue
+        outbound = accept(outbound)
+        if not outbound:
             continue
         parsed.append((sub_id, outbound))
         if outbound.get("_dedup_key"):
-            accepted[outbound["_dedup_key"]] = outbound
+            accepted[outbound["_dedup_key"]] = (len(parsed) - 1, outbound)
 
     print(f"{prefix}Parsed {len(parsed)} valid links, resolving {len(set(o.get('server', '') for _, o in parsed))} unique servers...")
 

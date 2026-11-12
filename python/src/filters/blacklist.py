@@ -96,8 +96,14 @@ def _cache_key(node: dict, protocol: str) -> str:
     elif protocol == "vless_grpc":
         service_name = node.get("transport", {}).get("service_name", "")
         return f"{node.get('server')}:{node.get('server_port')}:{node.get('uuid')}:{service_name}"
-    elif protocol in ("vless_http", "vless_ws", "vmess_tcp", "vmess_ws", "vmess_httpupgrade"):
+    elif protocol in ("vless_http", "vless_ws"):
         path = (node.get("transport") or {}).get("path") or "/"
+        return f"{node.get('server')}:{node.get('server_port')}:{node.get('uuid')}:{path}"
+    elif protocol in ("vmess_tcp", "vmess_ws", "vmess_httpupgrade"):
+        # ведущий слэш в path на ключ не влияет ("x" и "/x" — одна нода)
+        path = str((node.get("transport") or {}).get("path") or "/")
+        if not path.startswith("/"):
+            path = "/" + path
         return f"{node.get('server')}:{node.get('server_port')}:{node.get('uuid')}:{path}"
     elif protocol == "trojan_ws":
         path = (node.get("transport") or {}).get("path", "/")

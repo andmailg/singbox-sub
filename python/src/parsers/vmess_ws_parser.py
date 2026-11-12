@@ -1,10 +1,12 @@
 """Парсинг и фильтрация ссылок VMess + WebSocket.
 
 Использует общий парсер VMess (src.parsers.vmess_parser), но оставляет только
-транспорт ws и строит ключ дедупликации с учётом path.
+транспорт ws и строит ключ дедупликации с учётом path
+(ведущий слэш в path на ключ не влияет, при дубле побеждает версия со слэшем).
 """
 
 from src.parsers import vmess_parser
+from src.parsers.vmess_parser import normalize_path
 
 TRANSPORT = "ws"
 
@@ -25,10 +27,13 @@ def parse_proxy_link(link: str) -> dict | None:
 
     transport = outbound["transport"]
     transport.setdefault("path", "/")
+    # Ссылки, различающиеся только ведущим слэшем в path, считаются одной нодой;
+    # версия со слэшем приоритетнее (_dedup_rank), оркестратор оставляет её независимо от порядка.
     outbound["_dedup_key"] = (
         f"{outbound['server']}:{outbound['server_port']}:"
-        f"{outbound['uuid']}:{transport['path']}"
+        f"{outbound['uuid']}:{normalize_path(transport['path'])}"
     )
+    outbound["_dedup_rank"] = 1 if str(transport["path"]).startswith("/") else 0
 
     return outbound
 

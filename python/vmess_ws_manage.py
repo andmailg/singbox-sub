@@ -25,7 +25,7 @@ from src.pending import (
     load_pending_nodes,
     save_pending_nodes,
 )
-from src.parsers.vmess_parser import strip_tcp_transport
+from src.parsers.vmess_parser import drop_slashless_duplicates, strip_tcp_transport
 from src.common import (
     clean_internal_fields,
     country_code_to_flag,
@@ -135,9 +135,9 @@ def cmd_test(args):
       - Pending + failed + no timeout → оставить в pending
     """
     print("Loading nodes from vmess_ws_working.json...")
-    working = load_working_nodes()
+    working = drop_slashless_duplicates(load_working_nodes())
     print("Loading nodes from vmess_ws_pending.json...")
-    pending = load_pending_nodes(_PENDING_FILE)
+    pending = drop_slashless_duplicates(load_pending_nodes(_PENDING_FILE))
 
     if not working and not pending:
         print("No nodes found. Run 'merge' first.")
