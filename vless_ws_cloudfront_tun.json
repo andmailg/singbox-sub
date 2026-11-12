@@ -118,7 +118,11 @@
         "🇺🇸node-1",
         "🇺🇸node-2",
         "🇺🇸node-3",
-        "🇺🇸node-4"
+        "🇺🇸node-4",
+        "🇺🇸node-5",
+        "🇺🇸node-6",
+        "🇺🇸node-7",
+        "🇺🇸node-8"
       ],
       "default": "auto"
     },
@@ -129,7 +133,11 @@
         "🇺🇸node-1",
         "🇺🇸node-2",
         "🇺🇸node-3",
-        "🇺🇸node-4"
+        "🇺🇸node-4",
+        "🇺🇸node-5",
+        "🇺🇸node-6",
+        "🇺🇸node-7",
+        "🇺🇸node-8"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -195,6 +203,44 @@
     {
       "type": "vless",
       "tag": "🇺🇸node-4",
+      "server": "3.168.218.7",
+      "server_port": 443,
+      "uuid": "67cd3349-f789-4cbb-8b91-4b6b1654ce7c",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "d1aedflfr97jes.cloudfront.net"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "d1aedflfr97jes.cloudfront.net",
+        "insecure": false
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-5",
+      "server": "3.168.218.7",
+      "server_port": 443,
+      "uuid": "67cd3349-f789-4cbb-8b91-4b6b1654ce7c",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "d1aedflfr97jes.cloudfront.net"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "d1aedflfr97jes.cloudfront.net",
+        "insecure": false
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-6",
       "server": "3.168.218.8",
       "server_port": 443,
       "uuid": "67cd3349-f789-4cbb-8b91-4b6b1654ce7c",
@@ -208,6 +254,44 @@
       "tls": {
         "enabled": true,
         "server_name": "d1aedflfr97jes.cloudfront.net",
+        "insecure": false
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-7",
+      "server": "3.169.9.125",
+      "server_port": 443,
+      "uuid": "67cd3349-f789-4cbb-8b91-4b6b1654ce7c",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "d1afk2ndm8pox3.cloudfront.net"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "d1afk2ndm8pox3.cloudfront.net",
+        "insecure": false
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-8",
+      "server": "3.169.9.125",
+      "server_port": 443,
+      "uuid": "67cd3349-f789-4cbb-8b91-4b6b1654ce7c",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "d14jyezfrcyf60.cloudfront.net"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "d14jyezfrcyf60.cloudfront.net",
         "insecure": false
       }
     }
