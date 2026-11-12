@@ -71521,6 +71521,23 @@
             "server_name": "promo2.betust.net"
           }
         }
+      },
+      {
+        "key": "mytubeproxy10.duckdns.org:443:4b13c29ebe735e47",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-171",
+          "server": "mytubeproxy10.duckdns.org",
+          "server_port": 443,
+          "password": "4b13c29ebe735e47",
+          "tls": {
+            "enabled": true,
+            "server_name": "mytubeproxy10.duckdns.org",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -127428,5 +127445,5 @@
       }
     ]
   },
-  "updated": "2026-11-12T03:29:20Z"
+  "updated": "2026-11-12T07:10:19Z"
 }
