@@ -82797,6 +82797,77 @@
           },
           "packet_encoding": "xudp"
         }
+      },
+      {
+        "key": "195.206.235.74:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-103",
+          "server": "195.206.235.74",
+          "server_port": 443,
+          "uuid": "cda0862a-0f87-4be9-8ed8-1d0c9e382839",
+          "tls": {
+            "enabled": true,
+            "server_name": "961ec0g.nl13.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "xn7KVKS5MOnsFrYrEeRS04JssBCOxh12rxegaDFyGkA",
+              "short_id": "6d289ff0f47c0aac"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "7d5abcd7d8a1"
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "201.51.12.98:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-119",
+          "server": "201.51.12.98",
+          "server_port": 443,
+          "uuid": "38308ff1-5aa9-494f-a25a-0f2870d56b3e",
+          "tls": {
+            "enabled": true,
+            "server_name": "vps3.nemnogogo.com"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "mobile.api.Event"
+          }
+        }
+      },
+      {
+        "key": "88.80.150.15:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-211",
+          "server": "88.80.150.15",
+          "server_port": 443,
+          "uuid": "1d46250c-f015-439d-a7fd-c4d9e2a4c63d",
+          "tls": {
+            "enabled": true,
+            "server_name": "bg2.oncloudvpn.com",
+            "alpn": [
+              "h2"
+            ],
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -129232,5 +129303,5 @@
       }
     ]
   },
-  "updated": "2026-11-12T15:01:33Z"
+  "updated": "2026-11-12T18:34:15Z"
 }
