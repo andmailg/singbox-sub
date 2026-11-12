@@ -1,37 +1,1506 @@
 {
-  "last_updated": "2026-11-12T14:06:17Z",
+  "last_updated": "2026-11-12T22:06:10Z",
   "nodes": [
     {
       "type": "vmess",
-      "tag": "node-1",
-      "server": "104.17.0.1",
-      "server_port": 2083,
-      "uuid": "ac251237-576f-40c8-a543-554960c958b1",
+      "tag": "node-3",
+      "server": "172.64.149.209",
+      "server_port": 80,
+      "uuid": "3c75a551-81d6-46d0-876d-79519719bb22",
       "security": "auto",
       "transport": {
         "type": "ws",
-        "path": "/or3",
+        "path": "3c75a551-81d6-46d0-876d-79519719bb22-vm",
         "headers": {
-          "Host": "or3.sfacg.uk"
+          "Host": "argo.235697.xyz"
+        }
+      },
+      "_dedup_key": "172.64.149.209:80:3c75a551-81d6-46d0-876d-79519719bb22:3c75a551-81d6-46d0-876d-79519719bb22-vm",
+      "_sub_ids": [
+        "26"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": null,
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-8",
+      "server": "188.114.96.3",
+      "server_port": 8443,
+      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/lMnsZUN4/",
+        "headers": {
+          "Host": "v2ray1.dozapp.xyz"
         }
       },
       "tls": {
         "enabled": true,
-        "server_name": "or3.sfacg.uk",
+        "server_name": "v2ray1.dozapp.xyz",
         "insecure": false
       },
-      "_last_ok_ts": 1794448633.971337,
+      "_last_ok_ts": 1794491599.814602,
       "_country": null,
       "_sub_ids": [
         "1",
         "104",
         "105",
+        "13",
+        "201",
+        "26",
+        "27",
+        "29",
+        "300",
+        "4",
+        "9"
+      ],
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-11",
+      "server": "JP032005.ssgreen.org",
+      "server_port": 443,
+      "uuid": "6c18385a-6c45-47ad-a99e-5df55e123a71",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/wes"
+      },
+      "_dedup_key": "JP032005.ssgreen.org:443:6c18385a-6c45-47ad-a99e-5df55e123a71:/wes",
+      "tls": {
+        "enabled": true,
+        "server_name": "JP032005.ssgreen.org",
+        "insecure": false
+      },
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "26",
+        "27",
+        "29"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": null,
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-12",
+      "server": "JP032008.ssgreen.org",
+      "server_port": 443,
+      "uuid": "9db47acb-b0c7-4b1d-b0dc-ad2f9ee65980",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/wes"
+      },
+      "_dedup_key": "JP032008.ssgreen.org:443:9db47acb-b0c7-4b1d-b0dc-ad2f9ee65980:/wes",
+      "tls": {
+        "enabled": true,
+        "server_name": "JP032008.ssgreen.org",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "100",
+        "104",
+        "201",
+        "26",
+        "27",
+        "29",
+        "300",
+        "9"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": null,
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-13",
+      "server": "JP032010.ssgreen.org",
+      "server_port": 443,
+      "uuid": "4b40a0c4-2b81-4eaa-829f-ebb1e6fd5a9e",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/wes"
+      },
+      "_dedup_key": "JP032010.ssgreen.org:443:4b40a0c4-2b81-4eaa-829f-ebb1e6fd5a9e:/wes",
+      "tls": {
+        "enabled": true,
+        "server_name": "JP032010.ssgreen.org",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "102",
         "26",
         "27",
         "29",
         "300"
       ],
-      "_pending_since": 1794491599.814602
+      "_last_ok_ts": 1794491599.814602,
+      "_country": null,
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-14",
+      "server": "JP032011.ssgreen.org",
+      "server_port": 443,
+      "uuid": "aab7db8d-eed8-4f7c-94ef-5a6afb978c0f",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/wes"
+      },
+      "_dedup_key": "JP032011.ssgreen.org:443:aab7db8d-eed8-4f7c-94ef-5a6afb978c0f:/wes",
+      "tls": {
+        "enabled": true,
+        "server_name": "JP032011.ssgreen.org",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "102",
+        "104",
+        "13",
+        "26",
+        "27",
+        "29",
+        "300"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": null,
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-15",
+      "server": "US032017.ssgreen.org",
+      "server_port": 443,
+      "uuid": "5b1da241-af37-4d40-8ad4-9115e6f251d4",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/wes"
+      },
+      "_dedup_key": "US032017.ssgreen.org:443:5b1da241-af37-4d40-8ad4-9115e6f251d4:/wes",
+      "tls": {
+        "enabled": true,
+        "server_name": "US032017.ssgreen.org",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "102",
+        "104",
+        "13",
+        "26",
+        "27",
+        "29",
+        "300"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": null,
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-16",
+      "server": "US032019.ssgreen.org",
+      "server_port": 443,
+      "uuid": "13ae57b0-5fa7-4cd0-b1c4-72a437ffe505",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/wes"
+      },
+      "_dedup_key": "US032019.ssgreen.org:443:13ae57b0-5fa7-4cd0-b1c4-72a437ffe505:/wes",
+      "tls": {
+        "enabled": true,
+        "server_name": "US032019.ssgreen.org",
+        "insecure": false
+      },
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "1",
+        "102",
+        "26",
+        "27",
+        "29",
+        "300"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": null,
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-17",
+      "server": "US032020.ssgreen.org",
+      "server_port": 443,
+      "uuid": "674ef076-d4f7-4d7f-9aed-e579db2f1d6a",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/wes"
+      },
+      "_dedup_key": "US032020.ssgreen.org:443:674ef076-d4f7-4d7f-9aed-e579db2f1d6a:/wes",
+      "tls": {
+        "enabled": true,
+        "server_name": "US032020.ssgreen.org",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "102",
+        "104",
+        "13",
+        "26",
+        "27",
+        "29",
+        "300"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": null,
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-18",
+      "server": "US032021.ssgreen.org",
+      "server_port": 443,
+      "uuid": "ebed9b50-de0f-48de-9b46-9aee8ebb7768",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/wes"
+      },
+      "_dedup_key": "US032021.ssgreen.org:443:ebed9b50-de0f-48de-9b46-9aee8ebb7768:/wes",
+      "tls": {
+        "enabled": true,
+        "server_name": "US032021.ssgreen.org",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "104",
+        "26",
+        "27",
+        "29",
+        "300",
+        "9"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": null,
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-19",
+      "server": "US032022.ssgreen.org",
+      "server_port": 443,
+      "uuid": "4a80e9ff-ea58-4ac9-83c7-021190383d9a",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/wes"
+      },
+      "_dedup_key": "US032022.ssgreen.org:443:4a80e9ff-ea58-4ac9-83c7-021190383d9a:/wes",
+      "tls": {
+        "enabled": true,
+        "server_name": "US032022.ssgreen.org",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "102",
+        "104",
+        "13",
+        "26",
+        "27",
+        "29",
+        "300"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": null,
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-20",
+      "server": "US032023.ssgreen.org",
+      "server_port": 443,
+      "uuid": "1e493371-e041-454d-b0a1-4ae341eb9b1c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/wes"
+      },
+      "_dedup_key": "US032023.ssgreen.org:443:1e493371-e041-454d-b0a1-4ae341eb9b1c:/wes",
+      "tls": {
+        "enabled": true,
+        "server_name": "US032023.ssgreen.org",
+        "insecure": false
+      },
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "102",
+        "26",
+        "27",
+        "29"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": null,
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-21",
+      "server": "US032024.ssgreen.org",
+      "server_port": 443,
+      "uuid": "34c974b2-168d-403a-a794-18976debfb95",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/wes"
+      },
+      "_dedup_key": "US032024.ssgreen.org:443:34c974b2-168d-403a-a794-18976debfb95:/wes",
+      "tls": {
+        "enabled": true,
+        "server_name": "US032024.ssgreen.org",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "100",
+        "102",
+        "104",
+        "13",
+        "20",
+        "201",
+        "26",
+        "27",
+        "29",
+        "300"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": null,
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-22",
+      "server": "US122206.ssgreen.org",
+      "server_port": 443,
+      "uuid": "301b90ef-0f47-40e3-aabe-de411f67e6a8",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/wes"
+      },
+      "_dedup_key": "US122206.ssgreen.org:443:301b90ef-0f47-40e3-aabe-de411f67e6a8:/wes",
+      "tls": {
+        "enabled": true,
+        "server_name": "US122206.ssgreen.org",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "100",
+        "102",
+        "104",
+        "13",
+        "201",
+        "26",
+        "27",
+        "29",
+        "300"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": null,
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-23",
+      "server": "US122208.ssgreen.org",
+      "server_port": 443,
+      "uuid": "3abc6739-0b3a-40f4-a428-917d33619764",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/wes"
+      },
+      "_dedup_key": "US122208.ssgreen.org:443:3abc6739-0b3a-40f4-a428-917d33619764:/wes",
+      "tls": {
+        "enabled": true,
+        "server_name": "US122208.ssgreen.org",
+        "insecure": false
+      },
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "104",
+        "26",
+        "29",
+        "9"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": null,
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-27",
+      "server": "yg6.ygkkk.dpdns.org",
+      "server_port": 80,
+      "uuid": "3c75a551-81d6-46d0-876d-79519719bb22",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "3c75a551-81d6-46d0-876d-79519719bb22-vm",
+        "headers": {
+          "Host": "argo.235697.xyz"
+        }
+      },
+      "_dedup_key": "yg6.ygkkk.dpdns.org:80:3c75a551-81d6-46d0-876d-79519719bb22:/3c75a551-81d6-46d0-876d-79519719bb22-vm",
+      "_sub_ids": [
+        "1",
+        "100",
+        "104",
+        "105",
+        "107",
+        "108",
+        "109",
+        "13",
+        "14",
+        "20",
+        "201",
+        "21",
+        "22",
+        "26",
+        "29",
+        "3",
+        "300",
+        "8",
+        "9"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": null,
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "🇨🇳node-28",
+      "server": "39.108.113.127",
+      "server_port": 10086,
+      "uuid": "b0253c6c-0b96-4950-bde1-669f13bc1a01",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/"
+      },
+      "_dedup_key": "39.108.113.127:10086:b0253c6c-0b96-4950-bde1-669f13bc1a01:/",
+      "_sub_ids": [
+        "1",
+        "100",
+        "102",
+        "104",
+        "19",
+        "20",
+        "201",
+        "22",
+        "26",
+        "27",
+        "29",
+        "3",
+        "300",
+        "4"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": "CN",
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "🇨🇳node-29",
+      "server": "39.108.113.127",
+      "server_port": 10086,
+      "uuid": "74e07df3-f82a-4791-987f-247c3c395866",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/"
+      },
+      "_dedup_key": "39.108.113.127:10086:74e07df3-f82a-4791-987f-247c3c395866:/",
+      "_sub_ids": [
+        "104",
+        "22",
+        "26",
+        "27",
+        "29"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": "CN",
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "🇨🇳node-30",
+      "server": "39.108.113.127",
+      "server_port": 10086,
+      "uuid": "d50cc563-0c03-4136-899f-85cbc0b02699",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/"
+      },
+      "_dedup_key": "39.108.113.127:10086:d50cc563-0c03-4136-899f-85cbc0b02699:/",
+      "_sub_ids": [
+        "104",
+        "26",
+        "27",
+        "29"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": "CN",
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "🇯🇵node-34",
+      "server": "168.138.43.75",
+      "server_port": 80,
+      "uuid": "11c3627f-31e8-4695-dfbd-34076e2f1f5d",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/cctv13.m3u8",
+        "headers": {
+          "Host": "jp01.a0a.xyz"
+        }
+      },
+      "_dedup_key": "168.138.43.75:80:11c3627f-31e8-4695-dfbd-34076e2f1f5d:/cctv13.m3u8",
+      "_sub_ids": [
+        "1",
+        "10",
+        "100",
+        "104",
+        "105",
+        "108",
+        "109",
+        "13",
+        "18",
+        "20",
+        "201",
+        "21",
+        "22",
+        "26",
+        "29",
+        "300",
+        "311",
+        "316",
+        "318",
+        "319",
+        "8",
+        "9"
+      ],
+      "_last_ok_ts": 1794491599.814602,
+      "_country": "JP",
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "🇰🇿node-36",
+      "server": "38.107.234.57",
+      "server_port": 80,
+      "uuid": "567f4be5-12ab-42e1-b8d9-db6fd1fdd31c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/vmess/"
+      },
+      "_last_ok_ts": 1794491599.814602,
+      "_country": "KZ",
+      "_sub_ids": [
+        "1",
+        "10",
+        "100",
+        "104",
+        "105",
+        "108",
+        "109",
+        "13",
+        "14",
+        "18",
+        "20",
+        "201",
+        "21",
+        "22",
+        "26",
+        "29",
+        "3",
+        "300",
+        "312",
+        "319",
+        "322",
+        "8",
+        "9"
+      ],
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "🇰🇿node-37",
+      "server": "3h-kazakhstan1.09vpn.com",
+      "server_port": 80,
+      "uuid": "567f4be5-12ab-42e1-b8d9-db6fd1fdd31c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/vmess/",
+        "headers": {
+          "Host": "3h-kazakhstan1.09vpn.com"
+        }
+      },
+      "_last_ok_ts": 1794491599.814602,
+      "_country": "KZ",
+      "_sub_ids": [
+        "1",
+        "104",
+        "105",
+        "109",
+        "13",
+        "14",
+        "22",
+        "26",
+        "29",
+        "300",
+        "313",
+        "319",
+        "8",
+        "9"
+      ],
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-91",
+      "server": "103.21.244.142",
+      "server_port": 8443,
+      "uuid": "a6a37e04-5e81-44c9-be53-baa3ff46eb8b",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/"
+      },
+      "_dedup_key": "103.21.244.142:8443:a6a37e04-5e81-44c9-be53-baa3ff46eb8b:/",
+      "tls": {
+        "enabled": true,
+        "server_name": "103.21.244.142",
+        "insecure": false
+      },
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "26"
+      ],
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-105",
+      "server": "103.21.244.91",
+      "server_port": 8443,
+      "uuid": "a6a37e04-5e81-44c9-be53-baa3ff46eb8b",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/"
+      },
+      "_dedup_key": "103.21.244.91:8443:a6a37e04-5e81-44c9-be53-baa3ff46eb8b:/",
+      "tls": {
+        "enabled": true,
+        "server_name": "103.21.244.91",
+        "insecure": false
+      },
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "26"
+      ],
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-2732",
+      "server": "13.249.231.85",
+      "server_port": 443,
+      "uuid": "e952f473-1883-45cf-8e44-217ed44e955d",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/vmess",
+        "headers": {
+          "Host": "d318hdausjayqs.cloudfront.net"
+        }
+      },
+      "_dedup_key": "13.249.231.85:443:e952f473-1883-45cf-8e44-217ed44e955d:/vmess",
+      "tls": {
+        "enabled": true,
+        "server_name": "d318hdausjayqs.cloudfront.net",
+        "insecure": false
+      },
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "14"
+      ],
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-2733",
+      "server": "13.249.231.85",
+      "server_port": 443,
+      "uuid": "8cfefcd4-2bad-4e56-ab86-440e2376599a",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/rajaserver2",
+        "headers": {
+          "Host": "dyyl4x18ayspo.cloudfront.net"
+        }
+      },
+      "_dedup_key": "13.249.231.85:443:8cfefcd4-2bad-4e56-ab86-440e2376599a:/rajaserver2",
+      "tls": {
+        "enabled": true,
+        "server_name": "dyyl4x18ayspo.cloudfront.net",
+        "insecure": false
+      },
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "14"
+      ],
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3087",
+      "server": "153.52.255.73",
+      "server_port": 443,
+      "uuid": "a92753e3-b87c-4f9e-926b-20a9f96ed7a9",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/gw/4083472c-e157-47d0-b69e-7cda1c15d1be?ed=2560",
+        "headers": {
+          "Host": "am45enad-production.up.railway.app"
+        }
+      },
+      "_dedup_key": "153.52.255.73:443:a92753e3-b87c-4f9e-926b-20a9f96ed7a9:/gw/4083472c-e157-47d0-b69e-7cda1c15d1be?ed=2560",
+      "tls": {
+        "enabled": true,
+        "server_name": "am45enad-production.up.railway.app",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      },
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "102"
+      ],
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-5532",
+      "server": "am45enad-production.up.railway.app",
+      "server_port": 443,
+      "uuid": "a92753e3-b87c-4f9e-926b-20a9f96ed7a9",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/gw/4083472c-e157-47d0-b69e-7cda1c15d1be?ed=2560",
+        "headers": {
+          "Host": "am45enad-production.up.railway.app"
+        }
+      },
+      "_dedup_key": "am45enad-production.up.railway.app:443:a92753e3-b87c-4f9e-926b-20a9f96ed7a9:/gw/4083472c-e157-47d0-b69e-7cda1c15d1be?ed=2560",
+      "tls": {
+        "enabled": true,
+        "server_name": "am45enad-production.up.railway.app",
+        "insecure": false
+      },
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "1",
+        "100",
+        "104",
+        "13",
+        "201",
+        "26",
+        "29",
+        "300"
+      ],
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-5881",
+      "server": "moeyuwdn-production.up.railway.app",
+      "server_port": 443,
+      "uuid": "93ac9e20-9f2c-4e32-93f4-cae166b5e477",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/api/XcX1a6",
+        "headers": {
+          "Host": "moeyuwdn-production.up.railway.app"
+        }
+      },
+      "_dedup_key": "moeyuwdn-production.up.railway.app:443:93ac9e20-9f2c-4e32-93f4-cae166b5e477:/api/XcX1a6",
+      "tls": {
+        "enabled": true,
+        "server_name": "moeyuwdn-production.up.railway.app",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "100",
+        "104",
+        "201",
+        "26",
+        "29"
+      ],
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-6140",
+      "server": "suitesrwebo-production.up.railway.app",
+      "server_port": 443,
+      "uuid": "be2a6e74-781c-4c7b-98aa-95dc0715e82e",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/api/kTUYNq",
+        "headers": {
+          "Host": "suitesrwebo-production.up.railway.app"
+        }
+      },
+      "_dedup_key": "suitesrwebo-production.up.railway.app:443:be2a6e74-781c-4c7b-98aa-95dc0715e82e:/api/kTUYNq",
+      "tls": {
+        "enabled": true,
+        "server_name": "suitesrwebo-production.up.railway.app",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "26",
+        "29"
+      ],
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3084",
+      "server": "152.67.8.205",
+      "server_port": 80,
+      "uuid": "9db4c708-aef8-4359-821b-38e47990be0d",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "152.67.8.205"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3381",
+      "server": "162.19.192.89",
+      "server_port": 16641,
+      "uuid": "992b1bc6-6e1e-455d-940b-e99bd39f70a2",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "0606f25bbb646de3feadb8d23c1c6217.mobgslb.tbcache.com"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3382",
+      "server": "162.19.192.89",
+      "server_port": 16644,
+      "uuid": "992b1bc6-6e1e-455d-940b-e99bd39f70a2",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "0606f25bbb646de3feadb8d23c1c6217.mobgslb.tbcache.com"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3383",
+      "server": "162.19.192.89",
+      "server_port": 16622,
+      "uuid": "992b1bc6-6e1e-455d-940b-e99bd39f70a2",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "0606f25bbb646de3feadb8d23c1c6217.mobgslb.tbcache.com"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-5080",
+      "server": "57.129.132.223",
+      "server_port": 80,
+      "uuid": "a25cbf11-2908-4a1b-a3a8-9a571777dca3",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/vmess/",
+        "headers": {
+          "Host": "google.com"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-5081",
+      "server": "57.129.132.223",
+      "server_port": 80,
+      "uuid": "a25cbf11-2908-4a1b-a3a8-9a571777dca3",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/vmess/?TELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM",
+        "headers": {
+          "Host": "google.com"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-5597",
+      "server": "cf.090227.xyz",
+      "server_port": 443,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "vmess.lbw666.dpdns.org",
+        "insecure": false
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-5793",
+      "server": "jp4.998998.best",
+      "server_port": 443,
+      "uuid": "9c851606-9722-42fc-a1c1-175c3c82a7ae",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/vvvvvvvvv",
+        "headers": {
+          "Host": "nat12.9966338.xyz"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "nat12.9966338.xyz",
+        "insecure": false
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-226",
+      "server": "104.17.136.198",
+      "server_port": 443,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "vmess.lbw666.dpdns.org",
+        "insecure": false
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-228",
+      "server": "104.17.136.198",
+      "server_port": 443,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws?ed=2048",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "vmess.lbw666.dpdns.org",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-237",
+      "server": "104.17.147.222",
+      "server_port": 80,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws?ed=2048",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-238",
+      "server": "104.17.147.222",
+      "server_port": 80,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-655",
+      "server": "104.18.32.47",
+      "server_port": 8443,
+      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/lMnsZUN4/",
+        "headers": {
+          "Host": "v2ray1.dozapp.xyz"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "v2ray1.dozapp.xyz",
+        "insecure": false
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-2540",
+      "server": "104.27.0.1",
+      "server_port": 443,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "vmess.lbw666.dpdns.org",
+        "insecure": false
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3567",
+      "server": "172.64.229.21",
+      "server_port": 443,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws?ed=2048",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "vmess.lbw666.dpdns.org",
+        "insecure": false
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3569",
+      "server": "172.64.229.21",
+      "server_port": 443,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "vmess.lbw666.dpdns.org",
+        "insecure": false
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3777",
+      "server": "172.67.187.145",
+      "server_port": 80,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3778",
+      "server": "172.67.187.145",
+      "server_port": 80,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws?ed=2048",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-4919",
+      "server": "47.244.120.197",
+      "server_port": 23026,
+      "uuid": "b9de1bc9-baa7-41ac-86f7-ccd59695cb21",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/arki",
+        "headers": {
+          "Host": "47.244.120.197"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-4921",
+      "server": "47.244.120.197",
+      "server_port": 44867,
+      "uuid": "845e6b08-2919-4290-ade0-5dc7dcea59ca",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/arki?ed=2048"
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-5603",
+      "server": "cf.0sm.com",
+      "server_port": 443,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "vmess.lbw666.dpdns.org",
+        "insecure": false
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-5606",
+      "server": "cf.877771.xyz",
+      "server_port": 443,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "vmess.lbw666.dpdns.org",
+        "insecure": false
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3105",
+      "server": "154.201.73.153",
+      "server_port": 45654,
+      "uuid": "cd1106bc-1b71-4f11-8d29-d8870099adc6",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "cd1106bc-1b71-4f11-8d29-d8870099adc6-vm",
+        "headers": {
+          "Host": "www.bing.com"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3605",
+      "server": "172.66.203.67",
+      "server_port": 443,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "vmess.lbw666.dpdns.org",
+        "insecure": false
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3606",
+      "server": "172.66.203.67",
+      "server_port": 443,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws?ed=2048",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "vmess.lbw666.dpdns.org",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3189",
+      "server": "156.239.224.107",
+      "server_port": 57278,
+      "uuid": "1270bed5-f908-4ecc-f1c8-de246033b186",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/"
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-5479",
+      "server": "US032018.ssgreen.org",
+      "server_port": 443,
+      "uuid": "4d9a16d6-d162-4abc-b677-76b2634ea8bc",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/wes"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "US032018.ssgreen.org",
+        "insecure": false
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3689",
+      "server": "172.67.152.183",
+      "server_port": 443,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws?ed=2048",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "vmess.lbw666.dpdns.org",
+        "insecure": false
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-5096",
+      "server": "57.129.132.223",
+      "server_port": 80,
+      "uuid": "a25cbf11-2908-4a1b-a3a8-9a571777dca3",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/vmess/?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+        "headers": {
+          "Host": "google.com"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-1640",
+      "server": "104.21.7.133",
+      "server_port": 80,
+      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/ws",
+        "headers": {
+          "Host": "vmess.lbw666.dpdns.org"
+        }
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3660",
+      "server": "172.67.137.158",
+      "server_port": 443,
+      "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/guanwang.awsno.com/hls/cctv5phd.m3u8",
+        "headers": {
+          "Host": "nomino.11hi8itbaf.workers.dev"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "nomino.11hi8itbaf.workers.dev",
+        "insecure": false
+      },
+      "_pending_since": 1794520368.122367
+    },
+    {
+      "type": "vmess",
+      "tag": "node-5938",
+      "server": "nomino.11hi8itbaf.workers.dev",
+      "server_port": 443,
+      "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/guanwang.awsno.com/hls/cctv5phd.m3u8"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "nomino.11hi8itbaf.workers.dev",
+        "insecure": false
+      },
+      "_pending_since": 1794520368.122367
     },
     {
       "type": "vmess",
@@ -165,48 +1634,6 @@
     },
     {
       "type": "vmess",
-      "tag": "node-22",
-      "server": "104.17.77.77",
-      "server_port": 8443,
-      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/lMnsZUN4/",
-        "headers": {
-          "Host": "v2ray1.dozapp.xyz"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "v2ray1.dozapp.xyz",
-        "insecure": false
-      },
-      "_last_ok_ts": 1794448633.971337,
-      "_country": null,
-      "_sub_ids": [
-        "1",
-        "104",
-        "105",
-        "107",
-        "13",
-        "201",
-        "26",
-        "27",
-        "29",
-        "300",
-        "303",
-        "311",
-        "316",
-        "318",
-        "319",
-        "320",
-        "9"
-      ],
-      "_pending_since": 1794491599.814602
-    },
-    {
-      "type": "vmess",
       "tag": "node-25",
       "server": "104.18.32.47",
       "server_port": 8443,
@@ -239,75 +1666,6 @@
     },
     {
       "type": "vmess",
-      "tag": "node-30",
-      "server": "104.21.57.84",
-      "server_port": 8443,
-      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/lMnsZUN4/",
-        "headers": {
-          "Host": "v2ray1.dozapp.xyz"
-        }
-      },
-      "_dedup_key": "104.21.57.84:8443:60441548-b68e-43b2-8191-e3b884be4b3c:/lMnsZUN4/",
-      "tls": {
-        "enabled": true,
-        "server_name": "v2ray1.dozapp.xyz",
-        "insecure": false
-      },
-      "_sub_ids": [
-        "1",
-        "104",
-        "105",
-        "13",
-        "14",
-        "20",
-        "201",
-        "26",
-        "27",
-        "29",
-        "300",
-        "311",
-        "319",
-        "9"
-      ],
-      "_last_ok_ts": 1794448633.971337,
-      "_country": null,
-      "_pending_since": 1794491599.814602
-    },
-    {
-      "type": "vmess",
-      "tag": "node-31",
-      "server": "104.21.7.133",
-      "server_port": 80,
-      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/ws?ed=2048",
-        "headers": {
-          "Host": "vmess.lbw666.dpdns.org"
-        }
-      },
-      "_last_ok_ts": 1794448633.971337,
-      "_country": null,
-      "_sub_ids": [
-        "1",
-        "102",
-        "104",
-        "105",
-        "13",
-        "22",
-        "26",
-        "29",
-        "300"
-      ],
-      "_pending_since": 1794491599.814602
-    },
-    {
-      "type": "vmess",
       "tag": "node-34",
       "server": "104.21.7.133",
       "server_port": 80,
@@ -332,39 +1690,6 @@
       ],
       "_last_ok_ts": 1794448633.971337,
       "_country": null,
-      "_pending_since": 1794491599.814602
-    },
-    {
-      "type": "vmess",
-      "tag": "node-35",
-      "server": "104.21.7.133",
-      "server_port": 443,
-      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/ws?ed=2048",
-        "headers": {
-          "Host": "vmess.lbw666.dpdns.org"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "vmess.lbw666.dpdns.org",
-        "insecure": false
-      },
-      "_last_ok_ts": 1794448633.971337,
-      "_country": null,
-      "_sub_ids": [
-        "1",
-        "104",
-        "105",
-        "13",
-        "26",
-        "27",
-        "29",
-        "300"
-      ],
       "_pending_since": 1794491599.814602
     },
     {
@@ -499,40 +1824,6 @@
         "27",
         "29",
         "300"
-      ],
-      "_last_ok_ts": 1794448633.971337,
-      "_country": null,
-      "_pending_since": 1794491599.814602
-    },
-    {
-      "type": "vmess",
-      "tag": "node-52",
-      "server": "172.67.161.144",
-      "server_port": 8443,
-      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/lMnsZUN4/",
-        "headers": {
-          "Host": "v2ray1.dozapp.xyz"
-        }
-      },
-      "_dedup_key": "172.67.161.144:8443:60441548-b68e-43b2-8191-e3b884be4b3c:/lMnsZUN4/",
-      "tls": {
-        "enabled": true,
-        "server_name": "v2ray1.dozapp.xyz",
-        "insecure": false
-      },
-      "_sub_ids": [
-        "1",
-        "104",
-        "105",
-        "26",
-        "27",
-        "29",
-        "300",
-        "9"
       ],
       "_last_ok_ts": 1794448633.971337,
       "_country": null,
@@ -742,111 +2033,6 @@
     },
     {
       "type": "vmess",
-      "tag": "🇭🇰node-85",
-      "server": "47.244.120.197",
-      "server_port": 36703,
-      "uuid": "45b83519-9c4f-4052-a11b-02e017b636d4",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/arki"
-      },
-      "_last_ok_ts": 1794448633.971337,
-      "_country": "HK",
-      "_sub_ids": [
-        "1",
-        "100",
-        "104",
-        "105",
-        "14",
-        "201",
-        "21",
-        "22",
-        "26",
-        "29",
-        "300",
-        "313",
-        "4",
-        "8",
-        "9"
-      ],
-      "_pending_since": 1794491599.814602
-    },
-    {
-      "type": "vmess",
-      "tag": "🇭🇰node-86",
-      "server": "47.244.120.197",
-      "server_port": 36703,
-      "uuid": "45b83519-9c4f-4052-a11b-02e017b636d4",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/arki?ed=2048"
-      },
-      "_last_ok_ts": 1794448633.971337,
-      "_country": "HK",
-      "_sub_ids": [
-        "1",
-        "100",
-        "104",
-        "109",
-        "14",
-        "18",
-        "201",
-        "21",
-        "22",
-        "26",
-        "29",
-        "300",
-        "311",
-        "318",
-        "319",
-        "320"
-      ],
-      "_pending_since": 1794491599.814602
-    },
-    {
-      "type": "vmess",
-      "tag": "🇭🇰node-93",
-      "server": "47.244.120.197",
-      "server_port": 44867,
-      "uuid": "845e6b08-2919-4290-ade0-5dc7dcea59ca",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/arki",
-        "headers": {
-          "Host": "47.244.120.197"
-        }
-      },
-      "_dedup_key": "47.244.120.197:44867:845e6b08-2919-4290-ade0-5dc7dcea59ca:/arki",
-      "_sub_ids": [
-        "1",
-        "10",
-        "100",
-        "102",
-        "104",
-        "105",
-        "108",
-        "109",
-        "20",
-        "201",
-        "21",
-        "22",
-        "26",
-        "29",
-        "3",
-        "300",
-        "4",
-        "8",
-        "9"
-      ],
-      "_last_ok_ts": 1794448633.971337,
-      "_country": "HK",
-      "_pending_since": 1794491599.814602
-    },
-    {
-      "type": "vmess",
       "tag": "🇭🇰node-94",
       "server": "47.244.120.197",
       "server_port": 44867,
@@ -918,112 +2104,6 @@
         "8",
         "9"
       ],
-      "_pending_since": 1794491599.814602
-    },
-    {
-      "type": "vmess",
-      "tag": "🇺🇸node-111",
-      "server": "141.193.213.21",
-      "server_port": 8443,
-      "uuid": "bd67fcd2-ec34-40a6-aac6-67731f2d7011",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "matrix.phonicsindia.mobi"
-        }
-      },
-      "_dedup_key": "141.193.213.21:8443:bd67fcd2-ec34-40a6-aac6-67731f2d7011:/",
-      "tls": {
-        "enabled": true,
-        "server_name": "matrix.phonicsindia.mobi",
-        "insecure": false
-      },
-      "_sub_ids": [
-        "1",
-        "104",
-        "13",
-        "26",
-        "29",
-        "300",
-        "9"
-      ],
-      "_last_ok_ts": 1794448633.971337,
-      "_country": "US",
-      "_pending_since": 1794491599.814602
-    },
-    {
-      "type": "vmess",
-      "tag": "🇺🇸node-113",
-      "server": "172.66.0.1",
-      "server_port": 443,
-      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/ws",
-        "headers": {
-          "Host": "vmess.lbw666.dpdns.org"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "vmess.lbw666.dpdns.org",
-        "insecure": false
-      },
-      "_last_ok_ts": 1794448633.971337,
-      "_country": "US",
-      "_sub_ids": [
-        "1",
-        "100",
-        "102",
-        "104",
-        "105",
-        "107",
-        "13",
-        "18",
-        "20",
-        "201",
-        "21",
-        "26",
-        "27",
-        "29",
-        "300"
-      ],
-      "_pending_since": 1794491599.814602
-    },
-    {
-      "type": "vmess",
-      "tag": "🇺🇸node-116",
-      "server": "news.zoom.us",
-      "server_port": 8443,
-      "uuid": "bd67fcd2-ec34-40a6-aac6-67731f2d7011",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "matrix.phonicsindia.mobi"
-        }
-      },
-      "_dedup_key": "news.zoom.us:8443:bd67fcd2-ec34-40a6-aac6-67731f2d7011:/",
-      "tls": {
-        "enabled": true,
-        "server_name": "matrix.phonicsindia.mobi",
-        "insecure": false
-      },
-      "_sub_ids": [
-        "1",
-        "104",
-        "13",
-        "26",
-        "29",
-        "300",
-        "9"
-      ],
-      "_last_ok_ts": 1794448633.971337,
-      "_country": "US",
       "_pending_since": 1794491599.814602
     },
     {
@@ -1806,27 +2886,6 @@
     },
     {
       "type": "vmess",
-      "tag": "node-1679",
-      "server": "104.21.91.53",
-      "server_port": 8443,
-      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/lMnsZUN4/",
-        "headers": {
-          "Host": "v2ray1.dozapp.xyz"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "v2ray1.dozapp.xyz",
-        "insecure": false
-      },
-      "_pending_since": 1794491599.814602
-    },
-    {
-      "type": "vmess",
       "tag": "node-3381",
       "server": "162.19.192.89",
       "server_port": 16641,
@@ -1839,7 +2898,10 @@
           "Host": "0606f25bbb646de3feadb8d23c1c6217.mobgslb.tbcache.com"
         }
       },
-      "_pending_since": 1794491599.814602
+      "_pending_since": 1794491599.814602,
+      "_sub_ids": [
+        "102"
+      ]
     },
     {
       "type": "vmess",
@@ -1855,7 +2917,10 @@
           "Host": "0606f25bbb646de3feadb8d23c1c6217.mobgslb.tbcache.com"
         }
       },
-      "_pending_since": 1794491599.814602
+      "_pending_since": 1794491599.814602,
+      "_sub_ids": [
+        "102"
+      ]
     },
     {
       "type": "vmess",
@@ -1871,7 +2936,10 @@
           "Host": "0606f25bbb646de3feadb8d23c1c6217.mobgslb.tbcache.com"
         }
       },
-      "_pending_since": 1794491599.814602
+      "_pending_since": 1794491599.814602,
+      "_sub_ids": [
+        "102"
+      ]
     },
     {
       "type": "vmess",
@@ -1892,7 +2960,16 @@
         "server_name": "vmess.lbw666.dpdns.org",
         "insecure": false
       },
-      "_pending_since": 1794491599.814602
+      "_pending_since": 1794491599.814602,
+      "_sub_ids": [
+        "1",
+        "104",
+        "14",
+        "26",
+        "27",
+        "29",
+        "300"
+      ]
     },
     {
       "type": "vmess",
@@ -1913,7 +2990,12 @@
         "server_name": "nat12.9966338.xyz",
         "insecure": false
       },
-      "_pending_since": 1794491599.814602
+      "_pending_since": 1794491599.814602,
+      "_sub_ids": [
+        "104",
+        "26",
+        "29"
+      ]
     },
     {
       "type": "vmess",
@@ -1934,7 +3016,20 @@
         "server_name": "vmess.lbw666.dpdns.org",
         "insecure": false
       },
-      "_pending_since": 1794491599.814602
+      "_pending_since": 1794491599.814602,
+      "_sub_ids": [
+        "1",
+        "100",
+        "104",
+        "105",
+        "13",
+        "20",
+        "201",
+        "26",
+        "27",
+        "29",
+        "300"
+      ]
     },
     {
       "type": "vmess",
@@ -1950,7 +3045,18 @@
           "Host": "vmess.lbw666.dpdns.org"
         }
       },
-      "_pending_since": 1794491599.814602
+      "_pending_since": 1794491599.814602,
+      "_sub_ids": [
+        "1",
+        "102",
+        "104",
+        "13",
+        "22",
+        "26",
+        "29",
+        "300",
+        "9"
+      ]
     },
     {
       "type": "vmess",
@@ -1966,7 +3072,18 @@
           "Host": "vmess.lbw666.dpdns.org"
         }
       },
-      "_pending_since": 1794491599.814602
+      "_pending_since": 1794491599.814602,
+      "_sub_ids": [
+        "1",
+        "102",
+        "104",
+        "105",
+        "13",
+        "22",
+        "26",
+        "29",
+        "300"
+      ]
     },
     {
       "type": "vmess",
@@ -1987,7 +3104,16 @@
         "server_name": "vmess.lbw666.dpdns.org",
         "insecure": false
       },
-      "_pending_since": 1794491599.814602
+      "_pending_since": 1794491599.814602,
+      "_sub_ids": [
+        "1",
+        "104",
+        "105",
+        "26",
+        "27",
+        "29",
+        "300"
+      ]
     },
     {
       "type": "vmess",
@@ -2008,7 +3134,16 @@
         "server_name": "vmess.lbw666.dpdns.org",
         "insecure": false
       },
-      "_pending_since": 1794491599.814602
+      "_pending_since": 1794491599.814602,
+      "_sub_ids": [
+        "1",
+        "104",
+        "14",
+        "26",
+        "27",
+        "29",
+        "300"
+      ]
     },
     {
       "type": "vmess",
@@ -2019,12 +3154,19 @@
       "security": "auto",
       "transport": {
         "type": "ws",
-        "path": "cd1106bc-1b71-4f11-8d29-d8870099adc6-vm",
+        "path": "/cd1106bc-1b71-4f11-8d29-d8870099adc6-vm",
         "headers": {
           "Host": "www.bing.com"
         }
       },
-      "_pending_since": 1794491599.814602
+      "_pending_since": 1794448633.971337,
+      "_sub_ids": [
+        "105",
+        "13",
+        "26",
+        "29",
+        "3"
+      ]
     },
     {
       "type": "vmess",
@@ -2045,7 +3187,18 @@
         "server_name": "vmess.lbw666.dpdns.org",
         "insecure": false
       },
-      "_pending_since": 1794491599.814602
+      "_pending_since": 1794491599.814602,
+      "_sub_ids": [
+        "1",
+        "102",
+        "104",
+        "14",
+        "26",
+        "27",
+        "29",
+        "3",
+        "300"
+      ]
     },
     {
       "type": "vmess",
@@ -2070,7 +3223,17 @@
           "fingerprint": "chrome"
         }
       },
-      "_pending_since": 1794491599.814602
+      "_pending_since": 1794491599.814602,
+      "_sub_ids": [
+        "1",
+        "102",
+        "104",
+        "105",
+        "26",
+        "27",
+        "29",
+        "300"
+      ]
     },
     {
       "type": "vmess",
@@ -2083,57 +3246,7 @@
         "type": "ws",
         "path": "/"
       },
-      "_pending_since": 1794491599.814602
-    },
-    {
-      "type": "vmess",
-      "tag": "node-6",
-      "server": "104.27.0.1",
-      "server_port": 443,
-      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/ws",
-        "headers": {
-          "Host": "vmess.lbw666.dpdns.org"
-        }
-      },
-      "_dedup_key": "104.27.0.1:443:0cf6d970-3f1d-4aae-a989-92a8f76ae3db:/ws",
-      "tls": {
-        "enabled": true,
-        "server_name": "vmess.lbw666.dpdns.org",
-        "insecure": false
-      },
-      "_sub_ids": [
-        "1",
-        "100",
-        "104",
-        "105",
-        "13",
-        "20",
-        "201",
-        "26",
-        "27",
-        "29",
-        "300"
-      ],
-      "_last_ok_ts": 1794419853.212688,
-      "_country": null,
-      "_pending_since": 1794448633.971337
-    },
-    {
-      "type": "vmess",
-      "tag": "🇸🇨node-37",
-      "server": "156.239.224.107",
-      "server_port": 57278,
-      "uuid": "1270bed5-f908-4ecc-f1c8-de246033b186",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/"
-      },
-      "_dedup_key": "156.239.224.107:57278:1270bed5-f908-4ecc-f1c8-de246033b186:/",
+      "_pending_since": 1794491599.814602,
       "_sub_ids": [
         "104",
         "13",
@@ -2143,10 +3256,7 @@
         "29",
         "4",
         "9"
-      ],
-      "_last_ok_ts": 1794419853.212688,
-      "_country": "SC",
-      "_pending_since": 1794448633.971337
+      ]
     },
     {
       "type": "vmess",
@@ -2429,354 +3539,6 @@
         "29"
       ],
       "_pending_since": 1794448633.971337
-    },
-    {
-      "type": "vmess",
-      "tag": "node-1679",
-      "server": "104.21.91.53",
-      "server_port": 8443,
-      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/lMnsZUN4/",
-        "headers": {
-          "Host": "v2ray1.dozapp.xyz"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "v2ray1.dozapp.xyz",
-        "insecure": false
-      },
-      "_pending_since": 1794448633.971337,
-      "_sub_ids": [
-        "1",
-        "104",
-        "13",
-        "26",
-        "27",
-        "29",
-        "300",
-        "9"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "node-3381",
-      "server": "162.19.192.89",
-      "server_port": 16641,
-      "uuid": "992b1bc6-6e1e-455d-940b-e99bd39f70a2",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "0606f25bbb646de3feadb8d23c1c6217.mobgslb.tbcache.com"
-        }
-      },
-      "_pending_since": 1794448633.971337,
-      "_sub_ids": [
-        "102"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "node-3382",
-      "server": "162.19.192.89",
-      "server_port": 16644,
-      "uuid": "992b1bc6-6e1e-455d-940b-e99bd39f70a2",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "0606f25bbb646de3feadb8d23c1c6217.mobgslb.tbcache.com"
-        }
-      },
-      "_pending_since": 1794448633.971337,
-      "_sub_ids": [
-        "102"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "node-3383",
-      "server": "162.19.192.89",
-      "server_port": 16622,
-      "uuid": "992b1bc6-6e1e-455d-940b-e99bd39f70a2",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "0606f25bbb646de3feadb8d23c1c6217.mobgslb.tbcache.com"
-        }
-      },
-      "_pending_since": 1794448633.971337,
-      "_sub_ids": [
-        "102"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "node-5597",
-      "server": "cf.090227.xyz",
-      "server_port": 443,
-      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/ws",
-        "headers": {
-          "Host": "vmess.lbw666.dpdns.org"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "vmess.lbw666.dpdns.org",
-        "insecure": false
-      },
-      "_pending_since": 1794448633.971337,
-      "_sub_ids": [
-        "1",
-        "104",
-        "14",
-        "26",
-        "27",
-        "29",
-        "300"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "node-5793",
-      "server": "jp4.998998.best",
-      "server_port": 443,
-      "uuid": "9c851606-9722-42fc-a1c1-175c3c82a7ae",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/vvvvvvvvv",
-        "headers": {
-          "Host": "nat12.9966338.xyz"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "nat12.9966338.xyz",
-        "insecure": false
-      },
-      "_pending_since": 1794448633.971337,
-      "_sub_ids": [
-        "104",
-        "26",
-        "29"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "node-3777",
-      "server": "172.67.187.145",
-      "server_port": 80,
-      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/ws",
-        "headers": {
-          "Host": "vmess.lbw666.dpdns.org"
-        }
-      },
-      "_pending_since": 1794448633.971337,
-      "_sub_ids": [
-        "1",
-        "102",
-        "104",
-        "13",
-        "22",
-        "26",
-        "29",
-        "300",
-        "9"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "node-3778",
-      "server": "172.67.187.145",
-      "server_port": 80,
-      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/ws?ed=2048",
-        "headers": {
-          "Host": "vmess.lbw666.dpdns.org"
-        }
-      },
-      "_pending_since": 1794448633.971337,
-      "_sub_ids": [
-        "1",
-        "102",
-        "104",
-        "105",
-        "13",
-        "22",
-        "26",
-        "29",
-        "300"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "node-5603",
-      "server": "cf.0sm.com",
-      "server_port": 443,
-      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/ws",
-        "headers": {
-          "Host": "vmess.lbw666.dpdns.org"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "vmess.lbw666.dpdns.org",
-        "insecure": false
-      },
-      "_pending_since": 1794448633.971337,
-      "_sub_ids": [
-        "1",
-        "104",
-        "105",
-        "26",
-        "27",
-        "29",
-        "300"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "node-5606",
-      "server": "cf.877771.xyz",
-      "server_port": 443,
-      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/ws",
-        "headers": {
-          "Host": "vmess.lbw666.dpdns.org"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "vmess.lbw666.dpdns.org",
-        "insecure": false
-      },
-      "_pending_since": 1794448633.971337,
-      "_sub_ids": [
-        "1",
-        "104",
-        "14",
-        "26",
-        "27",
-        "29",
-        "300"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "node-3105",
-      "server": "154.201.73.153",
-      "server_port": 45654,
-      "uuid": "cd1106bc-1b71-4f11-8d29-d8870099adc6",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/cd1106bc-1b71-4f11-8d29-d8870099adc6-vm",
-        "headers": {
-          "Host": "www.bing.com"
-        }
-      },
-      "_pending_since": 1794448633.971337,
-      "_sub_ids": [
-        "105",
-        "13",
-        "26",
-        "29",
-        "3"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "node-3605",
-      "server": "172.66.203.67",
-      "server_port": 443,
-      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/ws",
-        "headers": {
-          "Host": "vmess.lbw666.dpdns.org"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "vmess.lbw666.dpdns.org",
-        "insecure": false
-      },
-      "_pending_since": 1794448633.971337,
-      "_sub_ids": [
-        "1",
-        "102",
-        "104",
-        "14",
-        "26",
-        "27",
-        "29",
-        "3",
-        "300"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "node-3606",
-      "server": "172.66.203.67",
-      "server_port": 443,
-      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/ws?ed=2048",
-        "headers": {
-          "Host": "vmess.lbw666.dpdns.org"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "vmess.lbw666.dpdns.org",
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_pending_since": 1794448633.971337,
-      "_sub_ids": [
-        "1",
-        "102",
-        "104",
-        "105",
-        "26",
-        "27",
-        "29",
-        "300"
-      ]
     },
     {
       "type": "vmess",
@@ -39418,36 +40180,6 @@
       "_sub_ids": [
         "26",
         "29"
-      ],
-      "_pending_since": 1794317711.0899
-    },
-    {
-      "type": "vmess",
-      "tag": "node-1638",
-      "server": "104.21.7.133",
-      "server_port": 443,
-      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/ws",
-        "headers": {
-          "Host": "vmess.lbw666.dpdns.org"
-        }
-      },
-      "_dedup_key": "104.21.7.133:443:0cf6d970-3f1d-4aae-a989-92a8f76ae3db:/ws",
-      "tls": {
-        "enabled": true,
-        "server_name": "vmess.lbw666.dpdns.org",
-        "insecure": false
-      },
-      "_sub_ids": [
-        "104",
-        "21",
-        "26",
-        "27",
-        "29",
-        "9"
       ],
       "_pending_since": 1794317711.0899
     },

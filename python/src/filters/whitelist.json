@@ -130021,6 +130021,52 @@
             "insecure": false
           }
         }
+      },
+      {
+        "key": "13.249.231.85:443:a84c132a-3151-40fe-947b-4dd9a7d2122c:/vmess",
+        "node": {
+          "type": "vmess",
+          "tag": "node-2731",
+          "server": "13.249.231.85",
+          "server_port": 443,
+          "uuid": "a84c132a-3151-40fe-947b-4dd9a7d2122c",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/vmess",
+            "headers": {
+              "Host": "d7pu5mzr9c4b0.cloudfront.net"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "d7pu5mzr9c4b0.cloudfront.net",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "104.21.7.133:443:0cf6d970-3f1d-4aae-a989-92a8f76ae3db:/ws",
+        "node": {
+          "type": "vmess",
+          "tag": "node-1638",
+          "server": "104.21.7.133",
+          "server_port": 443,
+          "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/ws",
+            "headers": {
+              "Host": "vmess.lbw666.dpdns.org"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "vmess.lbw666.dpdns.org",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -132988,5 +133034,5 @@
       }
     ]
   },
-  "updated": "2026-11-12T21:58:35Z"
+  "updated": "2026-11-12T22:06:11Z"
 }
