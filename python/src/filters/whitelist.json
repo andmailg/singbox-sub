@@ -96956,6 +96956,87 @@
             "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
           }
         }
+      },
+      {
+        "key": "104.26.6.171:443:reinz:/?ed=2560",
+        "node": {
+          "type": "trojan",
+          "tag": "node-206",
+          "server": "104.26.6.171",
+          "server_port": 443,
+          "password": "reinz",
+          "tls": {
+            "enabled": true,
+            "server_name": "tsg3.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/?ed=2560",
+            "headers": {
+              "Host": "tsg3.pages.dev"
+            }
+          }
+        }
+      },
+      {
+        "key": "www.wto.org:8443:ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f:%2F",
+        "node": {
+          "type": "trojan",
+          "tag": "node-868",
+          "server": "www.wto.org",
+          "server_port": 8443,
+          "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
+          "tls": {
+            "enabled": true,
+            "server_name": "jiangjc.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "%2F"
+          }
+        }
+      },
+      {
+        "key": "104.18.35.86:2096:123456:/ ",
+        "node": {
+          "type": "trojan",
+          "tag": "node-137",
+          "server": "104.18.35.86",
+          "server_port": 2096,
+          "password": "123456",
+          "tls": {
+            "enabled": true,
+            "server_name": "321dfbc6.uir-9i6.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/ ",
+            "headers": {
+              "Host": "321dfbc6.uir-9i6.pages.dev"
+            }
+          }
+        }
+      },
+      {
+        "key": "uk8.998998.best:443:3ce09306-9819-4988-b88e-25be291305e7:/angles",
+        "node": {
+          "type": "trojan",
+          "tag": "node-969",
+          "server": "uk8.998998.best",
+          "server_port": 443,
+          "password": "3ce09306-9819-4988-b88e-25be291305e7",
+          "tls": {
+            "enabled": true,
+            "server_name": "server41.9966338.xyz"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/angles",
+            "headers": {
+              "Host": "server41.9966338.xyz"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -127609,5 +127690,5 @@
       }
     ]
   },
-  "updated": "2026-11-12T07:35:06Z"
+  "updated": "2026-11-12T07:37:24Z"
 }
