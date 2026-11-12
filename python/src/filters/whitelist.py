@@ -18,7 +18,7 @@ def load_whitelist() -> dict[str, list[dict]]:
       - node: полная конфигурация ноды для восстановления
     """
     if not os.path.exists(_WHITELIST_FILE):
-        return {"vless_xhttp": [], "vless_tcp": [], "hy2": [], "vless_http": [], "vless_ws": [], "vmess_tcp": [], "vmess_ws": [], "vmess_httpupgrade": [], "trojan_ws": [], "trojan_grpc": []}
+        return {"vless_xhttp": [], "vless_tcp": [], "hy2": [], "vless_http": [], "vless_ws": [], "vmess_tcp": [], "vmess_ws": [], "vmess_httpupgrade": [], "trojan_ws": [], "trojan_grpc": [], "trojan_tcp": [], "trojan_httpupgrade": [], "trojan_xhttp": []}
     try:
         with open(_WHITELIST_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -26,11 +26,11 @@ def load_whitelist() -> dict[str, list[dict]]:
         for proto, entries in data.get("whitelist", {}).items():
             if isinstance(entries, list):
                 result[proto] = entries
-        for proto in ("vless_xhttp", "vless_tcp", "hy2", "vless_http", "vless_ws", "vmess_tcp", "vmess_ws", "vmess_httpupgrade", "trojan_ws", "trojan_grpc"):
+        for proto in ("vless_xhttp", "vless_tcp", "hy2", "vless_http", "vless_ws", "vmess_tcp", "vmess_ws", "vmess_httpupgrade", "trojan_ws", "trojan_grpc", "trojan_tcp", "trojan_httpupgrade", "trojan_xhttp"):
             result.setdefault(proto, [])
         return result
     except Exception:
-        return {"vless_xhttp": [], "vless_tcp": [], "hy2": [], "vless_http": [], "vless_ws": [], "vmess_tcp": [], "vmess_ws": [], "vmess_httpupgrade": [], "trojan_ws": [], "trojan_grpc": []}
+        return {"vless_xhttp": [], "vless_tcp": [], "hy2": [], "vless_http": [], "vless_ws": [], "vmess_tcp": [], "vmess_ws": [], "vmess_httpupgrade": [], "trojan_ws": [], "trojan_grpc": [], "trojan_tcp": [], "trojan_httpupgrade": [], "trojan_xhttp": []}
 
 
 def save_whitelist(whitelist: dict[str, list[dict]]) -> None:
@@ -111,5 +111,10 @@ def _cache_key(node: dict, protocol: str) -> str:
     elif protocol == "trojan_grpc":
         service_name = (node.get("transport") or {}).get("service_name", "")
         return f"{node.get('server')}:{node.get('server_port')}:{node.get('password')}:{service_name}"
+    elif protocol == "trojan_tcp":
+        return f"{node.get('server')}:{node.get('server_port')}:{node.get('password')}"
+    elif protocol in ("trojan_httpupgrade", "trojan_xhttp"):
+        path = (node.get("transport") or {}).get("path", "/")
+        return f"{node.get('server')}:{node.get('server_port')}:{node.get('password')}:{path}"
     else:
         return f"{node.get('server')}:{node.get('server_port')}"

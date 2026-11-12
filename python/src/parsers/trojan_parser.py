@@ -7,14 +7,26 @@ from src.common import (
     is_valid_domain
 )
 
-# Допустимые типы транспорта для Trojan
-ALLOWED_TRANSPORTS = frozenset({"tcp", "ws", "http", "grpc", "httpupgrade", "h2"})
+# Транспорты Trojan, которые умеет актуальный Xray и которые есть в share-ссылках
+# (type=raw — новое имя tcp). HTTP/2 (http, h2) из Xray удалён, mKCP/hysteria в ссылках trojan:// не встречаются.
+ALLOWED_TRANSPORTS = frozenset({"tcp", "ws", "grpc", "httpupgrade", "xhttp"})
 # Транспорты, использующие path
-TRANSPORTS_WITH_PATH = frozenset({"ws", "http", "httpupgrade"})
+TRANSPORTS_WITH_PATH = frozenset({"ws", "httpupgrade", "xhttp"})
 # Транспорты, использующие Host header
 TRANSPORTS_WITH_HOST_HEADER = frozenset({"ws", "httpupgrade"})
 # Транспорты, требующие TLS-конфигурации (кроме TCP)
-TLS_TRANSPORTS = frozenset({"ws", "http", "grpc", "httpupgrade", "h2"})
+TLS_TRANSPORTS = frozenset({"ws", "grpc", "httpupgrade", "xhttp"})
+# Режимы xhttp, которые принимает Xray
+XHTTP_MODES = frozenset({"auto", "packet-up", "stream-up", "stream-one"})
+
+
+def link_params(link: str) -> dict[str, str]:
+    """Параметры query ссылки (первое значение каждого), для проверок до основного парсинга."""
+    try:
+        query = urllib.parse.urlparse(link.strip()).query
+    except ValueError:
+        return {}
+    return {k: v[0] for k, v in urllib.parse.parse_qs(query).items() if v}
 
 
 def has_workers_dev(outbound: dict) -> bool:
@@ -115,6 +127,8 @@ def parse_proxy_link(link: str) -> dict | None:
         params_get("type", [""])[0].lower()
         or params_get("net", [""])[0].lower()
     )
+    if net_type == "raw":  # новое имя tcp в Xray
+        net_type = "tcp"
 
     # Фильтр запрещённых типов транспорта (пустая строка = TCP по умолчанию)
     if net_type and net_type not in ALLOWED_TRANSPORTS:
@@ -129,10 +143,15 @@ def parse_proxy_link(link: str) -> dict | None:
                 transport_config["path"] = path
 
         if host:
-            if net_type == "http":
+            if net_type == "xhttp":
                 transport_config["host"] = [host]
             elif net_type in TRANSPORTS_WITH_HOST_HEADER:
                 transport_config["headers"] = {"Host": host}
+
+        if net_type == "xhttp":
+            mode = params_get("mode", [""])[0].strip().lower()
+            if mode in XHTTP_MODES:
+                transport_config["mode"] = mode
 
         service_name = (
             params_get("serviceName", [""])[0]
@@ -183,7 +202,7 @@ def clean_outbound(outbound: dict) -> dict | None:
                 if ws_host and not is_valid_host(str(ws_host).strip()):
                     return None
 
-            elif net_type == "http":
+            elif net_type == "xhttp":
                 hosts = transport.get("host")
                 if hosts:
                     first_host = hosts[0] if isinstance(hosts, list) else hosts

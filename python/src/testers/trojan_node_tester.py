@@ -1,7 +1,8 @@
 """Trojan connectivity test functions for pipeline integration (Xray based).
 
-Переиспользует streamSettings из vless_node_tester (ws / tls уже поддерживаются),
-меняется только outbound: protocol=trojan вместо vless.
+Переиспользует streamSettings из vless_node_tester (tcp / ws / grpc / httpupgrade / tls),
+меняется только outbound: protocol=trojan вместо vless. xhttp в vless_node_tester нет —
+его xhttpSettings добавляются здесь.
 """
 
 import json
@@ -10,6 +11,27 @@ import tempfile
 
 from src.testers._proc import Child, probe_socks, release_port, reserve_port, run_connectivity
 from src.testers.vless_node_tester import _build_stream_settings
+
+
+def _xhttp_settings(transport_cfg: dict) -> dict:
+    """xhttpSettings для Xray из transport ноды (host в Xray — строка, не массив)."""
+    host = transport_cfg.get("host") or ""
+    if isinstance(host, list):
+        host = ",".join(host)
+    settings = {
+        "path": transport_cfg.get("path") or "/",
+        "mode": transport_cfg.get("mode") or "auto",
+    }
+    if host:
+        settings["host"] = host
+    return settings
+
+
+def _build_stream(node: dict, network: str, transport_cfg: dict) -> dict:
+    stream = _build_stream_settings(node, network)
+    if network == "xhttp":
+        stream["xhttpSettings"] = _xhttp_settings(transport_cfg)
+    return stream
 
 
 def _build_xray_config(node: dict, local_port: int) -> dict:
@@ -41,7 +63,7 @@ def _build_xray_config(node: dict, local_port: int) -> dict:
                         }
                     ]
                 },
-                "streamSettings": _build_stream_settings(node, network),
+                "streamSettings": _build_stream(node, network, transport_cfg),
                 "tag": "proxy",
             },
             {"protocol": "freedom", "tag": "direct"},

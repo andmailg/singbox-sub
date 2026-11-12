@@ -116,6 +116,76 @@ def _generate_trojan_ws_links(outbounds: list[dict]) -> list[str]:
     return links
 
 
+def _trojan_link_base(o: dict, params: dict) -> str:
+    """Собирает trojan://-ссылку: TLS-параметры из ноды, остальное — из params."""
+    tls = o.get("tls") or {}
+    if tls.get("enabled"):
+        params["security"] = "tls"
+        if tls.get("server_name"):
+            params["sni"] = tls["server_name"]
+        fp = (tls.get("utls") or {}).get("fingerprint", "")
+        if fp:
+            params["fp"] = fp
+        if tls.get("alpn"):
+            params["alpn"] = ",".join(tls["alpn"])
+        if tls.get("insecure"):
+            params["allowInsecure"] = "1"
+    else:
+        params["security"] = "none"
+
+    password = urllib.parse.quote(str(o.get("password", "")), safe="")
+    server = o.get("server", "")
+    port = o.get("server_port", 443)
+    fragment = urllib.parse.quote(o.get("tag", "Trojan-Node"))
+    return f"trojan://{password}@{server}:{port}?{urllib.parse.urlencode(params)}#{fragment}"
+
+
+def _generate_trojan_tcp_links(outbounds: list[dict]) -> list[str]:
+    """Конвертирует Trojan TCP (raw) ноды в v2ray-ссылки."""
+    links: list[str] = []
+    for o in outbounds:
+        if o.get("type") != "trojan" or isinstance(o.get("transport"), dict):
+            continue
+        links.append(_trojan_link_base(o, {"type": "tcp"}))
+    return links
+
+
+def _generate_trojan_httpupgrade_links(outbounds: list[dict]) -> list[str]:
+    """Конвертирует Trojan HTTPUpgrade ноды в v2ray-ссылки."""
+    links: list[str] = []
+    for o in outbounds:
+        if o.get("type") != "trojan":
+            continue
+        transport = o.get("transport") or {}
+        if transport.get("type") != "httpupgrade":
+            continue
+        params = {"type": "httpupgrade", "path": transport.get("path", "/")}
+        host = transport.get("host") or (transport.get("headers") or {}).get("Host", "")
+        if host:
+            params["host"] = host
+        links.append(_trojan_link_base(o, params))
+    return links
+
+
+def _generate_trojan_xhttp_links(outbounds: list[dict]) -> list[str]:
+    """Конвертирует Trojan xhttp ноды в v2ray-ссылки."""
+    links: list[str] = []
+    for o in outbounds:
+        if o.get("type") != "trojan":
+            continue
+        transport = o.get("transport") or {}
+        if transport.get("type") != "xhttp":
+            continue
+        params = {"type": "xhttp", "path": transport.get("path", "/")}
+        if transport.get("mode"):
+            params["mode"] = transport["mode"]
+        host = transport.get("host")
+        if host:
+            params["host"] = ",".join(host) if isinstance(host, list) else str(host)
+        links.append(_trojan_link_base(o, params))
+    return links
+
+
 def _generate_vless_grpc_links(outbounds: list[dict]) -> list[str]:
     """Конвертирует VLESS gRPC ноды в v2ray-ссылки (TLS / Reality)."""
     links: list[str] = []
