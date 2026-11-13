@@ -9047,6 +9047,58 @@
             }
           }
         }
+      },
+      {
+        "key": "78.159.250.83:8443:37af0181-5598-4aad-a040-d926bcb65757:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-306",
+          "server": "78.159.250.83",
+          "server_port": 8443,
+          "uuid": "37af0181-5598-4aad-a040-d926bcb65757",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "earlytrain.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "earlytrain.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "dey.lnmarketplace.net:443:3536e1fa-0850-44d1-b123-925ce12476cf:/kavir",
+        "node": {
+          "type": "vless",
+          "tag": "node-347",
+          "server": "dey.lnmarketplace.net",
+          "server_port": 443,
+          "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
+          "transport": {
+            "type": "xhttp",
+            "path": "/kavir",
+            "mode": "stream-one",
+            "host": [
+              "dey.lnmarketplace.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "dey.lnmarketplace.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -133541,5 +133593,5 @@
       }
     ]
   },
-  "updated": "2026-11-13T01:21:56Z"
+  "updated": "2026-11-13T01:31:45Z"
 }
