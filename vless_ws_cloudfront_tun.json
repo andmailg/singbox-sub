@@ -117,7 +117,9 @@
         "auto",
         "🇺🇸node-1",
         "🇺🇸node-2",
-        "🇺🇸node-3"
+        "🇺🇸node-3",
+        "🇺🇸node-4",
+        "🇺🇸node-5"
       ],
       "default": "auto"
     },
@@ -127,7 +129,9 @@
       "outbounds": [
         "🇺🇸node-1",
         "🇺🇸node-2",
-        "🇺🇸node-3"
+        "🇺🇸node-3",
+        "🇺🇸node-4",
+        "🇺🇸node-5"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -162,18 +166,37 @@
         "type": "ws",
         "path": "/",
         "headers": {
-          "Host": "d1afk2ndm8pox3.cloudfront.net"
+          "Host": "d2ex4nxd2e01ub.cloudfront.net"
         }
       },
       "tls": {
         "enabled": true,
-        "server_name": "d1afk2ndm8pox3.cloudfront.net",
+        "server_name": "d2ex4nxd2e01ub.cloudfront.net",
         "insecure": false
       }
     },
     {
       "type": "vless",
       "tag": "🇺🇸node-3",
+      "server": "3.168.218.14",
+      "server_port": 443,
+      "uuid": "67cd3349-f789-4cbb-8b91-4b6b1654ce7c",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "d2ex4nxd2e01ub.cloudfront.net"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "d2ex4nxd2e01ub.cloudfront.net",
+        "insecure": false
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-4",
       "server": "3.168.218.6",
       "server_port": 443,
       "uuid": "67cd3349-f789-4cbb-8b91-4b6b1654ce7c",
@@ -187,6 +210,25 @@
       "tls": {
         "enabled": true,
         "server_name": "d2ex4nxd2e01ub.cloudfront.net",
+        "insecure": false
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-5",
+      "server": "3.168.219.0",
+      "server_port": 443,
+      "uuid": "ad9a885d-93bb-48e3-9937-57f1116b64e3",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "d1aedflfr97jes.cloudfront.net"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "d1aedflfr97jes.cloudfront.net",
         "insecure": false
       }
     }
