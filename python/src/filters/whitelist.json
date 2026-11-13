@@ -130177,6 +130177,89 @@
             "type": "tcp"
           }
         }
+      },
+      {
+        "key": "206.237.11.17:50376:9091fd64-7e8e-4b7a-8ae7-84474f234926:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-605",
+          "server": "206.237.11.17",
+          "server_port": 50376,
+          "uuid": "9091fd64-7e8e-4b7a-8ae7-84474f234926",
+          "security": "auto"
+        }
+      },
+      {
+        "key": "179.254.95.57:26032:804334e2-04ca-434c-8311-3ccee8218175:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-332",
+          "server": "179.254.95.57",
+          "server_port": 26032,
+          "uuid": "804334e2-04ca-434c-8311-3ccee8218175",
+          "security": "auto"
+        }
+      },
+      {
+        "key": "151.241.19.44:1270:5c040f1d-45db-43bd-8d46-e4950e433735:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-199",
+          "server": "151.241.19.44",
+          "server_port": 1270,
+          "uuid": "5c040f1d-45db-43bd-8d46-e4950e433735",
+          "security": "auto",
+          "transport": {
+            "type": "tcp"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "xmfhlpy.com",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "dog-tw.kunlun01dns.com:21037:9464ca40-dd75-3742-a628-d931a9f413b2:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-1211",
+          "server": "dog-tw.kunlun01dns.com",
+          "server_port": 21037,
+          "uuid": "9464ca40-dd75-3742-a628-d931a9f413b2",
+          "security": "auto",
+          "transport": {
+            "type": "tcp"
+          }
+        }
+      },
+      {
+        "key": "zfd-boardv2.kunlun01dns.com:16317:0802ac03-7973-39ef-a019-ba02de6c01e1:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-1496",
+          "server": "zfd-boardv2.kunlun01dns.com",
+          "server_port": 16317,
+          "uuid": "0802ac03-7973-39ef-a019-ba02de6c01e1",
+          "security": "auto",
+          "transport": {
+            "type": "tcp"
+          }
+        }
+      },
+      {
+        "key": "zfd-boardv2.kunlun01dns.com:16308:0802ac03-7973-39ef-a019-ba02de6c01e1:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-1504",
+          "server": "zfd-boardv2.kunlun01dns.com",
+          "server_port": 16308,
+          "uuid": "0802ac03-7973-39ef-a019-ba02de6c01e1",
+          "security": "auto",
+          "transport": {
+            "type": "tcp"
+          }
+        }
       }
     ],
     "vmess_ws": [
@@ -134935,5 +135018,5 @@
       }
     ]
   },
-  "updated": "2026-11-13T02:17:58Z"
+  "updated": "2026-11-13T06:31:17Z"
 }
