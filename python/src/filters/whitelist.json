@@ -102251,6 +102251,27 @@
             }
           }
         }
+      },
+      {
+        "key": "199.68.156.221:2087:QzVKeGlc2qYRxyzWb3xZFjHbqY2JmOfZ:/wss",
+        "node": {
+          "type": "trojan",
+          "tag": "node-612",
+          "server": "199.68.156.221",
+          "server_port": 2087,
+          "password": "QzVKeGlc2qYRxyzWb3xZFjHbqY2JmOfZ",
+          "tls": {
+            "enabled": true,
+            "server_name": "nexoastra.xnetaro.ir"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/wss",
+            "headers": {
+              "Host": "nexoastra.xnetaro.ir"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -137537,5 +137558,5 @@
       }
     ]
   },
-  "updated": "2026-11-13T21:40:48Z"
+  "updated": "2026-11-13T21:53:26Z"
 }

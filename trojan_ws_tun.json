@@ -115,8 +115,7 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "node-1",
-        "node-2"
+        "🇺🇸node-1"
       ],
       "default": "auto"
     },
@@ -124,8 +123,7 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "node-1",
-        "node-2"
+        "🇺🇸node-1"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -133,37 +131,19 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1",
-      "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
+      "tag": "🇺🇸node-1",
+      "server": "199.68.156.221",
+      "server_port": 2087,
+      "password": "QzVKeGlc2qYRxyzWb3xZFjHbqY2JmOfZ",
       "tls": {
         "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
+        "server_name": "nexoastra.xnetaro.ir"
       },
       "transport": {
         "type": "ws",
-        "path": "/",
+        "path": "/wss",
         "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-2",
-      "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/ ",
-        "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
+          "Host": "nexoastra.xnetaro.ir"
         }
       }
     }
