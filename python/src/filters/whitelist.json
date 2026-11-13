@@ -133876,6 +133876,74 @@
             "path": "/vless"
           }
         }
+      },
+      {
+        "key": "moer67gv-production.up.railway.app:443:9d0bc215-a201-43af-a2bc-7a9db1899294:/api/WigrBu",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5875",
+          "server": "moer67gv-production.up.railway.app",
+          "server_port": 443,
+          "uuid": "9d0bc215-a201-43af-a2bc-7a9db1899294",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/api/WigrBu",
+            "headers": {
+              "Host": "moer67gv-production.up.railway.app"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "moer67gv-production.up.railway.app",
+            "insecure": false,
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "57.129.132.223:80:a25cbf11-2908-4a1b-a3a8-9a571777dca3:/vmess/?ed#",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5067",
+          "server": "57.129.132.223",
+          "server_port": 80,
+          "uuid": "a25cbf11-2908-4a1b-a3a8-9a571777dca3",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/vmess/?ed#",
+            "headers": {
+              "Host": "google.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "104.21.0.1:2083:ac251237-576f-40c8-a543-554960c958b1:/or3",
+        "node": {
+          "type": "vmess",
+          "tag": "node-1115",
+          "server": "104.21.0.1",
+          "server_port": 2083,
+          "uuid": "ac251237-576f-40c8-a543-554960c958b1",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/or3",
+            "headers": {
+              "Host": "or3.sfacg.uk"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "or3.sfacg.uk",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -137025,5 +137093,5 @@
       }
     ]
   },
-  "updated": "2026-11-13T18:00:01Z"
+  "updated": "2026-11-13T18:08:14Z"
 }
