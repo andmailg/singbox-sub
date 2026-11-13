@@ -9124,6 +9124,176 @@
             }
           }
         }
+      },
+      {
+        "key": "195.24.67.154:8443:a6c58c10-183e-4278-bdcd-ffc07220e7e2:/9f2c7a4e1b6d8053",
+        "node": {
+          "type": "vless",
+          "tag": "node-219",
+          "server": "195.24.67.154",
+          "server_port": 8443,
+          "uuid": "a6c58c10-183e-4278-bdcd-ffc07220e7e2",
+          "transport": {
+            "type": "xhttp",
+            "path": "/9f2c7a4e1b6d8053",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "eu88.cdn77.icu",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "46.243.234.17:2053:37af0181-5598-4aad-a040-d926bcb65757:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-289",
+          "server": "46.243.234.17",
+          "server_port": 2053,
+          "uuid": "37af0181-5598-4aad-a040-d926bcb65757",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "windytrout.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "windytrout.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "46.243.234.17:8443:37af0181-5598-4aad-a040-d926bcb65757:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-290",
+          "server": "46.243.234.17",
+          "server_port": 8443,
+          "uuid": "37af0181-5598-4aad-a040-d926bcb65757",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "windytrout.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "windytrout.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "104.16.160.8:8443:1662f377-776b-4e49-90d6-dd5b2c7920c8:/v-stream",
+        "node": {
+          "type": "vless",
+          "tag": "node-3",
+          "server": "104.16.160.8",
+          "server_port": 8443,
+          "uuid": "1662f377-776b-4e49-90d6-dd5b2c7920c8",
+          "transport": {
+            "type": "xhttp",
+            "path": "/v-stream",
+            "mode": "packet-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "3m.818567.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "104.18.162.1:8443:1662f377-776b-4e49-90d6-dd5b2c7920c8:/v-stream",
+        "node": {
+          "type": "vless",
+          "tag": "node-22",
+          "server": "104.18.162.1",
+          "server_port": 8443,
+          "uuid": "1662f377-776b-4e49-90d6-dd5b2c7920c8",
+          "transport": {
+            "type": "xhttp",
+            "path": "/v-stream",
+            "mode": "packet-up"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "3m.818567.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "31.76.62.126:4443:a35c508f-4d5d-4531-842e-6e9d43c762c0:/api/v1/sync/",
+        "node": {
+          "type": "vless",
+          "tag": "node-261",
+          "server": "31.76.62.126",
+          "server_port": 4443,
+          "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/sync/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "lv3.nexfile.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "qq"
+            }
+          }
+        }
+      },
+      {
+        "key": "3m.818567.xyz:8443:1662f377-776b-4e49-90d6-dd5b2c7920c8:/v-stream",
+        "node": {
+          "type": "vless",
+          "tag": "node-277",
+          "server": "3m.818567.xyz",
+          "server_port": 8443,
+          "uuid": "1662f377-776b-4e49-90d6-dd5b2c7920c8",
+          "transport": {
+            "type": "xhttp",
+            "path": "/v-stream",
+            "mode": "packet-up",
+            "host": [
+              "3m.818567.xyz"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "3m.818567.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -137367,5 +137537,5 @@
       }
     ]
   },
-  "updated": "2026-11-13T21:35:09Z"
+  "updated": "2026-11-13T21:40:48Z"
 }
