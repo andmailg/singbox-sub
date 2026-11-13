@@ -9099,6 +9099,31 @@
             }
           }
         }
+      },
+      {
+        "key": "2.26.88.240:4443:a35c508f-4d5d-4531-842e-6e9d43c762c0:/api/v1/sync/",
+        "node": {
+          "type": "vless",
+          "tag": "node-245",
+          "server": "2.26.88.240",
+          "server_port": 4443,
+          "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/sync/",
+            "host": [
+              "lv3.nexfile.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "lv3.nexfile.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -135870,5 +135895,5 @@
       }
     ]
   },
-  "updated": "2026-11-13T13:23:29Z"
+  "updated": "2026-11-13T13:30:27Z"
 }
