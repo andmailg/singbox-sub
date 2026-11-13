@@ -86706,6 +86706,82 @@
             "service_name": "glush.de3.v1"
           }
         }
+      },
+      {
+        "key": "atelier.merlano.monster:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-274",
+          "server": "atelier.merlano.monster",
+          "server_port": 443,
+          "uuid": "820fa845-a1eb-4a83-b613-e6714cea8a1a",
+          "tls": {
+            "enabled": true,
+            "server_name": "grove.moltex.click",
+            "alpn": [
+              "h2"
+            ],
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "glush.de1.v1"
+          }
+        }
+      },
+      {
+        "key": "notebook.filnex.baby:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-337",
+          "server": "notebook.filnex.baby",
+          "server_port": 443,
+          "uuid": "820fa845-a1eb-4a83-b613-e6714cea8a1a",
+          "tls": {
+            "enabled": true,
+            "server_name": "notebook.filnex.baby",
+            "alpn": [
+              "h2"
+            ],
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "glush.de6.v1"
+          }
+        }
+      },
+      {
+        "key": "81.90.20.203:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-210",
+          "server": "81.90.20.203",
+          "server_port": 443,
+          "uuid": "f37d32d0-ca5a-464f-8c32-92dc33f71408",
+          "tls": {
+            "enabled": true,
+            "server_name": "instance-103.nolimited.space",
+            "reality": {
+              "enabled": true,
+              "public_key": "qVU44SZtoG7cKR3ZCg4Ipf5rPefL5cbrto2OpzZNoU8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -137291,5 +137367,5 @@
       }
     ]
   },
-  "updated": "2026-11-13T19:12:11Z"
+  "updated": "2026-11-13T21:35:09Z"
 }
