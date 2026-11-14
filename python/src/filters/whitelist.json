@@ -89149,6 +89149,86 @@
             "service_name": "shop.v1.Catalog"
           }
         }
+      },
+      {
+        "key": "185.86.145.55:10470",
+        "node": {
+          "type": "vless",
+          "tag": "node-90",
+          "server": "185.86.145.55",
+          "server_port": 10470,
+          "uuid": "3ecbd833-40d8-4ddb-b80b-a7c4628ec7e5",
+          "tls": {
+            "enabled": true,
+            "server_name": "wn-pl4.static-s3.org",
+            "alpn": [
+              "h2"
+            ],
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "wn-adaptcloud"
+          }
+        }
+      },
+      {
+        "key": "201.8.64.254:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-137",
+          "server": "201.8.64.254",
+          "server_port": 443,
+          "uuid": "cda0862a-0f87-4be9-8ed8-1d0c9e382839",
+          "tls": {
+            "enabled": true,
+            "server_name": "15b171g.nl7.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "zbz--PMjcIC4Ggr3j-ibDf0fzXRTj0lM_HzjPJyMkVE",
+              "short_id": "50a749f0eccb628c"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "5b79e8a94241"
+          }
+        }
+      },
+      {
+        "key": "362c1eg.se1.h1clayd.click:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-122",
+          "server": "362c1eg.se1.h1clayd.click",
+          "server_port": 443,
+          "uuid": "3ede439b-410f-4eae-b449-4e15064c0706",
+          "tls": {
+            "enabled": true,
+            "server_name": "362c1eg.se1.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "BLhS7fE4Yh6kAADw7yRIn2PzKun-JDagJHJNOePYRSY",
+              "short_id": "bee802ae4ab66496",
+              "spider_x": "/"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -140560,5 +140640,5 @@
       }
     ]
   },
-  "updated": "2026-11-14T16:41:09Z"
+  "updated": "2026-11-14T16:46:28Z"
 }
