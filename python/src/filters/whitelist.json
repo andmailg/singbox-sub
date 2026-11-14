@@ -104671,6 +104671,27 @@
             }
           }
         }
+      },
+      {
+        "key": "5.59.204.26:21443:X00HagvwL8gQXNDAnsxsN8dv1_VdneEo:/trojan/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-728",
+          "server": "5.59.204.26",
+          "server_port": 21443,
+          "password": "X00HagvwL8gQXNDAnsxsN8dv1_VdneEo",
+          "tls": {
+            "enabled": true,
+            "server_name": "fi1.nebulaguard.org"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/trojan/",
+            "headers": {
+              "Host": "fi1.nebulaguard.org"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -140762,5 +140783,5 @@
       }
     ]
   },
-  "updated": "2026-11-14T16:47:33Z"
+  "updated": "2026-11-14T17:01:39Z"
 }

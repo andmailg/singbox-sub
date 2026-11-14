@@ -1,290 +1,32 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-11-14T06:38:39Z",
+  "last_tested": "2026-11-14T17:01:38Z",
   "nodes": [
     {
       "type": "trojan",
-      "tag": "node-1",
-      "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
+      "tag": "node-728",
+      "server": "5.59.204.26",
+      "server_port": 21443,
+      "password": "X00HagvwL8gQXNDAnsxsN8dv1_VdneEo",
+      "_dedup_key": "5.59.204.26:21443:X00HagvwL8gQXNDAnsxsN8dv1_VdneEo:/trojan/",
       "tls": {
         "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
+        "server_name": "fi1.nebulaguard.org"
       },
       "transport": {
         "type": "ws",
-        "path": "/",
+        "path": "/trojan/",
         "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
-        }
-      },
-      "_last_ok_ts": 1794636746.102305,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-2",
-      "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/ ",
-        "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
-        }
-      },
-      "_last_ok_ts": 1794636746.102305,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-3",
-      "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
-      "_dedup_key": "104.18.35.86:2096:123456:/",
-      "tls": {
-        "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
+          "Host": "fi1.nebulaguard.org"
         }
       },
       "_sub_ids": [
-        "13",
-        "20",
-        "26",
-        "29",
-        "4"
-      ],
-      "_last_ok_ts": 1794636746.102305,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-4",
-      "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
-      "_dedup_key": "104.18.35.86:2096:123456:/ ",
-      "tls": {
-        "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/ ",
-        "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
-        }
-      },
-      "_sub_ids": [
-        "110"
-      ],
-      "_last_ok_ts": 1794636746.102305,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-5",
-      "server": "104.26.6.171",
-      "server_port": 443,
-      "password": "reinz",
-      "tls": {
-        "enabled": true,
-        "server_name": "tsg3.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560",
-        "headers": {
-          "Host": "tsg3.pages.dev"
-        }
-      },
-      "_last_ok_ts": 1794636746.102305,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-6",
-      "server": "104.26.6.171",
-      "server_port": 443,
-      "password": "reinz",
-      "tls": {
-        "enabled": true,
-        "server_name": "tsg3.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560",
-        "headers": {
-          "Host": "tsg3.pages.dev"
-        }
-      },
-      "_last_ok_ts": 1794636746.102305,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-7",
-      "server": "104.26.6.171",
-      "server_port": 443,
-      "password": "reinz",
-      "_dedup_key": "104.26.6.171:443:reinz:/?ed=2560",
-      "tls": {
-        "enabled": true,
-        "server_name": "tsg3.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/?ed=2560",
-        "headers": {
-          "Host": "tsg3.pages.dev"
-        }
-      },
-      "_sub_ids": [
-        "21",
-        "26",
+        "102",
         "27",
-        "29",
         "9"
       ],
-      "_last_ok_ts": 1794636746.102305,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-8",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/"
-      },
-      "_last_ok_ts": 1794636746.102305,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-9",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "%2F"
-      },
-      "_last_ok_ts": 1794636746.102305,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-10",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/"
-      },
-      "_last_ok_ts": 1794636746.102305,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-11",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "%2F"
-      },
-      "_last_ok_ts": 1794636746.102305,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-12",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "_dedup_key": "www.wto.org:8443:ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f:/",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "jiangjc.pages.dev"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "13",
-        "18",
-        "203",
-        "26",
-        "27",
-        "29",
-        "300",
-        "9"
-      ],
-      "_last_ok_ts": 1794636746.102305,
-      "_country": null
-    },
-    {
-      "type": "trojan",
-      "tag": "node-13",
-      "server": "www.wto.org",
-      "server_port": 8443,
-      "password": "ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f",
-      "_dedup_key": "www.wto.org:8443:ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f:%2F",
-      "tls": {
-        "enabled": true,
-        "server_name": "jiangjc.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "%2F"
-      },
-      "_sub_ids": [
-        "1",
-        "26",
-        "29",
-        "300"
-      ],
-      "_last_ok_ts": 1794636746.102305,
-      "_country": null
+      "_latency_ms": 576,
+      "_last_ok_ts": 1794674141.466812
     }
   ]
 }
