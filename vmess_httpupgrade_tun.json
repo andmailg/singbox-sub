@@ -115,7 +115,10 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇩🇪node-1"
+        "node-1",
+        "node-2",
+        "node-3",
+        "🇩🇪node-4"
       ],
       "default": "auto"
     },
@@ -123,7 +126,10 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇩🇪node-1"
+        "node-1",
+        "node-2",
+        "node-3",
+        "🇩🇪node-4"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -131,7 +137,46 @@
     },
     {
       "type": "vmess",
-      "tag": "🇩🇪node-1",
+      "tag": "node-1",
+      "server": "bmi.ir.kolman.com.de",
+      "server_port": 80,
+      "uuid": "cfe7a80d-34c6-46df-909d-2daa14f98136",
+      "security": "auto",
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/f9bGbG7ZNy5L0tzXKZNxSX4q",
+        "host": "4n2TjrBWPojRe.6.server.marandcity.com.de."
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "node-2",
+      "server": "bmi2.kolman.com.de",
+      "server_port": 80,
+      "uuid": "cfe7a80d-34c6-46df-909d-2daa14f98136",
+      "security": "auto",
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/f9bGbG7ZNy5L0tzXKZNxSX4q",
+        "host": "zeo6-lylp.uti.realoslo-norg.maniyadg7shard.ir."
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "node-3",
+      "server": "cd0.bmi.ir.kolman.com.de",
+      "server_port": 80,
+      "uuid": "cfe7a80d-34c6-46df-909d-2daa14f98136",
+      "security": "auto",
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/f9bGbG7ZNy5L0tzXKZNxSX4q",
+        "host": "bmi.ir.draft.co.impossible.com.ir.bmi.ir.com.iran.ir6.ifilmino.com."
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "🇩🇪node-4",
       "server": "91.107.169.224",
       "server_port": 80,
       "uuid": "014f8bf6-9221-4f99-838f-4c16ca90334f",
