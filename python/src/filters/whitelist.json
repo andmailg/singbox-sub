@@ -9294,6 +9294,54 @@
             }
           }
         }
+      },
+      {
+        "key": "179.253.80.175:4443:a35c508f-4d5d-4531-842e-6e9d43c762c0:/api/v1/sync/",
+        "node": {
+          "type": "vless",
+          "tag": "node-104",
+          "server": "179.253.80.175",
+          "server_port": 4443,
+          "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/sync/"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "swo2.nexfile.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "3.174.189.0:443:2e69b088-6ef3-417f-8247-125cf257fafd:/cf",
+        "node": {
+          "type": "vless",
+          "tag": "node-246",
+          "server": "3.174.189.0",
+          "server_port": 443,
+          "uuid": "2e69b088-6ef3-417f-8247-125cf257fafd",
+          "transport": {
+            "type": "xhttp",
+            "path": "/cf",
+            "mode": "auto",
+            "host": [
+              "d1b9pmaut2v26v.cloudfront.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "d1b9pmaut2v26v.cloudfront.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -138915,5 +138963,5 @@
       }
     ]
   },
-  "updated": "2026-11-14T06:52:05Z"
+  "updated": "2026-11-14T07:04:38Z"
 }
