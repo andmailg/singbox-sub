@@ -87929,6 +87929,133 @@
             "service_name": ""
           }
         }
+      },
+      {
+        "key": "143.246.205.2:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-36",
+          "server": "143.246.205.2",
+          "server_port": 8443,
+          "uuid": "f2905db1-4c91-48fc-a101-705d1620e279",
+          "tls": {
+            "enabled": true,
+            "server_name": "ch.gacvpn.site",
+            "alpn": [
+              "h2"
+            ],
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "connect-ch"
+          }
+        }
+      },
+      {
+        "key": "200.102.183.226:80",
+        "node": {
+          "type": "vless",
+          "tag": "node-128",
+          "server": "200.102.183.226",
+          "server_port": 80,
+          "uuid": "664f65f4-33b3-43a3-b9e5-68192d1d428e",
+          "tls": {
+            "enabled": true,
+            "server_name": "68r2nrw6avta71yq.cdn.cachefleet.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "qi8ws15c7jv5q2fa"
+          }
+        }
+      },
+      {
+        "key": "79.98.38.24:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-214",
+          "server": "79.98.38.24",
+          "server_port": 443,
+          "uuid": "7d718630-7a1a-4af8-9332-aa0610634e8a",
+          "tls": {
+            "enabled": true,
+            "server_name": "api.alder.lalibobi.online",
+            "reality": {
+              "enabled": true,
+              "public_key": "tKzo0qk-NJCNnmxmSgP7uGmd9VHKiTG2L-YqXYGj4Dc",
+              "short_id": "203242200f9d16be"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "shop.v1.Catalog"
+          }
+        }
+      },
+      {
+        "key": "94.183.164.176:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-261",
+          "server": "94.183.164.176",
+          "server_port": 443,
+          "uuid": "12776e55-6230-48b9-b069-1bb8a04b4237",
+          "tls": {
+            "enabled": true,
+            "server_name": "optim.tildacdn.pub",
+            "reality": {
+              "enabled": true,
+              "public_key": "_KeOS5u_irk1547CMVB3RdwQzz1SzrQZk-IV-btF7TU"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "ebl"
+          }
+        }
+      },
+      {
+        "key": "api.parnu.lalibobi.online:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-276",
+          "server": "api.parnu.lalibobi.online",
+          "server_port": 443,
+          "uuid": "7d718630-7a1a-4af8-9332-aa0610634e8a",
+          "tls": {
+            "enabled": true,
+            "server_name": "api.parnu.lalibobi.online",
+            "reality": {
+              "enabled": true,
+              "public_key": "UUAeEJC-AryOno_jBPGDry1QzQlZ1wlm5S4uS0_D7hA",
+              "short_id": "0099b700c0152888"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "shop.v1.Catalog"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -138788,5 +138915,5 @@
       }
     ]
   },
-  "updated": "2026-11-14T06:15:34Z"
+  "updated": "2026-11-14T06:52:05Z"
 }
