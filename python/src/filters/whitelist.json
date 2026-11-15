@@ -141901,6 +141901,29 @@
             "insecure": false
           }
         }
+      },
+      {
+        "key": "arranged-samuel-cradle-hayes.trycloudflare.com:443:2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea:/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5612",
+          "server": "arranged-samuel-cradle-hayes.trycloudflare.com",
+          "server_port": 443,
+          "uuid": "2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+            "headers": {
+              "Host": "arranged-samuel-cradle-hayes.trycloudflare.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "arranged-samuel-cradle-hayes.trycloudflare.com",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -145239,5 +145262,5 @@
       }
     ]
   },
-  "updated": "2026-11-15T17:28:20Z"
+  "updated": "2026-11-15T17:31:04Z"
 }
