@@ -115,7 +115,8 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇩🇪node-1"
+        "🇩🇪node-1",
+        "🇮🇷node-2"
       ],
       "default": "auto"
     },
@@ -123,7 +124,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇩🇪node-1"
+        "🇩🇪node-1",
+        "🇮🇷node-2"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -140,6 +142,18 @@
         "type": "httpupgrade",
         "path": "/",
         "host": "google.whatsapp.snapp.torob.basalam.dns-look.space."
+      }
+    },
+    {
+      "type": "vmess",
+      "tag": "🇮🇷node-2",
+      "server": "2.182.32.225",
+      "server_port": 2087,
+      "uuid": "e56713b6-dfee-4286-b9c1-ad73886e9aae",
+      "security": "auto",
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/"
       }
     }
   ],
