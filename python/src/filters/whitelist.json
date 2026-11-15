@@ -9822,6 +9822,58 @@
             }
           }
         }
+      },
+      {
+        "key": "46.243.233.170:2053:37af0181-5598-4aad-a040-d926bcb65757:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-290",
+          "server": "46.243.233.170",
+          "server_port": 2053,
+          "uuid": "37af0181-5598-4aad-a040-d926bcb65757",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "windytrout.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "windytrout.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "91.107.191.188:8443:faf19d58-79f2-4857-f790-3ebd8cb2459d:/Meh?di=443",
+        "node": {
+          "type": "vless",
+          "tag": "node-318",
+          "server": "91.107.191.188",
+          "server_port": 8443,
+          "uuid": "faf19d58-79f2-4857-f790-3ebd8cb2459d",
+          "transport": {
+            "type": "xhttp",
+            "path": "/Meh?di=443",
+            "mode": "auto",
+            "host": [
+              "host.taghvimtime.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "host.taghvimtime.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -145187,5 +145239,5 @@
       }
     ]
   },
-  "updated": "2026-11-15T17:23:57Z"
+  "updated": "2026-11-15T17:28:20Z"
 }
