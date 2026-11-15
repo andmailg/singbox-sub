@@ -106030,6 +106030,48 @@
             }
           }
         }
+      },
+      {
+        "key": "loldgesswrt-production.up.railway.app:443:bRfIVTosoBIQxXCX:/api/GF0s05",
+        "node": {
+          "type": "trojan",
+          "tag": "node-797",
+          "server": "loldgesswrt-production.up.railway.app",
+          "server_port": 443,
+          "password": "bRfIVTosoBIQxXCX",
+          "tls": {
+            "enabled": true,
+            "server_name": "loldgesswrt-production.up.railway.app"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/api/GF0s05",
+            "headers": {
+              "Host": "loldgesswrt-production.up.railway.app"
+            }
+          }
+        }
+      },
+      {
+        "key": "194.5.98.83:8443:f426d3c9-fb43-43c0-868b-898dfa451a74:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-572",
+          "server": "194.5.98.83",
+          "server_port": 8443,
+          "password": "f426d3c9-fb43-43c0-868b-898dfa451a74",
+          "tls": {
+            "enabled": true,
+            "server_name": "likejennie.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "likejennie.pages.dev"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -142614,5 +142656,5 @@
       }
     ]
   },
-  "updated": "2026-11-15T00:13:33Z"
+  "updated": "2026-11-15T00:18:27Z"
 }
