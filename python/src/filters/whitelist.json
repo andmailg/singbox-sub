@@ -9746,6 +9746,82 @@
             }
           }
         }
+      },
+      {
+        "key": "165.231.177.59:443:97fd7807-7e2b-49da-8a0e-e40197088f97:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-89",
+          "server": "165.231.177.59",
+          "server_port": 443,
+          "uuid": "97fd7807-7e2b-49da-8a0e-e40197088f97",
+          "transport": {
+            "type": "xhttp",
+            "mode": "stream-one",
+            "host": [
+              "ice.noooo.win"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "cab-6af74a4f.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "23.237.202.254:443:97fd7807-7e2b-49da-8a0e-e40197088f97:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-257",
+          "server": "23.237.202.254",
+          "server_port": 443,
+          "uuid": "97fd7807-7e2b-49da-8a0e-e40197088f97",
+          "transport": {
+            "type": "xhttp",
+            "mode": "stream-one",
+            "host": [
+              "us.alpheratzz.org"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "id-97fd7807.vmagnum.win",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "50.7.87.251:443:97fd7807-7e2b-49da-8a0e-e40197088f97:/tr",
+        "node": {
+          "type": "vless",
+          "tag": "node-304",
+          "server": "50.7.87.251",
+          "server_port": 443,
+          "uuid": "97fd7807-7e2b-49da-8a0e-e40197088f97",
+          "transport": {
+            "type": "xhttp",
+            "path": "/tr",
+            "mode": "stream-one",
+            "host": [
+              "api.ferrin.uk"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "97fd7807.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -144335,5 +144411,5 @@
       }
     ]
   },
-  "updated": "2026-11-15T07:05:19Z"
+  "updated": "2026-11-15T07:15:32Z"
 }
