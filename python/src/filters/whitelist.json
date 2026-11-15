@@ -140951,6 +140951,52 @@
             }
           }
         }
+      },
+      {
+        "key": "JP032009.ssgreen.org:443:3734800b-3191-470b-ac36-86b18e3a826e:/wes",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5445",
+          "server": "JP032009.ssgreen.org",
+          "server_port": 443,
+          "uuid": "3734800b-3191-470b-ac36-86b18e3a826e",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/wes",
+            "headers": {
+              "Host": "JP032009.ssgreen.org"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "JP032009.ssgreen.org",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "US032013.ssgreen.org:443:4b6411e3-914d-4d6c-b486-58b1b88f5c5f:/wes",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5482",
+          "server": "US032013.ssgreen.org",
+          "server_port": 443,
+          "uuid": "4b6411e3-914d-4d6c-b486-58b1b88f5c5f",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/wes",
+            "headers": {
+              "Host": "US032013.ssgreen.org"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "US032013.ssgreen.org",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -144289,5 +144335,5 @@
       }
     ]
   },
-  "updated": "2026-11-15T06:57:16Z"
+  "updated": "2026-11-15T07:05:19Z"
 }
