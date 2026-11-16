@@ -9900,6 +9900,32 @@
             }
           }
         }
+      },
+      {
+        "key": "138.16.249.177:443:80a06811-f74b-4b82-ac99-7e66c2a98e1c:/api/preview/",
+        "node": {
+          "type": "vless",
+          "tag": "node-42",
+          "server": "138.16.249.177",
+          "server_port": 443,
+          "uuid": "80a06811-f74b-4b82-ac99-7e66c2a98e1c",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/preview/",
+            "mode": "packet-up",
+            "host": [
+              "folio.basterdym.asia"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "folio.basterdym.asia",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -157650,5 +157676,5 @@
       }
     ]
   },
-  "updated": "2026-11-16T07:05:13Z"
+  "updated": "2026-11-16T07:20:13Z"
 }
