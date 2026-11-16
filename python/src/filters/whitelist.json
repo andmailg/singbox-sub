@@ -156444,6 +156444,75 @@
             "insecure": false
           }
         }
+      },
+      {
+        "key": "38.11.69.48:30004:418048af-a293-4b99-9b0c-98ca3580dd24:/path/1698843555400",
+        "node": {
+          "type": "vmess",
+          "tag": "node-4701",
+          "server": "38.11.69.48",
+          "server_port": 30004,
+          "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/path/1698843555400",
+            "headers": {
+              "Host": "www.83761815.xyz"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "www.83761815.xyz",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "fighter-initiatives-plates-spectacular.trycloudflare.com:443:2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea:/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5760",
+          "server": "fighter-initiatives-plates-spectacular.trycloudflare.com",
+          "server_port": 443,
+          "uuid": "2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+            "headers": {
+              "Host": "fighter-initiatives-plates-spectacular.trycloudflare.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "fighter-initiatives-plates-spectacular.trycloudflare.com",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "wto.org:2087:82508138-bb0c-4d0c-9ab3-4a83959d19c2:/banana",
+        "node": {
+          "type": "vmess",
+          "tag": "node-6350",
+          "server": "wto.org",
+          "server_port": 2087,
+          "uuid": "82508138-bb0c-4d0c-9ab3-4a83959d19c2",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/banana",
+            "headers": {
+              "Host": "yx.kb1203.indevs.in"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "yx.kb1203.indevs.in",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -159894,5 +159963,5 @@
       }
     ]
   },
-  "updated": "2026-11-16T20:45:46Z"
+  "updated": "2026-11-16T20:49:13Z"
 }
