@@ -112460,6 +112460,27 @@
             }
           }
         }
+      },
+      {
+        "key": "104.17.128.1:2096:auto:/azadnet-5o5.pages.dev/?ed=2560",
+        "node": {
+          "type": "trojan",
+          "tag": "node-64",
+          "server": "104.17.128.1",
+          "server_port": 2096,
+          "password": "auto",
+          "tls": {
+            "enabled": true,
+            "server_name": "azadnet-5o5.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/azadnet-5o5.pages.dev/?ed=2560",
+            "headers": {
+              "Host": "azadnet-5o5.pages.dev"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -156605,5 +156626,5 @@
       }
     ]
   },
-  "updated": "2026-11-16T06:18:22Z"
+  "updated": "2026-11-16T06:40:32Z"
 }
