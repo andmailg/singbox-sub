@@ -115443,6 +115443,27 @@
             }
           }
         }
+      },
+      {
+        "key": "image-web-production-2ec53b05.up.railway.app:443:05cbf32b-7349-4497-b763-65702079929c:/tr/05cbf32b-7349-4497-b763-65702079929c",
+        "node": {
+          "type": "trojan",
+          "tag": "node-789",
+          "server": "image-web-production-2ec53b05.up.railway.app",
+          "server_port": 443,
+          "password": "05cbf32b-7349-4497-b763-65702079929c",
+          "tls": {
+            "enabled": true,
+            "server_name": "image-web-production-2ec53b05.up.railway.app"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/tr/05cbf32b-7349-4497-b763-65702079929c",
+            "headers": {
+              "Host": "image-web-production-2ec53b05.up.railway.app"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -159873,5 +159894,5 @@
       }
     ]
   },
-  "updated": "2026-11-16T20:44:33Z"
+  "updated": "2026-11-16T20:45:46Z"
 }
