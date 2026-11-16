@@ -144544,6 +144544,84 @@
             "insecure": false
           }
         }
+      },
+      {
+        "key": "147.135.213.72:20287:dcbb251a-90f2-454d-bf54-fc5efa789dbd:/bp-vmess",
+        "node": {
+          "type": "vmess",
+          "tag": "node-3020",
+          "server": "147.135.213.72",
+          "server_port": 20287,
+          "uuid": "dcbb251a-90f2-454d-bf54-fc5efa789dbd",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/bp-vmess"
+          }
+        }
+      },
+      {
+        "key": "cf.0sm.com:443:0cf6d970-3f1d-4aae-a989-92a8f76ae3db:/ws?ed=2048",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5600",
+          "server": "cf.0sm.com",
+          "server_port": 443,
+          "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/ws?ed=2048",
+            "headers": {
+              "Host": "vmess.lbw666.dpdns.org"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "vmess.lbw666.dpdns.org",
+            "insecure": false,
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "cf.0sm.com:80:0cf6d970-3f1d-4aae-a989-92a8f76ae3db:/ws?ed=2048",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5601",
+          "server": "cf.0sm.com",
+          "server_port": 80,
+          "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/ws?ed=2048",
+            "headers": {
+              "Host": "vmess.lbw666.dpdns.org"
+            }
+          }
+        }
+      },
+      {
+        "key": "cf.0sm.com:80:0cf6d970-3f1d-4aae-a989-92a8f76ae3db:/ws",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5602",
+          "server": "cf.0sm.com",
+          "server_port": 80,
+          "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/ws",
+            "headers": {
+              "Host": "vmess.lbw666.dpdns.org"
+            }
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -147938,5 +148016,5 @@
       }
     ]
   },
-  "updated": "2026-11-16T00:09:04Z"
+  "updated": "2026-11-16T00:16:19Z"
 }
