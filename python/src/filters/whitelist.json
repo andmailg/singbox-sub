@@ -9926,6 +9926,57 @@
             }
           }
         }
+      },
+      {
+        "key": "render.com:2087:49fe1f7b-e6f6-43dc-a67d-caade85128ba:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-374",
+          "server": "render.com",
+          "server_port": 2087,
+          "uuid": "49fe1f7b-e6f6-43dc-a67d-caade85128ba",
+          "transport": {
+            "type": "xhttp",
+            "mode": "stream-one",
+            "host": [
+              "Org-grm-soeiwhal-bssutudhdhese-beqhjdwter.maniyadg7shard.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "org-grm-soeiwhal-bssutudhdhese-beqhjdwter.maniyadg7shard.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "90.98.0.3:443:dd5e3dff-58d7-455a-ac8b-d86f5c80b499:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-307",
+          "server": "90.98.0.3",
+          "server_port": 443,
+          "uuid": "dd5e3dff-58d7-455a-ac8b-d86f5c80b499",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto",
+            "host": [
+              "Mastervpshost1.global.ssl.fastly.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "account.fastly.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -159822,5 +159873,5 @@
       }
     ]
   },
-  "updated": "2026-11-16T20:41:56Z"
+  "updated": "2026-11-16T20:44:33Z"
 }
