@@ -9874,6 +9874,32 @@
             }
           }
         }
+      },
+      {
+        "key": "151.101.38.82:443:e80fbaa0-9bb4-4ca6-9bc6-91aa129c6d16:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-87",
+          "server": "151.101.38.82",
+          "server_port": 443,
+          "uuid": "e80fbaa0-9bb4-4ca6-9bc6-91aa129c6d16",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto",
+            "host": [
+              "Mastervpshost1.global.ssl.fastly.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "account.fastly.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -148037,5 +148063,5 @@
       }
     ]
   },
-  "updated": "2026-11-16T00:19:20Z"
+  "updated": "2026-11-16T00:25:21Z"
 }
