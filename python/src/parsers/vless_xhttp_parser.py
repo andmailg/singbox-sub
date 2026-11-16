@@ -2,7 +2,7 @@
 
 import urllib.parse
 
-from src.common import is_valid_host
+from src.common import is_valid_host, normalize_vless_flow
 
 
 def parse_proxy_link(link: str) -> dict | None:
@@ -109,7 +109,7 @@ def parse_proxy_link(link: str) -> dict | None:
         return None
 
     # 7. Читаем flow (например, xtls-rprx-vision)
-    flow = params.get("flow", [None])[0]
+    flow = normalize_vless_flow(params.get("flow", [None])[0])
 
     # 8. Читаем xhttp-специфичные параметры
     # path — только если указан в ссылке

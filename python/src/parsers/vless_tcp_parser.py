@@ -5,6 +5,8 @@ import functools
 import re
 import urllib.parse
 
+from src.common import normalize_vless_flow
+
 
 @functools.lru_cache(maxsize=4096)
 def _is_valid_reality_public_key(s: str) -> bool:
@@ -188,7 +190,7 @@ def parse_proxy_link(link: str) -> dict | None:
             tls_opts["insecure"] = True
 
     # 7. Читаем flow (например, xtls-rprx-vision)
-    flow = params.get("flow", [None])[0]
+    flow = normalize_vless_flow(params.get("flow", [None])[0])
 
     # 8. Сборка объекта outbound для sing-box
     outbound: dict = {

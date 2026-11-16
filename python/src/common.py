@@ -27,6 +27,21 @@ INTERNAL_FIELDS = frozenset({
 })
 
 
+def normalize_vless_flow(flow: str | None) -> str | None:
+    """Приводит flow к значению, которое понимает sing-box.
+
+    sing-box поддерживает только "xtls-rprx-vision" (или пустой flow).
+    Xray-варианты вроде "xtls-rprx-vision-udp443" вызывают ошибку
+    "unsupported flow" при инициализации outbound.
+    """
+    if not flow:
+        return None
+    flow = flow.strip()
+    if flow.startswith("xtls-rprx-vision"):
+        return "xtls-rprx-vision"
+    return None
+
+
 def merge_sub_ids(target: dict, source: dict) -> None:
     """Объединяет _sub_ids двух копий одной ноды (подписки накапливаются, а не теряются)."""
     sub_ids = set(target.get("_sub_ids") or ()) | set(source.get("_sub_ids") or ())

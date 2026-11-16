@@ -2,6 +2,8 @@
 
 import urllib.parse
 
+from src.common import normalize_vless_flow
+
 
 def _param(params: dict, key: str) -> str | None:
     """Извлекает первое значение параметра query-строки."""
@@ -85,7 +87,7 @@ def parse_proxy_link(link: str) -> dict | None:
         fp = _param(params, "fp")
         # spx/spiderX нужен для ссылок и Xray; из sing-box JSON вырезается при экспорте
         spider_x = _param(params, "spx") or _param(params, "spiderX")
-        flow = _param(params, "flow")
+        flow = normalize_vless_flow(_param(params, "flow"))
 
         # Reality в sing-box требует public_key и utls-fingerprint;
         # значения по умолчанию не подставляем — ноду без них пропускаем.
