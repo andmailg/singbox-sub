@@ -154173,6 +154173,75 @@
             }
           }
         }
+      },
+      {
+        "key": "172.66.0.1:8443:60441548-b68e-43b2-8191-e3b884be4b3c:/lMnsZUN4/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-3585",
+          "server": "172.66.0.1",
+          "server_port": 8443,
+          "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/lMnsZUN4/",
+            "headers": {
+              "Host": "v2ray1.dozapp.xyz"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "v2ray1.dozapp.xyz",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "US032012.westmgreen.com:443:fbc990c5-c62e-4e31-a9a5-db3a4fe42741:/wes",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5477",
+          "server": "US032012.westmgreen.com",
+          "server_port": 443,
+          "uuid": "fbc990c5-c62e-4e31-a9a5-db3a4fe42741",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/wes",
+            "headers": {
+              "Host": "US032012.westmgreen.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "US032012.westmgreen.com",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "172.67.152.183:443:0cf6d970-3f1d-4aae-a989-92a8f76ae3db:/ws",
+        "node": {
+          "type": "vmess",
+          "tag": "node-3679",
+          "server": "172.67.152.183",
+          "server_port": 443,
+          "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/ws",
+            "headers": {
+              "Host": "vmess.lbw666.dpdns.org"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "vmess.lbw666.dpdns.org",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -157581,5 +157650,5 @@
       }
     ]
   },
-  "updated": "2026-11-16T06:56:11Z"
+  "updated": "2026-11-16T07:05:13Z"
 }
