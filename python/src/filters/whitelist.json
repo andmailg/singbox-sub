@@ -97035,6 +97035,947 @@
             "service_name": "download"
           }
         }
+      },
+      {
+        "key": "103.175.79.6:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-4",
+          "server": "103.175.79.6",
+          "server_port": 8443,
+          "uuid": "97ab2e86-83c5-0a32-4914-5dbe1af97839",
+          "tls": {
+            "enabled": true,
+            "server_name": "download.autodesk.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "92KJ-ibs1qTy8nODGrHTW8T0b_trG7McLYv8My9o2EE"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "TunService"
+          }
+        }
+      },
+      {
+        "key": "122.8.92.3:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-27",
+          "server": "122.8.92.3",
+          "server_port": 8443,
+          "uuid": "97ab2e86-83c5-0a32-4914-5dbe1af97839",
+          "tls": {
+            "enabled": true,
+            "server_name": "cdn.steamstatic.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "sbBzEDf7UllUslF6LTfsM1qiOW322QKM343zhJD0Lng"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "TunService"
+          }
+        }
+      },
+      {
+        "key": "132.243.67.241:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-43",
+          "server": "132.243.67.241",
+          "server_port": 443,
+          "uuid": "4618cebd-e1e9-45c3-be98-d9d6e3ee8bef",
+          "tls": {
+            "enabled": true,
+            "server_name": "362c1eg.se1.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "BLhS7fE4Yh6kAADw7yRIn2PzKun-JDagJHJNOePYRSY",
+              "short_id": "bee802ae4ab66496"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
+      },
+      {
+        "key": "140.235.168.8:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-51",
+          "server": "140.235.168.8",
+          "server_port": 8443,
+          "uuid": "97ab2e86-83c5-0a32-4914-5dbe1af97839",
+          "tls": {
+            "enabled": true,
+            "server_name": "download.nvidia.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "fCVnWVMTCS5fzMMTwk7EaBLlg4a2kAVDt2CG2jwobQ0"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "TunService"
+          }
+        }
+      },
+      {
+        "key": "144.31.3.105:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-60",
+          "server": "144.31.3.105",
+          "server_port": 8443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "pl105.homelab-cdn.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "0f9tBNd1e0FjqakxfoGM_bGfYIAdE81XzXwPQgJkVDI",
+              "short_id": "1eb65c424decdb73"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "172.235.165.162:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-96",
+          "server": "172.235.165.162",
+          "server_port": 443,
+          "uuid": "878ac990-650e-402f-910b-7859c35c1f50",
+          "tls": {
+            "enabled": true,
+            "server_name": "dl.google.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "cAFMol_SqbGzF6IZSHdOS8taChr8dRe9n3RdxJp0QEQ"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "172.239.4.188:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-97",
+          "server": "172.239.4.188",
+          "server_port": 443,
+          "uuid": "878ac990-650e-402f-910b-7859c35c1f50",
+          "tls": {
+            "enabled": true,
+            "server_name": "dl.google.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "cAFMol_SqbGzF6IZSHdOS8taChr8dRe9n3RdxJp0QEQ"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "186.246.20.208:2083",
+        "node": {
+          "type": "vless",
+          "tag": "node-121",
+          "server": "186.246.20.208",
+          "server_port": 2083,
+          "uuid": "94c8edcb-8de1-4443-b86a-4bcede4b7135",
+          "tls": {
+            "enabled": true,
+            "server_name": "dl.google.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "Cu6txBcQSoWtbAGXjR2lV2Z1bawVbA9_OodbuHRzGE4",
+              "short_id": "a1b0496f",
+              "spider_x": "/"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "google.storage.v2.Storage"
+          }
+        }
+      },
+      {
+        "key": "191.101.8.40:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-131",
+          "server": "191.101.8.40",
+          "server_port": 8443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "nl40.homelab-cdn.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "NW2c4t6gXODenb0_Mo5Qf-1nrJr5xFQm30zf-IVfHjY",
+              "short_id": "08"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "195.133.80.231:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-140",
+          "server": "195.133.80.231",
+          "server_port": 443,
+          "uuid": "ba9ac05e-422e-421e-a46b-a4c111a29946",
+          "tls": {
+            "enabled": true,
+            "server_name": "optim.tildacdn.pub",
+            "reality": {
+              "enabled": true,
+              "public_key": "unNROkbh95ZZNHzG2RIkgrFftOLldNH0ccmtW63CziE"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "ebl"
+          }
+        }
+      },
+      {
+        "key": "45.92.219.227:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-219",
+          "server": "45.92.219.227",
+          "server_port": 8443,
+          "uuid": "1e6bb05f-2d45-4f88-ae4d-4baa2763e4cf",
+          "tls": {
+            "enabled": true,
+            "server_name": "pics.ds-cdn.online",
+            "reality": {
+              "enabled": true,
+              "public_key": "83hcEckhKi2A2BxkgMa01143dR-lEnduh2qU5sHm-WY",
+              "short_id": "427dd79b7dd67972"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc-tro"
+          }
+        }
+      },
+      {
+        "key": "62764fg.nl19.h1clayd.shop:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-244",
+          "server": "62764fg.nl19.h1clayd.shop",
+          "server_port": 443,
+          "uuid": "2208b003-78b1-453c-b5ca-ce847ff0efd6",
+          "tls": {
+            "enabled": true,
+            "server_name": "62764fg.nl19.h1clayd.shop",
+            "reality": {
+              "enabled": true,
+              "public_key": "RqABpaIKrmdoK0pwnQ5zUP2c3Dh5cLw0ueT1hb35txk",
+              "short_id": "cd9f7c819a97cea9"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "4c9e80459954"
+          },
+          "packet_encoding": "xudp"
+        }
+      },
+      {
+        "key": "76.164.202.163:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-246",
+          "server": "76.164.202.163",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "de7-163.homelab-cdn.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "-ABl1aWUmg19BGoOGs8DwhPCTj4uUGgdyXZ1xaWh0W4",
+              "short_id": "376ec5abd2a1b80c"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "89.106.88.106:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-291",
+          "server": "89.106.88.106",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee106.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "89.106.88.11:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-292",
+          "server": "89.106.88.11",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee11.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "89.106.88.12:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-293",
+          "server": "89.106.88.12",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee12.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "89.106.88.125:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-294",
+          "server": "89.106.88.125",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee125.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "89.106.88.126:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-295",
+          "server": "89.106.88.126",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee126.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "89.106.88.146:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-296",
+          "server": "89.106.88.146",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee146.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "89.106.88.23:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-298",
+          "server": "89.106.88.23",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee23.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "89.106.88.24:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-299",
+          "server": "89.106.88.24",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee24.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "89.106.88.27:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-301",
+          "server": "89.106.88.27",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee27.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "89.106.88.30:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-302",
+          "server": "89.106.88.30",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee30.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "89.106.88.39:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-303",
+          "server": "89.106.88.39",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee39.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "89.106.88.42:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-304",
+          "server": "89.106.88.42",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee42.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "de7-164.homelab-cdn.cloud:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-370",
+          "server": "de7-164.homelab-cdn.cloud",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "de7-164.homelab-cdn.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "-ABl1aWUmg19BGoOGs8DwhPCTj4uUGgdyXZ1xaWh0W4",
+              "short_id": "376ec5abd2a1b80c"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "de7-165.homelab-cdn.cloud:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-371",
+          "server": "de7-165.homelab-cdn.cloud",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "de7-165.homelab-cdn.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "-ABl1aWUmg19BGoOGs8DwhPCTj4uUGgdyXZ1xaWh0W4",
+              "short_id": "376ec5abd2a1b80c"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "de7-166.homelab-cdn.cloud:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-372",
+          "server": "de7-166.homelab-cdn.cloud",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "de7-166.homelab-cdn.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "-ABl1aWUmg19BGoOGs8DwhPCTj4uUGgdyXZ1xaWh0W4",
+              "short_id": "376ec5abd2a1b80c"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "ee106.own-homelab.cloud:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-381",
+          "server": "ee106.own-homelab.cloud",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee106.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "ee125.own-homelab.cloud:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-382",
+          "server": "ee125.own-homelab.cloud",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee125.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "ee15.own-homelab.cloud:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-383",
+          "server": "ee15.own-homelab.cloud",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee15.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "ee23.own-homelab.cloud:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-384",
+          "server": "ee23.own-homelab.cloud",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee23.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "ee42.own-homelab.cloud:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-386",
+          "server": "ee42.own-homelab.cloud",
+          "server_port": 443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "ee42.own-homelab.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "4XnNIGFrNW2uKqvNJly-X_J52O_SDOdWwejuGQU_IAs",
+              "short_id": "05c0787b9357f4a8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "nl40.homelab-cdn.cloud:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-422",
+          "server": "nl40.homelab-cdn.cloud",
+          "server_port": 8443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "nl40.homelab-cdn.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "NW2c4t6gXODenb0_Mo5Qf-1nrJr5xFQm30zf-IVfHjY",
+              "short_id": "08"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "nl41.homelab-cdn.cloud:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-423",
+          "server": "nl41.homelab-cdn.cloud",
+          "server_port": 8443,
+          "uuid": "0ed9418b-e687-4c2d-8869-7e368c44887e",
+          "tls": {
+            "enabled": true,
+            "server_name": "nl41.homelab-cdn.cloud",
+            "reality": {
+              "enabled": true,
+              "public_key": "NW2c4t6gXODenb0_Mo5Qf-1nrJr5xFQm30zf-IVfHjY",
+              "short_id": "08"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -156640,5 +157581,5 @@
       }
     ]
   },
-  "updated": "2026-11-16T06:55:20Z"
+  "updated": "2026-11-16T06:56:11Z"
 }
