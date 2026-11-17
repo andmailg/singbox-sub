@@ -161837,6 +161837,31 @@
             "path": "/"
           }
         }
+      },
+      {
+        "key": "206.1.100.98:443:70b40ff3-f71a-4975-bef3-bce5e71ee37b:/QWK1KqvBK6rkKbK3YiGIn72",
+        "node": {
+          "type": "vmess",
+          "tag": "node-52",
+          "server": "206.1.100.98",
+          "server_port": 443,
+          "uuid": "70b40ff3-f71a-4975-bef3-bce5e71ee37b",
+          "security": "auto",
+          "transport": {
+            "type": "httpupgrade",
+            "path": "/QWK1KqvBK6rkKbK3YiGIn72",
+            "host": "cf1.blogboy.ir"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "cf1.blogboy.ir",
+            "insecure": false,
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "trojan_tcp": [
@@ -165146,5 +165171,5 @@
       }
     ]
   },
-  "updated": "2026-11-17T20:14:29Z"
+  "updated": "2026-11-17T23:12:35Z"
 }
