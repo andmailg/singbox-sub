@@ -202,11 +202,6 @@ def build_tun_config(outbounds: list[dict]) -> dict:
             "rule_set": [
                 {
                     "type": "remote",
-                    "tag": "db-github",
-                    "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-github.srs"
-                },
-                {
-                    "type": "remote",
                     "tag": "geosite-category-media-ru-blocked",
                     "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-category-media-ru-blocked.srs"
                 },
