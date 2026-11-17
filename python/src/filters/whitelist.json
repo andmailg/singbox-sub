@@ -159137,6 +159137,24 @@
             "insecure": false
           }
         }
+      },
+      {
+        "key": "www.speedtest.net:80:6fa9def2-edcb-4348-b012-6622c959a620:/@ferdolans7",
+        "node": {
+          "type": "vmess",
+          "tag": "node-6385",
+          "server": "www.speedtest.net",
+          "server_port": 80,
+          "uuid": "6fa9def2-edcb-4348-b012-6622c959a620",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/@ferdolans7",
+            "headers": {
+              "Host": "prairie-formats-holland-bundle.trycloudflare.com"
+            }
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -162615,5 +162633,5 @@
       }
     ]
   },
-  "updated": "2026-11-17T08:15:35Z"
+  "updated": "2026-11-17T08:24:39Z"
 }
