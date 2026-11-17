@@ -7,8 +7,12 @@
     "servers": [
       {
         "type": "https",
-        "tag": "dns-local",
-        "server": "77.88.8.8"
+        "tag": "dns-direct",
+        "server": "77.88.8.8",
+        "tls": {
+          "enabled": true,
+          "server_name": "common.dot.dns.yandex.net"
+        }
       },
       {
         "type": "https",
@@ -34,7 +38,7 @@
       },
       {
         "type": "local",
-        "tag": "local"
+        "tag": "dns-local"
       }
     ],
     "rules": [
@@ -43,7 +47,7 @@
           ".lan",
           ".local"
         ],
-        "server": "local"
+        "server": "dns-local"
       },
       {
         "rule_set": [
@@ -55,7 +59,7 @@
         "rule_set": [
           "geosite-category-ru"
         ],
-        "server": "dns-local"
+        "server": "dns-direct"
       },
       {
         "query_type": [
@@ -111,8 +115,7 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇫🇮node-1",
-        "🇫🇮node-2"
+        "🇩🇰node-1"
       ],
       "default": "auto"
     },
@@ -120,8 +123,7 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇫🇮node-1",
-        "🇫🇮node-2"
+        "🇩🇰node-1"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -129,32 +131,17 @@
     },
     {
       "type": "trojan",
-      "tag": "🇫🇮node-1",
-      "server": "45-149-147-213.sslip.io",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
+      "tag": "🇩🇰node-1",
+      "server": "217.78.237.118",
+      "server_port": 8447,
+      "password": "jCpBEnDOnqJ7J36rdoJ_cYvrKK5ErK9H",
       "tls": {
         "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
+        "server_name": "imgffbf.static.tv-av.fun"
       },
       "transport": {
         "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇫🇮node-2",
-      "server": "45.149.147.213",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
-      "tls": {
-        "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
+        "service_name": "grpc"
       }
     }
   ],
@@ -219,11 +206,6 @@
       }
     ],
     "rule_set": [
-      {
-        "type": "remote",
-        "tag": "db-github",
-        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-github.srs"
-      },
       {
         "type": "remote",
         "tag": "geosite-category-media-ru-blocked",
