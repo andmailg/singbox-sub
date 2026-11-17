@@ -53,7 +53,7 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                     "type": "https",
                     "tag": "smart-dns",
                     "server": "dns.comss.one",
-                    "domain_resolver": "dns-direct"
+                    "domain_resolver": "dns-local"
                 },
                 {
                     "type": "fakeip",
@@ -63,7 +63,7 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                 },
                 {
                     "type": "local",
-                    "tag": "local"
+                    "tag": "dns-local"
                 }
             ],
             "rules": [
@@ -72,7 +72,7 @@ def build_tun_config(outbounds: list[dict]) -> dict:
                         ".lan",
                         ".local"
                     ],
-                    "server": "local"
+                    "server": "dns-local"
                 },
                 {
                     "rule_set": [
@@ -229,7 +229,7 @@ def build_tun_config(outbounds: list[dict]) -> dict:
             "final": "proxy-out",
             "auto_detect_interface": True,
             "override_android_vpn": True,
-            "default_domain_resolver": "dns-direct"
+            "default_domain_resolver": "dns-local"
         },
         "experimental": {
             "cache_file": {
