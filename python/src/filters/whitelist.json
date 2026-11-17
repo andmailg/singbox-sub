@@ -88213,6 +88213,63 @@
             "server_name": "bl1.nexfile.net"
           }
         }
+      },
+      {
+        "key": "159.13.55.48:20000:b42d90fa667942aebc734d60",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-38",
+          "server": "159.13.55.48",
+          "server_port": 20000,
+          "password": "b42d90fa667942aebc734d60",
+          "tls": {
+            "enabled": true,
+            "server_name": "hy2-au2.whuiy.xyz"
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "b42d90fa667942aebc734d60"
+          }
+        }
+      },
+      {
+        "key": "77.90.15.183:8964:HATATEAYA",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-82",
+          "server": "77.90.15.183",
+          "server_port": 8964,
+          "password": "HATATEAYA",
+          "tls": {
+            "enabled": true,
+            "server_name": "ganlanc.at"
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "HATATEAYA"
+          }
+        }
+      },
+      {
+        "key": "ide.vipvirtualnet.eu:30746:99a271e85dbc4aa8950f9c7beee06b19",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-167",
+          "server": "ide.vipvirtualnet.eu",
+          "server_port": 30746,
+          "password": "99a271e85dbc4aa8950f9c7beee06b19",
+          "tls": {
+            "enabled": true,
+            "server_name": "del.vipvirtualnet.eu",
+            "alpn": [
+              "h3"
+            ]
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "7wjvepshx5g115x4"
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -164286,5 +164343,5 @@
       }
     ]
   },
-  "updated": "2026-11-17T19:11:20Z"
+  "updated": "2026-11-17T19:12:40Z"
 }
