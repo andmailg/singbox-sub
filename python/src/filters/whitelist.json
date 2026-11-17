@@ -10149,6 +10149,162 @@
             }
           }
         }
+      },
+      {
+        "key": "37.9.4.108:443:c55f65ef-3be3-477a-a646-94c3ccec1604:/xhttp",
+        "node": {
+          "type": "vless",
+          "tag": "node-236",
+          "server": "37.9.4.108",
+          "server_port": 443,
+          "uuid": "c55f65ef-3be3-477a-a646-94c3ccec1604",
+          "transport": {
+            "type": "xhttp",
+            "path": "/xhttp",
+            "mode": "auto",
+            "host": [
+              "kakaha.worldfly.io"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "kakaha.worldfly.io",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "78.159.250.155:8443:37af0181-5598-4aad-a040-d926bcb65757:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-282",
+          "server": "78.159.250.155",
+          "server_port": 8443,
+          "uuid": "37af0181-5598-4aad-a040-d926bcb65757",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "plaindune.com"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "plaindune.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "cde.vipvirtualnet.eu:8443:89573ddc-bc74-49d3-a1bf-96c293d07cea:/wex-secure",
+        "node": {
+          "type": "vless",
+          "tag": "node-307",
+          "server": "cde.vipvirtualnet.eu",
+          "server_port": 8443,
+          "uuid": "89573ddc-bc74-49d3-a1bf-96c293d07cea",
+          "transport": {
+            "type": "xhttp",
+            "path": "/wex-secure",
+            "mode": "auto",
+            "host": [
+              "cde.vipvirtualnet.eu"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "del.vipvirtualnet.eu",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "leviko-nl4640.shopingggg.ir:443:3536e1fa-0850-44d1-b123-925ce12476cf:/kavir",
+        "node": {
+          "type": "vless",
+          "tag": "node-346",
+          "server": "leviko-nl4640.shopingggg.ir",
+          "server_port": 443,
+          "uuid": "3536e1fa-0850-44d1-b123-925ce12476cf",
+          "transport": {
+            "type": "xhttp",
+            "path": "/kavir",
+            "mode": "stream-one",
+            "host": [
+              "dey.lnmarketplace.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "dey.lnmarketplace.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "plaindune.com:8443:37af0181-5598-4aad-a040-d926bcb65757:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-355",
+          "server": "plaindune.com",
+          "server_port": 8443,
+          "uuid": "37af0181-5598-4aad-a040-d926bcb65757",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "plaindune.com"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "plaindune.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "folio.basterdym.asia:443:80a06811-f74b-4b82-ac99-7e66c2a98e1c:/api/preview/",
+        "node": {
+          "type": "vless",
+          "tag": "node-325",
+          "server": "folio.basterdym.asia",
+          "server_port": 443,
+          "uuid": "80a06811-f74b-4b82-ac99-7e66c2a98e1c",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/preview/",
+            "mode": "packet-up",
+            "host": [
+              "folio.basterdym.asia"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "folio.basterdym.asia",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -165171,5 +165327,5 @@
       }
     ]
   },
-  "updated": "2026-11-17T23:12:35Z"
+  "updated": "2026-11-17T23:13:47Z"
 }
