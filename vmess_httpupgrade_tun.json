@@ -28,7 +28,7 @@
         "type": "https",
         "tag": "smart-dns",
         "server": "dns.comss.one",
-        "domain_resolver": "dns-direct"
+        "domain_resolver": "dns-local"
       },
       {
         "type": "fakeip",
@@ -38,7 +38,7 @@
       },
       {
         "type": "local",
-        "tag": "local"
+        "tag": "dns-local"
       }
     ],
     "rules": [
@@ -47,7 +47,7 @@
           ".lan",
           ".local"
         ],
-        "server": "local"
+        "server": "dns-local"
       },
       {
         "rule_set": [
@@ -206,11 +206,6 @@
     "rule_set": [
       {
         "type": "remote",
-        "tag": "db-github",
-        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-github.srs"
-      },
-      {
-        "type": "remote",
         "tag": "geosite-category-media-ru-blocked",
         "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-category-media-ru-blocked.srs"
       },
@@ -238,7 +233,7 @@
     "final": "proxy-out",
     "auto_detect_interface": true,
     "override_android_vpn": true,
-    "default_domain_resolver": "dns-direct"
+    "default_domain_resolver": "dns-local"
   },
   "experimental": {
     "cache_file": {
