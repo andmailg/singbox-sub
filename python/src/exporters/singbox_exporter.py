@@ -8,7 +8,14 @@ from .router_config_builder import build_router_config
 
 
 def export_tun(outbounds: list[dict], output_file: str = "output.json") -> int:
-    """Экспортирует ноды в мобильный конфиг sing-box (tun)."""
+    """Экспортирует ноды в мобильный конфиг sing-box (tun).
+
+    Если нод нет, файл не трогаем: конфиг с пустыми selector/urltest невалиден
+    и затёр бы последний рабочий конфиг.
+    """
+    if not outbounds:
+        print(f"SKIP {output_file}: no nodes, existing file left untouched.")
+        return 0
     return _export(outbounds, output_file, build_tun_config, 20)
 
 
