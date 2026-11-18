@@ -105462,6 +105462,140 @@
             "service_name": ""
           }
         }
+      },
+      {
+        "key": "143.246.41.205:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-42",
+          "server": "143.246.41.205",
+          "server_port": 443,
+          "uuid": "13e6bdfd-d51b-4e57-a40e-b88784cba8bd",
+          "tls": {
+            "enabled": true,
+            "server_name": "ec7a81g.de15.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "shUbIWcBJdXaDzO80KqTU9exgMarUCOiiZ56Dwl7XVU",
+              "short_id": "7a8e24da4eb2c1b5"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "43f41cd7fee0"
+          }
+        }
+      },
+      {
+        "key": "150.251.143.47:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-52",
+          "server": "150.251.143.47",
+          "server_port": 443,
+          "uuid": "07df3711-07a1-4649-9a61-3f16cb931d02",
+          "tls": {
+            "enabled": true,
+            "server_name": "ec7a81g.de19.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "shUbIWcBJdXaDzO80KqTU9exgMarUCOiiZ56Dwl7XVU",
+              "short_id": "7a8e24da4eb2c1b5",
+              "spider_x": "/"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "43f41cd7fee0"
+          }
+        }
+      },
+      {
+        "key": "195.206.235.110:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-128",
+          "server": "195.206.235.110",
+          "server_port": 443,
+          "uuid": "cda0862a-0f87-4be9-8ed8-1d0c9e382839",
+          "tls": {
+            "enabled": true,
+            "server_name": "717252g.nl8.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU",
+              "short_id": "d3bd772514c87d28"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "204adda7e3da"
+          }
+        }
+      },
+      {
+        "key": "37.114.37.192:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-190",
+          "server": "37.114.37.192",
+          "server_port": 443,
+          "uuid": "955d8dc7-5e3b-40ac-b2bb-bd8aa20fc7e6",
+          "tls": {
+            "enabled": true,
+            "server_name": "api-mod.storagedirectguide.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "eyEGQfdxyhZG0bCKlwp8hSihdc5WHTGmw4umrW4_bxY"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "api-mod"
+          }
+        }
+      },
+      {
+        "key": "45.134.111.131:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-200",
+          "server": "45.134.111.131",
+          "server_port": 443,
+          "uuid": "955d8dc7-5e3b-40ac-b2bb-bd8aa20fc7e6",
+          "tls": {
+            "enabled": true,
+            "server_name": "service-nl.storagedirectguide.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "pe3aJqDQUOtFNeJiOj3xVJg_-27iYoePS_jO8qnVKS8"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "api-service"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -168361,5 +168495,5 @@
       }
     ]
   },
-  "updated": "2026-11-18T13:55:48Z"
+  "updated": "2026-11-18T14:26:02Z"
 }
