@@ -1,6 +1,51 @@
 {
-  "last_updated": "2026-11-17T19:09:23Z",
+  "last_updated": "2026-11-18T02:24:07Z",
   "nodes": [
+    {
+      "type": "trojan",
+      "tag": "🇩🇰node-1",
+      "server": "217.78.237.118",
+      "server_port": 8447,
+      "password": "jCpBEnDOnqJ7J36rdoJ_cYvrKK5ErK9H",
+      "_dedup_key": "217.78.237.118:8447:jCpBEnDOnqJ7J36rdoJ_cYvrKK5ErK9H:grpc",
+      "tls": {
+        "enabled": true,
+        "server_name": "imgffbf.static.tv-av.fun"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc"
+      },
+      "_sub_ids": [
+        "100",
+        "102",
+        "105",
+        "26"
+      ],
+      "_last_ok_ts": 1794942556.996537,
+      "_country": "DK",
+      "_pending_since": 1794968640.547618
+    },
+    {
+      "type": "trojan",
+      "tag": "node-32",
+      "server": "60.249.28.59",
+      "server_port": 443,
+      "password": "67eb147db1c0f8c5",
+      "_dedup_key": "60.249.28.59:443:67eb147db1c0f8c5:db",
+      "tls": {
+        "enabled": true,
+        "server_name": "007.com"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "db"
+      },
+      "_sub_ids": [
+        "26"
+      ],
+      "_pending_since": 1794968640.547618
+    },
     {
       "type": "trojan",
       "tag": "node-33",
@@ -791,38 +836,6 @@
         "29"
       ],
       "_pending_since": 1794332709.812329
-    },
-    {
-      "type": "trojan",
-      "tag": "node-32",
-      "server": "45-149-147-213.sslip.io",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
-      "tls": {
-        "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
-      },
-      "_pending_since": 1794095960.122827
-    },
-    {
-      "type": "trojan",
-      "tag": "node-33",
-      "server": "45.149.147.213",
-      "server_port": 4444,
-      "password": "9b347a9b-d7a6-4b51-9890-eff62b832834",
-      "tls": {
-        "enabled": true,
-        "server_name": "45-149-147-213.sslip.io"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "kobedin-server1-trojan"
-      },
-      "_pending_since": 1794095960.122827
     }
   ]
 }
