@@ -122748,6 +122748,48 @@
             "path": "%2FWangCai-8"
           }
         }
+      },
+      {
+        "key": "8.6.112.0:443:XnjwEJbEbqBt8bjlrKZPwg:/Lunex",
+        "node": {
+          "type": "trojan",
+          "tag": "node-705",
+          "server": "8.6.112.0",
+          "server_port": 443,
+          "password": "XnjwEJbEbqBt8bjlrKZPwg",
+          "tls": {
+            "enabled": true,
+            "server_name": "cf.lunex-vpn.xyz"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/Lunex",
+            "headers": {
+              "Host": "cf.lunex-vpn.xyz"
+            }
+          }
+        }
+      },
+      {
+        "key": "staticxfastline.taymaztest.ir:16200:4mq9w5ckqw3ewbdg:/biyasd",
+        "node": {
+          "type": "trojan",
+          "tag": "node-791",
+          "server": "staticxfastline.taymaztest.ir",
+          "server_port": 16200,
+          "password": "4mq9w5ckqw3ewbdg",
+          "tls": {
+            "enabled": true,
+            "server_name": "staticxfastline.taymaztest.ir"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/biyasd",
+            "headers": {
+              "Host": "staticxfastline.taymaztest.ir"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -170409,5 +170451,5 @@
       }
     ]
   },
-  "updated": "2026-11-18T22:45:40Z"
+  "updated": "2026-11-18T22:48:55Z"
 }

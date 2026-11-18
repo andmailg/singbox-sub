@@ -116,8 +116,7 @@
       "outbounds": [
         "auto",
         "node-1",
-        "node-2",
-        "node-3"
+        "🇱🇺node-2"
       ],
       "default": "auto"
     },
@@ -126,8 +125,7 @@
       "tag": "auto",
       "outbounds": [
         "node-1",
-        "node-2",
-        "node-3"
+        "🇱🇺node-2"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -136,49 +134,37 @@
     {
       "type": "trojan",
       "tag": "node-1",
-      "server": "104.17.128.1",
-      "server_port": 2096,
-      "password": "auto",
+      "server": "8.6.112.0",
+      "server_port": 443,
+      "password": "XnjwEJbEbqBt8bjlrKZPwg",
       "tls": {
         "enabled": true,
-        "server_name": "azadnet-5o5.pages.dev"
+        "server_name": "cf.lunex-vpn.xyz"
       },
       "transport": {
         "type": "ws",
-        "path": "/azadnet-5o5.pages.dev/?ed=2560",
+        "path": "/Lunex",
         "headers": {
-          "Host": "azadnet-5o5.pages.dev"
+          "Host": "cf.lunex-vpn.xyz"
         }
       }
     },
     {
       "type": "trojan",
-      "tag": "node-2",
-      "server": "104.19.173.68",
-      "server_port": 443,
-      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
+      "tag": "🇱🇺node-2",
+      "server": "staticxfastline.taymaztest.ir",
+      "server_port": 16200,
+      "password": "4mq9w5ckqw3ewbdg",
       "tls": {
         "enabled": true,
-        "server_name": "azadnet-5vk.pages.dev"
+        "server_name": "staticxfastline.taymaztest.ir"
       },
       "transport": {
         "type": "ws",
-        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-3",
-      "server": "www.digitalocean.com",
-      "server_port": 443,
-      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
-      "tls": {
-        "enabled": true,
-        "server_name": "azadnet-5vk.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
+        "path": "/biyasd",
+        "headers": {
+          "Host": "staticxfastline.taymaztest.ir"
+        }
       }
     }
   ],
