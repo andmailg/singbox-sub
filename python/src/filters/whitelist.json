@@ -164922,6 +164922,67 @@
             }
           }
         }
+      },
+      {
+        "key": "39.108.113.127:10086:a625d148-e988-4008-b957-e9051a6371d2:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-4758",
+          "server": "39.108.113.127",
+          "server_port": 10086,
+          "uuid": "a625d148-e988-4008-b957-e9051a6371d2",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/"
+          }
+        }
+      },
+      {
+        "key": "US122205.ssgreen.org:443:4e3618c7-e683-49dd-b678-166dcb6eccea:/wes",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5523",
+          "server": "US122205.ssgreen.org",
+          "server_port": 443,
+          "uuid": "4e3618c7-e683-49dd-b678-166dcb6eccea",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/wes",
+            "headers": {
+              "Host": "US122205.ssgreen.org"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "US122205.ssgreen.org",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "US122207.ssgreen.org:443:74d216a3-fdb8-4774-a9c3-35f9e5a46819:/wes",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5528",
+          "server": "US122207.ssgreen.org",
+          "server_port": 443,
+          "uuid": "74d216a3-fdb8-4774-a9c3-35f9e5a46819",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/wes",
+            "headers": {
+              "Host": "US122207.ssgreen.org"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "US122207.ssgreen.org",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -168495,5 +168556,5 @@
       }
     ]
   },
-  "updated": "2026-11-18T14:26:02Z"
+  "updated": "2026-11-18T14:34:58Z"
 }
