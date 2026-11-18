@@ -119301,6 +119301,24 @@
             }
           }
         }
+      },
+      {
+        "key": "104.16.148.5:443:19877587-ed94-4033-88cd-4ac50a5e8718:%2FWangCai-8",
+        "node": {
+          "type": "trojan",
+          "tag": "node-32",
+          "server": "104.16.148.5",
+          "server_port": 443,
+          "password": "19877587-ed94-4033-88cd-4ac50a5e8718",
+          "tls": {
+            "enabled": true,
+            "server_name": "dimskiee.biz.id"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "%2FWangCai-8"
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -166082,5 +166100,5 @@
       }
     ]
   },
-  "updated": "2026-11-18T02:35:34Z"
+  "updated": "2026-11-18T02:40:32Z"
 }
