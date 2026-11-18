@@ -162527,6 +162527,117 @@
             "insecure": false
           }
         }
+      },
+      {
+        "key": "US122202.ssgreen.org:443:c429d26a-e3ff-416c-b851-bfb597655f20:/wes",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5515",
+          "server": "US122202.ssgreen.org",
+          "server_port": 443,
+          "uuid": "c429d26a-e3ff-416c-b851-bfb597655f20",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/wes"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "US122202.ssgreen.org",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "sticks-military-buildings-fence.trycloudflare.com:443:2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea:/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+        "node": {
+          "type": "vmess",
+          "tag": "node-6202",
+          "server": "sticks-military-buildings-fence.trycloudflare.com",
+          "server_port": 443,
+          "uuid": "2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+            "headers": {
+              "Host": "sticks-military-buildings-fence.trycloudflare.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "sticks-military-buildings-fence.trycloudflare.com",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "support.zoom.us:443:4caf156a-3309-4105-8388-d388eb9e1105:/whatever/vmess",
+        "node": {
+          "type": "vmess",
+          "tag": "node-6212",
+          "server": "support.zoom.us",
+          "server_port": 443,
+          "uuid": "4caf156a-3309-4105-8388-d388eb9e1105",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/whatever/vmess",
+            "headers": {
+              "Host": "id2.nathaya.web.id"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "zoomgov.nathaya.web.id",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "104.16.0.1:2083:ac251237-576f-40c8-a543-554960c958b1:/or3",
+        "node": {
+          "type": "vmess",
+          "tag": "node-123",
+          "server": "104.16.0.1",
+          "server_port": 2083,
+          "uuid": "ac251237-576f-40c8-a543-554960c958b1",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/or3",
+            "headers": {
+              "Host": "or3.sfacg.uk"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "or3.sfacg.uk",
+            "insecure": false,
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "188.114.99.137:80:0cf6d970-3f1d-4aae-a989-92a8f76ae3db:/ws",
+        "node": {
+          "type": "vmess",
+          "tag": "node-4228",
+          "server": "188.114.99.137",
+          "server_port": 80,
+          "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/ws",
+            "headers": {
+              "Host": "vmess.lbw666.dpdns.org"
+            }
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -166100,5 +166211,5 @@
       }
     ]
   },
-  "updated": "2026-11-18T02:40:32Z"
+  "updated": "2026-11-18T02:43:33Z"
 }
