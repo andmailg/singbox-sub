@@ -166857,6 +166857,90 @@
             "insecure": false
           }
         }
+      },
+      {
+        "key": "141.193.213.20:8443:bd67fcd2-ec34-40a6-aac6-67731f2d7011:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-2919",
+          "server": "141.193.213.20",
+          "server_port": 8443,
+          "uuid": "bd67fcd2-ec34-40a6-aac6-67731f2d7011",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "matrix.phonicsindia.mobi"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "matrix.phonicsindia.mobi",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "45.76.100.238:10086:ee2927f6-b76a-4011-957c-fe7c4865b36c:/ws",
+        "node": {
+          "type": "vmess",
+          "tag": "node-4859",
+          "server": "45.76.100.238",
+          "server_port": 10086,
+          "uuid": "ee2927f6-b76a-4011-957c-fe7c4865b36c",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/ws"
+          }
+        }
+      },
+      {
+        "key": "mort5edf-production.up.railway.app:443:d02593b7-db22-4f23-82f2-1e78eb7e4b89:/api/yBg7Aw",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5931",
+          "server": "mort5edf-production.up.railway.app",
+          "server_port": 443,
+          "uuid": "d02593b7-db22-4f23-82f2-1e78eb7e4b89",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/api/yBg7Aw",
+            "headers": {
+              "Host": "mort5edf-production.up.railway.app"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "mort5edf-production.up.railway.app",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "motorcycles-scan-ceremony-ideas.trycloudflare.com:443:2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea:/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5937",
+          "server": "motorcycles-scan-ceremony-ideas.trycloudflare.com",
+          "server_port": 443,
+          "uuid": "2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+            "headers": {
+              "Host": "motorcycles-scan-ceremony-ideas.trycloudflare.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "motorcycles-scan-ceremony-ideas.trycloudflare.com",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -170451,5 +170535,5 @@
       }
     ]
   },
-  "updated": "2026-11-18T22:48:55Z"
+  "updated": "2026-11-18T22:52:43Z"
 }
