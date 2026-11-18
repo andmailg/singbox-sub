@@ -170042,7 +170042,28 @@
           }
         }
       }
+    ],
+    "trojan_httpupgrade": [
+      {
+        "key": "sub.macdonalder.cyou:37468:+Y4bH6SejVz8gunXYHMS94Oy2yn4313jzITBdW8eLsI=:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-21",
+          "server": "sub.macdonalder.cyou",
+          "server_port": 37468,
+          "password": "+Y4bH6SejVz8gunXYHMS94Oy2yn4313jzITBdW8eLsI=",
+          "tls": {
+            "enabled": true,
+            "server_name": "sub.macdonalder.cyou"
+          },
+          "transport": {
+            "type": "httpupgrade",
+            "path": "/",
+            "host": "sub.macdonalder.cyou"
+          }
+        }
+      }
     ]
   },
-  "updated": "2026-11-18T22:37:46Z"
+  "updated": "2026-11-18T22:40:00Z"
 }
