@@ -117,7 +117,8 @@
         "auto",
         "🇪🇸node-1",
         "🇪🇸node-2",
-        "🇸🇪node-3"
+        "🇸🇪node-3",
+        "🇸🇪node-4"
       ],
       "default": "auto"
     },
@@ -127,7 +128,8 @@
       "outbounds": [
         "🇪🇸node-1",
         "🇪🇸node-2",
-        "🇸🇪node-3"
+        "🇸🇪node-3",
+        "🇸🇪node-4"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -164,6 +166,20 @@
     {
       "type": "vless",
       "tag": "🇸🇪node-3",
+      "server": "13.60.235.57",
+      "server_port": 443,
+      "uuid": "7060231d-b9ba-495f-a218-bf427940cf3e",
+      "transport": {
+        "type": "http",
+        "host": [
+          "play.googleapis.com"
+        ],
+        "path": "/"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇪node-4",
       "server": "13.60.72.205",
       "server_port": 443,
       "uuid": "7060231d-b9ba-495f-a218-bf427940cf3e",
