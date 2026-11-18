@@ -10305,6 +10305,29 @@
             }
           }
         }
+      },
+      {
+        "key": "93.88.206.70:443:44ddb84a-f152-47ef-a970-fd63f2df9b30:/350a12c4b006",
+        "node": {
+          "type": "vless",
+          "tag": "node-435",
+          "server": "93.88.206.70",
+          "server_port": 443,
+          "uuid": "44ddb84a-f152-47ef-a970-fd63f2df9b30",
+          "transport": {
+            "type": "xhttp",
+            "path": "/350a12c4b006",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "edge.sevka.xyz",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "qq"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -167798,5 +167821,5 @@
       }
     ]
   },
-  "updated": "2026-11-18T03:28:08Z"
+  "updated": "2026-11-18T08:00:32Z"
 }
