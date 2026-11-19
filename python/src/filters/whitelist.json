@@ -92632,6 +92632,38 @@
             "password": "CyG0RFxMjzs41uQD4OLuHQ=="
           }
         }
+      },
+      {
+        "key": "48.102.214.171:4444:a35c508f-4d5d-4531-842e-6e9d43c762c0",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-81",
+          "server": "48.102.214.171",
+          "server_port": 4444,
+          "password": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "tls": {
+            "enabled": true,
+            "server_name": "fl4.edgeport.cloud"
+          }
+        }
+      },
+      {
+        "key": "sub.macdonalder.cyou:16146:u9axzkplfc3463am",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-208",
+          "server": "sub.macdonalder.cyou",
+          "server_port": 16146,
+          "password": "u9axzkplfc3463am",
+          "tls": {
+            "enabled": true,
+            "server_name": "sub.macdonalder.cyou"
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "mn1g0eianbese7bl"
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -173276,5 +173308,5 @@
       }
     ]
   },
-  "updated": "2026-11-19T02:23:58Z"
+  "updated": "2026-11-19T07:15:52Z"
 }
