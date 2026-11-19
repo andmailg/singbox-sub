@@ -1,59 +1,10 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-11-19T07:54:14Z",
+  "last_tested": "2026-11-19T19:18:54Z",
   "nodes": [
     {
       "type": "vmess",
       "tag": "node-1",
-      "server": "104.17.77.77",
-      "server_port": 8443,
-      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/lMnsZUN4/",
-        "headers": {
-          "Host": "v2ray1.dozapp.xyz"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "v2ray1.dozapp.xyz",
-        "insecure": false
-      },
-      "_last_ok_ts": 1795074036.770484,
-      "_country": null,
-      "_sub_ids": [
-        "1",
-        "100",
-        "102",
-        "104",
-        "105",
-        "107",
-        "109",
-        "110",
-        "13",
-        "14",
-        "20",
-        "201",
-        "21",
-        "26",
-        "27",
-        "29",
-        "300",
-        "303",
-        "311",
-        "316",
-        "318",
-        "319",
-        "320",
-        "6",
-        "9"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "node-2",
       "server": "104.18.0.1",
       "server_port": 8443,
       "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
@@ -70,10 +21,11 @@
         "server_name": "v2ray1.dozapp.xyz",
         "insecure": false
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": null,
       "_sub_ids": [
         "1",
+        "102",
         "104",
         "110",
         "22",
@@ -86,7 +38,62 @@
     },
     {
       "type": "vmess",
+      "tag": "node-2",
+      "server": "104.18.32.47",
+      "server_port": 8443,
+      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/lMnsZUN4/",
+        "headers": {
+          "Host": "v2ray1.dozapp.xyz"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "v2ray1.dozapp.xyz",
+        "insecure": false
+      },
+      "_last_ok_ts": 1795115069.099842,
+      "_country": null
+    },
+    {
+      "type": "vmess",
       "tag": "node-3",
+      "server": "104.18.32.47",
+      "server_port": 8443,
+      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/lMnsZUN4/",
+        "headers": {
+          "Host": "v2ray1.dozapp.xyz"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "v2ray1.dozapp.xyz",
+        "insecure": false
+      },
+      "_last_ok_ts": 1795115069.099842,
+      "_country": null,
+      "_sub_ids": [
+        "1",
+        "102",
+        "104",
+        "110",
+        "26",
+        "27",
+        "29",
+        "300",
+        "9"
+      ]
+    },
+    {
+      "type": "vmess",
+      "tag": "node-4",
       "server": "104.18.42.163",
       "server_port": 443,
       "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
@@ -120,12 +127,12 @@
         "4",
         "8"
       ],
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": null
     },
     {
       "type": "vmess",
-      "tag": "node-4",
+      "tag": "node-5",
       "server": "104.21.0.1",
       "server_port": 8443,
       "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
@@ -141,6 +148,279 @@
       "tls": {
         "enabled": true,
         "server_name": "v2ray1.dozapp.xyz",
+        "insecure": false
+      },
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "1",
+        "102",
+        "104",
+        "110",
+        "22",
+        "26",
+        "27",
+        "29",
+        "300",
+        "9"
+      ],
+      "_last_ok_ts": 1795115069.099842,
+      "_country": null
+    },
+    {
+      "type": "vmess",
+      "tag": "node-6",
+      "server": "104.21.50.177",
+      "server_port": 2083,
+      "uuid": "ac251237-576f-40c8-a543-554960c958b1",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/or3",
+        "headers": {
+          "Host": "or3.sfacg.uk"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "or3.sfacg.uk",
+        "insecure": false
+      },
+      "_last_ok_ts": 1795115069.099842,
+      "_country": null
+    },
+    {
+      "type": "vmess",
+      "tag": "node-7",
+      "server": "104.21.50.177",
+      "server_port": 2083,
+      "uuid": "ac251237-576f-40c8-a543-554960c958b1",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/or3",
+        "headers": {
+          "Host": "or3.sfacg.uk"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "or3.sfacg.uk",
+        "insecure": false
+      },
+      "_last_ok_ts": 1795115069.099842,
+      "_country": null,
+      "_sub_ids": [
+        "1",
+        "104",
+        "26",
+        "29",
+        "300",
+        "6"
+      ]
+    },
+    {
+      "type": "vmess",
+      "tag": "node-8",
+      "server": "104.21.57.84",
+      "server_port": 8443,
+      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/lMnsZUN4/",
+        "headers": {
+          "Host": "v2ray1.dozapp.xyz"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "v2ray1.dozapp.xyz",
+        "insecure": false
+      },
+      "_last_ok_ts": 1795115069.099842,
+      "_country": null
+    },
+    {
+      "type": "vmess",
+      "tag": "node-9",
+      "server": "104.21.57.84",
+      "server_port": 8443,
+      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/lMnsZUN4/",
+        "headers": {
+          "Host": "v2ray1.dozapp.xyz"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "v2ray1.dozapp.xyz",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "102",
+        "104",
+        "105",
+        "110",
+        "13",
+        "14",
+        "20",
+        "201",
+        "26",
+        "27",
+        "29",
+        "300",
+        "311",
+        "319",
+        "9"
+      ],
+      "_last_ok_ts": 1795115069.099842,
+      "_country": null
+    },
+    {
+      "type": "vmess",
+      "tag": "node-10",
+      "server": "104.21.91.53",
+      "server_port": 8443,
+      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/lMnsZUN4/",
+        "headers": {
+          "Host": "v2ray1.dozapp.xyz"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "v2ray1.dozapp.xyz",
+        "insecure": false
+      },
+      "_last_ok_ts": 1795115069.099842,
+      "_country": null
+    },
+    {
+      "type": "vmess",
+      "tag": "node-11",
+      "server": "104.21.91.53",
+      "server_port": 8443,
+      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/lMnsZUN4/",
+        "headers": {
+          "Host": "v2ray1.dozapp.xyz"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "v2ray1.dozapp.xyz",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "100",
+        "102",
+        "104",
+        "105",
+        "107",
+        "110",
+        "13",
+        "201",
+        "21",
+        "26",
+        "27",
+        "29",
+        "300",
+        "9"
+      ],
+      "_last_ok_ts": 1795115069.099842,
+      "_country": null
+    },
+    {
+      "type": "vmess",
+      "tag": "node-12",
+      "server": "104.24.0.1",
+      "server_port": 8443,
+      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/lMnsZUN4/",
+        "headers": {
+          "Host": "v2ray1.dozapp.xyz"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "v2ray1.dozapp.xyz",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_last_ok_ts": 1795115069.099842,
+      "_country": null
+    },
+    {
+      "type": "vmess",
+      "tag": "node-13",
+      "server": "104.24.0.1",
+      "server_port": 8443,
+      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/lMnsZUN4/",
+        "headers": {
+          "Host": "v2ray1.dozapp.xyz"
+        }
+      },
+      "_dedup_key": "104.24.0.1:8443:60441548-b68e-43b2-8191-e3b884be4b3c:/lMnsZUN4/",
+      "tls": {
+        "enabled": true,
+        "server_name": "v2ray1.dozapp.xyz",
+        "insecure": false
+      },
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "1",
+        "104",
+        "110",
+        "20",
+        "22",
+        "26",
+        "27",
+        "29",
+        "300",
+        "9"
+      ],
+      "_last_ok_ts": 1795115069.099842,
+      "_country": null
+    },
+    {
+      "type": "vmess",
+      "tag": "node-14",
+      "server": "104.25.0.1",
+      "server_port": 2083,
+      "uuid": "ac251237-576f-40c8-a543-554960c958b1",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/or3",
+        "headers": {
+          "Host": "or3.sfacg.uk"
+        }
+      },
+      "_dedup_key": "104.25.0.1:2083:ac251237-576f-40c8-a543-554960c958b1:/or3",
+      "tls": {
+        "enabled": true,
+        "server_name": "or3.sfacg.uk",
         "insecure": false,
         "utls": {
           "enabled": true,
@@ -154,12 +434,12 @@
         "26",
         "29"
       ],
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": null
     },
     {
       "type": "vmess",
-      "tag": "node-5",
+      "tag": "node-15",
       "server": "172.64.145.93",
       "server_port": 443,
       "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
@@ -191,14 +471,15 @@
         "29",
         "3",
         "300",
-        "4"
+        "4",
+        "8"
       ],
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": null
     },
     {
       "type": "vmess",
-      "tag": "node-6",
+      "tag": "node-16",
       "server": "172.64.155.209",
       "server_port": 8443,
       "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
@@ -215,7 +496,7 @@
         "server_name": "v2ray1.dozapp.xyz",
         "insecure": false
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": null,
       "_sub_ids": [
         "1",
@@ -235,59 +516,8 @@
     },
     {
       "type": "vmess",
-      "tag": "node-7",
-      "server": "172.67.137.158",
-      "server_port": 443,
-      "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/guanwang.awsno.com/hls/cctv5phd.m3u8",
-        "headers": {
-          "Host": "nomino.11hi8itbaf.workers.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "nomino.11hi8itbaf.workers.dev",
-        "insecure": false
-      },
-      "_last_ok_ts": 1795074036.770484,
-      "_country": null
-    },
-    {
-      "type": "vmess",
-      "tag": "node-8",
-      "server": "172.67.137.158",
-      "server_port": 443,
-      "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/guanwang.awsno.com/hls/cctv5phd.m3u8",
-        "headers": {
-          "Host": "nomino.11hi8itbaf.workers.dev"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "nomino.11hi8itbaf.workers.dev",
-        "insecure": false
-      },
-      "_sub_ids": [
-        "1",
-        "104",
-        "26",
-        "29",
-        "300"
-      ],
-      "_last_ok_ts": 1795074036.770484,
-      "_country": null
-    },
-    {
-      "type": "vmess",
-      "tag": "node-9",
-      "server": "172.67.161.144",
+      "tag": "node-17",
+      "server": "172.64.80.1",
       "server_port": 8443,
       "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
       "security": "auto",
@@ -303,27 +533,13 @@
         "server_name": "v2ray1.dozapp.xyz",
         "insecure": false
       },
-      "_last_ok_ts": 1795074036.770484,
-      "_country": null,
-      "_sub_ids": [
-        "1",
-        "102",
-        "104",
-        "105",
-        "110",
-        "13",
-        "20",
-        "26",
-        "27",
-        "29",
-        "300",
-        "9"
-      ]
+      "_last_ok_ts": 1795115069.099842,
+      "_country": null
     },
     {
       "type": "vmess",
-      "tag": "node-10",
-      "server": "172.67.167.78",
+      "tag": "node-18",
+      "server": "172.64.80.1",
       "server_port": 8443,
       "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
       "security": "auto",
@@ -339,7 +555,7 @@
         "server_name": "v2ray1.dozapp.xyz",
         "insecure": false
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": null,
       "_sub_ids": [
         "1",
@@ -356,12 +572,50 @@
         "27",
         "29",
         "300",
+        "311",
+        "319",
         "9"
       ]
     },
     {
       "type": "vmess",
-      "tag": "node-11",
+      "tag": "node-19",
+      "server": "172.67.161.144",
+      "server_port": 8443,
+      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/lMnsZUN4/",
+        "headers": {
+          "Host": "v2ray1.dozapp.xyz"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "v2ray1.dozapp.xyz",
+        "insecure": false
+      },
+      "_last_ok_ts": 1795115069.099842,
+      "_country": null,
+      "_sub_ids": [
+        "1",
+        "102",
+        "104",
+        "105",
+        "110",
+        "13",
+        "20",
+        "26",
+        "27",
+        "29",
+        "300",
+        "9"
+      ]
+    },
+    {
+      "type": "vmess",
+      "tag": "node-20",
       "server": "172.67.190.164",
       "server_port": 443,
       "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
@@ -402,50 +656,12 @@
         "4",
         "8"
       ],
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": null
     },
     {
       "type": "vmess",
-      "tag": "node-12",
-      "server": "188.114.96.3",
-      "server_port": 8443,
-      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/lMnsZUN4/",
-        "headers": {
-          "Host": "v2ray1.dozapp.xyz"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "v2ray1.dozapp.xyz",
-        "insecure": false
-      },
-      "_last_ok_ts": 1795074036.770484,
-      "_country": null,
-      "_sub_ids": [
-        "1",
-        "102",
-        "104",
-        "105",
-        "110",
-        "13",
-        "201",
-        "21",
-        "26",
-        "27",
-        "29",
-        "300",
-        "4",
-        "9"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "node-13",
+      "tag": "node-21",
       "server": "188.114.99.137",
       "server_port": 443,
       "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
@@ -474,99 +690,12 @@
         "300",
         "4"
       ],
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": null
     },
     {
       "type": "vmess",
-      "tag": "node-14",
-      "server": "188.114.99.137",
-      "server_port": 8443,
-      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/lMnsZUN4/",
-        "headers": {
-          "Host": "v2ray1.dozapp.xyz"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "v2ray1.dozapp.xyz",
-        "insecure": false
-      },
-      "_last_ok_ts": 1795074036.770484,
-      "_country": null,
-      "_sub_ids": [
-        "1",
-        "104",
-        "110",
-        "13",
-        "26",
-        "27",
-        "29",
-        "300",
-        "9"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "node-15",
-      "server": "cf.0sm.com",
-      "server_port": 443,
-      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/ws",
-        "headers": {
-          "Host": "vmess.lbw666.dpdns.org"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "vmess.lbw666.dpdns.org",
-        "insecure": false
-      },
-      "_last_ok_ts": 1795074036.770484,
-      "_country": null
-    },
-    {
-      "type": "vmess",
-      "tag": "node-16",
-      "server": "cf.0sm.com",
-      "server_port": 443,
-      "uuid": "0cf6d970-3f1d-4aae-a989-92a8f76ae3db",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/ws",
-        "headers": {
-          "Host": "vmess.lbw666.dpdns.org"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "vmess.lbw666.dpdns.org",
-        "insecure": false
-      },
-      "_sub_ids": [
-        "1",
-        "102",
-        "104",
-        "105",
-        "26",
-        "27",
-        "29",
-        "300"
-      ],
-      "_last_ok_ts": 1795074036.770484,
-      "_country": null
-    },
-    {
-      "type": "vmess",
-      "tag": "node-17",
+      "tag": "node-22",
       "server": "chatgpt.com",
       "server_port": 8443,
       "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
@@ -583,7 +712,7 @@
         "server_name": "v2ray1.dozapp.xyz",
         "insecure": false
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": null,
       "_sub_ids": [
         "1",
@@ -603,7 +732,7 @@
     },
     {
       "type": "vmess",
-      "tag": "node-18",
+      "tag": "node-23",
       "server": "guanwang.awsno.com",
       "server_port": 443,
       "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
@@ -635,58 +764,42 @@
         "3",
         "300"
       ],
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": null
     },
     {
       "type": "vmess",
-      "tag": "node-19",
-      "server": "nomino.11hi8itbaf.workers.dev",
+      "tag": "node-24",
+      "server": "proceed-entered-tomato-ctrl.trycloudflare.com",
       "server_port": 443,
-      "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
+      "uuid": "2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea",
       "security": "auto",
       "transport": {
         "type": "ws",
-        "path": "/guanwang.awsno.com/hls/cctv5phd.m3u8"
+        "path": "/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+        "headers": {
+          "Host": "proceed-entered-tomato-ctrl.trycloudflare.com"
+        }
       },
+      "_dedup_key": "proceed-entered-tomato-ctrl.trycloudflare.com:443:2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea:/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
       "tls": {
         "enabled": true,
-        "server_name": "nomino.11hi8itbaf.workers.dev",
+        "server_name": "proceed-entered-tomato-ctrl.trycloudflare.com",
         "insecure": false
       },
-      "_last_ok_ts": 1795074036.770484,
-      "_country": null
-    },
-    {
-      "type": "vmess",
-      "tag": "node-20",
-      "server": "nomino.11hi8itbaf.workers.dev",
-      "server_port": 443,
-      "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/guanwang.awsno.com/hls/cctv5phd.m3u8"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "nomino.11hi8itbaf.workers.dev",
-        "insecure": false
-      },
+      "_dedup_rank": 1,
       "_sub_ids": [
         "1",
-        "104",
         "26",
-        "29",
-        "300",
-        "8"
+        "3",
+        "300"
       ],
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": null
     },
     {
       "type": "vmess",
-      "tag": "🇨🇳node-21",
+      "tag": "🇨🇳node-25",
       "server": "39.108.113.127",
       "server_port": 10086,
       "uuid": "a625d148-e988-4008-b957-e9051a6371d2",
@@ -708,12 +821,32 @@
         "29",
         "300"
       ],
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "CN"
     },
     {
       "type": "vmess",
-      "tag": "🇫🇷node-22",
+      "tag": "🇨🇳node-26",
+      "server": "39.108.113.127",
+      "server_port": 10086,
+      "uuid": "b4eabb06-18ea-4bcb-9ca3-7e8bf3a2d71d",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/"
+      },
+      "_dedup_key": "39.108.113.127:10086:b4eabb06-18ea-4bcb-9ca3-7e8bf3a2d71d:/",
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "102",
+        "27"
+      ],
+      "_last_ok_ts": 1795115069.099842,
+      "_country": "CN"
+    },
+    {
+      "type": "vmess",
+      "tag": "🇫🇷node-27",
       "server": "145.239.55.210",
       "server_port": 80,
       "uuid": "2bc80e77-9590-4ded-a48b-0eda493f611b",
@@ -725,7 +858,7 @@
           "Host": "google.whatsapp.snapp.torob.basalam.fortresshost.ir."
         }
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "FR",
       "_sub_ids": [
         "1",
@@ -755,7 +888,7 @@
     },
     {
       "type": "vmess",
-      "tag": "🇫🇷node-23",
+      "tag": "🇫🇷node-28",
       "server": "54.37.131.126",
       "server_port": 80,
       "uuid": "1e55beca-3c69-4fa7-fb1f-15c1b767435f",
@@ -791,12 +924,12 @@
         "8",
         "9"
       ],
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "FR"
     },
     {
       "type": "vmess",
-      "tag": "🇬🇧node-24",
+      "tag": "🇬🇧node-29",
       "server": "57.129.132.223",
       "server_port": 80,
       "uuid": "a25cbf11-2908-4a1b-a3a8-9a571777dca3",
@@ -808,7 +941,7 @@
           "Host": "google.com"
         }
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "GB",
       "_sub_ids": [
         "1",
@@ -830,7 +963,7 @@
     },
     {
       "type": "vmess",
-      "tag": "🇬🇧node-25",
+      "tag": "🇬🇧node-30",
       "server": "57.129.132.223",
       "server_port": 80,
       "uuid": "a25cbf11-2908-4a1b-a3a8-9a571777dca3",
@@ -842,7 +975,7 @@
           "Host": "google.com"
         }
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "GB",
       "_sub_ids": [
         "1",
@@ -858,7 +991,7 @@
     },
     {
       "type": "vmess",
-      "tag": "🇬🇧node-26",
+      "tag": "🇬🇧node-31",
       "server": "57.129.132.223",
       "server_port": 80,
       "uuid": "a25cbf11-2908-4a1b-a3a8-9a571777dca3",
@@ -867,7 +1000,7 @@
         "type": "ws",
         "path": "/vmess/"
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "GB",
       "_sub_ids": [
         "1",
@@ -902,7 +1035,7 @@
     },
     {
       "type": "vmess",
-      "tag": "🇬🇧node-27",
+      "tag": "🇬🇧node-32",
       "server": "57.129.132.223",
       "server_port": 80,
       "uuid": "a25cbf11-2908-4a1b-a3a8-9a571777dca3",
@@ -914,7 +1047,7 @@
           "Host": "google.com"
         }
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "GB",
       "_sub_ids": [
         "1",
@@ -932,7 +1065,7 @@
     },
     {
       "type": "vmess",
-      "tag": "🇭🇰node-28",
+      "tag": "🇭🇰node-33",
       "server": "156.245.232.239",
       "server_port": 35043,
       "uuid": "b15e481d-17e4-41a8-84c2-23d4f0514d9a",
@@ -941,7 +1074,7 @@
         "type": "ws",
         "path": "/"
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "HK",
       "_sub_ids": [
         "1",
@@ -954,6 +1087,7 @@
         "109",
         "110",
         "18",
+        "19",
         "20",
         "201",
         "21",
@@ -974,75 +1108,7 @@
     },
     {
       "type": "vmess",
-      "tag": "🇭🇰node-29",
-      "server": "47.244.120.197",
-      "server_port": 23026,
-      "uuid": "b9de1bc9-baa7-41ac-86f7-ccd59695cb21",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/arki"
-      },
-      "_last_ok_ts": 1795074036.770484,
-      "_country": "HK",
-      "_sub_ids": [
-        "1",
-        "10",
-        "100",
-        "104",
-        "105",
-        "109",
-        "110",
-        "18",
-        "20",
-        "201",
-        "21",
-        "22",
-        "26",
-        "29",
-        "300",
-        "319",
-        "4",
-        "8",
-        "9"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "🇭🇰node-30",
-      "server": "47.244.120.197",
-      "server_port": 36703,
-      "uuid": "45b83519-9c4f-4052-a11b-02e017b636d4",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/arki"
-      },
-      "_last_ok_ts": 1795074036.770484,
-      "_country": "HK",
-      "_sub_ids": [
-        "1",
-        "100",
-        "104",
-        "105",
-        "14",
-        "18",
-        "201",
-        "21",
-        "22",
-        "26",
-        "29",
-        "300",
-        "313",
-        "4",
-        "6",
-        "8",
-        "9"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "🇭🇰node-31",
+      "tag": "🇭🇰node-34",
       "server": "47.244.120.197",
       "server_port": 36703,
       "uuid": "45b83519-9c4f-4052-a11b-02e017b636d4",
@@ -1051,7 +1117,7 @@
         "type": "ws",
         "path": "/arki?ed=2048"
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "HK",
       "_sub_ids": [
         "1",
@@ -1077,40 +1143,7 @@
     },
     {
       "type": "vmess",
-      "tag": "🇯🇵node-32",
-      "server": "168.110.63.247",
-      "server_port": 8081,
-      "uuid": "c3bde296-8e44-4b8c-a325-577d5b3cc7c8",
-      "security": "auto",
-      "transport": {
-        "type": "ws",
-        "path": "/vless"
-      },
-      "_last_ok_ts": 1795074036.770484,
-      "_country": "JP",
-      "_sub_ids": [
-        "1",
-        "10",
-        "104",
-        "105",
-        "108",
-        "109",
-        "110",
-        "13",
-        "18",
-        "20",
-        "22",
-        "26",
-        "29",
-        "300",
-        "6",
-        "8",
-        "9"
-      ]
-    },
-    {
-      "type": "vmess",
-      "tag": "🇯🇵node-33",
+      "tag": "🇯🇵node-35",
       "server": "168.138.43.75",
       "server_port": 80,
       "uuid": "11c3627f-31e8-4695-dfbd-34076e2f1f5d",
@@ -1122,7 +1155,7 @@
           "Host": "168.138.43.75"
         }
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "JP",
       "_sub_ids": [
         "1",
@@ -1154,19 +1187,16 @@
     },
     {
       "type": "vmess",
-      "tag": "🇰🇷node-34",
+      "tag": "🇰🇷node-36",
       "server": "132.145.80.230",
       "server_port": 80,
       "uuid": "5155860e-d07d-46c3-9128-3afbd84626c7",
       "security": "auto",
       "transport": {
         "type": "ws",
-        "path": "/cctv13.m3u8",
-        "headers": {
-          "Host": "kr02.a0a.xyz"
-        }
+        "path": "/cctv13.m3u8"
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "KR",
       "_sub_ids": [
         "1",
@@ -1198,7 +1228,7 @@
     },
     {
       "type": "vmess",
-      "tag": "🇰🇿node-35",
+      "tag": "🇰🇿node-37",
       "server": "38.107.234.57",
       "server_port": 80,
       "uuid": "567f4be5-12ab-42e1-b8d9-db6fd1fdd31c",
@@ -1210,7 +1240,7 @@
           "Host": "38.107.234.57"
         }
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "KZ",
       "_sub_ids": [
         "1",
@@ -1242,7 +1272,60 @@
     },
     {
       "type": "vmess",
-      "tag": "🇺🇸node-36",
+      "tag": "🇰🇿node-38",
+      "server": "3h-kazakhstan1.09vpn.com",
+      "server_port": 80,
+      "uuid": "567f4be5-12ab-42e1-b8d9-db6fd1fdd31c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/vmess/",
+        "headers": {
+          "Host": "3h-kazakhstan1.09vpn.com"
+        }
+      },
+      "_last_ok_ts": 1795115069.099842,
+      "_country": "KZ"
+    },
+    {
+      "type": "vmess",
+      "tag": "🇰🇿node-39",
+      "server": "3h-kazakhstan1.09vpn.com",
+      "server_port": 80,
+      "uuid": "567f4be5-12ab-42e1-b8d9-db6fd1fdd31c",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/vmess/",
+        "headers": {
+          "Host": "wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc"
+        }
+      },
+      "_last_ok_ts": 1795115069.099842,
+      "_country": "KZ",
+      "_sub_ids": [
+        "1",
+        "100",
+        "104",
+        "105",
+        "108",
+        "109",
+        "13",
+        "14",
+        "18",
+        "22",
+        "26",
+        "29",
+        "300",
+        "313",
+        "319",
+        "8",
+        "9"
+      ]
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-40",
       "server": "129.146.77.248",
       "server_port": 39495,
       "uuid": "f836c736-87fc-4fde-aabc-00857ecdff3e",
@@ -1251,7 +1334,7 @@
         "type": "ws",
         "path": "/cctv13.m3u8"
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "US",
       "_sub_ids": [
         "1",
@@ -1285,7 +1368,7 @@
     },
     {
       "type": "vmess",
-      "tag": "🇺🇸node-37",
+      "tag": "🇺🇸node-41",
       "server": "141.193.213.20",
       "server_port": 8443,
       "uuid": "bd67fcd2-ec34-40a6-aac6-67731f2d7011",
@@ -1317,53 +1400,180 @@
         "8",
         "9"
       ],
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "US"
     },
     {
       "type": "vmess",
-      "tag": "🇺🇸node-38",
-      "server": "172.66.0.1",
+      "tag": "🇺🇸node-42",
+      "server": "141.193.213.21",
       "server_port": 8443,
-      "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
+      "uuid": "bd67fcd2-ec34-40a6-aac6-67731f2d7011",
       "security": "auto",
       "transport": {
         "type": "ws",
-        "path": "/lMnsZUN4/",
+        "path": "/",
         "headers": {
-          "Host": "v2ray1.dozapp.xyz"
+          "Host": "matrix.phonicsindia.mobi"
         }
       },
       "tls": {
         "enabled": true,
-        "server_name": "v2ray1.dozapp.xyz",
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
+        "server_name": "matrix.phonicsindia.mobi",
+        "insecure": false
+      },
+      "_last_ok_ts": 1795115069.099842,
+      "_country": "US"
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-43",
+      "server": "141.193.213.21",
+      "server_port": 8443,
+      "uuid": "bd67fcd2-ec34-40a6-aac6-67731f2d7011",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "matrix.phonicsindia.mobi"
         }
       },
-      "_last_ok_ts": 1795074036.770484,
+      "tls": {
+        "enabled": true,
+        "server_name": "matrix.phonicsindia.mobi",
+        "insecure": false
+      },
+      "_last_ok_ts": 1795115069.099842,
       "_country": "US",
       "_sub_ids": [
         "1",
-        "100",
+        "102",
         "104",
+        "105",
         "110",
         "13",
-        "201",
-        "21",
-        "22",
+        "18",
         "26",
         "27",
         "29",
         "300",
+        "6",
+        "8",
         "9"
       ]
     },
     {
       "type": "vmess",
-      "tag": "🇺🇸node-39",
+      "tag": "🇺🇸node-44",
+      "server": "162.159.130.234",
+      "server_port": 2083,
+      "uuid": "ac251237-576f-40c8-a543-554960c958b1",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/or3",
+        "headers": {
+          "Host": "or3.sfacg.uk"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "cdn.sfacg.uk",
+        "insecure": false
+      },
+      "_last_ok_ts": 1795115069.099842,
+      "_country": "US"
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-45",
+      "server": "162.159.130.234",
+      "server_port": 2083,
+      "uuid": "ac251237-576f-40c8-a543-554960c958b1",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/or3",
+        "headers": {
+          "Host": "or3.sfacg.uk"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "cdn.sfacg.uk",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "104",
+        "105",
+        "18",
+        "26",
+        "27",
+        "29",
+        "300",
+        "9"
+      ],
+      "_last_ok_ts": 1795115069.099842,
+      "_country": "US"
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-46",
+      "server": "162.159.135.234",
+      "server_port": 2083,
+      "uuid": "ac251237-576f-40c8-a543-554960c958b1",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/or3",
+        "headers": {
+          "Host": "or3.sfacg.uk"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "or3.sfacg.uk",
+        "insecure": false
+      },
+      "_last_ok_ts": 1795115069.099842,
+      "_country": "US"
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-47",
+      "server": "162.159.135.234",
+      "server_port": 2083,
+      "uuid": "ac251237-576f-40c8-a543-554960c958b1",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/or3",
+        "headers": {
+          "Host": "or3.sfacg.uk"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "or3.sfacg.uk",
+        "insecure": false
+      },
+      "_sub_ids": [
+        "1",
+        "104",
+        "18",
+        "26",
+        "27",
+        "29",
+        "300"
+      ],
+      "_last_ok_ts": 1795115069.099842,
+      "_country": "US"
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-48",
       "server": "38.11.69.48",
       "server_port": 30004,
       "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
@@ -1391,18 +1601,46 @@
         "108",
         "109",
         "110",
+        "13",
         "18",
         "26",
         "29",
         "3",
         "300"
       ],
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "US"
     },
     {
       "type": "vmess",
-      "tag": "🇺🇸node-40",
+      "tag": "🇺🇸node-49",
+      "server": "ldjfrfhvdvfg-production.up.railway.app",
+      "server_port": 443,
+      "uuid": "cda55439-17ba-4351-a0ae-72da9770b286",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/api/sOOLM_",
+        "headers": {
+          "Host": "ldjfrfhvdvfg-production.up.railway.app"
+        }
+      },
+      "_dedup_key": "ldjfrfhvdvfg-production.up.railway.app:443:cda55439-17ba-4351-a0ae-72da9770b286:/api/sOOLM_",
+      "tls": {
+        "enabled": true,
+        "server_name": "ldjfrfhvdvfg-production.up.railway.app",
+        "insecure": false
+      },
+      "_dedup_rank": 1,
+      "_sub_ids": [
+        "105"
+      ],
+      "_last_ok_ts": 1795115069.099842,
+      "_country": "US"
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-50",
       "server": "news.zoom.us",
       "server_port": 8443,
       "uuid": "bd67fcd2-ec34-40a6-aac6-67731f2d7011",
@@ -1419,7 +1657,7 @@
         "server_name": "matrix.phonicsindia.mobi",
         "insecure": false
       },
-      "_last_ok_ts": 1795074036.770484,
+      "_last_ok_ts": 1795115069.099842,
       "_country": "US",
       "_sub_ids": [
         "1",
@@ -1437,6 +1675,57 @@
         "6",
         "8",
         "9"
+      ]
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-51",
+      "server": "support.zoom.us",
+      "server_port": 443,
+      "uuid": "4caf156a-3309-4105-8388-d388eb9e1105",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/whatever/vmess",
+        "headers": {
+          "Host": "id2.nathaya.web.id"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "zoomgov.nathaya.web.id",
+        "insecure": false
+      },
+      "_last_ok_ts": 1795115069.099842,
+      "_country": "US"
+    },
+    {
+      "type": "vmess",
+      "tag": "🇺🇸node-52",
+      "server": "support.zoom.us",
+      "server_port": 443,
+      "uuid": "4caf156a-3309-4105-8388-d388eb9e1105",
+      "security": "auto",
+      "transport": {
+        "type": "ws",
+        "path": "/whatever/vmess",
+        "headers": {
+          "Host": "id2.nathaya.web.id"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "zoomgov.nathaya.web.id",
+        "insecure": false
+      },
+      "_last_ok_ts": 1795115069.099842,
+      "_country": "US",
+      "_sub_ids": [
+        "1",
+        "26",
+        "27",
+        "29",
+        "300"
       ]
     }
   ]
