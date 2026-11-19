@@ -115,10 +115,11 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇪🇸node-1",
-        "🇪🇸node-2",
-        "🇸🇪node-3",
-        "🇸🇪node-4"
+        "🇩🇪node-1",
+        "🇩🇪node-2",
+        "🇬🇧node-3",
+        "🇳🇱node-4",
+        "🇳🇱node-5"
       ],
       "default": "auto"
     },
@@ -126,10 +127,11 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇪🇸node-1",
-        "🇪🇸node-2",
-        "🇸🇪node-3",
-        "🇸🇪node-4"
+        "🇩🇪node-1",
+        "🇩🇪node-2",
+        "🇬🇧node-3",
+        "🇳🇱node-4",
+        "🇳🇱node-5"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -137,56 +139,70 @@
     },
     {
       "type": "vless",
-      "tag": "🇪🇸node-1",
-      "server": "89.60.208.74",
+      "tag": "🇩🇪node-1",
+      "server": "139.59.152.166",
       "server_port": 443,
-      "uuid": "7060231d-b9ba-495f-a218-bf427940cf3e",
+      "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
       "transport": {
         "type": "http",
         "host": [
-          "play.googleapis.com"
+          "store.steampowered.com"
         ],
         "path": "/"
       }
     },
     {
       "type": "vless",
-      "tag": "🇪🇸node-2",
-      "server": "89.60.213.198",
-      "server_port": 443,
-      "uuid": "7060231d-b9ba-495f-a218-bf427940cf3e",
+      "tag": "🇩🇪node-2",
+      "server": "91.107.170.218",
+      "server_port": 8080,
+      "uuid": "14eeebbc-65eb-4fa2-9523-494af186fe33",
       "transport": {
         "type": "http",
         "host": [
-          "play.googleapis.com"
+          "tgju.org"
         ],
         "path": "/"
       }
     },
     {
       "type": "vless",
-      "tag": "🇸🇪node-3",
-      "server": "13.60.235.57",
+      "tag": "🇬🇧node-3",
+      "server": "161.35.37.106",
       "server_port": 443,
-      "uuid": "7060231d-b9ba-495f-a218-bf427940cf3e",
+      "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
       "transport": {
         "type": "http",
         "host": [
-          "play.googleapis.com"
+          "fast.com"
         ],
         "path": "/"
       }
     },
     {
       "type": "vless",
-      "tag": "🇸🇪node-4",
-      "server": "13.60.72.205",
+      "tag": "🇳🇱node-4",
+      "server": "146.190.21.145",
       "server_port": 443,
-      "uuid": "7060231d-b9ba-495f-a218-bf427940cf3e",
+      "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
       "transport": {
         "type": "http",
         "host": [
-          "play.googleapis.com"
+          "fast.com"
+        ],
+        "path": "/"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-5",
+      "server": "178.62.212.162",
+      "server_port": 443,
+      "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
+      "transport": {
+        "type": "http",
+        "host": [
+          "store.steampowered.com"
         ],
         "path": "/"
       }
