@@ -10328,6 +10328,55 @@
             }
           }
         }
+      },
+      {
+        "key": "201.24.48.120:443:25ac78e7-6d1d-4c9a-a450-c01a4871769f:/api/de1/sync",
+        "node": {
+          "type": "vless",
+          "tag": "node-196",
+          "server": "201.24.48.120",
+          "server_port": 443,
+          "uuid": "25ac78e7-6d1d-4c9a-a450-c01a4871769f",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/de1/sync",
+            "mode": "auto",
+            "host": [
+              "orchard.elvano.website"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "orchard.elvano.website",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "leviko-pl7089.shopingggg.ir:4443:a35c508f-4d5d-4531-842e-6e9d43c762c0:/api/v1/sync/",
+        "node": {
+          "type": "vless",
+          "tag": "node-314",
+          "server": "leviko-pl7089.shopingggg.ir",
+          "server_port": 4443,
+          "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/sync/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "bl1.nexfile.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -173700,5 +173749,5 @@
       }
     ]
   },
-  "updated": "2026-11-19T08:49:37Z"
+  "updated": "2026-11-19T14:44:50Z"
 }
