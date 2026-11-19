@@ -115,19 +115,9 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "node-1",
-        "node-2",
-        "node-3",
-        "node-4",
-        "node-5",
-        "node-6",
-        "node-7",
-        "node-8",
-        "node-9",
-        "node-10",
-        "node-11",
-        "node-12",
-        "node-13"
+        "🇱🇺node-1",
+        "🇱🇺node-2",
+        "🇺🇸node-3"
       ],
       "default": "auto"
     },
@@ -135,19 +125,9 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "node-1",
-        "node-2",
-        "node-3",
-        "node-4",
-        "node-5",
-        "node-6",
-        "node-7",
-        "node-8",
-        "node-9",
-        "node-10",
-        "node-11",
-        "node-12",
-        "node-13"
+        "🇱🇺node-1",
+        "🇱🇺node-2",
+        "🇺🇸node-3"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -155,224 +135,56 @@
     },
     {
       "type": "trojan",
-      "tag": "node-1",
-      "server": "104.17.128.1",
-      "server_port": 2096,
-      "password": "auto",
+      "tag": "🇱🇺node-1",
+      "server": "staticxfastline.taymaztest.ir",
+      "server_port": 16200,
+      "password": "4mq9w5ckqw3ewbdg",
       "tls": {
         "enabled": true,
-        "server_name": "azadnet-5o5.pages.dev"
+        "server_name": "staticxfastline.taymaztest.ir"
       },
       "transport": {
         "type": "ws",
-        "path": "/azadnet-5o5.pages.dev/?ed=2560",
+        "path": "/biyasd",
         "headers": {
-          "Host": "azadnet-5o5.pages.dev"
+          "Host": "staticxfastline.taymaztest.ir"
         }
       }
     },
     {
       "type": "trojan",
-      "tag": "node-2",
-      "server": "104.17.128.1",
-      "server_port": 2096,
-      "password": "auto",
+      "tag": "🇱🇺node-2",
+      "server": "staticxfastline.taymaztest.ir",
+      "server_port": 16200,
+      "password": "4mq9w5ckqw3ewbdg",
       "tls": {
         "enabled": true,
-        "server_name": "azadnet-5o5.pages.dev"
+        "server_name": "staticxfastline.taymaztest.ir"
       },
       "transport": {
         "type": "ws",
-        "path": "/azadnet-5o5.pages.dev/?ed=2560",
+        "path": "/biyasd",
         "headers": {
-          "Host": "azadnet-5o5.pages.dev"
+          "Host": "staticxfastline.taymaztest.ir"
         }
       }
     },
     {
       "type": "trojan",
-      "tag": "node-3",
-      "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-4",
-      "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/ ",
-        "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-5",
-      "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-6",
-      "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/ ",
-        "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-7",
-      "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-8",
-      "server": "104.18.35.86",
-      "server_port": 2096,
-      "password": "123456",
-      "tls": {
-        "enabled": true,
-        "server_name": "321dfbc6.uir-9i6.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/ ",
-        "headers": {
-          "Host": "321dfbc6.uir-9i6.pages.dev"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-9",
-      "server": "104.19.173.68",
+      "tag": "🇺🇸node-3",
+      "server": "ldjfrfhvdvfg-production.up.railway.app",
       "server_port": 443,
-      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
+      "password": "J312MA7LbSkAk--8",
       "tls": {
         "enabled": true,
-        "server_name": "azadnet-5vk.pages.dev"
+        "server_name": "ldjfrfhvdvfg-production.up.railway.app"
       },
       "transport": {
         "type": "ws",
-        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-10",
-      "server": "104.19.173.68",
-      "server_port": 443,
-      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
-      "tls": {
-        "enabled": true,
-        "server_name": "azadnet-5vk.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-11",
-      "server": "8.6.112.0",
-      "server_port": 443,
-      "password": "XnjwEJbEbqBt8bjlrKZPwg",
-      "tls": {
-        "enabled": true,
-        "server_name": "cf.lunex-vpn.xyz"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/Lunex",
+        "path": "/api/00utMY",
         "headers": {
-          "Host": "cf.lunex-vpn.xyz"
+          "Host": "ldjfrfhvdvfg-production.up.railway.app"
         }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-12",
-      "server": "www.digitalocean.com",
-      "server_port": 443,
-      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
-      "tls": {
-        "enabled": true,
-        "server_name": "azadnet-5vk.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "node-13",
-      "server": "www.digitalocean.com",
-      "server_port": 443,
-      "password": "d0298536-d670-4045-bbb1-ddd5ea68683e",
-      "tls": {
-        "enabled": true,
-        "server_name": "azadnet-5vk.pages.dev"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/azadnet-5vk.pages.dev/?ed=2560&PROT_TYPE=trojan"
       }
     }
   ],

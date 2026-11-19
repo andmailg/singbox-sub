@@ -123982,6 +123982,27 @@
             }
           }
         }
+      },
+      {
+        "key": "ldjfrfhvdvfg-production.up.railway.app:443:J312MA7LbSkAk--8:/api/00utMY",
+        "node": {
+          "type": "trojan",
+          "tag": "node-758",
+          "server": "ldjfrfhvdvfg-production.up.railway.app",
+          "server_port": 443,
+          "password": "J312MA7LbSkAk--8",
+          "tls": {
+            "enabled": true,
+            "server_name": "ldjfrfhvdvfg-production.up.railway.app"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/api/00utMY",
+            "headers": {
+              "Host": "ldjfrfhvdvfg-production.up.railway.app"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -174065,5 +174086,5 @@
       }
     ]
   },
-  "updated": "2026-11-19T19:04:02Z"
+  "updated": "2026-11-19T19:08:41Z"
 }
