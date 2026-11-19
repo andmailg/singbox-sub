@@ -169768,6 +169768,33 @@
             "insecure": false
           }
         }
+      },
+      {
+        "key": "104.21.0.1:8443:60441548-b68e-43b2-8191-e3b884be4b3c:/lMnsZUN4/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-1127",
+          "server": "104.21.0.1",
+          "server_port": 8443,
+          "uuid": "60441548-b68e-43b2-8191-e3b884be4b3c",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/lMnsZUN4/",
+            "headers": {
+              "Host": "v2ray1.dozapp.xyz"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "v2ray1.dozapp.xyz",
+            "insecure": false,
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -173376,5 +173403,5 @@
       }
     ]
   },
-  "updated": "2026-11-19T07:47:21Z"
+  "updated": "2026-11-19T07:54:15Z"
 }
