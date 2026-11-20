@@ -10585,6 +10585,106 @@
             }
           }
         }
+      },
+      {
+        "key": "5.42.96.100:443:25ac78e7-6d1d-4c9a-a450-c01a4871769f:/api/de1/sync",
+        "node": {
+          "type": "vless",
+          "tag": "node-242",
+          "server": "5.42.96.100",
+          "server_port": 443,
+          "uuid": "25ac78e7-6d1d-4c9a-a450-c01a4871769f",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/de1/sync",
+            "host": [
+              "sketch.merlano.monster"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "sketch.merlano.monster",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "render.com:2053:97be5ac0-dae3-43c1-aae8-3fcb7b130c59:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-336",
+          "server": "render.com",
+          "server_port": 2053,
+          "uuid": "97be5ac0-dae3-43c1-aae8-3fcb7b130c59",
+          "transport": {
+            "type": "xhttp",
+            "mode": "stream-one",
+            "host": [
+              "Org-nether-soeiwhal-bssutudhdhese-beqhjdwter.maniyadg7shard.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "org-nether-soeiwhal-bssutudhdhese-beqhjdwter.maniyadg7shard.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "render.com:2083:97be5ac0-dae3-43c1-aae8-3fcb7b130c59:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-337",
+          "server": "render.com",
+          "server_port": 2083,
+          "uuid": "97be5ac0-dae3-43c1-aae8-3fcb7b130c59",
+          "transport": {
+            "type": "xhttp",
+            "mode": "stream-one",
+            "host": [
+              "org-alban-soeiwhdhdshal-bssutudhdahugsgahesye-beqhjdushswter.maniyadg7shard.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "org-alban-soeiwhdhdshal-bssutudhdahugsgahesye-beqhjdushswter.maniyadg7shard.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "render.com:443:97be5ac0-dae3-43c1-aae8-3fcb7b130c59:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-338",
+          "server": "render.com",
+          "server_port": 443,
+          "uuid": "97be5ac0-dae3-43c1-aae8-3fcb7b130c59",
+          "transport": {
+            "type": "xhttp",
+            "mode": "stream-one",
+            "host": [
+              "Org-ukrn-soeiwhdhshal-bssutudhdahuahese-beqhjdwter.maniyadg7shard.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "Org-ukrn-soeiwhdhshal-bssutudhdahuahese-beqhjdwter.maniyadg7shard.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -176688,5 +176788,5 @@
       }
     ]
   },
-  "updated": "2026-11-20T02:50:58Z"
+  "updated": "2026-11-20T07:48:17Z"
 }
