@@ -172045,6 +172045,150 @@
             }
           }
         }
+      },
+      {
+        "key": "83.147.19.242:8448:ec23abba-e6ae-395a-8986-2bd39a377a78:/xray/vmess",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5278",
+          "server": "83.147.19.242",
+          "server_port": 8448,
+          "uuid": "ec23abba-e6ae-395a-8986-2bd39a377a78",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/xray/vmess",
+            "headers": {
+              "Host": "google.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "US122205.ssgreen.org:443:a0e886c0-0d13-4446-9ad3-1325f595e39e:/wes",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5496",
+          "server": "US122205.ssgreen.org",
+          "server_port": 443,
+          "uuid": "a0e886c0-0d13-4446-9ad3-1325f595e39e",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/wes"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "US122205.ssgreen.org",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "carb-marker-tank-poems.trycloudflare.com:443:2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea:/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5598",
+          "server": "carb-marker-tank-poems.trycloudflare.com",
+          "server_port": 443,
+          "uuid": "2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+            "headers": {
+              "Host": "carb-marker-tank-poems.trycloudflare.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "carb-marker-tank-poems.trycloudflare.com",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "dp8yk.xiaoyan.io:16616:904f0569-8695-466f-97cf-0de2face1b46:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5707",
+          "server": "dp8yk.xiaoyan.io",
+          "server_port": 16616,
+          "uuid": "904f0569-8695-466f-97cf-0de2face1b46",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "f9309cc88637c26f552a1a64fb311cae.mobgslb.tbcache.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "46.8.103.136:40015:ed1b32ea-5cf9-4eb9-a7a0-a6586f2d5c23:/sddsfs",
+        "node": {
+          "type": "vmess",
+          "tag": "node-4894",
+          "server": "46.8.103.136",
+          "server_port": 40015,
+          "uuid": "ed1b32ea-5cf9-4eb9-a7a0-a6586f2d5c23",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/sddsfs",
+            "headers": {
+              "Host": "dl.google.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "46.8.103.136",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "leviko-kz9629.shopingggg.ir:80:567f4be5-12ab-42e1-b8d9-db6fd1fdd31c:/vmess/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5852",
+          "server": "leviko-kz9629.shopingggg.ir",
+          "server_port": 80,
+          "uuid": "567f4be5-12ab-42e1-b8d9-db6fd1fdd31c",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/vmess/"
+          }
+        }
+      },
+      {
+        "key": "cf.877774.xyz:443:60518fc8-889b-4ef0-8b09-63004f8b2964:/vmess-argo?ed=2560",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5617",
+          "server": "cf.877774.xyz",
+          "server_port": 443,
+          "uuid": "60518fc8-889b-4ef0-8b09-63004f8b2964",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/vmess-argo?ed=2560",
+            "headers": {
+              "Host": "sap-il.086571.xyz"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "sap-il.086571.xyz",
+            "insecure": false,
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -175667,5 +175811,5 @@
       }
     ]
   },
-  "updated": "2026-11-20T01:56:44Z"
+  "updated": "2026-11-20T02:03:24Z"
 }
