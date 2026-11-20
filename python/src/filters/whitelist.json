@@ -109231,6 +109231,137 @@
             "service_name": "99f2107b03f8"
           }
         }
+      },
+      {
+        "key": "122.8.45.5:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-12",
+          "server": "122.8.45.5",
+          "server_port": 8443,
+          "uuid": "f90baf22-0690-e2ea-c014-e5f536503ac6",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.canon.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "iVDh09Vm2DqZMNQoUdf-LCZ6TqVGb9mLXnClAK2LRj4"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "TunService"
+          }
+        }
+      },
+      {
+        "key": "196.196.149.30:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-137",
+          "server": "196.196.149.30",
+          "server_port": 443,
+          "uuid": "537d8ade-134d-4ec2-905c-0187e7e1e22e",
+          "tls": {
+            "enabled": true,
+            "server_name": "f0f0bet.fi2.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "_oCg5rCW6XTxriBPzbd_AX0os6QhenVYO9cbrsDSyRY",
+              "short_id": "cf2a731a5f2dc451"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
+      },
+      {
+        "key": "2.56.127.202:17101",
+        "node": {
+          "type": "vless",
+          "tag": "node-151",
+          "server": "2.56.127.202",
+          "server_port": 17101,
+          "uuid": "7d77e8fc-07d9-46e3-bf70-66531011fed3",
+          "tls": {
+            "enabled": true,
+            "server_name": "it.nvidia.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "td00T39muH83FZFqpyfgfYYQLjT860DLdrCcnKr2_FE",
+              "short_id": "b08ccd"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
+      },
+      {
+        "key": "ledger.filnex.baby:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-350",
+          "server": "ledger.filnex.baby",
+          "server_port": 443,
+          "uuid": "25ac78e7-6d1d-4c9a-a450-c01a4871769f",
+          "tls": {
+            "enabled": true,
+            "server_name": "copperdell.merlano.monster",
+            "alpn": [
+              "h2"
+            ],
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "glush.de2.v1"
+          }
+        }
+      },
+      {
+        "key": "188.225.57.185:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-137",
+          "server": "188.225.57.185",
+          "server_port": 443,
+          "uuid": "88e79aa6-f431-4453-8dcc-652a0c747198",
+          "tls": {
+            "enabled": true,
+            "server_name": "flintstack.dev",
+            "reality": {
+              "enabled": true,
+              "public_key": "4JggwEKhrkrIjQjO8kRX6iGvHQJixIFkiDOnE7zd3xE"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -175536,5 +175667,5 @@
       }
     ]
   },
-  "updated": "2026-11-20T01:55:16Z"
+  "updated": "2026-11-20T01:56:44Z"
 }
