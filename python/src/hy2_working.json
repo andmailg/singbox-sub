@@ -1,10 +1,44 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-11-19T19:04:01Z",
+  "last_tested": "2026-11-20T01:51:51Z",
   "nodes": [
     {
       "type": "hysteria2",
-      "tag": "🇦🇺node-1",
+      "tag": "🇦🇪node-1",
+      "server": "31.59.169.225",
+      "server_port": 443,
+      "password": "ca60984f-b1f0-4073-bd33-4c75168f749a",
+      "tls": {
+        "enabled": true,
+        "server_name": "ge-beer-1.fantoff.online"
+      },
+      "_dedup_key": "31.59.169.225:443:ca60984f-b1f0-4073-bd33-4c75168f749a",
+      "_sub_ids": [
+        "27"
+      ],
+      "_last_ok_ts": 1795139106.814267,
+      "_country": "AE"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇦🇪node-2",
+      "server": "94.183.197.237",
+      "server_port": 8444,
+      "password": "c1f4f185-5786-40c9-893f-2f100b7165f2",
+      "tls": {
+        "enabled": true,
+        "server_name": "eu79.cdn77.icu"
+      },
+      "_dedup_key": "94.183.197.237:8444:c1f4f185-5786-40c9-893f-2f100b7165f2",
+      "_sub_ids": [
+        "27"
+      ],
+      "_last_ok_ts": 1795139106.814267,
+      "_country": "AE"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇦🇺node-3",
       "server": "159.13.55.48",
       "server_port": 20000,
       "password": "b42d90fa667942aebc734d60",
@@ -21,12 +55,29 @@
         "110",
         "26"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "AU"
     },
     {
       "type": "hysteria2",
-      "tag": "🇧🇷node-2",
+      "tag": "🇧🇬node-4",
+      "server": "87.121.112.83",
+      "server_port": 443,
+      "password": "9a9f167d-b461-466f-be50-f0ffd598a6f8",
+      "tls": {
+        "enabled": true,
+        "server_name": "bulghys.live"
+      },
+      "_dedup_key": "87.121.112.83:443:9a9f167d-b461-466f-be50-f0ffd598a6f8",
+      "_sub_ids": [
+        "27"
+      ],
+      "_last_ok_ts": 1795139106.814267,
+      "_country": "BG"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇧🇷node-5",
       "server": "150.230.229.100",
       "server_port": 20000,
       "password": "CyG0RFxMjzs41uQD4OLuHQ==",
@@ -40,15 +91,22 @@
         "password": "CyG0RFxMjzs41uQD4OLuHQ=="
       },
       "_sub_ids": [
+        "1",
         "100",
-        "3"
+        "110",
+        "201",
+        "26",
+        "29",
+        "3",
+        "300",
+        "4"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "BR"
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-3",
+      "tag": "🇩🇪node-6",
       "server": "18.153.65.67",
       "server_port": 443,
       "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
@@ -63,12 +121,29 @@
         "26",
         "300"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "DE"
     },
     {
       "type": "hysteria2",
-      "tag": "🇩🇪node-4",
+      "tag": "🇩🇪node-7",
+      "server": "191.217.204.101",
+      "server_port": 443,
+      "password": "ca60984f-b1f0-4073-bd33-4c75168f749a",
+      "tls": {
+        "enabled": true,
+        "server_name": "ge-beer-10.fantoff.online"
+      },
+      "_dedup_key": "191.217.204.101:443:ca60984f-b1f0-4073-bd33-4c75168f749a",
+      "_sub_ids": [
+        "27"
+      ],
+      "_last_ok_ts": 1795139106.814267,
+      "_country": "DE"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇩🇪node-8",
       "server": "steel7.hadsvpn.com",
       "server_port": 443,
       "password": "23c82941-70f4-4381-90db-bd28e9a902e9",
@@ -81,6 +156,7 @@
         "1",
         "100",
         "105",
+        "110",
         "13",
         "14",
         "20",
@@ -91,12 +167,12 @@
         "300",
         "4"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "DE"
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇷node-5",
+      "tag": "🇫🇷node-9",
       "server": "62.210.124.146",
       "server_port": 22000,
       "password": "dongtaiwang.com",
@@ -114,80 +190,12 @@
         "20",
         "26"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "FR"
     },
     {
       "type": "hysteria2",
-      "tag": "🇫🇷node-6",
-      "server": "vpn-fr-001.fastervpn.world",
-      "server_port": 443,
-      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
-      "tls": {
-        "enabled": true,
-        "server_name": "vpn-fr-001.fastervpn.world"
-      },
-      "_last_ok_ts": 1795114638.62884,
-      "_country": "FR"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇷node-7",
-      "server": "vpn-fr-001.fastervpn.world",
-      "server_port": 443,
-      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
-      "tls": {
-        "enabled": true,
-        "server_name": "vpn-fr-001.fastervpn.world"
-      },
-      "_last_ok_ts": 1795114638.62884,
-      "_country": "FR"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇷node-8",
-      "server": "vpn-fr-001.fastervpn.world",
-      "server_port": 443,
-      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
-      "tls": {
-        "enabled": true,
-        "server_name": "vpn-fr-001.fastervpn.world"
-      },
-      "_last_ok_ts": 1795114638.62884,
-      "_country": "FR"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇷node-9",
-      "server": "vpn-fr-001.fastervpn.world",
-      "server_port": 443,
-      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
-      "tls": {
-        "enabled": true,
-        "server_name": "vpn-fr-001.fastervpn.world"
-      },
-      "_last_ok_ts": 1795114638.62884,
-      "_country": "FR"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇫🇷node-10",
-      "server": "vpn-fr-001.fastervpn.world",
-      "server_port": 443,
-      "password": "H7mP2xY9kJ4nQ8wR5tF6vB3z",
-      "tls": {
-        "enabled": true,
-        "server_name": "vpn-fr-001.fastervpn.world"
-      },
-      "_sub_ids": [
-        "1"
-      ],
-      "_last_ok_ts": 1795114638.62884,
-      "_country": "FR"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇭🇰node-11",
+      "tag": "🇭🇰node-10",
       "server": "152.32.254.68",
       "server_port": 5010,
       "password": "eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ",
@@ -215,12 +223,12 @@
         "4",
         "7"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "HK"
     },
     {
       "type": "hysteria2",
-      "tag": "🇭🇰node-12",
+      "tag": "🇭🇰node-11",
       "server": "82.152.161.146",
       "server_port": 10086,
       "password": "VR7zICGZd3cB34G0FxSYQra3",
@@ -234,41 +242,12 @@
         "26",
         "29"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "HK"
     },
     {
       "type": "hysteria2",
-      "tag": "🇮🇷node-13",
-      "server": "m1.config7x.kz.ci",
-      "server_port": 26206,
-      "password": "Telegram--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X-",
-      "tls": {
-        "enabled": true,
-        "server_name": "config7x.de5.net",
-        "alpn": [
-          "h3"
-        ]
-      },
-      "_dedup_key": "m1.config7x.kz.ci:26206:Telegram--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X--CONFIG7X-",
-      "obfs": {
-        "type": "salamander",
-        "password": "vxvnmus9agdzduvz"
-      },
-      "_sub_ids": [
-        "100",
-        "105",
-        "110",
-        "201",
-        "26",
-        "29"
-      ],
-      "_last_ok_ts": 1795114638.62884,
-      "_country": "IR"
-    },
-    {
-      "type": "hysteria2",
-      "tag": "🇰🇷node-14",
+      "tag": "🇰🇷node-12",
       "server": "150-230-252-217.liao.kdns.fr",
       "server_port": 50160,
       "password": "9cfc9458e48c028ec03ff86ebc71c744",
@@ -276,7 +255,7 @@
         "enabled": true,
         "server_name": "150-230-252-217.liao.kdns.fr"
       },
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "KR",
       "_sub_ids": [
         "1",
@@ -286,7 +265,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-15",
+      "tag": "🇰🇷node-13",
       "server": "150.230.252.217",
       "server_port": 50160,
       "password": "9cfc9458e48c028ec03ff86ebc71c744",
@@ -303,12 +282,12 @@
         "29",
         "300"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "KR"
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-16",
+      "tag": "🇰🇷node-14",
       "server": "152-69-231-175.liao.kdns.fr",
       "server_port": 50160,
       "password": "1beb216e3f60aea9555dae60d219a5ca",
@@ -316,7 +295,7 @@
         "enabled": true,
         "server_name": "152-69-231-175.liao.kdns.fr"
       },
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "KR",
       "_sub_ids": [
         "1",
@@ -332,7 +311,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-17",
+      "tag": "🇰🇷node-15",
       "server": "152.67.200.82",
       "server_port": 50160,
       "password": "3d7634af8cb2c6cb4bac1c0efad8b43d",
@@ -351,12 +330,12 @@
         "20",
         "26"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "KR"
     },
     {
       "type": "hysteria2",
-      "tag": "🇰🇷node-18",
+      "tag": "🇰🇷node-16",
       "server": "152.69.231.175",
       "server_port": 50160,
       "password": "1beb216e3f60aea9555dae60d219a5ca",
@@ -370,12 +349,29 @@
         "13",
         "20"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "KR"
     },
     {
       "type": "hysteria2",
-      "tag": "🇸🇪node-19",
+      "tag": "🇵🇱node-17",
+      "server": "31.58.117.133",
+      "server_port": 443,
+      "password": "ca60984f-b1f0-4073-bd33-4c75168f749a",
+      "tls": {
+        "enabled": true,
+        "server_name": "kraw-pl-5.fantoff.online"
+      },
+      "_dedup_key": "31.58.117.133:443:ca60984f-b1f0-4073-bd33-4c75168f749a",
+      "_sub_ids": [
+        "27"
+      ],
+      "_last_ok_ts": 1795139106.814267,
+      "_country": "PL"
+    },
+    {
+      "type": "hysteria2",
+      "tag": "🇸🇪node-18",
       "server": "50.7.38.243",
       "server_port": 443,
       "password": "d4ca9415f0eac7897472e1e5b86d2e96",
@@ -398,12 +394,12 @@
         "300",
         "4"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "SE"
     },
     {
       "type": "hysteria2",
-      "tag": "🇸🇪node-20",
+      "tag": "🇸🇪node-19",
       "server": "95.143.196.97",
       "server_port": 443,
       "password": "769f34f0-1500-488f-b414-03bc90666502",
@@ -421,12 +417,12 @@
         "26",
         "29"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "SE"
     },
     {
       "type": "hysteria2",
-      "tag": "🇸🇪node-21",
+      "tag": "🇸🇪node-20",
       "server": "promo.betust.net",
       "server_port": 443,
       "password": "d4ca9415f0eac7897472e1e5b86d2e96",
@@ -452,12 +448,12 @@
         "300",
         "4"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "SE"
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-22",
+      "tag": "🇺🇸node-21",
       "server": "179.254.191.251",
       "server_port": 4444,
       "password": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -479,12 +475,12 @@
         "300",
         "4"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "US"
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-23",
+      "tag": "🇺🇸node-22",
       "server": "48.102.214.171",
       "server_port": 4444,
       "password": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -498,12 +494,12 @@
         "26",
         "29"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "US"
     },
     {
       "type": "hysteria2",
-      "tag": "🇺🇸node-24",
+      "tag": "🇺🇸node-23",
       "server": "bl1.nexfile.net",
       "server_port": 4444,
       "password": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -530,7 +526,7 @@
         "300",
         "4"
       ],
-      "_last_ok_ts": 1795114638.62884,
+      "_last_ok_ts": 1795139106.814267,
       "_country": "US"
     }
   ]
