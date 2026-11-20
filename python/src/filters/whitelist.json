@@ -124779,6 +124779,147 @@
             }
           }
         }
+      },
+      {
+        "key": "104.18.42.98:443:xhl549341:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-129",
+          "server": "104.18.42.98",
+          "server_port": 443,
+          "password": "xhl549341",
+          "tls": {
+            "enabled": true,
+            "server_name": "tro.baiyi.cloudns.org"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/"
+          }
+        }
+      },
+      {
+        "key": "103.11.76.183:443:f426d3c9-fb43-43c0-868b-898dfa451a74:%2F",
+        "node": {
+          "type": "trojan",
+          "tag": "node-3",
+          "server": "103.11.76.183",
+          "server_port": 443,
+          "password": "f426d3c9-fb43-43c0-868b-898dfa451a74",
+          "tls": {
+            "enabled": true,
+            "server_name": "likejennie.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "%2F"
+          }
+        }
+      },
+      {
+        "key": "101.99.76.88:2053:f426d3c9-fb43-43c0-868b-898dfa451a74:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1",
+          "server": "101.99.76.88",
+          "server_port": 2053,
+          "password": "f426d3c9-fb43-43c0-868b-898dfa451a74",
+          "tls": {
+            "enabled": true,
+            "server_name": "likejennie.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "likejennie.pages.dev"
+            }
+          }
+        }
+      },
+      {
+        "key": "104.248.107.186:2053:f426d3c9-fb43-43c0-868b-898dfa451a74:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-194",
+          "server": "104.248.107.186",
+          "server_port": 2053,
+          "password": "f426d3c9-fb43-43c0-868b-898dfa451a74",
+          "tls": {
+            "enabled": true,
+            "server_name": "likejennie.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "likejennie.pages.dev"
+            }
+          }
+        }
+      },
+      {
+        "key": "194.9.62.42:8443:f426d3c9-fb43-43c0-868b-898dfa451a74:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-568",
+          "server": "194.9.62.42",
+          "server_port": 8443,
+          "password": "f426d3c9-fb43-43c0-868b-898dfa451a74",
+          "tls": {
+            "enabled": true,
+            "server_name": "likejennie.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "likejennie.pages.dev"
+            }
+          }
+        }
+      },
+      {
+        "key": "94.43.238.112:2053:f426d3c9-fb43-43c0-868b-898dfa451a74:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-758",
+          "server": "94.43.238.112",
+          "server_port": 2053,
+          "password": "f426d3c9-fb43-43c0-868b-898dfa451a74",
+          "tls": {
+            "enabled": true,
+            "server_name": "likejennie.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "likejennie.pages.dev"
+            }
+          }
+        }
+      },
+      {
+        "key": "103.83.86.112:8443:f426d3c9-fb43-43c0-868b-898dfa451a74:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-12",
+          "server": "103.83.86.112",
+          "server_port": 8443,
+          "password": "f426d3c9-fb43-43c0-868b-898dfa451a74",
+          "tls": {
+            "enabled": true,
+            "server_name": "likejennie.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "likejennie.pages.dev"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -175395,5 +175536,5 @@
       }
     ]
   },
-  "updated": "2026-11-20T01:51:52Z"
+  "updated": "2026-11-20T01:55:16Z"
 }
