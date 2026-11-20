@@ -175008,6 +175008,152 @@
             "insecure": false
           }
         }
+      },
+      {
+        "key": "142.171.48.179:28167:6da034c2-fc93-4f06-bee0-0714db94c61f:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-49",
+          "server": "142.171.48.179",
+          "server_port": 28167,
+          "uuid": "6da034c2-fc93-4f06-bee0-0714db94c61f",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "gw.alicdn.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "142.171.48.179:28167:273695bd-c2fb-4c54-9477-4b702a606242:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-50",
+          "server": "142.171.48.179",
+          "server_port": 28167,
+          "uuid": "273695bd-c2fb-4c54-9477-4b702a606242",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "gw.alicdn.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "bYWXdhIRqKJj8XAZ.v.3dns.vip:443:234a80412b4d44a3a8d8523cbfd58dc4:/ws-vmess",
+        "node": {
+          "type": "vmess",
+          "tag": "node-184",
+          "server": "bYWXdhIRqKJj8XAZ.v.3dns.vip",
+          "server_port": 443,
+          "uuid": "234a80412b4d44a3a8d8523cbfd58dc4",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/ws-vmess",
+            "headers": {
+              "Host": "bYWXdhIRqKJj8XAZ.v.3dns.vip"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "bYWXdhIRqKJj8XAZ.v.3dns.vip",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "robertson-connectivity-amber-coaching.trycloudflare.com:443:2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea:/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+        "node": {
+          "type": "vmess",
+          "tag": "node-249",
+          "server": "robertson-connectivity-amber-coaching.trycloudflare.com",
+          "server_port": 443,
+          "uuid": "2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+            "headers": {
+              "Host": "robertson-connectivity-amber-coaching.trycloudflare.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "robertson-connectivity-amber-coaching.trycloudflare.com",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "162.19.192.89:16616:904f0569-8695-466f-97cf-0de2face1b46:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-3376",
+          "server": "162.19.192.89",
+          "server_port": 16616,
+          "uuid": "904f0569-8695-466f-97cf-0de2face1b46",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "f9309cc88637c26f552a1a64fb311cae.mobgslb.tbcache.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "172.66.142.170:443:4caf156a-3309-4105-8388-d388eb9e1105:/whatever/vmess",
+        "node": {
+          "type": "vmess",
+          "tag": "node-3593",
+          "server": "172.66.142.170",
+          "server_port": 443,
+          "uuid": "4caf156a-3309-4105-8388-d388eb9e1105",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/whatever/vmess",
+            "headers": {
+              "Host": "id2.nathaya.web.id"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "zoomgov.nathaya.web.id",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "162.159.139.225:443:4caf156a-3309-4105-8388-d388eb9e1105:/whatever/vmess",
+        "node": {
+          "type": "vmess",
+          "tag": "node-3249",
+          "server": "162.159.139.225",
+          "server_port": 443,
+          "uuid": "4caf156a-3309-4105-8388-d388eb9e1105",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/whatever/vmess",
+            "headers": {
+              "Host": "id2.nathaya.web.id"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "zoomgov.nathaya.web.id",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -178672,5 +178818,5 @@
       }
     ]
   },
-  "updated": "2026-11-20T22:15:11Z"
+  "updated": "2026-11-20T22:18:03Z"
 }
