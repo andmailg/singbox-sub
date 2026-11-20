@@ -174104,6 +174104,47 @@
             }
           }
         }
+      },
+      {
+        "key": "142.171.48.179:28167:c5d9e8a0-6281-4d0e-8a8a-63adf30b7478:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-2949",
+          "server": "142.171.48.179",
+          "server_port": 28167,
+          "uuid": "c5d9e8a0-6281-4d0e-8a8a-63adf30b7478",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "gw.alicdn.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "US032012.westmgreen.com:443:5decdd8c-5790-4d16-9ce9-5cd7fb1934fc:/wes",
+        "node": {
+          "type": "vmess",
+          "tag": "node-5474",
+          "server": "US032012.westmgreen.com",
+          "server_port": 443,
+          "uuid": "5decdd8c-5790-4d16-9ce9-5cd7fb1934fc",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/wes",
+            "headers": {
+              "Host": "US032012.westmgreen.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "US032012.westmgreen.com",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -177768,5 +177809,5 @@
       }
     ]
   },
-  "updated": "2026-11-20T14:18:00Z"
+  "updated": "2026-11-20T14:25:32Z"
 }
