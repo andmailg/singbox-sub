@@ -10685,6 +10685,58 @@
             }
           }
         }
+      },
+      {
+        "key": "pigment.merlano.monster:443:25ac78e7-6d1d-4c9a-a450-c01a4871769f:/api/de2/sync",
+        "node": {
+          "type": "vless",
+          "tag": "node-331",
+          "server": "pigment.merlano.monster",
+          "server_port": 443,
+          "uuid": "25ac78e7-6d1d-4c9a-a450-c01a4871769f",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/de2/sync",
+            "mode": "auto",
+            "host": [
+              "pigment.merlano.monster"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "pigment.merlano.monster",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "riverside.elvano.website:443:25ac78e7-6d1d-4c9a-a450-c01a4871769f:/api/de1/sync",
+        "node": {
+          "type": "vless",
+          "tag": "node-348",
+          "server": "riverside.elvano.website",
+          "server_port": 443,
+          "uuid": "25ac78e7-6d1d-4c9a-a450-c01a4871769f",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/de1/sync",
+            "mode": "auto",
+            "host": [
+              "riverside.elvano.website"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "riverside.elvano.website",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "ios"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -178248,5 +178300,5 @@
       }
     ]
   },
-  "updated": "2026-11-20T15:19:57Z"
+  "updated": "2026-11-20T18:53:33Z"
 }
