@@ -110597,6 +110597,60 @@
             "service_name": ""
           }
         }
+      },
+      {
+        "key": "13.143.239.6:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-27",
+          "server": "13.143.239.6",
+          "server_port": 443,
+          "uuid": "cda0862a-0f87-4be9-8ed8-1d0c9e382839",
+          "tls": {
+            "enabled": true,
+            "server_name": "717252g.nl8.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU",
+              "short_id": "d3bd772514c87d28"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "204adda7e3da"
+          }
+        }
+      },
+      {
+        "key": "48.103.230.81:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-196",
+          "server": "48.103.230.81",
+          "server_port": 443,
+          "uuid": "cda0862a-0f87-4be9-8ed8-1d0c9e382839",
+          "tls": {
+            "enabled": true,
+            "server_name": "0592efg.us8.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "cO3wYHISTeorXcM8ffaDCDdqZ-olBQL-GyZqb-W7rTk",
+              "short_id": "bd8f712209a9c283"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "99f2107b03f8"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -177714,5 +177768,5 @@
       }
     ]
   },
-  "updated": "2026-11-20T14:17:13Z"
+  "updated": "2026-11-20T14:18:00Z"
 }
