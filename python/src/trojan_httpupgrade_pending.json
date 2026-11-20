@@ -1,6 +1,44 @@
 {
-  "last_updated": "2026-11-19T19:06:07Z",
+  "last_updated": "2026-11-20T01:50:24Z",
   "nodes": [
+    {
+      "type": "trojan",
+      "tag": "node-20",
+      "server": "sub.macdonalder.cyou",
+      "server_port": 37468,
+      "password": "%252BY4bH6SejVz8gunXYHMS94Oy2yn4313jzITBdW8eLsI%253D",
+      "_dedup_key": "sub.macdonalder.cyou:37468:%252BY4bH6SejVz8gunXYHMS94Oy2yn4313jzITBdW8eLsI%253D:/",
+      "tls": {
+        "enabled": true,
+        "server_name": "sub.macdonalder.cyou"
+      },
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/"
+      },
+      "_sub_ids": [
+        "26",
+        "29"
+      ],
+      "_pending_since": 1795139420.662398
+    },
+    {
+      "type": "trojan",
+      "tag": "node-21",
+      "server": "sub.macdonalder.cyou",
+      "server_port": 37468,
+      "password": "+Y4bH6SejVz8gunXYHMS94Oy2yn4313jzITBdW8eLsI=",
+      "tls": {
+        "enabled": true,
+        "server_name": "sub.macdonalder.cyou"
+      },
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/",
+        "host": "sub.macdonalder.cyou"
+      },
+      "_pending_since": 1795139420.662398
+    },
     {
       "type": "trojan",
       "tag": "🇺🇸node-1",
