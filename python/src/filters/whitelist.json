@@ -126286,6 +126286,48 @@
             }
           }
         }
+      },
+      {
+        "key": "104.19.180.169:443:31703819-c5eb-44fe-98d5-07799c80bd70:/download",
+        "node": {
+          "type": "trojan",
+          "tag": "node-135",
+          "server": "104.19.180.169",
+          "server_port": 443,
+          "password": "31703819-c5eb-44fe-98d5-07799c80bd70",
+          "tls": {
+            "enabled": true,
+            "server_name": "it01.node.qixi.best"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/download",
+            "headers": {
+              "Host": "it01.node.qixi.best"
+            }
+          }
+        }
+      },
+      {
+        "key": "de01.node.qixi.best:443:31703819-c5eb-44fe-98d5-07799c80bd70:/download",
+        "node": {
+          "type": "trojan",
+          "tag": "node-734",
+          "server": "de01.node.qixi.best",
+          "server_port": 443,
+          "password": "31703819-c5eb-44fe-98d5-07799c80bd70",
+          "tls": {
+            "enabled": true,
+            "server_name": "de01.node.qixi.best"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/download",
+            "headers": {
+              "Host": "de01.node.qixi.best"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -177630,5 +177672,5 @@
       }
     ]
   },
-  "updated": "2026-11-20T14:03:58Z"
+  "updated": "2026-11-20T14:06:24Z"
 }
