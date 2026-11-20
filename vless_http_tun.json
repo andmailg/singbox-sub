@@ -116,10 +116,9 @@
       "outbounds": [
         "auto",
         "🇩🇪node-1",
-        "🇩🇪node-2",
-        "🇬🇧node-3",
-        "🇳🇱node-4",
-        "🇳🇱node-5"
+        "🇬🇧node-2",
+        "🇳🇱node-3",
+        "🇳🇱node-4"
       ],
       "default": "auto"
     },
@@ -128,10 +127,9 @@
       "tag": "auto",
       "outbounds": [
         "🇩🇪node-1",
-        "🇩🇪node-2",
-        "🇬🇧node-3",
-        "🇳🇱node-4",
-        "🇳🇱node-5"
+        "🇬🇧node-2",
+        "🇳🇱node-3",
+        "🇳🇱node-4"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -153,21 +151,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-2",
-      "server": "91.107.170.218",
-      "server_port": 8080,
-      "uuid": "14eeebbc-65eb-4fa2-9523-494af186fe33",
-      "transport": {
-        "type": "http",
-        "host": [
-          "tgju.org"
-        ],
-        "path": "/"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇬🇧node-3",
+      "tag": "🇬🇧node-2",
       "server": "161.35.37.106",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
@@ -181,7 +165,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-4",
+      "tag": "🇳🇱node-3",
       "server": "146.190.21.145",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
@@ -195,7 +179,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-5",
+      "tag": "🇳🇱node-4",
       "server": "178.62.212.162",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
