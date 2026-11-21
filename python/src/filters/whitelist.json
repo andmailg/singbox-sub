@@ -180500,6 +180500,108 @@
             "insecure": false
           }
         }
+      },
+      {
+        "key": "128.140.49.30:443:11edc5c6-bd3f-48f5-ae44-7b61758f323b:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-36",
+          "server": "128.140.49.30",
+          "server_port": 443,
+          "uuid": "11edc5c6-bd3f-48f5-ae44-7b61758f323b",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "germanyhetz.onlinernet.ir"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "germanyhetz.onlinernet.ir",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "142.171.48.179:28167:0651c69c-77df-427b-a991-cb2d80155343:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-49",
+          "server": "142.171.48.179",
+          "server_port": 28167,
+          "uuid": "0651c69c-77df-427b-a991-cb2d80155343",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "gw.alicdn.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "161.33.20.255:8880:e0856508-d693-450a-a099-455091dc4f25:/e0856508-d693-450a-a099-455091dc4f25-vm",
+        "node": {
+          "type": "vmess",
+          "tag": "node-59",
+          "server": "161.33.20.255",
+          "server_port": 8880,
+          "uuid": "e0856508-d693-450a-a099-455091dc4f25",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/e0856508-d693-450a-a099-455091dc4f25-vm"
+          }
+        }
+      },
+      {
+        "key": "47.86.90.31:443:234a8041-2b4d-44a3-a8d8-523cbfd58dc4:/ws-vmess",
+        "node": {
+          "type": "vmess",
+          "tag": "node-124",
+          "server": "47.86.90.31",
+          "server_port": 443,
+          "uuid": "234a8041-2b4d-44a3-a8d8-523cbfd58dc4",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/ws-vmess",
+            "headers": {
+              "Host": "bYWXdhIRqKJj8XAZ.v.3dns.vip"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "bYWXdhIRqKJj8XAZ.v.3dns.vip",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "germanyhetz.onlinernet.ir:443:11edc5c6-bd3f-48f5-ae44-7b61758f323b:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-204",
+          "server": "germanyhetz.onlinernet.ir",
+          "server_port": 443,
+          "uuid": "11edc5c6-bd3f-48f5-ae44-7b61758f323b",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "germanyhetz.onlinernet.ir"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "germanyhetz.onlinernet.ir",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -184290,5 +184392,5 @@
       }
     ]
   },
-  "updated": "2026-11-21T17:27:37Z"
+  "updated": "2026-11-21T17:41:44Z"
 }
