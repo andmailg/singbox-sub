@@ -1,5 +1,227 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-11-20T22:20:41Z",
-  "nodes": []
+  "last_tested": "2026-11-21T07:03:35Z",
+  "nodes": [
+    {
+      "type": "trojan",
+      "tag": "node-1",
+      "server": "104.17.128.1",
+      "server_port": 2096,
+      "password": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "azadnet-5o5.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/azadnet-5o5.pages.dev/?ed=2560",
+        "headers": {
+          "Host": "azadnet-5o5.pages.dev"
+        }
+      },
+      "_last_ok_ts": 1795244320.580587,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-2",
+      "server": "104.17.128.1",
+      "server_port": 2096,
+      "password": "auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "azadnet-5o5.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/azadnet-5o5.pages.dev/?ed=2560",
+        "headers": {
+          "Host": "azadnet-5o5.pages.dev"
+        }
+      },
+      "_last_ok_ts": 1795244320.580587,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-3",
+      "server": "104.17.128.1",
+      "server_port": 2096,
+      "password": "auto",
+      "_dedup_key": "104.17.128.1:2096:auto:/azadnet-5o5.pages.dev/?ed=2560",
+      "tls": {
+        "enabled": true,
+        "server_name": "azadnet-5o5.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/azadnet-5o5.pages.dev/?ed=2560"
+      },
+      "_sub_ids": [
+        "13",
+        "201",
+        "26",
+        "29",
+        "3"
+      ],
+      "_last_ok_ts": 1795244320.580587,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-4",
+      "server": "104.17.234.157",
+      "server_port": 2096,
+      "password": "123456",
+      "_dedup_key": "104.17.234.157:2096:123456:/",
+      "tls": {
+        "enabled": true,
+        "server_name": "321dfbc6.uir-9i6.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "headers": {
+          "Host": "321dfbc6.uir-9i6.pages.dev"
+        },
+        "path": "/"
+      },
+      "_sub_ids": [
+        "102"
+      ],
+      "_last_ok_ts": 1795244320.580587,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-5",
+      "server": "104.18.35.86",
+      "server_port": 2096,
+      "password": "123456",
+      "tls": {
+        "enabled": true,
+        "server_name": "321dfbc6.uir-9i6.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "321dfbc6.uir-9i6.pages.dev"
+        }
+      },
+      "_last_ok_ts": 1795244320.580587,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-6",
+      "server": "104.18.35.86",
+      "server_port": 2096,
+      "password": "123456",
+      "tls": {
+        "enabled": true,
+        "server_name": "321dfbc6.uir-9i6.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/ ",
+        "headers": {
+          "Host": "321dfbc6.uir-9i6.pages.dev"
+        }
+      },
+      "_last_ok_ts": 1795244320.580587,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-7",
+      "server": "104.18.35.86",
+      "server_port": 2096,
+      "password": "123456",
+      "tls": {
+        "enabled": true,
+        "server_name": "321dfbc6.uir-9i6.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "321dfbc6.uir-9i6.pages.dev"
+        }
+      },
+      "_last_ok_ts": 1795244320.580587,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-8",
+      "server": "104.18.35.86",
+      "server_port": 2096,
+      "password": "123456",
+      "tls": {
+        "enabled": true,
+        "server_name": "321dfbc6.uir-9i6.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/ ",
+        "headers": {
+          "Host": "321dfbc6.uir-9i6.pages.dev"
+        }
+      },
+      "_last_ok_ts": 1795244320.580587,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-9",
+      "server": "104.18.35.86",
+      "server_port": 2096,
+      "password": "123456",
+      "_dedup_key": "104.18.35.86:2096:123456:/",
+      "tls": {
+        "enabled": true,
+        "server_name": "321dfbc6.uir-9i6.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "321dfbc6.uir-9i6.pages.dev"
+        }
+      },
+      "_sub_ids": [
+        "13",
+        "20",
+        "26",
+        "29",
+        "4"
+      ],
+      "_last_ok_ts": 1795244320.580587,
+      "_country": null
+    },
+    {
+      "type": "trojan",
+      "tag": "node-10",
+      "server": "104.18.35.86",
+      "server_port": 2096,
+      "password": "123456",
+      "_dedup_key": "104.18.35.86:2096:123456:/ ",
+      "tls": {
+        "enabled": true,
+        "server_name": "321dfbc6.uir-9i6.pages.dev"
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/ ",
+        "headers": {
+          "Host": "321dfbc6.uir-9i6.pages.dev"
+        }
+      },
+      "_sub_ids": [
+        "110"
+      ],
+      "_last_ok_ts": 1795244320.580587,
+      "_country": null
+    }
+  ]
 }

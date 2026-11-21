@@ -128599,6 +128599,27 @@
             }
           }
         }
+      },
+      {
+        "key": "104.17.234.157:2096:123456:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-90",
+          "server": "104.17.234.157",
+          "server_port": 2096,
+          "password": "123456",
+          "tls": {
+            "enabled": true,
+            "server_name": "321dfbc6.uir-9i6.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "headers": {
+              "Host": "321dfbc6.uir-9i6.pages.dev"
+            },
+            "path": "/"
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -182676,5 +182697,5 @@
       }
     ]
   },
-  "updated": "2026-11-21T07:01:24Z"
+  "updated": "2026-11-21T07:03:36Z"
 }
