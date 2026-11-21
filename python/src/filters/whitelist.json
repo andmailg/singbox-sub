@@ -114185,6 +114185,177 @@
             "service_name": "vless-grpc-reality"
           }
         }
+      },
+      {
+        "key": "104.16.183.101:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-2",
+          "server": "104.16.183.101",
+          "server_port": 443,
+          "uuid": "8344360f-0349-4784-a19f-33fd92e89389",
+          "tls": {
+            "enabled": true,
+            "server_name": "sync.2ml.bid"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "v3-direct"
+          }
+        }
+      },
+      {
+        "key": "172.67.192.112:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-64",
+          "server": "172.67.192.112",
+          "server_port": 443,
+          "uuid": "8344360f-0349-4784-a19f-33fd92e89389",
+          "tls": {
+            "enabled": true,
+            "server_name": "sync.2ml.bid",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "v3-direct"
+          }
+        }
+      },
+      {
+        "key": "80.47.13.56:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-165",
+          "server": "80.47.13.56",
+          "server_port": 443,
+          "uuid": "52e854c3-f891-4eb5-943a-fe385f59e8fb",
+          "tls": {
+            "enabled": true,
+            "server_name": "ps1.jetservaki.fit",
+            "reality": {
+              "enabled": true,
+              "public_key": "qYmjDdoe-W9e55-Rs6u_G4HCHMk31G_qj0t1Q4_BcUg",
+              "short_id": "884b938083b628d2"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "fi2-serv.maxleshax.icu:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-227",
+          "server": "fi2-serv.maxleshax.icu",
+          "server_port": 8443,
+          "uuid": "78dbd904-8400-40fa-b67d-8bbaa624d385",
+          "tls": {
+            "enabled": true,
+            "server_name": "fi2-serv.maxleshax.icu",
+            "reality": {
+              "enabled": true,
+              "public_key": "uRW_hGx4d5mprUYhkDyoM-JfsqNh5RT6I0J-2VcH-Rc",
+              "short_id": "c8c51d0a44538617"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "platina"
+          }
+        }
+      },
+      {
+        "key": "nl1.kndrsxraybot.com:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-250",
+          "server": "nl1.kndrsxraybot.com",
+          "server_port": 8443,
+          "uuid": "3bc7791e-d6fd-4f61-9864-c66928eac88e",
+          "tls": {
+            "enabled": true,
+            "server_name": "nl1.kndrsxraybot.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "Daeyem6bDb8-yehpS8bXro1rbfJQ1j9SMneUu5BleSQ",
+              "short_id": "b3386ec1dbce3d92",
+              "spider_x": "/"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "132.243.67.148:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-35",
+          "server": "132.243.67.148",
+          "server_port": 443,
+          "uuid": "4201786b-d99b-4147-a5f0-20d47acddb81",
+          "tls": {
+            "enabled": true,
+            "server_name": "b3cd32g.es1.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "7efBhLzPwoTtEC1GlukCdiTllobUfa2_XuAKNSLJx30",
+              "short_id": "e7cffac9f8cfb434"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": ""
+          }
+        }
+      },
+      {
+        "key": "172.64.80.1:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-88",
+          "server": "172.64.80.1",
+          "server_port": 443,
+          "uuid": "8344360f-0349-4784-a19f-33fd92e89389",
+          "tls": {
+            "enabled": true,
+            "server_name": "sync.2ml.bid",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "v3-direct"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -184448,5 +184619,5 @@
       }
     ]
   },
-  "updated": "2026-11-21T17:46:15Z"
+  "updated": "2026-11-21T17:48:21Z"
 }
