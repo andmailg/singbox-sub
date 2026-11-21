@@ -28,7 +28,7 @@
         "type": "https",
         "tag": "smart-dns",
         "server": "dns.comss.one",
-        "domain_resolver": "dns-direct"
+        "domain_resolver": "dns-local"
       },
       {
         "type": "fakeip",
@@ -38,7 +38,7 @@
       },
       {
         "type": "local",
-        "tag": "local"
+        "tag": "dns-local"
       }
     ],
     "rules": [
@@ -47,7 +47,7 @@
           ".lan",
           ".local"
         ],
-        "server": "local"
+        "server": "dns-local"
       },
       {
         "rule_set": [
@@ -115,8 +115,7 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇺🇸node-1",
-        "🇺🇸node-2"
+        "🇺🇸node-1"
       ],
       "default": "auto"
     },
@@ -124,8 +123,7 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇺🇸node-1",
-        "🇺🇸node-2"
+        "🇺🇸node-1"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -134,28 +132,9 @@
     {
       "type": "vless",
       "tag": "🇺🇸node-1",
-      "server": "3.168.219.0",
+      "server": "3.169.218.2",
       "server_port": 443,
-      "uuid": "ad9a885d-93bb-48e3-9937-57f1116b64e3",
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "d1aedflfr97jes.cloudfront.net"
-        }
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "d1aedflfr97jes.cloudfront.net",
-        "insecure": false
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-2",
-      "server": "3.169.218.0",
-      "server_port": 443,
-      "uuid": "ad9a885d-93bb-48e3-9937-57f1116b64e3",
+      "uuid": "654ba40a-0522-4fc3-8328-08099482c201",
       "transport": {
         "type": "ws",
         "path": "/",
@@ -233,11 +212,6 @@
     "rule_set": [
       {
         "type": "remote",
-        "tag": "db-github",
-        "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-github.srs"
-      },
-      {
-        "type": "remote",
         "tag": "geosite-category-media-ru-blocked",
         "url": "https://github.com/SagerNet/sing-geosite/raw/refs/heads/rule-set/geosite-category-media-ru-blocked.srs"
       },
@@ -265,7 +239,7 @@
     "final": "proxy-out",
     "auto_detect_interface": true,
     "override_android_vpn": true,
-    "default_domain_resolver": "dns-direct"
+    "default_domain_resolver": "dns-local"
   },
   "experimental": {
     "cache_file": {
