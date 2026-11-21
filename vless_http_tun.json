@@ -115,8 +115,10 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇬🇧node-1",
-        "🇳🇱node-2"
+        "🇩🇪node-1",
+        "🇳🇱node-2",
+        "🇸🇪node-3",
+        "🇸🇪node-4"
       ],
       "default": "auto"
     },
@@ -124,8 +126,10 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇬🇧node-1",
-        "🇳🇱node-2"
+        "🇩🇪node-1",
+        "🇳🇱node-2",
+        "🇸🇪node-3",
+        "🇸🇪node-4"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -133,14 +137,14 @@
     },
     {
       "type": "vless",
-      "tag": "🇬🇧node-1",
-      "server": "161.35.37.106",
+      "tag": "🇩🇪node-1",
+      "server": "159.89.13.245",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
       "transport": {
         "type": "http",
         "host": [
-          "fast.com"
+          "store.steampowered.com"
         ],
         "path": "/"
       }
@@ -155,6 +159,34 @@
         "type": "http",
         "host": [
           "fast.com"
+        ],
+        "path": "/"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇪node-3",
+      "server": "swe4.mlbaz.ir",
+      "server_port": 2222,
+      "uuid": "f4e7fdb5-9b1b-44e7-990a-40ee7da9cdc5",
+      "transport": {
+        "type": "http",
+        "host": [
+          "ajax.googleapis.com"
+        ],
+        "path": "/"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇪node-4",
+      "server": "swe4.mlbaz.ir",
+      "server_port": 2222,
+      "uuid": "f4e7fdb5-9b1b-44e7-990a-40ee7da9cdc5",
+      "transport": {
+        "type": "http",
+        "host": [
+          "ajax.googleapis.com"
         ],
         "path": "/"
       }
