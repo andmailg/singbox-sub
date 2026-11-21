@@ -10933,6 +10933,82 @@
             }
           }
         }
+      },
+      {
+        "key": "gr.tajpiex.ir:8443:cfe02c46-8eab-4aa7-8464-a504dd94e6c2:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-117",
+          "server": "gr.tajpiex.ir",
+          "server_port": 8443,
+          "uuid": "cfe02c46-8eab-4aa7-8464-a504dd94e6c2",
+          "transport": {
+            "type": "xhttp",
+            "mode": "auto",
+            "host": [
+              "gr1.plex1.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "gr1.plex1.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "mamad.ang-el.ir:2085:fbe735da-3a62-4b98-844b-8db9e2ebaf95:/api",
+        "node": {
+          "type": "vless",
+          "tag": "node-139",
+          "server": "mamad.ang-el.ir",
+          "server_port": 2085,
+          "uuid": "fbe735da-3a62-4b98-844b-8db9e2ebaf95",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api",
+            "mode": "stream-one",
+            "host": [
+              "community.fastly.steamstatic.com"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "angelvpn.angelmh.cv",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "ne.tajpiex.ir:8443:cfe02c46-8eab-4aa7-8464-a504dd94e6c2:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-146",
+          "server": "ne.tajpiex.ir",
+          "server_port": 8443,
+          "uuid": "cfe02c46-8eab-4aa7-8464-a504dd94e6c2",
+          "transport": {
+            "type": "xhttp",
+            "mode": "auto",
+            "host": [
+              "ne1.plex10.ir"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "ne1.plex10.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -183926,5 +184002,5 @@
       }
     ]
   },
-  "updated": "2026-11-21T08:35:34Z"
+  "updated": "2026-11-21T13:45:58Z"
 }
