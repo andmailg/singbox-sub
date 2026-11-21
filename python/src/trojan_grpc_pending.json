@@ -1,6 +1,44 @@
 {
-  "last_updated": "2026-11-21T06:58:10Z",
+  "last_updated": "2026-11-21T17:25:29Z",
   "nodes": [
+    {
+      "type": "trojan",
+      "tag": "node-1",
+      "server": "170.168.5.123",
+      "server_port": 8228,
+      "password": "HAB6WFjL2pKev0cN3ML1hz6V4pj1_S00",
+      "_dedup_key": "170.168.5.123:8228:HAB6WFjL2pKev0cN3ML1hz6V4pj1_S00:trgrpc",
+      "tls": {
+        "enabled": true,
+        "server_name": "nl100.marshonet.store"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "trgrpc"
+      },
+      "_sub_ids": [
+        "27"
+      ],
+      "_latency_ms": 1176,
+      "_last_ok_ts": 1795244287.355294,
+      "_pending_since": 1795281926.121094
+    },
+    {
+      "type": "trojan",
+      "tag": "node-18",
+      "server": "217.78.237.118",
+      "server_port": 8447,
+      "password": "jCpBEnDOnqJ7J36rdoJ_cYvrKK5ErK9H",
+      "tls": {
+        "enabled": true,
+        "server_name": "imgffbf.static.tv-av.fun"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc"
+      },
+      "_pending_since": 1795281926.121094
+    },
     {
       "type": "trojan",
       "tag": "node-18",
@@ -213,27 +251,6 @@
         "26"
       ],
       "_pending_since": 1794434073.598496
-    },
-    {
-      "type": "trojan",
-      "tag": "node-39",
-      "server": "stream.yabenzin.app",
-      "server_port": 443,
-      "password": "duJyVGgB2y0tCFs37Y89NE1fMHXk8C5j",
-      "_dedup_key": "stream.yabenzin.app:443:duJyVGgB2y0tCFs37Y89NE1fMHXk8C5j:TrojanGRPC",
-      "tls": {
-        "enabled": true,
-        "server_name": "cdn12.yabenzin.app"
-      },
-      "transport": {
-        "type": "grpc",
-        "service_name": "TrojanGRPC"
-      },
-      "_sub_ids": [
-        "26",
-        "29"
-      ],
-      "_pending_since": 1794400849.706017
     }
   ]
 }
