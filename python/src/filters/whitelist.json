@@ -97904,6 +97904,55 @@
             "server_name": "n1.content-treasure-via.online"
           }
         }
+      },
+      {
+        "key": "177.3.217.3:443:9a9f167d-b461-466f-be50-f0ffd598a6f8",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-36",
+          "server": "177.3.217.3",
+          "server_port": 443,
+          "password": "9a9f167d-b461-466f-be50-f0ffd598a6f8",
+          "tls": {
+            "enabled": true,
+            "server_name": "germanyafterpool.fun"
+          }
+        }
+      },
+      {
+        "key": "46.8.210.33:8446:b7941807-1f4d-4bda-a878-92d708b84494",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-66",
+          "server": "46.8.210.33",
+          "server_port": 8446,
+          "password": "b7941807-1f4d-4bda-a878-92d708b84494",
+          "tls": {
+            "enabled": true,
+            "server_name": "litelitvalitter.rooferz.surf"
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "nTm4oBa6QCpWoAFDVtF6mpMpfMfN8CM6"
+          }
+        }
+      },
+      {
+        "key": "germanyafterpool.fun:443:9a9f167d-b461-466f-be50-f0ffd598a6f8",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-87",
+          "server": "germanyafterpool.fun",
+          "server_port": 443,
+          "password": "9a9f167d-b461-466f-be50-f0ffd598a6f8",
+          "tls": {
+            "enabled": true,
+            "server_name": "germanyafterpool.fun",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -184224,5 +184273,5 @@
       }
     ]
   },
-  "updated": "2026-11-21T17:23:48Z"
+  "updated": "2026-11-21T17:27:16Z"
 }
