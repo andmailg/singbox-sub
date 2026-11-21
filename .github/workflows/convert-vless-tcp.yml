@@ -46,10 +46,10 @@ jobs:
         working-directory: python
         run: >
           python vless_tcp_manage.py run
-          --geoip-block "ru" --rkn-filter 0 --export tun,xray
+          --geoip-block "ru" --rkn-filter 0 --export tun,xray,router
           --test-timeout 3 --blacklist-timeout 10 --whitelist-timeout 10
 
       - name: Commit and push if changed
         run: >
           bash .github/scripts/push_results.sh vless_tcp "Auto-update vless_reality configs & working nodes"
-          vless_tcp_tun.json vless_tcp.txt python/src/vless_tcp_working.json python/src/vless_tcp_pending.json
+          vless_tcp_tun.json vless_tcp.txt python/src/vless_tcp_working.json python/src/vless_tcp_pending.json config.json 
