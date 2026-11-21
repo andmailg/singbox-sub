@@ -178921,6 +178921,29 @@
             "insecure": false
           }
         }
+      },
+      {
+        "key": "auto-sheet-arctic-mesa.trycloudflare.com:443:2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea:/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+        "node": {
+          "type": "vmess",
+          "tag": "node-187",
+          "server": "auto-sheet-arctic-mesa.trycloudflare.com",
+          "server_port": 443,
+          "uuid": "2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+            "headers": {
+              "Host": "auto-sheet-arctic-mesa.trycloudflare.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "auto-sheet-arctic-mesa.trycloudflare.com",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -182697,5 +182720,5 @@
       }
     ]
   },
-  "updated": "2026-11-21T07:03:36Z"
+  "updated": "2026-11-21T07:28:38Z"
 }
