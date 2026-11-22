@@ -1,6 +1,38 @@
 {
-  "last_updated": "2026-11-21T17:25:29Z",
+  "last_updated": "2026-11-22T00:19:06Z",
   "nodes": [
+    {
+      "type": "trojan",
+      "tag": "node-18",
+      "server": "217.78.237.118",
+      "server_port": 8447,
+      "password": "jCpBEnDOnqJ7J36rdoJ_cYvrKK5ErK9H",
+      "tls": {
+        "enabled": true,
+        "server_name": "imgffbf.static.tv-av.fun"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc"
+      },
+      "_pending_since": 1795306742.888362
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1",
+      "server": "170.168.5.123",
+      "server_port": 8228,
+      "password": "HAB6WFjL2pKev0cN3ML1hz6V4pj1_S00",
+      "tls": {
+        "enabled": true,
+        "server_name": "nl100.marshonet.store"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "trgrpc"
+      },
+      "_pending_since": 1795306742.888362
+    },
     {
       "type": "trojan",
       "tag": "node-1",
@@ -232,25 +264,6 @@
         "26"
       ],
       "_pending_since": 1794968640.547618
-    },
-    {
-      "type": "trojan",
-      "tag": "node-33",
-      "server": "83.228.230.226",
-      "server_port": 2087,
-      "password": "SoftNetConnect",
-      "_dedup_key": "83.228.230.226:2087:SoftNetConnect:",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.yahoo.com"
-      },
-      "transport": {
-        "type": "grpc"
-      },
-      "_sub_ids": [
-        "26"
-      ],
-      "_pending_since": 1794434073.598496
     }
   ]
 }
