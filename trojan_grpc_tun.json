@@ -115,7 +115,7 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇩🇰node-1"
+        "🇸🇪node-1"
       ],
       "default": "auto"
     },
@@ -123,7 +123,7 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇩🇰node-1"
+        "🇸🇪node-1"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -131,17 +131,17 @@
     },
     {
       "type": "trojan",
-      "tag": "🇩🇰node-1",
-      "server": "217.78.237.118",
-      "server_port": 8447,
-      "password": "jCpBEnDOnqJ7J36rdoJ_cYvrKK5ErK9H",
+      "tag": "🇸🇪node-1",
+      "server": "sw100.marshonet.store",
+      "server_port": 8228,
+      "password": "pHLdtRnEC5stYZvt9GqMyMYx215AskPW",
       "tls": {
         "enabled": true,
-        "server_name": "imgffbf.static.tv-av.fun"
+        "server_name": "sw100.marshonet.store"
       },
       "transport": {
         "type": "grpc",
-        "service_name": "grpc"
+        "service_name": "trgrpc"
       }
     }
   ],

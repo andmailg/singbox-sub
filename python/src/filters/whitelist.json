@@ -134977,6 +134977,24 @@
             "service_name": "trgrpc"
           }
         }
+      },
+      {
+        "key": "sw100.marshonet.store:8228:pHLdtRnEC5stYZvt9GqMyMYx215AskPW:trgrpc",
+        "node": {
+          "type": "trojan",
+          "tag": "node-3",
+          "server": "sw100.marshonet.store",
+          "server_port": 8228,
+          "password": "pHLdtRnEC5stYZvt9GqMyMYx215AskPW",
+          "tls": {
+            "enabled": true,
+            "server_name": "sw100.marshonet.store"
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "trgrpc"
+          }
+        }
       }
     ],
     "vless_ws": [
@@ -190262,5 +190280,5 @@
       }
     ]
   },
-  "updated": "2026-11-22T13:15:42Z"
+  "updated": "2026-11-22T13:17:29Z"
 }

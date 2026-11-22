@@ -1,5 +1,27 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-11-22T00:19:06Z",
-  "nodes": []
+  "last_tested": "2026-11-22T13:17:28Z",
+  "nodes": [
+    {
+      "type": "trojan",
+      "tag": "🇸🇪node-1",
+      "server": "sw100.marshonet.store",
+      "server_port": 8228,
+      "password": "pHLdtRnEC5stYZvt9GqMyMYx215AskPW",
+      "_dedup_key": "sw100.marshonet.store:8228:pHLdtRnEC5stYZvt9GqMyMYx215AskPW:trgrpc",
+      "tls": {
+        "enabled": true,
+        "server_name": "sw100.marshonet.store"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "trgrpc"
+      },
+      "_sub_ids": [
+        "102"
+      ],
+      "_last_ok_ts": 1795353444.871309,
+      "_country": "SE"
+    }
+  ]
 }
