@@ -100072,6 +100072,48 @@
             ]
           }
         }
+      },
+      {
+        "key": "152.234.245.52:443:713142c9-ad09-4894-b35c-645423f3f6c9",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-20",
+          "server": "152.234.245.52",
+          "server_port": 443,
+          "password": "713142c9-ad09-4894-b35c-645423f3f6c9",
+          "tls": {
+            "enabled": true,
+            "server_name": "media.embrofree.org"
+          }
+        }
+      },
+      {
+        "key": "media.embrofree.org:443:713142c9-ad09-4894-b35c-645423f3f6c9",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-84",
+          "server": "media.embrofree.org",
+          "server_port": 443,
+          "password": "713142c9-ad09-4894-b35c-645423f3f6c9",
+          "tls": {
+            "enabled": true,
+            "server_name": "media.embrofree.org"
+          }
+        }
+      },
+      {
+        "key": "4f070970.con.metricdraft.tech:443:030e421e-9317-4cb8-8fbe-a07a565ad3db",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-64",
+          "server": "4f070970.con.metricdraft.tech",
+          "server_port": 443,
+          "password": "030e421e-9317-4cb8-8fbe-a07a565ad3db",
+          "tls": {
+            "enabled": true,
+            "server_name": "4f070970.con.metricdraft.tech"
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -187083,5 +187125,5 @@
       }
     ]
   },
-  "updated": "2026-11-22T00:20:35Z"
+  "updated": "2026-11-22T00:22:21Z"
 }
