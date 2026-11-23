@@ -121544,6 +121544,114 @@
             "service_name": "5b79e8a94241"
           }
         }
+      },
+      {
+        "key": "109.107.171.227:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-6",
+          "server": "109.107.171.227",
+          "server_port": 8443,
+          "uuid": "3dc81156-17e2-4049-b103-653640749410",
+          "tls": {
+            "enabled": true,
+            "server_name": "www.wikipedia.org",
+            "reality": {
+              "enabled": true,
+              "public_key": "dY1BlEfqsT3LNPjCkXoPL81jXjR3Pw7x0d6V4J-_bzk",
+              "short_id": "8c2a1950542261ee"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "www_grpc"
+          }
+        }
+      },
+      {
+        "key": "assets.fernstatic.com:8444",
+        "node": {
+          "type": "vless",
+          "tag": "node-191",
+          "server": "assets.fernstatic.com",
+          "server_port": 8444,
+          "uuid": "43add026-128a-47d3-a403-b3875b4638db",
+          "tls": {
+            "enabled": true,
+            "server_name": "yastatic.net",
+            "reality": {
+              "enabled": true,
+              "public_key": "1hJPKCOTjPXm93o2JEeb-dOuFSkCvHj41uKM6yrP32Q",
+              "short_id": "bcefc042d39188e0"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "201.58.187.198:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-125",
+          "server": "201.58.187.198",
+          "server_port": 443,
+          "uuid": "2b81c772-78c2-49d7-ac3f-537b654bc53e",
+          "tls": {
+            "enabled": true,
+            "server_name": "smotret.tv",
+            "reality": {
+              "enabled": true,
+              "public_key": "KQASJC-erEvv8cgBbvJRMfHq0Z0TApsQUNtdSwl0YQY",
+              "short_id": "8f3e9c4b1a8d6e21"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc-service"
+          }
+        }
+      },
+      {
+        "key": "swself2.yandex-api.com:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-269",
+          "server": "swself2.yandex-api.com",
+          "server_port": 443,
+          "uuid": "2b81c772-78c2-49d7-ac3f-537b654bc53e",
+          "tls": {
+            "enabled": true,
+            "server_name": "smotret.tv",
+            "reality": {
+              "enabled": true,
+              "public_key": "KQASJC-erEvv8cgBbvJRMfHq0Z0TApsQUNtdSwl0YQY",
+              "short_id": "8f3e9c4b1a8d6e21"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc-service"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -195417,5 +195525,5 @@
       }
     ]
   },
-  "updated": "2026-11-23T08:02:01Z"
+  "updated": "2026-11-23T08:02:26Z"
 }
