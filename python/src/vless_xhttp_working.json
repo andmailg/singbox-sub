@@ -1,10 +1,44 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-11-22T18:06:12Z",
+  "last_tested": "2026-11-23T01:11:50Z",
   "nodes": [
     {
       "type": "vless",
       "tag": "node-1",
+      "server": "172.64.155.209",
+      "server_port": 8443,
+      "uuid": "a20ea704-ec9d-4c5d-9b12-fa760cdf2290",
+      "transport": {
+        "type": "xhttp",
+        "path": "/",
+        "mode": "auto"
+      },
+      "_dedup_key": "172.64.155.209:8443:a20ea704-ec9d-4c5d-9b12-fa760cdf2290",
+      "tls": {
+        "enabled": true,
+        "server_name": "sinavm2.soft10.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_sub_ids": [
+        "100",
+        "102",
+        "104",
+        "110",
+        "23",
+        "26",
+        "29",
+        "3",
+        "9"
+      ],
+      "_last_ok_ts": 1795396115.288921,
+      "_country": null
+    },
+    {
+      "type": "vless",
+      "tag": "node-2",
       "server": "chatgpt.com",
       "server_port": 8443,
       "uuid": "c2425034-91ef-44bf-9fd4-f2be9c1e989a",
@@ -23,18 +57,77 @@
       },
       "_sub_ids": [
         "102",
+        "104",
         "110",
         "23",
         "26",
         "29",
         "3"
       ],
-      "_last_ok_ts": 1795370567.656281,
+      "_last_ok_ts": 1795396115.288921,
       "_country": null
     },
     {
       "type": "vless",
-      "tag": "🇨🇾node-2",
+      "tag": "node-3",
+      "server": "chatgpt.com",
+      "server_port": 8443,
+      "uuid": "a20ea704-ec9d-4c5d-9b12-fa760cdf2290",
+      "transport": {
+        "type": "xhttp",
+        "path": "/",
+        "mode": "auto"
+      },
+      "_dedup_key": "chatgpt.com:8443:a20ea704-ec9d-4c5d-9b12-fa760cdf2290",
+      "tls": {
+        "enabled": true,
+        "server_name": "sinavm2.soft10.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_sub_ids": [
+        "100",
+        "104",
+        "26",
+        "29",
+        "3"
+      ],
+      "_last_ok_ts": 1795396115.288921,
+      "_country": null
+    },
+    {
+      "type": "vless",
+      "tag": "node-4",
+      "server": "sinavm3.soft10.ir",
+      "server_port": 8443,
+      "uuid": "c2425034-91ef-44bf-9fd4-f2be9c1e989a",
+      "transport": {
+        "type": "xhttp",
+        "mode": "auto"
+      },
+      "_dedup_key": "sinavm3.soft10.ir:8443:c2425034-91ef-44bf-9fd4-f2be9c1e989a",
+      "tls": {
+        "enabled": true,
+        "server_name": "sinavm3.soft10.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_sub_ids": [
+        "102",
+        "26",
+        "29",
+        "3"
+      ],
+      "_last_ok_ts": 1795396115.288921,
+      "_country": null
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇾node-5",
       "server": "45.88.176.223",
       "server_port": 443,
       "uuid": "d73e3cdc-a80b-4e73-a11b-cc467d7a84f8",
@@ -57,6 +150,7 @@
         "100",
         "102",
         "104",
+        "105",
         "110",
         "13",
         "14",
@@ -69,39 +163,44 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795370567.656281,
+      "_last_ok_ts": 1795396115.288921,
       "_country": "CY"
     },
     {
       "type": "vless",
-      "tag": "🇨🇾node-3",
-      "server": "leviko-ru4335.shopingggg.ir",
+      "tag": "🇩🇪node-6",
+      "server": "144.31.218.188",
       "server_port": 443,
-      "uuid": "d73e3cdc-a80b-4e73-a11b-cc467d7a84f8",
+      "uuid": "1f2836d7-e9ef-47d7-a9c4-1037077ae8d7",
       "transport": {
         "type": "xhttp",
-        "path": "/media/e1c76c",
-        "mode": "auto"
+        "path": "/api/v1/events",
+        "mode": "packet-up",
+        "host": [
+          "cz1.rarebooster.tech"
+        ]
       },
-      "_dedup_key": "leviko-ru4335.shopingggg.ir:443:d73e3cdc-a80b-4e73-a11b-cc467d7a84f8",
+      "_dedup_key": "144.31.218.188:443:1f2836d7-e9ef-47d7-a9c4-1037077ae8d7",
       "tls": {
         "enabled": true,
-        "server_name": "m.yourvibe.my",
+        "server_name": "cz1.rarebooster.tech",
         "utls": {
           "enabled": true,
           "fingerprint": "firefox"
         }
       },
       "_sub_ids": [
+        "1",
+        "13",
         "26",
         "29"
       ],
-      "_last_ok_ts": 1795370567.656281,
-      "_country": "CY"
+      "_last_ok_ts": 1795396115.288921,
+      "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-4",
+      "tag": "🇩🇪node-7",
       "server": "91.107.191.188",
       "server_port": 443,
       "uuid": "56b7fb67-aae8-435d-9fb1-545dcfb2fb7e",
@@ -130,12 +229,12 @@
         "29",
         "300"
       ],
-      "_last_ok_ts": 1795370567.656281,
+      "_last_ok_ts": 1795396115.288921,
       "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-5",
+      "tag": "🇩🇪node-8",
       "server": "kala.bestsellers1.site",
       "server_port": 443,
       "uuid": "56b7fb67-aae8-435d-9fb1-545dcfb2fb7e",
@@ -168,12 +267,97 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795370567.656281,
+      "_last_ok_ts": 1795396115.288921,
       "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇸🇨node-6",
+      "tag": "🇬🇧node-9",
+      "server": "folio.basterdym.asia",
+      "server_port": 443,
+      "uuid": "0b6a7fe0-206b-4071-9f96-cd397d1ec01a",
+      "transport": {
+        "type": "xhttp",
+        "path": "/api/library/",
+        "mode": "packet-up",
+        "host": [
+          "folio.basterdym.asia"
+        ]
+      },
+      "_dedup_key": "folio.basterdym.asia:443:0b6a7fe0-206b-4071-9f96-cd397d1ec01a",
+      "tls": {
+        "enabled": true,
+        "server_name": "folio.basterdym.asia",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_sub_ids": [
+        "100",
+        "104",
+        "110",
+        "26"
+      ],
+      "_last_ok_ts": 1795396115.288921,
+      "_country": "GB"
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇨node-10",
+      "server": "196.240.5.3",
+      "server_port": 443,
+      "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+      "transport": {
+        "type": "xhttp",
+        "path": "/es/?TELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM?ed=2048",
+        "mode": "stream-one"
+      },
+      "_dedup_key": "196.240.5.3:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+      "tls": {
+        "enabled": true,
+        "server_name": "7d1a74fd.ferrin.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "android"
+        }
+      },
+      "_sub_ids": [
+        "24"
+      ],
+      "_last_ok_ts": 1795396115.288921,
+      "_country": "SC"
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇨node-11",
+      "server": "196.240.7.214",
+      "server_port": 443,
+      "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+      "transport": {
+        "type": "xhttp",
+        "path": "/es/?TELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM?ed=2048",
+        "mode": "stream-one"
+      },
+      "_dedup_key": "196.240.7.214:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+      "tls": {
+        "enabled": true,
+        "server_name": "7d1a74fd.ferrin.uk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "android"
+        }
+      },
+      "_sub_ids": [
+        "10",
+        "26"
+      ],
+      "_last_ok_ts": 1795396115.288921,
+      "_country": "SC"
+    },
+    {
+      "type": "vless",
+      "tag": "🇸🇨node-12",
       "server": "api.ferrin.uk",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -208,12 +392,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795370567.656281,
+      "_last_ok_ts": 1795396115.288921,
       "_country": "SC"
     },
     {
       "type": "vless",
-      "tag": "🇸🇨node-7",
+      "tag": "🇸🇨node-13",
       "server": "api.ferrin.uk",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -240,12 +424,12 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1795370567.656281,
+      "_last_ok_ts": 1795396115.288921,
       "_country": "SC"
     },
     {
       "type": "vless",
-      "tag": "🇸🇨node-8",
+      "tag": "🇸🇨node-14",
       "server": "api.ferrin.uk",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -286,12 +470,12 @@
         "8",
         "9"
       ],
-      "_last_ok_ts": 1795370567.656281,
+      "_last_ok_ts": 1795396115.288921,
       "_country": "SC"
     },
     {
       "type": "vless",
-      "tag": "🇸🇨node-9",
+      "tag": "🇸🇨node-15",
       "server": "api.ferrin.uk",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -316,6 +500,7 @@
         "104",
         "105",
         "108",
+        "109",
         "110",
         "13",
         "201",
@@ -327,12 +512,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795370567.656281,
+      "_last_ok_ts": 1795396115.288921,
       "_country": "SC"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-10",
+      "tag": "🇺🇸node-16",
       "server": "179.253.80.175",
       "server_port": 4443,
       "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -365,12 +550,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795370567.656281,
+      "_last_ok_ts": 1795396115.288921,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-11",
+      "tag": "🇺🇸node-17",
       "server": "179.254.191.251",
       "server_port": 4443,
       "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -406,12 +591,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795370567.656281,
+      "_last_ok_ts": 1795396115.288921,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-12",
+      "tag": "🇺🇸node-18",
       "server": "50.7.28.213",
       "server_port": 443,
       "uuid": "8ce4ccb8-99ab-4540-a0db-f879c9933986",
@@ -429,23 +614,28 @@
       },
       "_sub_ids": [
         "1",
+        "10",
         "100",
+        "102",
         "104",
         "108",
+        "109",
         "110",
         "13",
+        "201",
+        "24",
         "26",
         "29",
         "3",
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795370567.656281,
+      "_last_ok_ts": 1795396115.288921,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-13",
+      "tag": "🇺🇸node-19",
       "server": "bl1.nexfile.net",
       "server_port": 4443,
       "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -480,171 +670,12 @@
         "8",
         "9"
       ],
-      "_last_ok_ts": 1795370567.656281,
+      "_last_ok_ts": 1795396115.288921,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-14",
-      "server": "leviko-pl0552.shopingggg.ir",
-      "server_port": 4443,
-      "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
-      "transport": {
-        "type": "xhttp",
-        "path": "/api/v1/sync/",
-        "mode": "auto"
-      },
-      "_dedup_key": "leviko-pl0552.shopingggg.ir:4443:a35c508f-4d5d-4531-842e-6e9d43c762c0",
-      "tls": {
-        "enabled": true,
-        "server_name": "bl1.nexfile.net",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_sub_ids": [
-        "100",
-        "104",
-        "26",
-        "29"
-      ],
-      "_last_ok_ts": 1795370567.656281,
-      "_country": "US"
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-15",
-      "server": "leviko-pl1961.shopingggg.ir",
-      "server_port": 4443,
-      "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
-      "transport": {
-        "type": "xhttp",
-        "path": "/api/v1/sync/",
-        "mode": "auto"
-      },
-      "_dedup_key": "leviko-pl1961.shopingggg.ir:4443:a35c508f-4d5d-4531-842e-6e9d43c762c0",
-      "tls": {
-        "enabled": true,
-        "server_name": "bl1.nexfile.net",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "100",
-        "104",
-        "105",
-        "13",
-        "14",
-        "201",
-        "26",
-        "29",
-        "3",
-        "300"
-      ],
-      "_last_ok_ts": 1795370567.656281,
-      "_country": "US"
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-16",
-      "server": "leviko-pl3384.shopingggg.ir",
-      "server_port": 4443,
-      "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
-      "transport": {
-        "type": "xhttp",
-        "path": "/api/v1/sync/",
-        "mode": "auto"
-      },
-      "_dedup_key": "leviko-pl3384.shopingggg.ir:4443:a35c508f-4d5d-4531-842e-6e9d43c762c0",
-      "tls": {
-        "enabled": true,
-        "server_name": "bl1.nexfile.net",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_sub_ids": [
-        "100",
-        "104",
-        "26",
-        "29"
-      ],
-      "_last_ok_ts": 1795370567.656281,
-      "_country": "US"
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-17",
-      "server": "leviko-pl5425.shopingggg.ir",
-      "server_port": 4443,
-      "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
-      "transport": {
-        "type": "xhttp",
-        "path": "/api/v1/sync/",
-        "mode": "auto"
-      },
-      "_dedup_key": "leviko-pl5425.shopingggg.ir:4443:a35c508f-4d5d-4531-842e-6e9d43c762c0",
-      "tls": {
-        "enabled": true,
-        "server_name": "bl1.nexfile.net",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "100",
-        "104",
-        "105",
-        "13",
-        "14",
-        "201",
-        "26",
-        "29",
-        "3",
-        "300"
-      ],
-      "_last_ok_ts": 1795370567.656281,
-      "_country": "US"
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-18",
-      "server": "leviko-us5038.shopingggg.ir",
-      "server_port": 4443,
-      "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
-      "transport": {
-        "type": "xhttp",
-        "path": "/api/v1/sync/",
-        "mode": "auto"
-      },
-      "_dedup_key": "leviko-us5038.shopingggg.ir:4443:a35c508f-4d5d-4531-842e-6e9d43c762c0",
-      "tls": {
-        "enabled": true,
-        "server_name": "swo2.nexfile.net",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_sub_ids": [
-        "100",
-        "104",
-        "26",
-        "29"
-      ],
-      "_last_ok_ts": 1795370567.656281,
-      "_country": "US"
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-19",
+      "tag": "🇺🇸node-20",
       "server": "swo2.nexfile.net",
       "server_port": 4443,
       "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -670,6 +701,7 @@
         "110",
         "13",
         "14",
+        "20",
         "201",
         "21",
         "212",
@@ -679,7 +711,7 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795370567.656281,
+      "_last_ok_ts": 1795396115.288921,
       "_country": "US"
     }
   ]
