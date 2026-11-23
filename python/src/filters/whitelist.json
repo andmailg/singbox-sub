@@ -105879,6 +105879,90 @@
             "server_name": "der.substituteme.space"
           }
         }
+      },
+      {
+        "key": "154.40.49.216:40055:57beeeb0-03fc-4fc9-94da-7604488a7134",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-15",
+          "server": "154.40.49.216",
+          "server_port": 40055,
+          "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+          "tls": {
+            "enabled": true,
+            "server_name": "psstatic.cdn.bcebos.com"
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "re61ep4ancwplwh8"
+          }
+        }
+      },
+      {
+        "key": "91.108.247.47:15443:lvu_fb79ddb9bbda86f657cf34ee5dbe40bd_cf1aff9abf2b3945664fd63a07229839:np2.1.Q6bg95HDIqzwSQwdlbeS4-tGJpT8yFUcNQd7KGxqbXU",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-65",
+          "server": "91.108.247.47",
+          "server_port": 15443,
+          "password": "lvu_fb79ddb9bbda86f657cf34ee5dbe40bd_cf1aff9abf2b3945664fd63a07229839:np2.1.Q6bg95HDIqzwSQwdlbeS4-tGJpT8yFUcNQd7KGxqbXU",
+          "tls": {
+            "enabled": true,
+            "server_name": "n9.neproxy.net",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
+      },
+      {
+        "key": "hkzfsg2.mateflora.com:443:57beeeb0-03fc-4fc9-94da-7604488a7134",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-72",
+          "server": "hkzfsg2.mateflora.com",
+          "server_port": 443,
+          "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+          "tls": {
+            "enabled": true,
+            "server_name": "hkzfsg2.mateflora.com"
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "fcfqz5o4znnjqtrp"
+          }
+        }
+      },
+      {
+        "key": "212.102.227.131:15443:lvu_fb79ddb9bbda86f657cf34ee5dbe40bd_cf1aff9abf2b3945664fd63a07229839:np2.1.Q6bg95HDIqzwSQwdlbeS4-tGJpT8yFUcNQd7KGxqbXU",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-45",
+          "server": "212.102.227.131",
+          "server_port": 15443,
+          "password": "lvu_fb79ddb9bbda86f657cf34ee5dbe40bd_cf1aff9abf2b3945664fd63a07229839:np2.1.Q6bg95HDIqzwSQwdlbeS4-tGJpT8yFUcNQd7KGxqbXU",
+          "tls": {
+            "enabled": true,
+            "server_name": "n9.neproxy.net",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
+      },
+      {
+        "key": "48.102.130.17:443:PEisy6m-98HcX1TWZt0yXiCS7jRZG4IzKQTXo6k1qb4",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-56",
+          "server": "48.102.130.17",
+          "server_port": 443,
+          "password": "PEisy6m-98HcX1TWZt0yXiCS7jRZG4IzKQTXo6k1qb4",
+          "tls": {
+            "enabled": true,
+            "server_name": "de2.substituteme.space"
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -197441,5 +197525,5 @@
       }
     ]
   },
-  "updated": "2026-11-23T22:03:06Z"
+  "updated": "2026-11-23T22:07:37Z"
 }
