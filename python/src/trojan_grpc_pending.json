@@ -1,6 +1,71 @@
 {
-  "last_updated": "2026-11-23T07:26:41Z",
+  "last_updated": "2026-11-23T22:00:42Z",
   "nodes": [
+    {
+      "type": "trojan",
+      "tag": "🇸🇪node-1",
+      "server": "sw100.marshonet.store",
+      "server_port": 8228,
+      "password": "pHLdtRnEC5stYZvt9GqMyMYx215AskPW",
+      "_dedup_key": "sw100.marshonet.store:8228:pHLdtRnEC5stYZvt9GqMyMYx215AskPW:trgrpc",
+      "tls": {
+        "enabled": true,
+        "server_name": "sw100.marshonet.store"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "trgrpc"
+      },
+      "_sub_ids": [
+        "1",
+        "100",
+        "102",
+        "104",
+        "110",
+        "13",
+        "14",
+        "201",
+        "26",
+        "29",
+        "300",
+        "4"
+      ],
+      "_last_ok_ts": 1795418798.551158,
+      "_country": "SE",
+      "_pending_since": 1795471239.013887
+    },
+    {
+      "type": "trojan",
+      "tag": "node-18",
+      "server": "217.78.237.118",
+      "server_port": 8447,
+      "password": "jCpBEnDOnqJ7J36rdoJ_cYvrKK5ErK9H",
+      "tls": {
+        "enabled": true,
+        "server_name": "imgffbf.static.tv-av.fun"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc"
+      },
+      "_pending_since": 1795471239.013887
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1",
+      "server": "170.168.5.123",
+      "server_port": 8228,
+      "password": "HAB6WFjL2pKev0cN3ML1hz6V4pj1_S00",
+      "tls": {
+        "enabled": true,
+        "server_name": "nl100.marshonet.store"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "trgrpc"
+      },
+      "_pending_since": 1795471239.013887
+    },
     {
       "type": "trojan",
       "tag": "node-18",
