@@ -115,18 +115,24 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇬🇧node-1",
-        "🇬🇧node-2",
-        "🇬🇧node-3",
-        "🇬🇧node-4",
+        "🇩🇪node-1",
+        "🇩🇪node-2",
+        "🇩🇪node-3",
+        "🇩🇪node-4",
         "🇬🇧node-5",
         "🇬🇧node-6",
         "🇬🇧node-7",
         "🇬🇧node-8",
-        "🇳🇱node-9",
-        "🇳🇱node-10",
-        "🇳🇱node-11",
-        "🇳🇱node-12"
+        "🇬🇧node-9",
+        "🇬🇧node-10",
+        "🇬🇧node-11",
+        "🇬🇧node-12",
+        "🇬🇧node-13",
+        "🇬🇧node-14",
+        "🇳🇱node-15",
+        "🇳🇱node-16",
+        "🇳🇱node-17",
+        "🇳🇱node-18"
       ],
       "default": "auto"
     },
@@ -134,18 +140,24 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇬🇧node-1",
-        "🇬🇧node-2",
-        "🇬🇧node-3",
-        "🇬🇧node-4",
+        "🇩🇪node-1",
+        "🇩🇪node-2",
+        "🇩🇪node-3",
+        "🇩🇪node-4",
         "🇬🇧node-5",
         "🇬🇧node-6",
         "🇬🇧node-7",
         "🇬🇧node-8",
-        "🇳🇱node-9",
-        "🇳🇱node-10",
-        "🇳🇱node-11",
-        "🇳🇱node-12"
+        "🇬🇧node-9",
+        "🇬🇧node-10",
+        "🇬🇧node-11",
+        "🇬🇧node-12",
+        "🇬🇧node-13",
+        "🇬🇧node-14",
+        "🇳🇱node-15",
+        "🇳🇱node-16",
+        "🇳🇱node-17",
+        "🇳🇱node-18"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -153,7 +165,63 @@
     },
     {
       "type": "vless",
-      "tag": "🇬🇧node-1",
+      "tag": "🇩🇪node-1",
+      "server": "164.92.205.25",
+      "server_port": 443,
+      "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
+      "transport": {
+        "type": "http",
+        "host": [
+          "store.steampowered.com"
+        ],
+        "path": "/"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪node-2",
+      "server": "164.92.205.25",
+      "server_port": 443,
+      "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
+      "transport": {
+        "type": "http",
+        "host": [
+          "store.steampowered.com"
+        ],
+        "path": "/"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪node-3",
+      "server": "68.183.212.173",
+      "server_port": 443,
+      "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
+      "transport": {
+        "type": "http",
+        "host": [
+          "store.steampowered.com"
+        ],
+        "path": "/"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇩🇪node-4",
+      "server": "68.183.212.173",
+      "server_port": 443,
+      "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
+      "transport": {
+        "type": "http",
+        "host": [
+          "store.steampowered.com"
+        ],
+        "path": "/"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇬🇧node-5",
       "server": "134.209.27.89",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
@@ -167,7 +235,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇬🇧node-2",
+      "tag": "🇬🇧node-6",
       "server": "165.232.46.76",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
@@ -181,7 +249,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇬🇧node-3",
+      "tag": "🇬🇧node-7",
       "server": "167.99.203.0",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
@@ -195,7 +263,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇬🇧node-4",
+      "tag": "🇬🇧node-8",
       "server": "178.62.110.142",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
@@ -209,7 +277,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇬🇧node-5",
+      "tag": "🇬🇧node-9",
       "server": "178.62.115.66",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
@@ -223,7 +291,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇬🇧node-6",
+      "tag": "🇬🇧node-10",
       "server": "46.101.0.105",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
@@ -237,7 +305,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇬🇧node-7",
+      "tag": "🇬🇧node-11",
       "server": "46.101.5.217",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
@@ -251,7 +319,21 @@
     },
     {
       "type": "vless",
-      "tag": "🇬🇧node-8",
+      "tag": "🇬🇧node-12",
+      "server": "46.101.56.175",
+      "server_port": 443,
+      "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
+      "transport": {
+        "type": "http",
+        "host": [
+          "fast.com"
+        ],
+        "path": "/"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇬🇧node-13",
       "server": "46.101.59.48",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
@@ -265,7 +347,21 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-9",
+      "tag": "🇬🇧node-14",
+      "server": "64.227.41.219",
+      "server_port": 443,
+      "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
+      "transport": {
+        "type": "http",
+        "host": [
+          "fast.com"
+        ],
+        "path": "/"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-15",
       "server": "146.190.16.218",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
@@ -279,7 +375,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-10",
+      "tag": "🇳🇱node-16",
       "server": "164.92.155.204",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
@@ -293,7 +389,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-11",
+      "tag": "🇳🇱node-17",
       "server": "188.166.120.52",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
@@ -307,7 +403,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇳🇱node-12",
+      "tag": "🇳🇱node-18",
       "server": "64.227.67.30",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
