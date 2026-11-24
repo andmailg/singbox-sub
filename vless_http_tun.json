@@ -117,7 +117,12 @@
         "auto",
         "🇩🇪node-1",
         "🇩🇪node-2",
-        "🇩🇪node-3"
+        "🇩🇪node-3",
+        "🇬🇧node-4",
+        "🇳🇱node-5",
+        "🇳🇱node-6",
+        "🇺🇸node-7",
+        "🇺🇸node-8"
       ],
       "default": "auto"
     },
@@ -127,7 +132,12 @@
       "outbounds": [
         "🇩🇪node-1",
         "🇩🇪node-2",
-        "🇩🇪node-3"
+        "🇩🇪node-3",
+        "🇬🇧node-4",
+        "🇳🇱node-5",
+        "🇳🇱node-6",
+        "🇺🇸node-7",
+        "🇺🇸node-8"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -165,6 +175,76 @@
       "type": "vless",
       "tag": "🇩🇪node-3",
       "server": "207.154.222.113",
+      "server_port": 443,
+      "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
+      "transport": {
+        "type": "http",
+        "host": [
+          "store.steampowered.com"
+        ],
+        "path": "/"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇬🇧node-4",
+      "server": "209.97.130.43",
+      "server_port": 443,
+      "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
+      "transport": {
+        "type": "http",
+        "host": [
+          "store.steampowered.com"
+        ],
+        "path": "/"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-5",
+      "server": "188.166.120.52",
+      "server_port": 443,
+      "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
+      "transport": {
+        "type": "http",
+        "host": [
+          "fast.com"
+        ],
+        "path": "/"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇳🇱node-6",
+      "server": "188.166.120.52",
+      "server_port": 443,
+      "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
+      "transport": {
+        "type": "http",
+        "host": [
+          "fast.com"
+        ],
+        "path": "/"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-7",
+      "server": "68.183.136.184",
+      "server_port": 443,
+      "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
+      "transport": {
+        "type": "http",
+        "host": [
+          "store.steampowered.com"
+        ],
+        "path": "/"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-8",
+      "server": "68.183.30.178",
       "server_port": 443,
       "uuid": "40992c2a-513e-4837-9594-23411fd42afd",
       "transport": {
