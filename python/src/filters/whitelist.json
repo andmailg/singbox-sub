@@ -194992,6 +194992,29 @@
             }
           }
         }
+      },
+      {
+        "key": "188.114.99.137:443:6a89a215-22bf-4bd7-9642-b95b2e09583a:/hls/cctv5phd.m3u8?TELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM",
+        "node": {
+          "type": "vmess",
+          "tag": "node-115",
+          "server": "188.114.99.137",
+          "server_port": 443,
+          "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/hls/cctv5phd.m3u8?TELEGRAM--B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub-B2Hub--TELEGRAM",
+            "headers": {
+              "Host": "guanwang.awsno.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "guanwang.awsno.com",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -199104,5 +199127,5 @@
       }
     ]
   },
-  "updated": "2026-11-24T10:09:03Z"
+  "updated": "2026-11-24T10:10:00Z"
 }
