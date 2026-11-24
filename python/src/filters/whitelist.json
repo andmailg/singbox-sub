@@ -196166,6 +196166,44 @@
             "insecure": false
           }
         }
+      },
+      {
+        "key": "120.48.133.162:10086:c89f8a9e-a2c4-480e-b9af-debc1998b725:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-40",
+          "server": "120.48.133.162",
+          "server_port": 10086,
+          "uuid": "c89f8a9e-a2c4-480e-b9af-debc1998b725",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/"
+          }
+        }
+      },
+      {
+        "key": "replica-poetry-candidates-situated.trycloudflare.com:443:2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea:/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+        "node": {
+          "type": "vmess",
+          "tag": "node-290",
+          "server": "replica-poetry-candidates-situated.trycloudflare.com",
+          "server_port": 443,
+          "uuid": "2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+            "headers": {
+              "Host": "replica-poetry-candidates-situated.trycloudflare.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "replica-poetry-candidates-situated.trycloudflare.com",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -200278,5 +200316,5 @@
       }
     ]
   },
-  "updated": "2026-11-24T20:44:09Z"
+  "updated": "2026-11-24T20:45:35Z"
 }
