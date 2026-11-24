@@ -141975,6 +141975,27 @@
             }
           }
         }
+      },
+      {
+        "key": "190.93.246.83:443:GanNiNiangJiBai-Gun:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-58",
+          "server": "190.93.246.83",
+          "server_port": 443,
+          "password": "GanNiNiangJiBai-Gun",
+          "tls": {
+            "enabled": true,
+            "server_name": "ganniniang-hahaha.pages.dev"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "ganniniang-hahaha.pages.dev"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -200193,5 +200214,5 @@
       }
     ]
   },
-  "updated": "2026-11-24T20:40:07Z"
+  "updated": "2026-11-24T20:40:35Z"
 }
