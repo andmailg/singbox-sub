@@ -199643,6 +199643,52 @@
             }
           }
         }
+      },
+      {
+        "key": "172.64.145.93:443:6a89a215-22bf-4bd7-9642-b95b2e09583a:/hls/cctv5phd.m3u8?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+        "node": {
+          "type": "vmess",
+          "tag": "node-82",
+          "server": "172.64.145.93",
+          "server_port": 443,
+          "uuid": "6a89a215-22bf-4bd7-9642-b95b2e09583a",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/hls/cctv5phd.m3u8?ed#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET",
+            "headers": {
+              "Host": "guanwang.awsno.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "guanwang.awsno.com",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "speaks-our-uni-twist.trycloudflare.com:443:2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea:/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+        "node": {
+          "type": "vmess",
+          "tag": "node-276",
+          "server": "speaks-our-uni-twist.trycloudflare.com",
+          "server_port": 443,
+          "uuid": "2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+            "headers": {
+              "Host": "speaks-our-uni-twist.trycloudflare.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "speaks-our-uni-twist.trycloudflare.com",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -203769,5 +203815,5 @@
       }
     ]
   },
-  "updated": "2026-11-25T20:00:19Z"
+  "updated": "2026-11-25T20:01:33Z"
 }
