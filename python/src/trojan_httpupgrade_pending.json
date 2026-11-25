@@ -1,6 +1,23 @@
 {
-  "last_updated": "2026-11-25T08:58:46Z",
+  "last_updated": "2026-11-25T20:02:35Z",
   "nodes": [
+    {
+      "type": "trojan",
+      "tag": "node-21",
+      "server": "sub.macdonalder.cyou",
+      "server_port": 37468,
+      "password": "+Y4bH6SejVz8gunXYHMS94Oy2yn4313jzITBdW8eLsI=",
+      "tls": {
+        "enabled": true,
+        "server_name": "sub.macdonalder.cyou"
+      },
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/",
+        "host": "sub.macdonalder.cyou"
+      },
+      "_pending_since": 1795636952.685496
+    },
     {
       "type": "trojan",
       "tag": "node-21",
