@@ -1,6 +1,54 @@
 {
-  "last_updated": "2026-11-25T08:21:19Z",
+  "last_updated": "2026-11-25T19:53:58Z",
   "nodes": [
+    {
+      "type": "trojan",
+      "tag": "node-18",
+      "server": "217.78.237.118",
+      "server_port": 8447,
+      "password": "jCpBEnDOnqJ7J36rdoJ_cYvrKK5ErK9H",
+      "tls": {
+        "enabled": true,
+        "server_name": "imgffbf.static.tv-av.fun"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "grpc"
+      },
+      "_pending_since": 1795636432.895393
+    },
+    {
+      "type": "trojan",
+      "tag": "node-1",
+      "server": "170.168.5.123",
+      "server_port": 8228,
+      "password": "HAB6WFjL2pKev0cN3ML1hz6V4pj1_S00",
+      "tls": {
+        "enabled": true,
+        "server_name": "nl100.marshonet.store"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "trgrpc"
+      },
+      "_pending_since": 1795636432.895393
+    },
+    {
+      "type": "trojan",
+      "tag": "node-3",
+      "server": "sw100.marshonet.store",
+      "server_port": 8228,
+      "password": "pHLdtRnEC5stYZvt9GqMyMYx215AskPW",
+      "tls": {
+        "enabled": true,
+        "server_name": "sw100.marshonet.store"
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "trgrpc"
+      },
+      "_pending_since": 1795636432.895393
+    },
     {
       "type": "trojan",
       "tag": "node-18",
