@@ -1,10 +1,210 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-11-25T03:49:16Z",
+  "last_tested": "2026-11-25T16:07:37Z",
   "nodes": [
     {
       "type": "vless",
-      "tag": "🇨🇾node-1",
+      "tag": "node-1",
+      "server": "172.64.155.209",
+      "server_port": 8443,
+      "uuid": "55b3fd10-3658-40a2-8951-ec90932d1d30",
+      "transport": {
+        "type": "xhttp",
+        "path": "/",
+        "mode": "auto"
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "sinavm2.soft10.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_last_ok_ts": 1795622626.617689,
+      "_country": null
+    },
+    {
+      "type": "vless",
+      "tag": "node-2",
+      "server": "172.64.155.209",
+      "server_port": 8443,
+      "uuid": "55b3fd10-3658-40a2-8951-ec90932d1d30",
+      "transport": {
+        "type": "xhttp",
+        "path": "/",
+        "mode": "auto"
+      },
+      "_dedup_key": "172.64.155.209:8443:55b3fd10-3658-40a2-8951-ec90932d1d30",
+      "tls": {
+        "enabled": true,
+        "server_name": "sinavm2.soft10.ir",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_sub_ids": [
+        "1",
+        "102",
+        "104",
+        "110",
+        "13",
+        "23",
+        "26",
+        "29",
+        "3",
+        "300",
+        "9"
+      ],
+      "_last_ok_ts": 1795622626.617689,
+      "_country": null
+    },
+    {
+      "type": "vless",
+      "tag": "node-3",
+      "server": "188.114.97.6",
+      "server_port": 443,
+      "uuid": "e58384f2-76ba-400b-ae0a-8271b4c9c310",
+      "transport": {
+        "type": "xhttp",
+        "path": "/api/v1/stream",
+        "mode": "auto",
+        "host": [
+          "crm.dpdns.org"
+        ]
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "crm.dpdns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_last_ok_ts": 1795622626.617689,
+      "_country": null
+    },
+    {
+      "type": "vless",
+      "tag": "node-4",
+      "server": "188.114.97.6",
+      "server_port": 443,
+      "uuid": "e58384f2-76ba-400b-ae0a-8271b4c9c310",
+      "transport": {
+        "type": "xhttp",
+        "path": "/api/v1/stream",
+        "mode": "auto",
+        "host": [
+          "crm.dpdns.org"
+        ]
+      },
+      "_dedup_key": "188.114.97.6:443:e58384f2-76ba-400b-ae0a-8271b4c9c310",
+      "tls": {
+        "enabled": true,
+        "server_name": "crm.dpdns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "_sub_ids": [
+        "23"
+      ],
+      "_last_ok_ts": 1795622626.617689,
+      "_country": null
+    },
+    {
+      "type": "vless",
+      "tag": "node-5",
+      "server": "188.114.98.0",
+      "server_port": 443,
+      "uuid": "0b6a7fe0-206b-4071-9f96-cd397d1ec01a",
+      "transport": {
+        "type": "xhttp",
+        "path": "/api/de5/sync",
+        "mode": "auto",
+        "host": [
+          "gesso.merlano.monster"
+        ]
+      },
+      "_dedup_key": "188.114.98.0:443:0b6a7fe0-206b-4071-9f96-cd397d1ec01a",
+      "tls": {
+        "enabled": true,
+        "server_name": "gesso.merlano.monster",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      },
+      "_sub_ids": [
+        "23"
+      ],
+      "_last_ok_ts": 1795622626.617689,
+      "_country": null
+    },
+    {
+      "type": "vless",
+      "tag": "node-6",
+      "server": "188.114.98.0",
+      "server_port": 443,
+      "uuid": "e58384f2-76ba-400b-ae0a-8271b4c9c310",
+      "transport": {
+        "type": "xhttp",
+        "path": "/api/v1/stream",
+        "mode": "auto",
+        "host": [
+          "crm.dpdns.org"
+        ]
+      },
+      "_dedup_key": "188.114.98.0:443:e58384f2-76ba-400b-ae0a-8271b4c9c310",
+      "tls": {
+        "enabled": true,
+        "server_name": "crm.dpdns.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "edge"
+        }
+      },
+      "_sub_ids": [
+        "23"
+      ],
+      "_last_ok_ts": 1795622626.617689,
+      "_country": null
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇾node-7",
+      "server": "45.88.162.111",
+      "server_port": 8443,
+      "uuid": "83706ae4-be2f-4b2b-8079-c3eb4e0b2e3e",
+      "transport": {
+        "type": "xhttp",
+        "path": "/api/preview/",
+        "host": [
+          "loam.elvano.website"
+        ]
+      },
+      "_dedup_key": "45.88.162.111:8443:83706ae4-be2f-4b2b-8079-c3eb4e0b2e3e",
+      "tls": {
+        "enabled": true,
+        "server_name": "loam.elvano.website",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "_sub_ids": [
+        "102",
+        "26",
+        "29"
+      ],
+      "_last_ok_ts": 1795622626.617689,
+      "_country": "CY"
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇾node-8",
       "server": "45.88.176.223",
       "server_port": 443,
       "uuid": "d73e3cdc-a80b-4e73-a11b-cc467d7a84f8",
@@ -41,12 +241,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "CY"
     },
     {
       "type": "vless",
-      "tag": "🇨🇾node-2",
+      "tag": "🇨🇾node-9",
       "server": "leviko-ru2753.shopingggg.ir",
       "server_port": 443,
       "uuid": "d73e3cdc-a80b-4e73-a11b-cc467d7a84f8",
@@ -74,12 +274,12 @@
         "29",
         "300"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "CY"
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-3",
+      "tag": "🇩🇪node-10",
       "server": "91.107.191.188",
       "server_port": 443,
       "uuid": "56b7fb67-aae8-435d-9fb1-545dcfb2fb7e",
@@ -110,6 +310,7 @@
         "109",
         "110",
         "201",
+        "21",
         "24",
         "26",
         "29",
@@ -117,43 +318,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-4",
-      "server": "92.223.124.62",
-      "server_port": 443,
-      "uuid": "35f8defb-c734-4ca6-907f-f36a49c6c389",
-      "transport": {
-        "type": "xhttp",
-        "path": "/sakeneko?ed=2048",
-        "mode": "auto",
-        "host": [
-          "my-site-44imwqft.gcorecdn.com"
-        ]
-      },
-      "_dedup_key": "92.223.124.62:443:35f8defb-c734-4ca6-907f-f36a49c6c389",
-      "tls": {
-        "enabled": true,
-        "server_name": "portal.gcore.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_sub_ids": [
-        "105",
-        "26",
-        "29"
-      ],
-      "_last_ok_ts": 1795578335.933571,
-      "_country": "DE"
-    },
-    {
-      "type": "vless",
-      "tag": "🇩🇪node-5",
+      "tag": "🇩🇪node-11",
       "server": "kala.bestsellers1.site",
       "server_port": 443,
       "uuid": "56b7fb67-aae8-435d-9fb1-545dcfb2fb7e",
@@ -182,18 +352,19 @@
         "110",
         "14",
         "201",
+        "21",
         "26",
         "29",
         "3",
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇫🇮node-6",
+      "tag": "🇫🇮node-12",
       "server": "144.31.156.42",
       "server_port": 443,
       "uuid": "8f154051-5b60-4e04-8880-a416c133a61b",
@@ -216,20 +387,22 @@
       },
       "_sub_ids": [
         "1",
+        "100",
         "104",
         "110",
         "13",
         "201",
+        "21",
         "26",
         "29",
         "300"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "FI"
     },
     {
       "type": "vless",
-      "tag": "🇫🇮node-7",
+      "tag": "🇫🇮node-13",
       "server": "angelmh.cv",
       "server_port": 2873,
       "uuid": "e901dc50-5de5-4e7f-920d-9069a14dbd3c",
@@ -251,14 +424,19 @@
         }
       },
       "_sub_ids": [
-        "100"
+        "100",
+        "104",
+        "13",
+        "201",
+        "26",
+        "29"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "FI"
     },
     {
       "type": "vless",
-      "tag": "🇬🇧node-8",
+      "tag": "🇬🇧node-14",
       "server": "82.148.242.109",
       "server_port": 443,
       "uuid": "83706ae4-be2f-4b2b-8079-c3eb4e0b2e3e",
@@ -279,14 +457,16 @@
         }
       },
       "_sub_ids": [
-        "102"
+        "102",
+        "26",
+        "29"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "GB"
     },
     {
       "type": "vless",
-      "tag": "🇬🇧node-9",
+      "tag": "🇬🇧node-15",
       "server": "folio.basterdym.asia",
       "server_port": 443,
       "uuid": "0b6a7fe0-206b-4071-9f96-cd397d1ec01a",
@@ -314,121 +494,49 @@
         "104",
         "110",
         "201",
+        "21",
         "23",
         "26",
         "29",
         "300"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "GB"
     },
     {
       "type": "vless",
-      "tag": "🇮🇷node-10",
-      "server": "46.38.142.90",
-      "server_port": 2052,
-      "uuid": "a81bcc1d-29f4-4886-b248-65ed8c4f23a9",
+      "tag": "🇬🇧node-16",
+      "server": "kiln.elvano.website",
+      "server_port": 443,
+      "uuid": "83706ae4-be2f-4b2b-8079-c3eb4e0b2e3e",
       "transport": {
         "type": "xhttp",
-        "path": "/",
-        "mode": "auto"
+        "path": "/api/preview/",
+        "mode": "packet-up",
+        "host": [
+          "kiln.elvano.website"
+        ]
       },
-      "_dedup_key": "46.38.142.90:2052:a81bcc1d-29f4-4886-b248-65ed8c4f23a9",
+      "_dedup_key": "kiln.elvano.website:443:83706ae4-be2f-4b2b-8079-c3eb4e0b2e3e",
       "tls": {
         "enabled": true,
-        "server_name": "3vm.ew.pgbtw.ir",
+        "server_name": "kiln.elvano.website",
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "safari"
         }
       },
       "_sub_ids": [
+        "1",
+        "26",
         "29"
       ],
-      "_last_ok_ts": 1795578335.933571,
-      "_country": "IR"
+      "_last_ok_ts": 1795622626.617689,
+      "_country": "GB"
     },
     {
       "type": "vless",
-      "tag": "🇮🇷node-11",
-      "server": "46.38.142.90",
-      "server_port": 2087,
-      "uuid": "a81bcc1d-29f4-4886-b248-65ed8c4f23a9",
-      "transport": {
-        "type": "xhttp",
-        "path": "/",
-        "mode": "auto"
-      },
-      "_dedup_key": "46.38.142.90:2087:a81bcc1d-29f4-4886-b248-65ed8c4f23a9",
-      "tls": {
-        "enabled": true,
-        "server_name": "3vm.ew.pgbtw.ir",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "_sub_ids": [
-        "29"
-      ],
-      "_last_ok_ts": 1795578335.933571,
-      "_country": "IR"
-    },
-    {
-      "type": "vless",
-      "tag": "🇮🇷node-12",
-      "server": "46.38.142.90",
-      "server_port": 8080,
-      "uuid": "a81bcc1d-29f4-4886-b248-65ed8c4f23a9",
-      "transport": {
-        "type": "xhttp",
-        "path": "/",
-        "mode": "auto"
-      },
-      "_dedup_key": "46.38.142.90:8080:a81bcc1d-29f4-4886-b248-65ed8c4f23a9",
-      "tls": {
-        "enabled": true,
-        "server_name": "3vm.ew.pgbtw.ir",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "_sub_ids": [
-        "29"
-      ],
-      "_last_ok_ts": 1795578335.933571,
-      "_country": "IR"
-    },
-    {
-      "type": "vless",
-      "tag": "🇮🇷node-13",
-      "server": "46.38.142.90",
-      "server_port": 8880,
-      "uuid": "a81bcc1d-29f4-4886-b248-65ed8c4f23a9",
-      "transport": {
-        "type": "xhttp",
-        "path": "/",
-        "mode": "auto"
-      },
-      "_dedup_key": "46.38.142.90:8880:a81bcc1d-29f4-4886-b248-65ed8c4f23a9",
-      "tls": {
-        "enabled": true,
-        "server_name": "3vm.ew.pgbtw.ir",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "_sub_ids": [
-        "29"
-      ],
-      "_last_ok_ts": 1795578335.933571,
-      "_country": "IR"
-    },
-    {
-      "type": "vless",
-      "tag": "🇸🇨node-14",
+      "tag": "🇸🇨node-17",
       "server": "api.ferrin.uk",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -463,12 +571,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "SC"
     },
     {
       "type": "vless",
-      "tag": "🇸🇨node-15",
+      "tag": "🇸🇨node-18",
       "server": "api.ferrin.uk",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -495,12 +603,12 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "SC"
     },
     {
       "type": "vless",
-      "tag": "🇸🇨node-16",
+      "tag": "🇸🇨node-19",
       "server": "api.ferrin.uk",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -543,12 +651,12 @@
         "8",
         "9"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "SC"
     },
     {
       "type": "vless",
-      "tag": "🇸🇨node-17",
+      "tag": "🇸🇨node-20",
       "server": "api.ferrin.uk",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -585,12 +693,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "SC"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-18",
+      "tag": "🇺🇸node-21",
       "server": "179.253.80.175",
       "server_port": 4443,
       "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -623,12 +731,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-19",
+      "tag": "🇺🇸node-22",
       "server": "179.254.191.251",
       "server_port": 4443,
       "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -664,12 +772,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-20",
+      "tag": "🇺🇸node-23",
       "server": "50.7.28.213",
       "server_port": 443,
       "uuid": "8ce4ccb8-99ab-4540-a0db-f879c9933986",
@@ -691,6 +799,7 @@
         "100",
         "102",
         "104",
+        "107",
         "108",
         "109",
         "110",
@@ -703,50 +812,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-21",
-      "server": "alderbloom.gerqix.online",
-      "server_port": 443,
-      "uuid": "83706ae4-be2f-4b2b-8079-c3eb4e0b2e3e",
-      "transport": {
-        "type": "xhttp",
-        "path": "/api/de4/preview/",
-        "mode": "packet-up",
-        "host": [
-          "inlet.gerqix.online"
-        ]
-      },
-      "_dedup_key": "alderbloom.gerqix.online:443:83706ae4-be2f-4b2b-8079-c3eb4e0b2e3e",
-      "tls": {
-        "enabled": true,
-        "server_name": "inlet.gerqix.online",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "_sub_ids": [
-        "1",
-        "100",
-        "104",
-        "110",
-        "13",
-        "201",
-        "23",
-        "26",
-        "29",
-        "300"
-      ],
-      "_last_ok_ts": 1795578335.933571,
-      "_country": "US"
-    },
-    {
-      "type": "vless",
-      "tag": "🇺🇸node-22",
+      "tag": "🇺🇸node-24",
       "server": "bl1.nexfile.net",
       "server_port": 4443,
       "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -781,12 +852,12 @@
         "8",
         "9"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-23",
+      "tag": "🇺🇸node-25",
       "server": "leviko-pl1084.shopingggg.ir",
       "server_port": 4443,
       "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -812,17 +883,18 @@
         "110",
         "13",
         "201",
+        "21",
         "26",
         "29",
         "3",
         "300"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-24",
+      "tag": "🇺🇸node-26",
       "server": "leviko-pl9958.shopingggg.ir",
       "server_port": 4443,
       "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -853,12 +925,12 @@
         "3",
         "300"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-25",
+      "tag": "🇺🇸node-27",
       "server": "leviko-se1767.shopingggg.ir",
       "server_port": 4443,
       "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -879,20 +951,23 @@
       "_sub_ids": [
         "1",
         "100",
+        "104",
         "110",
         "13",
+        "14",
         "17",
+        "201",
         "26",
         "29",
         "3",
         "300"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-26",
+      "tag": "🇺🇸node-28",
       "server": "swo2.nexfile.net",
       "server_port": 4443,
       "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -929,7 +1004,7 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795578335.933571,
+      "_last_ok_ts": 1795622626.617689,
       "_country": "US"
     }
   ]

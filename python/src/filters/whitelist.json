@@ -13020,6 +13020,135 @@
             }
           }
         }
+      },
+      {
+        "key": "188.114.98.0:443:0b6a7fe0-206b-4071-9f96-cd397d1ec01a:/api/de5/sync",
+        "node": {
+          "type": "vless",
+          "tag": "node-42",
+          "server": "188.114.98.0",
+          "server_port": 443,
+          "uuid": "0b6a7fe0-206b-4071-9f96-cd397d1ec01a",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/de5/sync",
+            "mode": "auto",
+            "host": [
+              "gesso.merlano.monster"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "gesso.merlano.monster",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          }
+        }
+      },
+      {
+        "key": "188.114.98.0:443:e58384f2-76ba-400b-ae0a-8271b4c9c310:/api/v1/stream",
+        "node": {
+          "type": "vless",
+          "tag": "node-43",
+          "server": "188.114.98.0",
+          "server_port": 443,
+          "uuid": "e58384f2-76ba-400b-ae0a-8271b4c9c310",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/stream",
+            "mode": "auto",
+            "host": [
+              "crm.dpdns.org"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "crm.dpdns.org",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "edge"
+            }
+          }
+        }
+      },
+      {
+        "key": "45.88.162.111:8443:83706ae4-be2f-4b2b-8079-c3eb4e0b2e3e:/api/preview/",
+        "node": {
+          "type": "vless",
+          "tag": "node-102",
+          "server": "45.88.162.111",
+          "server_port": 8443,
+          "uuid": "83706ae4-be2f-4b2b-8079-c3eb4e0b2e3e",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/preview/",
+            "host": [
+              "loam.elvano.website"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "loam.elvano.website",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "kiln.elvano.website:443:83706ae4-be2f-4b2b-8079-c3eb4e0b2e3e:/api/preview/",
+        "node": {
+          "type": "vless",
+          "tag": "node-195",
+          "server": "kiln.elvano.website",
+          "server_port": 443,
+          "uuid": "83706ae4-be2f-4b2b-8079-c3eb4e0b2e3e",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/preview/",
+            "mode": "packet-up",
+            "host": [
+              "kiln.elvano.website"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "kiln.elvano.website",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "safari"
+            }
+          }
+        }
+      },
+      {
+        "key": "sunfield.moltex.click:443:0b6a7fe0-206b-4071-9f96-cd397d1ec01a:/api/de1/sync",
+        "node": {
+          "type": "vless",
+          "tag": "node-259",
+          "server": "sunfield.moltex.click",
+          "server_port": 443,
+          "uuid": "0b6a7fe0-206b-4071-9f96-cd397d1ec01a",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/de1/sync",
+            "mode": "auto",
+            "host": [
+              "sunfield.moltex.click"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "fennel.moltex.click",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "ios"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -203604,5 +203733,5 @@
       }
     ]
   },
-  "updated": "2026-11-25T10:01:45Z"
+  "updated": "2026-11-25T16:07:38Z"
 }
