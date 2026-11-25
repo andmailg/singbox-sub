@@ -129229,6 +129229,87 @@
             "service_name": "/api/v1/update"
           }
         }
+      },
+      {
+        "key": "45.86.158.235:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-127",
+          "server": "45.86.158.235",
+          "server_port": 443,
+          "uuid": "cda0862a-0f87-4be9-8ed8-1d0c9e382839",
+          "tls": {
+            "enabled": true,
+            "server_name": "717252g.nl8.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "PD8Jdlg3xB9QY--jwQjp8PFPzCS8-Oryw6-HWBcHMFU",
+              "short_id": "d3bd772514c87d28"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "204adda7e3da"
+          }
+        }
+      },
+      {
+        "key": "48.102.133.140:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-134",
+          "server": "48.102.133.140",
+          "server_port": 8443,
+          "uuid": "841a00f9-8f53-40a4-94bb-950470d03a2f",
+          "tls": {
+            "enabled": true,
+            "server_name": "lesnaya-masterskaya.duckdns.org",
+            "reality": {
+              "enabled": true,
+              "public_key": "mREIeJQBnYrmiUCE686SaOBcELEMhuL0zlXATWVZj2s",
+              "short_id": "9f3a7c1d5e8b2a64"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "vless-grpc-reality"
+          }
+        }
+      },
+      {
+        "key": "origin5.pd-service.shop:2298",
+        "node": {
+          "type": "vless",
+          "tag": "node-227",
+          "server": "origin5.pd-service.shop",
+          "server_port": 2298,
+          "uuid": "cdfc923e-8d34-4b44-ac72-ab41ec560ba8",
+          "tls": {
+            "enabled": true,
+            "server_name": "vimeo.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "YVW5HyhXOqVIDLzngOhCHWXdSkVNrRBS029UK3Fl3mM",
+              "short_id": "729bef613f43e925"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "random"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "ads.x5.ru"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -203815,5 +203896,5 @@
       }
     ]
   },
-  "updated": "2026-11-25T20:01:33Z"
+  "updated": "2026-11-25T20:09:58Z"
 }
