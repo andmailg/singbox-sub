@@ -115,8 +115,7 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇺🇸node-1",
-        "🇺🇸node-2"
+        "node-1"
       ],
       "default": "auto"
     },
@@ -124,8 +123,7 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇺🇸node-1",
-        "🇺🇸node-2"
+        "node-1"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -133,38 +131,17 @@
     },
     {
       "type": "trojan",
-      "tag": "🇺🇸node-1",
-      "server": "bg.foldandflyhigh.com",
+      "tag": "node-1",
+      "server": "3x-sub.linzhonghong.com",
       "server_port": 443,
-      "password": "963A4918-A630-29DA-A873-093CDF8AD784",
+      "password": "c48qMRRfLJ3kwD4P_XpgfIq6",
       "tls": {
         "enabled": true,
-        "server_name": "bg.foldandflyhigh.com"
+        "server_name": "3x-sub.linzhonghong.com"
       },
       "transport": {
         "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "bg.foldandflyhigh.com"
-        }
-      }
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-2",
-      "server": "md.foldandflyhigh.com",
-      "server_port": 443,
-      "password": "963A4918-A630-29DA-A873-093CDF8AD784",
-      "tls": {
-        "enabled": true,
-        "server_name": "md.foldandflyhigh.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "md.foldandflyhigh.com"
-        }
+        "path": "/tjbbb7eab89c9a"
       }
     }
   ],

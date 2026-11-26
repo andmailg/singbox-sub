@@ -1,62 +1,27 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-11-26T15:08:38Z",
+  "last_tested": "2026-11-26T23:50:13Z",
   "nodes": [
     {
       "type": "trojan",
-      "tag": "🇺🇸node-1",
-      "server": "bg.foldandflyhigh.com",
+      "tag": "node-1",
+      "server": "3x-sub.linzhonghong.com",
       "server_port": 443,
-      "password": "963A4918-A630-29DA-A873-093CDF8AD784",
-      "_dedup_key": "bg.foldandflyhigh.com:443:963A4918-A630-29DA-A873-093CDF8AD784:/",
+      "password": "c48qMRRfLJ3kwD4P_XpgfIq6",
+      "_dedup_key": "3x-sub.linzhonghong.com:443:c48qMRRfLJ3kwD4P_XpgfIq6:/tjbbb7eab89c9a",
       "tls": {
         "enabled": true,
-        "server_name": "bg.foldandflyhigh.com"
+        "server_name": "3x-sub.linzhonghong.com"
       },
       "transport": {
         "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "bg.foldandflyhigh.com"
-        }
+        "path": "/tjbbb7eab89c9a"
       },
       "_sub_ids": [
-        "100",
-        "104",
-        "201",
-        "26",
-        "29"
+        "13"
       ],
-      "_last_ok_ts": 1795705606.52979,
-      "_country": "US"
-    },
-    {
-      "type": "trojan",
-      "tag": "🇺🇸node-2",
-      "server": "md.foldandflyhigh.com",
-      "server_port": 443,
-      "password": "963A4918-A630-29DA-A873-093CDF8AD784",
-      "_dedup_key": "md.foldandflyhigh.com:443:963A4918-A630-29DA-A873-093CDF8AD784:/",
-      "tls": {
-        "enabled": true,
-        "server_name": "md.foldandflyhigh.com"
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/",
-        "headers": {
-          "Host": "md.foldandflyhigh.com"
-        }
-      },
-      "_sub_ids": [
-        "100",
-        "104",
-        "201",
-        "26",
-        "29"
-      ],
-      "_last_ok_ts": 1795705606.52979,
-      "_country": "US"
+      "_last_ok_ts": 1795736901.225854,
+      "_country": null
     }
   ]
 }
