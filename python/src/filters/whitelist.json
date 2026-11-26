@@ -13149,6 +13149,80 @@
             }
           }
         }
+      },
+      {
+        "key": "196.240.6.115:443:7d1a74fd-8a38-4a29-863f-5da53a9e557e:/es/?—MARAMBASHI—MARAMBASHI—MARAMBASHI?ed=2048",
+        "node": {
+          "type": "vless",
+          "tag": "node-58",
+          "server": "196.240.6.115",
+          "server_port": 443,
+          "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
+          "transport": {
+            "type": "xhttp",
+            "path": "/es/?—MARAMBASHI—MARAMBASHI—MARAMBASHI?ed=2048"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "7d1a74fd.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "polarladder.com:2053:37af0181-5598-4aad-a040-d926bcb65757:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-240",
+          "server": "polarladder.com",
+          "server_port": 2053,
+          "uuid": "37af0181-5598-4aad-a040-d926bcb65757",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "polarladder.com"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "polarladder.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "78.159.240.62:2053:37af0181-5598-4aad-a040-d926bcb65757:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-113",
+          "server": "78.159.240.62",
+          "server_port": 2053,
+          "uuid": "37af0181-5598-4aad-a040-d926bcb65757",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "polarladder.com"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "polarladder.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -204479,5 +204553,5 @@
       }
     ]
   },
-  "updated": "2026-11-26T03:04:52Z"
+  "updated": "2026-11-26T03:10:32Z"
 }
