@@ -110984,6 +110984,76 @@
             "server_name": "jpk.wentibuxiaobuda.xyz"
           }
         }
+      },
+      {
+        "key": "193.122.106.29:20000:C0DD7bgChaltqnh/T2az6ijM",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-23",
+          "server": "193.122.106.29",
+          "server_port": 20000,
+          "password": "C0DD7bgChaltqnh/T2az6ijM",
+          "tls": {
+            "enabled": true,
+            "server_name": "hy2-kr.whuiy.xyz"
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "C0DD7bgChaltqnh/T2az6ijM"
+          }
+        }
+      },
+      {
+        "key": "corp.scan-cdn.com:443:d7121b33-e335-4921-bb00-4c0b157e7fc1",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-50",
+          "server": "corp.scan-cdn.com",
+          "server_port": 443,
+          "password": "d7121b33-e335-4921-bb00-4c0b157e7fc1",
+          "tls": {
+            "enabled": true,
+            "server_name": "corp.scan-cdn.com",
+            "alpn": [
+              "h2",
+              "http/1.1"
+            ]
+          }
+        }
+      },
+      {
+        "key": "r7m4.scan-cdn.com:443:d7121b33-e335-4921-bb00-4c0b157e7fc1",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-68",
+          "server": "r7m4.scan-cdn.com",
+          "server_port": 443,
+          "password": "d7121b33-e335-4921-bb00-4c0b157e7fc1",
+          "tls": {
+            "enabled": true,
+            "server_name": "r7m4.scan-cdn.com",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
+      },
+      {
+        "key": "timewhite655.thebestqas.am:443:9df9ee1a-0671-4c6c-93c7-65598fb946f7",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-72",
+          "server": "timewhite655.thebestqas.am",
+          "server_port": 443,
+          "password": "9df9ee1a-0671-4c6c-93c7-65598fb946f7",
+          "tls": {
+            "enabled": true,
+            "server_name": "timewhite655.thebestqas.am",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -204279,5 +204349,5 @@
       }
     ]
   },
-  "updated": "2026-11-26T02:46:12Z"
+  "updated": "2026-11-26T02:51:54Z"
 }
