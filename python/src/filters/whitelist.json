@@ -200223,6 +200223,47 @@
             "insecure": false
           }
         }
+      },
+      {
+        "key": "104.19.166.218:443:a9f9a249-1832-424c-9820-57af75107acc:/ferdolans7",
+        "node": {
+          "type": "vmess",
+          "tag": "node-19",
+          "server": "104.19.166.218",
+          "server_port": 443,
+          "uuid": "a9f9a249-1832-424c-9820-57af75107acc",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/ferdolans7",
+            "headers": {
+              "Host": "assumption-universities-weekend-litigation.trycloudflare.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "assumption-universities-weekend-litigation.trycloudflare.com",
+            "insecure": false
+          }
+        }
+      },
+      {
+        "key": "57.129.132.223:80:a25cbf11-2908-4a1b-a3a8-9a571777dca3:/vmess/?ed",
+        "node": {
+          "type": "vmess",
+          "tag": "node-152",
+          "server": "57.129.132.223",
+          "server_port": 80,
+          "uuid": "a25cbf11-2908-4a1b-a3a8-9a571777dca3",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/vmess/?ed",
+            "headers": {
+              "Host": "google.com"
+            }
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -204349,5 +204390,5 @@
       }
     ]
   },
-  "updated": "2026-11-26T02:51:54Z"
+  "updated": "2026-11-26T02:57:11Z"
 }
