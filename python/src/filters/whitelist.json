@@ -13223,6 +13223,125 @@
             }
           }
         }
+      },
+      {
+        "key": "165.231.177.60:443:0173d52e-8e1b-4681-831e-11529677b72f:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-43",
+          "server": "165.231.177.60",
+          "server_port": 443,
+          "uuid": "0173d52e-8e1b-4681-831e-11529677b72f",
+          "transport": {
+            "type": "xhttp",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "cab-6b07048f.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "safari"
+            }
+          }
+        }
+      },
+      {
+        "key": "23.237.202.252:443:0173d52e-8e1b-4681-831e-11529677b72f:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-110",
+          "server": "23.237.202.252",
+          "server_port": 443,
+          "uuid": "0173d52e-8e1b-4681-831e-11529677b72f",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "id-0173d52e.vmagnum.win",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "46.243.232.222:2053:37af0181-5598-4aad-a040-d926bcb65757:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-120",
+          "server": "46.243.232.222",
+          "server_port": 2053,
+          "uuid": "37af0181-5598-4aad-a040-d926bcb65757",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "curlypebble.com"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "curlypebble.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "46.243.234.248:8443:37af0181-5598-4aad-a040-d926bcb65757:/api/v1/upload",
+        "node": {
+          "type": "vless",
+          "tag": "node-121",
+          "server": "46.243.234.248",
+          "server_port": 8443,
+          "uuid": "37af0181-5598-4aad-a040-d926bcb65757",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/upload",
+            "mode": "auto",
+            "host": [
+              "plaindune.com"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "plaindune.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "render.com:443:3f3ac22b-5823-4d4b-b2fc-70ffdd2f961d:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-249",
+          "server": "render.com",
+          "server_port": 443,
+          "uuid": "3f3ac22b-5823-4d4b-b2fc-70ffdd2f961d",
+          "transport": {
+            "type": "xhttp",
+            "mode": "stream-one"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "nethrlnd-orng-bye-god-xn--fhq0la447aac5504dea701axr1g.maniyadg7shard.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -208178,5 +208297,5 @@
       }
     ]
   },
-  "updated": "2026-11-26T15:38:29Z"
+  "updated": "2026-11-26T15:49:52Z"
 }
