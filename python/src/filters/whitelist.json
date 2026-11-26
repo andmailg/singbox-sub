@@ -147131,6 +147131,48 @@
             }
           }
         }
+      },
+      {
+        "key": "bg.foldandflyhigh.com:443:963A4918-A630-29DA-A873-093CDF8AD784:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-93",
+          "server": "bg.foldandflyhigh.com",
+          "server_port": 443,
+          "password": "963A4918-A630-29DA-A873-093CDF8AD784",
+          "tls": {
+            "enabled": true,
+            "server_name": "bg.foldandflyhigh.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "bg.foldandflyhigh.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "md.foldandflyhigh.com:443:963A4918-A630-29DA-A873-093CDF8AD784:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-101",
+          "server": "md.foldandflyhigh.com",
+          "server_port": 443,
+          "password": "963A4918-A630-29DA-A873-093CDF8AD784",
+          "tls": {
+            "enabled": true,
+            "server_name": "md.foldandflyhigh.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "md.foldandflyhigh.com"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -207595,5 +207637,5 @@
       }
     ]
   },
-  "updated": "2026-11-26T15:05:34Z"
+  "updated": "2026-11-26T15:08:38Z"
 }
