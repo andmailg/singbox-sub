@@ -195550,6 +195550,33 @@
           "uuid": "853a251f-de85-40cc-84a6-ab8748c7258c",
           "security": "auto"
         }
+      },
+      {
+        "key": "47.87.64.133:18565:853a251f-de85-40cc-84a6-ab8748c7258c:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-124",
+          "server": "47.87.64.133",
+          "server_port": 18565,
+          "uuid": "853a251f-de85-40cc-84a6-ab8748c7258c",
+          "security": "auto"
+        }
+      },
+      {
+        "key": "45.131.153.56:443:f38e591d-d13a-4c30-9763-6be3ad65f3ec:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-118",
+          "server": "45.131.153.56",
+          "server_port": 443,
+          "uuid": "f38e591d-d13a-4c30-9763-6be3ad65f3ec",
+          "security": "auto",
+          "tls": {
+            "enabled": true,
+            "server_name": "de.zhou-yufan.com",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_ws": [
@@ -204252,5 +204279,5 @@
       }
     ]
   },
-  "updated": "2026-11-25T21:06:25Z"
+  "updated": "2026-11-26T02:46:12Z"
 }
