@@ -129736,6 +129736,81 @@
             "service_name": "ads.x5.ru"
           }
         }
+      },
+      {
+        "key": "212.193.0.117:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-122",
+          "server": "212.193.0.117",
+          "server_port": 443,
+          "uuid": "3b386319-a65a-4260-9702-561301b938bd",
+          "tls": {
+            "enabled": true,
+            "server_name": "dl.google.com",
+            "reality": {
+              "enabled": true,
+              "public_key": "cAFMol_SqbGzF6IZSHdOS8taChr8dRe9n3RdxJp0QEQ"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "grpc"
+          }
+        }
+      },
+      {
+        "key": "194.238.79.86:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-80",
+          "server": "194.238.79.86",
+          "server_port": 443,
+          "uuid": "cda0862a-0f87-4be9-8ed8-1d0c9e382839",
+          "tls": {
+            "enabled": true,
+            "server_name": "15b171g.nl7.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "zbz--PMjcIC4Ggr3j-ibDf0fzXRTj0lM_HzjPJyMkVE",
+              "short_id": "50a749f0eccb628c"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "5b79e8a94241"
+          }
+        }
+      },
+      {
+        "key": "95.129.234.108:8443",
+        "node": {
+          "type": "vless",
+          "tag": "node-203",
+          "server": "95.129.234.108",
+          "server_port": 8443,
+          "uuid": "d86e6fda-e519-46ab-98eb-9ff9a9da5984",
+          "tls": {
+            "enabled": true,
+            "server_name": "rowan-quay.cdn.cachefleet.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "qq"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "01ef4cdceb3b3439"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -204404,5 +204479,5 @@
       }
     ]
   },
-  "updated": "2026-11-26T02:58:02Z"
+  "updated": "2026-11-26T03:04:52Z"
 }
