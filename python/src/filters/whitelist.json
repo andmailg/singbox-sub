@@ -112045,6 +112045,121 @@
             ]
           }
         }
+      },
+      {
+        "key": "31.58.234.101:30443:ad80d93f-8b35-4b0e-861d-128813efc7d1",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-36",
+          "server": "31.58.234.101",
+          "server_port": 30443,
+          "password": "ad80d93f-8b35-4b0e-861d-128813efc7d1",
+          "tls": {
+            "enabled": true,
+            "server_name": "sync46.lernkino.online"
+          }
+        }
+      },
+      {
+        "key": "88.119.176.49:443:c0742f77-5495-43bf-b007-88d368774d7c",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-47",
+          "server": "88.119.176.49",
+          "server_port": 443,
+          "password": "c0742f77-5495-43bf-b007-88d368774d7c",
+          "tls": {
+            "enabled": true,
+            "server_name": "litual3.harcho.shop"
+          }
+        }
+      },
+      {
+        "key": "n42.neproxy.net:14443:lvu_3390f238bef4e3058ac47c87473755cf_07cd5acf7265adf5c1210040ca46facf:np2.1.HJjJucZ0-OZZUq5Njkl48v1gYx7ol9rXjxYXZUxrQdM",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-74",
+          "server": "n42.neproxy.net",
+          "server_port": 14443,
+          "password": "lvu_3390f238bef4e3058ac47c87473755cf_07cd5acf7265adf5c1210040ca46facf:np2.1.HJjJucZ0-OZZUq5Njkl48v1gYx7ol9rXjxYXZUxrQdM",
+          "tls": {
+            "enabled": true,
+            "server_name": "n37.neproxy.net",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
+      },
+      {
+        "key": "n42.neproxy.net:15443:lvu_3390f238bef4e3058ac47c87473755cf_07cd5acf7265adf5c1210040ca46facf:np2.1.HJjJucZ0-OZZUq5Njkl48v1gYx7ol9rXjxYXZUxrQdM",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-75",
+          "server": "n42.neproxy.net",
+          "server_port": 15443,
+          "password": "lvu_3390f238bef4e3058ac47c87473755cf_07cd5acf7265adf5c1210040ca46facf:np2.1.HJjJucZ0-OZZUq5Njkl48v1gYx7ol9rXjxYXZUxrQdM",
+          "tls": {
+            "enabled": true,
+            "server_name": "n9.neproxy.net",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
+      },
+      {
+        "key": "n42.neproxy.net:9443:lvu_3390f238bef4e3058ac47c87473755cf_07cd5acf7265adf5c1210040ca46facf:np2.1.HJjJucZ0-OZZUq5Njkl48v1gYx7ol9rXjxYXZUxrQdM",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-76",
+          "server": "n42.neproxy.net",
+          "server_port": 9443,
+          "password": "lvu_3390f238bef4e3058ac47c87473755cf_07cd5acf7265adf5c1210040ca46facf:np2.1.HJjJucZ0-OZZUq5Njkl48v1gYx7ol9rXjxYXZUxrQdM",
+          "tls": {
+            "enabled": true,
+            "server_name": "n34.neproxy.net",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
+      },
+      {
+        "key": "v1fr4.stablenode.cloud:45106:5400d59c-362e-40a9-a63d-3280ad665afc",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-95",
+          "server": "v1fr4.stablenode.cloud",
+          "server_port": 45106,
+          "password": "5400d59c-362e-40a9-a63d-3280ad665afc",
+          "tls": {
+            "enabled": true,
+            "server_name": "v1fr4.stablenode.cloud"
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "7lxfFHnxyPtOOafv"
+          }
+        }
+      },
+      {
+        "key": "v1fr4.stablenode.cloud:45206:5400d59c-362e-40a9-a63d-3280ad665afc",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-96",
+          "server": "v1fr4.stablenode.cloud",
+          "server_port": 45206,
+          "password": "5400d59c-362e-40a9-a63d-3280ad665afc",
+          "tls": {
+            "enabled": true,
+            "server_name": "v1fr4.stablenode.cloud"
+          },
+          "obfs": {
+            "type": "salamander",
+            "password": "N2rvCMYcDxnEWHVQ"
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -207480,5 +207595,5 @@
       }
     ]
   },
-  "updated": "2026-11-26T15:00:51Z"
+  "updated": "2026-11-26T15:05:34Z"
 }
