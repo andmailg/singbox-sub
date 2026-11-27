@@ -13897,6 +13897,58 @@
             }
           }
         }
+      },
+      {
+        "key": "168.113.142.192:443:749b1c56-e658-4bf5-94bd-5c3286a4aed1:/api/de3/preview/",
+        "node": {
+          "type": "vless",
+          "tag": "node-46",
+          "server": "168.113.142.192",
+          "server_port": 443,
+          "uuid": "749b1c56-e658-4bf5-94bd-5c3286a4aed1",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/de3/preview/",
+            "mode": "packet-up",
+            "host": [
+              "paperbirch.merlano.monster"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "paperbirch.merlano.monster",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "sedge.filnex.baby:443:749b1c56-e658-4bf5-94bd-5c3286a4aed1:/api/de6/preview/",
+        "node": {
+          "type": "vless",
+          "tag": "node-275",
+          "server": "sedge.filnex.baby",
+          "server_port": 443,
+          "uuid": "749b1c56-e658-4bf5-94bd-5c3286a4aed1",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/de6/preview/",
+            "mode": "packet-up",
+            "host": [
+              "paperbirch.merlano.monster"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "paperbirch.merlano.monster",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -216790,5 +216842,5 @@
       }
     ]
   },
-  "updated": "2026-11-27T23:45:19Z"
+  "updated": "2026-11-27T23:47:53Z"
 }
