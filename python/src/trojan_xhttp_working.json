@@ -1,5 +1,31 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-11-23T01:06:40Z",
-  "nodes": []
+  "last_tested": "2026-11-27T15:30:45Z",
+  "nodes": [
+    {
+      "type": "trojan",
+      "tag": "node-1",
+      "server": "89.127.217.191",
+      "server_port": 443,
+      "password": "lj6SSpygscls3HEo",
+      "_dedup_key": "89.127.217.191:443:lj6SSpygscls3HEo:/api/main/auto",
+      "tls": {
+        "enabled": true,
+        "server_name": "poland.alpacalounge.com"
+      },
+      "transport": {
+        "type": "xhttp",
+        "path": "/api/main/auto",
+        "mode": "auto"
+      },
+      "_sub_ids": [
+        "1",
+        "26",
+        "29",
+        "300"
+      ],
+      "_latency_ms": 616,
+      "_last_ok_ts": 1795793444.516136
+    }
+  ]
 }

@@ -214641,7 +214641,28 @@
           }
         }
       }
+    ],
+    "trojan_xhttp": [
+      {
+        "key": "89.127.217.191:443:lj6SSpygscls3HEo:/api/main/auto",
+        "node": {
+          "type": "trojan",
+          "tag": "node-1",
+          "server": "89.127.217.191",
+          "server_port": 443,
+          "password": "lj6SSpygscls3HEo",
+          "tls": {
+            "enabled": true,
+            "server_name": "poland.alpacalounge.com"
+          },
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/main/auto",
+            "mode": "auto"
+          }
+        }
+      }
     ]
   },
-  "updated": "2026-11-27T15:29:44Z"
+  "updated": "2026-11-27T15:30:46Z"
 }
