@@ -115639,6 +115639,68 @@
             ]
           }
         }
+      },
+      {
+        "key": "128.254.186.213:13337:900c8c92-1979-4c7c-8f2f-63e87d53d8fe",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-4",
+          "server": "128.254.186.213",
+          "server_port": 13337,
+          "password": "900c8c92-1979-4c7c-8f2f-63e87d53d8fe",
+          "tls": {
+            "enabled": true,
+            "server_name": "mother-earth.fyi"
+          }
+        }
+      },
+      {
+        "key": "194.87.224.137:9443:lvu_3390f238bef4e3058ac47c87473755cf_07cd5acf7265adf5c1210040ca46facf:np2.1.HJjJucZ0-OZZUq5Njkl48v1gYx7ol9rXjxYXZUxrQdM",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-28",
+          "server": "194.87.224.137",
+          "server_port": 9443,
+          "password": "lvu_3390f238bef4e3058ac47c87473755cf_07cd5acf7265adf5c1210040ca46facf:np2.1.HJjJucZ0-OZZUq5Njkl48v1gYx7ol9rXjxYXZUxrQdM",
+          "tls": {
+            "enabled": true,
+            "server_name": "n34.neproxy.net"
+          }
+        }
+      },
+      {
+        "key": "194.87.224.8:443:lvu_3390f238bef4e3058ac47c87473755cf_07cd5acf7265adf5c1210040ca46facf:np2.1.HJjJucZ0-OZZUq5Njkl48v1gYx7ol9rXjxYXZUxrQdM",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-32",
+          "server": "194.87.224.8",
+          "server_port": 443,
+          "password": "lvu_3390f238bef4e3058ac47c87473755cf_07cd5acf7265adf5c1210040ca46facf:np2.1.HJjJucZ0-OZZUq5Njkl48v1gYx7ol9rXjxYXZUxrQdM",
+          "tls": {
+            "enabled": true,
+            "server_name": "n49.neproxy.net",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
+      },
+      {
+        "key": "litual3.harcho.shop:443:c0742f77-5495-43bf-b007-88d368774d7c",
+        "node": {
+          "type": "hysteria2",
+          "tag": "node-75",
+          "server": "litual3.harcho.shop",
+          "server_port": 443,
+          "password": "c0742f77-5495-43bf-b007-88d368774d7c",
+          "tls": {
+            "enabled": true,
+            "server_name": "litual3.harcho.shop",
+            "alpn": [
+              "h3"
+            ]
+          }
+        }
       }
     ],
     "vless_grpc": [
@@ -214437,5 +214499,5 @@
       }
     ]
   },
-  "updated": "2026-11-27T04:07:55Z"
+  "updated": "2026-11-27T08:13:24Z"
 }
