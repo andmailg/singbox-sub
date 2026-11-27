@@ -13342,6 +13342,264 @@
             }
           }
         }
+      },
+      {
+        "key": "104.18.32.47:8443:55b3fd10-3658-40a2-8951-ec90932d1d30:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-2",
+          "server": "104.18.32.47",
+          "server_port": 8443,
+          "uuid": "55b3fd10-3658-40a2-8951-ec90932d1d30",
+          "transport": {
+            "type": "xhttp",
+            "path": "/"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "sinavm2.soft10.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "165.231.161.178:443:0173d52e-8e1b-4681-831e-11529677b72f:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-40",
+          "server": "165.231.161.178",
+          "server_port": 443,
+          "uuid": "0173d52e-8e1b-4681-831e-11529677b72f",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "stream-one"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "cab-6b07048f.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "safari"
+            }
+          }
+        }
+      },
+      {
+        "key": "50.7.28.214:443:0173d52e-8e1b-4681-831e-11529677b72f:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-120",
+          "server": "50.7.28.214",
+          "server_port": 443,
+          "uuid": "0173d52e-8e1b-4681-831e-11529677b72f",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "api-v3-0173d52e.vmagnum.win",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "api.ferrin.uk:443:8bc3af32-c6bb-4a57-8da1-9a662fd79e3c:/lv",
+        "node": {
+          "type": "vless",
+          "tag": "node-151",
+          "server": "api.ferrin.uk",
+          "server_port": 443,
+          "uuid": "8bc3af32-c6bb-4a57-8da1-9a662fd79e3c",
+          "transport": {
+            "type": "xhttp",
+            "path": "/lv",
+            "mode": "stream-one"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "8bc3af32.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "de.vmagnum.win:443:0173d52e-8e1b-4681-831e-11529677b72f:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-180",
+          "server": "de.vmagnum.win",
+          "server_port": 443,
+          "uuid": "0173d52e-8e1b-4681-831e-11529677b72f",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "stream-one"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "api-v3-0173d52e.vmagnum.win",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "ice.noooo.win:443:0173d52e-8e1b-4681-831e-11529677b72f:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-204",
+          "server": "ice.noooo.win",
+          "server_port": 443,
+          "uuid": "0173d52e-8e1b-4681-831e-11529677b72f",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "stream-one"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "cab-6b07048f.ferrin.uk",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "safari"
+            }
+          }
+        }
+      },
+      {
+        "key": "leviko-se7128.shopingggg.ir:4443:a35c508f-4d5d-4531-842e-6e9d43c762c0:/api/v1/sync/",
+        "node": {
+          "type": "vless",
+          "tag": "node-211",
+          "server": "leviko-se7128.shopingggg.ir",
+          "server_port": 4443,
+          "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/sync/",
+            "mode": "auto"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "swo2.nexfile.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "leviko-se7853.shopingggg.ir:4443:a35c508f-4d5d-4531-842e-6e9d43c762c0:/api/v1/sync/",
+        "node": {
+          "type": "vless",
+          "tag": "node-212",
+          "server": "leviko-se7853.shopingggg.ir",
+          "server_port": 4443,
+          "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v1/sync/",
+            "mode": "auto",
+            "host": [
+              "swo2.nexfile.net"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "swo2.nexfile.net",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "pigment.merlano.monster:443:749b1c56-e658-4bf5-94bd-5c3286a4aed1:/api/de2/sync",
+        "node": {
+          "type": "vless",
+          "tag": "node-231",
+          "server": "pigment.merlano.monster",
+          "server_port": 443,
+          "uuid": "749b1c56-e658-4bf5-94bd-5c3286a4aed1",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/de2/sync",
+            "mode": "auto",
+            "host": [
+              "pigment.merlano.monster"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "fieldmark.merlano.monster",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "render.com:443:a47d9818-d2cc-4b03-a358-712b2f5fc21b:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-247",
+          "server": "render.com",
+          "server_port": 443,
+          "uuid": "a47d9818-d2cc-4b03-a358-712b2f5fc21b",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "stream-one"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "germ2-orng-bye-god-xn--fhq0la447aac5504dea701axr1g.maniyadg7shard.ir",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "chrome"
+            }
+          }
+        }
+      },
+      {
+        "key": "us.alpheratzz.org:443:0173d52e-8e1b-4681-831e-11529677b72f:/",
+        "node": {
+          "type": "vless",
+          "tag": "node-297",
+          "server": "us.alpheratzz.org",
+          "server_port": 443,
+          "uuid": "0173d52e-8e1b-4681-831e-11529677b72f",
+          "transport": {
+            "type": "xhttp",
+            "path": "/",
+            "mode": "stream-one"
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "id-0173d52e.vmagnum.win",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "safari"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -210479,5 +210737,5 @@
       }
     ]
   },
-  "updated": "2026-11-27T03:08:07Z"
+  "updated": "2026-11-27T03:20:01Z"
 }
