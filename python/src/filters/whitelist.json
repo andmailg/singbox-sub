@@ -212240,6 +212240,44 @@
             "path": "/Telegram=@AmyraxVPN"
           }
         }
+      },
+      {
+        "key": "39.108.113.127:10086:ce4d0652-11f8-4531-9c59-98ceaef8fd86:/",
+        "node": {
+          "type": "vmess",
+          "tag": "node-130",
+          "server": "39.108.113.127",
+          "server_port": 10086,
+          "uuid": "ce4d0652-11f8-4531-9c59-98ceaef8fd86",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/"
+          }
+        }
+      },
+      {
+        "key": "bill-defendant-purse-reflect.trycloudflare.com:443:2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea:/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+        "node": {
+          "type": "vmess",
+          "tag": "node-211",
+          "server": "bill-defendant-purse-reflect.trycloudflare.com",
+          "server_port": 443,
+          "uuid": "2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+            "headers": {
+              "Host": "bill-defendant-purse-reflect.trycloudflare.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "bill-defendant-purse-reflect.trycloudflare.com",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -216457,5 +216495,5 @@
       }
     ]
   },
-  "updated": "2026-11-27T19:33:00Z"
+  "updated": "2026-11-27T23:37:29Z"
 }
