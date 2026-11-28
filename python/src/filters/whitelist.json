@@ -157391,6 +157391,90 @@
             }
           }
         }
+      },
+      {
+        "key": "ukr.stealthtunnel.com:443:963A4918-A630-29DA-A873-093CDF8AD784:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-86",
+          "server": "ukr.stealthtunnel.com",
+          "server_port": 443,
+          "password": "963A4918-A630-29DA-A873-093CDF8AD784",
+          "tls": {
+            "enabled": true,
+            "server_name": "ukr.stealthtunnel.com"
+          },
+          "transport": {
+            "type": "ws",
+            "headers": {
+              "Host": "ukr.stealthtunnel.com"
+            },
+            "path": "/"
+          }
+        }
+      },
+      {
+        "key": "sg.foldandflyhigh.com:443:963A4918-A630-29DA-A873-093CDF8AD784:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-103",
+          "server": "sg.foldandflyhigh.com",
+          "server_port": 443,
+          "password": "963A4918-A630-29DA-A873-093CDF8AD784",
+          "tls": {
+            "enabled": true,
+            "server_name": "sg.foldandflyhigh.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "sg.foldandflyhigh.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "sg.privatemailfiles.com:443:963A4918-A630-29DA-A873-093CDF8AD784:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-104",
+          "server": "sg.privatemailfiles.com",
+          "server_port": 443,
+          "password": "963A4918-A630-29DA-A873-093CDF8AD784",
+          "tls": {
+            "enabled": true,
+            "server_name": "sg.privatemailfiles.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "sg.privatemailfiles.com"
+            }
+          }
+        }
+      },
+      {
+        "key": "ukr.foldandflyhigh.com:443:963A4918-A630-29DA-A873-093CDF8AD784:/",
+        "node": {
+          "type": "trojan",
+          "tag": "node-110",
+          "server": "ukr.foldandflyhigh.com",
+          "server_port": 443,
+          "password": "963A4918-A630-29DA-A873-093CDF8AD784",
+          "tls": {
+            "enabled": true,
+            "server_name": "ukr.foldandflyhigh.com"
+          },
+          "transport": {
+            "type": "ws",
+            "path": "/",
+            "headers": {
+              "Host": "ukr.foldandflyhigh.com"
+            }
+          }
+        }
       }
     ],
     "trojan_grpc": [
@@ -224180,5 +224264,5 @@
       }
     ]
   },
-  "updated": "2026-11-28T14:06:32Z"
+  "updated": "2026-11-28T14:09:24Z"
 }
