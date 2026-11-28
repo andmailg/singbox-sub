@@ -13949,6 +13949,58 @@
             }
           }
         }
+      },
+      {
+        "key": "copperplate.gerqix.online:443:749b1c56-e658-4bf5-94bd-5c3286a4aed1:/api/de6/sync",
+        "node": {
+          "type": "vless",
+          "tag": "node-146",
+          "server": "copperplate.gerqix.online",
+          "server_port": 443,
+          "uuid": "749b1c56-e658-4bf5-94bd-5c3286a4aed1",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/de6/sync",
+            "mode": "auto",
+            "host": [
+              "copperplate.gerqix.online"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "copperplate.gerqix.online",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "sunfield.moltex.click:443:749b1c56-e658-4bf5-94bd-5c3286a4aed1:/api/de1/sync",
+        "node": {
+          "type": "vless",
+          "tag": "node-288",
+          "server": "sunfield.moltex.click",
+          "server_port": 443,
+          "uuid": "749b1c56-e658-4bf5-94bd-5c3286a4aed1",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/de1/sync",
+            "mode": "auto",
+            "host": [
+              "sunfield.moltex.click"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "fennel.moltex.click",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -222685,5 +222737,5 @@
       }
     ]
   },
-  "updated": "2026-11-28T08:09:34Z"
+  "updated": "2026-11-28T08:30:20Z"
 }

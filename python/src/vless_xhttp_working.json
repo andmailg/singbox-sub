@@ -1,31 +1,10 @@
 {
   "_asn_key": "a5fc5701fb167280",
-  "last_tested": "2026-11-27T23:47:51Z",
+  "last_tested": "2026-11-28T08:30:19Z",
   "nodes": [
     {
       "type": "vless",
       "tag": "node-1",
-      "server": "104.18.32.47",
-      "server_port": 8443,
-      "uuid": "55b3fd10-3658-40a2-8951-ec90932d1d30",
-      "transport": {
-        "type": "xhttp",
-        "path": "/"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "sinavm2.soft10.ir",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_last_ok_ts": 1795823061.22769,
-      "_country": null
-    },
-    {
-      "type": "vless",
-      "tag": "node-2",
       "server": "104.18.32.47",
       "server_port": 8443,
       "uuid": "55b3fd10-3658-40a2-8951-ec90932d1d30",
@@ -43,16 +22,17 @@
         }
       },
       "_sub_ids": [
+        "102",
         "110",
         "23",
         "26"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": null
     },
     {
       "type": "vless",
-      "tag": "node-3",
+      "tag": "node-2",
       "server": "172.64.155.209",
       "server_port": 8443,
       "uuid": "55b3fd10-3658-40a2-8951-ec90932d1d30",
@@ -75,9 +55,11 @@
         "100",
         "102",
         "104",
+        "105",
         "110",
         "13",
         "201",
+        "21",
         "23",
         "24",
         "26",
@@ -86,37 +68,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": null
     },
     {
       "type": "vless",
-      "tag": "node-4",
-      "server": "188.114.97.6",
-      "server_port": 443,
-      "uuid": "e58384f2-76ba-400b-ae0a-8271b4c9c310",
-      "transport": {
-        "type": "xhttp",
-        "path": "/api/v1/stream",
-        "mode": "auto",
-        "host": [
-          "crm.dpdns.org"
-        ]
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "crm.dpdns.org",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_last_ok_ts": 1795823061.22769,
-      "_country": null
-    },
-    {
-      "type": "vless",
-      "tag": "node-5",
+      "tag": "node-3",
       "server": "188.114.97.6",
       "server_port": 443,
       "uuid": "e58384f2-76ba-400b-ae0a-8271b4c9c310",
@@ -143,37 +100,12 @@
         "23",
         "26"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": null
     },
     {
       "type": "vless",
-      "tag": "node-6",
-      "server": "188.114.98.0",
-      "server_port": 443,
-      "uuid": "e58384f2-76ba-400b-ae0a-8271b4c9c310",
-      "transport": {
-        "type": "xhttp",
-        "path": "/api/v1/stream",
-        "mode": "auto",
-        "host": [
-          "crm.dpdns.org"
-        ]
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "crm.dpdns.org",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "edge"
-        }
-      },
-      "_last_ok_ts": 1795823061.22769,
-      "_country": null
-    },
-    {
-      "type": "vless",
-      "tag": "node-7",
+      "tag": "node-4",
       "server": "188.114.98.0",
       "server_port": 443,
       "uuid": "e58384f2-76ba-400b-ae0a-8271b4c9c310",
@@ -203,34 +135,12 @@
         "29",
         "300"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": null
     },
     {
       "type": "vless",
-      "tag": "node-8",
-      "server": "chatgpt.com",
-      "server_port": 8443,
-      "uuid": "55b3fd10-3658-40a2-8951-ec90932d1d30",
-      "transport": {
-        "type": "xhttp",
-        "path": "/",
-        "mode": "auto"
-      },
-      "tls": {
-        "enabled": true,
-        "server_name": "sinavm2.soft10.ir",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "_last_ok_ts": 1795823061.22769,
-      "_country": null
-    },
-    {
-      "type": "vless",
-      "tag": "node-9",
+      "tag": "node-5",
       "server": "chatgpt.com",
       "server_port": 8443,
       "uuid": "55b3fd10-3658-40a2-8951-ec90932d1d30",
@@ -250,24 +160,27 @@
       },
       "_sub_ids": [
         "1",
+        "100",
         "102",
         "104",
         "105",
         "110",
         "13",
         "14",
+        "201",
+        "21",
         "23",
         "26",
         "29",
         "3",
         "300"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": null
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-10",
+      "tag": "🇩🇪node-6",
       "server": "91.107.191.188",
       "server_port": 443,
       "uuid": "56b7fb67-aae8-435d-9fb1-545dcfb2fb7e",
@@ -307,12 +220,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇩🇪node-11",
+      "tag": "🇩🇪node-7",
       "server": "kala.bestsellers1.site",
       "server_port": 443,
       "uuid": "56b7fb67-aae8-435d-9fb1-545dcfb2fb7e",
@@ -349,12 +262,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": "DE"
     },
     {
       "type": "vless",
-      "tag": "🇸🇨node-12",
+      "tag": "🇸🇨node-8",
       "server": "196.240.6.115",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -377,12 +290,12 @@
         "24",
         "26"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": "SC"
     },
     {
       "type": "vless",
-      "tag": "🇸🇨node-13",
+      "tag": "🇸🇨node-9",
       "server": "api.ferrin.uk",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -417,12 +330,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": "SC"
     },
     {
       "type": "vless",
-      "tag": "🇸🇨node-14",
+      "tag": "🇸🇨node-10",
       "server": "api.ferrin.uk",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -449,12 +362,12 @@
         "7",
         "8"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": "SC"
     },
     {
       "type": "vless",
-      "tag": "🇸🇨node-15",
+      "tag": "🇸🇨node-11",
       "server": "api.ferrin.uk",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -497,12 +410,12 @@
         "8",
         "9"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": "SC"
     },
     {
       "type": "vless",
-      "tag": "🇸🇨node-16",
+      "tag": "🇸🇨node-12",
       "server": "api.ferrin.uk",
       "server_port": 443,
       "uuid": "7d1a74fd-8a38-4a29-863f-5da53a9e557e",
@@ -539,12 +452,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": "SC"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-17",
+      "tag": "🇺🇸node-13",
       "server": "179.253.80.175",
       "server_port": 4443,
       "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -578,12 +491,12 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-18",
+      "tag": "🇺🇸node-14",
       "server": "201.34.142.108",
       "server_port": 443,
       "uuid": "4777d90d-265b-4927-a0d1-63f36ed1421c",
@@ -604,12 +517,12 @@
       "_sub_ids": [
         "208"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-19",
+      "tag": "🇺🇸node-15",
       "server": "leviko-se7128.shopingggg.ir",
       "server_port": 4443,
       "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -635,17 +548,18 @@
         "13",
         "14",
         "201",
+        "21",
         "26",
         "29",
         "3",
         "300"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-20",
+      "tag": "🇺🇸node-16",
       "server": "leviko-se7853.shopingggg.ir",
       "server_port": 4443,
       "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -676,18 +590,19 @@
         "14",
         "17",
         "201",
+        "21",
         "26",
         "29",
         "3",
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": "US"
     },
     {
       "type": "vless",
-      "tag": "🇺🇸node-21",
+      "tag": "🇺🇸node-17",
       "server": "swo2.nexfile.net",
       "server_port": 4443,
       "uuid": "a35c508f-4d5d-4531-842e-6e9d43c762c0",
@@ -726,7 +641,7 @@
         "300",
         "9"
       ],
-      "_last_ok_ts": 1795823061.22769,
+      "_last_ok_ts": 1795854400.725584,
       "_country": "US"
     }
   ]
