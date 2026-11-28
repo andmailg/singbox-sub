@@ -140330,6 +140330,33 @@
             "service_name": "glush.wifi.v1"
           }
         }
+      },
+      {
+        "key": "89.169.54.244:443",
+        "node": {
+          "type": "vless",
+          "tag": "node-181",
+          "server": "89.169.54.244",
+          "server_port": 443,
+          "uuid": "cda0862a-0f87-4be9-8ed8-1d0c9e382839",
+          "tls": {
+            "enabled": true,
+            "server_name": "15b171g.nl7.h1clayd.click",
+            "reality": {
+              "enabled": true,
+              "public_key": "zbz--PMjcIC4Ggr3j-ibDf0fzXRTj0lM_HzjPJyMkVE",
+              "short_id": "50a749f0eccb628c"
+            },
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          },
+          "transport": {
+            "type": "grpc",
+            "service_name": "5b79e8a94241"
+          }
+        }
       }
     ],
     "trojan_ws": [
@@ -224329,5 +224356,5 @@
       }
     ]
   },
-  "updated": "2026-11-28T18:21:17Z"
+  "updated": "2026-11-28T18:28:16Z"
 }
