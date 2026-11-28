@@ -115,7 +115,8 @@
       "tag": "proxy-out",
       "outbounds": [
         "auto",
-        "🇺🇸node-1"
+        "🇺🇸node-1",
+        "🇺🇸node-2"
       ],
       "default": "auto"
     },
@@ -123,7 +124,8 @@
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇺🇸node-1"
+        "🇺🇸node-1",
+        "🇺🇸node-2"
       ],
       "url": "http://connectivitycheck.gstatic.com/generate_204",
       "interval": "10m",
@@ -134,7 +136,26 @@
       "tag": "🇺🇸node-1",
       "server": "108.158.198.2",
       "server_port": 443,
-      "uuid": "65286844-4797-4f94-bb37-5e41f90a2daa",
+      "uuid": "7a42d986-f0b8-46e7-82cf-9516e168a613",
+      "transport": {
+        "type": "ws",
+        "path": "/",
+        "headers": {
+          "Host": "dkfsoyk9ju2as.cloudfront.net"
+        }
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "dkfsoyk9ju2as.cloudfront.net",
+        "insecure": false
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇺🇸node-2",
+      "server": "108.159.247.2",
+      "server_port": 443,
+      "uuid": "7a42d986-f0b8-46e7-82cf-9516e168a613",
       "transport": {
         "type": "ws",
         "path": "/",
