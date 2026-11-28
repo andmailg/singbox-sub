@@ -220061,6 +220061,29 @@
             }
           }
         }
+      },
+      {
+        "key": "configuring-machine-notices-communicate.trycloudflare.com:443:2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea:/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+        "node": {
+          "type": "vmess",
+          "tag": "node-216",
+          "server": "configuring-machine-notices-communicate.trycloudflare.com",
+          "server_port": 443,
+          "uuid": "2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea",
+          "security": "auto",
+          "transport": {
+            "type": "ws",
+            "path": "/2a4d24bf-367a-4951-bfe6-50c7a0bdb5ea-vm",
+            "headers": {
+              "Host": "configuring-machine-notices-communicate.trycloudflare.com"
+            }
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "configuring-machine-notices-communicate.trycloudflare.com",
+            "insecure": false
+          }
+        }
       }
     ],
     "vmess_httpupgrade": [
@@ -224306,5 +224329,5 @@
       }
     ]
   },
-  "updated": "2026-11-28T18:20:49Z"
+  "updated": "2026-11-28T18:21:17Z"
 }
