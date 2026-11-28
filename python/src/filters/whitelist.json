@@ -14001,6 +14001,84 @@
             }
           }
         }
+      },
+      {
+        "key": "109.172.87.68:443:f4b08bf1-d9bd-4755-aa88-ba922282c608:/api/v2/telemetry/c3a474d77a",
+        "node": {
+          "type": "vless",
+          "tag": "node-3",
+          "server": "109.172.87.68",
+          "server_port": 443,
+          "uuid": "f4b08bf1-d9bd-4755-aa88-ba922282c608",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/v2/telemetry/c3a474d77a",
+            "mode": "auto",
+            "host": [
+              "rusamicro67.richhoodfoc.com"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "rusamicro67.richhoodfoc.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "201.51.2.188:443:749b1c56-e658-4bf5-94bd-5c3286a4aed1:/api/de2/sync",
+        "node": {
+          "type": "vless",
+          "tag": "node-85",
+          "server": "201.51.2.188",
+          "server_port": 443,
+          "uuid": "749b1c56-e658-4bf5-94bd-5c3286a4aed1",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/de2/sync",
+            "mode": "auto",
+            "host": [
+              "pigment.merlano.monster"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "fieldmark.merlano.monster",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
+      },
+      {
+        "key": "marginalia.gerqix.online:443:749b1c56-e658-4bf5-94bd-5c3286a4aed1:/api/preview/",
+        "node": {
+          "type": "vless",
+          "tag": "node-198",
+          "server": "marginalia.gerqix.online",
+          "server_port": 443,
+          "uuid": "749b1c56-e658-4bf5-94bd-5c3286a4aed1",
+          "transport": {
+            "type": "xhttp",
+            "path": "/api/preview/",
+            "mode": "packet-up",
+            "host": [
+              "marginalia.gerqix.online"
+            ]
+          },
+          "tls": {
+            "enabled": true,
+            "server_name": "marginalia.gerqix.online",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "firefox"
+            }
+          }
+        }
       }
     ],
     "vless_tcp": [
@@ -224356,5 +224434,5 @@
       }
     ]
   },
-  "updated": "2026-11-28T18:28:16Z"
+  "updated": "2026-11-28T18:33:12Z"
 }
